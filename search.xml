@@ -158,4 +158,19 @@
         <tag>datascience</tag>
       </tags>
   </entry>
+  <entry>
+    <title>딥러닝기초</title>
+    <url>/2021/04/06/%EB%94%A5%EB%9F%AC%EB%8B%9D%EA%B8%B0%EC%B4%88/</url>
+    <content><![CDATA[<h1 id="딥러닝"><a href="#딥러닝" class="headerlink" title="딥러닝"></a>딥러닝</h1><h2 id="딥러닝-필수선행지식"><a href="#딥러닝-필수선행지식" class="headerlink" title="딥러닝 필수선행지식"></a>딥러닝 필수선행지식</h2><ul>
+<li>python</li>
+<li>미분의 개념들, 행렬 연산, 지수와 로그</li>
+</ul>
+]]></content>
+      <categories>
+        <category>deeplearning</category>
+      </categories>
+      <tags>
+        <tag>deeplearning-basic</tag>
+      </tags>
+  </entry>
 </search>
