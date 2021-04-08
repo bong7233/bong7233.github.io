@@ -159,13 +159,32 @@
       </tags>
   </entry>
   <entry>
+    <title>PyTorch</title>
+    <url>/2021/04/09/PyTorch/</url>
+    <content><![CDATA[<h1 id="PyTorch"><a href="#PyTorch" class="headerlink" title="PyTorch"></a>PyTorch</h1><ul>
+<li>최근 TensorFlow 보다 높은 인지도와 실용성으로 성장중</li>
+<li>NumPy와 매우 비슷한 문법</li>
+<li>동적으로 back-propagation 경로 생성가능</li>
+<li>documentation 완벽(이것만으로도 충분히 마스터가능함)</li>
+<li>난이도 적당, 자유도 높음</li>
+<li>But TensorFlow 에 비해 낮은 상용화 지원</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Deep-Learning</category>
+      </categories>
+      <tags>
+        <tag>PyTorch</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>딥러닝기초</title>
     <url>/2021/04/06/%EB%94%A5%EB%9F%AC%EB%8B%9D%EA%B8%B0%EC%B4%88/</url>
-    <content><![CDATA[<h1 id="딥러닝"><a href="#딥러닝" class="headerlink" title="딥러닝"></a>딥러닝</h1><h2 id="딥러닝-필수선행지식"><a href="#딥러닝-필수선행지식" class="headerlink" title="딥러닝 필수선행지식"></a>딥러닝 필수선행지식</h2><ul>
+    <content><![CDATA[<h1 id="딥러닝-사전기초지식"><a href="#딥러닝-사전기초지식" class="headerlink" title="딥러닝 사전기초지식"></a>딥러닝 사전기초지식</h1><ul>
 <li>python</li>
 <li>미분의 개념들, 행렬 연산, 지수와 로그</li>
 </ul>
-<h2 id="딥러닝-1"><a href="#딥러닝-1" class="headerlink" title="딥러닝?"></a>딥러닝?</h2><ul>
+<h2 id="딥러닝"><a href="#딥러닝" class="headerlink" title="딥러닝?"></a>딥러닝?</h2><ul>
 <li>Deep Neural Networks(DNN)을 학습시켜 문제 해결</li>
 <li>인공신경망(Artificial Neural Networks)의 일부분이라 볼 수 있음</li>
 <li>비선형함수로, 머신러닝에비해 패턴인식능력 월등</li>
@@ -176,7 +195,6 @@
 </li>
 <li>음성인식, 기계번역, 자율주행, 객체인식및 이미지분류, 사진합성및 보정, 데이터분석 등등</li>
 </ul>
-<hr>
 <h2 id="인공지능-모델이란"><a href="#인공지능-모델이란" class="headerlink" title="인공지능 모델이란"></a>인공지능 모델이란</h2><ul>
 <li>x 가주어지면 y를 반환<ul>
 <li>y=f(x)</li>

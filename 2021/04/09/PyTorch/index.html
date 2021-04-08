@@ -23,16 +23,21 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"bong7233.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta property="og:type" content="website">
-<meta property="og:title" content="봉이의 개발블로그">
-<meta property="og:url" content="http://bong7233.github.io/categories/Deep-Learning/index.html">
+<meta name="description" content="PyTorch 최근 TensorFlow 보다 높은 인지도와 실용성으로 성장중 NumPy와 매우 비슷한 문법 동적으로 back-propagation 경로 생성가능 documentation 완벽(이것만으로도 충분히 마스터가능함) 난이도 적당, 자유도 높음 But TensorFlow 에 비해 낮은 상용화 지원">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PyTorch">
+<meta property="og:url" content="http://bong7233.github.io/2021/04/09/PyTorch/index.html">
 <meta property="og:site_name" content="봉이의 개발블로그">
+<meta property="og:description" content="PyTorch 최근 TensorFlow 보다 높은 인지도와 실용성으로 성장중 NumPy와 매우 비슷한 문법 동적으로 back-propagation 경로 생성가능 documentation 완벽(이것만으로도 충분히 마스터가능함) 난이도 적당, 자유도 높음 But TensorFlow 에 비해 낮은 상용화 지원">
 <meta property="og:locale">
+<meta property="article:published_time" content="2021-04-08T16:38:35.000Z">
+<meta property="article:modified_time" content="2021-04-08T17:17:10.825Z">
 <meta property="article:author" content="SangBong Lee">
+<meta property="article:tag" content="PyTorch">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://bong7233.github.io/categories/Deep-Learning/">
+<link rel="canonical" href="http://bong7233.github.io/2021/04/09/PyTorch/">
 
 
 <script class="page-configurations">
@@ -40,11 +45,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'kor'
   };
 </script>
-<title>Category: Deep-Learning | 봉이의 개발블로그</title>
+<title>PyTorch | 봉이의 개발블로그</title>
   
 
 
@@ -171,7 +176,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -184,6 +189,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PyTorch"><span class="nav-number">1.</span> <span class="nav-text">PyTorch</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -253,70 +259,103 @@
 </noscript>
 
 
-    <div class="main-inner category posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h2 class="collection-header">Deep-Learning
-          <small>Category</small>
-        </h2>
-      </div>
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="kor">
+    <link itemprop="mainEntityOfPage" href="http://bong7233.github.io/2021/04/09/PyTorch/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="SangBong Lee">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="봉이의 개발블로그">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          PyTorch
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+
+      <time title="Created: 2021-04-09 01:38:35 / Modified: 02:17:10" itemprop="dateCreated datePublished" datetime="2021-04-09T01:38:35+09:00">2021-04-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Deep-Learning/" itemprop="url" rel="index"><span itemprop="name">Deep-Learning</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="PyTorch"><a href="#PyTorch" class="headerlink" title="PyTorch"></a>PyTorch</h1><ul>
+<li>최근 TensorFlow 보다 높은 인지도와 실용성으로 성장중</li>
+<li>NumPy와 매우 비슷한 문법</li>
+<li>동적으로 back-propagation 경로 생성가능</li>
+<li>documentation 완벽(이것만으로도 충분히 마스터가능함)</li>
+<li>난이도 적당, 자유도 높음</li>
+<li>But TensorFlow 에 비해 낮은 상용화 지원</li>
+</ul>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-04-09T01:38:35+09:00"
-              content="2021-04-09">
-          04-09
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/04/09/PyTorch/" itemprop="url">
-            <span itemprop="name">PyTorch</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/PyTorch/" rel="tag"># PyTorch</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/04/06/%EB%94%A5%EB%9F%AC%EB%8B%9D%EA%B8%B0%EC%B4%88/" rel="prev" title="딥러닝기초">
+                  <i class="fa fa-chevron-left"></i> 딥러닝기초
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-04-06T22:28:15+09:00"
-              content="2021-04-06">
-          04-06
-        </time>
-      </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/04/06/%EB%94%A5%EB%9F%AC%EB%8B%9D%EA%B8%B0%EC%B4%88/" itemprop="url">
-            <span itemprop="name">딥러닝기초</span>
-          </a>
-      </div>
 
-      
-    </header>
-  </article>
 
-    </div>
-  </div>
-  
-  
-  
+
 
 
 <script>
