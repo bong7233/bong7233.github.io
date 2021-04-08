@@ -23,15 +23,15 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"bong7233.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="딥러닝딥러닝 필수선행지식 python 미분의 개념들, 행렬 연산, 지수와 로그  딥러닝? Deep Neural Networks(DNN)을 학습시켜 문제 해결 인공신경망(Artificial Neural Networks)의 일부분이라 볼 수 있음 비선형함수로, 머신러닝에비해 패턴인식능력 월등 이미지나 텍스트, 음성같은 분야들에서 비약적 성능개선 기존 머신러닝과">
+<meta name="description" content="딥러닝딥러닝 필수선행지식 python 미분의 개념들, 행렬 연산, 지수와 로그  딥러닝? Deep Neural Networks(DNN)을 학습시켜 문제 해결  인공신경망(Artificial Neural Networks)의 일부분이라 볼 수 있음  비선형함수로, 머신러닝에비해 패턴인식능력 월등  이미지나 텍스트, 음성같은 분야들에서 비약적 성능개선  기존 머">
 <meta property="og:type" content="article">
 <meta property="og:title" content="딥러닝기초">
 <meta property="og:url" content="http://bong7233.github.io/2021/04/06/%EB%94%A5%EB%9F%AC%EB%8B%9D%EA%B8%B0%EC%B4%88/index.html">
 <meta property="og:site_name" content="봉이의 개발블로그">
-<meta property="og:description" content="딥러닝딥러닝 필수선행지식 python 미분의 개념들, 행렬 연산, 지수와 로그  딥러닝? Deep Neural Networks(DNN)을 학습시켜 문제 해결 인공신경망(Artificial Neural Networks)의 일부분이라 볼 수 있음 비선형함수로, 머신러닝에비해 패턴인식능력 월등 이미지나 텍스트, 음성같은 분야들에서 비약적 성능개선 기존 머신러닝과">
+<meta property="og:description" content="딥러닝딥러닝 필수선행지식 python 미분의 개념들, 행렬 연산, 지수와 로그  딥러닝? Deep Neural Networks(DNN)을 학습시켜 문제 해결  인공신경망(Artificial Neural Networks)의 일부분이라 볼 수 있음  비선형함수로, 머신러닝에비해 패턴인식능력 월등  이미지나 텍스트, 음성같은 분야들에서 비약적 성능개선  기존 머">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-04-06T13:28:15.000Z">
-<meta property="article:modified_time" content="2021-04-06T14:07:50.121Z">
+<meta property="article:modified_time" content="2021-04-08T14:55:00.520Z">
 <meta property="article:author" content="SangBong Lee">
 <meta property="article:tag" content="deeplearning-basic">
 <meta name="twitter:card" content="summary">
@@ -293,10 +293,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-04-06 22:28:15 / Modified: 23:07:50" itemprop="dateCreated datePublished" datetime="2021-04-06T22:28:15+09:00">2021-04-06</time>
+      <time title="Created: 2021-04-06 22:28:15" itemprop="dateCreated datePublished" datetime="2021-04-06T22:28:15+09:00">2021-04-06</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-04-08 23:55:00" itemprop="dateModified" datetime="2021-04-08T23:55:00+09:00">2021-04-08</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -322,14 +328,21 @@
 <li>미분의 개념들, 행렬 연산, 지수와 로그</li>
 </ul>
 <h2 id="딥러닝-1"><a href="#딥러닝-1" class="headerlink" title="딥러닝?"></a>딥러닝?</h2><ul>
-<li>Deep Neural Networks(DNN)을 학습시켜 문제 해결</li>
-<li>인공신경망(Artificial Neural Networks)의 일부분이라 볼 수 있음</li>
-<li>비선형함수로, 머신러닝에비해 패턴인식능력 월등</li>
-<li>이미지나 텍스트, 음성같은 분야들에서 비약적 성능개선<ul>
+<li><p>Deep Neural Networks(DNN)을 학습시켜 문제 해결</p>
+</li>
+<li><p>인공신경망(Artificial Neural Networks)의 일부분이라 볼 수 있음</p>
+</li>
+<li><p>비선형함수로, 머신러닝에비해 패턴인식능력 월등</p>
+</li>
+<li><p>이미지나 텍스트, 음성같은 분야들에서 비약적 성능개선</p>
+<ul>
 <li>기존 머신러닝과 다르게 hand-crafted feature 필요없음</li>
 <li>단순 raw 데이터 넣기만하면 자동으로 feature 학습</li>
 </ul>
 </li>
+<li><p>패러다임</p>
+</li>
+<li></li>
 </ul>
 
     </div>
