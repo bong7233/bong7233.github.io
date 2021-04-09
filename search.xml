@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>PyTorch</title>
+    <url>/2021/04/09/PyTorch/</url>
+    <content><![CDATA[<h1 id="PyTorch"><a href="#PyTorch" class="headerlink" title="PyTorch"></a>PyTorch</h1><ul>
+<li>최근 TensorFlow 보다 높은 인지도와 실용성으로 성장중</li>
+<li>NumPy와 매우 비슷한 문법</li>
+<li>동적으로 back-propagation 경로 생성가능</li>
+<li>documentation 완벽(이것만으로도 충분히 마스터가능함)</li>
+<li>난이도 적당, 자유도 높음</li>
+<li>But TensorFlow 에 비해 낮은 상용화 지원</li>
+</ul>
+<h2 id="PyTorch-설치"><a href="#PyTorch-설치" class="headerlink" title="PyTorch 설치"></a>PyTorch 설치</h2><ul>
+<li>Windows 사용중이므로 PyTorch와 CUDA도 같이 설치</li>
+</ul>
+<h2 id="Data-Set"><a href="#Data-Set" class="headerlink" title="Data Set"></a>Data Set</h2><ul>
+<li>Tabular Dataset<ul>
+<li>가장 많이 활용되는 table형태</li>
+<li>엑셀파일이라고 생각하면 쉬움</li>
+<li>한 row가 한개의 sample</li>
+<li>Column 갯수가 백터의 차원</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Deep-Learning</category>
+      </categories>
+      <tags>
+        <tag>PyTorch</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>DataScience</title>
     <url>/2021/04/06/DataScience/</url>
     <content><![CDATA[<h1 id="데이터사이언스-시작한-이유"><a href="#데이터사이언스-시작한-이유" class="headerlink" title="데이터사이언스 시작한 이유?"></a>데이터사이언스 시작한 이유?</h1><ul>
@@ -156,25 +187,6 @@
 ]]></content>
       <tags>
         <tag>datascience</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PyTorch</title>
-    <url>/2021/04/09/PyTorch/</url>
-    <content><![CDATA[<h1 id="PyTorch"><a href="#PyTorch" class="headerlink" title="PyTorch"></a>PyTorch</h1><ul>
-<li>최근 TensorFlow 보다 높은 인지도와 실용성으로 성장중</li>
-<li>NumPy와 매우 비슷한 문법</li>
-<li>동적으로 back-propagation 경로 생성가능</li>
-<li>documentation 완벽(이것만으로도 충분히 마스터가능함)</li>
-<li>난이도 적당, 자유도 높음</li>
-<li>But TensorFlow 에 비해 낮은 상용화 지원</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Deep-Learning</category>
-      </categories>
-      <tags>
-        <tag>PyTorch</tag>
       </tags>
   </entry>
   <entry>

@@ -23,15 +23,15 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"bong7233.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="PyTorch 최근 TensorFlow 보다 높은 인지도와 실용성으로 성장중 NumPy와 매우 비슷한 문법 동적으로 back-propagation 경로 생성가능 documentation 완벽(이것만으로도 충분히 마스터가능함) 난이도 적당, 자유도 높음 But TensorFlow 에 비해 낮은 상용화 지원">
+<meta name="description" content="PyTorch 최근 TensorFlow 보다 높은 인지도와 실용성으로 성장중 NumPy와 매우 비슷한 문법 동적으로 back-propagation 경로 생성가능 documentation 완벽(이것만으로도 충분히 마스터가능함) 난이도 적당, 자유도 높음 But TensorFlow 에 비해 낮은 상용화 지원  PyTorch 설치 Windows 사용중이므로 Py">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PyTorch">
 <meta property="og:url" content="http://bong7233.github.io/2021/04/09/PyTorch/index.html">
 <meta property="og:site_name" content="봉이의 개발블로그">
-<meta property="og:description" content="PyTorch 최근 TensorFlow 보다 높은 인지도와 실용성으로 성장중 NumPy와 매우 비슷한 문법 동적으로 back-propagation 경로 생성가능 documentation 완벽(이것만으로도 충분히 마스터가능함) 난이도 적당, 자유도 높음 But TensorFlow 에 비해 낮은 상용화 지원">
+<meta property="og:description" content="PyTorch 최근 TensorFlow 보다 높은 인지도와 실용성으로 성장중 NumPy와 매우 비슷한 문법 동적으로 back-propagation 경로 생성가능 documentation 완벽(이것만으로도 충분히 마스터가능함) 난이도 적당, 자유도 높음 But TensorFlow 에 비해 낮은 상용화 지원  PyTorch 설치 Windows 사용중이므로 Py">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-04-08T16:38:35.000Z">
-<meta property="article:modified_time" content="2021-04-08T17:17:10.825Z">
+<meta property="article:modified_time" content="2021-04-09T02:29:30.010Z">
 <meta property="article:author" content="SangBong Lee">
 <meta property="article:tag" content="PyTorch">
 <meta name="twitter:card" content="summary">
@@ -189,7 +189,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PyTorch"><span class="nav-number">1.</span> <span class="nav-text">PyTorch</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PyTorch"><span class="nav-number">1.</span> <span class="nav-text">PyTorch</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PyTorch-%EC%84%A4%EC%B9%98"><span class="nav-number">1.1.</span> <span class="nav-text">PyTorch 설치</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Set"><span class="nav-number">1.2.</span> <span class="nav-text">Data Set</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -295,7 +295,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-04-09 01:38:35 / Modified: 02:17:10" itemprop="dateCreated datePublished" datetime="2021-04-09T01:38:35+09:00">2021-04-09</time>
+      <time title="Created: 2021-04-09 01:38:35 / Modified: 11:29:30" itemprop="dateCreated datePublished" datetime="2021-04-09T01:38:35+09:00">2021-04-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -324,6 +324,18 @@
 <li>documentation 완벽(이것만으로도 충분히 마스터가능함)</li>
 <li>난이도 적당, 자유도 높음</li>
 <li>But TensorFlow 에 비해 낮은 상용화 지원</li>
+</ul>
+<h2 id="PyTorch-설치"><a href="#PyTorch-설치" class="headerlink" title="PyTorch 설치"></a>PyTorch 설치</h2><ul>
+<li>Windows 사용중이므로 PyTorch와 CUDA도 같이 설치</li>
+</ul>
+<h2 id="Data-Set"><a href="#Data-Set" class="headerlink" title="Data Set"></a>Data Set</h2><ul>
+<li>Tabular Dataset<ul>
+<li>가장 많이 활용되는 table형태</li>
+<li>엑셀파일이라고 생각하면 쉬움</li>
+<li>한 row가 한개의 sample</li>
+<li>Column 갯수가 백터의 차원</li>
+</ul>
+</li>
 </ul>
 
     </div>
