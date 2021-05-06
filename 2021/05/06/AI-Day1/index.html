@@ -23,16 +23,21 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"bong7233.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta property="og:type" content="website">
-<meta property="og:title" content="Bong&#39;s Blog">
-<meta property="og:url" content="http://bong7233.github.io/archives/2021/index.html">
+<meta name="description" content="Data Preprocess &amp; EDAWarm-up CSV(Comma-separated values) : 텍스트 데이터파일  비슷한 포맷으로 탭으로 구분하는 ‘tab-separated values’(TSV), 반각 스페이스로 구분하는 ‘space-separated values’(SSV) 등이 있으며, 이것들을 합쳐서 character-separate">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI-Day1">
+<meta property="og:url" content="http://bong7233.github.io/2021/05/06/AI-Day1/index.html">
 <meta property="og:site_name" content="Bong&#39;s Blog">
+<meta property="og:description" content="Data Preprocess &amp; EDAWarm-up CSV(Comma-separated values) : 텍스트 데이터파일  비슷한 포맷으로 탭으로 구분하는 ‘tab-separated values’(TSV), 반각 스페이스로 구분하는 ‘space-separated values’(SSV) 등이 있으며, 이것들을 합쳐서 character-separate">
 <meta property="og:locale">
+<meta property="article:published_time" content="2021-05-06T01:29:20.000Z">
+<meta property="article:modified_time" content="2021-05-06T05:11:21.437Z">
 <meta property="article:author" content="SangBong Lee">
+<meta property="article:tag" content="Data process &amp; EDA">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://bong7233.github.io/archives/2021/">
+<link rel="canonical" href="http://bong7233.github.io/2021/05/06/AI-Day1/">
 
 
 <script class="page-configurations">
@@ -40,11 +45,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'kor'
   };
 </script>
-<title>Archive | Bong's Blog</title>
+<title>AI-Day1 | Bong's Blog</title>
   
 
 
@@ -171,7 +176,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -184,6 +189,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Preprocess-amp-EDA"><span class="nav-number">1.</span> <span class="nav-text">Data Preprocess &amp; EDA</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Warm-up"><span class="nav-number">1.1.</span> <span class="nav-text">Warm-up</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EDA-Exploratory-Data-Analysis-%ED%83%90%EC%83%89%EC%A0%81-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D"><span class="nav-number">1.2.</span> <span class="nav-text">EDA(Exploratory Data Analysis, 탐색적 데이터 분석)</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -253,129 +259,143 @@
 </noscript>
 
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 5 posts in total. Keep on posting.</span>
-      </div>
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="kor">
+    <link itemprop="mainEntityOfPage" href="http://bong7233.github.io/2021/05/06/AI-Day1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="SangBong Lee">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bong's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AI-Day1
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+
+      <time title="Created: 2021-05-06 10:29:20 / Modified: 14:11:21" itemprop="dateCreated datePublished" datetime="2021-05-06T10:29:20+09:00">2021-05-06</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Data-Preprocess-amp-EDA"><a href="#Data-Preprocess-amp-EDA" class="headerlink" title="Data Preprocess &amp; EDA"></a>Data Preprocess &amp; EDA</h1><h2 id="Warm-up"><a href="#Warm-up" class="headerlink" title="Warm-up"></a>Warm-up</h2><ul>
+<li><p>CSV(Comma-separated values) : 텍스트 데이터파일</p>
+<ul>
+<li>비슷한 포맷으로 탭으로 구분하는 ‘tab-separated values’(TSV), 반각 스페이스로 구분하는 ‘space-separated values’(SSV) 등이 있으며, 이것들을 합쳐서 character-separated values (CSV), delimiter-separated values 라고 부르기도 함  </li>
+</ul>
+</li>
+<li><p>EDA(Exploratory Data Analysis, 탐색적 데이터 분석)</p>
+<ul>
+<li>수집한 데이터가 들어왔을 때, 이를 다양한 각도에서 관찰하고 이해한후  데이터를 분석하기 전에 그래프나 통계적인 방법으로 자료를 직관적으로 바라보는 과정  </li>
+</ul>
+</li>
+<li><p>Histogram</p>
+<ul>
+<li>양적데이터(숫자데이터) 사용</li>
+<li>막대그래프들 사이에 갭이없음, 갭이 있다?-&gt;데이터의 누락</li>
+<li>막대의 두께(bin size)가 일정</li>
+<li>y축은 일반적으로 갯수,히스토그램의 빈도를 나타냄</li>
+<li>데이터셋의 최소값,최대값을 찾은후 x축의 시작점과 끝점을 설정<ul>
+<li>[40,50) -&gt; 40이상 50미만 임을 기억  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Stem and Leaf Plots : 줄기 잎 그림</p>
+<ul>
+<li>통계학에서 통계적 자료를 표와 그래프가 혼합된 방법으로 나타내는것</li>
+<li>주로 숫자를 다룰때는 자리수를 기준으로 구분하여 보기쉽게 정리  </li>
+</ul>
+</li>
+<li><p>Box and Whisker Plots : 상자 수염 그림</p>
+<ul>
+<li>기술통계학에서 수치적 자료를 5가지 요약수치를 기준으로 표현하는 그래프<ul>
+<li>최솟값,제1~3사분위,최댓값</li>
+<li>1사분위 Q1 : 하위25%</li>
+<li>2사분위 Q2 : 50%</li>
+<li>3사분위 Q3 : 상위25%</li>
+<li>4분위범위 IQR : 3사분위-1사분위</li>
+<li>파이썬의 matplotlib.pyplot 모듈로 손쉽게 그릴수있음</li>
+</ul>
+</li>
+<li>histogram과 다르게 집단이 여러개인경우도 한 공간에 나타낼수있음  </li>
+</ul>
+</li>
+</ul>
+<h2 id="EDA-Exploratory-Data-Analysis-탐색적-데이터-분석"><a href="#EDA-Exploratory-Data-Analysis-탐색적-데이터-분석" class="headerlink" title="EDA(Exploratory Data Analysis, 탐색적 데이터 분석)"></a>EDA(Exploratory Data Analysis, 탐색적 데이터 분석)</h2><ul>
+<li>데이터의 초기분석단계<ul>
+<li>시각화 같은 도구를 통해 패턴발견</li>
+<li>데이터 특이성 확인</li>
+<li>통계와 그래픽을 통해 가설을 검증</li>
+</ul>
+</li>
+<li>크게 2가지 방법이있음<ul>
+<li>Graphic: 차트 그림을 이용해 데이터확인</li>
+<li>Non-Graphic: Summary Statistics를통해 데이터확인</li>
+</ul>
+</li>
+</ul>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-05-06T10:29:20+09:00"
-              content="2021-05-06">
-          05-06
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/05/06/AI-Day1/" itemprop="url">
-            <span itemprop="name">AI-Day1</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Data-process-EDA/" rel="tag"># Data process & EDA</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/04/15/linear-layer/" rel="prev" title="linear layer">
+                  <i class="fa fa-chevron-left"></i> linear layer
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-04-15T21:30:38+09:00"
-              content="2021-04-15">
-          04-15
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/04/15/linear-layer/" itemprop="url">
-            <span itemprop="name">linear layer</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-04-09T01:38:35+09:00"
-              content="2021-04-09">
-          04-09
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/04/09/PyTorch/" itemprop="url">
-            <span itemprop="name">PyTorch</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-04-06T22:28:15+09:00"
-              content="2021-04-06">
-          04-06
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/04/06/%EB%94%A5%EB%9F%AC%EB%8B%9D%EA%B8%B0%EC%B4%88/" itemprop="url">
-            <span itemprop="name">딥러닝기초</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-04-06T19:41:36+09:00"
-              content="2021-04-06">
-          04-06
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/04/06/DataScience/" itemprop="url">
-            <span itemprop="name">DataScience</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
+</div>
 
 
-    </div>
-  </div>
-  
-  
-  
+
+
+
 
 
 <script>
