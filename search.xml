@@ -1,229 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>DataScience</title>
-    <url>/2021/04/06/DataScience/</url>
-    <content><![CDATA[<h1 id="데이터사이언스-시작한-이유"><a href="#데이터사이언스-시작한-이유" class="headerlink" title="데이터사이언스 시작한 이유?"></a>데이터사이언스 시작한 이유?</h1><ul>
-<li>백엔드 관련 공부하던 중 웹이나 앱의 개발보다는 정보와 데이터를 처리, 알고리즘을 이용한 수학적 과정에 흥미를 느낌</li>
-<li>데이터사이언스 엔지니어중 평소 인공지능관련된 딥러닝,머신러닝에 관심이 많아 기초부터 시작해서 딥러닝,머신러닝을 공부</li>
-<li>21년에 부지런히 공부하여 취업이 되면 best, 공부를하며 국내 인공지능 대학원에 22년 신입생으로 지원해보는것도 가능하다면 better(하지만 취업보다 더 어렵지않을까..)</li>
-</ul>
-<h2 id="생명공학전공-승무원경험이-장점이-될수-있을까"><a href="#생명공학전공-승무원경험이-장점이-될수-있을까" class="headerlink" title="생명공학전공 + 승무원경험이 장점이 될수 있을까?"></a>생명공학전공 + 승무원경험이 장점이 될수 있을까?</h2><ul>
-<li>현업은 석박사 or 전공자들이 많다고함</li>
-<li>So 국비지원 6개월과정과(21년 5월시작) + 파이썬과 알고리즘, 컴퓨터사이언스에대해 인강으로 독학시작(21년 4월시작)</li>
-<li>실제로 캐글같은 현업 활용사례에는 생명과학 전공도 도움이 될 수 있고(거의다 잊어버렸지만, 그래도 전공이니 조금만 복습하면 리마인드 가능), 승무원경험으로 쌓은 커뮤니케이션 능력과 회사경험은 충분히 장점이 될 수 있음</li>
-<li>데이터사이언스 기술만으로는 부족하다! 학문이나 인문학과 혼합된 </li>
-</ul>
-<h2 id="데이터사이언스-목적"><a href="#데이터사이언스-목적" class="headerlink" title="데이터사이언스 목적"></a>데이터사이언스 목적</h2><ul>
-<li>데이터 이해 -&gt; 분석 -&gt; 해석 -&gt; 인사이트 도출 -&gt; 결론도출 -&gt; 비지니스 문제 해결<ul>
-<li>분석한 데이터를 해석할수없다면? 무용지물이다</li>
-<li>생명공학 전공이나 다른 사회경험은 이 데이터해석에서 충분히 강점이 될 수 있음</li>
-<li>현업에서 분석결과를 다른사람에게 전달할때, 전달받는 사람의 대부분은 데이터사이언스에대해 자세히 알지 못한다. 이때 커뮤니케이션 능력이 더욱더 중요</li>
-</ul>
-</li>
-</ul>
-<h2 id="빅데이터시대로인한-데이터-종류와-처리가-더욱-다양해짐"><a href="#빅데이터시대로인한-데이터-종류와-처리가-더욱-다양해짐" class="headerlink" title="빅데이터시대로인한 데이터 종류와 처리가 더욱 다양해짐"></a>빅데이터시대로인한 데이터 종류와 처리가 더욱 다양해짐</h2><ul>
-<li>예전에는 엑셀로만 다루었지만, 최근 프로그래밍 언어와 기술들로 훨씬더 방대하고 복잡한 데이터를 수집 및 분석이 가능해짐</li>
-<li>이 방대한 데이터를 사람이 직접 수집할수없기떄문에, 머신러닝 딥러닝 기술을 이용해 기계가 수많은 데이터를 처리하도록 함</li>
-</ul>
-<h2 id="머신러닝-딥러닝-AI"><a href="#머신러닝-딥러닝-AI" class="headerlink" title="머신러닝 딥러닝 AI"></a>머신러닝 딥러닝 AI</h2><ul>
-<li><p>머신러닝</p>
-<ul>
-<li>알고리즘을 이용한 기계의 지도학습(supervised)과 비지도(unsupervised)학습  </li>
-</ul>
-</li>
-<li><p>딥러닝</p>
-<ul>
-<li>머신러닝의 알고리즘중, 인공신경망을 이용하여 머신러닝하는것</li>
-<li>이미지나 비디오데이터를 분석하는데 탁월  </li>
-</ul>
-</li>
-<li><p>AI</p>
-<ul>
-<li>인간의 지능을 기계에 구현</li>
-</ul>
-</li>
-<li><p>머신러닝 딥러닝은 구체적인 분석방법과 기법을 뜻함(데이터사이언티스트가 다룸)  </p>
-</li>
-<li><p>AI는 그런 방법을 적용시켜 기업에서 방향을 설정하고 개념을 이용하는것</p>
-</li>
-</ul>
-<h2 id="데이터사이언티스트"><a href="#데이터사이언티스트" class="headerlink" title="데이터사이언티스트?"></a>데이터사이언티스트?</h2><ul>
-<li>데이터사이언티스트 : 머신러닝과 딥러닝을 활용하여 데이터분석(Data Analytics)<ul>
-<li>우버,넷플릭스,유투브,페이스북 같은 기업들은 스스로 자체적으로 머신러닝 딥러닝알고리즘을 만들어서 사용</li>
-<li>AI개발, 알고리즘연구원 등등으로 모집하기도 함  </li>
-</ul>
-</li>
-<li>데이터 엔지니어(Data engineering)<ul>
-<li>ETL process를 이용하고, 데이터 준비와 전처리  </li>
-</ul>
-</li>
-<li>Data governance<ul>
-<li>데이터 관련된 법( 국내의 데이터3법, 유럽의 GDPR 등)을 다룸  </li>
-</ul>
-</li>
-<li>BI developer, Data visualiser, Application developer<ul>
-<li>처리된 크고 복잡한 데이터를 이해하기쉽고 유용하게 시각화 함  </li>
-<li>데이터의 종류가 방대해짐에따라 각각의 업무가 더욱 세분화되는 추세  </li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="데이터-분석"><a href="#데이터-분석" class="headerlink" title="데이터 분석"></a>데이터 분석</h2><ul>
-<li>통계학 이론이 base<ul>
-<li>기술통계 Descriptive statistics<ul>
-<li>데이터가 어떤 형태인지 요약해서 정리</li>
-<li>데이터 이해를위한 데이터 묘사</li>
-<li>EDA</li>
-<li>변수들의 분포와 이 변수들의 관계성에대해 파악  </li>
-</ul>
-</li>
-<li>추론통계 Inferential statistics<ul>
-<li>표본데이터를 근거로 집단의 특성을 추론 및일반화</li>
-<li>가설검정의 과정에대해 공부하면서 추론통계개념을 이해하는것이 좋음  </li>
-</ul>
-</li>
-</ul>
-</li>
-<li>프로그래밍 언어를 이용하여 데이터를 분석하는 과정이 중요<ul>
-<li>Python / R</li>
-<li>EDA / Regression  </li>
-</ul>
-</li>
-</ul>
-<h2 id="데이터-준비"><a href="#데이터-준비" class="headerlink" title="데이터 준비"></a>데이터 준비</h2><ul>
-<li>데이터 전처리(Data preprocessing)<ul>
-<li>데이터 merging</li>
-<li>숫자변수 scaling</li>
-<li>범주형 변수활용</li>
-<li>결측치(missing values) 처리</li>
-<li>columns, values 의 일관성  </li>
-</ul>
-</li>
-<li>데이터 수집 (Data collecting)<ul>
-<li><strong>SQL (Structured Query Language)</strong> 갈수록 중요해지는 추세</li>
-<li>Data crawling (웹상에서 매우 유용)<ul>
-<li>python beatifulsoup</li>
-<li>selenium<h2 id="데이터-분석결과-활용"><a href="#데이터-분석결과-활용" class="headerlink" title="데이터 분석결과 활용"></a>데이터 분석결과 활용</h2></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>분석 결과보고<ul>
-<li>Plots 활용(쉽고빠름)<ul>
-<li>python- matplotlib.pyplot, seaborn</li>
-<li>R- ggplot2  </li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Dashborad 제작<ul>
-<li>PowerBi</li>
-<li>Tableau</li>
-<li>BI 툴 사용  </li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="자세한-준비방법"><a href="#자세한-준비방법" class="headerlink" title="자세한 준비방법"></a>자세한 준비방법</h2><ul>
-<li>전문서적 3권이상 읽어보기<ul>
-<li>데이터분석이뭔지? 머신러닝 딥러닝은 정확히 무엇인지?  </li>
-</ul>
-</li>
-<li>온라인강의(단순한 이론보다는 각각 직무스킬의 세부내용과 활용법까지 알기)<ul>
-<li>데이터분석 전체 과정에대한 설명은 기초로 알아야함</li>
-<li>원하는 직무에맞는 스킬을 추가로 선택  </li>
-</ul>
-</li>
-<li>뉴스레터 블로그 구독(최신정보의 습득)<ul>
-<li>python- pandas 관련내용은 매우 중요(SPARK, Tensorflow 등등…)</li>
-<li>이외의 데이터관련 국내외 공식사이트와 블로그로 최신정보 획득</li>
-</ul>
-</li>
-<li>대학원은 세부 분야에대해서도 잘 알아봐야함<ul>
-<li>연구 및 개발위주의 학위과정은 필수  </li>
-</ul>
-</li>
-<li>자격증(비전공자라면 겸행할수록 좋음 but 시간대비 효율이 낮을수있음)<ul>
-<li>자격증은… 실제 현업 및 취업에 크게 도움되지않음</li>
-<li>공부하면서 얻는 내용자체가 도움이되지, 자격증 자체가 도움되진 않는다</li>
-<li>데이터분석전문가 ADP</li>
-<li>데이터분석준전문가 ADsP</li>
-<li>데이터 분석기사  </li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>datascience</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI-Day1</title>
-    <url>/2021/05/06/AI-Day1/</url>
-    <content><![CDATA[<h1 id="Data-Preprocess-amp-EDA"><a href="#Data-Preprocess-amp-EDA" class="headerlink" title="Data Preprocess &amp; EDA"></a>Data Preprocess &amp; EDA</h1><h2 id="Warm-up"><a href="#Warm-up" class="headerlink" title="Warm-up"></a>Warm-up</h2><ul>
-<li><p>CSV(Comma-separated values) : 텍스트 데이터파일</p>
-<ul>
-<li>비슷한 포맷으로 탭으로 구분하는 ‘tab-separated values’(TSV), 반각 스페이스로 구분하는 ‘space-separated values’(SSV) 등이 있으며, 이것들을 합쳐서 character-separated values (CSV), delimiter-separated values 라고 부르기도 함  </li>
-</ul>
-</li>
-<li><p>EDA(Exploratory Data Analysis, 탐색적 데이터 분석)</p>
-<ul>
-<li>수집한 데이터가 들어왔을 때, 이를 다양한 각도에서 관찰하고 이해한후  데이터를 분석하기 전에 그래프나 통계적인 방법으로 자료를 직관적으로 바라보는 과정  </li>
-</ul>
-</li>
-<li><p>Histogram</p>
-<ul>
-<li>양적데이터(숫자데이터) 사용</li>
-<li>막대그래프들 사이에 갭이없음, 갭이 있다?-&gt;데이터의 누락</li>
-<li>막대의 두께(bin size)가 일정</li>
-<li>y축은 일반적으로 갯수,히스토그램의 빈도를 나타냄</li>
-<li>데이터셋의 최소값,최대값을 찾은후 x축의 시작점과 끝점을 설정<ul>
-<li>[40,50) -&gt; 40이상 50미만 임을 기억  </li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Stem and Leaf Plots : 줄기 잎 그림</p>
-<ul>
-<li>통계학에서 통계적 자료를 표와 그래프가 혼합된 방법으로 나타내는것</li>
-<li>주로 숫자를 다룰때는 자리수를 기준으로 구분하여 보기쉽게 정리  </li>
-</ul>
-</li>
-<li><p>Box and Whisker Plots : 상자 수염 그림</p>
-<ul>
-<li>기술통계학에서 수치적 자료를 5가지 요약수치를 기준으로 표현하는 그래프<ul>
-<li>최솟값,제1~3사분위,최댓값</li>
-<li>1사분위 Q1 : 하위25%</li>
-<li>2사분위 Q2 : 50%</li>
-<li>3사분위 Q3 : 상위25%</li>
-<li>4분위범위 IQR : 3사분위-1사분위</li>
-<li>파이썬의 matplotlib.pyplot 모듈로 손쉽게 그릴수있음</li>
-</ul>
-</li>
-<li>histogram과 다르게 집단이 여러개인경우도 한 공간에 나타낼수있음  </li>
-</ul>
-</li>
-</ul>
-<h2 id="EDA-Exploratory-Data-Analysis-탐색적-데이터-분석"><a href="#EDA-Exploratory-Data-Analysis-탐색적-데이터-분석" class="headerlink" title="EDA(Exploratory Data Analysis, 탐색적 데이터 분석)"></a>EDA(Exploratory Data Analysis, 탐색적 데이터 분석)</h2><ul>
-<li>데이터의 초기분석단계<ul>
-<li>시각화 같은 도구를 통해 패턴발견</li>
-<li>데이터 특이성 확인</li>
-<li>통계와 그래픽을 통해 가설을 검증</li>
-</ul>
-</li>
-<li>크게 2가지 방법이있음<ul>
-<li>Graphic: 차트 그림을 이용해 데이터확인</li>
-<li>Non-Graphic: Summary Statistics를통해 데이터확인</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>Data process &amp; EDA</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>PyTorch</title>
     <url>/2021/04/09/PyTorch/</url>
     <content><![CDATA[<h1 id="PyTorch"><a href="#PyTorch" class="headerlink" title="PyTorch"></a>PyTorch</h1><ul>
@@ -415,6 +192,213 @@
       </tags>
   </entry>
   <entry>
+    <title>AI-Day2</title>
+    <url>/2021/05/07/AI-Day2/</url>
+    <content><![CDATA[<h1 id="Feature-Engineering"><a href="#Feature-Engineering" class="headerlink" title="Feature Engineering"></a>Feature Engineering</h1><h2 id="Warm-up"><a href="#Warm-up" class="headerlink" title="Warm up"></a>Warm up</h2><ul>
+<li>Data cleaning<ul>
+<li>대부분의 실제 데이터엔지니어, 데이터사이언티스트는 데이터클리닝이 대부분의 업무</li>
+<li>AI에 머신러닝을 시키기위해선 정제된 데이터가 필수</li>
+</ul>
+</li>
+</ul>
+<h2 id="Feature-Engineering-이란"><a href="#Feature-Engineering-이란" class="headerlink" title="Feature Engineering 이란?"></a>Feature Engineering 이란?</h2><ul>
+<li>도메인 지식과 창의성을 바탕으로, 데이터셋에 존재하는 Feature들을 재조합하여 새로운 Feature를 만드는 것</li>
+<li>통계 분석 혹은 머신러닝, 딥러닝까지 대부분의 분석은 데이터에 있는 패턴을 인식하고 해당 패턴들을 바탕으로 예측</li>
+<li>더 좋은 퍼포먼스를 위해서 새롭고, 의미있는 패턴을 제공하는 것이 궁극적인 Feature engineering의 목적</li>
+<li>Gargage in - Garbage out 을 기억  </li>
+</ul>
+<h2 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h2><ul>
+<li>테이블형태의 데이터로 기억</li>
+<li>Row(행)에는 objervation, Colum(열)에는 feature가 있다</li>
+<li></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Feature Engineering</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI-Day1</title>
+    <url>/2021/05/06/AI-Day1/</url>
+    <content><![CDATA[<h1 id="Data-Preprocess-amp-EDA"><a href="#Data-Preprocess-amp-EDA" class="headerlink" title="Data Preprocess &amp; EDA"></a>Data Preprocess &amp; EDA</h1><h2 id="Warm-up"><a href="#Warm-up" class="headerlink" title="Warm-up"></a>Warm-up</h2><ul>
+<li><p>CSV(Comma-separated values) : 텍스트 데이터파일</p>
+<ul>
+<li>비슷한 포맷으로 탭으로 구분하는 ‘tab-separated values’(TSV), 반각 스페이스로 구분하는 ‘space-separated values’(SSV) 등이 있으며, 이것들을 합쳐서 character-separated values (CSV), delimiter-separated values 라고 부르기도 함  </li>
+</ul>
+</li>
+<li><p>EDA(Exploratory Data Analysis, 탐색적 데이터 분석)</p>
+<ul>
+<li>수집한 데이터가 들어왔을 때, 이를 다양한 각도에서 관찰하고 이해한후  데이터를 분석하기 전에 그래프나 통계적인 방법으로 자료를 직관적으로 바라보는 과정  </li>
+</ul>
+</li>
+<li><p>Histogram</p>
+<ul>
+<li>양적데이터(숫자데이터) 사용</li>
+<li>막대그래프들 사이에 갭이없음, 갭이 있다?-&gt;데이터의 누락</li>
+<li>막대의 두께(bin size)가 일정</li>
+<li>y축은 일반적으로 갯수,히스토그램의 빈도를 나타냄</li>
+<li>데이터셋의 최소값,최대값을 찾은후 x축의 시작점과 끝점을 설정<ul>
+<li>[40,50) -&gt; 40이상 50미만 임을 기억  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Stem and Leaf Plots : 줄기 잎 그림</p>
+<ul>
+<li>통계학에서 통계적 자료를 표와 그래프가 혼합된 방법으로 나타내는것</li>
+<li>주로 숫자를 다룰때는 자리수를 기준으로 구분하여 보기쉽게 정리  </li>
+</ul>
+</li>
+<li><p>Box and Whisker Plots : 상자 수염 그림</p>
+<ul>
+<li>기술통계학에서 수치적 자료를 5가지 요약수치를 기준으로 표현하는 그래프<ul>
+<li>최솟값,제1~3사분위,최댓값</li>
+<li>1사분위 Q1 : 하위25%</li>
+<li>2사분위 Q2 : 50%</li>
+<li>3사분위 Q3 : 상위25%</li>
+<li>4분위범위 IQR : 3사분위-1사분위</li>
+<li>파이썬의 matplotlib.pyplot 모듈로 손쉽게 그릴수있음</li>
+</ul>
+</li>
+<li>histogram과 다르게 집단이 여러개인경우도 한 공간에 나타낼수있음  </li>
+</ul>
+</li>
+</ul>
+<h2 id="EDA-Exploratory-Data-Analysis-탐색적-데이터-분석"><a href="#EDA-Exploratory-Data-Analysis-탐색적-데이터-분석" class="headerlink" title="EDA(Exploratory Data Analysis, 탐색적 데이터 분석)"></a>EDA(Exploratory Data Analysis, 탐색적 데이터 분석)</h2><ul>
+<li><p>데이터의 초기분석단계</p>
+<ul>
+<li>시각화 같은 도구를 통해 패턴발견</li>
+<li>데이터 특이성 확인</li>
+<li>통계와 그래픽을 통해 가설을 검증</li>
+</ul>
+</li>
+<li><p>크게 2가지 방법이있음</p>
+<ul>
+<li>Graphic: 차트 그림을 이용해 데이터확인</li>
+<li>Non-Graphic: Summary Statistics를통해 데이터확인</li>
+</ul>
+</li>
+<li><p>EDA의 “타겟”(데이터) 또한 2가지 (Univariate, Multi-variate)로 나눠짐</p>
+<ul>
+<li>Multi-variate : 변수들간의 관계를 보는 것이 주요 목적  </li>
+</ul>
+</li>
+<li><p>Uni - Non Graphic : Sample Data의 Distribution을 확인하는 것이 주목적</p>
+<ul>
+<li>Numeric data의 경우 summary statistics 활용<ul>
+<li>Center (Mean, Median, Mod)</li>
+<li>Spread (Variance, SD, IQR, Range)</li>
+<li>Modality (Peak)</li>
+<li>Shape (Tail, Skewness, Kurtosis)</li>
+<li>Outliers 등을 확인합니다.</li>
+<li>Categorical data의 경우 occurence, frequency, tabulation등을 할 수 있음  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Uni - Graphic</p>
+<ul>
+<li>Histogram 혹은 Pie chart, Stem-leaf plot, Boxplot, QQplot 등을 사용합니다.</li>
+<li>그러나 값들이 너무 다양하다면, Binning, Tabulation등을 활용  </li>
+</ul>
+</li>
+<li><p>QQPlot :데이터의 분포와 이론상 분포가 잘 일치하는가 를 확인 할 수 있는 방법  </p>
+</li>
+<li><p>Multi - Non Graphic : Relationship을 보는 것이 주된 목표</p>
+<ul>
+<li>Cross-Tabulation</li>
+<li>Cross-Statistics (Correlation, Covariance)  </li>
+</ul>
+</li>
+<li><p>Multi - Graphic</p>
+<ul>
+<li>Category &amp; Numeric : Boxplots, Stacked bar, Parallel Coordinate, Heatmap</li>
+<li>Numeric &amp; Numeric : Scatter Plot</li>
+</ul>
+</li>
+</ul>
+<h2 id="Data-preprocessing"><a href="#Data-preprocessing" class="headerlink" title="Data preprocessing"></a>Data preprocessing</h2><ul>
+<li>Data Cleaning<ul>
+<li>noise 를 제거하거나, inconsistency 를 보정하는 과정</li>
+<li>값이 빠져있거나, 잘못 입력되거나 혹은 일관성을 가지지 않는 데이터들을 제거 / 보정 하는 과정들이 포함</li>
+<li>Ignore the tuple (결측치가 있는 데이터 삭제)</li>
+<li>Manual Fill (수동으로 입력)</li>
+<li>Global Constant (“Unknown”)</li>
+<li>Imputation (All mean, Class mean, Inference mean, Regression 등)</li>
+<li>Binning, Regression, Outlier analysis 등등</li>
+</ul>
+</li>
+<li>Data Integration<ul>
+<li>여러개로 나누어져 있는 데이터들을 분석하기 편하게 하나로 합치는 과정  </li>
+</ul>
+</li>
+<li>Data Transformation(scaling)<ul>
+<li>데이터의 형태를 변환하는 작업  </li>
+</ul>
+</li>
+<li>Data Reduction<ul>
+<li>데이터를 의미있게 줄이는 것</li>
+<li>dimension reduction과 유사한 목적  </li>
+</ul>
+</li>
+</ul>
+<h2 id="Pandas-메서드들"><a href="#Pandas-메서드들" class="headerlink" title="Pandas 메서드들"></a>Pandas 메서드들</h2><ul>
+<li>Missing Data<ul>
+<li>isna</li>
+<li>isnull</li>
+<li>notna</li>
+<li>notnull</li>
+<li>dropna</li>
+<li>fillna</li>
+</ul>
+</li>
+<li>Data Frame<ul>
+<li>index</li>
+<li>columns</li>
+<li>dtypes</li>
+<li>info</li>
+<li>select_dtypes</li>
+<li>loc</li>
+<li>iloc</li>
+<li>insert</li>
+<li>head</li>
+<li>tail</li>
+<li>apply</li>
+<li>aggregate</li>
+<li>drop</li>
+<li>rename</li>
+<li>replace</li>
+<li>nsmallest</li>
+<li>nlargest</li>
+<li>sort_values</li>
+<li>sort_index</li>
+<li>value_counts</li>
+<li>describe</li>
+<li>shape</li>
+</ul>
+</li>
+<li>Vis<ul>
+<li>plot</li>
+<li>plot.area</li>
+<li>plot.bar</li>
+<li>plot.barh</li>
+<li>plot.box</li>
+<li>plot.density</li>
+<li>plot.hexbin</li>
+<li>plot.hist</li>
+<li>plot.kde</li>
+<li>plot.line</li>
+<li>plot.pie</li>
+<li>plot.scatter</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Data process &amp; EDA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>linear layer</title>
     <url>/2021/04/15/linear-layer/</url>
     <content><![CDATA[<h1 id="Linear-layer"><a href="#Linear-layer" class="headerlink" title="Linear layer"></a>Linear layer</h1><ul>
@@ -434,6 +418,164 @@
       </categories>
       <tags>
         <tag>linear-layer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>DataScience</title>
+    <url>/2021/04/06/DataScience/</url>
+    <content><![CDATA[<h1 id="데이터사이언스-시작한-이유"><a href="#데이터사이언스-시작한-이유" class="headerlink" title="데이터사이언스 시작한 이유?"></a>데이터사이언스 시작한 이유?</h1><ul>
+<li>백엔드 관련 공부하던 중 웹이나 앱의 개발보다는 정보와 데이터를 처리, 알고리즘을 이용한 수학적 과정에 흥미를 느낌</li>
+<li>데이터사이언스 엔지니어중 평소 인공지능관련된 딥러닝,머신러닝에 관심이 많아 기초부터 시작해서 딥러닝,머신러닝을 공부</li>
+<li>21년에 부지런히 공부하여 취업이 되면 best, 공부를하며 국내 인공지능 대학원에 22년 신입생으로 지원해보는것도 가능하다면 better(하지만 취업보다 더 어렵지않을까..)</li>
+</ul>
+<h2 id="생명공학전공-승무원경험이-장점이-될수-있을까"><a href="#생명공학전공-승무원경험이-장점이-될수-있을까" class="headerlink" title="생명공학전공 + 승무원경험이 장점이 될수 있을까?"></a>생명공학전공 + 승무원경험이 장점이 될수 있을까?</h2><ul>
+<li>현업은 석박사 or 전공자들이 많다고함</li>
+<li>So 국비지원 6개월과정과(21년 5월시작) + 파이썬과 알고리즘, 컴퓨터사이언스에대해 인강으로 독학시작(21년 4월시작)</li>
+<li>실제로 캐글같은 현업 활용사례에는 생명과학 전공도 도움이 될 수 있고(거의다 잊어버렸지만, 그래도 전공이니 조금만 복습하면 리마인드 가능), 승무원경험으로 쌓은 커뮤니케이션 능력과 회사경험은 충분히 장점이 될 수 있음</li>
+<li>데이터사이언스 기술만으로는 부족하다! 학문이나 인문학과 혼합된 </li>
+</ul>
+<h2 id="데이터사이언스-목적"><a href="#데이터사이언스-목적" class="headerlink" title="데이터사이언스 목적"></a>데이터사이언스 목적</h2><ul>
+<li>데이터 이해 -&gt; 분석 -&gt; 해석 -&gt; 인사이트 도출 -&gt; 결론도출 -&gt; 비지니스 문제 해결<ul>
+<li>분석한 데이터를 해석할수없다면? 무용지물이다</li>
+<li>생명공학 전공이나 다른 사회경험은 이 데이터해석에서 충분히 강점이 될 수 있음</li>
+<li>현업에서 분석결과를 다른사람에게 전달할때, 전달받는 사람의 대부분은 데이터사이언스에대해 자세히 알지 못한다. 이때 커뮤니케이션 능력이 더욱더 중요</li>
+</ul>
+</li>
+</ul>
+<h2 id="빅데이터시대로인한-데이터-종류와-처리가-더욱-다양해짐"><a href="#빅데이터시대로인한-데이터-종류와-처리가-더욱-다양해짐" class="headerlink" title="빅데이터시대로인한 데이터 종류와 처리가 더욱 다양해짐"></a>빅데이터시대로인한 데이터 종류와 처리가 더욱 다양해짐</h2><ul>
+<li>예전에는 엑셀로만 다루었지만, 최근 프로그래밍 언어와 기술들로 훨씬더 방대하고 복잡한 데이터를 수집 및 분석이 가능해짐</li>
+<li>이 방대한 데이터를 사람이 직접 수집할수없기떄문에, 머신러닝 딥러닝 기술을 이용해 기계가 수많은 데이터를 처리하도록 함</li>
+</ul>
+<h2 id="머신러닝-딥러닝-AI"><a href="#머신러닝-딥러닝-AI" class="headerlink" title="머신러닝 딥러닝 AI"></a>머신러닝 딥러닝 AI</h2><ul>
+<li><p>머신러닝</p>
+<ul>
+<li>알고리즘을 이용한 기계의 지도학습(supervised)과 비지도(unsupervised)학습  </li>
+</ul>
+</li>
+<li><p>딥러닝</p>
+<ul>
+<li>머신러닝의 알고리즘중, 인공신경망을 이용하여 머신러닝하는것</li>
+<li>이미지나 비디오데이터를 분석하는데 탁월  </li>
+</ul>
+</li>
+<li><p>AI</p>
+<ul>
+<li>인간의 지능을 기계에 구현</li>
+</ul>
+</li>
+<li><p>머신러닝 딥러닝은 구체적인 분석방법과 기법을 뜻함(데이터사이언티스트가 다룸)  </p>
+</li>
+<li><p>AI는 그런 방법을 적용시켜 기업에서 방향을 설정하고 개념을 이용하는것</p>
+</li>
+</ul>
+<h2 id="데이터사이언티스트"><a href="#데이터사이언티스트" class="headerlink" title="데이터사이언티스트?"></a>데이터사이언티스트?</h2><ul>
+<li>데이터사이언티스트 : 머신러닝과 딥러닝을 활용하여 데이터분석(Data Analytics)<ul>
+<li>우버,넷플릭스,유투브,페이스북 같은 기업들은 스스로 자체적으로 머신러닝 딥러닝알고리즘을 만들어서 사용</li>
+<li>AI개발, 알고리즘연구원 등등으로 모집하기도 함  </li>
+</ul>
+</li>
+<li>데이터 엔지니어(Data engineering)<ul>
+<li>ETL process를 이용하고, 데이터 준비와 전처리  </li>
+</ul>
+</li>
+<li>Data governance<ul>
+<li>데이터 관련된 법( 국내의 데이터3법, 유럽의 GDPR 등)을 다룸  </li>
+</ul>
+</li>
+<li>BI developer, Data visualiser, Application developer<ul>
+<li>처리된 크고 복잡한 데이터를 이해하기쉽고 유용하게 시각화 함  </li>
+<li>데이터의 종류가 방대해짐에따라 각각의 업무가 더욱 세분화되는 추세  </li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="데이터-분석"><a href="#데이터-분석" class="headerlink" title="데이터 분석"></a>데이터 분석</h2><ul>
+<li>통계학 이론이 base<ul>
+<li>기술통계 Descriptive statistics<ul>
+<li>데이터가 어떤 형태인지 요약해서 정리</li>
+<li>데이터 이해를위한 데이터 묘사</li>
+<li>EDA</li>
+<li>변수들의 분포와 이 변수들의 관계성에대해 파악  </li>
+</ul>
+</li>
+<li>추론통계 Inferential statistics<ul>
+<li>표본데이터를 근거로 집단의 특성을 추론 및일반화</li>
+<li>가설검정의 과정에대해 공부하면서 추론통계개념을 이해하는것이 좋음  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>프로그래밍 언어를 이용하여 데이터를 분석하는 과정이 중요<ul>
+<li>Python / R</li>
+<li>EDA / Regression  </li>
+</ul>
+</li>
+</ul>
+<h2 id="데이터-준비"><a href="#데이터-준비" class="headerlink" title="데이터 준비"></a>데이터 준비</h2><ul>
+<li>데이터 전처리(Data preprocessing)<ul>
+<li>데이터 merging</li>
+<li>숫자변수 scaling</li>
+<li>범주형 변수활용</li>
+<li>결측치(missing values) 처리</li>
+<li>columns, values 의 일관성  </li>
+</ul>
+</li>
+<li>데이터 수집 (Data collecting)<ul>
+<li><strong>SQL (Structured Query Language)</strong> 갈수록 중요해지는 추세</li>
+<li>Data crawling (웹상에서 매우 유용)<ul>
+<li>python beatifulsoup</li>
+<li>selenium<h2 id="데이터-분석결과-활용"><a href="#데이터-분석결과-활용" class="headerlink" title="데이터 분석결과 활용"></a>데이터 분석결과 활용</h2></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>분석 결과보고<ul>
+<li>Plots 활용(쉽고빠름)<ul>
+<li>python- matplotlib.pyplot, seaborn</li>
+<li>R- ggplot2  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Dashborad 제작<ul>
+<li>PowerBi</li>
+<li>Tableau</li>
+<li>BI 툴 사용  </li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="자세한-준비방법"><a href="#자세한-준비방법" class="headerlink" title="자세한 준비방법"></a>자세한 준비방법</h2><ul>
+<li>전문서적 3권이상 읽어보기<ul>
+<li>데이터분석이뭔지? 머신러닝 딥러닝은 정확히 무엇인지?  </li>
+</ul>
+</li>
+<li>온라인강의(단순한 이론보다는 각각 직무스킬의 세부내용과 활용법까지 알기)<ul>
+<li>데이터분석 전체 과정에대한 설명은 기초로 알아야함</li>
+<li>원하는 직무에맞는 스킬을 추가로 선택  </li>
+</ul>
+</li>
+<li>뉴스레터 블로그 구독(최신정보의 습득)<ul>
+<li>python- pandas 관련내용은 매우 중요(SPARK, Tensorflow 등등…)</li>
+<li>이외의 데이터관련 국내외 공식사이트와 블로그로 최신정보 획득</li>
+</ul>
+</li>
+<li>대학원은 세부 분야에대해서도 잘 알아봐야함<ul>
+<li>연구 및 개발위주의 학위과정은 필수  </li>
+</ul>
+</li>
+<li>자격증(비전공자라면 겸행할수록 좋음 but 시간대비 효율이 낮을수있음)<ul>
+<li>자격증은… 실제 현업 및 취업에 크게 도움되지않음</li>
+<li>공부하면서 얻는 내용자체가 도움이되지, 자격증 자체가 도움되진 않는다</li>
+<li>데이터분석전문가 ADP</li>
+<li>데이터분석준전문가 ADsP</li>
+<li>데이터 분석기사  </li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>datascience</tag>
       </tags>
   </entry>
 </search>
