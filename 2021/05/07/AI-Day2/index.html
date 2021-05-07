@@ -31,7 +31,7 @@
 <meta property="og:description" content="Feature EngineeringWarm up Data cleaning 대부분의 실제 데이터엔지니어, 데이터사이언티스트는 데이터클리닝이 대부분의 업무 AI에 머신러닝을 시키기위해선 정제된 데이터가 필수      Feature Engineering 이란? 도메인 지식과 창의성을 바탕으로, 데이터셋에 존재하는 Feature들을 재조합하여 새로운 Feature">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-05-07T00:11:41.000Z">
-<meta property="article:modified_time" content="2021-05-07T02:21:01.114Z">
+<meta property="article:modified_time" content="2021-05-07T06:26:31.462Z">
 <meta property="article:author" content="SangBong Lee">
 <meta property="article:tag" content="Feature Engineering">
 <meta name="twitter:card" content="summary">
@@ -189,7 +189,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Feature-Engineering"><span class="nav-number">1.</span> <span class="nav-text">Feature Engineering</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Warm-up"><span class="nav-number">1.1.</span> <span class="nav-text">Warm up</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Feature-Engineering-%EC%9D%B4%EB%9E%80"><span class="nav-number">1.2.</span> <span class="nav-text">Feature Engineering 이란?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DataFrame"><span class="nav-number">1.3.</span> <span class="nav-text">DataFrame</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Feature-Engineering"><span class="nav-number">1.</span> <span class="nav-text">Feature Engineering</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Warm-up"><span class="nav-number">1.1.</span> <span class="nav-text">Warm up</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Feature-Engineering-%EC%9D%B4%EB%9E%80"><span class="nav-number">1.2.</span> <span class="nav-text">Feature Engineering 이란?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DataFrame"><span class="nav-number">1.3.</span> <span class="nav-text">DataFrame</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Feature-Engineering-1"><span class="nav-number">1.4.</span> <span class="nav-text">Feature Engineering</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Methods"><span class="nav-number">1.4.1.</span> <span class="nav-text">Methods</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -295,7 +295,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-05-07 09:11:41 / Modified: 11:21:01" itemprop="dateCreated datePublished" datetime="2021-05-07T09:11:41+09:00">2021-05-07</time>
+      <time title="Created: 2021-05-07 09:11:41 / Modified: 15:26:31" itemprop="dateCreated datePublished" datetime="2021-05-07T09:11:41+09:00">2021-05-07</time>
     </span>
 
   
@@ -324,7 +324,28 @@
 <h2 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h2><ul>
 <li>테이블형태의 데이터로 기억</li>
 <li>Row(행)에는 observation, Column(열)에는 feature가 있다</li>
-<li></li>
+<li>만약 데이터에 NaN값이있다면? 같은 row의 다른값들은 자동으로 float으로 typecasting</li>
+</ul>
+<h2 id="Feature-Engineering-1"><a href="#Feature-Engineering-1" class="headerlink" title="Feature Engineering"></a>Feature Engineering</h2><ul>
+<li>feature끼리는 일반수식처럼 가능하지만, 각각의 data type에 주의하여야함<ul>
+<li>int끼리라면 의도대로 수식이되지만, 만약 str이라면? 예상치못한 결과도출</li>
+<li>특히 머신러닝 모델링에서는 문자열로된 data는 사용하지 않음</li>
+</ul>
+</li>
+</ul>
+<h3 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h3><ul>
+<li>s.replace(‘지우려는것’,’대체할것’)<ul>
+<li>하지만 바뀐것을 변수에 다시선언해주어야 변경됨(얕은복사? 더찾아보기)</li>
+</ul>
+</li>
+<li>s.toint()<ul>
+<li>자동으로 int로 typecasting까지 실행</li>
+</ul>
+</li>
+<li>s.apply(함수)<ul>
+<li>한 column전체에 대해 함수를 다 실행시킴(파이썬의 map과 비슷한느낌)</li>
+</ul>
+</li>
 </ul>
 
     </div>

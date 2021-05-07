@@ -288,7 +288,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-05-07 09:11:41 / Modified: 11:21:01" itemprop="dateCreated datePublished" datetime="2021-05-07T09:11:41+09:00">2021-05-07</time>
+      <time title="Created: 2021-05-07 09:11:41 / Modified: 15:26:31" itemprop="dateCreated datePublished" datetime="2021-05-07T09:11:41+09:00">2021-05-07</time>
     </span>
 
   
@@ -317,7 +317,28 @@
 <h2 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h2><ul>
 <li>테이블형태의 데이터로 기억</li>
 <li>Row(행)에는 observation, Column(열)에는 feature가 있다</li>
-<li></li>
+<li>만약 데이터에 NaN값이있다면? 같은 row의 다른값들은 자동으로 float으로 typecasting</li>
+</ul>
+<h2 id="Feature-Engineering-1"><a href="#Feature-Engineering-1" class="headerlink" title="Feature Engineering"></a>Feature Engineering</h2><ul>
+<li>feature끼리는 일반수식처럼 가능하지만, 각각의 data type에 주의하여야함<ul>
+<li>int끼리라면 의도대로 수식이되지만, 만약 str이라면? 예상치못한 결과도출</li>
+<li>특히 머신러닝 모델링에서는 문자열로된 data는 사용하지 않음</li>
+</ul>
+</li>
+</ul>
+<h3 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h3><ul>
+<li>s.replace(‘지우려는것’,’대체할것’)<ul>
+<li>하지만 바뀐것을 변수에 다시선언해주어야 변경됨(얕은복사? 더찾아보기)</li>
+</ul>
+</li>
+<li>s.toint()<ul>
+<li>자동으로 int로 typecasting까지 실행</li>
+</ul>
+</li>
+<li>s.apply(함수)<ul>
+<li>한 column전체에 대해 함수를 다 실행시킴(파이썬의 map과 비슷한느낌)</li>
+</ul>
+</li>
 </ul>
 
       
