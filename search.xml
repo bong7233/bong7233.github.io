@@ -47,148 +47,161 @@
       </tags>
   </entry>
   <entry>
-    <title>딥러닝기초</title>
-    <url>/2021/04/06/%EB%94%A5%EB%9F%AC%EB%8B%9D%EA%B8%B0%EC%B4%88/</url>
-    <content><![CDATA[<h1 id="딥러닝-사전기초지식"><a href="#딥러닝-사전기초지식" class="headerlink" title="딥러닝 사전기초지식"></a>딥러닝 사전기초지식</h1><ul>
-<li>python</li>
-<li>미분의 개념들, 행렬 연산, 지수와 로그</li>
+    <title>DataScience</title>
+    <url>/2021/04/06/DataScience/</url>
+    <content><![CDATA[<h1 id="데이터사이언스-시작한-이유"><a href="#데이터사이언스-시작한-이유" class="headerlink" title="데이터사이언스 시작한 이유?"></a>데이터사이언스 시작한 이유?</h1><ul>
+<li>백엔드 관련 공부하던 중 웹이나 앱의 개발보다는 정보와 데이터를 처리, 알고리즘을 이용한 수학적 과정에 흥미를 느낌</li>
+<li>데이터사이언스 엔지니어중 평소 인공지능관련된 딥러닝,머신러닝에 관심이 많아 기초부터 시작해서 딥러닝,머신러닝을 공부</li>
+<li>21년에 부지런히 공부하여 취업이 되면 best, 공부를하며 국내 인공지능 대학원에 22년 신입생으로 지원해보는것도 가능하다면 better(하지만 취업보다 더 어렵지않을까..)</li>
 </ul>
-<h2 id="딥러닝"><a href="#딥러닝" class="headerlink" title="딥러닝?"></a>딥러닝?</h2><ul>
-<li>Deep Neural Networks(DNN)을 학습시켜 문제 해결</li>
-<li>인공신경망(Artificial Neural Networks)의 일부분이라 볼 수 있음</li>
-<li>비선형함수로, 머신러닝에비해 패턴인식능력 월등</li>
-<li>이미지나 텍스트, 음성같은 분야들에서 비약적 성능개선<ul>
-<li>기존 머신러닝과 다르게 hand-crafted feature 필요없음</li>
-<li>단순 raw 데이터 넣기만하면 자동으로 feature 학습</li>
+<h2 id="생명공학전공-승무원경험이-장점이-될수-있을까"><a href="#생명공학전공-승무원경험이-장점이-될수-있을까" class="headerlink" title="생명공학전공 + 승무원경험이 장점이 될수 있을까?"></a>생명공학전공 + 승무원경험이 장점이 될수 있을까?</h2><ul>
+<li>현업은 석박사 or 전공자들이 많다고함</li>
+<li>So 국비지원 6개월과정과(21년 5월시작) + 파이썬과 알고리즘, 컴퓨터사이언스에대해 인강으로 독학시작(21년 4월시작)</li>
+<li>실제로 캐글같은 현업 활용사례에는 생명과학 전공도 도움이 될 수 있고(거의다 잊어버렸지만, 그래도 전공이니 조금만 복습하면 리마인드 가능), 승무원경험으로 쌓은 커뮤니케이션 능력과 회사경험은 충분히 장점이 될 수 있음</li>
+<li>데이터사이언스 기술만으로는 부족하다! 학문이나 인문학과 혼합된 </li>
 </ul>
-</li>
-<li>음성인식, 기계번역, 자율주행, 객체인식및 이미지분류, 사진합성및 보정, 데이터분석 등등</li>
-</ul>
-<h2 id="인공지능-모델이란"><a href="#인공지능-모델이란" class="headerlink" title="인공지능 모델이란"></a>인공지능 모델이란</h2><ul>
-<li>x 가주어지면 y를 반환<ul>
-<li>y=f(x)</li>
-</ul>
-</li>
-<li>파라미터(weight parameter)<ul>
-<li>f 가 동작하는 방식을 결정</li>
-</ul>
-</li>
-<li>학습 ?<ul>
-<li>x와y의 쌍으로 이뤄진 데이터가 주어지면, x-&gt;y 로가는 관계를 배우는것</li>
-<li>x와y를 통해 적절한 파라미터를 찾아내는것</li>
-</ul>
-</li>
-<li>모델 ?<ul>
-<li>상황에따라 알고리즘자체 혹은 파라미터를 뜻하기도 함</li>
+<h2 id="데이터사이언스-목적"><a href="#데이터사이언스-목적" class="headerlink" title="데이터사이언스 목적"></a>데이터사이언스 목적</h2><ul>
+<li>데이터 이해 -&gt; 분석 -&gt; 해석 -&gt; 인사이트 도출 -&gt; 결론도출 -&gt; 비지니스 문제 해결<ul>
+<li>분석한 데이터를 해석할수없다면? 무용지물이다</li>
+<li>생명공학 전공이나 다른 사회경험은 이 데이터해석에서 충분히 강점이 될 수 있음</li>
+<li>현업에서 분석결과를 다른사람에게 전달할때, 전달받는 사람의 대부분은 데이터사이언스에대해 자세히 알지 못한다. 이때 커뮤니케이션 능력이 더욱더 중요</li>
 </ul>
 </li>
 </ul>
-<h3 id="좋은-인공지능이란"><a href="#좋은-인공지능이란" class="headerlink" title="좋은 인공지능이란?"></a>좋은 인공지능이란?</h3><ul>
-<li>일반화(Generalization)를 잘 하는 모델</li>
-<li>보지못한 데이터에대해 좋은 예측을하는 모델<ul>
-<li>모든 경우의수를 모을수없으므로…</li>
-<li>스스로 새로운 데이터에대해 좋은 판단을 내릴수있어야함</li>
+<h2 id="빅데이터시대로인한-데이터-종류와-처리가-더욱-다양해짐"><a href="#빅데이터시대로인한-데이터-종류와-처리가-더욱-다양해짐" class="headerlink" title="빅데이터시대로인한 데이터 종류와 처리가 더욱 다양해짐"></a>빅데이터시대로인한 데이터 종류와 처리가 더욱 다양해짐</h2><ul>
+<li>예전에는 엑셀로만 다루었지만, 최근 프로그래밍 언어와 기술들로 훨씬더 방대하고 복잡한 데이터를 수집 및 분석이 가능해짐</li>
+<li>이 방대한 데이터를 사람이 직접 수집할수없기떄문에, 머신러닝 딥러닝 기술을 이용해 기계가 수많은 데이터를 처리하도록 함</li>
+</ul>
+<h2 id="머신러닝-딥러닝-AI"><a href="#머신러닝-딥러닝-AI" class="headerlink" title="머신러닝 딥러닝 AI"></a>머신러닝 딥러닝 AI</h2><ul>
+<li><p>머신러닝</p>
+<ul>
+<li>알고리즘을 이용한 기계의 지도학습(supervised)과 비지도(unsupervised)학습  </li>
+</ul>
+</li>
+<li><p>딥러닝</p>
+<ul>
+<li>머신러닝의 알고리즘중, 인공신경망을 이용하여 머신러닝하는것</li>
+<li>이미지나 비디오데이터를 분석하는데 탁월  </li>
+</ul>
+</li>
+<li><p>AI</p>
+<ul>
+<li>인간의 지능을 기계에 구현</li>
+</ul>
+</li>
+<li><p>머신러닝 딥러닝은 구체적인 분석방법과 기법을 뜻함(데이터사이언티스트가 다룸)  </p>
+</li>
+<li><p>AI는 그런 방법을 적용시켜 기업에서 방향을 설정하고 개념을 이용하는것</p>
+</li>
+</ul>
+<h2 id="데이터사이언티스트"><a href="#데이터사이언티스트" class="headerlink" title="데이터사이언티스트?"></a>데이터사이언티스트?</h2><ul>
+<li>데이터사이언티스트 : 머신러닝과 딥러닝을 활용하여 데이터분석(Data Analytics)<ul>
+<li>우버,넷플릭스,유투브,페이스북 같은 기업들은 스스로 자체적으로 머신러닝 딥러닝알고리즘을 만들어서 사용</li>
+<li>AI개발, 알고리즘연구원 등등으로 모집하기도 함  </li>
+</ul>
+</li>
+<li>데이터 엔지니어(Data engineering)<ul>
+<li>ETL process를 이용하고, 데이터 준비와 전처리  </li>
+</ul>
+</li>
+<li>Data governance<ul>
+<li>데이터 관련된 법( 국내의 데이터3법, 유럽의 GDPR 등)을 다룸  </li>
+</ul>
+</li>
+<li>BI developer, Data visualiser, Application developer<ul>
+<li>처리된 크고 복잡한 데이터를 이해하기쉽고 유용하게 시각화 함  </li>
+<li>데이터의 종류가 방대해짐에따라 각각의 업무가 더욱 세분화되는 추세  </li>
 </ul>
 </li>
 </ul>
 <hr>
-<h2 id="딥러닝의-목적과-순서"><a href="#딥러닝의-목적과-순서" class="headerlink" title="딥러닝의 목적과 순서"></a>딥러닝의 목적과 순서</h2><ul>
-<li>주어진 데이터에대해 결과를 내는 가상의 함수를 <strong>모사</strong>하는 함수를 만드는것  </li>
-</ul>
-<ol>
-<li>문제정의<ul>
-<li>가장 중요한 부분</li>
-<li>풀고자하는 문제를 단계별로 나누고 simplify</li>
-<li>신경망이라는 함수에 넣기위한 x와 결과값y가 정의되어야 함</li>
-</ul>
-</li>
-<li>데이터수집<ul>
-<li>문제 정의에따라 정해진 x와y</li>
-<li>풀고자하는 문제의 영역에따라 수집방법이 다름<ul>
-<li>자연어처리,컴퓨터비전:크롤링</li>
-<li>데이터분석: 실제수집데이터</li>
+<h2 id="데이터-분석"><a href="#데이터-분석" class="headerlink" title="데이터 분석"></a>데이터 분석</h2><ul>
+<li>통계학 이론이 base<ul>
+<li>기술통계 Descriptive statistics<ul>
+<li>데이터가 어떤 형태인지 요약해서 정리</li>
+<li>데이터 이해를위한 데이터 묘사</li>
+<li>EDA</li>
+<li>변수들의 분포와 이 변수들의 관계성에대해 파악  </li>
 </ul>
 </li>
-<li>필요에따라 레이블링작업 수행<ul>
-<li>자동적으로 레이블이 y로 주어질수도있음</li>
-<li>but 대부분 레이블이 따로필요</li>
-<li>비지도학습(unsupervised learning)을 기대하면 안됨</li>
+<li>추론통계 Inferential statistics<ul>
+<li>표본데이터를 근거로 집단의 특성을 추론 및일반화</li>
+<li>가설검정의 과정에대해 공부하면서 추론통계개념을 이해하는것이 좋음  </li>
 </ul>
 </li>
 </ul>
 </li>
-<li>데이터 전처리 및 분석<ul>
-<li>수집도니 데이터를 신경망에 넣어주기위한 형태로 가공하는 과정<ul>
-<li>입출력 값 정제(cleaning &amp; normalization)</li>
+<li>프로그래밍 언어를 이용하여 데이터를 분석하는 과정이 중요<ul>
+<li>Python / R</li>
+<li>EDA / Regression  </li>
 </ul>
 </li>
-<li>이 과정에서 탐험적분석(Exploratory Data Analaysis, EDA) 필요<ul>
-<li>데이터에 맞는 알고리즘을 찾기위함</li>
-<li>자연어처리, 컴퓨터비전의경우는 생략되기도 함</li>
+</ul>
+<h2 id="데이터-준비"><a href="#데이터-준비" class="headerlink" title="데이터 준비"></a>데이터 준비</h2><ul>
+<li>데이터 전처리(Data preprocessing)<ul>
+<li>데이터 merging</li>
+<li>숫자변수 scaling</li>
+<li>범주형 변수활용</li>
+<li>결측치(missing values) 처리</li>
+<li>columns, values 의 일관성  </li>
 </ul>
 </li>
-<li>영상처리(computer vision)의 경우, 데이터증강(argumentation)이 수행됨<ul>
-<li>rotation,flipping,shifting 등 간단한 연산</li>
+<li>데이터 수집 (Data collecting)<ul>
+<li><strong>SQL (Structured Query Language)</strong> 갈수록 중요해지는 추세</li>
+<li>Data crawling (웹상에서 매우 유용)<ul>
+<li>python beatifulsoup</li>
+<li>selenium<h2 id="데이터-분석결과-활용"><a href="#데이터-분석결과-활용" class="headerlink" title="데이터 분석결과 활용"></a>데이터 분석결과 활용</h2></li>
 </ul>
 </li>
-<li>특히 전처리 및 분석은 경험을 많이 해보는것이 중요</li>
 </ul>
 </li>
-<li>알고리즘 적용<ul>
-<li>데이터에대해 가설을 세우고, 해당 가설을위한 알고리즘(모델)을 적용</li>
+<li>분석 결과보고<ul>
+<li>Plots 활용(쉽고빠름)<ul>
+<li>python- matplotlib.pyplot, seaborn</li>
+<li>R- ggplot2  </li>
 </ul>
 </li>
-<li>평가<ul>
-<li>문제 정의에 따른 공장하고 올바른 평가필요<ul>
-<li>가설을 검증하기 위한 실험 설계</li>
 </ul>
 </li>
-<li>테스트셋(test set) 구성<ul>
-<li>판별력이 중요</li>
-<li>실제데이터와 가장 비슷하게 구성되어야함</li>
+<li>Dashborad 제작<ul>
+<li>PowerBi</li>
+<li>Tableau</li>
+<li>BI 툴 사용  </li>
 </ul>
 </li>
-<li>정량적 평가(extrinsic evaluation)와 정성적 평가(intrinsic evaluation)</li>
 </ul>
-</li>
-<li>배포<ul>
-<li>학습과 평가가 완료된 모델 weights 파일을 배포</li>
-<li>RESTful API 등을 통해 wrapping 후 배포</li>
-<li>데이터 분포의 변화에따른 모델 업데이트 및 유지보수가 필요할 수 있음</li>
-</ul>
-</li>
-</ol>
 <hr>
-<h2 id="Appendix-Basic-math"><a href="#Appendix-Basic-math" class="headerlink" title="Appendix: Basic math"></a>Appendix: Basic math</h2><ul>
-<li>지수와 로그<ul>
-<li>지수 기본법칙과 연산법칙 숙지</li>
-<li>머신러닝에서는 로그의 밑으로 자연상수 e를 기본적으로 사용함을 기억</li>
-<li>log1 = 0</li>
-<li>log0 = -무한대</li>
-<li>log무한대 = 무한대</li>
-<li>log a + log b = log ab</li>
-<li>log a - log b = log a/b</li>
-<li>log a의 b승 = b log a</li>
+<h2 id="자세한-준비방법"><a href="#자세한-준비방법" class="headerlink" title="자세한 준비방법"></a>자세한 준비방법</h2><ul>
+<li>전문서적 3권이상 읽어보기<ul>
+<li>데이터분석이뭔지? 머신러닝 딥러닝은 정확히 무엇인지?  </li>
 </ul>
 </li>
-<li>시그마(덧셈)와 파이(곱셈)<ul>
-<li>정의를 알고 파이썬 코드로 짤줄 알아야함</li>
+<li>온라인강의(단순한 이론보다는 각각 직무스킬의 세부내용과 활용법까지 알기)<ul>
+<li>데이터분석 전체 과정에대한 설명은 기초로 알아야함</li>
+<li>원하는 직무에맞는 스킬을 추가로 선택  </li>
 </ul>
 </li>
-<li>argmax (hat ‘^’)<ul>
-<li>x(hat) = argmax f(x)</li>
-<li>f(x)가 최대값을 나타내는 argument x 를 리턴</li>
-<li>max 값을 리턴하는게아닌 값을 만드는 x를 리턴함을 기억</li>
-<li>같은 뉘앙스로 최소값을 나타내는 x를 리턴하는 argmin 도 있음</li>
+<li>뉴스레터 블로그 구독(최신정보의 습득)<ul>
+<li>python- pandas 관련내용은 매우 중요(SPARK, Tensorflow 등등…)</li>
+<li>이외의 데이터관련 국내외 공식사이트와 블로그로 최신정보 획득</li>
+</ul>
+</li>
+<li>대학원은 세부 분야에대해서도 잘 알아봐야함<ul>
+<li>연구 및 개발위주의 학위과정은 필수  </li>
+</ul>
+</li>
+<li>자격증(비전공자라면 겸행할수록 좋음 but 시간대비 효율이 낮을수있음)<ul>
+<li>자격증은… 실제 현업 및 취업에 크게 도움되지않음</li>
+<li>공부하면서 얻는 내용자체가 도움이되지, 자격증 자체가 도움되진 않는다</li>
+<li>데이터분석전문가 ADP</li>
+<li>데이터분석준전문가 ADsP</li>
+<li>데이터 분석기사  </li>
 </ul>
 </li>
 </ul>
 ]]></content>
-      <categories>
-        <category>Deep-Learning</category>
-      </categories>
       <tags>
-        <tag>deeplearning-basic</tag>
+        <tag>datascience</tag>
       </tags>
   </entry>
   <entry>
@@ -197,7 +210,7 @@
     <content><![CDATA[<h1 id="Feature-Engineering"><a href="#Feature-Engineering" class="headerlink" title="Feature Engineering"></a>Feature Engineering</h1><h2 id="Warm-up"><a href="#Warm-up" class="headerlink" title="Warm up"></a>Warm up</h2><ul>
 <li>Data cleaning<ul>
 <li>대부분의 실제 데이터엔지니어, 데이터사이언티스트는 데이터클리닝이 대부분의 업무</li>
-<li>AI에 머신러닝을 시키기위해선 정제된 데이터가 필수</li>
+<li>AI에 머신러닝을 시키기위해선 정제된 데이터가 필수  </li>
 </ul>
 </li>
 </ul>
@@ -209,12 +222,34 @@
 </ul>
 <h2 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h2><ul>
 <li>테이블형태의 데이터로 기억</li>
-<li>Row(행)에는 objervation, Colum(열)에는 feature가 있다</li>
+<li>Row(행)에는 observation, Column(열)에는 feature가 있다</li>
 <li></li>
 </ul>
 ]]></content>
       <tags>
         <tag>Feature Engineering</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>linear layer</title>
+    <url>/2021/04/15/linear-layer/</url>
+    <content><![CDATA[<h1 id="Linear-layer"><a href="#Linear-layer" class="headerlink" title="Linear layer"></a>Linear layer</h1><ul>
+<li>신경망의 기본요소</li>
+<li>Fully-connected (FC) layer</li>
+<li>내부 파라미터에따른 선형변환을 수행</li>
+<li>각 입력노드에 weight(가중치)를 곱하고 합친후, bias(편향) 더함</li>
+<li><img src="../images/linear.PNG" width="300" height="300"></li>
+<li>이때 행렬의 곱으로 표현가능<ul>
+<li><img src="../images/linearmulti.PNG"></li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>deep-learning</category>
+      </categories>
+      <tags>
+        <tag>linear-layer</tag>
       </tags>
   </entry>
   <entry>
@@ -399,183 +434,148 @@
       </tags>
   </entry>
   <entry>
-    <title>linear layer</title>
-    <url>/2021/04/15/linear-layer/</url>
-    <content><![CDATA[<h1 id="Linear-layer"><a href="#Linear-layer" class="headerlink" title="Linear layer"></a>Linear layer</h1><ul>
-<li>신경망의 기본요소</li>
-<li>Fully-connected (FC) layer</li>
-<li>내부 파라미터에따른 선형변환을 수행</li>
-<li>각 입력노드에 weight(가중치)를 곱하고 합친후, bias(편향) 더함</li>
-<li><img src="../images/linear.PNG" width="300" height="300"></li>
-<li>이때 행렬의 곱으로 표현가능<ul>
-<li><img src="../images/linearmulti.PNG"></li>
+    <title>딥러닝기초</title>
+    <url>/2021/04/06/%EB%94%A5%EB%9F%AC%EB%8B%9D%EA%B8%B0%EC%B4%88/</url>
+    <content><![CDATA[<h1 id="딥러닝-사전기초지식"><a href="#딥러닝-사전기초지식" class="headerlink" title="딥러닝 사전기초지식"></a>딥러닝 사전기초지식</h1><ul>
+<li>python</li>
+<li>미분의 개념들, 행렬 연산, 지수와 로그</li>
+</ul>
+<h2 id="딥러닝"><a href="#딥러닝" class="headerlink" title="딥러닝?"></a>딥러닝?</h2><ul>
+<li>Deep Neural Networks(DNN)을 학습시켜 문제 해결</li>
+<li>인공신경망(Artificial Neural Networks)의 일부분이라 볼 수 있음</li>
+<li>비선형함수로, 머신러닝에비해 패턴인식능력 월등</li>
+<li>이미지나 텍스트, 음성같은 분야들에서 비약적 성능개선<ul>
+<li>기존 머신러닝과 다르게 hand-crafted feature 필요없음</li>
+<li>단순 raw 데이터 넣기만하면 자동으로 feature 학습</li>
+</ul>
+</li>
+<li>음성인식, 기계번역, 자율주행, 객체인식및 이미지분류, 사진합성및 보정, 데이터분석 등등</li>
+</ul>
+<h2 id="인공지능-모델이란"><a href="#인공지능-모델이란" class="headerlink" title="인공지능 모델이란"></a>인공지능 모델이란</h2><ul>
+<li>x 가주어지면 y를 반환<ul>
+<li>y=f(x)</li>
+</ul>
+</li>
+<li>파라미터(weight parameter)<ul>
+<li>f 가 동작하는 방식을 결정</li>
+</ul>
+</li>
+<li>학습 ?<ul>
+<li>x와y의 쌍으로 이뤄진 데이터가 주어지면, x-&gt;y 로가는 관계를 배우는것</li>
+<li>x와y를 통해 적절한 파라미터를 찾아내는것</li>
+</ul>
+</li>
+<li>모델 ?<ul>
+<li>상황에따라 알고리즘자체 혹은 파라미터를 뜻하기도 함</li>
+</ul>
+</li>
+</ul>
+<h3 id="좋은-인공지능이란"><a href="#좋은-인공지능이란" class="headerlink" title="좋은 인공지능이란?"></a>좋은 인공지능이란?</h3><ul>
+<li>일반화(Generalization)를 잘 하는 모델</li>
+<li>보지못한 데이터에대해 좋은 예측을하는 모델<ul>
+<li>모든 경우의수를 모을수없으므로…</li>
+<li>스스로 새로운 데이터에대해 좋은 판단을 내릴수있어야함</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="딥러닝의-목적과-순서"><a href="#딥러닝의-목적과-순서" class="headerlink" title="딥러닝의 목적과 순서"></a>딥러닝의 목적과 순서</h2><ul>
+<li>주어진 데이터에대해 결과를 내는 가상의 함수를 <strong>모사</strong>하는 함수를 만드는것  </li>
+</ul>
+<ol>
+<li>문제정의<ul>
+<li>가장 중요한 부분</li>
+<li>풀고자하는 문제를 단계별로 나누고 simplify</li>
+<li>신경망이라는 함수에 넣기위한 x와 결과값y가 정의되어야 함</li>
+</ul>
+</li>
+<li>데이터수집<ul>
+<li>문제 정의에따라 정해진 x와y</li>
+<li>풀고자하는 문제의 영역에따라 수집방법이 다름<ul>
+<li>자연어처리,컴퓨터비전:크롤링</li>
+<li>데이터분석: 실제수집데이터</li>
+</ul>
+</li>
+<li>필요에따라 레이블링작업 수행<ul>
+<li>자동적으로 레이블이 y로 주어질수도있음</li>
+<li>but 대부분 레이블이 따로필요</li>
+<li>비지도학습(unsupervised learning)을 기대하면 안됨</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>데이터 전처리 및 분석<ul>
+<li>수집도니 데이터를 신경망에 넣어주기위한 형태로 가공하는 과정<ul>
+<li>입출력 값 정제(cleaning &amp; normalization)</li>
+</ul>
+</li>
+<li>이 과정에서 탐험적분석(Exploratory Data Analaysis, EDA) 필요<ul>
+<li>데이터에 맞는 알고리즘을 찾기위함</li>
+<li>자연어처리, 컴퓨터비전의경우는 생략되기도 함</li>
+</ul>
+</li>
+<li>영상처리(computer vision)의 경우, 데이터증강(argumentation)이 수행됨<ul>
+<li>rotation,flipping,shifting 등 간단한 연산</li>
+</ul>
+</li>
+<li>특히 전처리 및 분석은 경험을 많이 해보는것이 중요</li>
+</ul>
+</li>
+<li>알고리즘 적용<ul>
+<li>데이터에대해 가설을 세우고, 해당 가설을위한 알고리즘(모델)을 적용</li>
+</ul>
+</li>
+<li>평가<ul>
+<li>문제 정의에 따른 공장하고 올바른 평가필요<ul>
+<li>가설을 검증하기 위한 실험 설계</li>
+</ul>
+</li>
+<li>테스트셋(test set) 구성<ul>
+<li>판별력이 중요</li>
+<li>실제데이터와 가장 비슷하게 구성되어야함</li>
+</ul>
+</li>
+<li>정량적 평가(extrinsic evaluation)와 정성적 평가(intrinsic evaluation)</li>
+</ul>
+</li>
+<li>배포<ul>
+<li>학습과 평가가 완료된 모델 weights 파일을 배포</li>
+<li>RESTful API 등을 통해 wrapping 후 배포</li>
+<li>데이터 분포의 변화에따른 모델 업데이트 및 유지보수가 필요할 수 있음</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="Appendix-Basic-math"><a href="#Appendix-Basic-math" class="headerlink" title="Appendix: Basic math"></a>Appendix: Basic math</h2><ul>
+<li>지수와 로그<ul>
+<li>지수 기본법칙과 연산법칙 숙지</li>
+<li>머신러닝에서는 로그의 밑으로 자연상수 e를 기본적으로 사용함을 기억</li>
+<li>log1 = 0</li>
+<li>log0 = -무한대</li>
+<li>log무한대 = 무한대</li>
+<li>log a + log b = log ab</li>
+<li>log a - log b = log a/b</li>
+<li>log a의 b승 = b log a</li>
+</ul>
+</li>
+<li>시그마(덧셈)와 파이(곱셈)<ul>
+<li>정의를 알고 파이썬 코드로 짤줄 알아야함</li>
+</ul>
+</li>
+<li>argmax (hat ‘^’)<ul>
+<li>x(hat) = argmax f(x)</li>
+<li>f(x)가 최대값을 나타내는 argument x 를 리턴</li>
+<li>max 값을 리턴하는게아닌 값을 만드는 x를 리턴함을 기억</li>
+<li>같은 뉘앙스로 최소값을 나타내는 x를 리턴하는 argmin 도 있음</li>
 </ul>
 </li>
 </ul>
 ]]></content>
       <categories>
-        <category>deep-learning</category>
+        <category>Deep-Learning</category>
       </categories>
       <tags>
-        <tag>linear-layer</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>DataScience</title>
-    <url>/2021/04/06/DataScience/</url>
-    <content><![CDATA[<h1 id="데이터사이언스-시작한-이유"><a href="#데이터사이언스-시작한-이유" class="headerlink" title="데이터사이언스 시작한 이유?"></a>데이터사이언스 시작한 이유?</h1><ul>
-<li>백엔드 관련 공부하던 중 웹이나 앱의 개발보다는 정보와 데이터를 처리, 알고리즘을 이용한 수학적 과정에 흥미를 느낌</li>
-<li>데이터사이언스 엔지니어중 평소 인공지능관련된 딥러닝,머신러닝에 관심이 많아 기초부터 시작해서 딥러닝,머신러닝을 공부</li>
-<li>21년에 부지런히 공부하여 취업이 되면 best, 공부를하며 국내 인공지능 대학원에 22년 신입생으로 지원해보는것도 가능하다면 better(하지만 취업보다 더 어렵지않을까..)</li>
-</ul>
-<h2 id="생명공학전공-승무원경험이-장점이-될수-있을까"><a href="#생명공학전공-승무원경험이-장점이-될수-있을까" class="headerlink" title="생명공학전공 + 승무원경험이 장점이 될수 있을까?"></a>생명공학전공 + 승무원경험이 장점이 될수 있을까?</h2><ul>
-<li>현업은 석박사 or 전공자들이 많다고함</li>
-<li>So 국비지원 6개월과정과(21년 5월시작) + 파이썬과 알고리즘, 컴퓨터사이언스에대해 인강으로 독학시작(21년 4월시작)</li>
-<li>실제로 캐글같은 현업 활용사례에는 생명과학 전공도 도움이 될 수 있고(거의다 잊어버렸지만, 그래도 전공이니 조금만 복습하면 리마인드 가능), 승무원경험으로 쌓은 커뮤니케이션 능력과 회사경험은 충분히 장점이 될 수 있음</li>
-<li>데이터사이언스 기술만으로는 부족하다! 학문이나 인문학과 혼합된 </li>
-</ul>
-<h2 id="데이터사이언스-목적"><a href="#데이터사이언스-목적" class="headerlink" title="데이터사이언스 목적"></a>데이터사이언스 목적</h2><ul>
-<li>데이터 이해 -&gt; 분석 -&gt; 해석 -&gt; 인사이트 도출 -&gt; 결론도출 -&gt; 비지니스 문제 해결<ul>
-<li>분석한 데이터를 해석할수없다면? 무용지물이다</li>
-<li>생명공학 전공이나 다른 사회경험은 이 데이터해석에서 충분히 강점이 될 수 있음</li>
-<li>현업에서 분석결과를 다른사람에게 전달할때, 전달받는 사람의 대부분은 데이터사이언스에대해 자세히 알지 못한다. 이때 커뮤니케이션 능력이 더욱더 중요</li>
-</ul>
-</li>
-</ul>
-<h2 id="빅데이터시대로인한-데이터-종류와-처리가-더욱-다양해짐"><a href="#빅데이터시대로인한-데이터-종류와-처리가-더욱-다양해짐" class="headerlink" title="빅데이터시대로인한 데이터 종류와 처리가 더욱 다양해짐"></a>빅데이터시대로인한 데이터 종류와 처리가 더욱 다양해짐</h2><ul>
-<li>예전에는 엑셀로만 다루었지만, 최근 프로그래밍 언어와 기술들로 훨씬더 방대하고 복잡한 데이터를 수집 및 분석이 가능해짐</li>
-<li>이 방대한 데이터를 사람이 직접 수집할수없기떄문에, 머신러닝 딥러닝 기술을 이용해 기계가 수많은 데이터를 처리하도록 함</li>
-</ul>
-<h2 id="머신러닝-딥러닝-AI"><a href="#머신러닝-딥러닝-AI" class="headerlink" title="머신러닝 딥러닝 AI"></a>머신러닝 딥러닝 AI</h2><ul>
-<li><p>머신러닝</p>
-<ul>
-<li>알고리즘을 이용한 기계의 지도학습(supervised)과 비지도(unsupervised)학습  </li>
-</ul>
-</li>
-<li><p>딥러닝</p>
-<ul>
-<li>머신러닝의 알고리즘중, 인공신경망을 이용하여 머신러닝하는것</li>
-<li>이미지나 비디오데이터를 분석하는데 탁월  </li>
-</ul>
-</li>
-<li><p>AI</p>
-<ul>
-<li>인간의 지능을 기계에 구현</li>
-</ul>
-</li>
-<li><p>머신러닝 딥러닝은 구체적인 분석방법과 기법을 뜻함(데이터사이언티스트가 다룸)  </p>
-</li>
-<li><p>AI는 그런 방법을 적용시켜 기업에서 방향을 설정하고 개념을 이용하는것</p>
-</li>
-</ul>
-<h2 id="데이터사이언티스트"><a href="#데이터사이언티스트" class="headerlink" title="데이터사이언티스트?"></a>데이터사이언티스트?</h2><ul>
-<li>데이터사이언티스트 : 머신러닝과 딥러닝을 활용하여 데이터분석(Data Analytics)<ul>
-<li>우버,넷플릭스,유투브,페이스북 같은 기업들은 스스로 자체적으로 머신러닝 딥러닝알고리즘을 만들어서 사용</li>
-<li>AI개발, 알고리즘연구원 등등으로 모집하기도 함  </li>
-</ul>
-</li>
-<li>데이터 엔지니어(Data engineering)<ul>
-<li>ETL process를 이용하고, 데이터 준비와 전처리  </li>
-</ul>
-</li>
-<li>Data governance<ul>
-<li>데이터 관련된 법( 국내의 데이터3법, 유럽의 GDPR 등)을 다룸  </li>
-</ul>
-</li>
-<li>BI developer, Data visualiser, Application developer<ul>
-<li>처리된 크고 복잡한 데이터를 이해하기쉽고 유용하게 시각화 함  </li>
-<li>데이터의 종류가 방대해짐에따라 각각의 업무가 더욱 세분화되는 추세  </li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="데이터-분석"><a href="#데이터-분석" class="headerlink" title="데이터 분석"></a>데이터 분석</h2><ul>
-<li>통계학 이론이 base<ul>
-<li>기술통계 Descriptive statistics<ul>
-<li>데이터가 어떤 형태인지 요약해서 정리</li>
-<li>데이터 이해를위한 데이터 묘사</li>
-<li>EDA</li>
-<li>변수들의 분포와 이 변수들의 관계성에대해 파악  </li>
-</ul>
-</li>
-<li>추론통계 Inferential statistics<ul>
-<li>표본데이터를 근거로 집단의 특성을 추론 및일반화</li>
-<li>가설검정의 과정에대해 공부하면서 추론통계개념을 이해하는것이 좋음  </li>
-</ul>
-</li>
-</ul>
-</li>
-<li>프로그래밍 언어를 이용하여 데이터를 분석하는 과정이 중요<ul>
-<li>Python / R</li>
-<li>EDA / Regression  </li>
-</ul>
-</li>
-</ul>
-<h2 id="데이터-준비"><a href="#데이터-준비" class="headerlink" title="데이터 준비"></a>데이터 준비</h2><ul>
-<li>데이터 전처리(Data preprocessing)<ul>
-<li>데이터 merging</li>
-<li>숫자변수 scaling</li>
-<li>범주형 변수활용</li>
-<li>결측치(missing values) 처리</li>
-<li>columns, values 의 일관성  </li>
-</ul>
-</li>
-<li>데이터 수집 (Data collecting)<ul>
-<li><strong>SQL (Structured Query Language)</strong> 갈수록 중요해지는 추세</li>
-<li>Data crawling (웹상에서 매우 유용)<ul>
-<li>python beatifulsoup</li>
-<li>selenium<h2 id="데이터-분석결과-활용"><a href="#데이터-분석결과-활용" class="headerlink" title="데이터 분석결과 활용"></a>데이터 분석결과 활용</h2></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>분석 결과보고<ul>
-<li>Plots 활용(쉽고빠름)<ul>
-<li>python- matplotlib.pyplot, seaborn</li>
-<li>R- ggplot2  </li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Dashborad 제작<ul>
-<li>PowerBi</li>
-<li>Tableau</li>
-<li>BI 툴 사용  </li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="자세한-준비방법"><a href="#자세한-준비방법" class="headerlink" title="자세한 준비방법"></a>자세한 준비방법</h2><ul>
-<li>전문서적 3권이상 읽어보기<ul>
-<li>데이터분석이뭔지? 머신러닝 딥러닝은 정확히 무엇인지?  </li>
-</ul>
-</li>
-<li>온라인강의(단순한 이론보다는 각각 직무스킬의 세부내용과 활용법까지 알기)<ul>
-<li>데이터분석 전체 과정에대한 설명은 기초로 알아야함</li>
-<li>원하는 직무에맞는 스킬을 추가로 선택  </li>
-</ul>
-</li>
-<li>뉴스레터 블로그 구독(최신정보의 습득)<ul>
-<li>python- pandas 관련내용은 매우 중요(SPARK, Tensorflow 등등…)</li>
-<li>이외의 데이터관련 국내외 공식사이트와 블로그로 최신정보 획득</li>
-</ul>
-</li>
-<li>대학원은 세부 분야에대해서도 잘 알아봐야함<ul>
-<li>연구 및 개발위주의 학위과정은 필수  </li>
-</ul>
-</li>
-<li>자격증(비전공자라면 겸행할수록 좋음 but 시간대비 효율이 낮을수있음)<ul>
-<li>자격증은… 실제 현업 및 취업에 크게 도움되지않음</li>
-<li>공부하면서 얻는 내용자체가 도움이되지, 자격증 자체가 도움되진 않는다</li>
-<li>데이터분석전문가 ADP</li>
-<li>데이터분석준전문가 ADsP</li>
-<li>데이터 분석기사  </li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>datascience</tag>
+        <tag>deeplearning-basic</tag>
       </tags>
   </entry>
 </search>
