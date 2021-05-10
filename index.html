@@ -197,20 +197,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -263,6 +263,106 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://bong7233.github.io/2021/05/10/AI-Day3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="SangBong Lee">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bong's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/05/10/AI-Day3/" class="post-title-link" itemprop="url">AI-Day3</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-05-10 15:42:22 / Modified: 16:12:16" itemprop="dateCreated datePublished" datetime="2021-05-10T15:42:22+09:00">2021-05-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Data-science/" itemprop="url" rel="index"><span itemprop="name">Data science</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Data-Manipulation"><a href="#Data-Manipulation" class="headerlink" title="Data Manipulation"></a>Data Manipulation</h1><h2 id="Warm-up"><a href="#Warm-up" class="headerlink" title="Warm-up"></a>Warm-up</h2><ul>
+<li>Pandas 유용 메서드<ul>
+<li>pd.show_versions() : 여러 툴들의 버전표시</li>
+<li>pd.DataFrame() : DF 생성, parameter 값들은 공식문서 참조</li>
+<li>df.rename(‘a’,’b’) : 열이름 변경 a -&gt; b</li>
+<li>df.loc[::음수] : 열 순서바꾸기<ul>
+<li>df.loc[::음수].reset_index(drop=True) : 색인 초기화(행은 역순이지만)</li>
+</ul>
+</li>
+<li>df.loc[:,::음수] : 열 반전</li>
+<li>df.dtypes() : 타입확인 (parameter에 execlude=’원하는타입’ 으로 선별가능) </li>
+<li>df.apply() : data type 변환</li>
+<li>df.info(memory_usage=’deep’) : DF size 축소 (메모리확보)</li>
+<li>from glob import glob : 여러개의파일을 하나로 합침<ul>
+<li>sorted(glob(‘파일명*’))</li>
+<li>pd.concat((pd.read_csv(file))) for file in stock_files), ignore_index=True) : 로 합쳐진 값의 인덱스를 중복되지않게 수정</li>
+<li>ingnore 대신 axis=’columns’ : 여러파일에서 열단위로 DF 빌드</li>
+</ul>
+</li>
+<li>pd.read_clipboard() : 엑셀에서 선택한 클립보드영역을 자동으로 df 빌드</li>
+<li>df.sample() : 전체행을 설정한 비율에따라 두개의 df로 나누기</li>
+<li>df.genre.isin() : 원하는 조건만 선택가능</li>
+<li>df.nlargest() : 가장큰것부터 표시</li>
+<li>pd.~.str.split() : 문자열을 여러열로 분리</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://bong7233.github.io/2021/05/07/AI-Day2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -286,9 +386,24 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-05-07 09:11:41 / Modified: 15:26:31" itemprop="dateCreated datePublished" datetime="2021-05-07T09:11:41+09:00">2021-05-07</time>
+      <time title="Created: 2021-05-07 09:11:41" itemprop="dateCreated datePublished" datetime="2021-05-07T09:11:41+09:00">2021-05-07</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-05-10 15:44:51" itemprop="dateModified" datetime="2021-05-10T15:44:51+09:00">2021-05-10</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Data-science/" itemprop="url" rel="index"><span itemprop="name">Data-science</span></a>
+        </span>
     </span>
 
   
@@ -397,8 +512,17 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-07 09:37:03" itemprop="dateModified" datetime="2021-05-07T09:37:03+09:00">2021-05-07</time>
+        <time title="Modified: 2021-05-10 15:44:50" itemprop="dateModified" datetime="2021-05-10T15:44:50+09:00">2021-05-10</time>
       </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Data-science/" itemprop="url" rel="index"><span itemprop="name">Data-science</span></a>
+        </span>
+    </span>
 
   
 </div>
@@ -632,17 +756,23 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-04-15 21:30:38 / Modified: 22:00:24" itemprop="dateCreated datePublished" datetime="2021-04-15T21:30:38+09:00">2021-04-15</time>
+      <time title="Created: 2021-04-15 21:30:38" itemprop="dateCreated datePublished" datetime="2021-04-15T21:30:38+09:00">2021-04-15</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-05-10 15:44:54" itemprop="dateModified" datetime="2021-05-10T15:44:54+09:00">2021-05-10</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/deep-learning/" itemprop="url" rel="index"><span itemprop="name">deep-learning</span></a>
+          <a href="/categories/Deep-Learning/" itemprop="url" rel="index"><span itemprop="name">Deep-Learning</span></a>
         </span>
     </span>
 
@@ -724,7 +854,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-15 20:47:19" itemprop="dateModified" datetime="2021-04-15T20:47:19+09:00">2021-04-15</time>
+        <time title="Modified: 2021-05-10 15:44:55" itemprop="dateModified" datetime="2021-05-10T15:44:55+09:00">2021-05-10</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -838,7 +968,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-09 01:44:04" itemprop="dateModified" datetime="2021-04-09T01:44:04+09:00">2021-04-09</time>
+        <time title="Modified: 2021-05-10 15:44:49" itemprop="dateModified" datetime="2021-05-10T15:44:49+09:00">2021-05-10</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1043,9 +1173,24 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-04-06 19:41:36 / Modified: 22:17:40" itemprop="dateCreated datePublished" datetime="2021-04-06T19:41:36+09:00">2021-04-06</time>
+      <time title="Created: 2021-04-06 19:41:36" itemprop="dateCreated datePublished" datetime="2021-04-06T19:41:36+09:00">2021-04-06</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-05-10 15:44:53" itemprop="dateModified" datetime="2021-05-10T15:44:53+09:00">2021-05-10</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Deep-Learning/" itemprop="url" rel="index"><span itemprop="name">Deep-Learning</span></a>
+        </span>
     </span>
 
   
