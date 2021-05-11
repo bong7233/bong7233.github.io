@@ -23,18 +23,20 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"bong7233.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="Basic Derivative 기초미분-">
+<meta name="description" content="Basic Derivative 기초미분 미분 : 함수를 작게 나누는것 DS에서의 미분? x를 넣었을때 y값을 예측하는 선형모델을 예로보면 $\hat y &#x3D; a + b X$ 주어진 데이터 X를 넣었을 떄 모델이 예측하는 예측값과 실제값 간의 차이(Error, $\varepsilon$)를 계산한 다음, 여러 모델 중 Error(모델에서 예측하는 예측값과 실제값">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AI-Day4">
 <meta property="og:url" content="http://bong7233.github.io/2021/05/11/AI-Day4/index.html">
 <meta property="og:site_name" content="Bong&#39;s Blog">
-<meta property="og:description" content="Basic Derivative 기초미분-">
+<meta property="og:description" content="Basic Derivative 기초미분 미분 : 함수를 작게 나누는것 DS에서의 미분? x를 넣었을때 y값을 예측하는 선형모델을 예로보면 $\hat y &#x3D; a + b X$ 주어진 데이터 X를 넣었을 떄 모델이 예측하는 예측값과 실제값 간의 차이(Error, $\varepsilon$)를 계산한 다음, 여러 모델 중 Error(모델에서 예측하는 예측값과 실제값">
 <meta property="og:locale">
+<meta property="og:image" content="http://bong7233.github.io/2021/05/11/images/PD.PNG">
 <meta property="article:published_time" content="2021-05-11T00:39:13.000Z">
-<meta property="article:modified_time" content="2021-05-11T08:35:39.242Z">
+<meta property="article:modified_time" content="2021-05-11T10:45:17.262Z">
 <meta property="article:author" content="SangBong Lee">
 <meta property="article:tag" content="Basic Derivative">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://bong7233.github.io/2021/05/11/images/PD.PNG">
 
 
 <link rel="canonical" href="http://bong7233.github.io/2021/05/11/AI-Day4/">
@@ -189,7 +191,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Basic-Derivative-%EA%B8%B0%EC%B4%88%EB%AF%B8%EB%B6%84"><span class="nav-number">1.</span> <span class="nav-text">Basic Derivative 기초미분</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Basic-Derivative-%EA%B8%B0%EC%B4%88%EB%AF%B8%EB%B6%84"><span class="nav-number">1.</span> <span class="nav-text">Basic Derivative 기초미분</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%AF%B8%EB%B6%84-%EA%B3%B5%EC%8B%9D-w-Python"><span class="nav-number">1.1.</span> <span class="nav-text">미분 공식 w&#x2F; Python</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%8E%B8%EB%AF%B8%EB%B6%84-Partial-Derivative"><span class="nav-number">1.2.</span> <span class="nav-text">편미분 Partial Derivative</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chain-Rule"><span class="nav-number">1.3.</span> <span class="nav-text">Chain Rule</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -295,7 +297,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-05-11 09:39:13 / Modified: 17:35:39" itemprop="dateCreated datePublished" datetime="2021-05-11T09:39:13+09:00">2021-05-11</time>
+      <time title="Created: 2021-05-11 09:39:13 / Modified: 19:45:17" itemprop="dateCreated datePublished" datetime="2021-05-11T09:39:13+09:00">2021-05-11</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -317,7 +319,56 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="Basic-Derivative-기초미분"><a href="#Basic-Derivative-기초미분" class="headerlink" title="Basic Derivative 기초미분"></a>Basic Derivative 기초미분</h1><p>- </p>
+        <h1 id="Basic-Derivative-기초미분"><a href="#Basic-Derivative-기초미분" class="headerlink" title="Basic Derivative 기초미분"></a>Basic Derivative 기초미분</h1><ul>
+<li>미분 : 함수를 작게 나누는것</li>
+<li>DS에서의 미분?<ul>
+<li>x를 넣었을때 y값을 예측하는 선형모델을 예로보면</li>
+<li>$\hat y = a + b X$</li>
+<li>주어진 데이터 X를 넣었을 떄 모델이 예측하는 예측값과 실제값 간의 차이(Error, $\varepsilon$)를 계산한 다음, 여러 모델 중 Error(모델에서 예측하는 예측값과 실제값 (y)의 차이)가 가장 작은 모델을 선택하는 방법을 통해, 가장 좋은 모델을 선택할 수 있음</li>
+<li>이 과정은 $f(a,b) = \varepsilon$ 로 표현 될 수 있으며, 오차 함수인 $\varepsilon$을 최소화 하는 $a,b$를 찾는 것이 머신러닝(Linear regression)의 목표</li>
+<li>이 오차함수를 최소화하는 a,b를 찾기위해 미분 사용  </li>
+</ul>
+</li>
+</ul>
+<h2 id="미분-공식-w-Python"><a href="#미분-공식-w-Python" class="headerlink" title="미분 공식 w/ Python"></a>미분 공식 w/ Python</h2><ul>
+<li>기본적으로 미분은 다음의 공식을 활용<ul>
+<li>$f’(x) = {f(x + \Delta x) - f(x) \over \Delta x}$, $\Delta x \rightarrow 0$</li>
+<li>but 실제 0으로 나눌 수 없기때문에 0에 매우근사한 $1e-5$ 을 사용하며, 이러한 접근 방식을 numerical method라 함</li>
+<li>numerical method에서는 조금 더 정확한 측정을 위해 분자에 $f(x + \Delta x) - f(x - \Delta x) \over 2\Delta x$ 를 사용하기도 함  </li>
+</ul>
+</li>
+<li>머신러닝에서 쓰이는 대표적 미분공식들<ul>
+<li>$f(x)$ = 상수 $\rightarrow$ $f’(x)$ = 0<ul>
+<li>f’(x)가 상수 (constant)인 경우는 x를 아무리 늘리거나 줄여도 늘 같은 숫자이기 때문에 변화가 전혀 없음. 즉 변화율이 0이기 때문에 미분계수도 늘 0<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># f(x) &#x3D; 5</span><br><span class="line">def f(x):</span><br><span class="line">    return 5</span><br><span class="line"></span><br><span class="line">def numerical_derivative(fx, x):</span><br><span class="line">    delta_x &#x3D; 1e-5</span><br><span class="line"></span><br><span class="line">    return (fx(x + delta_x) - fx(x)) &#x2F; delta_x</span><br><span class="line">print(numerical_derivative(f, 1))</span><br><span class="line"></span><br><span class="line"># 예시 2 : Scipy의 derivative 활용(도함수를 바로계산해주는 함수)</span><br><span class="line">from scipy.misc import derivative</span><br><span class="line"></span><br><span class="line"># 두 방법의 결과값 비교</span><br><span class="line">derivative(f,1, dx&#x3D;1e-6) &#x3D;&#x3D; numerical_derivative(f, 1)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>$f(x) = ax^{n}$ $\rightarrow$ $f’(x) = an{x}^{(n-1)}$<ul>
+<li>Power Rule로도 알려져있는 미분법</li>
+<li>x 기준으로 n승을 미분할 경우 n을 내려보내서 곱해준 후, 이후에 n승에서 “하나”를 가져왔기 때문에 빼주는 방법  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">def f(x):</span><br><span class="line">    return 3*(x**4) + 10</span><br><span class="line"></span><br><span class="line">def numerical_derivative(fx, x):</span><br><span class="line">    delta_x &#x3D; 1e-5</span><br><span class="line"></span><br><span class="line">    return (fx(x + delta_x) - fx(x)) &#x2F; delta_x</span><br><span class="line"></span><br><span class="line">print(numerical_derivative(f, 2))</span><br><span class="line"></span><br><span class="line"># 예시 2 : Scipy의 derivative 활용</span><br><span class="line">from scipy.misc import derivative</span><br><span class="line"></span><br><span class="line"># 두 방법의 결과값 비교</span><br><span class="line">print(derivative(f,2, dx&#x3D;1e-5))</span><br><span class="line">derivative(f,2, dx&#x3D;1e-5) &#x3D;&#x3D; numerical_derivative(f, 2)  #delta X의 값은 같지만 Rounding 에러로 인해 두 결과가 미묘하게 다르게 나오지만 거의 같음</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>$f(x) = e^x$ $\rightarrow$ $f’(x) = e^x$<ul>
+<li>지수 함수의 경우에는 도함수 역시 지수 함수  </li>
+</ul>
+</li>
+<li>$f(x) = lnx$ $\rightarrow$ $f’(x) = {1 \over x}$<ul>
+<li>자연로그의 미분은 신경망의 활성 함수인 sigmoid 함수를 쉽게 미분할수 있도록 도와줌<ul>
+<li>why? sigmoid 함수에 자연로그를 씌움으로서 미분을 훨씬 수월하게 할 수 있게 되기 때문<h2 id="편미분-Partial-Derivative"><a href="#편미분-Partial-Derivative" class="headerlink" title="편미분 Partial Derivative"></a>편미분 Partial Derivative</h2></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>파라미터가 2개 이상인 Error 함수에서 우선 1개의 파라미터에 대해서만 미분을 하자 라는 목적으로 다른 변수들을 상수 취급 하는 방법  <img src="../images/PD.PNG"></li>
+</ul>
+<h2 id="Chain-Rule"><a href="#Chain-Rule" class="headerlink" title="Chain Rule"></a>Chain Rule</h2><ul>
+<li>**합성함수(함수의 함수)**를 미분하기 위해 사용하는 방식</li>
+<li>$F(x) = f(g(x))$<br>$F’(x)$ $\rightarrow$ $f’((g(x)) \cdot g’(x)$<ul>
+<li>미분할 때 반드시 바깥함수(f(x))부터 미분을 해야함을 기억</li>
+</ul>
+</li>
+</ul>
 
     </div>
 
