@@ -185,75 +185,6 @@
       </tags>
   </entry>
   <entry>
-    <title>AI-Day3</title>
-    <url>/2021/05/10/AI-Day3/</url>
-    <content><![CDATA[<h1 id="Data-Manipulation"><a href="#Data-Manipulation" class="headerlink" title="Data Manipulation"></a>Data Manipulation</h1><h2 id="Warm-up"><a href="#Warm-up" class="headerlink" title="Warm-up"></a>Warm-up</h2><ul>
-<li>Pandas 유용 메서드<ul>
-<li>pd.show_versions() : 여러 툴들의 버전표시</li>
-<li>pd.DataFrame() : DF 생성, parameter 값들은 공식문서 참조</li>
-<li>df.rename(‘a’,’b’) : 열이름 변경 a -&gt; b</li>
-<li>df.loc[::음수] : 열 순서바꾸기<ul>
-<li>df.loc[::음수].reset_index(drop=True) : 색인 초기화(행은 역순이지만)</li>
-</ul>
-</li>
-<li>df.loc[:,::음수] : 열 반전</li>
-<li>df.dtypes() : 타입확인 (parameter에 execlude=’원하는타입’ 으로 선별가능) </li>
-<li>df.apply() : data type 변환</li>
-<li>df.info(memory_usage=’deep’) : DF size 축소 (메모리확보)</li>
-<li>from glob import glob : 여러개의파일을 하나로 합침<ul>
-<li>sorted(glob(‘파일명*’))</li>
-<li>pd.concat((pd.read_csv(file))) for file in stock_files), ignore_index=True) : 로 합쳐진 값의 인덱스를 중복되지않게 수정</li>
-<li>ingnore 대신 axis=’columns’ : 여러파일에서 열단위로 DF 빌드</li>
-</ul>
-</li>
-<li>pd.read_clipboard() : 엑셀에서 선택한 클립보드영역을 자동으로 df 빌드</li>
-<li>df.sample() : 전체행을 설정한 비율에따라 두개의 df로 나누기</li>
-<li>df.genre.isin() : 원하는 조건만 선택가능</li>
-<li>df.nlargest() : 가장큰것부터 표시</li>
-<li>pd.~.str.split() : 문자열을 여러열로 분리</li>
-</ul>
-</li>
-</ul>
-<h2 id="Manipulation-데이터의-조작"><a href="#Manipulation-데이터의-조작" class="headerlink" title="Manipulation, 데이터의 조작"></a>Manipulation, 데이터의 조작</h2><ul>
-<li>데이터가 여러개로 나눠져있으므로 하나로 합칠수 있어야함</li>
-<li>그중 자주사용되는 두가지 concat과 merge에 대해 습득</li>
-<li>string과 dataframe은 조작법이 다름을 주의</li>
-<li>dataframe의 dimension이 같아야 두개를 manipulation 가능<h3 id="concat"><a href="#concat" class="headerlink" title="concat"></a>concat</h3></li>
-<li>pd.concat([x,y],axis=1)<ul>
-<li>두개의 df x와 y, axis=1 이면 열로 붙임, default값은 행으로 붙임<h3 id="maerge"><a href="#maerge" class="headerlink" title="maerge"></a>maerge</h3></li>
-</ul>
-</li>
-<li>concat과 다르게 공통된 부분을 기반으로 합침</li>
-<li>inner-join이외의 option들도 추가적으로 숙지해야함</li>
-<li>df.merge(df2, how=’inner’, on=’종목’)<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 데이터프레임 필터링 예시</span><br><span class="line"></span><br><span class="line"># type cast &#x2F; str-&gt;int</span><br><span class="line">df[&#39;순이익률&#39;] &#x3D; pd.to_numeric(df[&#39;순이익률&#39;])</span><br><span class="line"></span><br><span class="line"># 필터링 조건 (Condition) 설정</span><br><span class="line">condition &#x3D; (df[&#39;순이익률&#39;] &gt; 0) # Type Cast</span><br><span class="line"># () 로 씌우는것에 주의</span><br><span class="line"># and or 등도 사용가능</span><br><span class="line"></span><br><span class="line">## condition 의 값을 출력을 통해 확인해보세요. </span><br><span class="line"></span><br><span class="line"># [ ] 안에 컨디션을 설정하는 것으로, 컨디션의 값이 *TRUE*로 해당하는 부분의 데이터만 선택 할 수 있습니다.</span><br><span class="line">df_subset &#x3D; df[condition]</span><br><span class="line"></span><br><span class="line"># 결과물을 확인</span><br><span class="line">df_subset</span><br></pre></td></tr></table></figure>
-<h3 id="groupby"><a href="#groupby" class="headerlink" title="groupby"></a>groupby</h3></li>
-<li>테마에 따른 순이익률을 보고싶다?</li>
-<li>df.groupby(‘테마’).순이익률.mean()</li>
-</ul>
-<h3 id="Tidy-data"><a href="#Tidy-data" class="headerlink" title="Tidy data"></a>Tidy data</h3><ul>
-<li>쉽게말해 한 row에 한 observation을 다 표현한 data<ul>
-<li>1행 1데이터</li>
-<li>행에는 observation, 열에는 feature</li>
-</ul>
-</li>
-<li>일반적인 데이터는 wide라고 명칭<ul>
-<li>wide -&gt; tidy</li>
-<li>tidy -&gt; wide</li>
-<li>둘다 할 줄 알아야 함</li>
-</ul>
-</li>
-<li>df.melt() 로 tidy 를 조작하는법도 알아야함</li>
-<li>특히 seaborn과같은 시각화 라이브러리에 유용</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Data science</category>
-      </categories>
-      <tags>
-        <tag>Data Manipulation</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>AI-Day2</title>
     <url>/2021/05/07/AI-Day2/</url>
     <content><![CDATA[<h1 id="Feature-Engineering"><a href="#Feature-Engineering" class="headerlink" title="Feature Engineering"></a>Feature Engineering</h1><h2 id="Warm-up"><a href="#Warm-up" class="headerlink" title="Warm up"></a>Warm up</h2><ul>
@@ -301,78 +232,6 @@
       </categories>
       <tags>
         <tag>Feature Engineering</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI-Day5</title>
-    <url>/2021/05/12/AI-Day5/</url>
-    <content><![CDATA[<h1 id="Weekly-review"><a href="#Weekly-review" class="headerlink" title="Weekly review"></a>Weekly review</h1><h2 id="EDA"><a href="#EDA" class="headerlink" title="EDA"></a>EDA</h2><ul>
-<li>데이터를 불러오기<ul>
-<li>Description 을통해 데이터셋에대한 정보파악<ul>
-<li>EDA를 대신해주는거지만, 직접확인하는것이 더 정확</li>
-</ul>
-</li>
-<li>pd.read_csv() 에 대한 완벽한 숙지가 중요</li>
-</ul>
-</li>
-<li>데이터셋 확인하기<ul>
-<li>Graphic , Non-Graphic 을 구분하고 사용할줄 알아야함</li>
-<li>하지만, 자기가 시각화를 한 자료에대해서는 100% 설명할줄 알아야함<ul>
-<li>EDA과정에서 시각화된 자료에대한 코멘트(어떤 insigth를 얻었는지 등등)를 달아보기</li>
-</ul>
-</li>
-<li>Pandas의 메서드들을 외우는건 의미없음<ul>
-<li>여러번 사용해보면서 이런 기능을하는 함수가 있었다라는걸 기억하는것이 중요</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>데이터 전처리도 중요하다는것만 우선 기억  </li>
-</ul>
-<h2 id="Feature-Engineering"><a href="#Feature-Engineering" class="headerlink" title="Feature Engineering"></a>Feature Engineering</h2><ul>
-<li>데이터를 보다 확인하기 좋은 형태로 다듬는것이 목적<ul>
-<li>기존의 feature들을 조합하여 새로운 feature를 만드는것</li>
-<li>도메인지식과 창의성이 중요</li>
-</ul>
-</li>
-<li>DataFrame, DataSet 이해<ul>
-<li>결측치들(Na,Null,NaN,0,Undefined)의 차이를 알기</li>
-</ul>
-</li>
-<li>typecasting, 특히 string-&gt;int가 매우 중요하고 많이쓰임<ul>
-<li>replace,apply,astype 등의 다양한 방법이 존재하므로 정확히 의도대로 사용할 줄 알아야함  </li>
-</ul>
-</li>
-</ul>
-<h2 id="Data-Manipulation"><a href="#Data-Manipulation" class="headerlink" title="Data Manipulation"></a>Data Manipulation</h2><ul>
-<li>concat과 merge를 구분하고 사용할줄 알아야함<ul>
-<li>단순히 합치는법을 알기보다는 원하는 shape으로 만들어낼줄 아는것이 중요</li>
-</ul>
-</li>
-<li>wide &amp; tidy<ul>
-<li>각각의 형태가 언제 유용하고 확인하기 좋은가를 구분할줄 알아야함</li>
-<li>data를보고 어떤형태인지도 유추할수 있다면 best</li>
-<li>melt() &amp; pivot_table() 를 적절하게 사용할 줄 알아야함</li>
-</ul>
-</li>
-<li>pandas styling <ul>
-<li>나중에 알고있다면 좋은것</li>
-</ul>
-</li>
-</ul>
-<h2 id="Basic-derivative"><a href="#Basic-derivative" class="headerlink" title="Basic derivative"></a>Basic derivative</h2><ul>
-<li>미분에 대한 개념은 매우중요하지만, 직접미분을 해야하는경우는 드물다<ul>
-<li>다양한 미분 공식들을 알아야 알고리즘에대해 이해하고 사용할 수 있음</li>
-</ul>
-</li>
-<li>경사하강법은 뒤로갈수록 중요한 개념이므로 꾸준히 공부하고 이해할수록 좋음</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Data science</category>
-      </categories>
-      <tags>
-        <tag>Weekly reveiw</tag>
       </tags>
   </entry>
   <entry>
@@ -446,6 +305,147 @@
       </categories>
       <tags>
         <tag>Basic Derivative</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI-Day3</title>
+    <url>/2021/05/10/AI-Day3/</url>
+    <content><![CDATA[<h1 id="Data-Manipulation"><a href="#Data-Manipulation" class="headerlink" title="Data Manipulation"></a>Data Manipulation</h1><h2 id="Warm-up"><a href="#Warm-up" class="headerlink" title="Warm-up"></a>Warm-up</h2><ul>
+<li>Pandas 유용 메서드<ul>
+<li>pd.show_versions() : 여러 툴들의 버전표시</li>
+<li>pd.DataFrame() : DF 생성, parameter 값들은 공식문서 참조</li>
+<li>df.rename(‘a’,’b’) : 열이름 변경 a -&gt; b</li>
+<li>df.loc[::음수] : 열 순서바꾸기<ul>
+<li>df.loc[::음수].reset_index(drop=True) : 색인 초기화(행은 역순이지만)</li>
+</ul>
+</li>
+<li>df.loc[:,::음수] : 열 반전</li>
+<li>df.dtypes() : 타입확인 (parameter에 execlude=’원하는타입’ 으로 선별가능) </li>
+<li>df.apply() : data type 변환</li>
+<li>df.info(memory_usage=’deep’) : DF size 축소 (메모리확보)</li>
+<li>from glob import glob : 여러개의파일을 하나로 합침<ul>
+<li>sorted(glob(‘파일명*’))</li>
+<li>pd.concat((pd.read_csv(file))) for file in stock_files), ignore_index=True) : 로 합쳐진 값의 인덱스를 중복되지않게 수정</li>
+<li>ingnore 대신 axis=’columns’ : 여러파일에서 열단위로 DF 빌드</li>
+</ul>
+</li>
+<li>pd.read_clipboard() : 엑셀에서 선택한 클립보드영역을 자동으로 df 빌드</li>
+<li>df.sample() : 전체행을 설정한 비율에따라 두개의 df로 나누기</li>
+<li>df.genre.isin() : 원하는 조건만 선택가능</li>
+<li>df.nlargest() : 가장큰것부터 표시</li>
+<li>pd.~.str.split() : 문자열을 여러열로 분리</li>
+</ul>
+</li>
+</ul>
+<h2 id="Manipulation-데이터의-조작"><a href="#Manipulation-데이터의-조작" class="headerlink" title="Manipulation, 데이터의 조작"></a>Manipulation, 데이터의 조작</h2><ul>
+<li>데이터가 여러개로 나눠져있으므로 하나로 합칠수 있어야함</li>
+<li>그중 자주사용되는 두가지 concat과 merge에 대해 습득</li>
+<li>string과 dataframe은 조작법이 다름을 주의</li>
+<li>dataframe의 dimension이 같아야 두개를 manipulation 가능<h3 id="concat"><a href="#concat" class="headerlink" title="concat"></a>concat</h3></li>
+<li>pd.concat([x,y],axis=1)<ul>
+<li>두개의 df x와 y, axis=1 이면 열로 붙임, default값은 행으로 붙임<h3 id="maerge"><a href="#maerge" class="headerlink" title="maerge"></a>maerge</h3></li>
+</ul>
+</li>
+<li>concat과 다르게 공통된 부분을 기반으로 합침</li>
+<li>inner-join이외의 option들도 추가적으로 숙지해야함</li>
+<li>df.merge(df2, how=’inner’, on=’종목’)<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 데이터프레임 필터링 예시</span><br><span class="line"></span><br><span class="line"># type cast &#x2F; str-&gt;int</span><br><span class="line">df[&#39;순이익률&#39;] &#x3D; pd.to_numeric(df[&#39;순이익률&#39;])</span><br><span class="line"></span><br><span class="line"># 필터링 조건 (Condition) 설정</span><br><span class="line">condition &#x3D; (df[&#39;순이익률&#39;] &gt; 0) # Type Cast</span><br><span class="line"># () 로 씌우는것에 주의</span><br><span class="line"># and or 등도 사용가능</span><br><span class="line"></span><br><span class="line">## condition 의 값을 출력을 통해 확인해보세요. </span><br><span class="line"></span><br><span class="line"># [ ] 안에 컨디션을 설정하는 것으로, 컨디션의 값이 *TRUE*로 해당하는 부분의 데이터만 선택 할 수 있습니다.</span><br><span class="line">df_subset &#x3D; df[condition]</span><br><span class="line"></span><br><span class="line"># 결과물을 확인</span><br><span class="line">df_subset</span><br></pre></td></tr></table></figure>
+<h3 id="groupby"><a href="#groupby" class="headerlink" title="groupby"></a>groupby</h3></li>
+<li>테마에 따른 순이익률을 보고싶다?</li>
+<li>df.groupby(‘테마’).순이익률.mean()</li>
+</ul>
+<h3 id="Tidy-data"><a href="#Tidy-data" class="headerlink" title="Tidy data"></a>Tidy data</h3><ul>
+<li>쉽게말해 한 row에 한 observation을 다 표현한 data<ul>
+<li>1행 1데이터</li>
+<li>행에는 observation, 열에는 feature</li>
+</ul>
+</li>
+<li>일반적인 데이터는 wide라고 명칭<ul>
+<li>wide -&gt; tidy</li>
+<li>tidy -&gt; wide</li>
+<li>둘다 할 줄 알아야 함</li>
+</ul>
+</li>
+<li>df.melt() 로 tidy 를 조작하는법도 알아야함</li>
+<li>특히 seaborn과같은 시각화 라이브러리에 유용</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Data science</category>
+      </categories>
+      <tags>
+        <tag>Data Manipulation</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI-Day5</title>
+    <url>/2021/05/12/AI-Day5/</url>
+    <content><![CDATA[<h1 id="Weekly-review"><a href="#Weekly-review" class="headerlink" title="Weekly review"></a>Weekly review</h1><h2 id="EDA"><a href="#EDA" class="headerlink" title="EDA"></a>EDA</h2><ul>
+<li>데이터를 불러오기<ul>
+<li>Description 을통해 데이터셋에대한 정보파악<ul>
+<li>EDA를 대신해주는거지만, 직접확인하는것이 더 정확</li>
+</ul>
+</li>
+<li>pd.read_csv() 에 대한 완벽한 숙지가 중요</li>
+</ul>
+</li>
+<li>데이터셋 확인하기<ul>
+<li>Graphic , Non-Graphic 을 구분하고 사용할줄 알아야함</li>
+<li>하지만, 자기가 시각화를 한 자료에대해서는 100% 설명할줄 알아야함<ul>
+<li>EDA과정에서 시각화된 자료에대한 코멘트(어떤 insigth를 얻었는지 등등)를 달아보기</li>
+</ul>
+</li>
+<li>Pandas의 메서드들을 외우는건 의미없음<ul>
+<li>여러번 사용해보면서 이런 기능을하는 함수가 있었다라는걸 기억하는것이 중요</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>데이터 전처리도 중요하다는것만 우선 기억  </li>
+</ul>
+<h2 id="Feature-Engineering"><a href="#Feature-Engineering" class="headerlink" title="Feature Engineering"></a>Feature Engineering</h2><ul>
+<li>데이터를 보다 확인하기 좋은 형태로 다듬는것이 목적<ul>
+<li>기존의 feature들을 조합하여 새로운 feature를 만드는것</li>
+<li>도메인지식과 창의성이 중요</li>
+</ul>
+</li>
+<li>DataFrame, DataSet 이해<ul>
+<li>결측치들(Na,Null,NaN,0,Undefined)의 차이를 알기</li>
+</ul>
+</li>
+<li>typecasting, 특히 string-&gt;int가 매우 중요하고 많이쓰임<ul>
+<li>replace,apply,astype 등의 다양한 방법이 존재하므로 정확히 의도대로 사용할 줄 알아야함  </li>
+</ul>
+</li>
+</ul>
+<h2 id="Data-Manipulation"><a href="#Data-Manipulation" class="headerlink" title="Data Manipulation"></a>Data Manipulation</h2><ul>
+<li>concat과 merge를 구분하고 사용할줄 알아야함<ul>
+<li>단순히 합치는법을 알기보다는 원하는 shape으로 만들어낼줄 아는것이 중요</li>
+</ul>
+</li>
+<li>wide &amp; tidy<ul>
+<li>각각의 형태가 언제 유용하고 확인하기 좋은가를 구분할줄 알아야함</li>
+<li>data를보고 어떤형태인지도 유추할수 있다면 best</li>
+<li>melt() &amp; pivot_table() 를 적절하게 사용할 줄 알아야함</li>
+</ul>
+</li>
+<li>pandas styling <ul>
+<li>나중에 알고있다면 좋은것</li>
+</ul>
+</li>
+</ul>
+<h2 id="Basic-derivative"><a href="#Basic-derivative" class="headerlink" title="Basic derivative"></a>Basic derivative</h2><ul>
+<li>미분에 대한 개념은 매우중요하지만, 직접미분을 해야하는경우는 드물다<ul>
+<li>다양한 미분 공식들을 알아야 알고리즘에대해 이해하고 사용할 수 있음</li>
+</ul>
+</li>
+<li>경사하강법은 뒤로갈수록 중요한 개념이므로 꾸준히 공부하고 이해할수록 좋음</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Data science</category>
+      </categories>
+      <tags>
+        <tag>Weekly reveiw</tag>
       </tags>
   </entry>
   <entry>
@@ -599,7 +599,7 @@
 </li>
 <li>FDR (false discovery rate) ?</li>
 <li>P-value Q-value? <a href="https://doooob.tistory.com/101">https://doooob.tistory.com/101</a></li>
-<li>t-test ? <a href="https://www.youtube.com/watch?v=mEWQ_vl3IPw&amp;list=PLalb9l0_6WArHh18Plrn8uIGBUKalqsf-&amp;index=1">https://www.youtube.com/watch?v=mEWQ_vl3IPw&amp;list=PLalb9l0_6WArHh18Plrn8uIGBUKalqsf-&amp;index=1</a></li>
+<li>t-test <a href="https://www.youtube.com/watch?v=mEWQ_vl3IPw&amp;list=PLalb9l0_6WArHh18Plrn8uIGBUKalqsf-&amp;index=1">https://www.youtube.com/watch?v=mEWQ_vl3IPw&amp;list=PLalb9l0_6WArHh18Plrn8uIGBUKalqsf-&amp;index=1</a></li>
 </ul>
 ]]></content>
       <categories>
@@ -610,15 +610,49 @@
       </tags>
   </entry>
   <entry>
-    <title>AI-day7</title>
-    <url>/2021/05/14/AI-day7/</url>
-    <content><![CDATA[<h1 id="Other-Hypothesis-Testing"><a href="#Other-Hypothesis-Testing" class="headerlink" title="Other Hypothesis Testing"></a>Other Hypothesis Testing</h1><p>- </p>
+    <title>PyTorch</title>
+    <url>/2021/04/09/PyTorch/</url>
+    <content><![CDATA[<h1 id="PyTorch"><a href="#PyTorch" class="headerlink" title="PyTorch"></a>PyTorch</h1><ul>
+<li>최근 TensorFlow 보다 높은 인지도와 실용성으로 성장중</li>
+<li>NumPy와 매우 비슷한 문법</li>
+<li>동적으로 back-propagation 경로 생성가능</li>
+<li>documentation 완벽(이것만으로도 충분히 마스터가능함)</li>
+<li>난이도 적당, 자유도 높음</li>
+<li>But TensorFlow 에 비해 낮은 상용화 지원</li>
+</ul>
+<h2 id="PyTorch-설치"><a href="#PyTorch-설치" class="headerlink" title="PyTorch 설치"></a>PyTorch 설치</h2><ul>
+<li>Windows 사용중이므로 PyTorch와 CUDA도 같이 설치</li>
+</ul>
+<h2 id="Data-Set"><a href="#Data-Set" class="headerlink" title="Data Set"></a>Data Set</h2><ul>
+<li>Tabular Dataset<ul>
+<li>가장 많이 활용되는 table형태</li>
+<li>엑셀파일이라고 생각하면 쉬움</li>
+<li>한 row가 한개의 sample</li>
+<li>Column 갯수가 백터의 차원</li>
+</ul>
+</li>
+</ul>
+<h2 id="Tensor"><a href="#Tensor" class="headerlink" title="Tensor"></a>Tensor</h2><ul>
+<li><p> 하나의 정보 (점) : scalar</p>
+</li>
+<li><p> 1차원 배열,리스트: vector</p>
+</li>
+<li><p> 2차원 배열,행렬  : matrix</p>
+</li>
+<li><p>3차원 ~ n차원    : tensor</p>
+<ul>
+<li>tensor 는 육면체의 형태  <p align="left"><img src="../images/tensor_shape.PNG" width="400" height="300"></p></li>
+</ul>
+</li>
+<li><p>NLP,ComputerVision 에서도 Tensor형태로 시각화 가능</p>
+</li>
+</ul>
 ]]></content>
       <categories>
-        <category>Data science</category>
+        <category>Deep-Learning</category>
       </categories>
       <tags>
-        <tag>hypothesis statistics</tag>
+        <tag>PyTorch</tag>
       </tags>
   </entry>
   <entry>
@@ -783,6 +817,24 @@
       </tags>
   </entry>
   <entry>
+    <title>AI-day7</title>
+    <url>/2021/05/14/AI-day7/</url>
+    <content><![CDATA[<h1 id="다양한-가설검정방법"><a href="#다양한-가설검정방법" class="headerlink" title="다양한 가설검정방법"></a>다양한 가설검정방법</h1><ul>
+<li>t-test를 위한 조건알기</li>
+<li>t-test 이외의 가설검정방법 익히기</li>
+<li>Type of Error 구분할줄 알기</li>
+<li>X<sup>2-test</sup>의 목적과 사용예시알기</li>
+<li>모수통계, 비모수통계 차이 파악하기</li>
+</ul>
+<h2 id="T-test"><a href="#T-test" class="headerlink" title="T-test +"></a>T-test +</h2>]]></content>
+      <categories>
+        <category>Data science</category>
+      </categories>
+      <tags>
+        <tag>hypothesis statistics</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>딥러닝기초</title>
     <url>/2021/04/06/%EB%94%A5%EB%9F%AC%EB%8B%9D%EA%B8%B0%EC%B4%88/</url>
     <content><![CDATA[<h1 id="딥러닝-사전기초지식"><a href="#딥러닝-사전기초지식" class="headerlink" title="딥러닝 사전기초지식"></a>딥러닝 사전기초지식</h1><ul>
@@ -935,52 +987,6 @@
       </categories>
       <tags>
         <tag>deeplearning-basic</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PyTorch</title>
-    <url>/2021/04/09/PyTorch/</url>
-    <content><![CDATA[<h1 id="PyTorch"><a href="#PyTorch" class="headerlink" title="PyTorch"></a>PyTorch</h1><ul>
-<li>최근 TensorFlow 보다 높은 인지도와 실용성으로 성장중</li>
-<li>NumPy와 매우 비슷한 문법</li>
-<li>동적으로 back-propagation 경로 생성가능</li>
-<li>documentation 완벽(이것만으로도 충분히 마스터가능함)</li>
-<li>난이도 적당, 자유도 높음</li>
-<li>But TensorFlow 에 비해 낮은 상용화 지원</li>
-</ul>
-<h2 id="PyTorch-설치"><a href="#PyTorch-설치" class="headerlink" title="PyTorch 설치"></a>PyTorch 설치</h2><ul>
-<li>Windows 사용중이므로 PyTorch와 CUDA도 같이 설치</li>
-</ul>
-<h2 id="Data-Set"><a href="#Data-Set" class="headerlink" title="Data Set"></a>Data Set</h2><ul>
-<li>Tabular Dataset<ul>
-<li>가장 많이 활용되는 table형태</li>
-<li>엑셀파일이라고 생각하면 쉬움</li>
-<li>한 row가 한개의 sample</li>
-<li>Column 갯수가 백터의 차원</li>
-</ul>
-</li>
-</ul>
-<h2 id="Tensor"><a href="#Tensor" class="headerlink" title="Tensor"></a>Tensor</h2><ul>
-<li><p> 하나의 정보 (점) : scalar</p>
-</li>
-<li><p> 1차원 배열,리스트: vector</p>
-</li>
-<li><p> 2차원 배열,행렬  : matrix</p>
-</li>
-<li><p>3차원 ~ n차원    : tensor</p>
-<ul>
-<li>tensor 는 육면체의 형태  <p align="left"><img src="../images/tensor_shape.PNG" width="400" height="300"></p></li>
-</ul>
-</li>
-<li><p>NLP,ComputerVision 에서도 Tensor형태로 시각화 가능</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Deep-Learning</category>
-      </categories>
-      <tags>
-        <tag>PyTorch</tag>
       </tags>
   </entry>
   <entry>
