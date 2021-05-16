@@ -185,6 +185,75 @@
       </tags>
   </entry>
   <entry>
+    <title>AI-Day3</title>
+    <url>/2021/05/10/AI-Day3/</url>
+    <content><![CDATA[<h1 id="Data-Manipulation"><a href="#Data-Manipulation" class="headerlink" title="Data Manipulation"></a>Data Manipulation</h1><h2 id="Warm-up"><a href="#Warm-up" class="headerlink" title="Warm-up"></a>Warm-up</h2><ul>
+<li>Pandas 유용 메서드<ul>
+<li>pd.show_versions() : 여러 툴들의 버전표시</li>
+<li>pd.DataFrame() : DF 생성, parameter 값들은 공식문서 참조</li>
+<li>df.rename(‘a’,’b’) : 열이름 변경 a -&gt; b</li>
+<li>df.loc[::음수] : 열 순서바꾸기<ul>
+<li>df.loc[::음수].reset_index(drop=True) : 색인 초기화(행은 역순이지만)</li>
+</ul>
+</li>
+<li>df.loc[:,::음수] : 열 반전</li>
+<li>df.dtypes() : 타입확인 (parameter에 execlude=’원하는타입’ 으로 선별가능) </li>
+<li>df.apply() : data type 변환</li>
+<li>df.info(memory_usage=’deep’) : DF size 축소 (메모리확보)</li>
+<li>from glob import glob : 여러개의파일을 하나로 합침<ul>
+<li>sorted(glob(‘파일명*’))</li>
+<li>pd.concat((pd.read_csv(file))) for file in stock_files), ignore_index=True) : 로 합쳐진 값의 인덱스를 중복되지않게 수정</li>
+<li>ingnore 대신 axis=’columns’ : 여러파일에서 열단위로 DF 빌드</li>
+</ul>
+</li>
+<li>pd.read_clipboard() : 엑셀에서 선택한 클립보드영역을 자동으로 df 빌드</li>
+<li>df.sample() : 전체행을 설정한 비율에따라 두개의 df로 나누기</li>
+<li>df.genre.isin() : 원하는 조건만 선택가능</li>
+<li>df.nlargest() : 가장큰것부터 표시</li>
+<li>pd.~.str.split() : 문자열을 여러열로 분리</li>
+</ul>
+</li>
+</ul>
+<h2 id="Manipulation-데이터의-조작"><a href="#Manipulation-데이터의-조작" class="headerlink" title="Manipulation, 데이터의 조작"></a>Manipulation, 데이터의 조작</h2><ul>
+<li>데이터가 여러개로 나눠져있으므로 하나로 합칠수 있어야함</li>
+<li>그중 자주사용되는 두가지 concat과 merge에 대해 습득</li>
+<li>string과 dataframe은 조작법이 다름을 주의</li>
+<li>dataframe의 dimension이 같아야 두개를 manipulation 가능<h3 id="concat"><a href="#concat" class="headerlink" title="concat"></a>concat</h3></li>
+<li>pd.concat([x,y],axis=1)<ul>
+<li>두개의 df x와 y, axis=1 이면 열로 붙임, default값은 행으로 붙임<h3 id="maerge"><a href="#maerge" class="headerlink" title="maerge"></a>maerge</h3></li>
+</ul>
+</li>
+<li>concat과 다르게 공통된 부분을 기반으로 합침</li>
+<li>inner-join이외의 option들도 추가적으로 숙지해야함</li>
+<li>df.merge(df2, how=’inner’, on=’종목’)<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 데이터프레임 필터링 예시</span><br><span class="line"></span><br><span class="line"># type cast &#x2F; str-&gt;int</span><br><span class="line">df[&#39;순이익률&#39;] &#x3D; pd.to_numeric(df[&#39;순이익률&#39;])</span><br><span class="line"></span><br><span class="line"># 필터링 조건 (Condition) 설정</span><br><span class="line">condition &#x3D; (df[&#39;순이익률&#39;] &gt; 0) # Type Cast</span><br><span class="line"># () 로 씌우는것에 주의</span><br><span class="line"># and or 등도 사용가능</span><br><span class="line"></span><br><span class="line">## condition 의 값을 출력을 통해 확인해보세요. </span><br><span class="line"></span><br><span class="line"># [ ] 안에 컨디션을 설정하는 것으로, 컨디션의 값이 *TRUE*로 해당하는 부분의 데이터만 선택 할 수 있습니다.</span><br><span class="line">df_subset &#x3D; df[condition]</span><br><span class="line"></span><br><span class="line"># 결과물을 확인</span><br><span class="line">df_subset</span><br></pre></td></tr></table></figure>
+<h3 id="groupby"><a href="#groupby" class="headerlink" title="groupby"></a>groupby</h3></li>
+<li>테마에 따른 순이익률을 보고싶다?</li>
+<li>df.groupby(‘테마’).순이익률.mean()</li>
+</ul>
+<h3 id="Tidy-data"><a href="#Tidy-data" class="headerlink" title="Tidy data"></a>Tidy data</h3><ul>
+<li>쉽게말해 한 row에 한 observation을 다 표현한 data<ul>
+<li>1행 1데이터</li>
+<li>행에는 observation, 열에는 feature</li>
+</ul>
+</li>
+<li>일반적인 데이터는 wide라고 명칭<ul>
+<li>wide -&gt; tidy</li>
+<li>tidy -&gt; wide</li>
+<li>둘다 할 줄 알아야 함</li>
+</ul>
+</li>
+<li>df.melt() 로 tidy 를 조작하는법도 알아야함</li>
+<li>특히 seaborn과같은 시각화 라이브러리에 유용</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Data science</category>
+      </categories>
+      <tags>
+        <tag>Data Manipulation</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AI-Day2</title>
     <url>/2021/05/07/AI-Day2/</url>
     <content><![CDATA[<h1 id="Feature-Engineering"><a href="#Feature-Engineering" class="headerlink" title="Feature Engineering"></a>Feature Engineering</h1><h2 id="Warm-up"><a href="#Warm-up" class="headerlink" title="Warm up"></a>Warm up</h2><ul>
@@ -305,75 +374,6 @@
       </categories>
       <tags>
         <tag>Basic Derivative</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI-Day3</title>
-    <url>/2021/05/10/AI-Day3/</url>
-    <content><![CDATA[<h1 id="Data-Manipulation"><a href="#Data-Manipulation" class="headerlink" title="Data Manipulation"></a>Data Manipulation</h1><h2 id="Warm-up"><a href="#Warm-up" class="headerlink" title="Warm-up"></a>Warm-up</h2><ul>
-<li>Pandas 유용 메서드<ul>
-<li>pd.show_versions() : 여러 툴들의 버전표시</li>
-<li>pd.DataFrame() : DF 생성, parameter 값들은 공식문서 참조</li>
-<li>df.rename(‘a’,’b’) : 열이름 변경 a -&gt; b</li>
-<li>df.loc[::음수] : 열 순서바꾸기<ul>
-<li>df.loc[::음수].reset_index(drop=True) : 색인 초기화(행은 역순이지만)</li>
-</ul>
-</li>
-<li>df.loc[:,::음수] : 열 반전</li>
-<li>df.dtypes() : 타입확인 (parameter에 execlude=’원하는타입’ 으로 선별가능) </li>
-<li>df.apply() : data type 변환</li>
-<li>df.info(memory_usage=’deep’) : DF size 축소 (메모리확보)</li>
-<li>from glob import glob : 여러개의파일을 하나로 합침<ul>
-<li>sorted(glob(‘파일명*’))</li>
-<li>pd.concat((pd.read_csv(file))) for file in stock_files), ignore_index=True) : 로 합쳐진 값의 인덱스를 중복되지않게 수정</li>
-<li>ingnore 대신 axis=’columns’ : 여러파일에서 열단위로 DF 빌드</li>
-</ul>
-</li>
-<li>pd.read_clipboard() : 엑셀에서 선택한 클립보드영역을 자동으로 df 빌드</li>
-<li>df.sample() : 전체행을 설정한 비율에따라 두개의 df로 나누기</li>
-<li>df.genre.isin() : 원하는 조건만 선택가능</li>
-<li>df.nlargest() : 가장큰것부터 표시</li>
-<li>pd.~.str.split() : 문자열을 여러열로 분리</li>
-</ul>
-</li>
-</ul>
-<h2 id="Manipulation-데이터의-조작"><a href="#Manipulation-데이터의-조작" class="headerlink" title="Manipulation, 데이터의 조작"></a>Manipulation, 데이터의 조작</h2><ul>
-<li>데이터가 여러개로 나눠져있으므로 하나로 합칠수 있어야함</li>
-<li>그중 자주사용되는 두가지 concat과 merge에 대해 습득</li>
-<li>string과 dataframe은 조작법이 다름을 주의</li>
-<li>dataframe의 dimension이 같아야 두개를 manipulation 가능<h3 id="concat"><a href="#concat" class="headerlink" title="concat"></a>concat</h3></li>
-<li>pd.concat([x,y],axis=1)<ul>
-<li>두개의 df x와 y, axis=1 이면 열로 붙임, default값은 행으로 붙임<h3 id="maerge"><a href="#maerge" class="headerlink" title="maerge"></a>maerge</h3></li>
-</ul>
-</li>
-<li>concat과 다르게 공통된 부분을 기반으로 합침</li>
-<li>inner-join이외의 option들도 추가적으로 숙지해야함</li>
-<li>df.merge(df2, how=’inner’, on=’종목’)<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 데이터프레임 필터링 예시</span><br><span class="line"></span><br><span class="line"># type cast &#x2F; str-&gt;int</span><br><span class="line">df[&#39;순이익률&#39;] &#x3D; pd.to_numeric(df[&#39;순이익률&#39;])</span><br><span class="line"></span><br><span class="line"># 필터링 조건 (Condition) 설정</span><br><span class="line">condition &#x3D; (df[&#39;순이익률&#39;] &gt; 0) # Type Cast</span><br><span class="line"># () 로 씌우는것에 주의</span><br><span class="line"># and or 등도 사용가능</span><br><span class="line"></span><br><span class="line">## condition 의 값을 출력을 통해 확인해보세요. </span><br><span class="line"></span><br><span class="line"># [ ] 안에 컨디션을 설정하는 것으로, 컨디션의 값이 *TRUE*로 해당하는 부분의 데이터만 선택 할 수 있습니다.</span><br><span class="line">df_subset &#x3D; df[condition]</span><br><span class="line"></span><br><span class="line"># 결과물을 확인</span><br><span class="line">df_subset</span><br></pre></td></tr></table></figure>
-<h3 id="groupby"><a href="#groupby" class="headerlink" title="groupby"></a>groupby</h3></li>
-<li>테마에 따른 순이익률을 보고싶다?</li>
-<li>df.groupby(‘테마’).순이익률.mean()</li>
-</ul>
-<h3 id="Tidy-data"><a href="#Tidy-data" class="headerlink" title="Tidy data"></a>Tidy data</h3><ul>
-<li>쉽게말해 한 row에 한 observation을 다 표현한 data<ul>
-<li>1행 1데이터</li>
-<li>행에는 observation, 열에는 feature</li>
-</ul>
-</li>
-<li>일반적인 데이터는 wide라고 명칭<ul>
-<li>wide -&gt; tidy</li>
-<li>tidy -&gt; wide</li>
-<li>둘다 할 줄 알아야 함</li>
-</ul>
-</li>
-<li>df.melt() 로 tidy 를 조작하는법도 알아야함</li>
-<li>특히 seaborn과같은 시각화 라이브러리에 유용</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Data science</category>
-      </categories>
-      <tags>
-        <tag>Data Manipulation</tag>
       </tags>
   </entry>
   <entry>
@@ -610,52 +610,6 @@
       </tags>
   </entry>
   <entry>
-    <title>PyTorch</title>
-    <url>/2021/04/09/PyTorch/</url>
-    <content><![CDATA[<h1 id="PyTorch"><a href="#PyTorch" class="headerlink" title="PyTorch"></a>PyTorch</h1><ul>
-<li>최근 TensorFlow 보다 높은 인지도와 실용성으로 성장중</li>
-<li>NumPy와 매우 비슷한 문법</li>
-<li>동적으로 back-propagation 경로 생성가능</li>
-<li>documentation 완벽(이것만으로도 충분히 마스터가능함)</li>
-<li>난이도 적당, 자유도 높음</li>
-<li>But TensorFlow 에 비해 낮은 상용화 지원</li>
-</ul>
-<h2 id="PyTorch-설치"><a href="#PyTorch-설치" class="headerlink" title="PyTorch 설치"></a>PyTorch 설치</h2><ul>
-<li>Windows 사용중이므로 PyTorch와 CUDA도 같이 설치</li>
-</ul>
-<h2 id="Data-Set"><a href="#Data-Set" class="headerlink" title="Data Set"></a>Data Set</h2><ul>
-<li>Tabular Dataset<ul>
-<li>가장 많이 활용되는 table형태</li>
-<li>엑셀파일이라고 생각하면 쉬움</li>
-<li>한 row가 한개의 sample</li>
-<li>Column 갯수가 백터의 차원</li>
-</ul>
-</li>
-</ul>
-<h2 id="Tensor"><a href="#Tensor" class="headerlink" title="Tensor"></a>Tensor</h2><ul>
-<li><p> 하나의 정보 (점) : scalar</p>
-</li>
-<li><p> 1차원 배열,리스트: vector</p>
-</li>
-<li><p> 2차원 배열,행렬  : matrix</p>
-</li>
-<li><p>3차원 ~ n차원    : tensor</p>
-<ul>
-<li>tensor 는 육면체의 형태  <p align="left"><img src="../images/tensor_shape.PNG" width="400" height="300"></p></li>
-</ul>
-</li>
-<li><p>NLP,ComputerVision 에서도 Tensor형태로 시각화 가능</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Deep-Learning</category>
-      </categories>
-      <tags>
-        <tag>PyTorch</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>DataScience</title>
     <url>/2021/04/06/DataScience/</url>
     <content><![CDATA[<h1 id="데이터사이언스-시작한-이유"><a href="#데이터사이언스-시작한-이유" class="headerlink" title="데이터사이언스 시작한 이유?"></a>데이터사이언스 시작한 이유?</h1><ul>
@@ -817,6 +771,52 @@
       </tags>
   </entry>
   <entry>
+    <title>PyTorch</title>
+    <url>/2021/04/09/PyTorch/</url>
+    <content><![CDATA[<h1 id="PyTorch"><a href="#PyTorch" class="headerlink" title="PyTorch"></a>PyTorch</h1><ul>
+<li>최근 TensorFlow 보다 높은 인지도와 실용성으로 성장중</li>
+<li>NumPy와 매우 비슷한 문법</li>
+<li>동적으로 back-propagation 경로 생성가능</li>
+<li>documentation 완벽(이것만으로도 충분히 마스터가능함)</li>
+<li>난이도 적당, 자유도 높음</li>
+<li>But TensorFlow 에 비해 낮은 상용화 지원</li>
+</ul>
+<h2 id="PyTorch-설치"><a href="#PyTorch-설치" class="headerlink" title="PyTorch 설치"></a>PyTorch 설치</h2><ul>
+<li>Windows 사용중이므로 PyTorch와 CUDA도 같이 설치</li>
+</ul>
+<h2 id="Data-Set"><a href="#Data-Set" class="headerlink" title="Data Set"></a>Data Set</h2><ul>
+<li>Tabular Dataset<ul>
+<li>가장 많이 활용되는 table형태</li>
+<li>엑셀파일이라고 생각하면 쉬움</li>
+<li>한 row가 한개의 sample</li>
+<li>Column 갯수가 백터의 차원</li>
+</ul>
+</li>
+</ul>
+<h2 id="Tensor"><a href="#Tensor" class="headerlink" title="Tensor"></a>Tensor</h2><ul>
+<li><p> 하나의 정보 (점) : scalar</p>
+</li>
+<li><p> 1차원 배열,리스트: vector</p>
+</li>
+<li><p> 2차원 배열,행렬  : matrix</p>
+</li>
+<li><p>3차원 ~ n차원    : tensor</p>
+<ul>
+<li>tensor 는 육면체의 형태  <p align="left"><img src="../images/tensor_shape.PNG" width="400" height="300"></p></li>
+</ul>
+</li>
+<li><p>NLP,ComputerVision 에서도 Tensor형태로 시각화 가능</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Deep-Learning</category>
+      </categories>
+      <tags>
+        <tag>PyTorch</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AI-day7</title>
     <url>/2021/05/14/AI-day7/</url>
     <content><![CDATA[<h1 id="다양한-가설검정방법"><a href="#다양한-가설검정방법" class="headerlink" title="다양한 가설검정방법"></a>다양한 가설검정방법</h1><ul>
@@ -826,12 +826,149 @@
 <li>X<sup>2-test</sup>의 목적과 사용예시알기</li>
 <li>모수통계, 비모수통계 차이 파악하기</li>
 </ul>
-<h2 id="T-test"><a href="#T-test" class="headerlink" title="T-test +"></a>T-test +</h2>]]></content>
+<h2 id="T-test"><a href="#T-test" class="headerlink" title="T-test +"></a>T-test +</h2><ul>
+<li>T-test의 선행조건 3가지<ul>
+<li>독립성 : 두 그룹의 연관성이 없어야함</li>
+<li>정규성 : 데이터가 정규성을 나타내야함<ul>
+<li>scipy.stats.normaltest()</li>
+</ul>
+</li>
+<li>등분산성 : 유사한수준의 분산값을 가져야함</li>
+</ul>
+</li>
+</ul>
+<h2 id="Type-of-Error"><a href="#Type-of-Error" class="headerlink" title="Type of Error"></a>Type of Error</h2><ul>
+<li>Error<ul>
+<li>FN (알파,type1 error) : 귀무가설이 참이지만, 거짓이라 판단한경우</li>
+<li>FP (베타,type2 error) : 귀무가설이 거짓이지만, 참이라 판단한경우</li>
+</ul>
+</li>
+<li>Corret<ul>
+<li>TP (1-알파) : 귀무가설이 참이고, 참이라 판단</li>
+<li>TN (1-베타) : 귀무가설이 거짓이고, 거짓이라 판단</li>
+</ul>
+</li>
+</ul>
+<h2 id="Non-parametric-methods-비모수적-방법"><a href="#Non-parametric-methods-비모수적-방법" class="headerlink" title="Non parametric methods(비모수적 방법)"></a>Non parametric methods(비모수적 방법)</h2><ul>
+<li><p>모집단이 특정확률분포(normal 같은)따른다는 전제를 하지않는 방식</p>
+<ul>
+<li>즉 모집단의 형태에 관계없이 주어진 데이터에서 직접 확률을 계산 및 검정</li>
+</ul>
+</li>
+<li><p>parameter 추정이 필요하지 않는 non-parametric</p>
+</li>
+<li><p>Categorical 데이터를 위한 모델링</p>
+<ul>
+<li>범주형자료 : 관측결과가 몇개의 범주 또는 항목 형태로 나타나는 자료</li>
+<li>어떠한 수치가아닌 성별,선호도,혈액형,지역 등등으로 나타나는 것</li>
+</ul>
+</li>
+<li><p>극단적 outlier가 있는경우 매우 유효</p>
+<ul>
+<li>outlier(이상치,극단치) : 분포에서 비정상적으로 보이는 극단값 혹은 비현실적 변수(평균을 왜곡시키는 값)</li>
+</ul>
+</li>
+<li><p>distribution free method (분포무관 검정법) 이라고도 함</p>
+<h3 id="비모수적-방법들"><a href="#비모수적-방법들" class="headerlink" title="비모수적 방법들"></a>비모수적 방법들</h3><ul>
+<li><p>카이제곱 테스트(x<sup>2</sup> Tests) </p>
+<ul>
+<li>One sample x<sup>2</sup> Tests<ul>
+<li>주어진 데이터가 예상하고있는 분포와 동일한 분포를 나타낼지를 검정</li>
+<li>계산된 x<sup>2</sup> 값과 자유도를 이용하여 pvalue를 구함<ul>
+<li>stats.chi2.df(x<sup>2</sup>, df=자유도)</li>
+</ul>
+</li>
+<li>chisquare(data, axis=None) 으로 statstics과 pvalue 바로 구할수 있음<ul>
+<li>pvalue가 크다 -&gt; 연관이있다 -&gt; 분포가 비슷하다</li>
+<li>pvalue가 작다 -&gt; 연관이없다 -&gt; 분포가 다르다</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Two sample x<sup>2</sup><ul>
+<li>주어진 두 데이터가 서로 독립적인가를 검정</li>
+<li>이떄의 자유도는 one sample과 다르게 (행-1)*(열-1)</li>
+<li>chi2_contingency(data)<ul>
+<li>parameter 에 coreestion=T/F 로 Yates correction 설정가능</li>
+<li>x<sup>2</sup>, p-value, 자유도, 예측되는 관측치 순서대로 print 됨</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Kruskal-Wallis Test (비모수적 평균 비교법)</p>
+<ul>
+<li>샘플크기가 같고나 다른 두개 이상의 독립샘플을 비교(샘플수가 5개이상일때 좋음)</li>
+<li>샘플의 순위를 매기고 집단별 순위의 합을 구해 통계량을 계산</li>
+<li>귀무가설은 모든그룹의 크기가 같다, 대립가설은 크기가 다르다로 설정</li>
+<li>from scipy.stats import kruskal  </li>
+</ul>
+</li>
+<li><p>Mann-Whitney U</p>
+<ul>
+<li>Kruskal-Wallis Test와 같지만, 두개의 샘플에대해서 분석  </li>
+</ul>
+</li>
+<li><p>Spearman correlation</p>
+<ul>
+<li>두 샘플이 어느정도 연관성은있지만, 그 연관성에 일정한 비율이 없을때 두 샘플의 통계적 의존성을 측정</li>
+<li>쉽게 이해하자면, 한학생의 수학 영어점수를 비교하여 수학을잘하면 영어도잘하나?확인  </li>
+</ul>
+</li>
+<li><p>Run test</p>
+<ul>
+<li>연속적인 관측값들이 랜덤으로 나타난것인가를 검정하는 방법</li>
+<li>관측값들의 얻어진 순서에 근거하여 먼저얻어진 관측치가 후에 얻어진 관측치에 영향을 미치는지 확인  </li>
+</ul>
+</li>
+<li><p>Kolmogorov Smirnov test</p>
+<ul>
+<li>비교하고자 하는 두 분포의 empirical distribution function 의 차이를 특정 기준과 비교하여 기각의 여부를 결정하는 것</li>
+<li>한마디로 어떤 두 샘플의 부분부분을 비교하여 이 두샘플이 같은 집단에서 나왔는지를 확인  </li>
+</ul>
+</li>
+<li><p>Wilcoxon Sigend-Rank Test</p>
+<ul>
+<li>자료의 순서(절대값으로)를 사용해 중위수(median)가 0 인지 검정<ul>
+<li>중위수? : 양수데이터수 =음수데이터들수 -&gt; 중위수가 0</li>
+</ul>
+</li>
+<li>이 순위에 다시 +,- 를 부여하여 부호화된순위(signed rank)를 가지게함</li>
+<li>환자의 약 복용 전후 몸무게차이가 정규분포를 따른다는 귀무가설을 세우고 검정  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
       <categories>
         <category>Data science</category>
       </categories>
       <tags>
         <tag>hypothesis statistics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>linear layer</title>
+    <url>/2021/04/15/linear-layer/</url>
+    <content><![CDATA[<h1 id="Linear-layer"><a href="#Linear-layer" class="headerlink" title="Linear layer"></a>Linear layer</h1><ul>
+<li>신경망의 기본요소</li>
+<li>Fully-connected (FC) layer</li>
+<li>내부 파라미터에따른 선형변환을 수행</li>
+<li>각 입력노드에 weight(가중치)를 곱하고 합친후, bias(편향) 더함</li>
+<li><img src="../images/linear.PNG" width="300" height="300"></li>
+<li>이때 행렬의 곱으로 표현가능<ul>
+<li><img src="../images/linearmulti.PNG"></li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Deep-Learning</category>
+      </categories>
+      <tags>
+        <tag>linear-layer</tag>
       </tags>
   </entry>
   <entry>
@@ -987,28 +1124,6 @@
       </categories>
       <tags>
         <tag>deeplearning-basic</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>linear layer</title>
-    <url>/2021/04/15/linear-layer/</url>
-    <content><![CDATA[<h1 id="Linear-layer"><a href="#Linear-layer" class="headerlink" title="Linear layer"></a>Linear layer</h1><ul>
-<li>신경망의 기본요소</li>
-<li>Fully-connected (FC) layer</li>
-<li>내부 파라미터에따른 선형변환을 수행</li>
-<li>각 입력노드에 weight(가중치)를 곱하고 합친후, bias(편향) 더함</li>
-<li><img src="../images/linear.PNG" width="300" height="300"></li>
-<li>이때 행렬의 곱으로 표현가능<ul>
-<li><img src="../images/linearmulti.PNG"></li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Deep-Learning</category>
-      </categories>
-      <tags>
-        <tag>linear-layer</tag>
       </tags>
   </entry>
 </search>
