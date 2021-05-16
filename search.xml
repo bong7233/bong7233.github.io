@@ -1,6 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>AI-Day2</title>
+    <url>/2021/05/07/AI-Day2/</url>
+    <content><![CDATA[<h1 id="Feature-Engineering"><a href="#Feature-Engineering" class="headerlink" title="Feature Engineering"></a>Feature Engineering</h1><h2 id="Warm-up"><a href="#Warm-up" class="headerlink" title="Warm up"></a>Warm up</h2><ul>
+<li>Data cleaning<ul>
+<li>대부분의 실제 데이터엔지니어, 데이터사이언티스트는 데이터클리닝이 대부분의 업무</li>
+<li>AI에 머신러닝을 시키기위해선 정제된 데이터가 필수  </li>
+</ul>
+</li>
+</ul>
+<h2 id="Feature-Engineering-이란"><a href="#Feature-Engineering-이란" class="headerlink" title="Feature Engineering 이란?"></a>Feature Engineering 이란?</h2><ul>
+<li>도메인 지식과 창의성을 바탕으로, 데이터셋에 존재하는 Feature들을 재조합하여 새로운 Feature를 만드는 것</li>
+<li>통계 분석 혹은 머신러닝, 딥러닝까지 대부분의 분석은 데이터에 있는 패턴을 인식하고 해당 패턴들을 바탕으로 예측</li>
+<li>더 좋은 퍼포먼스를 위해서 새롭고, 의미있는 패턴을 제공하는 것이 궁극적인 Feature engineering의 목적</li>
+<li>Gargage in - Garbage out 을 기억  </li>
+</ul>
+<h2 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h2><ul>
+<li>테이블형태의 데이터로 기억</li>
+<li>Row(행)에는 observation, Column(열)에는 feature가 있다</li>
+<li>만약 데이터에 NaN값이있다면? 같은 row의 다른값들은 자동으로 float으로 typecasting</li>
+</ul>
+<h2 id="Feature-Engineering-1"><a href="#Feature-Engineering-1" class="headerlink" title="Feature Engineering"></a>Feature Engineering</h2><ul>
+<li>feature끼리는 일반수식처럼 가능하지만, 각각의 data type에 주의하여야함<ul>
+<li>int끼리라면 의도대로 수식이되지만, 만약 str이라면? 예상치못한 결과도출</li>
+<li>특히 머신러닝 모델링에서는 문자열로된 data는 사용하지 않음</li>
+</ul>
+</li>
+</ul>
+<h3 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h3><ul>
+<li>s.replace(‘지우려는것’,’대체할것’)<ul>
+<li>하지만 바뀐것을 변수에 다시선언해주어야 변경됨(얕은복사? 더찾아보기)</li>
+</ul>
+</li>
+<li>s.toint()<ul>
+<li>자동으로 int로 typecasting까지 실행</li>
+</ul>
+</li>
+<li>s.apply(함수)<ul>
+<li>한 column전체에 대해 함수를 다 실행시킴(파이썬의 map과 비슷한느낌)</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Data science</category>
+      </categories>
+      <tags>
+        <tag>Feature Engineering</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AI-Day1</title>
     <url>/2021/05/06/AI-Day1/</url>
     <content><![CDATA[<h1 id="Data-Preprocess-amp-EDA"><a href="#Data-Preprocess-amp-EDA" class="headerlink" title="Data Preprocess &amp; EDA"></a>Data Preprocess &amp; EDA</h1><h2 id="Warm-up"><a href="#Warm-up" class="headerlink" title="Warm-up"></a>Warm-up</h2><ul>
@@ -254,53 +304,75 @@
       </tags>
   </entry>
   <entry>
-    <title>AI-Day2</title>
-    <url>/2021/05/07/AI-Day2/</url>
-    <content><![CDATA[<h1 id="Feature-Engineering"><a href="#Feature-Engineering" class="headerlink" title="Feature Engineering"></a>Feature Engineering</h1><h2 id="Warm-up"><a href="#Warm-up" class="headerlink" title="Warm up"></a>Warm up</h2><ul>
-<li>Data cleaning<ul>
-<li>대부분의 실제 데이터엔지니어, 데이터사이언티스트는 데이터클리닝이 대부분의 업무</li>
-<li>AI에 머신러닝을 시키기위해선 정제된 데이터가 필수  </li>
+    <title>AI-Day5</title>
+    <url>/2021/05/12/AI-Day5/</url>
+    <content><![CDATA[<h1 id="Weekly-review"><a href="#Weekly-review" class="headerlink" title="Weekly review"></a>Weekly review</h1><h2 id="EDA"><a href="#EDA" class="headerlink" title="EDA"></a>EDA</h2><ul>
+<li>데이터를 불러오기<ul>
+<li>Description 을통해 데이터셋에대한 정보파악<ul>
+<li>EDA를 대신해주는거지만, 직접확인하는것이 더 정확</li>
+</ul>
+</li>
+<li>pd.read_csv() 에 대한 완벽한 숙지가 중요</li>
+</ul>
+</li>
+<li>데이터셋 확인하기<ul>
+<li>Graphic , Non-Graphic 을 구분하고 사용할줄 알아야함</li>
+<li>하지만, 자기가 시각화를 한 자료에대해서는 100% 설명할줄 알아야함<ul>
+<li>EDA과정에서 시각화된 자료에대한 코멘트(어떤 insigth를 얻었는지 등등)를 달아보기</li>
+</ul>
+</li>
+<li>Pandas의 메서드들을 외우는건 의미없음<ul>
+<li>여러번 사용해보면서 이런 기능을하는 함수가 있었다라는걸 기억하는것이 중요</li>
 </ul>
 </li>
 </ul>
-<h2 id="Feature-Engineering-이란"><a href="#Feature-Engineering-이란" class="headerlink" title="Feature Engineering 이란?"></a>Feature Engineering 이란?</h2><ul>
-<li>도메인 지식과 창의성을 바탕으로, 데이터셋에 존재하는 Feature들을 재조합하여 새로운 Feature를 만드는 것</li>
-<li>통계 분석 혹은 머신러닝, 딥러닝까지 대부분의 분석은 데이터에 있는 패턴을 인식하고 해당 패턴들을 바탕으로 예측</li>
-<li>더 좋은 퍼포먼스를 위해서 새롭고, 의미있는 패턴을 제공하는 것이 궁극적인 Feature engineering의 목적</li>
-<li>Gargage in - Garbage out 을 기억  </li>
+</li>
+<li>데이터 전처리도 중요하다는것만 우선 기억  </li>
 </ul>
-<h2 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h2><ul>
-<li>테이블형태의 데이터로 기억</li>
-<li>Row(행)에는 observation, Column(열)에는 feature가 있다</li>
-<li>만약 데이터에 NaN값이있다면? 같은 row의 다른값들은 자동으로 float으로 typecasting</li>
+<h2 id="Feature-Engineering"><a href="#Feature-Engineering" class="headerlink" title="Feature Engineering"></a>Feature Engineering</h2><ul>
+<li>데이터를 보다 확인하기 좋은 형태로 다듬는것이 목적<ul>
+<li>기존의 feature들을 조합하여 새로운 feature를 만드는것</li>
+<li>도메인지식과 창의성이 중요</li>
 </ul>
-<h2 id="Feature-Engineering-1"><a href="#Feature-Engineering-1" class="headerlink" title="Feature Engineering"></a>Feature Engineering</h2><ul>
-<li>feature끼리는 일반수식처럼 가능하지만, 각각의 data type에 주의하여야함<ul>
-<li>int끼리라면 의도대로 수식이되지만, 만약 str이라면? 예상치못한 결과도출</li>
-<li>특히 머신러닝 모델링에서는 문자열로된 data는 사용하지 않음</li>
+</li>
+<li>DataFrame, DataSet 이해<ul>
+<li>결측치들(Na,Null,NaN,0,Undefined)의 차이를 알기</li>
+</ul>
+</li>
+<li>typecasting, 특히 string-&gt;int가 매우 중요하고 많이쓰임<ul>
+<li>replace,apply,astype 등의 다양한 방법이 존재하므로 정확히 의도대로 사용할 줄 알아야함  </li>
 </ul>
 </li>
 </ul>
-<h3 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h3><ul>
-<li>s.replace(‘지우려는것’,’대체할것’)<ul>
-<li>하지만 바뀐것을 변수에 다시선언해주어야 변경됨(얕은복사? 더찾아보기)</li>
+<h2 id="Data-Manipulation"><a href="#Data-Manipulation" class="headerlink" title="Data Manipulation"></a>Data Manipulation</h2><ul>
+<li>concat과 merge를 구분하고 사용할줄 알아야함<ul>
+<li>단순히 합치는법을 알기보다는 원하는 shape으로 만들어낼줄 아는것이 중요</li>
 </ul>
 </li>
-<li>s.toint()<ul>
-<li>자동으로 int로 typecasting까지 실행</li>
+<li>wide &amp; tidy<ul>
+<li>각각의 형태가 언제 유용하고 확인하기 좋은가를 구분할줄 알아야함</li>
+<li>data를보고 어떤형태인지도 유추할수 있다면 best</li>
+<li>melt() &amp; pivot_table() 를 적절하게 사용할 줄 알아야함</li>
 </ul>
 </li>
-<li>s.apply(함수)<ul>
-<li>한 column전체에 대해 함수를 다 실행시킴(파이썬의 map과 비슷한느낌)</li>
+<li>pandas styling <ul>
+<li>나중에 알고있다면 좋은것</li>
 </ul>
 </li>
+</ul>
+<h2 id="Basic-derivative"><a href="#Basic-derivative" class="headerlink" title="Basic derivative"></a>Basic derivative</h2><ul>
+<li>미분에 대한 개념은 매우중요하지만, 직접미분을 해야하는경우는 드물다<ul>
+<li>다양한 미분 공식들을 알아야 알고리즘에대해 이해하고 사용할 수 있음</li>
+</ul>
+</li>
+<li>경사하강법은 뒤로갈수록 중요한 개념이므로 꾸준히 공부하고 이해할수록 좋음</li>
 </ul>
 ]]></content>
       <categories>
         <category>Data science</category>
       </categories>
       <tags>
-        <tag>Feature Engineering</tag>
+        <tag>Weekly reveiw</tag>
       </tags>
   </entry>
   <entry>
@@ -374,78 +446,6 @@
       </categories>
       <tags>
         <tag>Basic Derivative</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI-Day5</title>
-    <url>/2021/05/12/AI-Day5/</url>
-    <content><![CDATA[<h1 id="Weekly-review"><a href="#Weekly-review" class="headerlink" title="Weekly review"></a>Weekly review</h1><h2 id="EDA"><a href="#EDA" class="headerlink" title="EDA"></a>EDA</h2><ul>
-<li>데이터를 불러오기<ul>
-<li>Description 을통해 데이터셋에대한 정보파악<ul>
-<li>EDA를 대신해주는거지만, 직접확인하는것이 더 정확</li>
-</ul>
-</li>
-<li>pd.read_csv() 에 대한 완벽한 숙지가 중요</li>
-</ul>
-</li>
-<li>데이터셋 확인하기<ul>
-<li>Graphic , Non-Graphic 을 구분하고 사용할줄 알아야함</li>
-<li>하지만, 자기가 시각화를 한 자료에대해서는 100% 설명할줄 알아야함<ul>
-<li>EDA과정에서 시각화된 자료에대한 코멘트(어떤 insigth를 얻었는지 등등)를 달아보기</li>
-</ul>
-</li>
-<li>Pandas의 메서드들을 외우는건 의미없음<ul>
-<li>여러번 사용해보면서 이런 기능을하는 함수가 있었다라는걸 기억하는것이 중요</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>데이터 전처리도 중요하다는것만 우선 기억  </li>
-</ul>
-<h2 id="Feature-Engineering"><a href="#Feature-Engineering" class="headerlink" title="Feature Engineering"></a>Feature Engineering</h2><ul>
-<li>데이터를 보다 확인하기 좋은 형태로 다듬는것이 목적<ul>
-<li>기존의 feature들을 조합하여 새로운 feature를 만드는것</li>
-<li>도메인지식과 창의성이 중요</li>
-</ul>
-</li>
-<li>DataFrame, DataSet 이해<ul>
-<li>결측치들(Na,Null,NaN,0,Undefined)의 차이를 알기</li>
-</ul>
-</li>
-<li>typecasting, 특히 string-&gt;int가 매우 중요하고 많이쓰임<ul>
-<li>replace,apply,astype 등의 다양한 방법이 존재하므로 정확히 의도대로 사용할 줄 알아야함  </li>
-</ul>
-</li>
-</ul>
-<h2 id="Data-Manipulation"><a href="#Data-Manipulation" class="headerlink" title="Data Manipulation"></a>Data Manipulation</h2><ul>
-<li>concat과 merge를 구분하고 사용할줄 알아야함<ul>
-<li>단순히 합치는법을 알기보다는 원하는 shape으로 만들어낼줄 아는것이 중요</li>
-</ul>
-</li>
-<li>wide &amp; tidy<ul>
-<li>각각의 형태가 언제 유용하고 확인하기 좋은가를 구분할줄 알아야함</li>
-<li>data를보고 어떤형태인지도 유추할수 있다면 best</li>
-<li>melt() &amp; pivot_table() 를 적절하게 사용할 줄 알아야함</li>
-</ul>
-</li>
-<li>pandas styling <ul>
-<li>나중에 알고있다면 좋은것</li>
-</ul>
-</li>
-</ul>
-<h2 id="Basic-derivative"><a href="#Basic-derivative" class="headerlink" title="Basic derivative"></a>Basic derivative</h2><ul>
-<li>미분에 대한 개념은 매우중요하지만, 직접미분을 해야하는경우는 드물다<ul>
-<li>다양한 미분 공식들을 알아야 알고리즘에대해 이해하고 사용할 수 있음</li>
-</ul>
-</li>
-<li>경사하강법은 뒤로갈수록 중요한 개념이므로 꾸준히 공부하고 이해할수록 좋음</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Data science</category>
-      </categories>
-      <tags>
-        <tag>Weekly reveiw</tag>
       </tags>
   </entry>
   <entry>
@@ -607,6 +607,172 @@
       </categories>
       <tags>
         <tag>hypothesis statistics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI-day7</title>
+    <url>/2021/05/14/AI-day7/</url>
+    <content><![CDATA[<h1 id="다양한-가설검정방법"><a href="#다양한-가설검정방법" class="headerlink" title="다양한 가설검정방법"></a>다양한 가설검정방법</h1><ul>
+<li>t-test를 위한 조건알기</li>
+<li>t-test 이외의 가설검정방법 익히기</li>
+<li>Type of Error 구분할줄 알기</li>
+<li>X<sup>2-test</sup>의 목적과 사용예시알기</li>
+<li>모수통계, 비모수통계 차이 파악하기</li>
+</ul>
+<h2 id="T-test"><a href="#T-test" class="headerlink" title="T-test +"></a>T-test +</h2><ul>
+<li>T-test의 선행조건 3가지<ul>
+<li>독립성 : 두 그룹의 연관성이 없어야함</li>
+<li>정규성 : 데이터가 정규성을 나타내야함<ul>
+<li>scipy.stats.normaltest()</li>
+</ul>
+</li>
+<li>등분산성 : 유사한수준의 분산값을 가져야함</li>
+</ul>
+</li>
+</ul>
+<h2 id="Type-of-Error"><a href="#Type-of-Error" class="headerlink" title="Type of Error"></a>Type of Error</h2><ul>
+<li>Error<ul>
+<li>FN (알파,type1 error) : 귀무가설이 참이지만, 거짓이라 판단한경우</li>
+<li>FP (베타,type2 error) : 귀무가설이 거짓이지만, 참이라 판단한경우</li>
+</ul>
+</li>
+<li>Corret<ul>
+<li>TP (1-알파) : 귀무가설이 참이고, 참이라 판단</li>
+<li>TN (1-베타) : 귀무가설이 거짓이고, 거짓이라 판단</li>
+</ul>
+</li>
+</ul>
+<h2 id="Non-parametric-methods-비모수적-방법"><a href="#Non-parametric-methods-비모수적-방법" class="headerlink" title="Non parametric methods(비모수적 방법)"></a>Non parametric methods(비모수적 방법)</h2><ul>
+<li><p>모집단이 특정확률분포(normal 같은)따른다는 전제를 하지않는 방식</p>
+<ul>
+<li>즉 모집단의 형태에 관계없이 주어진 데이터에서 직접 확률을 계산 및 검정</li>
+</ul>
+</li>
+<li><p>parameter 추정이 필요하지 않는 non-parametric</p>
+</li>
+<li><p>Categorical 데이터를 위한 모델링</p>
+<ul>
+<li>범주형자료 : 관측결과가 몇개의 범주 또는 항목 형태로 나타나는 자료</li>
+<li>어떠한 수치가아닌 성별,선호도,혈액형,지역 등등으로 나타나는 것</li>
+</ul>
+</li>
+<li><p>극단적 outlier가 있는경우 매우 유효</p>
+<ul>
+<li>outlier(이상치,극단치) : 분포에서 비정상적으로 보이는 극단값 혹은 비현실적 변수(평균을 왜곡시키는 값)</li>
+</ul>
+</li>
+<li><p>distribution free method (분포무관 검정법) 이라고도 함</p>
+<h3 id="비모수적-방법들"><a href="#비모수적-방법들" class="headerlink" title="비모수적 방법들"></a>비모수적 방법들</h3><ul>
+<li><p>카이제곱 테스트(x<sup>2</sup> Tests) </p>
+<ul>
+<li>One sample x<sup>2</sup> Tests<ul>
+<li>주어진 데이터가 예상하고있는 분포와 동일한 분포를 나타낼지를 검정</li>
+<li>계산된 x<sup>2</sup> 값과 자유도를 이용하여 pvalue를 구함<ul>
+<li>stats.chi2.df(x<sup>2</sup>, df=자유도)</li>
+</ul>
+</li>
+<li>chisquare(data, axis=None) 으로 statstics과 pvalue 바로 구할수 있음<ul>
+<li>pvalue가 크다 -&gt; 연관이있다 -&gt; 분포가 비슷하다</li>
+<li>pvalue가 작다 -&gt; 연관이없다 -&gt; 분포가 다르다</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Two sample x<sup>2</sup><ul>
+<li>주어진 두 데이터가 서로 독립적인가를 검정</li>
+<li>이떄의 자유도는 one sample과 다르게 (행-1)*(열-1)</li>
+<li>chi2_contingency(data)<ul>
+<li>parameter 에 coreestion=T/F 로 Yates correction 설정가능</li>
+<li>x<sup>2</sup>, p-value, 자유도, 예측되는 관측치 순서대로 print 됨</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Kruskal-Wallis Test (비모수적 평균 비교법)</p>
+<ul>
+<li>샘플크기가 같고나 다른 두개 이상의 독립샘플을 비교(샘플수가 5개이상일때 좋음)</li>
+<li>샘플의 순위를 매기고 집단별 순위의 합을 구해 통계량을 계산</li>
+<li>귀무가설은 모든그룹의 크기가 같다, 대립가설은 크기가 다르다로 설정</li>
+<li>from scipy.stats import kruskal  </li>
+</ul>
+</li>
+<li><p>Mann-Whitney U</p>
+<ul>
+<li>Kruskal-Wallis Test와 같지만, 두개의 샘플에대해서 분석  </li>
+</ul>
+</li>
+<li><p>Spearman correlation</p>
+<ul>
+<li>두 샘플이 어느정도 연관성은있지만, 그 연관성에 일정한 비율이 없을때 두 샘플의 통계적 의존성을 측정</li>
+<li>쉽게 이해하자면, 한학생의 수학 영어점수를 비교하여 수학을잘하면 영어도잘하나?확인  </li>
+</ul>
+</li>
+<li><p>Run test</p>
+<ul>
+<li>연속적인 관측값들이 랜덤으로 나타난것인가를 검정하는 방법</li>
+<li>관측값들의 얻어진 순서에 근거하여 먼저얻어진 관측치가 후에 얻어진 관측치에 영향을 미치는지 확인  </li>
+</ul>
+</li>
+<li><p>Kolmogorov Smirnov test</p>
+<ul>
+<li>비교하고자 하는 두 분포의 empirical distribution function 의 차이를 특정 기준과 비교하여 기각의 여부를 결정하는 것</li>
+<li>한마디로 어떤 두 샘플의 부분부분을 비교하여 이 두샘플이 같은 집단에서 나왔는지를 확인  </li>
+</ul>
+</li>
+<li><p>Wilcoxon Sigend-Rank Test</p>
+<ul>
+<li>자료의 순서(절대값으로)를 사용해 중위수(median)가 0 인지 검정<ul>
+<li>중위수? : 양수데이터수 =음수데이터들수 -&gt; 중위수가 0</li>
+</ul>
+</li>
+<li>이 순위에 다시 +,- 를 부여하여 부호화된순위(signed rank)를 가지게함</li>
+<li>환자의 약 복용 전후 몸무게차이가 정규분포를 따른다는 귀무가설을 세우고 검정  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Data science</category>
+      </categories>
+      <tags>
+        <tag>hypothesis statistics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI-day8</title>
+    <url>/2021/05/17/AI-day8/</url>
+    <content><![CDATA[<h1 id="신뢰구간-Confidence-Interval"><a href="#신뢰구간-Confidence-Interval" class="headerlink" title="신뢰구간 (Confidence Interval)"></a>신뢰구간 (Confidence Interval)</h1><ul>
+<li>ANOVA, CLT 이해</li>
+<li>신뢰구간의 목적과 사용예시 이해</li>
+<li>추전도니 통계치에 대한 신뢰구간 계산</li>
+</ul>
+<h2 id="ANOVA"><a href="#ANOVA" class="headerlink" title="ANOVA"></a>ANOVA</h2><ul>
+<li>2개 이상의 그룹의 평균에 차이가 있는지를 가설검정</li>
+<li>만약 여러개를 하나씩 비교한다면? error 증가</li>
+<li>여러 그룹이 하나의 분포에서왔다고 가정<ul>
+<li>F-test<ul>
+<li>표본의 분산에 대한 두표본의 차이를 검정하는 방법</li>
+<li>카이제곱 : 단일표본의 모집단이 정규분포를 따르며 분산을 미리 알고 있는 경우    </li>
+<li>F Test : 모집단을 알고 있지 않은 경우</li>
+<li>F = 그룹끼리의 분산 / 전체 그룹의 분산<ul>
+<li>F 값이 크다 ? -&gt; 그룹끼리의 분포가 전체그룹보다 크다-&gt; 그룹간 분포가 다를것이다</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="중심극한정리-Central-Limit-Theorem-CLT"><a href="#중심극한정리-Central-Limit-Theorem-CLT" class="headerlink" title="중심극한정리 ( Central Limit Theorem, CLT )"></a>중심극한정리 ( Central Limit Theorem, CLT )</h2>]]></content>
+      <categories>
+        <category>Data science</category>
+      </categories>
+      <tags>
+        <tag>Confidence Interval</tag>
       </tags>
   </entry>
   <entry>
@@ -814,139 +980,6 @@
       </categories>
       <tags>
         <tag>PyTorch</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI-day7</title>
-    <url>/2021/05/14/AI-day7/</url>
-    <content><![CDATA[<h1 id="다양한-가설검정방법"><a href="#다양한-가설검정방법" class="headerlink" title="다양한 가설검정방법"></a>다양한 가설검정방법</h1><ul>
-<li>t-test를 위한 조건알기</li>
-<li>t-test 이외의 가설검정방법 익히기</li>
-<li>Type of Error 구분할줄 알기</li>
-<li>X<sup>2-test</sup>의 목적과 사용예시알기</li>
-<li>모수통계, 비모수통계 차이 파악하기</li>
-</ul>
-<h2 id="T-test"><a href="#T-test" class="headerlink" title="T-test +"></a>T-test +</h2><ul>
-<li>T-test의 선행조건 3가지<ul>
-<li>독립성 : 두 그룹의 연관성이 없어야함</li>
-<li>정규성 : 데이터가 정규성을 나타내야함<ul>
-<li>scipy.stats.normaltest()</li>
-</ul>
-</li>
-<li>등분산성 : 유사한수준의 분산값을 가져야함</li>
-</ul>
-</li>
-</ul>
-<h2 id="Type-of-Error"><a href="#Type-of-Error" class="headerlink" title="Type of Error"></a>Type of Error</h2><ul>
-<li>Error<ul>
-<li>FN (알파,type1 error) : 귀무가설이 참이지만, 거짓이라 판단한경우</li>
-<li>FP (베타,type2 error) : 귀무가설이 거짓이지만, 참이라 판단한경우</li>
-</ul>
-</li>
-<li>Corret<ul>
-<li>TP (1-알파) : 귀무가설이 참이고, 참이라 판단</li>
-<li>TN (1-베타) : 귀무가설이 거짓이고, 거짓이라 판단</li>
-</ul>
-</li>
-</ul>
-<h2 id="Non-parametric-methods-비모수적-방법"><a href="#Non-parametric-methods-비모수적-방법" class="headerlink" title="Non parametric methods(비모수적 방법)"></a>Non parametric methods(비모수적 방법)</h2><ul>
-<li><p>모집단이 특정확률분포(normal 같은)따른다는 전제를 하지않는 방식</p>
-<ul>
-<li>즉 모집단의 형태에 관계없이 주어진 데이터에서 직접 확률을 계산 및 검정</li>
-</ul>
-</li>
-<li><p>parameter 추정이 필요하지 않는 non-parametric</p>
-</li>
-<li><p>Categorical 데이터를 위한 모델링</p>
-<ul>
-<li>범주형자료 : 관측결과가 몇개의 범주 또는 항목 형태로 나타나는 자료</li>
-<li>어떠한 수치가아닌 성별,선호도,혈액형,지역 등등으로 나타나는 것</li>
-</ul>
-</li>
-<li><p>극단적 outlier가 있는경우 매우 유효</p>
-<ul>
-<li>outlier(이상치,극단치) : 분포에서 비정상적으로 보이는 극단값 혹은 비현실적 변수(평균을 왜곡시키는 값)</li>
-</ul>
-</li>
-<li><p>distribution free method (분포무관 검정법) 이라고도 함</p>
-<h3 id="비모수적-방법들"><a href="#비모수적-방법들" class="headerlink" title="비모수적 방법들"></a>비모수적 방법들</h3><ul>
-<li><p>카이제곱 테스트(x<sup>2</sup> Tests) </p>
-<ul>
-<li>One sample x<sup>2</sup> Tests<ul>
-<li>주어진 데이터가 예상하고있는 분포와 동일한 분포를 나타낼지를 검정</li>
-<li>계산된 x<sup>2</sup> 값과 자유도를 이용하여 pvalue를 구함<ul>
-<li>stats.chi2.df(x<sup>2</sup>, df=자유도)</li>
-</ul>
-</li>
-<li>chisquare(data, axis=None) 으로 statstics과 pvalue 바로 구할수 있음<ul>
-<li>pvalue가 크다 -&gt; 연관이있다 -&gt; 분포가 비슷하다</li>
-<li>pvalue가 작다 -&gt; 연관이없다 -&gt; 분포가 다르다</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Two sample x<sup>2</sup><ul>
-<li>주어진 두 데이터가 서로 독립적인가를 검정</li>
-<li>이떄의 자유도는 one sample과 다르게 (행-1)*(열-1)</li>
-<li>chi2_contingency(data)<ul>
-<li>parameter 에 coreestion=T/F 로 Yates correction 설정가능</li>
-<li>x<sup>2</sup>, p-value, 자유도, 예측되는 관측치 순서대로 print 됨</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Kruskal-Wallis Test (비모수적 평균 비교법)</p>
-<ul>
-<li>샘플크기가 같고나 다른 두개 이상의 독립샘플을 비교(샘플수가 5개이상일때 좋음)</li>
-<li>샘플의 순위를 매기고 집단별 순위의 합을 구해 통계량을 계산</li>
-<li>귀무가설은 모든그룹의 크기가 같다, 대립가설은 크기가 다르다로 설정</li>
-<li>from scipy.stats import kruskal  </li>
-</ul>
-</li>
-<li><p>Mann-Whitney U</p>
-<ul>
-<li>Kruskal-Wallis Test와 같지만, 두개의 샘플에대해서 분석  </li>
-</ul>
-</li>
-<li><p>Spearman correlation</p>
-<ul>
-<li>두 샘플이 어느정도 연관성은있지만, 그 연관성에 일정한 비율이 없을때 두 샘플의 통계적 의존성을 측정</li>
-<li>쉽게 이해하자면, 한학생의 수학 영어점수를 비교하여 수학을잘하면 영어도잘하나?확인  </li>
-</ul>
-</li>
-<li><p>Run test</p>
-<ul>
-<li>연속적인 관측값들이 랜덤으로 나타난것인가를 검정하는 방법</li>
-<li>관측값들의 얻어진 순서에 근거하여 먼저얻어진 관측치가 후에 얻어진 관측치에 영향을 미치는지 확인  </li>
-</ul>
-</li>
-<li><p>Kolmogorov Smirnov test</p>
-<ul>
-<li>비교하고자 하는 두 분포의 empirical distribution function 의 차이를 특정 기준과 비교하여 기각의 여부를 결정하는 것</li>
-<li>한마디로 어떤 두 샘플의 부분부분을 비교하여 이 두샘플이 같은 집단에서 나왔는지를 확인  </li>
-</ul>
-</li>
-<li><p>Wilcoxon Sigend-Rank Test</p>
-<ul>
-<li>자료의 순서(절대값으로)를 사용해 중위수(median)가 0 인지 검정<ul>
-<li>중위수? : 양수데이터수 =음수데이터들수 -&gt; 중위수가 0</li>
-</ul>
-</li>
-<li>이 순위에 다시 +,- 를 부여하여 부호화된순위(signed rank)를 가지게함</li>
-<li>환자의 약 복용 전후 몸무게차이가 정규분포를 따른다는 귀무가설을 세우고 검정  </li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Data science</category>
-      </categories>
-      <tags>
-        <tag>hypothesis statistics</tag>
       </tags>
   </entry>
   <entry>

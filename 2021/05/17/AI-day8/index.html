@@ -23,16 +23,21 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"bong7233.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta property="og:type" content="website">
-<meta property="og:title" content="Bong&#39;s Blog">
-<meta property="og:url" content="http://bong7233.github.io/archives/2021/index.html">
+<meta name="description" content="신뢰구간 (Confidence Interval) ANOVA, CLT 이해 신뢰구간의 목적과 사용예시 이해 추전도니 통계치에 대한 신뢰구간 계산  ANOVA 2개 이상의 그룹의 평균에 차이가 있는지를 가설검정 만약 여러개를 하나씩 비교한다면? error 증가 여러 그룹이 하나의 분포에서왔다고 가정 F-test 표본의 분산에 대한 두표본의 차이를 검정하는 방법">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI-day8">
+<meta property="og:url" content="http://bong7233.github.io/2021/05/17/AI-day8/index.html">
 <meta property="og:site_name" content="Bong&#39;s Blog">
+<meta property="og:description" content="신뢰구간 (Confidence Interval) ANOVA, CLT 이해 신뢰구간의 목적과 사용예시 이해 추전도니 통계치에 대한 신뢰구간 계산  ANOVA 2개 이상의 그룹의 평균에 차이가 있는지를 가설검정 만약 여러개를 하나씩 비교한다면? error 증가 여러 그룹이 하나의 분포에서왔다고 가정 F-test 표본의 분산에 대한 두표본의 차이를 검정하는 방법">
 <meta property="og:locale">
+<meta property="article:published_time" content="2021-05-16T21:30:55.000Z">
+<meta property="article:modified_time" content="2021-05-16T21:45:40.520Z">
 <meta property="article:author" content="SangBong Lee">
+<meta property="article:tag" content="Confidence Interval">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://bong7233.github.io/archives/2021/">
+<link rel="canonical" href="http://bong7233.github.io/2021/05/17/AI-day8/">
 
 
 <script class="page-configurations">
@@ -40,11 +45,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'kor'
   };
 </script>
-<title>Archive | Bong's Blog</title>
+<title>AI-day8 | Bong's Blog</title>
   
 
 
@@ -171,7 +176,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -184,6 +189,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EC%8B%A0%EB%A2%B0%EA%B5%AC%EA%B0%84-Confidence-Interval"><span class="nav-number">1.</span> <span class="nav-text">신뢰구간 (Confidence Interval)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ANOVA"><span class="nav-number">1.1.</span> <span class="nav-text">ANOVA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%A4%91%EC%8B%AC%EA%B7%B9%ED%95%9C%EC%A0%95%EB%A6%AC-Central-Limit-Theorem-CLT"><span class="nav-number">1.2.</span> <span class="nav-text">중심극한정리 ( Central Limit Theorem, CLT )</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -253,232 +259,117 @@
 </noscript>
 
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 12 posts in total. Keep on posting.</span>
-      </div>
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="kor">
+    <link itemprop="mainEntityOfPage" href="http://bong7233.github.io/2021/05/17/AI-day8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="SangBong Lee">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bong's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AI-day8
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+
+      <time title="Created: 2021-05-17 06:30:55 / Modified: 06:45:40" itemprop="dateCreated datePublished" datetime="2021-05-17T06:30:55+09:00">2021-05-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Data-science/" itemprop="url" rel="index"><span itemprop="name">Data science</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="신뢰구간-Confidence-Interval"><a href="#신뢰구간-Confidence-Interval" class="headerlink" title="신뢰구간 (Confidence Interval)"></a>신뢰구간 (Confidence Interval)</h1><ul>
+<li>ANOVA, CLT 이해</li>
+<li>신뢰구간의 목적과 사용예시 이해</li>
+<li>추전도니 통계치에 대한 신뢰구간 계산</li>
+</ul>
+<h2 id="ANOVA"><a href="#ANOVA" class="headerlink" title="ANOVA"></a>ANOVA</h2><ul>
+<li>2개 이상의 그룹의 평균에 차이가 있는지를 가설검정</li>
+<li>만약 여러개를 하나씩 비교한다면? error 증가</li>
+<li>여러 그룹이 하나의 분포에서왔다고 가정<ul>
+<li>F-test<ul>
+<li>표본의 분산에 대한 두표본의 차이를 검정하는 방법</li>
+<li>카이제곱 : 단일표본의 모집단이 정규분포를 따르며 분산을 미리 알고 있는 경우    </li>
+<li>F Test : 모집단을 알고 있지 않은 경우</li>
+<li>F = 그룹끼리의 분산 / 전체 그룹의 분산<ul>
+<li>F 값이 크다 ? -&gt; 그룹끼리의 분포가 전체그룹보다 크다-&gt; 그룹간 분포가 다를것이다</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="중심극한정리-Central-Limit-Theorem-CLT"><a href="#중심극한정리-Central-Limit-Theorem-CLT" class="headerlink" title="중심극한정리 ( Central Limit Theorem, CLT )"></a>중심극한정리 ( Central Limit Theorem, CLT )</h2>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-05-17T06:30:55+09:00"
-              content="2021-05-17">
-          05-17
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/05/17/AI-day8/" itemprop="url">
-            <span itemprop="name">AI-day8</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Confidence-Interval/" rel="tag"># Confidence Interval</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/05/14/AI-day7/" rel="prev" title="AI-day7">
+                  <i class="fa fa-chevron-left"></i> AI-day7
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-05-14T07:19:10+09:00"
-              content="2021-05-14">
-          05-14
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/05/14/AI-day7/" itemprop="url">
-            <span itemprop="name">AI-day7</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-05-13T09:36:33+09:00"
-              content="2021-05-13">
-          05-13
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/05/13/AI-day6/" itemprop="url">
-            <span itemprop="name">AI-day6</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-05-12T16:09:17+09:00"
-              content="2021-05-12">
-          05-12
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/05/12/AI-Day5/" itemprop="url">
-            <span itemprop="name">AI-Day5</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-05-11T09:39:13+09:00"
-              content="2021-05-11">
-          05-11
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/05/11/AI-Day4/" itemprop="url">
-            <span itemprop="name">AI-Day4</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-05-10T15:42:22+09:00"
-              content="2021-05-10">
-          05-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/05/10/AI-Day3/" itemprop="url">
-            <span itemprop="name">AI-Day3</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-05-07T09:11:41+09:00"
-              content="2021-05-07">
-          05-07
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/05/07/AI-Day2/" itemprop="url">
-            <span itemprop="name">AI-Day2</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-05-06T10:29:20+09:00"
-              content="2021-05-06">
-          05-06
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/05/06/AI-Day1/" itemprop="url">
-            <span itemprop="name">AI-Day1</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-04-15T21:30:38+09:00"
-              content="2021-04-15">
-          04-15
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/04/15/linear-layer/" itemprop="url">
-            <span itemprop="name">linear layer</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-04-09T01:38:35+09:00"
-              content="2021-04-09">
-          04-09
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/04/09/PyTorch/" itemprop="url">
-            <span itemprop="name">PyTorch</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
+</div>
 
 
-    </div>
-  </div>
-  
-  
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2021/page/2/">2</a><a class="extend next" rel="next" href="/archives/2021/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
+
+
+
 
 
 <script>
