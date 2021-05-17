@@ -23,15 +23,15 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"bong7233.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="신뢰구간 (Confidence Interval) 목표 ANOVA, CLT 이해 신뢰구간의 목적과 사용예시 이해 추전도니 통계치에 대한 신뢰구간 계산      신뢰구간이란? 실제 모수가 존재할 가능성이 높은구간 모비율,모평균 등의 모수를 포함할 확률 신뢰수준(Confidence level) : 구간에 모수평균이 포함될 확률  구간추정 (Point estima">
+<meta name="description" content="신뢰구간 (Confidence Interval) 목표 ANOVA, CLT 이해 신뢰구간의 목적과 사용예시 이해 추정된 통계치에 대한 신뢰구간 계산      신뢰구간이란? 실제 모수가 존재할 가능성이 높은구간 모비율,모평균 등의 모수를 포함할 확률 신뢰수준(Confidence level) : 구간에 모수평균이 포함될 확률  구간추정 (Point estimat">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AI-day8">
 <meta property="og:url" content="http://bong7233.github.io/2021/05/17/AI-day8/index.html">
 <meta property="og:site_name" content="Bong&#39;s Blog">
-<meta property="og:description" content="신뢰구간 (Confidence Interval) 목표 ANOVA, CLT 이해 신뢰구간의 목적과 사용예시 이해 추전도니 통계치에 대한 신뢰구간 계산      신뢰구간이란? 실제 모수가 존재할 가능성이 높은구간 모비율,모평균 등의 모수를 포함할 확률 신뢰수준(Confidence level) : 구간에 모수평균이 포함될 확률  구간추정 (Point estima">
+<meta property="og:description" content="신뢰구간 (Confidence Interval) 목표 ANOVA, CLT 이해 신뢰구간의 목적과 사용예시 이해 추정된 통계치에 대한 신뢰구간 계산      신뢰구간이란? 실제 모수가 존재할 가능성이 높은구간 모비율,모평균 등의 모수를 포함할 확률 신뢰수준(Confidence level) : 구간에 모수평균이 포함될 확률  구간추정 (Point estimat">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-05-16T21:30:55.000Z">
-<meta property="article:modified_time" content="2021-05-17T01:43:14.766Z">
+<meta property="article:modified_time" content="2021-05-17T03:00:25.362Z">
 <meta property="article:author" content="SangBong Lee">
 <meta property="article:tag" content="Confidence Interval">
 <meta name="twitter:card" content="summary">
@@ -189,7 +189,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EC%8B%A0%EB%A2%B0%EA%B5%AC%EA%B0%84-Confidence-Interval"><span class="nav-number">1.</span> <span class="nav-text">신뢰구간 (Confidence Interval)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%8B%A0%EB%A2%B0%EA%B5%AC%EA%B0%84%EC%9D%B4%EB%9E%80"><span class="nav-number">1.1.</span> <span class="nav-text">신뢰구간이란?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EA%B5%AC%EA%B0%84%EC%B6%94%EC%A0%95-Point-estimate-VS-Interval-estimate"><span class="nav-number">1.2.</span> <span class="nav-text">구간추정 (Point estimate VS Interval estimate)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ANOVA"><span class="nav-number">1.3.</span> <span class="nav-text">ANOVA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%81%B0%EC%88%98%EC%9D%98-%EB%B2%95%EC%B9%99-Law-of-large-numbers"><span class="nav-number">1.4.</span> <span class="nav-text">큰수의 법칙 ( Law of large numbers )</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%A4%91%EC%8B%AC%EA%B7%B9%ED%95%9C%EC%A0%95%EB%A6%AC-Central-Limit-Theorem-CLT"><span class="nav-number">1.5.</span> <span class="nav-text">중심극한정리 ( Central Limit Theorem, CLT )</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EC%8B%A0%EB%A2%B0%EA%B5%AC%EA%B0%84-Confidence-Interval"><span class="nav-number">1.</span> <span class="nav-text">신뢰구간 (Confidence Interval)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%8B%A0%EB%A2%B0%EA%B5%AC%EA%B0%84%EC%9D%B4%EB%9E%80"><span class="nav-number">1.1.</span> <span class="nav-text">신뢰구간이란?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EA%B5%AC%EA%B0%84%EC%B6%94%EC%A0%95-Point-estimate-VS-Interval-estimate"><span class="nav-number">1.2.</span> <span class="nav-text">구간추정 (Point estimate VS Interval estimate)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ANOVA"><span class="nav-number">1.3.</span> <span class="nav-text">ANOVA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%81%B0%EC%88%98%EC%9D%98-%EB%B2%95%EC%B9%99-Law-of-large-numbers"><span class="nav-number">1.4.</span> <span class="nav-text">큰수의 법칙 ( Law of large numbers )</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%A4%91%EC%8B%AC%EA%B7%B9%ED%95%9C%EC%A0%95%EB%A6%AC-Central-Limit-Theorem-CLT"><span class="nav-number">1.5.</span> <span class="nav-text">중심극한정리 ( Central Limit Theorem, CLT )</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Quest"><span class="nav-number">1.5.1.</span> <span class="nav-text">Quest</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -295,7 +295,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-05-17 06:30:55 / Modified: 10:43:14" itemprop="dateCreated datePublished" datetime="2021-05-17T06:30:55+09:00">2021-05-17</time>
+      <time title="Created: 2021-05-17 06:30:55 / Modified: 12:00:25" itemprop="dateCreated datePublished" datetime="2021-05-17T06:30:55+09:00">2021-05-17</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -321,7 +321,7 @@
 <li>목표<ul>
 <li>ANOVA, CLT 이해</li>
 <li>신뢰구간의 목적과 사용예시 이해</li>
-<li>추전도니 통계치에 대한 신뢰구간 계산  </li>
+<li>추정된 통계치에 대한 신뢰구간 계산  </li>
 </ul>
 </li>
 </ul>
@@ -360,6 +360,11 @@
 <h2 id="중심극한정리-Central-Limit-Theorem-CLT"><a href="#중심극한정리-Central-Limit-Theorem-CLT" class="headerlink" title="중심극한정리 ( Central Limit Theorem, CLT )"></a>중심극한정리 ( Central Limit Theorem, CLT )</h2><ul>
 <li>샘플데이터가 많아질수록 샘플평균은 정규분포에 근사해진다</li>
 <li>샘플데이터들의 기존 분포가 모두 다르더라도, 샘플들의 평균은 데이터가 쌓일수록 모두 정규분포에 근사해지므로 서로 비교가 가능해짐(가설검정이 쉬워짐)</li>
+</ul>
+<h3 id="Quest"><a href="#Quest" class="headerlink" title="Quest"></a>Quest</h3><ul>
+<li>정규분포, T분포, F분포를 구분하고 설명할수 있는가</li>
+<li>P-value, 카이제곱의 x, F-test의 f값에대해 구분하고 설명할수있는가</li>
+<li>코딩에서 가독성을 올려주는 method chaining 에대해 알아보자</li>
 </ul>
 
     </div>
