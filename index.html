@@ -197,20 +197,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -263,6 +263,126 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://bong7233.github.io/2021/05/18/AI-day9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="SangBong Lee">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bong's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/05/18/AI-day9/" class="post-title-link" itemprop="url">AI-day9</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-05-18 08:54:15 / Modified: 11:15:12" itemprop="dateCreated datePublished" datetime="2021-05-18T08:54:15+09:00">2021-05-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="베이지안-통계-개론-Bayesian-Inference"><a href="#베이지안-통계-개론-Bayesian-Inference" class="headerlink" title="베이지안 통계 개론 (Bayesian Inference)"></a>베이지안 통계 개론 (Bayesian Inference)</h1><ul>
+<li>이유 불충분의 정리<ul>
+<li>확률을 모를때는 50대50으로 생각</li>
+<li>아무 정보없을때 사전확률(50%)</li>
+<li>어떤 새로운 정보로인해 상승한 사후확률(50+a%)</li>
+<li>이렇게 어떤 하나의 정보로인해 확률이 변하는것이 <strong>베이즈정리</strong> </li>
+</ul>
+</li>
+<li>조건부확률도 중요</li>
+</ul>
+<h2 id="총-확률의-법칙-The-Law-of-Total-Probability"><a href="#총-확률의-법칙-The-Law-of-Total-Probability" class="headerlink" title="총 확률의 법칙 (The Law of Total Probability)"></a>총 확률의 법칙 (The Law of Total Probability)</h2><ul>
+<li>특정 확률 변수에 대해, 모든 가능한 이벤트의 총 확률 = 1</li>
+<li>2개의 변수를 고려 한다면 두 변수가 연관이 있는 경우, B가 일어난 상황에서 A에 대한 확률 P(A)는, P(A|B) 의 형태로 표현  <img src="../images/ltp.PNG"></li>
+</ul>
+<h2 id="조건부-확률-The-Law-of-Conditional-Probability"><a href="#조건부-확률-The-Law-of-Conditional-Probability" class="headerlink" title="조건부 확률 (The Law of Conditional Probability)"></a>조건부 확률 (The Law of Conditional Probability)</h2><ul>
+<li>전체사각형이 모든 확률공간(1) 일때 각각 B의 조건에서 A가 일어날 확률을 교집합으로 표현가능  <img src="../images/conditional.PNG"></li>
+</ul>
+<h2 id="베이지안-이론-Bayes-Theorem"><a href="#베이지안-이론-Bayes-Theorem" class="headerlink" title="베이지안 이론 (Bayes Theorem)"></a>베이지안 이론 (Bayes Theorem)</h2><ul>
+<li>B가 주어진 상황에서 A의 확률 = A가 주어진 상황에서 B의 확률 X A의 확률 % B 의 확률로 표현</li>
+<li>p(A|B) -&gt; 사후 확률 (B라는 정보가 업데이트 된 이후 확률)</li>
+<li>p(A) -&gt; 사전 확률 (B라는 정보가 업데이트 되기 전의 사전확률)</li>
+<li>p(B|A) -&gt; likelihood</li>
+<li>사전확률(“Prior”)은 사후확률(“Updated”)로 다시 표현 할 수 있음이 중요<ul>
+<li>쉽게말해 사후확률의 추가(샘플의 추가)로 불규칙한 확률을 정규분포와 비슷하게 업데이트 할수 있다 -&gt; 베이지안이론이 많이 쓰이는 이유  <img src="../images/bayes.PNG"></li>
+</ul>
+</li>
+</ul>
+<h2 id="베이지안-테스트를-반복하여-사용-repeated-testing"><a href="#베이지안-테스트를-반복하여-사용-repeated-testing" class="headerlink" title="베이지안 테스트를 반복하여 사용 (repeated testing)"></a>베이지안 테스트를 반복하여 사용 (repeated testing)</h2><ul>
+<li>False positive rate와 사전확률을 통해 반복적인 테스트로 정확한 확률을 계산<ul>
+<li>TPR : True Positive Rate (= 민감도, true accept rate) 1인 케이스에 대해 1로 잘 예측한 비율(암환자를 암이라고 진단 함)</li>
+<li>FPR : False Positive Rate (= 1-특이도, false accept rate) 0인 케이스에 대해 1로 잘못 예측한 비율(암환자가 아닌데 암이라고 진단 함)</li>
+</ul>
+</li>
+</ul>
+<h3 id="Bayesian-기반-신뢰구간-추정"><a href="#Bayesian-기반-신뢰구간-추정" class="headerlink" title="Bayesian 기반 신뢰구간 추정"></a>Bayesian 기반 신뢰구간 추정</h3><ul>
+<li>Scipy.stats.bayes_mvs()</li>
+</ul>
+<h3 id="Bayesian-Optimize"><a href="#Bayesian-Optimize" class="headerlink" title="Bayesian Optimize"></a>Bayesian Optimize</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/fmfn/BayesianOptimization">https://github.com/fmfn/BayesianOptimization</a></li>
+</ul>
+<h2 id="Naive-Bayes"><a href="#Naive-Bayes" class="headerlink" title="Naive Bayes"></a>Naive Bayes</h2><ul>
+<li></li>
+</ul>
+<h2 id="MLE-와-MAP"><a href="#MLE-와-MAP" class="headerlink" title="MLE 와 MAP"></a>MLE 와 MAP</h2><ul>
+<li>MLE</li>
+<li>MAP</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://bong7233.github.io/2021/05/17/AI-day8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -286,17 +406,23 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-05-17 06:30:55 / Modified: 12:00:25" itemprop="dateCreated datePublished" datetime="2021-05-17T06:30:55+09:00">2021-05-17</time>
+      <time title="Created: 2021-05-17 06:30:55" itemprop="dateCreated datePublished" datetime="2021-05-17T06:30:55+09:00">2021-05-17</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-05-18 08:58:25" itemprop="dateModified" datetime="2021-05-18T08:58:25+09:00">2021-05-18</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Data-science/" itemprop="url" rel="index"><span itemprop="name">Data science</span></a>
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
         </span>
     </span>
 
@@ -416,7 +542,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-17 06:48:09" itemprop="dateModified" datetime="2021-05-17T06:48:09+09:00">2021-05-17</time>
+        <time title="Modified: 2021-05-18 08:58:00" itemprop="dateModified" datetime="2021-05-18T08:58:00+09:00">2021-05-18</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -424,7 +550,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Data-science/" itemprop="url" rel="index"><span itemprop="name">Data science</span></a>
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
         </span>
     </span>
 
@@ -603,7 +729,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-16 00:18:15" itemprop="dateModified" datetime="2021-05-16T00:18:15+09:00">2021-05-16</time>
+        <time title="Modified: 2021-05-18 08:57:43" itemprop="dateModified" datetime="2021-05-18T08:57:43+09:00">2021-05-18</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -611,7 +737,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Data-science/" itemprop="url" rel="index"><span itemprop="name">Data science</span></a>
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
         </span>
     </span>
 
@@ -824,17 +950,23 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-05-12 16:09:17 / Modified: 17:29:53" itemprop="dateCreated datePublished" datetime="2021-05-12T16:09:17+09:00">2021-05-12</time>
+      <time title="Created: 2021-05-12 16:09:17" itemprop="dateCreated datePublished" datetime="2021-05-12T16:09:17+09:00">2021-05-12</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-05-18 08:57:25" itemprop="dateModified" datetime="2021-05-18T08:57:25+09:00">2021-05-18</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Data-science/" itemprop="url" rel="index"><span itemprop="name">Data science</span></a>
+          <a href="/categories/Weekly-reveiw/" itemprop="url" rel="index"><span itemprop="name">Weekly reveiw</span></a>
         </span>
     </span>
 
@@ -966,7 +1098,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-13 12:04:37" itemprop="dateModified" datetime="2021-05-13T12:04:37+09:00">2021-05-13</time>
+        <time title="Modified: 2021-05-18 08:56:48" itemprop="dateModified" datetime="2021-05-18T08:56:48+09:00">2021-05-18</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -974,7 +1106,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Data-science/" itemprop="url" rel="index"><span itemprop="name">Data science</span></a>
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
         </span>
     </span>
 
@@ -1107,7 +1239,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-11 20:06:19" itemprop="dateModified" datetime="2021-05-11T20:06:19+09:00">2021-05-11</time>
+        <time title="Modified: 2021-05-18 08:56:33" itemprop="dateModified" datetime="2021-05-18T08:56:33+09:00">2021-05-18</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1115,7 +1247,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Data-science/" itemprop="url" rel="index"><span itemprop="name">Data science</span></a>
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
         </span>
     </span>
 
@@ -1244,7 +1376,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-17 02:47:10" itemprop="dateModified" datetime="2021-05-17T02:47:10+09:00">2021-05-17</time>
+        <time title="Modified: 2021-05-18 08:56:18" itemprop="dateModified" datetime="2021-05-18T08:56:18+09:00">2021-05-18</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1252,7 +1384,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Data-science/" itemprop="url" rel="index"><span itemprop="name">Data science</span></a>
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
         </span>
     </span>
 
@@ -1362,7 +1494,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-12 00:04:36" itemprop="dateModified" datetime="2021-05-12T00:04:36+09:00">2021-05-12</time>
+        <time title="Modified: 2021-05-18 08:55:51" itemprop="dateModified" datetime="2021-05-18T08:55:51+09:00">2021-05-18</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1370,7 +1502,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Data-science/" itemprop="url" rel="index"><span itemprop="name">Data science</span></a>
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
         </span>
     </span>
 
@@ -1645,120 +1777,6 @@
 <li>이때 행렬의 곱으로 표현가능<ul>
 <li><img src="../images/linearmulti.PNG"></li>
 </ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://bong7233.github.io/2021/04/09/PyTorch/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="SangBong Lee">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Bong's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/04/09/PyTorch/" class="post-title-link" itemprop="url">PyTorch</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-04-09 01:38:35" itemprop="dateCreated datePublished" datetime="2021-04-09T01:38:35+09:00">2021-04-09</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-10 15:44:55" itemprop="dateModified" datetime="2021-05-10T15:44:55+09:00">2021-05-10</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Deep-Learning/" itemprop="url" rel="index"><span itemprop="name">Deep-Learning</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="PyTorch"><a href="#PyTorch" class="headerlink" title="PyTorch"></a>PyTorch</h1><ul>
-<li>최근 TensorFlow 보다 높은 인지도와 실용성으로 성장중</li>
-<li>NumPy와 매우 비슷한 문법</li>
-<li>동적으로 back-propagation 경로 생성가능</li>
-<li>documentation 완벽(이것만으로도 충분히 마스터가능함)</li>
-<li>난이도 적당, 자유도 높음</li>
-<li>But TensorFlow 에 비해 낮은 상용화 지원</li>
-</ul>
-<h2 id="PyTorch-설치"><a href="#PyTorch-설치" class="headerlink" title="PyTorch 설치"></a>PyTorch 설치</h2><ul>
-<li>Windows 사용중이므로 PyTorch와 CUDA도 같이 설치</li>
-</ul>
-<h2 id="Data-Set"><a href="#Data-Set" class="headerlink" title="Data Set"></a>Data Set</h2><ul>
-<li>Tabular Dataset<ul>
-<li>가장 많이 활용되는 table형태</li>
-<li>엑셀파일이라고 생각하면 쉬움</li>
-<li>한 row가 한개의 sample</li>
-<li>Column 갯수가 백터의 차원</li>
-</ul>
-</li>
-</ul>
-<h2 id="Tensor"><a href="#Tensor" class="headerlink" title="Tensor"></a>Tensor</h2><ul>
-<li><p> 하나의 정보 (점) : scalar</p>
-</li>
-<li><p> 1차원 배열,리스트: vector</p>
-</li>
-<li><p> 2차원 배열,행렬  : matrix</p>
-</li>
-<li><p>3차원 ~ n차원    : tensor</p>
-<ul>
-<li>tensor 는 육면체의 형태  <p align="left"><img src="../images/tensor_shape.PNG" width="400" height="300"></p></li>
-</ul>
-</li>
-<li><p>NLP,ComputerVision 에서도 Tensor형태로 시각화 가능</p>
 </li>
 </ul>
 
