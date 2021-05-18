@@ -34,7 +34,7 @@
 <meta property="og:image" content="http://bong7233.github.io/2021/05/18/images/conditional.PNG">
 <meta property="og:image" content="http://bong7233.github.io/2021/05/18/images/bayes.PNG">
 <meta property="article:published_time" content="2021-05-17T23:54:15.000Z">
-<meta property="article:modified_time" content="2021-05-18T02:15:12.895Z">
+<meta property="article:modified_time" content="2021-05-18T04:43:01.020Z">
 <meta property="article:author" content="SangBong Lee">
 <meta property="article:tag" content="Data science">
 <meta property="article:tag" content="Bayesian">
@@ -300,7 +300,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-05-18 08:54:15 / Modified: 11:15:12" itemprop="dateCreated datePublished" datetime="2021-05-18T08:54:15+09:00">2021-05-18</time>
+      <time title="Created: 2021-05-18 08:54:15 / Modified: 13:43:01" itemprop="dateCreated datePublished" datetime="2021-05-18T08:54:15+09:00">2021-05-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -337,13 +337,16 @@
 <li>2개의 변수를 고려 한다면 두 변수가 연관이 있는 경우, B가 일어난 상황에서 A에 대한 확률 P(A)는, P(A|B) 의 형태로 표현  <img src="../images/ltp.PNG"></li>
 </ul>
 <h2 id="조건부-확률-The-Law-of-Conditional-Probability"><a href="#조건부-확률-The-Law-of-Conditional-Probability" class="headerlink" title="조건부 확률 (The Law of Conditional Probability)"></a>조건부 확률 (The Law of Conditional Probability)</h2><ul>
-<li>전체사각형이 모든 확률공간(1) 일때 각각 B의 조건에서 A가 일어날 확률을 교집합으로 표현가능  <img src="../images/conditional.PNG"></li>
+<li>전체사각형이 모든 확률공간(1) 일때 각각 B의 조건에서 A가 일어날 확률을 교집합으로 표현가능  <img src="../images/conditional.PNG" width="300"></li>
 </ul>
 <h2 id="베이지안-이론-Bayes-Theorem"><a href="#베이지안-이론-Bayes-Theorem" class="headerlink" title="베이지안 이론 (Bayes Theorem)"></a>베이지안 이론 (Bayes Theorem)</h2><ul>
+<li>사후확률(posterior probability)을 사전확률(prior probability)과 likelihood를 이용해서 계산할 수 있도록 해 주는 확률 변환식<ul>
 <li>B가 주어진 상황에서 A의 확률 = A가 주어진 상황에서 B의 확률 X A의 확률 % B 의 확률로 표현</li>
 <li>p(A|B) -&gt; 사후 확률 (B라는 정보가 업데이트 된 이후 확률)</li>
 <li>p(A) -&gt; 사전 확률 (B라는 정보가 업데이트 되기 전의 사전확률)</li>
-<li>p(B|A) -&gt; likelihood</li>
+<li>p(B|A) -&gt; likelihood(어떤 모델에서 해당 데이터(관측값)이 나올 확률)</li>
+</ul>
+</li>
 <li>사전확률(“Prior”)은 사후확률(“Updated”)로 다시 표현 할 수 있음이 중요<ul>
 <li>쉽게말해 사후확률의 추가(샘플의 추가)로 불규칙한 확률을 정규분포와 비슷하게 업데이트 할수 있다 -&gt; 베이지안이론이 많이 쓰이는 이유  <img src="../images/bayes.PNG"></li>
 </ul>
@@ -363,11 +366,30 @@
 <li><a target="_blank" rel="noopener" href="https://github.com/fmfn/BayesianOptimization">https://github.com/fmfn/BayesianOptimization</a></li>
 </ul>
 <h2 id="Naive-Bayes"><a href="#Naive-Bayes" class="headerlink" title="Naive Bayes"></a>Naive Bayes</h2><ul>
-<li></li>
+<li>bayes theorem을 사용하되, 고려해야할 특징이 많은경우 보다 단순화해서 판달할수있는 방법</li>
+<li>즉, multi=class 분류에서 쉽고 빠르게 예측가능</li>
+<li>수치형보다는 범주형데이터에 효과적<ul>
+<li>특히 실시간 예측이 필요한경우나 질병예측분야에서 효과적</li>
+</ul>
+</li>
+<li>but ! 학습데이터에는 없지만 실제 검사데이터에 있는 범주에서는 확률이 0 이되어(zero frequency) 예측 불가능해짐<ul>
+<li>이를 방지하기위해 다른 테크닉이 필요하고, 실제 데이터간의 독립성이 불분명한경우에도 오류가능성있음</li>
+</ul>
+</li>
 </ul>
 <h2 id="MLE-와-MAP"><a href="#MLE-와-MAP" class="headerlink" title="MLE 와 MAP"></a>MLE 와 MAP</h2><ul>
-<li>MLE</li>
-<li>MAP</li>
+<li>최대우도법(Maximum Likelihood Estimation, 이하 MLE)<ul>
+<li>likelihood 가 높은것을 선택</li>
+<li>내 주머니에서 돈이 떨어질확률 vs 친구 주머니에서 떨어질확률 -&gt; 높은것을 선택</li>
+<li>바지에 주머니의 갯수가 몇개인지에 상관없이 떨어질확률만 생각(좋지않음)</li>
+</ul>
+</li>
+<li>최대 사후확률법(Maximum A Posteriori, 이하 MAP)<ul>
+<li>posterior 가 높은것을 선택</li>
+<li>길에떨어져있는 돈이 내꺼일확률 vs 친구꺼일확률 -&gt; 높은것을 선택</li>
+<li>주머니의 갯수까지 고려</li>
+</ul>
+</li>
 </ul>
 
     </div>
