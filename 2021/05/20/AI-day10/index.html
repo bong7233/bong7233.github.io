@@ -23,16 +23,21 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"bong7233.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta property="og:type" content="website">
-<meta property="og:title" content="Bong&#39;s Blog">
-<meta property="og:url" content="http://bong7233.github.io/tags/Confidence-Interval/index.html">
+<meta name="description" content="Weekly review가설검정 가설검정의 목적: 모집단의 실제값들 중 sample들을 뽑아 그 통계치를 통해 통계적으로 유의한지아닌지를 판정하는것    기술통계치(데이터를 설명하는 값들)와 box plot, violin plot, count, mean, standard dev, min, 1Q, median, 3Q, max 이해하고 설명할 수 있어야함">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI-day10">
+<meta property="og:url" content="http://bong7233.github.io/2021/05/20/AI-day10/index.html">
 <meta property="og:site_name" content="Bong&#39;s Blog">
+<meta property="og:description" content="Weekly review가설검정 가설검정의 목적: 모집단의 실제값들 중 sample들을 뽑아 그 통계치를 통해 통계적으로 유의한지아닌지를 판정하는것    기술통계치(데이터를 설명하는 값들)와 box plot, violin plot, count, mean, standard dev, min, 1Q, median, 3Q, max 이해하고 설명할 수 있어야함">
 <meta property="og:locale">
+<meta property="article:published_time" content="2021-05-20T06:55:05.000Z">
+<meta property="article:modified_time" content="2021-05-20T07:39:17.582Z">
 <meta property="article:author" content="SangBong Lee">
+<meta property="article:tag" content="Data science">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://bong7233.github.io/tags/Confidence-Interval/">
+<link rel="canonical" href="http://bong7233.github.io/2021/05/20/AI-day10/">
 
 
 <script class="page-configurations">
@@ -40,11 +45,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'kor'
   };
 </script>
-<title>Tag: Confidence Interval | Bong's Blog</title>
+<title>AI-day10 | Bong's Blog</title>
   
 
 
@@ -171,7 +176,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -184,6 +189,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Weekly-review"><span class="nav-number">1.</span> <span class="nav-text">Weekly review</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EA%B0%80%EC%84%A4%EA%B2%80%EC%A0%95"><span class="nav-number">1.1.</span> <span class="nav-text">가설검정</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#T-test"><span class="nav-number">1.2.</span> <span class="nav-text">T-test</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -253,50 +259,133 @@
 </noscript>
 
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h2 class="collection-header">Confidence Interval
-          <small>Tag</small>
-        </h2>
-      </div>
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="kor">
+    <link itemprop="mainEntityOfPage" href="http://bong7233.github.io/2021/05/20/AI-day10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="SangBong Lee">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bong's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AI-day10
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+
+      <time title="Created: 2021-05-20 15:55:05 / Modified: 16:39:17" itemprop="dateCreated datePublished" datetime="2021-05-20T15:55:05+09:00">2021-05-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Weekly-reveiw/" itemprop="url" rel="index"><span itemprop="name">Weekly reveiw</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Weekly-review"><a href="#Weekly-review" class="headerlink" title="Weekly review"></a>Weekly review</h1><h2 id="가설검정"><a href="#가설검정" class="headerlink" title="가설검정"></a>가설검정</h2><ul>
+<li><p>가설검정의 목적: 모집단의 실제값들 중 sample들을 뽑아 그 통계치를 통해 통계적으로 유의한지아닌지를 판정하는것  </p>
+</li>
+<li><p>기술통계치(데이터를 설명하는 값들)와 box plot, violin plot, count, mean, standard dev, min, 1Q, median, 3Q, max 이해하고 설명할 수 있어야함  </p>
+</li>
+<li><p>Outlier(이상치)에 대한 개념, 구하는 식 찾기  </p>
+</li>
+<li><p>추리통계치</p>
+<ul>
+<li>Population, Parameter, Statistic, Estimator, Standard Deviation, Standard Error 각각의 정의는 반드시 알아야함  </li>
+</ul>
+</li>
+<li><p>Sampling 4가지 </p>
+<ul>
+<li>Simple random sampling, Systematic sampling, Stratified random sampling, Cluster sampling 와 추가로 이것들의 변이형 도 찾아서 전체적인 뉘앙스를 기억하기  </li>
+</ul>
+</li>
+<li><p>Standard Error(표준오차,표준편차)</p>
+<ul>
+<li>표준편차 나누기 루트샘플사이즈 공식이 왜 그렇게 도출된것인지를 설명할 수 있어야함</li>
+<li>표본의 수가 많을수록 오차가 작다 기억</li>
+</ul>
+</li>
+</ul>
+<h2 id="T-test"><a href="#T-test" class="headerlink" title="T-test"></a>T-test</h2><ul>
+<li>독립성,정규성,등분산성이 지켜져야 t-test 가능</li>
+<li>one sample : 1개 <strong>샘플의 평균값</strong>이 <strong>특정값과 동일</strong>한지 비교<ul>
+<li>t = 샘플평균-모집단평균 / 표준편차</li>
+</ul>
+</li>
+<li>two sample : 2개 <strong>샘플 각각의 평균값</strong>이 <strong>서로 동일</strong>한지 비교</li>
+<li>t-test의 정확한 의미와 결과에대한 해석을 할 줄 알아야함</li>
+<li>P-value(일반적으로 신뢰구간 95%)<ul>
+<li>0.05보다 크다 -&gt; 귀무가설 채택</li>
+<li>0.05보다 작다 -&gt; 귀무가설 기각</li>
+</ul>
+</li>
+</ul>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-05-17T06:30:55+09:00"
-              content="2021-05-17">
-          05-17
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/05/17/AI-day8/" itemprop="url">
-            <span itemprop="name">AI-day8</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Data-science/" rel="tag"># Data science</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/05/18/AI-day9/" rel="prev" title="AI-day9">
+                  <i class="fa fa-chevron-left"></i> AI-day9
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-    </div>
-  </div>
-  
-  
-  
+
+
+
+
 
 
 <script>
