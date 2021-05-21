@@ -197,7 +197,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -210,7 +210,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -254,6 +254,258 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://bong7233.github.io/2021/05/06/AI-Day1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="SangBong Lee">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bong's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/05/06/AI-Day1/" class="post-title-link" itemprop="url">AI-Day1</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-05-06 10:29:20" itemprop="dateCreated datePublished" datetime="2021-05-06T10:29:20+09:00">2021-05-06</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-05-18 08:55:51" itemprop="dateModified" datetime="2021-05-18T08:55:51+09:00">2021-05-18</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Data-Preprocess-amp-EDA"><a href="#Data-Preprocess-amp-EDA" class="headerlink" title="Data Preprocess &amp; EDA"></a>Data Preprocess &amp; EDA</h1><h2 id="Warm-up"><a href="#Warm-up" class="headerlink" title="Warm-up"></a>Warm-up</h2><ul>
+<li><p>CSV(Comma-separated values) : 텍스트 데이터파일</p>
+<ul>
+<li>비슷한 포맷으로 탭으로 구분하는 ‘tab-separated values’(TSV), 반각 스페이스로 구분하는 ‘space-separated values’(SSV) 등이 있으며, 이것들을 합쳐서 character-separated values (CSV), delimiter-separated values 라고 부르기도 함  </li>
+</ul>
+</li>
+<li><p>EDA(Exploratory Data Analysis, 탐색적 데이터 분석)</p>
+<ul>
+<li>수집한 데이터가 들어왔을 때, 이를 다양한 각도에서 관찰하고 이해한후  데이터를 분석하기 전에 그래프나 통계적인 방법으로 자료를 직관적으로 바라보는 과정  </li>
+</ul>
+</li>
+<li><p>Histogram</p>
+<ul>
+<li>양적데이터(숫자데이터) 사용</li>
+<li>막대그래프들 사이에 갭이없음, 갭이 있다?-&gt;데이터의 누락</li>
+<li>막대의 두께(bin size)가 일정</li>
+<li>y축은 일반적으로 갯수,히스토그램의 빈도를 나타냄</li>
+<li>데이터셋의 최소값,최대값을 찾은후 x축의 시작점과 끝점을 설정<ul>
+<li>[40,50) -&gt; 40이상 50미만 임을 기억  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Stem and Leaf Plots : 줄기 잎 그림</p>
+<ul>
+<li>통계학에서 통계적 자료를 표와 그래프가 혼합된 방법으로 나타내는것</li>
+<li>주로 숫자를 다룰때는 자리수를 기준으로 구분하여 보기쉽게 정리  </li>
+</ul>
+</li>
+<li><p>Box and Whisker Plots : 상자 수염 그림</p>
+<ul>
+<li>기술통계학에서 수치적 자료를 5가지 요약수치를 기준으로 표현하는 그래프<ul>
+<li>최솟값,제1~3사분위,최댓값</li>
+<li>1사분위 Q1 : 하위25%</li>
+<li>2사분위 Q2 : 50%</li>
+<li>3사분위 Q3 : 상위25%</li>
+<li>4분위범위 IQR : 3사분위-1사분위</li>
+<li>파이썬의 matplotlib.pyplot 모듈로 손쉽게 그릴수있음</li>
+</ul>
+</li>
+<li>histogram과 다르게 집단이 여러개인경우도 한 공간에 나타낼수있음  </li>
+</ul>
+</li>
+</ul>
+<h2 id="EDA-Exploratory-Data-Analysis-탐색적-데이터-분석"><a href="#EDA-Exploratory-Data-Analysis-탐색적-데이터-분석" class="headerlink" title="EDA(Exploratory Data Analysis, 탐색적 데이터 분석)"></a>EDA(Exploratory Data Analysis, 탐색적 데이터 분석)</h2><ul>
+<li><p>데이터의 초기분석단계</p>
+<ul>
+<li>시각화 같은 도구를 통해 패턴발견</li>
+<li>데이터 특이성 확인</li>
+<li>통계와 그래픽을 통해 가설을 검증</li>
+</ul>
+</li>
+<li><p>크게 2가지 방법이있음</p>
+<ul>
+<li>Graphic: 차트 그림을 이용해 데이터확인</li>
+<li>Non-Graphic: Summary Statistics를통해 데이터확인</li>
+</ul>
+</li>
+<li><p>EDA의 “타겟”(데이터) 또한 2가지 (Univariate, Multi-variate)로 나눠짐</p>
+<ul>
+<li>Multi-variate : 변수들간의 관계를 보는 것이 주요 목적  </li>
+</ul>
+</li>
+<li><p>Uni - Non Graphic : Sample Data의 Distribution을 확인하는 것이 주목적</p>
+<ul>
+<li>Numeric data의 경우 summary statistics 활용<ul>
+<li>Center (Mean, Median, Mod)</li>
+<li>Spread (Variance, SD, IQR, Range)</li>
+<li>Modality (Peak)</li>
+<li>Shape (Tail, Skewness, Kurtosis)</li>
+<li>Outliers 등을 확인합니다.</li>
+<li>Categorical data의 경우 occurence, frequency, tabulation등을 할 수 있음  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Uni - Graphic</p>
+<ul>
+<li>Histogram 혹은 Pie chart, Stem-leaf plot, Boxplot, QQplot 등을 사용합니다.</li>
+<li>그러나 값들이 너무 다양하다면, Binning, Tabulation등을 활용  </li>
+</ul>
+</li>
+<li><p>QQPlot :데이터의 분포와 이론상 분포가 잘 일치하는가 를 확인 할 수 있는 방법  </p>
+</li>
+<li><p>Multi - Non Graphic : Relationship을 보는 것이 주된 목표</p>
+<ul>
+<li>Cross-Tabulation</li>
+<li>Cross-Statistics (Correlation, Covariance)  </li>
+</ul>
+</li>
+<li><p>Multi - Graphic</p>
+<ul>
+<li>Category &amp; Numeric : Boxplots, Stacked bar, Parallel Coordinate, Heatmap</li>
+<li>Numeric &amp; Numeric : Scatter Plot</li>
+</ul>
+</li>
+</ul>
+<h2 id="Data-preprocessing"><a href="#Data-preprocessing" class="headerlink" title="Data preprocessing"></a>Data preprocessing</h2><ul>
+<li>Data Cleaning<ul>
+<li>noise 를 제거하거나, inconsistency 를 보정하는 과정</li>
+<li>값이 빠져있거나, 잘못 입력되거나 혹은 일관성을 가지지 않는 데이터들을 제거 / 보정 하는 과정들이 포함</li>
+<li>Ignore the tuple (결측치가 있는 데이터 삭제)</li>
+<li>Manual Fill (수동으로 입력)</li>
+<li>Global Constant (“Unknown”)</li>
+<li>Imputation (All mean, Class mean, Inference mean, Regression 등)</li>
+<li>Binning, Regression, Outlier analysis 등등</li>
+</ul>
+</li>
+<li>Data Integration<ul>
+<li>여러개로 나누어져 있는 데이터들을 분석하기 편하게 하나로 합치는 과정  </li>
+</ul>
+</li>
+<li>Data Transformation(scaling)<ul>
+<li>데이터의 형태를 변환하는 작업  </li>
+</ul>
+</li>
+<li>Data Reduction<ul>
+<li>데이터를 의미있게 줄이는 것</li>
+<li>dimension reduction과 유사한 목적  </li>
+</ul>
+</li>
+</ul>
+<h2 id="Pandas-메서드들"><a href="#Pandas-메서드들" class="headerlink" title="Pandas 메서드들"></a>Pandas 메서드들</h2><ul>
+<li>Missing Data<ul>
+<li>isna</li>
+<li>isnull</li>
+<li>notna</li>
+<li>notnull</li>
+<li>dropna</li>
+<li>fillna</li>
+</ul>
+</li>
+<li>Data Frame<ul>
+<li>index</li>
+<li>columns</li>
+<li>dtypes</li>
+<li>info</li>
+<li>select_dtypes</li>
+<li>loc</li>
+<li>iloc</li>
+<li>insert</li>
+<li>head</li>
+<li>tail</li>
+<li>apply</li>
+<li>aggregate</li>
+<li>drop</li>
+<li>rename</li>
+<li>replace</li>
+<li>nsmallest</li>
+<li>nlargest</li>
+<li>sort_values</li>
+<li>sort_index</li>
+<li>value_counts</li>
+<li>describe</li>
+<li>shape</li>
+</ul>
+</li>
+<li>Vis<ul>
+<li>plot</li>
+<li>plot.area</li>
+<li>plot.bar</li>
+<li>plot.barh</li>
+<li>plot.box</li>
+<li>plot.density</li>
+<li>plot.hexbin</li>
+<li>plot.hist</li>
+<li>plot.kde</li>
+<li>plot.line</li>
+<li>plot.pie</li>
+<li>plot.scatter</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
