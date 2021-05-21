@@ -288,7 +288,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-05-21 09:03:14 / Modified: 12:02:19" itemprop="dateCreated datePublished" datetime="2021-05-21T09:03:14+09:00">2021-05-21</time>
+      <time title="Created: 2021-05-21 09:03:14 / Modified: 16:09:06" itemprop="dateCreated datePublished" datetime="2021-05-21T09:03:14+09:00">2021-05-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -347,10 +347,39 @@
 <li>대각선기준 행 열을 뒤집기, 코드로는 df.T 로 간단하게 가능</li>
 </ul>
 </li>
-<li>정사각 매트릭스(square matrix)<ul>
+<li>정사각 행렬(square matrix)<ul>
 <li>정방매트릭스 라고불리며, 행과 열의수가 동일한 매트릭스</li>
+<li>Upper Triangular(상삼각): 대각선 위쪽 부분에만 값이 있고, 나머지는 전부 0</li>
+<li>Lower Triangular(하삼각): upper triangular 와 반대</li>
+<li>Symmetric(대칭): 대각선을 기준으로 위 아래의 값이 대칭</li>
+<li>Diagonal(대각): 대각선 부분에만 값이 있고, 나머지는 전부 0<ul>
+<li>Identity(단위 매트릭스) : 대각중 모든값이 1, 임의의 행렬에 곱했을때 단위행렬이 나오는것 = 역행렬</li>
 </ul>
 </li>
+</ul>
+</li>
+</ul>
+<h2 id="행렬식-Determinant"><a href="#행렬식-Determinant" class="headerlink" title="행렬식 (Determinant)"></a>행렬식 (Determinant)</h2><ul>
+<li>2x2 행렬기준 행렬식은 ad-bc<ul>
+<li>그 이상 차원의 행렬은 방법이 다름(재귀적으로 부분나누어서)</li>
+</ul>
+</li>
+<li>행렬식이 0 이라면 역행렬은 존재하지 않음<ul>
+<li>이것을  “특이” (singular) 행렬이라 하며, <strong>매트릭스의 행과 열이 의존관계가 있다</strong> 고 표현가능</li>
+</ul>
+</li>
+</ul>
+<h2 id="역행렬"><a href="#역행렬" class="headerlink" title="역행렬"></a>역행렬</h2><ul>
+<li>역행렬 계산법은 여러가지이며 행렬의 역수로 표현가능</li>
+<li>행렬에 역행렬을 곱하면 단위행렬</li>
+</ul>
+<h3 id="사용해본-모듈및-메서드"><a href="#사용해본-모듈및-메서드" class="headerlink" title="사용해본 모듈및 메서드"></a>사용해본 모듈및 메서드</h3><ul>
+<li>np.matmul</li>
+<li>np.dot</li>
+<li>linalg.norm(v)</li>
+<li>linalg.inv(v)</li>
+<li>mean_squared_error(x,y)</li>
+<li>mean_absolute_error(x,y)</li>
 </ul>
 
       
