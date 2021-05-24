@@ -279,14 +279,57 @@
 <li>Gaussian elemination</li>
 <li>linear projection과 예시</li>
 </ul>
-<h2 id="분산-Variance"><a href="#분산-Variance" class="headerlink" title="분산 Variance"></a>분산 Variance</h2><ul>
+<h2 id="기본적인-개념"><a href="#기본적인-개념" class="headerlink" title="기본적인 개념"></a>기본적인 개념</h2><ul>
+<li>기저벡터<ul>
+<li>“벡터공간 전체를 생성하는 선형 독립인 벡터의 집합” , but.. 이게무슨말일까?</li>
+<li>벡터v 의 각 좌표값을 스칼라라고 생각해보자</li>
+<li>이때 각 x,y 좌표의 단위벡터가 i^, j^ 라면 각각의 좌표를 단위백터에 스칼라곱 한만큼의 합이라고 볼 수 있다<ul>
+<li>벡터v =  ai^ + bj^</li>
+</ul>
+</li>
+<li>이 단위벡터 i^,j^ 을 xy좌표계의 <strong>기저벡터</strong> 라고 한다</li>
+<li>이는 벡터를 수적으로 표현할때 기저벡터를 기준으로 나타낸다  </li>
+</ul>
+</li>
+<li>선형결합<ul>
+<li>두 벡터를 스케일하여 새로운 벡터를 생성하는 모든 연산</li>
+<li>벡터 v,w 의 선형결합 : av + bw</li>
+<li>3차원 이라면 ? av + bw + cu  </li>
+</ul>
+</li>
+<li>선형생성<ul>
+<li>백터 v와 w의 모든 선형결합으로 만들어진 벡터의 집합을 두 벡터의 생성(선형생성) 이라 한다</li>
+<li>일반적으로 두 기저벡터로 선형결합을 한다면, 그 차원의 모든 벡터를 만들수있다. 즉 생성은 <strong>평면전체</strong> 가 된다</li>
+<li>하지만 두 기저벡터가 같은 직선상에 존재한다면 생성은 <strong>영점을 지나는 하나의 선</strong> 이 된다</li>
+<li>3차원에서 하나의 벡터가 나머지 두 벡터의 선형생성안에 있다면? 즉 두 벡터로 만들어진 평면안에 포함된다면<ul>
+<li>그 포함된 벡터의 변화는 전체 선형생성에 의미가 없다, 즉 제거해도 상관없다  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>선형종속<ul>
+<li><strong>제거해도 상관없다</strong> 는 것을 선형종속 이라 표현<ul>
+<li>즉 벡터(u) 는 다른 벡터(v,w) 들의 선형결합으로 표현될 수 있다</li>
+<li>u = av + bw  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>선형독립<ul>
+<li>서로 선형생성안에 포함되지않는 독립적인 상태라면 선형독립이라 표현<ul>
+<li>u != av + bw</li>
+<li>av + bw + cu = 0 의 유일한 해가 a=b=c=0 이라면 선형독립이다 라고도 할 수 있다  <h2 id="분산-Variance"><a href="#분산-Variance" class="headerlink" title="분산 Variance"></a>분산 Variance</h2></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><strong>데이터가 얼마나 퍼져있는지</strong> 측정하는 방법</li>
-<li>값-평균값 의 제곱</li>
+<li>값-평균값 의 제곱  </li>
 </ul>
 <h2 id="표준편차-Standard-Deviation"><a href="#표준편차-Standard-Deviation" class="headerlink" title="표준편차 Standard Deviation"></a>표준편차 Standard Deviation</h2><ul>
 <li>분산에 루트씌운것</li>
 <li>분산은 샘플으 사이즈에 따라 평균에비해 스케일이 더 커지는 경향이있음</li>
-<li>표준편차는 제곱된 스케일을 낮춘 방법이므로 통계분석에서 많이 사용됨</li>
+<li>표준편차는 제곱된 스케일을 낮춘 방법이므로 통계분석에서 많이 사용됨  </li>
 </ul>
 <h2 id="공분산-Covariance"><a href="#공분산-Covariance" class="headerlink" title="공분산 Covariance"></a>공분산 Covariance</h2><ul>
 <li>하나의 변수가 변화할때, 다른 변수가 어떤 연관성을 나타내며 변화하는가 측정</li>
@@ -296,7 +339,7 @@
 <li>COV(x,y) ~ 0 : 관련성을 알 수 없음</li>
 <li>하지만 ! 변수들이 다른 스케일을 가지고 있다면 공분산은 실제 변수의 연관성에 관계 없이 영향을 받음<ul>
 <li>즉 만약 두 변수의 연관성이 작더라도 스케일이크다면, 연관성이 높지만 스케일이 작은 변수에비해 높은 공분산값을 가짐</li>
-<li>이것을 보완하기위해 상관계수를 사용</li>
+<li>이것을 보완하기위해 상관계수를 사용  </li>
 </ul>
 </li>
 </ul>
@@ -310,7 +353,7 @@
 <li>-1 &lt; COR(x,y) &lt; 0 : x가 증가하면 y는 감소</li>
 <li> 0 &lt; COR(x,y) &lt; 1 : x가 증가하면 y도 증가</li>
 <li>COR(x,y) ~ 0 : 관련성 알 수 없음</li>
-<li>COR(x,y) = 1 : 한변수가 다른변수에대해 완벽한 양의 선형관계이다</li>
+<li>COR(x,y) = 1 : 한변수가 다른변수에대해 완벽한 양의 선형관계이다  </li>
 </ul>
 <h3 id="Spearman-correlation"><a href="#Spearman-correlation" class="headerlink" title="Spearman correlation"></a>Spearman correlation</h3><ul>
 <li>일반적 상관계수는 Pearson correlation<ul>
@@ -318,32 +361,32 @@
 </ul>
 </li>
 <li>만약 categorical 이라면 ?<ul>
-<li>Spearman correlation coefficient 로 값들의 순서(rank)를 주고, 그 바탕으로 상관관계 측정</li>
+<li>Spearman correlation coefficient 로 값들의 순서(rank)를 주고, 그 바탕으로 상관관계 측정  </li>
 </ul>
 </li>
 </ul>
 <h2 id="수직성-Orthogonality"><a href="#수직성-Orthogonality" class="headerlink" title="수직성 Orthogonality"></a>수직성 Orthogonality</h2><ul>
 <li>벡터, 매트릭스가 서로 수직인 상태</li>
 <li>두 벡터가 수직이다? 상관관계가 전혀 없다<ul>
-<li>수직이다 -&gt; 내적이 0 이다</li>
+<li>수직이다 -&gt; 내적이 0 이다  </li>
 </ul>
 </li>
 </ul>
 <h2 id="단위벡터-Unit-Vectors"><a href="#단위벡터-Unit-Vectors" class="headerlink" title="단위벡터 Unit Vectors"></a>단위벡터 Unit Vectors</h2><ul>
 <li>단위길이(1) 을 갖는 모든벡터<ul>
 <li>차원별 단위벡터는 벡터내에 하나의1과 0들로만 이뤄진벡터</li>
-<li>ex ) 1차원:[1], 2차원:[1,0], 3차원:[1,0,0] </li>
+<li>ex ) 1차원:[1], 2차원:[1,0], 3차원:[1,0,0]  </li>
 </ul>
 </li>
 </ul>
 <h2 id="Span"><a href="#Span" class="headerlink" title="Span"></a>Span</h2><ul>
 <li>주어진 두 벡터의 조합으로 만들수 있는 모든 벡터들의 집합</li>
-<li>선형관계의 벡터가 아니라면? 주어진 차원전체를 나타내는 평면으로 나타낼 수 있다</li>
+<li>선형관계의 벡터가 아니라면? 주어진 차원전체를 나타내는 평면으로 나타낼 수 있다  </li>
 </ul>
 <h2 id="선형관계의-벡터-Linearly-Dependent-Vector"><a href="#선형관계의-벡터-Linearly-Dependent-Vector" class="headerlink" title="선형관계의 벡터 (Linearly Dependent Vector)"></a>선형관계의 벡터 (Linearly Dependent Vector)</h2><ul>
 <li>두 벡터가 같은선상에 있는 경우</li>
 <li>이 경우 두 벡터로 만들어진 Span은 하나의 선이 된다</li>
-<li>선형관계가 없는 <strong>벡터는 독립되어 있다</strong> 고 표현</li>
+<li>선형관계가 없는 <strong>벡터는 독립되어 있다</strong> 고 표현  </li>
 </ul>
 <h2 id="Basis"><a href="#Basis" class="headerlink" title="Basis"></a>Basis</h2><ul>
 <li>벡터공간 V의 basis 란, V를 채울 수 있는 선형관계에 있지않은 벡터들의 집합</li>
@@ -353,23 +396,29 @@
 <li>일차독립 벡터집합을 정규직교기저로 변환</li>
 </ul>
 </li>
-<li>벡터공간을 나타내는 R<sup>n</sup> 에서의 n은 해당 <strong>벡터공간을 이루는 기저의 수</strong> 라고 이해할 수 있다</li>
+<li>벡터공간을 나타내는 R<sup>n</sup> 에서의 n은 해당 <strong>벡터공간을 이루는 기저의 수</strong> 라고 이해할 수 있다  </li>
 </ul>
 <h2 id="Rank"><a href="#Rank" class="headerlink" title="Rank"></a>Rank</h2><ul>
 <li>매트릭스의 열을 이루는 벡터들로 만들 수 있는 span공간의 차원</li>
 <li>매트릭스의 차원과는 다를수 있음<ul>
-<li>why? 행과 열을 이루는 벡터들중 선형관계가 있는 경우 rank가 더 작을 수 있다</li>
+<li>why? 행과 열을 이루는 벡터들중 선형관계가 있는 경우 rank가 더 작을 수 있다  </li>
 </ul>
 </li>
 </ul>
-<h2 id="Gaussian-Elimination"><a href="#Gaussian-Elimination" class="headerlink" title="Gaussian Elimination"></a>Gaussian Elimination</h2><ul>
+<h2 id="가우스-소거법-Gaussian-Elimination"><a href="#가우스-소거법-Gaussian-Elimination" class="headerlink" title="가우스 소거법(Gaussian Elimination)"></a>가우스 소거법(Gaussian Elimination)</h2><ul>
+<li>연립일차방정식에서 미지수를 소거시켜 남은 미지수에대한 선형결합으로 표현하여 풀이하는 방법</li>
 <li>매트릭스를 사다리꼴행렬(Row-Echelon form)로 바꾸는 방법<ul>
 <li>사다리꼴행렬 : 각행의 왼쪽에 1, 나머지는 0</li>
 </ul>
 </li>
-<li>다른 행들의 스칼라 곱과 합을통해 어떤행이 0이 되었다 -&gt; 선형관계가 있다</li>
+<li>다른 행들의 스칼라 곱과 합을통해 어떤행이 0이 되었다 -&gt; 선형관계가 있다  </li>
 </ul>
-<h2 id="R2-공간에서의-Linear-Projections"><a href="#R2-공간에서의-Linear-Projections" class="headerlink" title="R2 공간에서의 Linear Projections"></a>R<sup>2</sup> 공간에서의 Linear Projections</h2>]]></content>
+<h2 id="R2-공간에서의-Linear-Projections"><a href="#R2-공간에서의-Linear-Projections" class="headerlink" title="R2 공간에서의 Linear Projections"></a>R<sup>2</sup> 공간에서의 Linear Projections</h2><ul>
+<li>일반적인 사영은 하나의 벡터를 다른벡터에 수직으로내려서 투영시키는것을 뜻한다</li>
+<li>통계에서의 사영은 투영시키는 그 벡터, 즉 두개의 feature중 하나를 다른하나에 투영시킴으로써 차원을 줄이고 그로인해 통계적 분석에 필요한 메모리나 시간 등을 줄이는 방법이다</li>
+<li>벡터 L에대한 벡터W의 projection  <img src="../images/linearprojection.PNG"></li>
+</ul>
+]]></content>
       <categories>
         <category>TIL</category>
       </categories>
@@ -500,68 +549,70 @@
       </tags>
   </entry>
   <entry>
-    <title>AI-Day5</title>
-    <url>/2021/05/12/AI-Day5/</url>
-    <content><![CDATA[<h1 id="Weekly-review"><a href="#Weekly-review" class="headerlink" title="Weekly review"></a>Weekly review</h1><h2 id="EDA"><a href="#EDA" class="headerlink" title="EDA"></a>EDA</h2><ul>
-<li>데이터를 불러오기<ul>
-<li>Description 을통해 데이터셋에대한 정보파악<ul>
-<li>EDA를 대신해주는거지만, 직접확인하는것이 더 정확</li>
+    <title>AI-day10</title>
+    <url>/2021/05/20/AI-day10/</url>
+    <content><![CDATA[<h1 id="Weekly-review"><a href="#Weekly-review" class="headerlink" title="Weekly review"></a>Weekly review</h1><h2 id="가설검정"><a href="#가설검정" class="headerlink" title="가설검정"></a>가설검정</h2><ul>
+<li><p>가설검정의 목적: 모집단의 실제값들 중 sample들을 뽑아 그 통계치를 통해 통계적으로 유의한지아닌지를 판정하는것  </p>
+</li>
+<li><p>기술통계치(데이터를 설명하는 값들)와 box plot, violin plot, count, mean, standard dev, min, 1Q, median, 3Q, max 이해하고 설명할 수 있어야함  </p>
+</li>
+<li><p>Outlier(이상치)에 대한 개념, 구하는 식 찾기  </p>
+</li>
+<li><p>추리통계치</p>
+<ul>
+<li>Population, Parameter, Statistic, Estimator, Standard Deviation, Standard Error 각각의 정의는 반드시 알아야함  </li>
 </ul>
 </li>
-<li>pd.read_csv() 에 대한 완벽한 숙지가 중요</li>
+<li><p>Sampling 4가지 </p>
+<ul>
+<li>Simple random sampling, Systematic sampling, Stratified random sampling, Cluster sampling 와 추가로 이것들의 변이형 도 찾아서 전체적인 뉘앙스를 기억하기  </li>
 </ul>
 </li>
-<li>데이터셋 확인하기<ul>
-<li>Graphic , Non-Graphic 을 구분하고 사용할줄 알아야함</li>
-<li>하지만, 자기가 시각화를 한 자료에대해서는 100% 설명할줄 알아야함<ul>
-<li>EDA과정에서 시각화된 자료에대한 코멘트(어떤 insigth를 얻었는지 등등)를 달아보기</li>
-</ul>
-</li>
-<li>Pandas의 메서드들을 외우는건 의미없음<ul>
-<li>여러번 사용해보면서 이런 기능을하는 함수가 있었다라는걸 기억하는것이 중요</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>데이터 전처리도 중요하다는것만 우선 기억  </li>
-</ul>
-<h2 id="Feature-Engineering"><a href="#Feature-Engineering" class="headerlink" title="Feature Engineering"></a>Feature Engineering</h2><ul>
-<li>데이터를 보다 확인하기 좋은 형태로 다듬는것이 목적<ul>
-<li>기존의 feature들을 조합하여 새로운 feature를 만드는것</li>
-<li>도메인지식과 창의성이 중요</li>
-</ul>
-</li>
-<li>DataFrame, DataSet 이해<ul>
-<li>결측치들(Na,Null,NaN,0,Undefined)의 차이를 알기</li>
-</ul>
-</li>
-<li>typecasting, 특히 string-&gt;int가 매우 중요하고 많이쓰임<ul>
-<li>replace,apply,astype 등의 다양한 방법이 존재하므로 정확히 의도대로 사용할 줄 알아야함  </li>
+<li><p>Standard Error(표준오차,표준편차)</p>
+<ul>
+<li>표준편차 나누기 루트샘플사이즈 공식이 왜 그렇게 도출된것인지를 설명할 수 있어야함</li>
+<li>표본의 수가 많을수록 오차가 작다 기억</li>
 </ul>
 </li>
 </ul>
-<h2 id="Data-Manipulation"><a href="#Data-Manipulation" class="headerlink" title="Data Manipulation"></a>Data Manipulation</h2><ul>
-<li>concat과 merge를 구분하고 사용할줄 알아야함<ul>
-<li>단순히 합치는법을 알기보다는 원하는 shape으로 만들어낼줄 아는것이 중요</li>
+<h2 id="T-test"><a href="#T-test" class="headerlink" title="T-test"></a>T-test</h2><ul>
+<li>독립성,정규성,등분산성이 지켜져야 t-test 가능</li>
+<li>수치형,연속형data 만 사용가능</li>
+<li>one sample : 1개 <strong>샘플의 평균값</strong>이 <strong>특정값과 동일</strong>한지 비교<ul>
+<li>t = 샘플평균-모집단평균 / 표준편차</li>
 </ul>
 </li>
-<li>wide &amp; tidy<ul>
-<li>각각의 형태가 언제 유용하고 확인하기 좋은가를 구분할줄 알아야함</li>
-<li>data를보고 어떤형태인지도 유추할수 있다면 best</li>
-<li>melt() &amp; pivot_table() 를 적절하게 사용할 줄 알아야함</li>
-</ul>
-</li>
-<li>pandas styling <ul>
-<li>나중에 알고있다면 좋은것</li>
+<li>two sample : 2개 <strong>샘플 각각의 평균값</strong>이 <strong>서로 동일</strong>한지 비교</li>
+<li>t-test의 정확한 의미와 결과에대한 해석을 할 줄 알아야함</li>
+<li>P-value(일반적으로 신뢰구간 95%)<ul>
+<li>0.05보다 크다 -&gt; 귀무가설 채택</li>
+<li>0.05보다 작다 -&gt; 귀무가설 기각</li>
 </ul>
 </li>
 </ul>
-<h2 id="Basic-derivative"><a href="#Basic-derivative" class="headerlink" title="Basic derivative"></a>Basic derivative</h2><ul>
-<li>미분에 대한 개념은 매우중요하지만, 직접미분을 해야하는경우는 드물다<ul>
-<li>다양한 미분 공식들을 알아야 알고리즘에대해 이해하고 사용할 수 있음</li>
+<h2 id="Type-of-Error"><a href="#Type-of-Error" class="headerlink" title="Type of Error"></a>Type of Error</h2><ul>
+<li>type1, type2 error의 개념과 차이가 중요</li>
 </ul>
-</li>
-<li>경사하강법은 뒤로갈수록 중요한 개념이므로 꾸준히 공부하고 이해할수록 좋음</li>
+<h2 id="Chi-square"><a href="#Chi-square" class="headerlink" title="Chi square"></a>Chi square</h2><ul>
+<li>하는법과 의미를 기억</li>
+</ul>
+<h2 id="ANOVA"><a href="#ANOVA" class="headerlink" title="ANOVA"></a>ANOVA</h2><ul>
+<li>2 Sample 이상을 다루는경우 주로 사용하는 가설검정법</li>
+</ul>
+<h2 id="큰-수의-법칙-Law-of-large-numbers"><a href="#큰-수의-법칙-Law-of-large-numbers" class="headerlink" title="큰 수의 법칙 ( Law of large numbers )"></a>큰 수의 법칙 ( Law of large numbers )</h2><ul>
+<li>샘플이 많아질수록 모집단의 통계치와 근사해진다</li>
+</ul>
+<h2 id="중심극한정리-Central-Limit-Theorem-CLT"><a href="#중심극한정리-Central-Limit-Theorem-CLT" class="headerlink" title="중심극한정리 ( Central Limit Theorem, CLT )"></a>중심극한정리 ( Central Limit Theorem, CLT )</h2><ul>
+<li>샘플이 많아질수록 정규분포에 근사해진다</li>
+<li>특히 큰수의법칙과 중심극한정리는 개념을 정확히 설명할줄 알아야한다(면접에서도 중요)</li>
+</ul>
+<h2 id="신뢰구간"><a href="#신뢰구간" class="headerlink" title="신뢰구간"></a>신뢰구간</h2><ul>
+<li>샘플평균 플러스마이너스 Error 로 기억(공식 암기)</li>
+</ul>
+<h2 id="총-확률의-법칙-The-Law-of-Total-Probability"><a href="#총-확률의-법칙-The-Law-of-Total-Probability" class="headerlink" title="총 확률의 법칙 (The Law of Total Probability)"></a>총 확률의 법칙 (The Law of Total Probability)</h2><ul>
+<li>다시말해 A의 모든 확률은, 주어진 Bn에 대해, 각각의 일어날 확률의 총합이다</li>
+<li>bayesian 에 대한 내용은 알면 알수록 좋고, 분야가 세분화될수록 점점 쓸모가있다</li>
+<li>조건부확률 계산하는 법도 직접 할수있으면 더 좋다</li>
 </ul>
 ]]></content>
       <categories>
@@ -646,200 +697,6 @@
       </tags>
   </entry>
   <entry>
-    <title>AI-day10</title>
-    <url>/2021/05/20/AI-day10/</url>
-    <content><![CDATA[<h1 id="Weekly-review"><a href="#Weekly-review" class="headerlink" title="Weekly review"></a>Weekly review</h1><h2 id="가설검정"><a href="#가설검정" class="headerlink" title="가설검정"></a>가설검정</h2><ul>
-<li><p>가설검정의 목적: 모집단의 실제값들 중 sample들을 뽑아 그 통계치를 통해 통계적으로 유의한지아닌지를 판정하는것  </p>
-</li>
-<li><p>기술통계치(데이터를 설명하는 값들)와 box plot, violin plot, count, mean, standard dev, min, 1Q, median, 3Q, max 이해하고 설명할 수 있어야함  </p>
-</li>
-<li><p>Outlier(이상치)에 대한 개념, 구하는 식 찾기  </p>
-</li>
-<li><p>추리통계치</p>
-<ul>
-<li>Population, Parameter, Statistic, Estimator, Standard Deviation, Standard Error 각각의 정의는 반드시 알아야함  </li>
-</ul>
-</li>
-<li><p>Sampling 4가지 </p>
-<ul>
-<li>Simple random sampling, Systematic sampling, Stratified random sampling, Cluster sampling 와 추가로 이것들의 변이형 도 찾아서 전체적인 뉘앙스를 기억하기  </li>
-</ul>
-</li>
-<li><p>Standard Error(표준오차,표준편차)</p>
-<ul>
-<li>표준편차 나누기 루트샘플사이즈 공식이 왜 그렇게 도출된것인지를 설명할 수 있어야함</li>
-<li>표본의 수가 많을수록 오차가 작다 기억</li>
-</ul>
-</li>
-</ul>
-<h2 id="T-test"><a href="#T-test" class="headerlink" title="T-test"></a>T-test</h2><ul>
-<li>독립성,정규성,등분산성이 지켜져야 t-test 가능</li>
-<li>수치형,연속형data 만 사용가능</li>
-<li>one sample : 1개 <strong>샘플의 평균값</strong>이 <strong>특정값과 동일</strong>한지 비교<ul>
-<li>t = 샘플평균-모집단평균 / 표준편차</li>
-</ul>
-</li>
-<li>two sample : 2개 <strong>샘플 각각의 평균값</strong>이 <strong>서로 동일</strong>한지 비교</li>
-<li>t-test의 정확한 의미와 결과에대한 해석을 할 줄 알아야함</li>
-<li>P-value(일반적으로 신뢰구간 95%)<ul>
-<li>0.05보다 크다 -&gt; 귀무가설 채택</li>
-<li>0.05보다 작다 -&gt; 귀무가설 기각</li>
-</ul>
-</li>
-</ul>
-<h2 id="Type-of-Error"><a href="#Type-of-Error" class="headerlink" title="Type of Error"></a>Type of Error</h2><ul>
-<li>type1, type2 error의 개념과 차이가 중요</li>
-</ul>
-<h2 id="Chi-square"><a href="#Chi-square" class="headerlink" title="Chi square"></a>Chi square</h2><ul>
-<li>하는법과 의미를 기억</li>
-</ul>
-<h2 id="ANOVA"><a href="#ANOVA" class="headerlink" title="ANOVA"></a>ANOVA</h2><ul>
-<li>2 Sample 이상을 다루는경우 주로 사용하는 가설검정법</li>
-</ul>
-<h2 id="큰-수의-법칙-Law-of-large-numbers"><a href="#큰-수의-법칙-Law-of-large-numbers" class="headerlink" title="큰 수의 법칙 ( Law of large numbers )"></a>큰 수의 법칙 ( Law of large numbers )</h2><ul>
-<li>샘플이 많아질수록 모집단의 통계치와 근사해진다</li>
-</ul>
-<h2 id="중심극한정리-Central-Limit-Theorem-CLT"><a href="#중심극한정리-Central-Limit-Theorem-CLT" class="headerlink" title="중심극한정리 ( Central Limit Theorem, CLT )"></a>중심극한정리 ( Central Limit Theorem, CLT )</h2><ul>
-<li>샘플이 많아질수록 정규분포에 근사해진다</li>
-<li>특히 큰수의법칙과 중심극한정리는 개념을 정확히 설명할줄 알아야한다(면접에서도 중요)</li>
-</ul>
-<h2 id="신뢰구간"><a href="#신뢰구간" class="headerlink" title="신뢰구간"></a>신뢰구간</h2><ul>
-<li>샘플평균 플러스마이너스 Error 로 기억(공식 암기)</li>
-</ul>
-<h2 id="총-확률의-법칙-The-Law-of-Total-Probability"><a href="#총-확률의-법칙-The-Law-of-Total-Probability" class="headerlink" title="총 확률의 법칙 (The Law of Total Probability)"></a>총 확률의 법칙 (The Law of Total Probability)</h2><ul>
-<li>다시말해 A의 모든 확률은, 주어진 Bn에 대해, 각각의 일어날 확률의 총합이다</li>
-<li>bayesian 에 대한 내용은 알면 알수록 좋고, 분야가 세분화될수록 점점 쓸모가있다</li>
-<li>조건부확률 계산하는 법도 직접 할수있으면 더 좋다</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Weekly reveiw</category>
-      </categories>
-      <tags>
-        <tag>Data science</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI-day7</title>
-    <url>/2021/05/14/AI-day7/</url>
-    <content><![CDATA[<h1 id="다양한-가설검정방법"><a href="#다양한-가설검정방법" class="headerlink" title="다양한 가설검정방법"></a>다양한 가설검정방법</h1><ul>
-<li>t-test를 위한 조건알기</li>
-<li>t-test 이외의 가설검정방법 익히기</li>
-<li>Type of Error 구분할줄 알기</li>
-<li>X<sup>2-test</sup>의 목적과 사용예시알기</li>
-<li>모수통계, 비모수통계 차이 파악하기</li>
-</ul>
-<h2 id="T-test"><a href="#T-test" class="headerlink" title="T-test +"></a>T-test +</h2><ul>
-<li>T-test의 선행조건 3가지<ul>
-<li>독립성 : 두 그룹의 연관성이 없어야함</li>
-<li>정규성 : 데이터가 정규성을 나타내야함<ul>
-<li>scipy.stats.normaltest()</li>
-</ul>
-</li>
-<li>등분산성 : 유사한수준의 분산값을 가져야함</li>
-</ul>
-</li>
-</ul>
-<h2 id="Type-of-Error"><a href="#Type-of-Error" class="headerlink" title="Type of Error"></a>Type of Error</h2><ul>
-<li>Error<ul>
-<li>FN (알파,type1 error) : 귀무가설이 참이지만, 거짓이라 판단한경우</li>
-<li>FP (베타,type2 error) : 귀무가설이 거짓이지만, 참이라 판단한경우</li>
-</ul>
-</li>
-<li>Corret<ul>
-<li>TP (1-알파) : 귀무가설이 참이고, 참이라 판단</li>
-<li>TN (1-베타) : 귀무가설이 거짓이고, 거짓이라 판단</li>
-</ul>
-</li>
-</ul>
-<h2 id="Non-parametric-methods-비모수적-방법"><a href="#Non-parametric-methods-비모수적-방법" class="headerlink" title="Non parametric methods(비모수적 방법)"></a>Non parametric methods(비모수적 방법)</h2><ul>
-<li>모집단이 특정확률분포(normal 같은)따른다는 전제를 하지않는 방식<ul>
-<li>즉 모집단의 형태에 관계없이 주어진 데이터에서 직접 확률을 계산 및 검정</li>
-</ul>
-</li>
-<li>parameter 추정이 필요하지 않는 non-parametric</li>
-<li>Categorical 데이터를 위한 모델링<ul>
-<li>범주형자료 : 관측결과가 몇개의 범주 또는 항목 형태로 나타나는 자료</li>
-<li>어떠한 수치가아닌 성별,선호도,혈액형,지역 등등으로 나타나는 것</li>
-</ul>
-</li>
-<li>극단적 outlier가 있는경우 매우 유효<ul>
-<li>outlier(이상치,극단치) : 분포에서 비정상적으로 보이는 극단값 혹은 비현실적 변수(평균을 왜곡시키는 값)</li>
-</ul>
-</li>
-<li>distribution free method (분포무관 검정법) 이라고도 함<h3 id="비모수적-방법들"><a href="#비모수적-방법들" class="headerlink" title="비모수적 방법들"></a>비모수적 방법들</h3></li>
-<li>카이제곱 테스트(x<sup>2</sup> Tests)<ul>
-<li>One sample x<sup>2</sup> Tests<ul>
-<li>주어진 데이터가 예상하고있는 분포와 동일한 분포를 나타낼지를 검정</li>
-<li>계산된 x<sup>2</sup> 값과 자유도를 이용하여 pvalue를 구함<ul>
-<li>stats.chi2.df(x<sup>2</sup>, df=자유도)</li>
-</ul>
-</li>
-<li>chisquare(data, axis=None) 으로 statstics과 pvalue 바로 구할수 있음<ul>
-<li>pvalue가 크다 -&gt; 연관이있다 -&gt; 분포가 비슷하다</li>
-<li>pvalue가 작다 -&gt; 연관이없다 -&gt; 분포가 다르다</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Two sample x<sup>2</sup><ul>
-<li>주어진 두 데이터가 서로 독립적인가를 검정</li>
-<li>이떄의 자유도는 one sample과 다르게 (행-1)*(열-1)</li>
-<li>chi2_contingency(data)<ul>
-<li>parameter 에 coreestion=T/F 로 Yates correction 설정가능</li>
-<li>x<sup>2</sup>, p-value, 자유도, 예측되는 관측치 순서대로 print 됨  </li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Kruskal-Wallis Test (비모수적 평균 비교법)<ul>
-<li>샘플크기가 같고나 다른 두개 이상의 독립샘플을 비교(샘플수가 5개이상일때 좋음)</li>
-<li>샘플의 순위를 매기고 집단별 순위의 합을 구해 통계량을 계산</li>
-<li>귀무가설은 모든그룹의 크기가 같다, 대립가설은 크기가 다르다로 설정</li>
-<li>from scipy.stats import kruskal  </li>
-</ul>
-</li>
-<li>Mann-Whitney U<ul>
-<li>Kruskal-Wallis Test와 같지만, 두개의 샘플에대해서 분석  </li>
-</ul>
-</li>
-<li>Spearman correlation<ul>
-<li>두 샘플이 어느정도 연관성은있지만, 그 연관성에 일정한 비율이 없을때 두 샘플의 통계적 의존성을 측정</li>
-<li>쉽게 이해하자면, 한학생의 수학 영어점수를 비교하여 수학을잘하면 영어도잘하나?확인  </li>
-</ul>
-</li>
-<li>Run test<ul>
-<li>연속적인 관측값들이 랜덤으로 나타난것인가를 검정하는 방법</li>
-<li>관측값들의 얻어진 순서에 근거하여 먼저얻어진 관측치가 후에 얻어진 관측치에 영향을 미치는지 확인  </li>
-</ul>
-</li>
-<li>Kolmogorov Smirnov test<ul>
-<li>비교하고자 하는 두 분포의 empirical distribution function 의 차이를 특정 기준과 비교하여 기각의 여부를 결정하는 것</li>
-<li>한마디로 어떤 두 샘플의 부분부분을 비교하여 이 두샘플이 같은 집단에서 나왔는지를 확인  </li>
-</ul>
-</li>
-<li>Wilcoxon Sigend-Rank Test<ul>
-<li>자료의 순서(절대값으로)를 사용해 중위수(median)가 0 인지 검정<ul>
-<li>중위수? : 양수데이터수 =음수데이터들수 -&gt; 중위수가 0</li>
-</ul>
-</li>
-<li>이 순위에 다시 +,- 를 부여하여 부호화된순위(signed rank)를 가지게함</li>
-<li>환자의 약 복용 전후 몸무게차이가 정규분포를 따른다는 귀무가설을 세우고 검정</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>TIL</category>
-      </categories>
-      <tags>
-        <tag>Data science</tag>
-        <tag>hypothesis statistics</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>AI-day8</title>
     <url>/2021/05/17/AI-day8/</url>
     <content><![CDATA[<h1 id="신뢰구간-Confidence-Interval"><a href="#신뢰구간-Confidence-Interval" class="headerlink" title="신뢰구간 (Confidence Interval)"></a>신뢰구간 (Confidence Interval)</h1><ul>
@@ -898,168 +755,6 @@
       <tags>
         <tag>Data science</tag>
         <tag>Confidence Interval</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI-day6</title>
-    <url>/2021/05/13/AI-day6/</url>
-    <content><![CDATA[<h1 id="통계학"><a href="#통계학" class="headerlink" title="통계학"></a>통계학</h1><ul>
-<li>Estimation / Sampling의 목적과 방법</li>
-<li>가설검정 이해</li>
-<li>T-test의 목적과 사용예시 숙지  </li>
-</ul>
-<hr>
-<h2 id="기술-통계치-Descriptive-Statistics-란"><a href="#기술-통계치-Descriptive-Statistics-란" class="headerlink" title="기술 통계치(Descriptive Statistics)란?"></a>기술 통계치(Descriptive Statistics)란?</h2><ul>
-<li>count, mean, standard dev, min, 1Q, median, 3Q, max 등의 데이터를 설명 하는 값(혹은 통계치)</li>
-<li><a href="https://drhongdatanote.tistory.com/25">https://drhongdatanote.tistory.com/25</a></li>
-<li>기술통계치의 시각화<ul>
-<li>df.describe()</li>
-<li>Mean / Median / Mode</li>
-<li>Range</li>
-<li>Var / SD</li>
-<li>Kurtosis</li>
-<li>Skewness  </li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="추리통계치-Inferetial-Statistics"><a href="#추리통계치-Inferetial-Statistics" class="headerlink" title="추리통계치(Inferetial Statistics)"></a>추리통계치(Inferetial Statistics)</h2><ul>
-<li>어떤 큰 집단에서 통계를할때 큰집단 내부의 작은 샘플그룹을 선정한후 분석,추론하는것</li>
-<li>키워드들을 알아두자<ul>
-<li>Population, Parameter, Statistic, Estimator, Standard Deviation, Standard Error  </li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="Effective-Sampling"><a href="#Effective-Sampling" class="headerlink" title="Effective Sampling"></a>Effective Sampling</h2><ul>
-<li>Simple random sampling<ul>
-<li>모집단에서 무작위로 sampling</li>
-</ul>
-</li>
-<li>Systematic sampling<ul>
-<li>모집단에서 규칙을 가지고 sample 추출<br>ex) 1, 6, 11, 16, … 번째의 데이터</li>
-</ul>
-</li>
-<li>Stratified random sampling<ul>
-<li>모집단을 미리 여러 그룹으로 나누고, 그 그룹별로 무작위 추출<br>ex) 여론 조사를 위해 사람을 나이대 별로 나누고, 해당 그룹안에서 무작위 추출</li>
-</ul>
-</li>
-<li>Cluster sampling<ul>
-<li>모집단을 미리 여러 그룹으로 나누고, 이후 특정 그룹을 무작위로 선택  </li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="가설검정"><a href="#가설검정" class="headerlink" title="가설검정"></a>가설검정</h2><ul>
-<li>주어진 상황에 대해서, 하고자 하는 주장이 맞는지 아닌지를 판정하는 과정</li>
-<li>모집단의 실제 값에 대한 sample의 통계치를 사용해 통계적으로 유의한지 아닌지 여부를 판정</li>
-<li><a href="https://en.wikipedia.org/wiki/Statistical_hypothesis_testing">https://en.wikipedia.org/wiki/Statistical_hypothesis_testing</a></li>
-<li>예시에 사용해본 메서드들<ul>
-<li>np.random.seed()</li>
-<li>np.random.binomial() / 베르누이 분포</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="표본평균의-표준오차-Standard-Error-of-the-Sample-Mean"><a href="#표본평균의-표준오차-Standard-Error-of-the-Sample-Mean" class="headerlink" title="표본평균의 표준오차( Standard Error of the Sample Mean )"></a>표본평균의 표준오차( Standard Error of the Sample Mean )</h2><ul>
-<li>StandardError = 표본의 표준편차 s (sample standard deviation) / 표본의 수 n(sample size)</li>
-<li>표본의 수가 더욱 많아질수록, 추측은 더 정확해지고 (평균) 높은 신뢰도를 바탕으로 모집단에 대해 예측 할 수 있도록 함  <img src="../images/se.PNG"></li>
-</ul>
-<hr>
-<h2 id="Student-T-test"><a href="#Student-T-test" class="headerlink" title="Student T-test"></a>Student T-test</h2><h3 id="One-Sample-t-test"><a href="#One-Sample-t-test" class="headerlink" title="One Sample t-test"></a>One Sample t-test</h3><ul>
-<li><p>1개의 sample 값들의 평균이 특정값과 동일한지 비교</p>
-<ul>
-<li>예) 동전이 공정한지 확인하려고 할때 : p(x = H) = 0.5</li>
-</ul>
-</li>
-<li><p>모집단에 대한 정보와 표본의 데이터를 비교  </p>
-<img src="../images/ttest.PNG"></li>
-<li><p>위 통계치는 평균을 빼고 표준편차로 나눠줬는데 이러한 과정을 <strong>“정규화”</strong> 라고 하며, 이 과정을 하게 되면 주어진 데이터가 평균은 0, 표준편차가 1인 데이터로 scaling 됨  </p>
-</li>
-<li><p>T-test Process</p>
-<ol>
-<li><p>귀무 가설 (Null Hypothesis) 설정  </p>
-<img src="../images/ttestpro1.PNG"></li>
-<li><p>대안 가설 (Alternative Hypothesis) 설정 (귀무가설과 반대)  </p>
-<img src="../images/ttestpro1.PNG"></li>
-<li><p>신뢰도 설정 (Confidence Level) : 모수가 신뢰구간 안에 포함될 확률 (보통 95, 99% 등을 사용)</p>
-<ul>
-<li>신뢰도 95%의 의미 = 모수가 신뢰 구간 안에 포함될 확률이 95% = 귀무가설이 틀렸지만 우연히 성립할 확률이 5%</li>
-</ul>
-</li>
-<li><p>P-value 확인(규모가 너무클때 t를 P-value로 바꿔준다)</p>
-<ul>
-<li>P-value : 주어진 가설에 대해 “얼마나 근거가 있는지”에 대한 값을 0과 1사이의 값으로 scale한 지표</li>
-<li>p-value가 낮다 -&gt; 귀무가설이 틀렸을 확률이 높다</li>
-</ul>
-</li>
-<li><p> p-value를 바탕으로 가설에 대해 결론  </p>
-</li>
-</ol>
-</li>
-<li><p>T-test with Scipy</p>
-<ul>
-<li>scipy에 수치만 입력하면 t=test를 실행해주는 다양한방법이 있음</li>
-<li><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_1samp.html">https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_1samp.html</a>  </li>
-</ul>
-</li>
-<li><p>P-value의 기준</p>
-<ol>
-<li>pvalue &lt; 0.01 : 귀무가설이 옳을 확률이 1%이하 -&gt; 틀렸다 (깐깐한 기준)</li>
-<li>pvalue &lt; 0.05 (5%) : 귀무가설이 옳을 확률이 5%이하 -&gt; 틀렸다 (일반적인 기준)</li>
-<li>0.05 ~ pvalue ~ 0.1 사이인 경우: (애매함)<ul>
-<li>실험을 다시한다</li>
-<li>데이터를 다시 뽑는다</li>
-<li>샘플링을 다시한다</li>
-<li>기존의 경험 / 인사이트를 바탕으로 가설에 대한 결론을 내린다.</li>
-</ul>
-</li>
-<li>pvalue &gt; 0.1 (10%) : 귀무가설이 옳을 확률이 10%이상인데 -&gt; 귀무가설이 맞다 ~ 틀리지 않았을것이다<ul>
-<li>ex) p-value : 0.85 –&gt; 귀무가설은 틀리지 않았다. (‘귀무가설이 옳다’와는 톤이 약간 다름)</li>
-</ul>
-</li>
-</ol>
-<ul>
-<li>p-value가 (1-Confidence)보다 낮은 경우, 귀무가설을 기각하고 대안 가설을 채택</li>
-<li><a href="https://en.wikipedia.org/wiki/P-value">https://en.wikipedia.org/wiki/P-value</a>  </li>
-</ul>
-</li>
-<li><p>One-side test vs Two-side test</p>
-<ul>
-<li>One side test : 샘플 데이터의 평균이 “X”보다 크다 혹은 작다 / 크지 않다 작지 않다. 를 검정하는 내용</li>
-<li>Two side (tail / direction) test : 샘플 데이터의 평균이 “X”와 같다 / 같지 않다. 를 검정하는 내용  <h3 id="Two-Sample-T-test"><a href="#Two-Sample-T-test" class="headerlink" title="Two Sample T-test"></a>Two Sample T-test</h3></li>
-</ul>
-</li>
-<li><p>2개의 sample 값들의 평균이 서로 동일한지 비교</p>
-<ul>
-<li>2개의 동전 (500원짜리 vs 100원짜리)을 여러번 던져서 p(H)의 평균이 유사한 지 확인</li>
-</ul>
-<ol>
-<li><p>귀무가설 : 두 확률은 같다 (차이가 없다)  </p>
-<img src="../images/ttestpro3.PNG"></li>
-<li><p>대안가설 : 같지 않다  </p>
-<img src="../images/ttestpro4.PNG"></li>
-<li><p>신뢰도 : 95%</p>
-</li>
-</ol>
-</li>
-</ul>
-<h3 id="Quest"><a href="#Quest" class="headerlink" title="Quest"></a>Quest</h3><ul>
-<li>정규분포한? t분포란? 두분포의 차이는뭐고 어떨때 무엇을쓰는가?<ul>
-<li>이것을 정확히 파악해야 t=test, P-value를 재대로 이해할수있다</li>
-</ul>
-</li>
-<li>FDR (false discovery rate) ?</li>
-<li>P-value Q-value? <a href="https://doooob.tistory.com/101">https://doooob.tistory.com/101</a></li>
-<li>t-test <a href="https://www.youtube.com/watch?v=mEWQ_vl3IPw&amp;list=PLalb9l0_6WArHh18Plrn8uIGBUKalqsf-&amp;index=1">https://www.youtube.com/watch?v=mEWQ_vl3IPw&amp;list=PLalb9l0_6WArHh18Plrn8uIGBUKalqsf-&amp;index=1</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>TIL</category>
-      </categories>
-      <tags>
-        <tag>Data science</tag>
-        <tag>hypothesis statistics</tag>
       </tags>
   </entry>
   <entry>
@@ -1270,6 +965,28 @@
       </tags>
   </entry>
   <entry>
+    <title>linear layer</title>
+    <url>/2021/04/15/linear-layer/</url>
+    <content><![CDATA[<h1 id="Linear-layer"><a href="#Linear-layer" class="headerlink" title="Linear layer"></a>Linear layer</h1><ul>
+<li>신경망의 기본요소</li>
+<li>Fully-connected (FC) layer</li>
+<li>내부 파라미터에따른 선형변환을 수행</li>
+<li>각 입력노드에 weight(가중치)를 곱하고 합친후, bias(편향) 더함</li>
+<li><img src="../images/linear.PNG" width="300" height="300"></li>
+<li>이때 행렬의 곱으로 표현가능<ul>
+<li><img src="../images/linearmulti.PNG"></li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Deep-Learning</category>
+      </categories>
+      <tags>
+        <tag>linear-layer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AI-day9</title>
     <url>/2021/05/18/AI-day9/</url>
     <content><![CDATA[<h1 id="베이지안-통계-개론-Bayesian-Inference"><a href="#베이지안-통계-개론-Bayesian-Inference" class="headerlink" title="베이지안 통계 개론 (Bayesian Inference)"></a>베이지안 통계 개론 (Bayesian Inference)</h1><ul>
@@ -1348,28 +1065,6 @@
       <tags>
         <tag>Data science</tag>
         <tag>Bayesian</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>linear layer</title>
-    <url>/2021/04/15/linear-layer/</url>
-    <content><![CDATA[<h1 id="Linear-layer"><a href="#Linear-layer" class="headerlink" title="Linear layer"></a>Linear layer</h1><ul>
-<li>신경망의 기본요소</li>
-<li>Fully-connected (FC) layer</li>
-<li>내부 파라미터에따른 선형변환을 수행</li>
-<li>각 입력노드에 weight(가중치)를 곱하고 합친후, bias(편향) 더함</li>
-<li><img src="../images/linear.PNG" width="300" height="300"></li>
-<li>이때 행렬의 곱으로 표현가능<ul>
-<li><img src="../images/linearmulti.PNG"></li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Deep-Learning</category>
-      </categories>
-      <tags>
-        <tag>linear-layer</tag>
       </tags>
   </entry>
   <entry>
@@ -1525,6 +1220,360 @@
       </categories>
       <tags>
         <tag>deeplearning-basic</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI-day7</title>
+    <url>/2021/05/14/AI-day7/</url>
+    <content><![CDATA[<h1 id="다양한-가설검정방법"><a href="#다양한-가설검정방법" class="headerlink" title="다양한 가설검정방법"></a>다양한 가설검정방법</h1><ul>
+<li>t-test를 위한 조건알기</li>
+<li>t-test 이외의 가설검정방법 익히기</li>
+<li>Type of Error 구분할줄 알기</li>
+<li>X<sup>2-test</sup>의 목적과 사용예시알기</li>
+<li>모수통계, 비모수통계 차이 파악하기</li>
+</ul>
+<h2 id="T-test"><a href="#T-test" class="headerlink" title="T-test +"></a>T-test +</h2><ul>
+<li>T-test의 선행조건 3가지<ul>
+<li>독립성 : 두 그룹의 연관성이 없어야함</li>
+<li>정규성 : 데이터가 정규성을 나타내야함<ul>
+<li>scipy.stats.normaltest()</li>
+</ul>
+</li>
+<li>등분산성 : 유사한수준의 분산값을 가져야함</li>
+</ul>
+</li>
+</ul>
+<h2 id="Type-of-Error"><a href="#Type-of-Error" class="headerlink" title="Type of Error"></a>Type of Error</h2><ul>
+<li>Error<ul>
+<li>FN (알파,type1 error) : 귀무가설이 참이지만, 거짓이라 판단한경우</li>
+<li>FP (베타,type2 error) : 귀무가설이 거짓이지만, 참이라 판단한경우</li>
+</ul>
+</li>
+<li>Corret<ul>
+<li>TP (1-알파) : 귀무가설이 참이고, 참이라 판단</li>
+<li>TN (1-베타) : 귀무가설이 거짓이고, 거짓이라 판단</li>
+</ul>
+</li>
+</ul>
+<h2 id="Non-parametric-methods-비모수적-방법"><a href="#Non-parametric-methods-비모수적-방법" class="headerlink" title="Non parametric methods(비모수적 방법)"></a>Non parametric methods(비모수적 방법)</h2><ul>
+<li>모집단이 특정확률분포(normal 같은)따른다는 전제를 하지않는 방식<ul>
+<li>즉 모집단의 형태에 관계없이 주어진 데이터에서 직접 확률을 계산 및 검정</li>
+</ul>
+</li>
+<li>parameter 추정이 필요하지 않는 non-parametric</li>
+<li>Categorical 데이터를 위한 모델링<ul>
+<li>범주형자료 : 관측결과가 몇개의 범주 또는 항목 형태로 나타나는 자료</li>
+<li>어떠한 수치가아닌 성별,선호도,혈액형,지역 등등으로 나타나는 것</li>
+</ul>
+</li>
+<li>극단적 outlier가 있는경우 매우 유효<ul>
+<li>outlier(이상치,극단치) : 분포에서 비정상적으로 보이는 극단값 혹은 비현실적 변수(평균을 왜곡시키는 값)</li>
+</ul>
+</li>
+<li>distribution free method (분포무관 검정법) 이라고도 함<h3 id="비모수적-방법들"><a href="#비모수적-방법들" class="headerlink" title="비모수적 방법들"></a>비모수적 방법들</h3></li>
+<li>카이제곱 테스트(x<sup>2</sup> Tests)<ul>
+<li>One sample x<sup>2</sup> Tests<ul>
+<li>주어진 데이터가 예상하고있는 분포와 동일한 분포를 나타낼지를 검정</li>
+<li>계산된 x<sup>2</sup> 값과 자유도를 이용하여 pvalue를 구함<ul>
+<li>stats.chi2.df(x<sup>2</sup>, df=자유도)</li>
+</ul>
+</li>
+<li>chisquare(data, axis=None) 으로 statstics과 pvalue 바로 구할수 있음<ul>
+<li>pvalue가 크다 -&gt; 연관이있다 -&gt; 분포가 비슷하다</li>
+<li>pvalue가 작다 -&gt; 연관이없다 -&gt; 분포가 다르다</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Two sample x<sup>2</sup><ul>
+<li>주어진 두 데이터가 서로 독립적인가를 검정</li>
+<li>이떄의 자유도는 one sample과 다르게 (행-1)*(열-1)</li>
+<li>chi2_contingency(data)<ul>
+<li>parameter 에 coreestion=T/F 로 Yates correction 설정가능</li>
+<li>x<sup>2</sup>, p-value, 자유도, 예측되는 관측치 순서대로 print 됨  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Kruskal-Wallis Test (비모수적 평균 비교법)<ul>
+<li>샘플크기가 같고나 다른 두개 이상의 독립샘플을 비교(샘플수가 5개이상일때 좋음)</li>
+<li>샘플의 순위를 매기고 집단별 순위의 합을 구해 통계량을 계산</li>
+<li>귀무가설은 모든그룹의 크기가 같다, 대립가설은 크기가 다르다로 설정</li>
+<li>from scipy.stats import kruskal  </li>
+</ul>
+</li>
+<li>Mann-Whitney U<ul>
+<li>Kruskal-Wallis Test와 같지만, 두개의 샘플에대해서 분석  </li>
+</ul>
+</li>
+<li>Spearman correlation<ul>
+<li>두 샘플이 어느정도 연관성은있지만, 그 연관성에 일정한 비율이 없을때 두 샘플의 통계적 의존성을 측정</li>
+<li>쉽게 이해하자면, 한학생의 수학 영어점수를 비교하여 수학을잘하면 영어도잘하나?확인  </li>
+</ul>
+</li>
+<li>Run test<ul>
+<li>연속적인 관측값들이 랜덤으로 나타난것인가를 검정하는 방법</li>
+<li>관측값들의 얻어진 순서에 근거하여 먼저얻어진 관측치가 후에 얻어진 관측치에 영향을 미치는지 확인  </li>
+</ul>
+</li>
+<li>Kolmogorov Smirnov test<ul>
+<li>비교하고자 하는 두 분포의 empirical distribution function 의 차이를 특정 기준과 비교하여 기각의 여부를 결정하는 것</li>
+<li>한마디로 어떤 두 샘플의 부분부분을 비교하여 이 두샘플이 같은 집단에서 나왔는지를 확인  </li>
+</ul>
+</li>
+<li>Wilcoxon Sigend-Rank Test<ul>
+<li>자료의 순서(절대값으로)를 사용해 중위수(median)가 0 인지 검정<ul>
+<li>중위수? : 양수데이터수 =음수데이터들수 -&gt; 중위수가 0</li>
+</ul>
+</li>
+<li>이 순위에 다시 +,- 를 부여하여 부호화된순위(signed rank)를 가지게함</li>
+<li>환자의 약 복용 전후 몸무게차이가 정규분포를 따른다는 귀무가설을 세우고 검정</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>TIL</category>
+      </categories>
+      <tags>
+        <tag>Data science</tag>
+        <tag>hypothesis statistics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI-Day5</title>
+    <url>/2021/05/12/AI-Day5/</url>
+    <content><![CDATA[<h1 id="Weekly-review"><a href="#Weekly-review" class="headerlink" title="Weekly review"></a>Weekly review</h1><h2 id="EDA"><a href="#EDA" class="headerlink" title="EDA"></a>EDA</h2><ul>
+<li>데이터를 불러오기<ul>
+<li>Description 을통해 데이터셋에대한 정보파악<ul>
+<li>EDA를 대신해주는거지만, 직접확인하는것이 더 정확</li>
+</ul>
+</li>
+<li>pd.read_csv() 에 대한 완벽한 숙지가 중요</li>
+</ul>
+</li>
+<li>데이터셋 확인하기<ul>
+<li>Graphic , Non-Graphic 을 구분하고 사용할줄 알아야함</li>
+<li>하지만, 자기가 시각화를 한 자료에대해서는 100% 설명할줄 알아야함<ul>
+<li>EDA과정에서 시각화된 자료에대한 코멘트(어떤 insigth를 얻었는지 등등)를 달아보기</li>
+</ul>
+</li>
+<li>Pandas의 메서드들을 외우는건 의미없음<ul>
+<li>여러번 사용해보면서 이런 기능을하는 함수가 있었다라는걸 기억하는것이 중요</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>데이터 전처리도 중요하다는것만 우선 기억  </li>
+</ul>
+<h2 id="Feature-Engineering"><a href="#Feature-Engineering" class="headerlink" title="Feature Engineering"></a>Feature Engineering</h2><ul>
+<li>데이터를 보다 확인하기 좋은 형태로 다듬는것이 목적<ul>
+<li>기존의 feature들을 조합하여 새로운 feature를 만드는것</li>
+<li>도메인지식과 창의성이 중요</li>
+</ul>
+</li>
+<li>DataFrame, DataSet 이해<ul>
+<li>결측치들(Na,Null,NaN,0,Undefined)의 차이를 알기</li>
+</ul>
+</li>
+<li>typecasting, 특히 string-&gt;int가 매우 중요하고 많이쓰임<ul>
+<li>replace,apply,astype 등의 다양한 방법이 존재하므로 정확히 의도대로 사용할 줄 알아야함  </li>
+</ul>
+</li>
+</ul>
+<h2 id="Data-Manipulation"><a href="#Data-Manipulation" class="headerlink" title="Data Manipulation"></a>Data Manipulation</h2><ul>
+<li>concat과 merge를 구분하고 사용할줄 알아야함<ul>
+<li>단순히 합치는법을 알기보다는 원하는 shape으로 만들어낼줄 아는것이 중요</li>
+</ul>
+</li>
+<li>wide &amp; tidy<ul>
+<li>각각의 형태가 언제 유용하고 확인하기 좋은가를 구분할줄 알아야함</li>
+<li>data를보고 어떤형태인지도 유추할수 있다면 best</li>
+<li>melt() &amp; pivot_table() 를 적절하게 사용할 줄 알아야함</li>
+</ul>
+</li>
+<li>pandas styling <ul>
+<li>나중에 알고있다면 좋은것</li>
+</ul>
+</li>
+</ul>
+<h2 id="Basic-derivative"><a href="#Basic-derivative" class="headerlink" title="Basic derivative"></a>Basic derivative</h2><ul>
+<li>미분에 대한 개념은 매우중요하지만, 직접미분을 해야하는경우는 드물다<ul>
+<li>다양한 미분 공식들을 알아야 알고리즘에대해 이해하고 사용할 수 있음</li>
+</ul>
+</li>
+<li>경사하강법은 뒤로갈수록 중요한 개념이므로 꾸준히 공부하고 이해할수록 좋음</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Weekly reveiw</category>
+      </categories>
+      <tags>
+        <tag>Data science</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI-day6</title>
+    <url>/2021/05/13/AI-day6/</url>
+    <content><![CDATA[<h1 id="통계학"><a href="#통계학" class="headerlink" title="통계학"></a>통계학</h1><ul>
+<li>Estimation / Sampling의 목적과 방법</li>
+<li>가설검정 이해</li>
+<li>T-test의 목적과 사용예시 숙지  </li>
+</ul>
+<hr>
+<h2 id="기술-통계치-Descriptive-Statistics-란"><a href="#기술-통계치-Descriptive-Statistics-란" class="headerlink" title="기술 통계치(Descriptive Statistics)란?"></a>기술 통계치(Descriptive Statistics)란?</h2><ul>
+<li>count, mean, standard dev, min, 1Q, median, 3Q, max 등의 데이터를 설명 하는 값(혹은 통계치)</li>
+<li><a href="https://drhongdatanote.tistory.com/25">https://drhongdatanote.tistory.com/25</a></li>
+<li>기술통계치의 시각화<ul>
+<li>df.describe()</li>
+<li>Mean / Median / Mode</li>
+<li>Range</li>
+<li>Var / SD</li>
+<li>Kurtosis</li>
+<li>Skewness  </li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="추리통계치-Inferetial-Statistics"><a href="#추리통계치-Inferetial-Statistics" class="headerlink" title="추리통계치(Inferetial Statistics)"></a>추리통계치(Inferetial Statistics)</h2><ul>
+<li>어떤 큰 집단에서 통계를할때 큰집단 내부의 작은 샘플그룹을 선정한후 분석,추론하는것</li>
+<li>키워드들을 알아두자<ul>
+<li>Population, Parameter, Statistic, Estimator, Standard Deviation, Standard Error  </li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="Effective-Sampling"><a href="#Effective-Sampling" class="headerlink" title="Effective Sampling"></a>Effective Sampling</h2><ul>
+<li>Simple random sampling<ul>
+<li>모집단에서 무작위로 sampling</li>
+</ul>
+</li>
+<li>Systematic sampling<ul>
+<li>모집단에서 규칙을 가지고 sample 추출<br>ex) 1, 6, 11, 16, … 번째의 데이터</li>
+</ul>
+</li>
+<li>Stratified random sampling<ul>
+<li>모집단을 미리 여러 그룹으로 나누고, 그 그룹별로 무작위 추출<br>ex) 여론 조사를 위해 사람을 나이대 별로 나누고, 해당 그룹안에서 무작위 추출</li>
+</ul>
+</li>
+<li>Cluster sampling<ul>
+<li>모집단을 미리 여러 그룹으로 나누고, 이후 특정 그룹을 무작위로 선택  </li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="가설검정"><a href="#가설검정" class="headerlink" title="가설검정"></a>가설검정</h2><ul>
+<li>주어진 상황에 대해서, 하고자 하는 주장이 맞는지 아닌지를 판정하는 과정</li>
+<li>모집단의 실제 값에 대한 sample의 통계치를 사용해 통계적으로 유의한지 아닌지 여부를 판정</li>
+<li><a href="https://en.wikipedia.org/wiki/Statistical_hypothesis_testing">https://en.wikipedia.org/wiki/Statistical_hypothesis_testing</a></li>
+<li>예시에 사용해본 메서드들<ul>
+<li>np.random.seed()</li>
+<li>np.random.binomial() / 베르누이 분포</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="표본평균의-표준오차-Standard-Error-of-the-Sample-Mean"><a href="#표본평균의-표준오차-Standard-Error-of-the-Sample-Mean" class="headerlink" title="표본평균의 표준오차( Standard Error of the Sample Mean )"></a>표본평균의 표준오차( Standard Error of the Sample Mean )</h2><ul>
+<li>StandardError = 표본의 표준편차 s (sample standard deviation) / 표본의 수 n(sample size)</li>
+<li>표본의 수가 더욱 많아질수록, 추측은 더 정확해지고 (평균) 높은 신뢰도를 바탕으로 모집단에 대해 예측 할 수 있도록 함  <img src="../images/se.PNG"></li>
+</ul>
+<hr>
+<h2 id="Student-T-test"><a href="#Student-T-test" class="headerlink" title="Student T-test"></a>Student T-test</h2><h3 id="One-Sample-t-test"><a href="#One-Sample-t-test" class="headerlink" title="One Sample t-test"></a>One Sample t-test</h3><ul>
+<li><p>1개의 sample 값들의 평균이 특정값과 동일한지 비교</p>
+<ul>
+<li>예) 동전이 공정한지 확인하려고 할때 : p(x = H) = 0.5</li>
+</ul>
+</li>
+<li><p>모집단에 대한 정보와 표본의 데이터를 비교  </p>
+<img src="../images/ttest.PNG"></li>
+<li><p>위 통계치는 평균을 빼고 표준편차로 나눠줬는데 이러한 과정을 <strong>“정규화”</strong> 라고 하며, 이 과정을 하게 되면 주어진 데이터가 평균은 0, 표준편차가 1인 데이터로 scaling 됨  </p>
+</li>
+<li><p>T-test Process</p>
+<ol>
+<li><p>귀무 가설 (Null Hypothesis) 설정  </p>
+<img src="../images/ttestpro1.PNG"></li>
+<li><p>대안 가설 (Alternative Hypothesis) 설정 (귀무가설과 반대)  </p>
+<img src="../images/ttestpro1.PNG"></li>
+<li><p>신뢰도 설정 (Confidence Level) : 모수가 신뢰구간 안에 포함될 확률 (보통 95, 99% 등을 사용)</p>
+<ul>
+<li>신뢰도 95%의 의미 = 모수가 신뢰 구간 안에 포함될 확률이 95% = 귀무가설이 틀렸지만 우연히 성립할 확률이 5%</li>
+</ul>
+</li>
+<li><p>P-value 확인(규모가 너무클때 t를 P-value로 바꿔준다)</p>
+<ul>
+<li>P-value : 주어진 가설에 대해 “얼마나 근거가 있는지”에 대한 값을 0과 1사이의 값으로 scale한 지표</li>
+<li>p-value가 낮다 -&gt; 귀무가설이 틀렸을 확률이 높다</li>
+</ul>
+</li>
+<li><p> p-value를 바탕으로 가설에 대해 결론  </p>
+</li>
+</ol>
+</li>
+<li><p>T-test with Scipy</p>
+<ul>
+<li>scipy에 수치만 입력하면 t=test를 실행해주는 다양한방법이 있음</li>
+<li><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_1samp.html">https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_1samp.html</a>  </li>
+</ul>
+</li>
+<li><p>P-value의 기준</p>
+<ol>
+<li>pvalue &lt; 0.01 : 귀무가설이 옳을 확률이 1%이하 -&gt; 틀렸다 (깐깐한 기준)</li>
+<li>pvalue &lt; 0.05 (5%) : 귀무가설이 옳을 확률이 5%이하 -&gt; 틀렸다 (일반적인 기준)</li>
+<li>0.05 ~ pvalue ~ 0.1 사이인 경우: (애매함)<ul>
+<li>실험을 다시한다</li>
+<li>데이터를 다시 뽑는다</li>
+<li>샘플링을 다시한다</li>
+<li>기존의 경험 / 인사이트를 바탕으로 가설에 대한 결론을 내린다.</li>
+</ul>
+</li>
+<li>pvalue &gt; 0.1 (10%) : 귀무가설이 옳을 확률이 10%이상인데 -&gt; 귀무가설이 맞다 ~ 틀리지 않았을것이다<ul>
+<li>ex) p-value : 0.85 –&gt; 귀무가설은 틀리지 않았다. (‘귀무가설이 옳다’와는 톤이 약간 다름)</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>p-value가 (1-Confidence)보다 낮은 경우, 귀무가설을 기각하고 대안 가설을 채택</li>
+<li><a href="https://en.wikipedia.org/wiki/P-value">https://en.wikipedia.org/wiki/P-value</a>  </li>
+</ul>
+</li>
+<li><p>One-side test vs Two-side test</p>
+<ul>
+<li>One side test : 샘플 데이터의 평균이 “X”보다 크다 혹은 작다 / 크지 않다 작지 않다. 를 검정하는 내용</li>
+<li>Two side (tail / direction) test : 샘플 데이터의 평균이 “X”와 같다 / 같지 않다. 를 검정하는 내용  <h3 id="Two-Sample-T-test"><a href="#Two-Sample-T-test" class="headerlink" title="Two Sample T-test"></a>Two Sample T-test</h3></li>
+</ul>
+</li>
+<li><p>2개의 sample 값들의 평균이 서로 동일한지 비교</p>
+<ul>
+<li>2개의 동전 (500원짜리 vs 100원짜리)을 여러번 던져서 p(H)의 평균이 유사한 지 확인</li>
+</ul>
+<ol>
+<li><p>귀무가설 : 두 확률은 같다 (차이가 없다)  </p>
+<img src="../images/ttestpro3.PNG"></li>
+<li><p>대안가설 : 같지 않다  </p>
+<img src="../images/ttestpro4.PNG"></li>
+<li><p>신뢰도 : 95%</p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="Quest"><a href="#Quest" class="headerlink" title="Quest"></a>Quest</h3><ul>
+<li>정규분포한? t분포란? 두분포의 차이는뭐고 어떨때 무엇을쓰는가?<ul>
+<li>이것을 정확히 파악해야 t=test, P-value를 재대로 이해할수있다</li>
+</ul>
+</li>
+<li>FDR (false discovery rate) ?</li>
+<li>P-value Q-value? <a href="https://doooob.tistory.com/101">https://doooob.tistory.com/101</a></li>
+<li>t-test <a href="https://www.youtube.com/watch?v=mEWQ_vl3IPw&amp;list=PLalb9l0_6WArHh18Plrn8uIGBUKalqsf-&amp;index=1">https://www.youtube.com/watch?v=mEWQ_vl3IPw&amp;list=PLalb9l0_6WArHh18Plrn8uIGBUKalqsf-&amp;index=1</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>TIL</category>
+      </categories>
+      <tags>
+        <tag>Data science</tag>
+        <tag>hypothesis statistics</tag>
       </tags>
   </entry>
 </search>
