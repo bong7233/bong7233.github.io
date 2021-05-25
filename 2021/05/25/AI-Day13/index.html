@@ -31,7 +31,7 @@
 <meta property="og:description" content="Dimension Reduction Vector transformation의 목적과 사용예시 eigenvector(고유벡터) &#x2F; eigenvalue(고유값) 데이터의 feature수의 증가에따른 문제점과 handling 방법 PCA의 목적과 기본원리  선형변환과 매트릭스 행렬과 벡터의곱은 “두 열벡터의 선형결합”을 표현한것 이라 할 수 있다 선형변환 : 특">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-05-24T22:17:41.000Z">
-<meta property="article:modified_time" content="2021-05-25T00:58:42.613Z">
+<meta property="article:modified_time" content="2021-05-25T01:59:21.984Z">
 <meta property="article:author" content="SangBong Lee">
 <meta property="article:tag" content="Data science">
 <meta property="article:tag" content="Linear Algebra">
@@ -191,7 +191,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Dimension-Reduction"><span class="nav-number">1.</span> <span class="nav-text">Dimension Reduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%84%A0%ED%98%95%EB%B3%80%ED%99%98%EA%B3%BC-%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4"><span class="nav-number">1.1.</span> <span class="nav-text">선형변환과 매트릭스</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EA%B3%A0%EC%9C%A0%EA%B0%92%EA%B3%BC-%EA%B3%A0%EC%9C%A0%EB%B2%A1%ED%84%B0-eigenvalue-eigenvector"><span class="nav-number">1.2.</span> <span class="nav-text">고유값과 고유벡터(eigenvalue&#x2F;eigenvector)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PCA"><span class="nav-number">1.3.</span> <span class="nav-text">PCA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#One-hot-Encoding"><span class="nav-number">1.4.</span> <span class="nav-text">One-hot Encoding</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Dimension-Reduction"><span class="nav-number">1.</span> <span class="nav-text">Dimension Reduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%84%A0%ED%98%95%EB%B3%80%ED%99%98%EA%B3%BC-%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4"><span class="nav-number">1.1.</span> <span class="nav-text">선형변환과 매트릭스</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EA%B3%A0%EC%9C%A0%EA%B0%92%EA%B3%BC-%EA%B3%A0%EC%9C%A0%EB%B2%A1%ED%84%B0-eigenvalue-eigenvector"><span class="nav-number">1.2.</span> <span class="nav-text">고유값과 고유벡터(eigenvalue&#x2F;eigenvector)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EA%B3%A0%EC%B0%A8%EC%9B%90%EC%9D%98-%EB%AC%B8%EC%A0%9C-The-Curse-of-Dimensionality"><span class="nav-number">1.3.</span> <span class="nav-text">고차원의 문제 (The Curse of Dimensionality)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dimension-Reduction-%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C"><span class="nav-number">1.4.</span> <span class="nav-text">Dimension Reduction 차원축소</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%A3%BC%EC%84%B1%EB%B6%84%EB%B6%84%EC%84%9D-PCA-Principal-Component-Analysis"><span class="nav-number">1.5.</span> <span class="nav-text">주성분분석 (PCA, Principal Component Analysis)</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -297,7 +297,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-05-25 07:17:41 / Modified: 09:58:42" itemprop="dateCreated datePublished" datetime="2021-05-25T07:17:41+09:00">2021-05-25</time>
+      <time title="Created: 2021-05-25 07:17:41 / Modified: 10:59:21" itemprop="dateCreated datePublished" datetime="2021-05-25T07:17:41+09:00">2021-05-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -369,10 +369,53 @@
 <li>분석의 측면에서보면 만약 분산-공분산 행렬의 고유값 고유벡터를 구한다면<ul>
 <li>고유값의 합은 두 분산의 합과 같고</li>
 <li>고유값의 곱은 분산-공분산의 행렬식과 같다</li>
-<li>여기서는 이렇다는것만 기억하고 이것들이 가지는 의미는 후에 더 알 수 있다<h2 id="PCA"><a href="#PCA" class="headerlink" title="PCA"></a>PCA</h2><h2 id="One-hot-Encoding"><a href="#One-hot-Encoding" class="headerlink" title="One-hot Encoding"></a>One-hot Encoding</h2></li>
+<li>여기서는 이렇다는것만 기억하고 이것들이 가지는 의미는 후에 더 알 수 있다<h2 id="고차원의-문제-The-Curse-of-Dimensionality"><a href="#고차원의-문제-The-Curse-of-Dimensionality" class="headerlink" title="고차원의 문제 (The Curse of Dimensionality)"></a>고차원의 문제 (The Curse of Dimensionality)</h2></li>
 </ul>
 </li>
-<li></li>
+<li>feature 의 수가 많은 데이터셋을 모델링하거나 분석할때 발생하는 문제</li>
+<li>So, feature들의 중요도를 비교하여 실제로 의미가 높은 feature만 선택함으로써 차원을 줄여야함</li>
+</ul>
+<h2 id="Dimension-Reduction-차원축소"><a href="#Dimension-Reduction-차원축소" class="headerlink" title="Dimension Reduction 차원축소"></a>Dimension Reduction 차원축소</h2><ul>
+<li>이 고차원의 문제를 해결하기위해 차원축소</li>
+<li>Feature Selection<ul>
+<li>덜 중요한 feature를 제거하는 방법</li>
+<li>장점 : 선택된 feature 해석이 쉽다.</li>
+<li>단점 : feature들간의 연관성을 고려해야함.</li>
+<li>LASSO, Genetic algorithm 등</li>
+</ul>
+</li>
+<li>Feature Extraction<ul>
+<li>기존의 feature 혹은 feature들이 조합된 새로운 feature를 사용하는 방법</li>
+<li>장점 : feature 들간의 연관성 고려됨. feature수 많이 줄일 수 있음</li>
+<li>단점 : feature 해석이 어려움.</li>
+<li>PCA, Auto-encoder 등</li>
+</ul>
+</li>
+</ul>
+<h2 id="주성분분석-PCA-Principal-Component-Analysis"><a href="#주성분분석-PCA-Principal-Component-Analysis" class="headerlink" title="주성분분석 (PCA, Principal Component Analysis)"></a>주성분분석 (PCA, Principal Component Analysis)</h2><ul>
+<li>고차원의 데이터를 분석하기위한 방법(제일 정보손실이적은 2차원으로 바꾸는것이 무난하다)</li>
+<li>원점에서 투영된 점들간의 거리제곱의 합을 최대화(수학적으로 한줄정리라 기억하자)</li>
+<li>분산을 유지하는 축(PC)를 기준으로 차원을 축소</li>
+<li>PCA 의 과정<ul>
+<li>데이터의 각열에대해 평균을 빼고 표준편차로 나누어 Normalize</li>
+<li>데이터의 분산-공분산 매트릭스계산</li>
+<li>분산-공분산 매트릭스의 고유벡터와 고유값 계산</li>
+<li>데이터를 고유벡터에 projection(matmul)</li>
+</ul>
+</li>
+<li>PCA 특징<ul>
+<li>데이터에대해 독립적인 축을 찾을 수 있음</li>
+<li>데이터의 분포가 정규성을 띄지않는경우 적용이 어려움<ul>
+<li>커널 PCA 활용</li>
+</ul>
+</li>
+<li>분류/ 예측 문제에대해 데이터의 라벨을 고려하지 않기때문에 효과적 분리가 어려움<ul>
+<li>PLS 활용</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Sklearn 라이브러리를 활용하여 PCA 가능</li>
 </ul>
 
     </div>
