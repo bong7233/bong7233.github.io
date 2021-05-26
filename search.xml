@@ -1,136 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>AI-Day14</title>
-    <url>/2021/05/26/AI-Day14/</url>
-    <content><![CDATA[<h1 id="군집화-Clustering"><a href="#군집화-Clustering" class="headerlink" title="군집화 (Clustering)"></a>군집화 (Clustering)</h1><ul>
-<li>Screeplot 이해</li>
-<li>Supervised, Unsupervised learning 차이 이해</li>
-<li>K-means clustering 이해</li>
-</ul>
-<h2 id="Scree-plot"><a href="#Scree-plot" class="headerlink" title="Scree plot"></a>Scree plot</h2><ul>
-<li>고유값 크기를 기반으로 성분 수를 결정</li>
-<li>그래프의 기울기는 주성분에 의해 설명되는 데이터의 변동성을 나타냄<ul>
-<li>즉 기울기가 많이 떨어진다? 해당 주성분이 데이터의 많은 영향을준다</li>
-<li>기울기가 평평해진다? 해당 주성분이 데이터에 적은 영향을준다</li>
-<li>그러므로 기울기가 급격하게 변하는 고유값들을 골라 주성분으로 선택</li>
-<li>앞서배운 PCA에서 feature수를 줄여 차원을 줄이는것처럼, 데이터에 영향을 많이주는 주성분을 골라내 차원을 줄인다고 이해할 수 있다</li>
-</ul>
-</li>
-</ul>
-<h2 id="Machine-Learning"><a href="#Machine-Learning" class="headerlink" title="Machine Learning"></a>Machine Learning</h2><ul>
-<li>지도학습 (Supervised Leanring)<ul>
-<li>input data에 라벨(답)이 있을경우 사용</li>
-<li>분류(Classification)<ul>
-<li>데이터의 카테고리, 클래스 예측</li>
-</ul>
-</li>
-<li>회귀(Prediction)<ul>
-<li>continuous 데이터를 바탕으로 결과를 예측</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>비지도학습 (Unsupervised Learning)<ul>
-<li>Input data에 라벨(답)이 없을경우 사용<ul>
-<li>클러스터링(Clustering)<ul>
-<li>데이터의 연관된 feature를 바탕으로 유사한 그룹을 생성</li>
-</ul>
-</li>
-<li>차원 축소 (Dimensionality Reduction)<ul>
-<li>높은 차원을 갖는 데이터셋을 사용하여 feature selection / extraction 등을 통해 차원을 줄이는 방법</li>
-</ul>
-</li>
-<li>연관 규칙 학습 (Association Rule Learning)<ul>
-<li>데이터셋의 feature들의 관계를 발견</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>강화 학습 (Reinforcement Learning)<ul>
-<li>머신러닝의 한 형태로, 기계가 좋은 행동에 대해서는 보상, 그렇지 않은 행동에는 처벌이라는 피드백을 통해서 행동에 대해 학습</li>
-</ul>
-</li>
-</ul>
-<h2 id="군집화-Clustering-1"><a href="#군집화-Clustering-1" class="headerlink" title="군집화(Clustering)"></a>군집화(Clustering)</h2><ul>
-<li>Unsupervised Learning Algorithm의 한 종류</li>
-<li>주어진 데이터들이 얼마나, 어떻게 유사한지</li>
-<li>데이터셋을 요약/정리하는데 있어서 매우 효율적인 방법</li>
-<li>Hard vs Soft Clustering<ul>
-<li>Hard Clustering에서 하나의 데이터는 하나의 cluster에만 할당</li>
-<li>Soft Clustering에서 하나의 데이터는 여러 cluster에 확률을 가지고 할당</li>
-<li>일반적으로 Hard Clustering을 Clustering이라 함</li>
-</ul>
-</li>
-<li>정답을 보장하지 않기 때문에, production의 수준 혹은 예측을 위한 모델링보다는 EDA를 위한 방법으로써 많이 쓰임</li>
-</ul>
-<h3 id="HCA-Hierarchical-Clustering"><a href="#HCA-Hierarchical-Clustering" class="headerlink" title="HCA (Hierarchical Clustering)"></a>HCA (Hierarchical Clustering)</h3><ul>
-<li>각각의 샘플간의 유사성에 기반하여 행과열을 재정렬</li>
-<li>정렬된 cluster 간의 dendrogram 을 그리고, 가지의 길이로 연관성을 나타낼 수 있음</li>
-<li>Agglomerative: 개별 포인트에서 시작후 점점 크게 합쳐감</li>
-<li>Divisive: 한개의 큰 cluster에서 시작후 점점 작은 cluster로 나눠감</li>
-</ul>
-<h3 id="Point-Assignment"><a href="#Point-Assignment" class="headerlink" title="Point Assignment"></a>Point Assignment</h3><ul>
-<li>시작시에 cluster의 수를 정한 다음, 데이터들을 하나씩 cluster에 배정</li>
-</ul>
-<h2 id="K-means-clustering"><a href="#K-means-clustering" class="headerlink" title="K-means clustering"></a>K-means clustering</h2><ul>
-<li>point assignment의 한종류로 빈번하게 쓰임</li>
-</ul>
-<ol>
-<li>k 개의 랜덤한 데이터를 cluster의 중심점으로 설정</li>
-<li>해당 cluster에 근접해 있는 데이터를 cluster로 할당</li>
-<li>변경된 cluster에 대해서 중심점을 새로 계산</li>
-<li>cluster에 유의미한 변화가 없을 때 까지 2-3 반복</li>
-</ol>
-<ul>
-<li>시간복잡도가 선형이므로 빅데이터에 적합</li>
-<li>PCA와 clustering은 반드시 연계해서 사용할 필요는 없지만, PCA로 전처리를 하고 K-means를 메인 “머신러닝”으로 사용할 수 있음</li>
-</ul>
-<h3 id="중심점-Centroid-계산"><a href="#중심점-Centroid-계산" class="headerlink" title="중심점 (Centroid) 계산"></a>중심점 (Centroid) 계산</h3><ul>
-<li>K-means 는 centroid-based clustering 알고리즘으로도 불립</li>
-<li>Centroid란, 주어진 cluster 내부에 있는 모든 점들의 중심부분에 위치한 (가상의) 점</li>
-<li>Initial Centoid state<ul>
-<li>k-means는 centroid를 어떻게 선택하느냐에 따라서, clustering의 결과가 안 좋거나 끝없이 반복해야 하는 경우도 있음</li>
-</ul>
-</li>
-</ul>
-<h3 id="K-means에서-K를-결정하는-방법"><a href="#K-means에서-K를-결정하는-방법" class="headerlink" title="K-means에서 K를 결정하는 방법"></a>K-means에서 K를 결정하는 방법</h3><ul>
-<li>The Eyeball Method : 사람의 주관적인 판단을 통해 임의로 지정하는 방법</li>
-<li>Metrics : 객관적인 지표를 설정하여, 최적화된 k를 선택하는 방법</li>
-<li>일반적으로 Elbow methods 활용</li>
-</ul>
-<h2 id="Similarity"><a href="#Similarity" class="headerlink" title="Similarity"></a>Similarity</h2><ul>
-<li>그렇다면 군집화에서 데이터끼리의 유사성은 어떻게 분별하는가</li>
-<li>Euclidean</li>
-<li>Cosine</li>
-<li>Jaccard</li>
-<li>Edit Distance</li>
-</ul>
-<h2 id="시간복잡도"><a href="#시간복잡도" class="headerlink" title="시간복잡도"></a>시간복잡도</h2><ul>
-<li>clustering 알고리즘은 매우많으며 도메인과 상황에따라 알맞은 것을 사용하는것이 중요</li>
-<li>data가 커질수록 시간복잡도를 무시할 수 없으므로 많이 알수록 도움이된다<br><img src="../images/timecomplex.PNG" alt="com"></li>
-</ul>
-<h3 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h3><ul>
-<li>선형대수학 (MIT, Gulbert Strang)</li>
-<li>통계 (Harvard, Statistics 110)</li>
-<li>모두를위한 딥러닝(성킴)</li>
-<li>Machine Learning( Andrew Ng)</li>
-<li>CS231n(Stanford, Computer Vision)</li>
-<li>CS224n(Stanford, NLP)</li>
-</ul>
-]]></content>
-      <categories>
-        <category>TIL</category>
-      </categories>
-      <tags>
-        <tag>Data science</tag>
-        <tag>Linear Algebra</tag>
-        <tag>Clustering</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>AI-Day13</title>
     <url>/2021/05/25/AI-Day13/</url>
     <content><![CDATA[<h1 id="Dimension-Reduction"><a href="#Dimension-Reduction" class="headerlink" title="Dimension Reduction"></a>Dimension Reduction</h1><ul>
@@ -450,89 +320,6 @@
       </tags>
   </entry>
   <entry>
-    <title>AI-Day11</title>
-    <url>/2021/05/21/AI-Day11/</url>
-    <content><![CDATA[<h1 id="선형대수학"><a href="#선형대수학" class="headerlink" title="선형대수학"></a>선형대수학</h1><ul>
-<li>데이터사이언스와 선형대수의 관계를 알기</li>
-<li>백터와 매트릭스에대한 기본계산 익히기</li>
-<li>단위행렬(Identity matrix)과 같은 특별한 매트릭스의 의미 이해하고 행렬식(determinant)이나, 역행렬을(inverse)계산 할수 있어야함</li>
-</ul>
-<h2 id="Data-Structure-데이터를-담는-구조"><a href="#Data-Structure-데이터를-담는-구조" class="headerlink" title="Data Structure(데이터를 담는 구조)"></a>Data Structure(데이터를 담는 구조)</h2><ul>
-<li>1차원 (1D)<ul>
-<li>list 형태의 data structure</li>
-</ul>
-</li>
-<li>2차원 (2D)<ul>
-<li>list 안의 list 형태</li>
-</ul>
-</li>
-</ul>
-<h2 id="스칼라-벡터"><a href="#스칼라-벡터" class="headerlink" title="스칼라,벡터"></a>스칼라,벡터</h2><ul>
-<li>선형 대수를 구성하는 기본 요소</li>
-<li>스칼라 : 단순히 변수로 저장되어 있는 숫자(크기)</li>
-<li>벡터 : 파이썬에서 주로 list로 사용 되며, 데이터셋을 구성하고 있는 데이터프레임의 행/열로써 사용(크기+방향)<ul>
-<li>매트릭스는 벡터의 모음으로 간주 될 수도 있음</li>
-<li>벡터의 연산 공식 암기</li>
-</ul>
-</li>
-</ul>
-<h2 id="매트릭스"><a href="#매트릭스" class="headerlink" title="매트릭스"></a>매트릭스</h2><ul>
-<li>행과 열을 통해 배치되어있는 숫자</li>
-<li>pandas를 통해 다뤘던 데이터프레임이 매트릭스와 유사한 형태</li>
-<li>Dimensionality<ul>
-<li>매트릭스의 행과 열의 숫자를 차원 (dimension, 차원수)이라 표현</li>
-<li>차원을 표기 할때는 행을 먼저, 열을 나중에 표기 (행-열)</li>
-</ul>
-</li>
-<li>2개의 매트릭스가 일치하기 위해서는 차원이 같고, 해당하는 구성요소가 동일해야함</li>
-<li>Transpose (B<sup>T</sup> or B’)<ul>
-<li>대각선기준 행 열을 뒤집기, 코드로는 df.T 로 간단하게 가능</li>
-</ul>
-</li>
-<li>정사각 행렬(square matrix)<ul>
-<li>정방매트릭스 라고불리며, 행과 열의수가 동일한 매트릭스</li>
-<li>Upper Triangular(상삼각): 대각선 위쪽 부분에만 값이 있고, 나머지는 전부 0</li>
-<li>Lower Triangular(하삼각): upper triangular 와 반대</li>
-<li>Symmetric(대칭): 대각선을 기준으로 위 아래의 값이 대칭</li>
-<li>Diagonal(대각): 대각선 부분에만 값이 있고, 나머지는 전부 0<ul>
-<li>Identity(단위 매트릭스) : 대각중 모든값이 1, 임의의 행렬에 곱했을때 단위행렬이 나오는것 = 역행렬</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="행렬식-Determinant"><a href="#행렬식-Determinant" class="headerlink" title="행렬식 (Determinant)"></a>행렬식 (Determinant)</h2><ul>
-<li>2x2 행렬기준 행렬식은 ad-bc<ul>
-<li>그 이상 차원의 행렬은 방법이 다름(재귀적으로 부분나누어서)</li>
-</ul>
-</li>
-<li>행렬식이 0 이라면 역행렬은 존재하지 않음<ul>
-<li>이것을  “특이” (singular) 행렬이라 하며, <strong>매트릭스의 행과 열이 의존관계가 있다</strong> 고 표현가능</li>
-</ul>
-</li>
-</ul>
-<h2 id="역행렬"><a href="#역행렬" class="headerlink" title="역행렬"></a>역행렬</h2><ul>
-<li>역행렬 계산법은 여러가지이며 행렬의 역수로 표현가능</li>
-<li>행렬에 역행렬을 곱하면 단위행렬</li>
-</ul>
-<h3 id="사용해본-모듈및-메서드"><a href="#사용해본-모듈및-메서드" class="headerlink" title="사용해본 모듈및 메서드"></a>사용해본 모듈및 메서드</h3><ul>
-<li>np.matmul</li>
-<li>np.dot</li>
-<li>linalg.norm(v)</li>
-<li>linalg.inv(v)</li>
-<li>mean_squared_error(x,y)</li>
-<li>mean_absolute_error(x,y)</li>
-</ul>
-]]></content>
-      <categories>
-        <category>TIL</category>
-      </categories>
-      <tags>
-        <tag>Data science</tag>
-        <tag>Linear Algebra</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>AI-Day12</title>
     <url>/2021/05/23/AI-Day12/</url>
     <content><![CDATA[<h1 id="선형대수"><a href="#선형대수" class="headerlink" title="선형대수 +"></a>선형대수 +</h1><ul>
@@ -694,6 +481,219 @@
       </tags>
   </entry>
   <entry>
+    <title>AI-Day11</title>
+    <url>/2021/05/21/AI-Day11/</url>
+    <content><![CDATA[<h1 id="선형대수학"><a href="#선형대수학" class="headerlink" title="선형대수학"></a>선형대수학</h1><ul>
+<li>데이터사이언스와 선형대수의 관계를 알기</li>
+<li>백터와 매트릭스에대한 기본계산 익히기</li>
+<li>단위행렬(Identity matrix)과 같은 특별한 매트릭스의 의미 이해하고 행렬식(determinant)이나, 역행렬을(inverse)계산 할수 있어야함</li>
+</ul>
+<h2 id="Data-Structure-데이터를-담는-구조"><a href="#Data-Structure-데이터를-담는-구조" class="headerlink" title="Data Structure(데이터를 담는 구조)"></a>Data Structure(데이터를 담는 구조)</h2><ul>
+<li>1차원 (1D)<ul>
+<li>list 형태의 data structure</li>
+</ul>
+</li>
+<li>2차원 (2D)<ul>
+<li>list 안의 list 형태</li>
+</ul>
+</li>
+</ul>
+<h2 id="스칼라-벡터"><a href="#스칼라-벡터" class="headerlink" title="스칼라,벡터"></a>스칼라,벡터</h2><ul>
+<li>선형 대수를 구성하는 기본 요소</li>
+<li>스칼라 : 단순히 변수로 저장되어 있는 숫자(크기)</li>
+<li>벡터 : 파이썬에서 주로 list로 사용 되며, 데이터셋을 구성하고 있는 데이터프레임의 행/열로써 사용(크기+방향)<ul>
+<li>매트릭스는 벡터의 모음으로 간주 될 수도 있음</li>
+<li>벡터의 연산 공식 암기</li>
+</ul>
+</li>
+</ul>
+<h2 id="매트릭스"><a href="#매트릭스" class="headerlink" title="매트릭스"></a>매트릭스</h2><ul>
+<li>행과 열을 통해 배치되어있는 숫자</li>
+<li>pandas를 통해 다뤘던 데이터프레임이 매트릭스와 유사한 형태</li>
+<li>Dimensionality<ul>
+<li>매트릭스의 행과 열의 숫자를 차원 (dimension, 차원수)이라 표현</li>
+<li>차원을 표기 할때는 행을 먼저, 열을 나중에 표기 (행-열)</li>
+</ul>
+</li>
+<li>2개의 매트릭스가 일치하기 위해서는 차원이 같고, 해당하는 구성요소가 동일해야함</li>
+<li>Transpose (B<sup>T</sup> or B’)<ul>
+<li>대각선기준 행 열을 뒤집기, 코드로는 df.T 로 간단하게 가능</li>
+</ul>
+</li>
+<li>정사각 행렬(square matrix)<ul>
+<li>정방매트릭스 라고불리며, 행과 열의수가 동일한 매트릭스</li>
+<li>Upper Triangular(상삼각): 대각선 위쪽 부분에만 값이 있고, 나머지는 전부 0</li>
+<li>Lower Triangular(하삼각): upper triangular 와 반대</li>
+<li>Symmetric(대칭): 대각선을 기준으로 위 아래의 값이 대칭</li>
+<li>Diagonal(대각): 대각선 부분에만 값이 있고, 나머지는 전부 0<ul>
+<li>Identity(단위 매트릭스) : 대각중 모든값이 1, 임의의 행렬에 곱했을때 단위행렬이 나오는것 = 역행렬</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="행렬식-Determinant"><a href="#행렬식-Determinant" class="headerlink" title="행렬식 (Determinant)"></a>행렬식 (Determinant)</h2><ul>
+<li>2x2 행렬기준 행렬식은 ad-bc<ul>
+<li>그 이상 차원의 행렬은 방법이 다름(재귀적으로 부분나누어서)</li>
+</ul>
+</li>
+<li>행렬식이 0 이라면 역행렬은 존재하지 않음<ul>
+<li>이것을  “특이” (singular) 행렬이라 하며, <strong>매트릭스의 행과 열이 의존관계가 있다</strong> 고 표현가능</li>
+</ul>
+</li>
+</ul>
+<h2 id="역행렬"><a href="#역행렬" class="headerlink" title="역행렬"></a>역행렬</h2><ul>
+<li>역행렬 계산법은 여러가지이며 행렬의 역수로 표현가능</li>
+<li>행렬에 역행렬을 곱하면 단위행렬</li>
+</ul>
+<h3 id="사용해본-모듈및-메서드"><a href="#사용해본-모듈및-메서드" class="headerlink" title="사용해본 모듈및 메서드"></a>사용해본 모듈및 메서드</h3><ul>
+<li>np.matmul</li>
+<li>np.dot</li>
+<li>linalg.norm(v)</li>
+<li>linalg.inv(v)</li>
+<li>mean_squared_error(x,y)</li>
+<li>mean_absolute_error(x,y)</li>
+</ul>
+]]></content>
+      <categories>
+        <category>TIL</category>
+      </categories>
+      <tags>
+        <tag>Data science</tag>
+        <tag>Linear Algebra</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI-Day14</title>
+    <url>/2021/05/26/AI-Day14/</url>
+    <content><![CDATA[<h1 id="군집화-Clustering"><a href="#군집화-Clustering" class="headerlink" title="군집화 (Clustering)"></a>군집화 (Clustering)</h1><ul>
+<li>Screeplot 이해</li>
+<li>Supervised, Unsupervised learning 차이 이해</li>
+<li>K-means clustering 이해</li>
+</ul>
+<h2 id="Scree-plot"><a href="#Scree-plot" class="headerlink" title="Scree plot"></a>Scree plot</h2><ul>
+<li>고유값 크기를 기반으로 성분 수를 결정</li>
+<li>그래프의 기울기는 주성분에 의해 설명되는 데이터의 변동성을 나타냄<ul>
+<li>즉 기울기가 많이 떨어진다? 해당 주성분이 데이터의 많은 영향을준다</li>
+<li>기울기가 평평해진다? 해당 주성분이 데이터에 적은 영향을준다</li>
+<li>그러므로 기울기가 급격하게 변하는 고유값들을 골라 주성분으로 선택</li>
+<li>앞서배운 PCA에서 feature수를 줄여 차원을 줄이는것처럼, 데이터에 영향을 많이주는 주성분을 골라내 차원을 줄인다고 이해할 수 있다</li>
+</ul>
+</li>
+</ul>
+<h2 id="Machine-Learning"><a href="#Machine-Learning" class="headerlink" title="Machine Learning"></a>Machine Learning</h2><ul>
+<li>지도학습 (Supervised Leanring)<ul>
+<li>input data에 라벨(답)이 있을경우 사용</li>
+<li>분류(Classification)<ul>
+<li>데이터의 카테고리, 클래스 예측</li>
+</ul>
+</li>
+<li>회귀(Prediction)<ul>
+<li>continuous 데이터를 바탕으로 결과를 예측</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>비지도학습 (Unsupervised Learning)<ul>
+<li>Input data에 라벨(답)이 없을경우 사용<ul>
+<li>클러스터링(Clustering)<ul>
+<li>데이터의 연관된 feature를 바탕으로 유사한 그룹을 생성</li>
+</ul>
+</li>
+<li>차원 축소 (Dimensionality Reduction)<ul>
+<li>높은 차원을 갖는 데이터셋을 사용하여 feature selection / extraction 등을 통해 차원을 줄이는 방법</li>
+</ul>
+</li>
+<li>연관 규칙 학습 (Association Rule Learning)<ul>
+<li>데이터셋의 feature들의 관계를 발견</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>강화 학습 (Reinforcement Learning)<ul>
+<li>머신러닝의 한 형태로, 기계가 좋은 행동에 대해서는 보상, 그렇지 않은 행동에는 처벌이라는 피드백을 통해서 행동에 대해 학습</li>
+</ul>
+</li>
+</ul>
+<h2 id="군집화-Clustering-1"><a href="#군집화-Clustering-1" class="headerlink" title="군집화(Clustering)"></a>군집화(Clustering)</h2><ul>
+<li>Unsupervised Learning Algorithm의 한 종류</li>
+<li>주어진 데이터들이 얼마나, 어떻게 유사한지</li>
+<li>데이터셋을 요약/정리하는데 있어서 매우 효율적인 방법</li>
+<li>Hard vs Soft Clustering<ul>
+<li>Hard Clustering에서 하나의 데이터는 하나의 cluster에만 할당</li>
+<li>Soft Clustering에서 하나의 데이터는 여러 cluster에 확률을 가지고 할당</li>
+<li>일반적으로 Hard Clustering을 Clustering이라 함</li>
+</ul>
+</li>
+<li>정답을 보장하지 않기 때문에, production의 수준 혹은 예측을 위한 모델링보다는 EDA를 위한 방법으로써 많이 쓰임</li>
+</ul>
+<h3 id="HCA-Hierarchical-Clustering"><a href="#HCA-Hierarchical-Clustering" class="headerlink" title="HCA (Hierarchical Clustering)"></a>HCA (Hierarchical Clustering)</h3><ul>
+<li>각각의 샘플간의 유사성에 기반하여 행과열을 재정렬</li>
+<li>정렬된 cluster 간의 dendrogram 을 그리고, 가지의 길이로 연관성을 나타낼 수 있음</li>
+<li>Agglomerative: 개별 포인트에서 시작후 점점 크게 합쳐감</li>
+<li>Divisive: 한개의 큰 cluster에서 시작후 점점 작은 cluster로 나눠감</li>
+</ul>
+<h3 id="Point-Assignment"><a href="#Point-Assignment" class="headerlink" title="Point Assignment"></a>Point Assignment</h3><ul>
+<li>시작시에 cluster의 수를 정한 다음, 데이터들을 하나씩 cluster에 배정</li>
+</ul>
+<h2 id="K-means-clustering"><a href="#K-means-clustering" class="headerlink" title="K-means clustering"></a>K-means clustering</h2><ul>
+<li>point assignment의 한종류로 빈번하게 쓰임</li>
+</ul>
+<ol>
+<li>k 개의 랜덤한 데이터를 cluster의 중심점으로 설정</li>
+<li>해당 cluster에 근접해 있는 데이터를 cluster로 할당</li>
+<li>변경된 cluster에 대해서 중심점을 새로 계산</li>
+<li>cluster에 유의미한 변화가 없을 때 까지 2-3 반복</li>
+</ol>
+<ul>
+<li>시간복잡도가 선형이므로 빅데이터에 적합</li>
+<li>PCA와 clustering은 반드시 연계해서 사용할 필요는 없지만, PCA로 전처리를 하고 K-means를 메인 “머신러닝”으로 사용할 수 있음</li>
+</ul>
+<h3 id="중심점-Centroid-계산"><a href="#중심점-Centroid-계산" class="headerlink" title="중심점 (Centroid) 계산"></a>중심점 (Centroid) 계산</h3><ul>
+<li>K-means 는 centroid-based clustering 알고리즘으로도 불립</li>
+<li>Centroid란, 주어진 cluster 내부에 있는 모든 점들의 중심부분에 위치한 (가상의) 점</li>
+<li>Initial Centoid state<ul>
+<li>k-means는 centroid를 어떻게 선택하느냐에 따라서, clustering의 결과가 안 좋거나 끝없이 반복해야 하는 경우도 있음</li>
+</ul>
+</li>
+</ul>
+<h3 id="K-means에서-K를-결정하는-방법"><a href="#K-means에서-K를-결정하는-방법" class="headerlink" title="K-means에서 K를 결정하는 방법"></a>K-means에서 K를 결정하는 방법</h3><ul>
+<li>The Eyeball Method : 사람의 주관적인 판단을 통해 임의로 지정하는 방법</li>
+<li>Metrics : 객관적인 지표를 설정하여, 최적화된 k를 선택하는 방법</li>
+<li>일반적으로 Elbow methods 활용</li>
+</ul>
+<h2 id="Similarity"><a href="#Similarity" class="headerlink" title="Similarity"></a>Similarity</h2><ul>
+<li>그렇다면 군집화에서 데이터끼리의 유사성은 어떻게 분별하는가</li>
+<li>Euclidean</li>
+<li>Cosine</li>
+<li>Jaccard</li>
+<li>Edit Distance</li>
+</ul>
+<h2 id="시간복잡도"><a href="#시간복잡도" class="headerlink" title="시간복잡도"></a>시간복잡도</h2><ul>
+<li>clustering 알고리즘은 매우많으며 도메인과 상황에따라 알맞은 것을 사용하는것이 중요</li>
+<li>data가 커질수록 시간복잡도를 무시할 수 없으므로 많이 알수록 도움이된다<br><img src="/../images/timecomplex.PNG" alt="com"></li>
+</ul>
+<h3 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h3><ul>
+<li>선형대수학 (MIT, Gulbert Strang)</li>
+<li>통계 (Harvard, Statistics 110)</li>
+<li>모두를위한 딥러닝(성킴)</li>
+<li>Machine Learning( Andrew Ng)</li>
+<li>CS231n(Stanford, Computer Vision)</li>
+<li>CS224n(Stanford, NLP)</li>
+</ul>
+]]></content>
+      <categories>
+        <category>TIL</category>
+      </categories>
+      <tags>
+        <tag>Data science</tag>
+        <tag>Linear Algebra</tag>
+        <tag>Clustering</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AI-Day3</title>
     <url>/2021/05/10/AI-Day3/</url>
     <content><![CDATA[<h1 id="Data-Manipulation"><a href="#Data-Manipulation" class="headerlink" title="Data Manipulation"></a>Data Manipulation</h1><h2 id="Warm-up"><a href="#Warm-up" class="headerlink" title="Warm-up"></a>Warm-up</h2><ul>
@@ -769,6 +769,83 @@
       </tags>
   </entry>
   <entry>
+    <title>AI-Day4</title>
+    <url>/2021/05/11/AI-Day4/</url>
+    <content><![CDATA[<h1 id="Basic-Derivative-기초미분"><a href="#Basic-Derivative-기초미분" class="headerlink" title="Basic Derivative 기초미분"></a>Basic Derivative 기초미분</h1><ul>
+<li>미분 : 함수를 작게 나누는것</li>
+<li>DS에서의 미분?<ul>
+<li>x를 넣었을때 y값을 예측하는 선형모델을 예로보면</li>
+<li>y^ = a + b X</li>
+<li>주어진 데이터 X를 넣었을 떄 모델이 예측하는 예측값과 실제값 간의 차이(Error,𝜀)를 계산한 다음, 여러 모델 중 Error(모델에서 예측하는 예측값과 실제값 (y)의 차이)가 가장 작은 모델을 선택하는 방법을 통해, 가장 좋은 모델을 선택할 수 있음</li>
+<li>이 과정은 f(a,b) =𝜀 로 표현 될 수 있으며, 오차 함수인 𝜀 을 최소화 하는 a,b를 찾는 것이 머신러닝(Linear regression)의 목표</li>
+<li>이 오차함수를 최소화하는 a,b를 찾기위해 미분 사용  </li>
+</ul>
+</li>
+</ul>
+<h2 id="미분-공식-w-Python"><a href="#미분-공식-w-Python" class="headerlink" title="미분 공식 w/ Python"></a>미분 공식 w/ Python</h2><ul>
+<li>기본적으로 미분은 다음의 공식을 활용<ul>
+<li>f’(x) = {f(x + Δx) - f(x)/ Δx}, Δ x-&gt; 0</li>
+<li>but 실제 0으로 나눌 수 없기때문에 0에 매우근사한 1e-5 을 사용하며, 이러한 접근 방식을 numerical method라 함</li>
+<li>numerical method에서는 조금 더 정확한 측정을 위해 분자에 f(x + Δx) - f(x - Δx)/ 2Δx 를 사용하기도 함  </li>
+</ul>
+</li>
+<li>머신러닝에서 쓰이는 대표적 미분공식들<ul>
+<li>f(x) = 상수 -&gt; f’(x) = 0<ul>
+<li>f’(x)가 상수 (constant)인 경우는 x를 아무리 늘리거나 줄여도 늘 같은 숫자이기 때문에 변화가 전혀 없음. 즉 변화율이 0이기 때문에 미분계수도 늘 0<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># f(x) &#x3D; 5</span><br><span class="line">def f(x):</span><br><span class="line">    return 5</span><br><span class="line"></span><br><span class="line">def numerical_derivative(fx, x):</span><br><span class="line">    delta_x &#x3D; 1e-5</span><br><span class="line"></span><br><span class="line">    return (fx(x + delta_x) - fx(x)) &#x2F; delta_x</span><br><span class="line">print(numerical_derivative(f, 1))</span><br><span class="line"></span><br><span class="line"># 예시 2 : Scipy의 derivative 활용(도함수를 바로계산해주는 함수)</span><br><span class="line">from scipy.misc import derivative</span><br><span class="line"></span><br><span class="line"># 두 방법의 결과값 비교</span><br><span class="line">derivative(f,1, dx&#x3D;1e-6) &#x3D;&#x3D; numerical_derivative(f, 1)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>f(x) = ax<sup>{n}</sup> -&gt; f’(x) = an{x}<sup>{(n-1)}</sup><ul>
+<li>Power Rule로도 알려져있는 미분법</li>
+<li>x 기준으로 n승을 미분할 경우 n을 내려보내서 곱해준 후, 이후에 n승에서 “하나”를 가져왔기 때문에 빼주는 방법  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">def f(x):</span><br><span class="line">    return 3*(x**4) + 10</span><br><span class="line"></span><br><span class="line">def numerical_derivative(fx, x):</span><br><span class="line">    delta_x &#x3D; 1e-5</span><br><span class="line"></span><br><span class="line">    return (fx(x + delta_x) - fx(x)) &#x2F; delta_x</span><br><span class="line"></span><br><span class="line">print(numerical_derivative(f, 2))</span><br><span class="line"></span><br><span class="line"># 예시 2 : Scipy의 derivative 활용</span><br><span class="line">from scipy.misc import derivative</span><br><span class="line"></span><br><span class="line"># 두 방법의 결과값 비교</span><br><span class="line">print(derivative(f,2, dx&#x3D;1e-5))</span><br><span class="line">derivative(f,2, dx&#x3D;1e-5) &#x3D;&#x3D; numerical_derivative(f, 2)  #delta X의 값은 같지만 Rounding 에러로 인해 두 결과가 미묘하게 다르게 나오지만 거의 같음</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>f(x) = e<sup>x</sup> -&gt;f’(x) = e<sup>x</sup><ul>
+<li>지수 함수의 경우에는 도함수 역시 지수 함수  </li>
+</ul>
+</li>
+<li>f(x) = lnx -&gt; f’(x) = {1 / x}<ul>
+<li>자연로그의 미분은 신경망의 활성 함수인 sigmoid 함수를 쉽게 미분할수 있도록 도와줌<ul>
+<li>why? sigmoid 함수에 자연로그를 씌움으로서 미분을 훨씬 수월하게 할 수 있게 되기 때문</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="편미분-Partial-Derivative"><a href="#편미분-Partial-Derivative" class="headerlink" title="편미분 Partial Derivative"></a>편미분 Partial Derivative</h2><ul>
+<li>파라미터가 2개 이상인 Error 함수에서 우선 1개의 파라미터에 대해서만 미분을 하자 라는 목적으로 다른 변수들을 상수 취급 하는 방법  </li>
+</ul>
+<p><img src="/../images/PD.PNG" alt="pd"></p>
+<h2 id="Chain-Rule"><a href="#Chain-Rule" class="headerlink" title="Chain Rule"></a>Chain Rule</h2><ul>
+<li><strong>합성함수(함수의 함수)</strong> 를 미분하기 위해 사용하는 방식</li>
+<li>F(x) = f(g(x))$<br>F’(x) -&gt; f’((g(x)) ∘ g’(x)<ul>
+<li>미분할 때 반드시 바깥함수(f(x))부터 미분을 해야함을 기억</li>
+<li>F(x) = (2x<sup>3</sup> + 7)<sup>6</sup>  를 x에 대해 미분하려는 경우<br>f(x) = x<sup>6</sup>, g(x) = 2x<sup>3</sup> + 7 로 설정<br>F’(x) = 6(2x<sup>3</sup> + 7)<sup>5</sup> ∘ 6x<sup>2</sup></li>
+</ul>
+</li>
+<li>Chain Rule은 Deep learning의 핵심 개념 중 하나인 Backward Propagation(역전파)을 이해하는데 중요하기 때문에 시간이 될 때마다 연습</li>
+</ul>
+<h2 id="경사하강법-Gradient-Descent"><a href="#경사하강법-Gradient-Descent" class="headerlink" title="경사하강법 Gradient Descent"></a>경사하강법 Gradient Descent</h2><ul>
+<li>오차 함수인 𝜀 을 최소화 하는 𝑎,𝑏 를 찾을 수 있는 최적화 알고리즘 중의 하나</li>
+<li>최적의 a,b를 찾기 위해선 도함수의 미분계수가 0인 곳을 찾으면 되지만, 실제 다루게 될 문제에선 파라미터의 갯수는 수없이 많고 하나의 minimum/maximum만이 존재하지 않음</li>
+<li>경사하강법은 임의의 a, b를 선택한 후 (random initialization)에 기울기 (gradient)를 계산해서 기울기 값이 낮아지는 방향으로 진행</li>
+<li>기울기는 항상 손실 함수 값이 가장 크게 증가하는 방향으로 진행합니다. 그렇기 때문에 경사하강법 알고리즘은 기울기의 반대 방향으로 이동</li>
+<li>경사하강법에서의 a,b<br>an+1=an−η∇f(an)<br>bn+1=bn−η∇f(bn)<ul>
+<li>반복적으로 파라미터 a,b를 업데이트 해가면서 그래디언트(∇f)가 0이 될 때까지 이동<br>이 때 중요한게 바로 학습률 (learning rate,η)<br>학습률이 너무 낮게 되면 알고리즘이 수렴하기 위해서 반복을 많이 해야되고 학습률이 너무 크면 극소값을 지나쳐서 알고리즘이 수렴을 못하고 계산을 계속 반복<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">def gradient_descent(X, y, lr &#x3D; 0.05, epoch &#x3D; 10):</span><br><span class="line">    </span><br><span class="line">    a, b &#x3D; 0.33, 0.48 # 임의 선택한 파라미터 a, b</span><br><span class="line">    N &#x3D; len(X) # 샘플 갯수</span><br><span class="line">    </span><br><span class="line">    for _ in range(epoch):            </span><br><span class="line">        f &#x3D; y - (a*X + b)</span><br><span class="line">    </span><br><span class="line">        # a와 b를 업데이트 합니다(기울기를 바꿔준다고 쉽게이해하면 됨)</span><br><span class="line">        a -&#x3D; lr * (-2 * X.dot(f).sum() &#x2F; N)</span><br><span class="line">        b -&#x3D; lr * (-2 * f.sum() &#x2F; N</span><br><span class="line"></span><br><span class="line"># y &#x3D; 3 x + 5</span><br><span class="line">X &#x3D; np.array([1, 2, 3, 4, 5])</span><br><span class="line">y &#x3D; np.array([8, 11, 14, 17, 20])</span><br><span class="line"></span><br><span class="line">gradient_descent(X,y)  # 10번만 돌렸을 때</span><br><span class="line">gradient_descent(X, y, epoch &#x3D; 100)  # 100번 반복</span><br><span class="line">gradient_descent(X, y, epoch &#x3D; 1000)  # 1000번 반복</span><br><span class="line">반복할수록 a&#x3D;43 b&#x3D;5에 점점 수렴해감을 확인할 수 있음</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>TIL</category>
+      </categories>
+      <tags>
+        <tag>Data science</tag>
+        <tag>Basic Derivative</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AI-Day2</title>
     <url>/2021/05/07/AI-Day2/</url>
     <content><![CDATA[<h1 id="Feature-Engineering"><a href="#Feature-Engineering" class="headerlink" title="Feature Engineering"></a>Feature Engineering</h1><h2 id="Warm-up"><a href="#Warm-up" class="headerlink" title="Warm up"></a>Warm up</h2><ul>
@@ -817,6 +894,202 @@
       <tags>
         <tag>Data science</tag>
         <tag>Feature Engineering</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI-day10</title>
+    <url>/2021/05/20/AI-day10/</url>
+    <content><![CDATA[<h1 id="Weekly-review"><a href="#Weekly-review" class="headerlink" title="Weekly review"></a>Weekly review</h1><h2 id="가설검정"><a href="#가설검정" class="headerlink" title="가설검정"></a>가설검정</h2><ul>
+<li><p>가설검정의 목적: 모집단의 실제값들 중 sample들을 뽑아 그 통계치를 통해 통계적으로 유의한지아닌지를 판정하는것  </p>
+</li>
+<li><p>기술통계치(데이터를 설명하는 값들)와 box plot, violin plot, count, mean, standard dev, min, 1Q, median, 3Q, max 이해하고 설명할 수 있어야함  </p>
+</li>
+<li><p>Outlier(이상치)에 대한 개념, 구하는 식 찾기  </p>
+</li>
+<li><p>추리통계치</p>
+<ul>
+<li>Population, Parameter, Statistic, Estimator, Standard Deviation, Standard Error 각각의 정의는 반드시 알아야함  </li>
+</ul>
+</li>
+<li><p>Sampling 4가지 </p>
+<ul>
+<li>Simple random sampling, Systematic sampling, Stratified random sampling, Cluster sampling 와 추가로 이것들의 변이형 도 찾아서 전체적인 뉘앙스를 기억하기  </li>
+</ul>
+</li>
+<li><p>Standard Error(표준오차,표준편차)</p>
+<ul>
+<li>표준편차 나누기 루트샘플사이즈 공식이 왜 그렇게 도출된것인지를 설명할 수 있어야함</li>
+<li>표본의 수가 많을수록 오차가 작다 기억</li>
+</ul>
+</li>
+</ul>
+<h2 id="T-test"><a href="#T-test" class="headerlink" title="T-test"></a>T-test</h2><ul>
+<li>독립성,정규성,등분산성이 지켜져야 t-test 가능</li>
+<li>수치형,연속형data 만 사용가능</li>
+<li>one sample : 1개 <strong>샘플의 평균값</strong>이 <strong>특정값과 동일</strong>한지 비교<ul>
+<li>t = 샘플평균-모집단평균 / 표준편차</li>
+</ul>
+</li>
+<li>two sample : 2개 <strong>샘플 각각의 평균값</strong>이 <strong>서로 동일</strong>한지 비교</li>
+<li>t-test의 정확한 의미와 결과에대한 해석을 할 줄 알아야함</li>
+<li>P-value(일반적으로 신뢰구간 95%)<ul>
+<li>0.05보다 크다 -&gt; 귀무가설 채택</li>
+<li>0.05보다 작다 -&gt; 귀무가설 기각</li>
+</ul>
+</li>
+</ul>
+<h2 id="Type-of-Error"><a href="#Type-of-Error" class="headerlink" title="Type of Error"></a>Type of Error</h2><ul>
+<li>type1, type2 error의 개념과 차이가 중요</li>
+</ul>
+<h2 id="Chi-square"><a href="#Chi-square" class="headerlink" title="Chi square"></a>Chi square</h2><ul>
+<li>하는법과 의미를 기억</li>
+</ul>
+<h2 id="ANOVA"><a href="#ANOVA" class="headerlink" title="ANOVA"></a>ANOVA</h2><ul>
+<li>2 Sample 이상을 다루는경우 주로 사용하는 가설검정법</li>
+</ul>
+<h2 id="큰-수의-법칙-Law-of-large-numbers"><a href="#큰-수의-법칙-Law-of-large-numbers" class="headerlink" title="큰 수의 법칙 ( Law of large numbers )"></a>큰 수의 법칙 ( Law of large numbers )</h2><ul>
+<li>샘플이 많아질수록 모집단의 통계치와 근사해진다</li>
+</ul>
+<h2 id="중심극한정리-Central-Limit-Theorem-CLT"><a href="#중심극한정리-Central-Limit-Theorem-CLT" class="headerlink" title="중심극한정리 ( Central Limit Theorem, CLT )"></a>중심극한정리 ( Central Limit Theorem, CLT )</h2><ul>
+<li>샘플이 많아질수록 정규분포에 근사해진다</li>
+<li>특히 큰수의법칙과 중심극한정리는 개념을 정확히 설명할줄 알아야한다(면접에서도 중요)</li>
+</ul>
+<h2 id="신뢰구간"><a href="#신뢰구간" class="headerlink" title="신뢰구간"></a>신뢰구간</h2><ul>
+<li>샘플평균 플러스마이너스 Error 로 기억(공식 암기)</li>
+</ul>
+<h2 id="총-확률의-법칙-The-Law-of-Total-Probability"><a href="#총-확률의-법칙-The-Law-of-Total-Probability" class="headerlink" title="총 확률의 법칙 (The Law of Total Probability)"></a>총 확률의 법칙 (The Law of Total Probability)</h2><ul>
+<li>다시말해 A의 모든 확률은, 주어진 Bn에 대해, 각각의 일어날 확률의 총합이다</li>
+<li>bayesian 에 대한 내용은 알면 알수록 좋고, 분야가 세분화될수록 점점 쓸모가있다</li>
+<li>조건부확률 계산하는 법도 직접 할수있으면 더 좋다</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Weekly reveiw</category>
+      </categories>
+      <tags>
+        <tag>Data science</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI-day7</title>
+    <url>/2021/05/14/AI-day7/</url>
+    <content><![CDATA[<h1 id="다양한-가설검정방법"><a href="#다양한-가설검정방법" class="headerlink" title="다양한 가설검정방법"></a>다양한 가설검정방법</h1><ul>
+<li>t-test를 위한 조건알기</li>
+<li>t-test 이외의 가설검정방법 익히기</li>
+<li>Type of Error 구분할줄 알기</li>
+<li>X<sup>2-test</sup>의 목적과 사용예시알기</li>
+<li>모수통계, 비모수통계 차이 파악하기</li>
+</ul>
+<h2 id="T-test"><a href="#T-test" class="headerlink" title="T-test +"></a>T-test +</h2><ul>
+<li>T-test의 선행조건 3가지<ul>
+<li>독립성 : 두 그룹의 연관성이 없어야함</li>
+<li>정규성 : 데이터가 정규성을 나타내야함<ul>
+<li>scipy.stats.normaltest()</li>
+</ul>
+</li>
+<li>등분산성 : 유사한수준의 분산값을 가져야함</li>
+</ul>
+</li>
+</ul>
+<h2 id="Type-of-Error"><a href="#Type-of-Error" class="headerlink" title="Type of Error"></a>Type of Error</h2><ul>
+<li>Error<ul>
+<li>FN (알파,type1 error) : 귀무가설이 참이지만, 거짓이라 판단한경우</li>
+<li>FP (베타,type2 error) : 귀무가설이 거짓이지만, 참이라 판단한경우</li>
+</ul>
+</li>
+<li>Corret<ul>
+<li>TP (1-알파) : 귀무가설이 참이고, 참이라 판단</li>
+<li>TN (1-베타) : 귀무가설이 거짓이고, 거짓이라 판단</li>
+</ul>
+</li>
+</ul>
+<h2 id="Non-parametric-methods-비모수적-방법"><a href="#Non-parametric-methods-비모수적-방법" class="headerlink" title="Non parametric methods(비모수적 방법)"></a>Non parametric methods(비모수적 방법)</h2><ul>
+<li>모집단이 특정확률분포(normal 같은)따른다는 전제를 하지않는 방식<ul>
+<li>즉 모집단의 형태에 관계없이 주어진 데이터에서 직접 확률을 계산 및 검정</li>
+</ul>
+</li>
+<li>parameter 추정이 필요하지 않는 non-parametric</li>
+<li>Categorical 데이터를 위한 모델링<ul>
+<li>범주형자료 : 관측결과가 몇개의 범주 또는 항목 형태로 나타나는 자료</li>
+<li>어떠한 수치가아닌 성별,선호도,혈액형,지역 등등으로 나타나는 것</li>
+</ul>
+</li>
+<li>극단적 outlier가 있는경우 매우 유효<ul>
+<li>outlier(이상치,극단치) : 분포에서 비정상적으로 보이는 극단값 혹은 비현실적 변수(평균을 왜곡시키는 값)</li>
+</ul>
+</li>
+<li>distribution free method (분포무관 검정법) 이라고도 함</li>
+</ul>
+<h3 id="비모수적-방법들"><a href="#비모수적-방법들" class="headerlink" title="비모수적 방법들"></a>비모수적 방법들</h3><ul>
+<li>카이제곱 테스트(x<sup>2</sup> Tests)<ul>
+<li>One sample x<sup>2</sup> Tests<ul>
+<li>주어진 데이터가 예상하고있는 분포와 동일한 분포를 나타낼지를 검정</li>
+<li>계산된 x<sup>2</sup> 값과 자유도를 이용하여 pvalue를 구함<ul>
+<li>stats.chi2.df(x<sup>2</sup>, df=자유도)</li>
+</ul>
+</li>
+<li>chisquare(data, axis=None) 으로 statstics과 pvalue 바로 구할수 있음<ul>
+<li>pvalue가 크다 -&gt; 연관이있다 -&gt; 분포가 비슷하다</li>
+<li>pvalue가 작다 -&gt; 연관이없다 -&gt; 분포가 다르다</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Two sample x<sup>2</sup><ul>
+<li>주어진 두 데이터가 서로 독립적인가를 검정</li>
+<li>이떄의 자유도는 one sample과 다르게 (행-1)*(열-1)</li>
+<li>chi2_contingency(data)<ul>
+<li>parameter 에 coreestion=T/F 로 Yates correction 설정가능</li>
+<li>x<sup>2</sup>, p-value, 자유도, 예측되는 관측치 순서대로 print 됨  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Kruskal-Wallis Test (비모수적 평균 비교법)<ul>
+<li>샘플크기가 같고나 다른 두개 이상의 독립샘플을 비교(샘플수가 5개이상일때 좋음)</li>
+<li>샘플의 순위를 매기고 집단별 순위의 합을 구해 통계량을 계산</li>
+<li>귀무가설은 모든그룹의 크기가 같다, 대립가설은 크기가 다르다로 설정</li>
+<li>from scipy.stats import kruskal  </li>
+</ul>
+</li>
+<li>Mann-Whitney U<ul>
+<li>Kruskal-Wallis Test와 같지만, 두개의 샘플에대해서 분석  </li>
+</ul>
+</li>
+<li>Spearman correlation<ul>
+<li>두 샘플이 어느정도 연관성은있지만, 그 연관성에 일정한 비율이 없을때 두 샘플의 통계적 의존성을 측정</li>
+<li>쉽게 이해하자면, 한학생의 수학 영어점수를 비교하여 수학을잘하면 영어도잘하나?확인  </li>
+</ul>
+</li>
+<li>Run test<ul>
+<li>연속적인 관측값들이 랜덤으로 나타난것인가를 검정하는 방법</li>
+<li>관측값들의 얻어진 순서에 근거하여 먼저얻어진 관측치가 후에 얻어진 관측치에 영향을 미치는지 확인  </li>
+</ul>
+</li>
+<li>Kolmogorov Smirnov test<ul>
+<li>비교하고자 하는 두 분포의 empirical distribution function 의 차이를 특정 기준과 비교하여 기각의 여부를 결정하는 것</li>
+<li>한마디로 어떤 두 샘플의 부분부분을 비교하여 이 두샘플이 같은 집단에서 나왔는지를 확인  </li>
+</ul>
+</li>
+<li>Wilcoxon Sigend-Rank Test<ul>
+<li>자료의 순서(절대값으로)를 사용해 중위수(median)가 0 인지 검정<ul>
+<li>중위수? : 양수데이터수 =음수데이터들수 -&gt; 중위수가 0</li>
+</ul>
+</li>
+<li>이 순위에 다시 +,- 를 부여하여 부호화된순위(signed rank)를 가지게함</li>
+<li>환자의 약 복용 전후 몸무게차이가 정규분포를 따른다는 귀무가설을 세우고 검정</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>TIL</category>
+      </categories>
+      <tags>
+        <tag>Data science</tag>
+        <tag>hypothesis statistics</tag>
       </tags>
   </entry>
   <entry>
@@ -880,87 +1153,6 @@
       <tags>
         <tag>Data science</tag>
         <tag>Confidence Interval</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI-day9</title>
-    <url>/2021/05/18/AI-day9/</url>
-    <content><![CDATA[<h1 id="베이지안-통계-개론-Bayesian-Inference"><a href="#베이지안-통계-개론-Bayesian-Inference" class="headerlink" title="베이지안 통계 개론 (Bayesian Inference)"></a>베이지안 통계 개론 (Bayesian Inference)</h1><ul>
-<li>이유 불충분의 정리<ul>
-<li>확률을 모를때는 50대50으로 생각</li>
-<li>아무 정보없을때 사전확률(50%)</li>
-<li>어떤 새로운 정보로인해 상승한 사후확률(50+a%)</li>
-<li>이렇게 어떤 하나의 정보로인해 확률이 변하는것이 <strong>베이즈정리</strong> </li>
-</ul>
-</li>
-<li>조건부확률도 중요</li>
-</ul>
-<h2 id="총-확률의-법칙-The-Law-of-Total-Probability"><a href="#총-확률의-법칙-The-Law-of-Total-Probability" class="headerlink" title="총 확률의 법칙 (The Law of Total Probability)"></a>총 확률의 법칙 (The Law of Total Probability)</h2><ul>
-<li>특정 확률 변수에 대해, 모든 가능한 이벤트의 총 확률 = 1</li>
-<li>2개의 변수를 고려 한다면 두 변수가 연관이 있는 경우, B가 일어난 상황에서 A에 대한 확률 P(A)는, P(A|B) 의 형태로 표현  <img src="../images/ltp.PNG"></li>
-</ul>
-<h2 id="조건부-확률-The-Law-of-Conditional-Probability"><a href="#조건부-확률-The-Law-of-Conditional-Probability" class="headerlink" title="조건부 확률 (The Law of Conditional Probability)"></a>조건부 확률 (The Law of Conditional Probability)</h2><ul>
-<li>전체사각형이 모든 확률공간(1) 일때 각각 B의 조건에서 A가 일어날 확률을 교집합으로 표현가능  <img src="../images/conditional.PNG" width="300"></li>
-</ul>
-<h2 id="베이지안-이론-Bayes-Theorem"><a href="#베이지안-이론-Bayes-Theorem" class="headerlink" title="베이지안 이론 (Bayes Theorem)"></a>베이지안 이론 (Bayes Theorem)</h2><ul>
-<li>사후확률(posterior probability)을 사전확률(prior probability)과 likelihood를 이용해서 계산할 수 있도록 해 주는 확률 변환식<ul>
-<li>B가 주어진 상황에서 A의 확률 = A가 주어진 상황에서 B의 확률 X A의 확률 % B 의 확률로 표현</li>
-<li>p(A|B) -&gt; 사후 확률 (B라는 정보가 업데이트 된 이후 확률)</li>
-<li>p(A) -&gt; 사전 확률 (B라는 정보가 업데이트 되기 전의 사전확률)</li>
-<li>p(B|A) -&gt; likelihood(어떤 모델에서 해당 데이터(관측값)이 나올 확률)</li>
-</ul>
-</li>
-<li>사전확률(“Prior”)은 사후확률(“Updated”)로 다시 표현 할 수 있음이 중요<ul>
-<li>쉽게말해 사후확률의 추가(샘플의 추가)로 불규칙한 확률을 정규분포와 비슷하게 업데이트 할수 있다 -&gt; 베이지안이론이 많이 쓰이는 이유  <img src="../images/bayes.PNG"></li>
-</ul>
-</li>
-</ul>
-<h2 id="베이지안-테스트를-반복하여-사용-repeated-testing"><a href="#베이지안-테스트를-반복하여-사용-repeated-testing" class="headerlink" title="베이지안 테스트를 반복하여 사용 (repeated testing)"></a>베이지안 테스트를 반복하여 사용 (repeated testing)</h2><ul>
-<li>False positive rate와 사전확률을 통해 반복적인 테스트로 정확한 확률을 계산<ul>
-<li>TPR : True Positive Rate (= 민감도, true accept rate) 1인 케이스에 대해 1로 잘 예측한 비율(암환자를 암이라고 진단 함)</li>
-<li>FPR : False Positive Rate (= 1-특이도, false accept rate) 0인 케이스에 대해 1로 잘못 예측한 비율(암환자가 아닌데 암이라고 진단 함)</li>
-</ul>
-</li>
-</ul>
-<h3 id="Bayesian-기반-신뢰구간-추정"><a href="#Bayesian-기반-신뢰구간-추정" class="headerlink" title="Bayesian 기반 신뢰구간 추정"></a>Bayesian 기반 신뢰구간 추정</h3><ul>
-<li>Scipy.stats.bayes_mvs()</li>
-</ul>
-<h3 id="Bayesian-Optimize"><a href="#Bayesian-Optimize" class="headerlink" title="Bayesian Optimize"></a>Bayesian Optimize</h3><ul>
-<li><a href="https://github.com/fmfn/BayesianOptimization">https://github.com/fmfn/BayesianOptimization</a></li>
-</ul>
-<h2 id="Naive-Bayes"><a href="#Naive-Bayes" class="headerlink" title="Naive Bayes"></a>Naive Bayes</h2><ul>
-<li>bayes theorem을 사용하되, 고려해야할 특징이 많은경우 보다 단순화해서 판달할수있는 방법</li>
-<li>즉, multi=class 분류에서 쉽고 빠르게 예측가능</li>
-<li>수치형보다는 범주형데이터에 효과적<ul>
-<li>특히 실시간 예측이 필요한경우나 질병예측분야에서 효과적</li>
-</ul>
-</li>
-<li>but ! 학습데이터에는 없지만 실제 검사데이터에 있는 범주에서는 확률이 0 이되어(zero frequency) 예측 불가능해짐<ul>
-<li>이를 방지하기위해 다른 테크닉이 필요하고, 실제 데이터간의 독립성이 불분명한경우에도 오류가능성있음</li>
-</ul>
-</li>
-</ul>
-<h2 id="MLE-와-MAP"><a href="#MLE-와-MAP" class="headerlink" title="MLE 와 MAP"></a>MLE 와 MAP</h2><ul>
-<li>최대우도법(Maximum Likelihood Estimation, 이하 MLE)<ul>
-<li>likelihood 가 높은것을 선택</li>
-<li>내 주머니에서 돈이 떨어질확률 vs 친구 주머니에서 떨어질확률 -&gt; 높은것을 선택</li>
-<li>바지에 주머니의 갯수가 몇개인지에 상관없이 떨어질확률만 생각(좋지않음)</li>
-</ul>
-</li>
-<li>최대 사후확률법(Maximum A Posteriori, 이하 MAP)<ul>
-<li>posterior 가 높은것을 선택</li>
-<li>길에떨어져있는 돈이 내꺼일확률 vs 친구꺼일확률 -&gt; 높은것을 선택</li>
-<li>주머니의 갯수까지 고려</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>TIL</category>
-      </categories>
-      <tags>
-        <tag>Data science</tag>
-        <tag>Bayesian</tag>
       </tags>
   </entry>
   <entry>
@@ -1134,115 +1326,146 @@
       </tags>
   </entry>
   <entry>
-    <title>AI-day7</title>
-    <url>/2021/05/14/AI-day7/</url>
-    <content><![CDATA[<h1 id="다양한-가설검정방법"><a href="#다양한-가설검정방법" class="headerlink" title="다양한 가설검정방법"></a>다양한 가설검정방법</h1><ul>
-<li>t-test를 위한 조건알기</li>
-<li>t-test 이외의 가설검정방법 익히기</li>
-<li>Type of Error 구분할줄 알기</li>
-<li>X<sup>2-test</sup>의 목적과 사용예시알기</li>
-<li>모수통계, 비모수통계 차이 파악하기</li>
-</ul>
-<h2 id="T-test"><a href="#T-test" class="headerlink" title="T-test +"></a>T-test +</h2><ul>
-<li>T-test의 선행조건 3가지<ul>
-<li>독립성 : 두 그룹의 연관성이 없어야함</li>
-<li>정규성 : 데이터가 정규성을 나타내야함<ul>
-<li>scipy.stats.normaltest()</li>
+    <title>AI-Day5</title>
+    <url>/2021/05/12/AI-Day5/</url>
+    <content><![CDATA[<h1 id="Weekly-review"><a href="#Weekly-review" class="headerlink" title="Weekly review"></a>Weekly review</h1><h2 id="EDA"><a href="#EDA" class="headerlink" title="EDA"></a>EDA</h2><ul>
+<li>데이터를 불러오기<ul>
+<li>Description 을통해 데이터셋에대한 정보파악<ul>
+<li>EDA를 대신해주는거지만, 직접확인하는것이 더 정확</li>
 </ul>
 </li>
-<li>등분산성 : 유사한수준의 분산값을 가져야함</li>
+<li>pd.read_csv() 에 대한 완벽한 숙지가 중요</li>
 </ul>
 </li>
-</ul>
-<h2 id="Type-of-Error"><a href="#Type-of-Error" class="headerlink" title="Type of Error"></a>Type of Error</h2><ul>
-<li>Error<ul>
-<li>FN (알파,type1 error) : 귀무가설이 참이지만, 거짓이라 판단한경우</li>
-<li>FP (베타,type2 error) : 귀무가설이 거짓이지만, 참이라 판단한경우</li>
-</ul>
-</li>
-<li>Corret<ul>
-<li>TP (1-알파) : 귀무가설이 참이고, 참이라 판단</li>
-<li>TN (1-베타) : 귀무가설이 거짓이고, 거짓이라 판단</li>
+<li>데이터셋 확인하기<ul>
+<li>Graphic , Non-Graphic 을 구분하고 사용할줄 알아야함</li>
+<li>하지만, 자기가 시각화를 한 자료에대해서는 100% 설명할줄 알아야함<ul>
+<li>EDA과정에서 시각화된 자료에대한 코멘트(어떤 insigth를 얻었는지 등등)를 달아보기</li>
 </ul>
 </li>
-</ul>
-<h2 id="Non-parametric-methods-비모수적-방법"><a href="#Non-parametric-methods-비모수적-방법" class="headerlink" title="Non parametric methods(비모수적 방법)"></a>Non parametric methods(비모수적 방법)</h2><ul>
-<li>모집단이 특정확률분포(normal 같은)따른다는 전제를 하지않는 방식<ul>
-<li>즉 모집단의 형태에 관계없이 주어진 데이터에서 직접 확률을 계산 및 검정</li>
-</ul>
-</li>
-<li>parameter 추정이 필요하지 않는 non-parametric</li>
-<li>Categorical 데이터를 위한 모델링<ul>
-<li>범주형자료 : 관측결과가 몇개의 범주 또는 항목 형태로 나타나는 자료</li>
-<li>어떠한 수치가아닌 성별,선호도,혈액형,지역 등등으로 나타나는 것</li>
-</ul>
-</li>
-<li>극단적 outlier가 있는경우 매우 유효<ul>
-<li>outlier(이상치,극단치) : 분포에서 비정상적으로 보이는 극단값 혹은 비현실적 변수(평균을 왜곡시키는 값)</li>
-</ul>
-</li>
-<li>distribution free method (분포무관 검정법) 이라고도 함</li>
-</ul>
-<h3 id="비모수적-방법들"><a href="#비모수적-방법들" class="headerlink" title="비모수적 방법들"></a>비모수적 방법들</h3><ul>
-<li>카이제곱 테스트(x<sup>2</sup> Tests)<ul>
-<li>One sample x<sup>2</sup> Tests<ul>
-<li>주어진 데이터가 예상하고있는 분포와 동일한 분포를 나타낼지를 검정</li>
-<li>계산된 x<sup>2</sup> 값과 자유도를 이용하여 pvalue를 구함<ul>
-<li>stats.chi2.df(x<sup>2</sup>, df=자유도)</li>
-</ul>
-</li>
-<li>chisquare(data, axis=None) 으로 statstics과 pvalue 바로 구할수 있음<ul>
-<li>pvalue가 크다 -&gt; 연관이있다 -&gt; 분포가 비슷하다</li>
-<li>pvalue가 작다 -&gt; 연관이없다 -&gt; 분포가 다르다</li>
+<li>Pandas의 메서드들을 외우는건 의미없음<ul>
+<li>여러번 사용해보면서 이런 기능을하는 함수가 있었다라는걸 기억하는것이 중요</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Two sample x<sup>2</sup><ul>
-<li>주어진 두 데이터가 서로 독립적인가를 검정</li>
-<li>이떄의 자유도는 one sample과 다르게 (행-1)*(열-1)</li>
-<li>chi2_contingency(data)<ul>
-<li>parameter 에 coreestion=T/F 로 Yates correction 설정가능</li>
-<li>x<sup>2</sup>, p-value, 자유도, 예측되는 관측치 순서대로 print 됨  </li>
+<li>데이터 전처리도 중요하다는것만 우선 기억  </li>
+</ul>
+<h2 id="Feature-Engineering"><a href="#Feature-Engineering" class="headerlink" title="Feature Engineering"></a>Feature Engineering</h2><ul>
+<li>데이터를 보다 확인하기 좋은 형태로 다듬는것이 목적<ul>
+<li>기존의 feature들을 조합하여 새로운 feature를 만드는것</li>
+<li>도메인지식과 창의성이 중요</li>
+</ul>
+</li>
+<li>DataFrame, DataSet 이해<ul>
+<li>결측치들(Na,Null,NaN,0,Undefined)의 차이를 알기</li>
+</ul>
+</li>
+<li>typecasting, 특히 string-&gt;int가 매우 중요하고 많이쓰임<ul>
+<li>replace,apply,astype 등의 다양한 방법이 존재하므로 정확히 의도대로 사용할 줄 알아야함  </li>
 </ul>
 </li>
 </ul>
-</li>
+<h2 id="Data-Manipulation"><a href="#Data-Manipulation" class="headerlink" title="Data Manipulation"></a>Data Manipulation</h2><ul>
+<li>concat과 merge를 구분하고 사용할줄 알아야함<ul>
+<li>단순히 합치는법을 알기보다는 원하는 shape으로 만들어낼줄 아는것이 중요</li>
 </ul>
 </li>
-<li>Kruskal-Wallis Test (비모수적 평균 비교법)<ul>
-<li>샘플크기가 같고나 다른 두개 이상의 독립샘플을 비교(샘플수가 5개이상일때 좋음)</li>
-<li>샘플의 순위를 매기고 집단별 순위의 합을 구해 통계량을 계산</li>
-<li>귀무가설은 모든그룹의 크기가 같다, 대립가설은 크기가 다르다로 설정</li>
-<li>from scipy.stats import kruskal  </li>
+<li>wide &amp; tidy<ul>
+<li>각각의 형태가 언제 유용하고 확인하기 좋은가를 구분할줄 알아야함</li>
+<li>data를보고 어떤형태인지도 유추할수 있다면 best</li>
+<li>melt() &amp; pivot_table() 를 적절하게 사용할 줄 알아야함</li>
 </ul>
 </li>
-<li>Mann-Whitney U<ul>
-<li>Kruskal-Wallis Test와 같지만, 두개의 샘플에대해서 분석  </li>
+<li>pandas styling <ul>
+<li>나중에 알고있다면 좋은것</li>
 </ul>
 </li>
-<li>Spearman correlation<ul>
-<li>두 샘플이 어느정도 연관성은있지만, 그 연관성에 일정한 비율이 없을때 두 샘플의 통계적 의존성을 측정</li>
-<li>쉽게 이해하자면, 한학생의 수학 영어점수를 비교하여 수학을잘하면 영어도잘하나?확인  </li>
+</ul>
+<h2 id="Basic-derivative"><a href="#Basic-derivative" class="headerlink" title="Basic derivative"></a>Basic derivative</h2><ul>
+<li>미분에 대한 개념은 매우중요하지만, 직접미분을 해야하는경우는 드물다<ul>
+<li>다양한 미분 공식들을 알아야 알고리즘에대해 이해하고 사용할 수 있음</li>
 </ul>
 </li>
-<li>Run test<ul>
-<li>연속적인 관측값들이 랜덤으로 나타난것인가를 검정하는 방법</li>
-<li>관측값들의 얻어진 순서에 근거하여 먼저얻어진 관측치가 후에 얻어진 관측치에 영향을 미치는지 확인  </li>
+<li>경사하강법은 뒤로갈수록 중요한 개념이므로 꾸준히 공부하고 이해할수록 좋음</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Weekly reveiw</category>
+      </categories>
+      <tags>
+        <tag>Data science</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI-day9</title>
+    <url>/2021/05/18/AI-day9/</url>
+    <content><![CDATA[<h1 id="베이지안-통계-개론-Bayesian-Inference"><a href="#베이지안-통계-개론-Bayesian-Inference" class="headerlink" title="베이지안 통계 개론 (Bayesian Inference)"></a>베이지안 통계 개론 (Bayesian Inference)</h1><ul>
+<li>이유 불충분의 정리<ul>
+<li>확률을 모를때는 50대50으로 생각</li>
+<li>아무 정보없을때 사전확률(50%)</li>
+<li>어떤 새로운 정보로인해 상승한 사후확률(50+a%)</li>
+<li>이렇게 어떤 하나의 정보로인해 확률이 변하는것이 <strong>베이즈정리</strong> </li>
 </ul>
 </li>
-<li>Kolmogorov Smirnov test<ul>
-<li>비교하고자 하는 두 분포의 empirical distribution function 의 차이를 특정 기준과 비교하여 기각의 여부를 결정하는 것</li>
-<li>한마디로 어떤 두 샘플의 부분부분을 비교하여 이 두샘플이 같은 집단에서 나왔는지를 확인  </li>
+<li>조건부확률도 중요</li>
+</ul>
+<h2 id="총-확률의-법칙-The-Law-of-Total-Probability"><a href="#총-확률의-법칙-The-Law-of-Total-Probability" class="headerlink" title="총 확률의 법칙 (The Law of Total Probability)"></a>총 확률의 법칙 (The Law of Total Probability)</h2><ul>
+<li>특정 확률 변수에 대해, 모든 가능한 이벤트의 총 확률 = 1</li>
+<li>2개의 변수를 고려 한다면 두 변수가 연관이 있는 경우, B가 일어난 상황에서 A에 대한 확률 P(A)는, P(A|B) 의 형태로 표현  <img src="../images/ltp.PNG"></li>
+</ul>
+<h2 id="조건부-확률-The-Law-of-Conditional-Probability"><a href="#조건부-확률-The-Law-of-Conditional-Probability" class="headerlink" title="조건부 확률 (The Law of Conditional Probability)"></a>조건부 확률 (The Law of Conditional Probability)</h2><ul>
+<li>전체사각형이 모든 확률공간(1) 일때 각각 B의 조건에서 A가 일어날 확률을 교집합으로 표현가능  <img src="../images/conditional.PNG" width="300"></li>
+</ul>
+<h2 id="베이지안-이론-Bayes-Theorem"><a href="#베이지안-이론-Bayes-Theorem" class="headerlink" title="베이지안 이론 (Bayes Theorem)"></a>베이지안 이론 (Bayes Theorem)</h2><ul>
+<li>사후확률(posterior probability)을 사전확률(prior probability)과 likelihood를 이용해서 계산할 수 있도록 해 주는 확률 변환식<ul>
+<li>B가 주어진 상황에서 A의 확률 = A가 주어진 상황에서 B의 확률 X A의 확률 % B 의 확률로 표현</li>
+<li>p(A|B) -&gt; 사후 확률 (B라는 정보가 업데이트 된 이후 확률)</li>
+<li>p(A) -&gt; 사전 확률 (B라는 정보가 업데이트 되기 전의 사전확률)</li>
+<li>p(B|A) -&gt; likelihood(어떤 모델에서 해당 데이터(관측값)이 나올 확률)</li>
 </ul>
 </li>
-<li>Wilcoxon Sigend-Rank Test<ul>
-<li>자료의 순서(절대값으로)를 사용해 중위수(median)가 0 인지 검정<ul>
-<li>중위수? : 양수데이터수 =음수데이터들수 -&gt; 중위수가 0</li>
+<li>사전확률(“Prior”)은 사후확률(“Updated”)로 다시 표현 할 수 있음이 중요<ul>
+<li>쉽게말해 사후확률의 추가(샘플의 추가)로 불규칙한 확률을 정규분포와 비슷하게 업데이트 할수 있다 -&gt; 베이지안이론이 많이 쓰이는 이유  <img src="../images/bayes.PNG"></li>
 </ul>
 </li>
-<li>이 순위에 다시 +,- 를 부여하여 부호화된순위(signed rank)를 가지게함</li>
-<li>환자의 약 복용 전후 몸무게차이가 정규분포를 따른다는 귀무가설을 세우고 검정</li>
+</ul>
+<h2 id="베이지안-테스트를-반복하여-사용-repeated-testing"><a href="#베이지안-테스트를-반복하여-사용-repeated-testing" class="headerlink" title="베이지안 테스트를 반복하여 사용 (repeated testing)"></a>베이지안 테스트를 반복하여 사용 (repeated testing)</h2><ul>
+<li>False positive rate와 사전확률을 통해 반복적인 테스트로 정확한 확률을 계산<ul>
+<li>TPR : True Positive Rate (= 민감도, true accept rate) 1인 케이스에 대해 1로 잘 예측한 비율(암환자를 암이라고 진단 함)</li>
+<li>FPR : False Positive Rate (= 1-특이도, false accept rate) 0인 케이스에 대해 1로 잘못 예측한 비율(암환자가 아닌데 암이라고 진단 함)</li>
+</ul>
+</li>
+</ul>
+<h3 id="Bayesian-기반-신뢰구간-추정"><a href="#Bayesian-기반-신뢰구간-추정" class="headerlink" title="Bayesian 기반 신뢰구간 추정"></a>Bayesian 기반 신뢰구간 추정</h3><ul>
+<li>Scipy.stats.bayes_mvs()</li>
+</ul>
+<h3 id="Bayesian-Optimize"><a href="#Bayesian-Optimize" class="headerlink" title="Bayesian Optimize"></a>Bayesian Optimize</h3><ul>
+<li><a href="https://github.com/fmfn/BayesianOptimization">https://github.com/fmfn/BayesianOptimization</a></li>
+</ul>
+<h2 id="Naive-Bayes"><a href="#Naive-Bayes" class="headerlink" title="Naive Bayes"></a>Naive Bayes</h2><ul>
+<li>bayes theorem을 사용하되, 고려해야할 특징이 많은경우 보다 단순화해서 판달할수있는 방법</li>
+<li>즉, multi=class 분류에서 쉽고 빠르게 예측가능</li>
+<li>수치형보다는 범주형데이터에 효과적<ul>
+<li>특히 실시간 예측이 필요한경우나 질병예측분야에서 효과적</li>
+</ul>
+</li>
+<li>but ! 학습데이터에는 없지만 실제 검사데이터에 있는 범주에서는 확률이 0 이되어(zero frequency) 예측 불가능해짐<ul>
+<li>이를 방지하기위해 다른 테크닉이 필요하고, 실제 데이터간의 독립성이 불분명한경우에도 오류가능성있음</li>
+</ul>
+</li>
+</ul>
+<h2 id="MLE-와-MAP"><a href="#MLE-와-MAP" class="headerlink" title="MLE 와 MAP"></a>MLE 와 MAP</h2><ul>
+<li>최대우도법(Maximum Likelihood Estimation, 이하 MLE)<ul>
+<li>likelihood 가 높은것을 선택</li>
+<li>내 주머니에서 돈이 떨어질확률 vs 친구 주머니에서 떨어질확률 -&gt; 높은것을 선택</li>
+<li>바지에 주머니의 갯수가 몇개인지에 상관없이 떨어질확률만 생각(좋지않음)</li>
+</ul>
+</li>
+<li>최대 사후확률법(Maximum A Posteriori, 이하 MAP)<ul>
+<li>posterior 가 높은것을 선택</li>
+<li>길에떨어져있는 돈이 내꺼일확률 vs 친구꺼일확률 -&gt; 높은것을 선택</li>
+<li>주머니의 갯수까지 고려</li>
 </ul>
 </li>
 </ul>
@@ -1252,7 +1475,7 @@
       </categories>
       <tags>
         <tag>Data science</tag>
-        <tag>hypothesis statistics</tag>
+        <tag>Bayesian</tag>
       </tags>
   </entry>
   <entry>
@@ -1417,29 +1640,6 @@
       </tags>
   </entry>
   <entry>
-    <title>linear layer</title>
-    <url>/2021/04/15/linear-layer/</url>
-    <content><![CDATA[<h1 id="Linear-layer"><a href="#Linear-layer" class="headerlink" title="Linear layer"></a>Linear layer</h1><ul>
-<li><p>신경망의 기본요소</p>
-</li>
-<li><p>Fully-connected (FC) layer</p>
-</li>
-<li><p>내부 파라미터에따른 선형변환을 수행</p>
-</li>
-<li><p>각 입력노드에 weight(가중치)를 곱하고 합친후, bias(편향) 더함  </p>
-<img src="../images/linear.PNG" width="300" height="300"></li>
-<li><p>이때 행렬의 곱으로 표현가능  </p>
-<img src="../images/linearmulti.PNG"></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Deep-Learning</category>
-      </categories>
-      <tags>
-        <tag>linear-layer</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>딥러닝기초</title>
     <url>/2021/04/06/%EB%94%A5%EB%9F%AC%EB%8B%9D%EA%B8%B0%EC%B4%88/</url>
     <content><![CDATA[<h1 id="딥러닝-사전기초지식"><a href="#딥러닝-사전기초지식" class="headerlink" title="딥러닝 사전기초지식"></a>딥러닝 사전기초지식</h1><ul>
@@ -1595,226 +1795,26 @@
       </tags>
   </entry>
   <entry>
-    <title>AI-day10</title>
-    <url>/2021/05/20/AI-day10/</url>
-    <content><![CDATA[<h1 id="Weekly-review"><a href="#Weekly-review" class="headerlink" title="Weekly review"></a>Weekly review</h1><h2 id="가설검정"><a href="#가설검정" class="headerlink" title="가설검정"></a>가설검정</h2><ul>
-<li><p>가설검정의 목적: 모집단의 실제값들 중 sample들을 뽑아 그 통계치를 통해 통계적으로 유의한지아닌지를 판정하는것  </p>
+    <title>linear layer</title>
+    <url>/2021/04/15/linear-layer/</url>
+    <content><![CDATA[<h1 id="Linear-layer"><a href="#Linear-layer" class="headerlink" title="Linear layer"></a>Linear layer</h1><ul>
+<li><p>신경망의 기본요소</p>
 </li>
-<li><p>기술통계치(데이터를 설명하는 값들)와 box plot, violin plot, count, mean, standard dev, min, 1Q, median, 3Q, max 이해하고 설명할 수 있어야함  </p>
+<li><p>Fully-connected (FC) layer</p>
 </li>
-<li><p>Outlier(이상치)에 대한 개념, 구하는 식 찾기  </p>
+<li><p>내부 파라미터에따른 선형변환을 수행</p>
 </li>
-<li><p>추리통계치</p>
-<ul>
-<li>Population, Parameter, Statistic, Estimator, Standard Deviation, Standard Error 각각의 정의는 반드시 알아야함  </li>
-</ul>
-</li>
-<li><p>Sampling 4가지 </p>
-<ul>
-<li>Simple random sampling, Systematic sampling, Stratified random sampling, Cluster sampling 와 추가로 이것들의 변이형 도 찾아서 전체적인 뉘앙스를 기억하기  </li>
-</ul>
-</li>
-<li><p>Standard Error(표준오차,표준편차)</p>
-<ul>
-<li>표준편차 나누기 루트샘플사이즈 공식이 왜 그렇게 도출된것인지를 설명할 수 있어야함</li>
-<li>표본의 수가 많을수록 오차가 작다 기억</li>
-</ul>
-</li>
-</ul>
-<h2 id="T-test"><a href="#T-test" class="headerlink" title="T-test"></a>T-test</h2><ul>
-<li>독립성,정규성,등분산성이 지켜져야 t-test 가능</li>
-<li>수치형,연속형data 만 사용가능</li>
-<li>one sample : 1개 <strong>샘플의 평균값</strong>이 <strong>특정값과 동일</strong>한지 비교<ul>
-<li>t = 샘플평균-모집단평균 / 표준편차</li>
-</ul>
-</li>
-<li>two sample : 2개 <strong>샘플 각각의 평균값</strong>이 <strong>서로 동일</strong>한지 비교</li>
-<li>t-test의 정확한 의미와 결과에대한 해석을 할 줄 알아야함</li>
-<li>P-value(일반적으로 신뢰구간 95%)<ul>
-<li>0.05보다 크다 -&gt; 귀무가설 채택</li>
-<li>0.05보다 작다 -&gt; 귀무가설 기각</li>
-</ul>
-</li>
-</ul>
-<h2 id="Type-of-Error"><a href="#Type-of-Error" class="headerlink" title="Type of Error"></a>Type of Error</h2><ul>
-<li>type1, type2 error의 개념과 차이가 중요</li>
-</ul>
-<h2 id="Chi-square"><a href="#Chi-square" class="headerlink" title="Chi square"></a>Chi square</h2><ul>
-<li>하는법과 의미를 기억</li>
-</ul>
-<h2 id="ANOVA"><a href="#ANOVA" class="headerlink" title="ANOVA"></a>ANOVA</h2><ul>
-<li>2 Sample 이상을 다루는경우 주로 사용하는 가설검정법</li>
-</ul>
-<h2 id="큰-수의-법칙-Law-of-large-numbers"><a href="#큰-수의-법칙-Law-of-large-numbers" class="headerlink" title="큰 수의 법칙 ( Law of large numbers )"></a>큰 수의 법칙 ( Law of large numbers )</h2><ul>
-<li>샘플이 많아질수록 모집단의 통계치와 근사해진다</li>
-</ul>
-<h2 id="중심극한정리-Central-Limit-Theorem-CLT"><a href="#중심극한정리-Central-Limit-Theorem-CLT" class="headerlink" title="중심극한정리 ( Central Limit Theorem, CLT )"></a>중심극한정리 ( Central Limit Theorem, CLT )</h2><ul>
-<li>샘플이 많아질수록 정규분포에 근사해진다</li>
-<li>특히 큰수의법칙과 중심극한정리는 개념을 정확히 설명할줄 알아야한다(면접에서도 중요)</li>
-</ul>
-<h2 id="신뢰구간"><a href="#신뢰구간" class="headerlink" title="신뢰구간"></a>신뢰구간</h2><ul>
-<li>샘플평균 플러스마이너스 Error 로 기억(공식 암기)</li>
-</ul>
-<h2 id="총-확률의-법칙-The-Law-of-Total-Probability"><a href="#총-확률의-법칙-The-Law-of-Total-Probability" class="headerlink" title="총 확률의 법칙 (The Law of Total Probability)"></a>총 확률의 법칙 (The Law of Total Probability)</h2><ul>
-<li>다시말해 A의 모든 확률은, 주어진 Bn에 대해, 각각의 일어날 확률의 총합이다</li>
-<li>bayesian 에 대한 내용은 알면 알수록 좋고, 분야가 세분화될수록 점점 쓸모가있다</li>
-<li>조건부확률 계산하는 법도 직접 할수있으면 더 좋다</li>
+<li><p>각 입력노드에 weight(가중치)를 곱하고 합친후, bias(편향) 더함  </p>
+<img src="../images/linear.PNG" width="300" height="300"></li>
+<li><p>이때 행렬의 곱으로 표현가능  </p>
+<img src="../images/linearmulti.PNG"></li>
 </ul>
 ]]></content>
       <categories>
-        <category>Weekly reveiw</category>
+        <category>Deep-Learning</category>
       </categories>
       <tags>
-        <tag>Data science</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI-Day4</title>
-    <url>/2021/05/11/AI-Day4/</url>
-    <content><![CDATA[<h1 id="Basic-Derivative-기초미분"><a href="#Basic-Derivative-기초미분" class="headerlink" title="Basic Derivative 기초미분"></a>Basic Derivative 기초미분</h1><ul>
-<li>미분 : 함수를 작게 나누는것</li>
-<li>DS에서의 미분?<ul>
-<li>x를 넣었을때 y값을 예측하는 선형모델을 예로보면</li>
-<li>y^ = a + b X</li>
-<li>주어진 데이터 X를 넣었을 떄 모델이 예측하는 예측값과 실제값 간의 차이(Error,𝜀)를 계산한 다음, 여러 모델 중 Error(모델에서 예측하는 예측값과 실제값 (y)의 차이)가 가장 작은 모델을 선택하는 방법을 통해, 가장 좋은 모델을 선택할 수 있음</li>
-<li>이 과정은 f(a,b) =𝜀 로 표현 될 수 있으며, 오차 함수인 𝜀 을 최소화 하는 a,b를 찾는 것이 머신러닝(Linear regression)의 목표</li>
-<li>이 오차함수를 최소화하는 a,b를 찾기위해 미분 사용  </li>
-</ul>
-</li>
-</ul>
-<h2 id="미분-공식-w-Python"><a href="#미분-공식-w-Python" class="headerlink" title="미분 공식 w/ Python"></a>미분 공식 w/ Python</h2><ul>
-<li>기본적으로 미분은 다음의 공식을 활용<ul>
-<li>f’(x) = {f(x + Δx) - f(x)/ Δx}, Δ x-&gt; 0</li>
-<li>but 실제 0으로 나눌 수 없기때문에 0에 매우근사한 1e-5 을 사용하며, 이러한 접근 방식을 numerical method라 함</li>
-<li>numerical method에서는 조금 더 정확한 측정을 위해 분자에 f(x + Δx) - f(x - Δx)/ 2Δx 를 사용하기도 함  </li>
-</ul>
-</li>
-<li>머신러닝에서 쓰이는 대표적 미분공식들<ul>
-<li>f(x) = 상수 -&gt; f’(x) = 0<ul>
-<li>f’(x)가 상수 (constant)인 경우는 x를 아무리 늘리거나 줄여도 늘 같은 숫자이기 때문에 변화가 전혀 없음. 즉 변화율이 0이기 때문에 미분계수도 늘 0<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># f(x) &#x3D; 5</span><br><span class="line">def f(x):</span><br><span class="line">    return 5</span><br><span class="line"></span><br><span class="line">def numerical_derivative(fx, x):</span><br><span class="line">    delta_x &#x3D; 1e-5</span><br><span class="line"></span><br><span class="line">    return (fx(x + delta_x) - fx(x)) &#x2F; delta_x</span><br><span class="line">print(numerical_derivative(f, 1))</span><br><span class="line"></span><br><span class="line"># 예시 2 : Scipy의 derivative 활용(도함수를 바로계산해주는 함수)</span><br><span class="line">from scipy.misc import derivative</span><br><span class="line"></span><br><span class="line"># 두 방법의 결과값 비교</span><br><span class="line">derivative(f,1, dx&#x3D;1e-6) &#x3D;&#x3D; numerical_derivative(f, 1)</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li>f(x) = ax<sup>{n}</sup> -&gt; f’(x) = an{x}<sup>{(n-1)}</sup><ul>
-<li>Power Rule로도 알려져있는 미분법</li>
-<li>x 기준으로 n승을 미분할 경우 n을 내려보내서 곱해준 후, 이후에 n승에서 “하나”를 가져왔기 때문에 빼주는 방법  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">def f(x):</span><br><span class="line">    return 3*(x**4) + 10</span><br><span class="line"></span><br><span class="line">def numerical_derivative(fx, x):</span><br><span class="line">    delta_x &#x3D; 1e-5</span><br><span class="line"></span><br><span class="line">    return (fx(x + delta_x) - fx(x)) &#x2F; delta_x</span><br><span class="line"></span><br><span class="line">print(numerical_derivative(f, 2))</span><br><span class="line"></span><br><span class="line"># 예시 2 : Scipy의 derivative 활용</span><br><span class="line">from scipy.misc import derivative</span><br><span class="line"></span><br><span class="line"># 두 방법의 결과값 비교</span><br><span class="line">print(derivative(f,2, dx&#x3D;1e-5))</span><br><span class="line">derivative(f,2, dx&#x3D;1e-5) &#x3D;&#x3D; numerical_derivative(f, 2)  #delta X의 값은 같지만 Rounding 에러로 인해 두 결과가 미묘하게 다르게 나오지만 거의 같음</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li>f(x) = e<sup>x</sup> -&gt;f’(x) = e<sup>x</sup><ul>
-<li>지수 함수의 경우에는 도함수 역시 지수 함수  </li>
-</ul>
-</li>
-<li>f(x) = lnx -&gt; f’(x) = {1 / x}<ul>
-<li>자연로그의 미분은 신경망의 활성 함수인 sigmoid 함수를 쉽게 미분할수 있도록 도와줌<ul>
-<li>why? sigmoid 함수에 자연로그를 씌움으로서 미분을 훨씬 수월하게 할 수 있게 되기 때문</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="편미분-Partial-Derivative"><a href="#편미분-Partial-Derivative" class="headerlink" title="편미분 Partial Derivative"></a>편미분 Partial Derivative</h2><ul>
-<li>파라미터가 2개 이상인 Error 함수에서 우선 1개의 파라미터에 대해서만 미분을 하자 라는 목적으로 다른 변수들을 상수 취급 하는 방법  </li>
-</ul>
-<p><img src="../images/PD.PNG" alt="pd"></p>
-<h2 id="Chain-Rule"><a href="#Chain-Rule" class="headerlink" title="Chain Rule"></a>Chain Rule</h2><ul>
-<li><strong>합성함수(함수의 함수)</strong> 를 미분하기 위해 사용하는 방식</li>
-<li>F(x) = f(g(x))$<br>F’(x) -&gt; f’((g(x)) ∘ g’(x)<ul>
-<li>미분할 때 반드시 바깥함수(f(x))부터 미분을 해야함을 기억</li>
-<li>F(x) = (2x<sup>3</sup> + 7)<sup>6</sup>  를 x에 대해 미분하려는 경우<br>f(x) = x<sup>6</sup>, g(x) = 2x<sup>3</sup> + 7 로 설정<br>F’(x) = 6(2x<sup>3</sup> + 7)<sup>5</sup> ∘ 6x<sup>2</sup></li>
-</ul>
-</li>
-<li>Chain Rule은 Deep learning의 핵심 개념 중 하나인 Backward Propagation(역전파)을 이해하는데 중요하기 때문에 시간이 될 때마다 연습</li>
-</ul>
-<h2 id="경사하강법-Gradient-Descent"><a href="#경사하강법-Gradient-Descent" class="headerlink" title="경사하강법 Gradient Descent"></a>경사하강법 Gradient Descent</h2><ul>
-<li>오차 함수인 𝜀 을 최소화 하는 𝑎,𝑏 를 찾을 수 있는 최적화 알고리즘 중의 하나</li>
-<li>최적의 a,b를 찾기 위해선 도함수의 미분계수가 0인 곳을 찾으면 되지만, 실제 다루게 될 문제에선 파라미터의 갯수는 수없이 많고 하나의 minimum/maximum만이 존재하지 않음</li>
-<li>경사하강법은 임의의 a, b를 선택한 후 (random initialization)에 기울기 (gradient)를 계산해서 기울기 값이 낮아지는 방향으로 진행</li>
-<li>기울기는 항상 손실 함수 값이 가장 크게 증가하는 방향으로 진행합니다. 그렇기 때문에 경사하강법 알고리즘은 기울기의 반대 방향으로 이동</li>
-<li>경사하강법에서의 a,b<br>an+1=an−η∇f(an)<br>bn+1=bn−η∇f(bn)<ul>
-<li>반복적으로 파라미터 a,b를 업데이트 해가면서 그래디언트(∇f)가 0이 될 때까지 이동<br>이 때 중요한게 바로 학습률 (learning rate,η)<br>학습률이 너무 낮게 되면 알고리즘이 수렴하기 위해서 반복을 많이 해야되고 학습률이 너무 크면 극소값을 지나쳐서 알고리즘이 수렴을 못하고 계산을 계속 반복<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">def gradient_descent(X, y, lr &#x3D; 0.05, epoch &#x3D; 10):</span><br><span class="line">    </span><br><span class="line">    a, b &#x3D; 0.33, 0.48 # 임의 선택한 파라미터 a, b</span><br><span class="line">    N &#x3D; len(X) # 샘플 갯수</span><br><span class="line">    </span><br><span class="line">    for _ in range(epoch):            </span><br><span class="line">        f &#x3D; y - (a*X + b)</span><br><span class="line">    </span><br><span class="line">        # a와 b를 업데이트 합니다(기울기를 바꿔준다고 쉽게이해하면 됨)</span><br><span class="line">        a -&#x3D; lr * (-2 * X.dot(f).sum() &#x2F; N)</span><br><span class="line">        b -&#x3D; lr * (-2 * f.sum() &#x2F; N</span><br><span class="line"></span><br><span class="line"># y &#x3D; 3 x + 5</span><br><span class="line">X &#x3D; np.array([1, 2, 3, 4, 5])</span><br><span class="line">y &#x3D; np.array([8, 11, 14, 17, 20])</span><br><span class="line"></span><br><span class="line">gradient_descent(X,y)  # 10번만 돌렸을 때</span><br><span class="line">gradient_descent(X, y, epoch &#x3D; 100)  # 100번 반복</span><br><span class="line">gradient_descent(X, y, epoch &#x3D; 1000)  # 1000번 반복</span><br><span class="line">반복할수록 a&#x3D;43 b&#x3D;5에 점점 수렴해감을 확인할 수 있음</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>TIL</category>
-      </categories>
-      <tags>
-        <tag>Data science</tag>
-        <tag>Basic Derivative</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI-Day5</title>
-    <url>/2021/05/12/AI-Day5/</url>
-    <content><![CDATA[<h1 id="Weekly-review"><a href="#Weekly-review" class="headerlink" title="Weekly review"></a>Weekly review</h1><h2 id="EDA"><a href="#EDA" class="headerlink" title="EDA"></a>EDA</h2><ul>
-<li>데이터를 불러오기<ul>
-<li>Description 을통해 데이터셋에대한 정보파악<ul>
-<li>EDA를 대신해주는거지만, 직접확인하는것이 더 정확</li>
-</ul>
-</li>
-<li>pd.read_csv() 에 대한 완벽한 숙지가 중요</li>
-</ul>
-</li>
-<li>데이터셋 확인하기<ul>
-<li>Graphic , Non-Graphic 을 구분하고 사용할줄 알아야함</li>
-<li>하지만, 자기가 시각화를 한 자료에대해서는 100% 설명할줄 알아야함<ul>
-<li>EDA과정에서 시각화된 자료에대한 코멘트(어떤 insigth를 얻었는지 등등)를 달아보기</li>
-</ul>
-</li>
-<li>Pandas의 메서드들을 외우는건 의미없음<ul>
-<li>여러번 사용해보면서 이런 기능을하는 함수가 있었다라는걸 기억하는것이 중요</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>데이터 전처리도 중요하다는것만 우선 기억  </li>
-</ul>
-<h2 id="Feature-Engineering"><a href="#Feature-Engineering" class="headerlink" title="Feature Engineering"></a>Feature Engineering</h2><ul>
-<li>데이터를 보다 확인하기 좋은 형태로 다듬는것이 목적<ul>
-<li>기존의 feature들을 조합하여 새로운 feature를 만드는것</li>
-<li>도메인지식과 창의성이 중요</li>
-</ul>
-</li>
-<li>DataFrame, DataSet 이해<ul>
-<li>결측치들(Na,Null,NaN,0,Undefined)의 차이를 알기</li>
-</ul>
-</li>
-<li>typecasting, 특히 string-&gt;int가 매우 중요하고 많이쓰임<ul>
-<li>replace,apply,astype 등의 다양한 방법이 존재하므로 정확히 의도대로 사용할 줄 알아야함  </li>
-</ul>
-</li>
-</ul>
-<h2 id="Data-Manipulation"><a href="#Data-Manipulation" class="headerlink" title="Data Manipulation"></a>Data Manipulation</h2><ul>
-<li>concat과 merge를 구분하고 사용할줄 알아야함<ul>
-<li>단순히 합치는법을 알기보다는 원하는 shape으로 만들어낼줄 아는것이 중요</li>
-</ul>
-</li>
-<li>wide &amp; tidy<ul>
-<li>각각의 형태가 언제 유용하고 확인하기 좋은가를 구분할줄 알아야함</li>
-<li>data를보고 어떤형태인지도 유추할수 있다면 best</li>
-<li>melt() &amp; pivot_table() 를 적절하게 사용할 줄 알아야함</li>
-</ul>
-</li>
-<li>pandas styling <ul>
-<li>나중에 알고있다면 좋은것</li>
-</ul>
-</li>
-</ul>
-<h2 id="Basic-derivative"><a href="#Basic-derivative" class="headerlink" title="Basic derivative"></a>Basic derivative</h2><ul>
-<li>미분에 대한 개념은 매우중요하지만, 직접미분을 해야하는경우는 드물다<ul>
-<li>다양한 미분 공식들을 알아야 알고리즘에대해 이해하고 사용할 수 있음</li>
-</ul>
-</li>
-<li>경사하강법은 뒤로갈수록 중요한 개념이므로 꾸준히 공부하고 이해할수록 좋음</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Weekly reveiw</category>
-      </categories>
-      <tags>
-        <tag>Data science</tag>
+        <tag>linear-layer</tag>
       </tags>
   </entry>
 </search>
