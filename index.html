@@ -288,7 +288,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-05-26 07:50:23 / Modified: 07:52:33" itemprop="dateCreated datePublished" datetime="2021-05-26T07:50:23+09:00">2021-05-26</time>
+      <time title="Created: 2021-05-26 07:50:23 / Modified: 10:08:21" itemprop="dateCreated datePublished" datetime="2021-05-26T07:50:23+09:00">2021-05-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -310,12 +310,48 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="클러스터링-Clustering"><a href="#클러스터링-Clustering" class="headerlink" title="클러스터링 (Clustering)"></a>클러스터링 (Clustering)</h1><ul>
+          <h1 id="군집화-Clustering"><a href="#군집화-Clustering" class="headerlink" title="군집화 (Clustering)"></a>군집화 (Clustering)</h1><ul>
 <li>Screeplot 이해</li>
 <li>Supervised, Unsupervised learning 차이 이해</li>
 <li>K-means clustering 이해</li>
 </ul>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
+<h2 id="Scree-plot"><a href="#Scree-plot" class="headerlink" title="Scree plot"></a>Scree plot</h2><ul>
+<li>고유값 크기를 기반으로 성분 수를 결정</li>
+<li>그래프의 기울기는 주성분에 의해 설명되는 데이터의 변동성을 나타냄<ul>
+<li>즉 기울기가 많이 떨어진다? 해당 주성분이 데이터의 많은 영향을준다</li>
+<li>기울기가 평평해진다? 해당 주성분이 데이터에 적은 영향을준다</li>
+<li>그러므로 기울기가 급격하게 변하는 고유값들을 골라 주성분으로 선택</li>
+<li>앞서배운 PCA에서 feature수를 줄여 차원을 줄이는것처럼, 데이터에 영향을 많이주는 주성분을 골라내 차원을 줄인다고 이해할 수 있다</li>
+</ul>
+</li>
+</ul>
+<h2 id="군집화의-종류-Clustering"><a href="#군집화의-종류-Clustering" class="headerlink" title="군집화의 종류(Clustering)"></a>군집화의 종류(Clustering)</h2><ul>
+<li>K-means<ul>
+<li>나타낼 클러스터의 갯수를 정한후 클러스터들을 일직선상에 두고 거리에따라 묶음</li>
+<li>시간복잡도가 선형이므로 빅데이터에 적합</li>
+<li></li>
+</ul>
+</li>
+<li>HCA (Hierarchical Clustering)<ul>
+<li>각각의 샘플간의 유사성에 기반하여 행과열을 재정렬</li>
+<li>정렬된 cluster 간의 dendrogram 을 그리고, 가지의 길이로 연관성을 나타낼 수 있음</li>
+<li>Euclidian distance<ul>
+<li>피타고라스정의와 동일</li>
+</ul>
+</li>
+<li><h2 id="Manhattan-distance"><a href="#Manhattan-distance" class="headerlink" title="Manhattan distance"></a>Manhattan distance</h2></li>
+</ul>
+</li>
+</ul>
+<h3 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h3><ul>
+<li>선형대수학 (MIT, Gulbert Strang)</li>
+<li>통계 (Harvard, Statistics 110)</li>
+<li>모두를위한 딥러닝(성킴)</li>
+<li>Machine Learning( Andrew Ng)</li>
+<li>CS231n(Stanford, Computer Vision)</li>
+<li>CS224n(Stanford, NLP)</li>
+</ul>
+
       
     </div>
 
@@ -1216,7 +1252,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-18 08:58:25" itemprop="dateModified" datetime="2021-05-18T08:58:25+09:00">2021-05-18</time>
+        <time title="Modified: 2021-05-26 10:07:56" itemprop="dateModified" datetime="2021-05-26T10:07:56+09:00">2021-05-26</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1268,13 +1304,15 @@
 <li>카이제곱 : 단일표본의 모집단이 정규분포를 따르며 분산을 미리 알고 있는 경우    </li>
 <li>F Test : 모집단을 알고 있지 않은 경우</li>
 <li>F = 그룹들 간의 분산 / 그룹내에서의 분산<ul>
-<li>F 값이 크다 ? -&gt; 그룹끼리의 분포가 그룹내부보다 크다-&gt; 그룹간 분포가 다를것이다<h2 id="큰수의-법칙-Law-of-large-numbers"><a href="#큰수의-법칙-Law-of-large-numbers" class="headerlink" title="큰수의 법칙 ( Law of large numbers )"></a>큰수의 법칙 ( Law of large numbers )</h2></li>
+<li>F 값이 크다 ? -&gt; 그룹끼리의 분포가 그룹내부보다 크다-&gt; 그룹간 분포가 다를것이다</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+<h2 id="큰수의-법칙-Law-of-large-numbers"><a href="#큰수의-법칙-Law-of-large-numbers" class="headerlink" title="큰수의 법칙 ( Law of large numbers )"></a>큰수의 법칙 ( Law of large numbers )</h2><ul>
 <li>샘플 데이터의수가 커질수록 , 샘플의 통계치는 점점 모집단의 모수와 같아진다</li>
 <li>일반적으로 샘플수가 30개 이상이면 큰수의법칙으로 볼 수 있다</li>
 </ul>
@@ -1344,7 +1382,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-18 08:58:00" itemprop="dateModified" datetime="2021-05-18T08:58:00+09:00">2021-05-18</time>
+        <time title="Modified: 2021-05-26 10:08:20" itemprop="dateModified" datetime="2021-05-26T10:08:20+09:00">2021-05-26</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1411,7 +1449,9 @@
 <li>outlier(이상치,극단치) : 분포에서 비정상적으로 보이는 극단값 혹은 비현실적 변수(평균을 왜곡시키는 값)</li>
 </ul>
 </li>
-<li>distribution free method (분포무관 검정법) 이라고도 함<h3 id="비모수적-방법들"><a href="#비모수적-방법들" class="headerlink" title="비모수적 방법들"></a>비모수적 방법들</h3></li>
+<li>distribution free method (분포무관 검정법) 이라고도 함</li>
+</ul>
+<h3 id="비모수적-방법들"><a href="#비모수적-방법들" class="headerlink" title="비모수적 방법들"></a>비모수적 방법들</h3><ul>
 <li>카이제곱 테스트(x<sup>2</sup> Tests)<ul>
 <li>One sample x<sup>2</sup> Tests<ul>
 <li>주어진 데이터가 예상하고있는 분포와 동일한 분포를 나타낼지를 검정</li>
@@ -1531,7 +1571,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-18 11:25:39" itemprop="dateModified" datetime="2021-05-18T11:25:39+09:00">2021-05-18</time>
+        <time title="Modified: 2021-05-26 10:08:42" itemprop="dateModified" datetime="2021-05-26T10:08:42+09:00">2021-05-26</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1677,9 +1717,11 @@
 <li><p>One-side test vs Two-side test</p>
 <ul>
 <li>One side test : 샘플 데이터의 평균이 “X”보다 크다 혹은 작다 / 크지 않다 작지 않다. 를 검정하는 내용</li>
-<li>Two side (tail / direction) test : 샘플 데이터의 평균이 “X”와 같다 / 같지 않다. 를 검정하는 내용  <h3 id="Two-Sample-T-test"><a href="#Two-Sample-T-test" class="headerlink" title="Two Sample T-test"></a>Two Sample T-test</h3></li>
+<li>Two side (tail / direction) test : 샘플 데이터의 평균이 “X”와 같다 / 같지 않다. 를 검정하는 내용</li>
 </ul>
 </li>
+</ul>
+<h3 id="Two-Sample-T-test"><a href="#Two-Sample-T-test" class="headerlink" title="Two Sample T-test"></a>Two Sample T-test</h3><ul>
 <li><p>2개의 sample 값들의 평균이 서로 동일한지 비교</p>
 <ul>
 <li>2개의 동전 (500원짜리 vs 100원짜리)을 여러번 던져서 p(H)의 평균이 유사한 지 확인</li>

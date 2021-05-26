@@ -23,15 +23,15 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"bong7233.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="클러스터링 (Clustering) Screeplot 이해 Supervised, Unsupervised learning 차이 이해 K-means clustering 이해">
+<meta name="description" content="군집화 (Clustering) Screeplot 이해 Supervised, Unsupervised learning 차이 이해 K-means clustering 이해  Scree plot 고유값 크기를 기반으로 성분 수를 결정 그래프의 기울기는 주성분에 의해 설명되는 데이터의 변동성을 나타냄 즉 기울기가 많이 떨어진다? 해당 주성분이 데이터의 많은 영향을준다">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AI-Day14">
 <meta property="og:url" content="http://bong7233.github.io/2021/05/26/AI-Day14/index.html">
 <meta property="og:site_name" content="Bong&#39;s Blog">
-<meta property="og:description" content="클러스터링 (Clustering) Screeplot 이해 Supervised, Unsupervised learning 차이 이해 K-means clustering 이해">
+<meta property="og:description" content="군집화 (Clustering) Screeplot 이해 Supervised, Unsupervised learning 차이 이해 K-means clustering 이해  Scree plot 고유값 크기를 기반으로 성분 수를 결정 그래프의 기울기는 주성분에 의해 설명되는 데이터의 변동성을 나타냄 즉 기울기가 많이 떨어진다? 해당 주성분이 데이터의 많은 영향을준다">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-05-25T22:50:23.000Z">
-<meta property="article:modified_time" content="2021-05-25T22:52:33.255Z">
+<meta property="article:modified_time" content="2021-05-26T01:08:21.680Z">
 <meta property="article:author" content="SangBong Lee">
 <meta property="article:tag" content="Data science">
 <meta property="article:tag" content="Linear Algebra">
@@ -191,7 +191,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%EB%A7%81-Clustering"><span class="nav-number">1.</span> <span class="nav-text">클러스터링 (Clustering)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text"></span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EA%B5%B0%EC%A7%91%ED%99%94-Clustering"><span class="nav-number">1.</span> <span class="nav-text">군집화 (Clustering)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Scree-plot"><span class="nav-number">1.1.</span> <span class="nav-text">Scree plot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EA%B5%B0%EC%A7%91%ED%99%94%EC%9D%98-%EC%A2%85%EB%A5%98-Clustering"><span class="nav-number">1.2.</span> <span class="nav-text">군집화의 종류(Clustering)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Manhattan-distance"><span class="nav-number">1.3.</span> <span class="nav-text">Manhattan distance</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EC%B0%B8%EA%B3%A0%EC%9E%90%EB%A3%8C"><span class="nav-number">1.3.1.</span> <span class="nav-text">참고자료</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -297,7 +297,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-05-26 07:50:23 / Modified: 07:52:33" itemprop="dateCreated datePublished" datetime="2021-05-26T07:50:23+09:00">2021-05-26</time>
+      <time title="Created: 2021-05-26 07:50:23 / Modified: 10:08:21" itemprop="dateCreated datePublished" datetime="2021-05-26T07:50:23+09:00">2021-05-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -319,12 +319,48 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="클러스터링-Clustering"><a href="#클러스터링-Clustering" class="headerlink" title="클러스터링 (Clustering)"></a>클러스터링 (Clustering)</h1><ul>
+        <h1 id="군집화-Clustering"><a href="#군집화-Clustering" class="headerlink" title="군집화 (Clustering)"></a>군집화 (Clustering)</h1><ul>
 <li>Screeplot 이해</li>
 <li>Supervised, Unsupervised learning 차이 이해</li>
 <li>K-means clustering 이해</li>
 </ul>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
+<h2 id="Scree-plot"><a href="#Scree-plot" class="headerlink" title="Scree plot"></a>Scree plot</h2><ul>
+<li>고유값 크기를 기반으로 성분 수를 결정</li>
+<li>그래프의 기울기는 주성분에 의해 설명되는 데이터의 변동성을 나타냄<ul>
+<li>즉 기울기가 많이 떨어진다? 해당 주성분이 데이터의 많은 영향을준다</li>
+<li>기울기가 평평해진다? 해당 주성분이 데이터에 적은 영향을준다</li>
+<li>그러므로 기울기가 급격하게 변하는 고유값들을 골라 주성분으로 선택</li>
+<li>앞서배운 PCA에서 feature수를 줄여 차원을 줄이는것처럼, 데이터에 영향을 많이주는 주성분을 골라내 차원을 줄인다고 이해할 수 있다</li>
+</ul>
+</li>
+</ul>
+<h2 id="군집화의-종류-Clustering"><a href="#군집화의-종류-Clustering" class="headerlink" title="군집화의 종류(Clustering)"></a>군집화의 종류(Clustering)</h2><ul>
+<li>K-means<ul>
+<li>나타낼 클러스터의 갯수를 정한후 클러스터들을 일직선상에 두고 거리에따라 묶음</li>
+<li>시간복잡도가 선형이므로 빅데이터에 적합</li>
+<li></li>
+</ul>
+</li>
+<li>HCA (Hierarchical Clustering)<ul>
+<li>각각의 샘플간의 유사성에 기반하여 행과열을 재정렬</li>
+<li>정렬된 cluster 간의 dendrogram 을 그리고, 가지의 길이로 연관성을 나타낼 수 있음</li>
+<li>Euclidian distance<ul>
+<li>피타고라스정의와 동일</li>
+</ul>
+</li>
+<li><h2 id="Manhattan-distance"><a href="#Manhattan-distance" class="headerlink" title="Manhattan distance"></a>Manhattan distance</h2></li>
+</ul>
+</li>
+</ul>
+<h3 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h3><ul>
+<li>선형대수학 (MIT, Gulbert Strang)</li>
+<li>통계 (Harvard, Statistics 110)</li>
+<li>모두를위한 딥러닝(성킴)</li>
+<li>Machine Learning( Andrew Ng)</li>
+<li>CS231n(Stanford, Computer Vision)</li>
+<li>CS224n(Stanford, NLP)</li>
+</ul>
+
     </div>
 
     

@@ -31,7 +31,7 @@
 <meta property="og:description" content="Data ManipulationWarm-up Pandas 유용 메서드 pd.show_versions() : 여러 툴들의 버전표시 pd.DataFrame() : DF 생성, parameter 값들은 공식문서 참조 df.rename(‘a’,’b’) : 열이름 변경 a -&gt; b df.loc[::음수] : 열 순서바꾸기 df.loc[::음수].reset_in">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-05-10T06:42:22.000Z">
-<meta property="article:modified_time" content="2021-05-17T23:56:33.485Z">
+<meta property="article:modified_time" content="2021-05-26T01:11:30.653Z">
 <meta property="article:author" content="SangBong Lee">
 <meta property="article:tag" content="Data science">
 <meta property="article:tag" content="Data Manipulation">
@@ -302,7 +302,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-18 08:56:33" itemprop="dateModified" datetime="2021-05-18T08:56:33+09:00">2021-05-18</time>
+        <time title="Modified: 2021-05-26 10:11:30" itemprop="dateModified" datetime="2021-05-26T10:11:30+09:00">2021-05-26</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -355,15 +355,20 @@
 <li>데이터가 여러개로 나눠져있으므로 하나로 합칠수 있어야함</li>
 <li>그중 자주사용되는 두가지 concat과 merge에 대해 습득</li>
 <li>string과 dataframe은 조작법이 다름을 주의</li>
-<li>dataframe의 dimension이 같아야 두개를 manipulation 가능<h3 id="concat"><a href="#concat" class="headerlink" title="concat"></a>concat</h3></li>
+<li>dataframe의 dimension이 같아야 두개를 manipulation 가능</li>
+</ul>
+<h3 id="concat"><a href="#concat" class="headerlink" title="concat"></a>concat</h3><ul>
 <li>pd.concat([x,y],axis=1)<ul>
-<li>두개의 df x와 y, axis=1 이면 열로 붙임, default값은 행으로 붙임<h3 id="maerge"><a href="#maerge" class="headerlink" title="maerge"></a>maerge</h3></li>
+<li>두개의 df x와 y, axis=1 이면 열로 붙임, default값은 행으로 붙임</li>
 </ul>
 </li>
+</ul>
+<h3 id="maerge"><a href="#maerge" class="headerlink" title="maerge"></a>maerge</h3><ul>
 <li>concat과 다르게 공통된 부분을 기반으로 합침</li>
 <li>inner-join이외의 option들도 추가적으로 숙지해야함</li>
-<li>df.merge(df2, how=’inner’, on=’종목’)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># 데이터프레임 필터링 예시</span><br><span class="line"></span><br><span class="line"># type cast &#x2F; str-&gt;int</span><br><span class="line">df[&#39;순이익률&#39;] &#x3D; pd.to_numeric(df[&#39;순이익률&#39;])</span><br><span class="line"></span><br><span class="line"># 필터링 조건 (Condition) 설정</span><br><span class="line">condition &#x3D; (df[&#39;순이익률&#39;] &gt; 0) # Type Cast</span><br><span class="line"># () 로 씌우는것에 주의</span><br><span class="line"># and or 등도 사용가능</span><br><span class="line"></span><br><span class="line">## condition 의 값을 출력을 통해 확인해보세요. </span><br><span class="line"></span><br><span class="line"># [ ] 안에 컨디션을 설정하는 것으로, 컨디션의 값이 *TRUE*로 해당하는 부분의 데이터만 선택 할 수 있습니다.</span><br><span class="line">df_subset &#x3D; df[condition]</span><br><span class="line"></span><br><span class="line"># 결과물을 확인</span><br><span class="line">df_subset</span><br></pre></td></tr></table></figure>
-<h3 id="groupby"><a href="#groupby" class="headerlink" title="groupby"></a>groupby</h3></li>
+<li>df.merge(df2, how=’inner’, on=’종목’)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># 데이터프레임 필터링 예시</span><br><span class="line"></span><br><span class="line"># type cast &#x2F; str-&gt;int</span><br><span class="line">df[&#39;순이익률&#39;] &#x3D; pd.to_numeric(df[&#39;순이익률&#39;])</span><br><span class="line"></span><br><span class="line"># 필터링 조건 (Condition) 설정</span><br><span class="line">condition &#x3D; (df[&#39;순이익률&#39;] &gt; 0) # Type Cast</span><br><span class="line"># () 로 씌우는것에 주의</span><br><span class="line"># and or 등도 사용가능</span><br><span class="line"></span><br><span class="line">## condition 의 값을 출력을 통해 확인해보세요. </span><br><span class="line"></span><br><span class="line"># [ ] 안에 컨디션을 설정하는 것으로, 컨디션의 값이 *TRUE*로 해당하는 부분의 데이터만 선택 할 수 있습니다.</span><br><span class="line">df_subset &#x3D; df[condition]</span><br><span class="line"></span><br><span class="line"># 결과물을 확인</span><br><span class="line">df_subset</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="groupby"><a href="#groupby" class="headerlink" title="groupby"></a>groupby</h3><ul>
 <li>테마에 따른 순이익률을 보고싶다?</li>
 <li>df.groupby(‘테마’).순이익률.mean()</li>
 </ul>
