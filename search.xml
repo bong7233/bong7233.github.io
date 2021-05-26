@@ -1798,17 +1798,16 @@
     <title>linear layer</title>
     <url>/2021/04/15/linear-layer/</url>
     <content><![CDATA[<h1 id="Linear-layer"><a href="#Linear-layer" class="headerlink" title="Linear layer"></a>Linear layer</h1><ul>
-<li><p>신경망의 기본요소</p>
-</li>
-<li><p>Fully-connected (FC) layer</p>
-</li>
-<li><p>내부 파라미터에따른 선형변환을 수행</p>
-</li>
-<li><p>각 입력노드에 weight(가중치)를 곱하고 합친후, bias(편향) 더함<br><img src="/../images/linear.PNG" alt="li"></p>
-</li>
-<li><p>이때 행렬의 곱으로 표현가능<br><img src="/../images/linearmulti.PNG" alt="li"></p>
-</li>
+<li>신경망의 기본요소</li>
+<li>Fully-connected (FC) layer</li>
+<li>내부 파라미터에따른 선형변환을 수행</li>
+<li>각 입력노드에 weight(가중치)를 곱하고 합친후, bias(편향) 더함  </li>
 </ul>
+<p><img src="/../images/linear.PNG" alt="li"></p>
+<ul>
+<li>이때 행렬의 곱으로 표현가능  </li>
+</ul>
+<p><img src="/../images/linearmulti.PNG" alt="li"></p>
 ]]></content>
       <categories>
         <category>Deep-Learning</category>
