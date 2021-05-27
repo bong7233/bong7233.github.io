@@ -23,21 +23,21 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"bong7233.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="Basic Derivative 기초미분 미분 : 함수를 작게 나누는것 DS에서의 미분? x를 넣었을때 y값을 예측하는 선형모델을 예로보면 y^ &#x3D; a + b X 주어진 데이터 X를 넣었을 떄 모델이 예측하는 예측값과 실제값 간의 차이(Error,𝜀)를 계산한 다음, 여러 모델 중 Error(모델에서 예측하는 예측값과 실제값 (y)의 차이)가 가장 작은 모">
+<meta name="description" content="Basic Derivative 기초미분  미분 : 함수를 작게 나누는것 DS에서의 미분?  x를 넣었을때 y값을 예측하는 선형모델을 예로보면 y^ &#x3D; a + b X 주어진 데이터 X를 넣었을 떄 모델이 예측하는 예측값과 실제값 간의 차이(Error,𝜀)를 계산한 다음, 여러 모델 중 Error(모델에서 예측하는 예측값과 실제값 (y)의 차이)가 가장 작은">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AI-Day4">
 <meta property="og:url" content="http://bong7233.github.io/2021/05/11/AI-Day4/index.html">
 <meta property="og:site_name" content="Bong&#39;s Blog">
-<meta property="og:description" content="Basic Derivative 기초미분 미분 : 함수를 작게 나누는것 DS에서의 미분? x를 넣었을때 y값을 예측하는 선형모델을 예로보면 y^ &#x3D; a + b X 주어진 데이터 X를 넣었을 떄 모델이 예측하는 예측값과 실제값 간의 차이(Error,𝜀)를 계산한 다음, 여러 모델 중 Error(모델에서 예측하는 예측값과 실제값 (y)의 차이)가 가장 작은 모">
+<meta property="og:description" content="Basic Derivative 기초미분  미분 : 함수를 작게 나누는것 DS에서의 미분?  x를 넣었을때 y값을 예측하는 선형모델을 예로보면 y^ &#x3D; a + b X 주어진 데이터 X를 넣었을 떄 모델이 예측하는 예측값과 실제값 간의 차이(Error,𝜀)를 계산한 다음, 여러 모델 중 Error(모델에서 예측하는 예측값과 실제값 (y)의 차이)가 가장 작은">
 <meta property="og:locale">
-<meta property="og:image" content="http://bong7233.github.io/images/PD.PNG">
+<meta property="og:image" content="http://bong7233.github.io/2021/05/11/images/PD.PNG">
 <meta property="article:published_time" content="2021-05-11T00:39:13.000Z">
 <meta property="article:modified_time" content="2021-05-26T02:54:22.554Z">
 <meta property="article:author" content="SangBong Lee">
 <meta property="article:tag" content="Data science">
 <meta property="article:tag" content="Basic Derivative">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://bong7233.github.io/images/PD.PNG">
+<meta name="twitter:image" content="http://bong7233.github.io/2021/05/11/images/PD.PNG">
 
 
 <link rel="canonical" href="http://bong7233.github.io/2021/05/11/AI-Day4/">
@@ -192,7 +192,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Basic-Derivative-%EA%B8%B0%EC%B4%88%EB%AF%B8%EB%B6%84"><span class="nav-number">1.</span> <span class="nav-text">Basic Derivative 기초미분</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%AF%B8%EB%B6%84-%EA%B3%B5%EC%8B%9D-w-Python"><span class="nav-number">1.1.</span> <span class="nav-text">미분 공식 w&#x2F; Python</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%8E%B8%EB%AF%B8%EB%B6%84-Partial-Derivative"><span class="nav-number">1.2.</span> <span class="nav-text">편미분 Partial Derivative</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chain-Rule"><span class="nav-number">1.3.</span> <span class="nav-text">Chain Rule</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EA%B2%BD%EC%82%AC%ED%95%98%EA%B0%95%EB%B2%95-Gradient-Descent"><span class="nav-number">1.4.</span> <span class="nav-text">경사하강법 Gradient Descent</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#basic-derivative-%EA%B8%B0%EC%B4%88%EB%AF%B8%EB%B6%84"><span class="nav-number">1.</span> <span class="nav-text">Basic Derivative 기초미분</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%AF%B8%EB%B6%84-%EA%B3%B5%EC%8B%9D-w-python"><span class="nav-number">1.1.</span> <span class="nav-text">미분 공식 w&#x2F; Python</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%8E%B8%EB%AF%B8%EB%B6%84-partial-derivative"><span class="nav-number">1.2.</span> <span class="nav-text">편미분 Partial Derivative</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chain-rule"><span class="nav-number">1.3.</span> <span class="nav-text">Chain Rule</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EA%B2%BD%EC%82%AC%ED%95%98%EA%B0%95%EB%B2%95-gradient-descent"><span class="nav-number">1.4.</span> <span class="nav-text">경사하강법 Gradient Descent</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -326,70 +326,86 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="Basic-Derivative-기초미분"><a href="#Basic-Derivative-기초미분" class="headerlink" title="Basic Derivative 기초미분"></a>Basic Derivative 기초미분</h1><ul>
+        <h1 id="basic-derivative-기초미분">Basic Derivative 기초미분</h1>
+<ul>
 <li>미분 : 함수를 작게 나누는것</li>
-<li>DS에서의 미분?<ul>
+<li>DS에서의 미분?
+<ul>
 <li>x를 넣었을때 y값을 예측하는 선형모델을 예로보면</li>
 <li>y^ = a + b X</li>
 <li>주어진 데이터 X를 넣었을 떄 모델이 예측하는 예측값과 실제값 간의 차이(Error,𝜀)를 계산한 다음, 여러 모델 중 Error(모델에서 예측하는 예측값과 실제값 (y)의 차이)가 가장 작은 모델을 선택하는 방법을 통해, 가장 좋은 모델을 선택할 수 있음</li>
 <li>이 과정은 f(a,b) =𝜀 로 표현 될 수 있으며, 오차 함수인 𝜀 을 최소화 하는 a,b를 찾는 것이 머신러닝(Linear regression)의 목표</li>
-<li>이 오차함수를 최소화하는 a,b를 찾기위해 미분 사용  </li>
+<li>이 오차함수를 최소화하는 a,b를 찾기위해 미분 사용</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="미분-공식-w-Python"><a href="#미분-공식-w-Python" class="headerlink" title="미분 공식 w/ Python"></a>미분 공식 w/ Python</h2><ul>
-<li>기본적으로 미분은 다음의 공식을 활용<ul>
-<li>f’(x) = {f(x + Δx) - f(x)/ Δx}, Δ x-&gt; 0</li>
+<h2 id="미분-공식-w-python">미분 공식 w/ Python</h2>
+<ul>
+<li>기본적으로 미분은 다음의 공식을 활용
+<ul>
+<li>f'(x) = {f(x + Δx) - f(x)/ Δx}, Δ x-&gt; 0</li>
 <li>but 실제 0으로 나눌 수 없기때문에 0에 매우근사한 1e-5 을 사용하며, 이러한 접근 방식을 numerical method라 함</li>
-<li>numerical method에서는 조금 더 정확한 측정을 위해 분자에 f(x + Δx) - f(x - Δx)/ 2Δx 를 사용하기도 함  </li>
-</ul>
+<li>numerical method에서는 조금 더 정확한 측정을 위해 분자에 f(x + Δx) - f(x - Δx)/ 2Δx 를 사용하기도 함<br />
 </li>
-<li>머신러닝에서 쓰이는 대표적 미분공식들<ul>
-<li>f(x) = 상수 -&gt; f’(x) = 0<ul>
-<li>f’(x)가 상수 (constant)인 경우는 x를 아무리 늘리거나 줄여도 늘 같은 숫자이기 때문에 변화가 전혀 없음. 즉 변화율이 0이기 때문에 미분계수도 늘 0<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># f(x) &#x3D; 5</span><br><span class="line">def f(x):</span><br><span class="line">    return 5</span><br><span class="line"></span><br><span class="line">def numerical_derivative(fx, x):</span><br><span class="line">    delta_x &#x3D; 1e-5</span><br><span class="line"></span><br><span class="line">    return (fx(x + delta_x) - fx(x)) &#x2F; delta_x</span><br><span class="line">print(numerical_derivative(f, 1))</span><br><span class="line"></span><br><span class="line"># 예시 2 : Scipy의 derivative 활용(도함수를 바로계산해주는 함수)</span><br><span class="line">from scipy.misc import derivative</span><br><span class="line"></span><br><span class="line"># 두 방법의 결과값 비교</span><br><span class="line">derivative(f,1, dx&#x3D;1e-6) &#x3D;&#x3D; numerical_derivative(f, 1)</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li>f(x) = ax<sup>{n}</sup> -&gt; f’(x) = an{x}<sup>{(n-1)}</sup><ul>
+</ul></li>
+<li>머신러닝에서 쓰이는 대표적 미분공식들
+<ul>
+<li>f(x) = 상수 -&gt; f'(x) = 0
+<ul>
+<li>f'(x)가 상수 (constant)인 경우는 x를 아무리 늘리거나 줄여도 늘 같은 숫자이기 때문에 변화가 전혀 없음. 즉 변화율이 0이기 때문에 미분계수도 늘 0 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># f(x) &#x3D; 5</span><br><span class="line">def f(x):</span><br><span class="line">    return 5</span><br><span class="line"></span><br><span class="line">def numerical_derivative(fx, x):</span><br><span class="line">    delta_x &#x3D; 1e-5</span><br><span class="line"></span><br><span class="line">    return (fx(x + delta_x) - fx(x)) &#x2F; delta_x</span><br><span class="line">print(numerical_derivative(f, 1))</span><br><span class="line"></span><br><span class="line"># 예시 2 : Scipy의 derivative 활용(도함수를 바로계산해주는 함수)</span><br><span class="line">from scipy.misc import derivative</span><br><span class="line"></span><br><span class="line"># 두 방법의 결과값 비교</span><br><span class="line">derivative(f,1, dx&#x3D;1e-6) &#x3D;&#x3D; numerical_derivative(f, 1)</span><br></pre></td></tr></table></figure></li>
+</ul></li>
+<li>f(x) = ax<sup>{n}</sup> -&gt; f'(x) = an{x}<sup>{(n-1)}</sup>
+<ul>
 <li>Power Rule로도 알려져있는 미분법</li>
-<li>x 기준으로 n승을 미분할 경우 n을 내려보내서 곱해준 후, 이후에 n승에서 “하나”를 가져왔기 때문에 빼주는 방법  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">def f(x):</span><br><span class="line">    return 3*(x**4) + 10</span><br><span class="line"></span><br><span class="line">def numerical_derivative(fx, x):</span><br><span class="line">    delta_x &#x3D; 1e-5</span><br><span class="line"></span><br><span class="line">    return (fx(x + delta_x) - fx(x)) &#x2F; delta_x</span><br><span class="line"></span><br><span class="line">print(numerical_derivative(f, 2))</span><br><span class="line"></span><br><span class="line"># 예시 2 : Scipy의 derivative 활용</span><br><span class="line">from scipy.misc import derivative</span><br><span class="line"></span><br><span class="line"># 두 방법의 결과값 비교</span><br><span class="line">print(derivative(f,2, dx&#x3D;1e-5))</span><br><span class="line">derivative(f,2, dx&#x3D;1e-5) &#x3D;&#x3D; numerical_derivative(f, 2)  #delta X의 값은 같지만 Rounding 에러로 인해 두 결과가 미묘하게 다르게 나오지만 거의 같음</span><br></pre></td></tr></table></figure></li>
-</ul>
+<li>x 기준으로 n승을 미분할 경우 n을 내려보내서 곱해준 후, 이후에 n승에서 "하나"를 가져왔기 때문에 빼주는 방법<br />
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">def f(x):</span><br><span class="line">    return 3*(x**4) + 10</span><br><span class="line"></span><br><span class="line">def numerical_derivative(fx, x):</span><br><span class="line">    delta_x &#x3D; 1e-5</span><br><span class="line"></span><br><span class="line">    return (fx(x + delta_x) - fx(x)) &#x2F; delta_x</span><br><span class="line"></span><br><span class="line">print(numerical_derivative(f, 2))</span><br><span class="line"></span><br><span class="line"># 예시 2 : Scipy의 derivative 활용</span><br><span class="line">from scipy.misc import derivative</span><br><span class="line"></span><br><span class="line"># 두 방법의 결과값 비교</span><br><span class="line">print(derivative(f,2, dx&#x3D;1e-5))</span><br><span class="line">derivative(f,2, dx&#x3D;1e-5) &#x3D;&#x3D; numerical_derivative(f, 2)  #delta X의 값은 같지만 Rounding 에러로 인해 두 결과가 미묘하게 다르게 나오지만 거의 같음</span><br></pre></td></tr></table></figure></li>
+</ul></li>
+<li>f(x) = e<sup>x</sup> -&gt;f'(x) = e<sup>x</sup>
+<ul>
+<li>지수 함수의 경우에는 도함수 역시 지수 함수<br />
 </li>
-<li>f(x) = e<sup>x</sup> -&gt;f’(x) = e<sup>x</sup><ul>
-<li>지수 함수의 경우에는 도함수 역시 지수 함수  </li>
-</ul>
-</li>
-<li>f(x) = lnx -&gt; f’(x) = {1 / x}<ul>
-<li>자연로그의 미분은 신경망의 활성 함수인 sigmoid 함수를 쉽게 미분할수 있도록 도와줌<ul>
+</ul></li>
+<li>f(x) = lnx -&gt; f'(x) = {1 / x}
+<ul>
+<li>자연로그의 미분은 신경망의 활성 함수인 sigmoid 함수를 쉽게 미분할수 있도록 도와줌
+<ul>
 <li>why? sigmoid 함수에 자연로그를 씌움으로서 미분을 훨씬 수월하게 할 수 있게 되기 때문</li>
+</ul></li>
+</ul></li>
+</ul></li>
 </ul>
-</li>
+<h2 id="편미분-partial-derivative">편미분 Partial Derivative</h2>
+<ul>
+<li>파라미터가 2개 이상인 Error 함수에서 우선 1개의 파라미터에 대해서만 미분을 하자 라는 목적으로 다른 변수들을 상수 취급 하는 방법</li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="편미분-Partial-Derivative"><a href="#편미분-Partial-Derivative" class="headerlink" title="편미분 Partial Derivative"></a>편미분 Partial Derivative</h2><ul>
-<li>파라미터가 2개 이상인 Error 함수에서 우선 1개의 파라미터에 대해서만 미분을 하자 라는 목적으로 다른 변수들을 상수 취급 하는 방법  </li>
-</ul>
-<p><img src="/../images/PD.PNG" alt="pd"></p>
-<h2 id="Chain-Rule"><a href="#Chain-Rule" class="headerlink" title="Chain Rule"></a>Chain Rule</h2><ul>
+<figure>
+<img src="../images/PD.PNG" alt="pd" /><figcaption>pd</figcaption>
+</figure>
+<h2 id="chain-rule">Chain Rule</h2>
+<ul>
 <li><strong>합성함수(함수의 함수)</strong> 를 미분하기 위해 사용하는 방식</li>
-<li>F(x) = f(g(x))$<br>F’(x) -&gt; f’((g(x)) ∘ g’(x)<ul>
+<li>F(x) = f(g(x))$ F'(x) -&gt; f'((g(x)) ∘ g'(x)
+<ul>
 <li>미분할 때 반드시 바깥함수(f(x))부터 미분을 해야함을 기억</li>
-<li>F(x) = (2x<sup>3</sup> + 7)<sup>6</sup>  를 x에 대해 미분하려는 경우<br>f(x) = x<sup>6</sup>, g(x) = 2x<sup>3</sup> + 7 로 설정<br>F’(x) = 6(2x<sup>3</sup> + 7)<sup>5</sup> ∘ 6x<sup>2</sup></li>
-</ul>
-</li>
+<li>F(x) = (2x<sup>3</sup> + 7)<sup>6</sup> 를 x에 대해 미분하려는 경우<br />
+f(x) = x<sup>6</sup>, g(x) = 2x<sup>3</sup> + 7 로 설정<br />
+F'(x) = 6(2x<sup>3</sup> + 7)<sup>5</sup> ∘ 6x<sup>2</sup></li>
+</ul></li>
 <li>Chain Rule은 Deep learning의 핵심 개념 중 하나인 Backward Propagation(역전파)을 이해하는데 중요하기 때문에 시간이 될 때마다 연습</li>
 </ul>
-<h2 id="경사하강법-Gradient-Descent"><a href="#경사하강법-Gradient-Descent" class="headerlink" title="경사하강법 Gradient Descent"></a>경사하강법 Gradient Descent</h2><ul>
+<h2 id="경사하강법-gradient-descent">경사하강법 Gradient Descent</h2>
+<ul>
 <li>오차 함수인 𝜀 을 최소화 하는 𝑎,𝑏 를 찾을 수 있는 최적화 알고리즘 중의 하나</li>
 <li>최적의 a,b를 찾기 위해선 도함수의 미분계수가 0인 곳을 찾으면 되지만, 실제 다루게 될 문제에선 파라미터의 갯수는 수없이 많고 하나의 minimum/maximum만이 존재하지 않음</li>
 <li>경사하강법은 임의의 a, b를 선택한 후 (random initialization)에 기울기 (gradient)를 계산해서 기울기 값이 낮아지는 방향으로 진행</li>
 <li>기울기는 항상 손실 함수 값이 가장 크게 증가하는 방향으로 진행합니다. 그렇기 때문에 경사하강법 알고리즘은 기울기의 반대 방향으로 이동</li>
-<li>경사하강법에서의 a,b<br>an+1=an−η∇f(an)<br>bn+1=bn−η∇f(bn)<ul>
-<li>반복적으로 파라미터 a,b를 업데이트 해가면서 그래디언트(∇f)가 0이 될 때까지 이동<br>이 때 중요한게 바로 학습률 (learning rate,η)<br>학습률이 너무 낮게 되면 알고리즘이 수렴하기 위해서 반복을 많이 해야되고 학습률이 너무 크면 극소값을 지나쳐서 알고리즘이 수렴을 못하고 계산을 계속 반복<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">def gradient_descent(X, y, lr &#x3D; 0.05, epoch &#x3D; 10):</span><br><span class="line">    </span><br><span class="line">    a, b &#x3D; 0.33, 0.48 # 임의 선택한 파라미터 a, b</span><br><span class="line">    N &#x3D; len(X) # 샘플 갯수</span><br><span class="line">    </span><br><span class="line">    for _ in range(epoch):            </span><br><span class="line">        f &#x3D; y - (a*X + b)</span><br><span class="line">    </span><br><span class="line">        # a와 b를 업데이트 합니다(기울기를 바꿔준다고 쉽게이해하면 됨)</span><br><span class="line">        a -&#x3D; lr * (-2 * X.dot(f).sum() &#x2F; N)</span><br><span class="line">        b -&#x3D; lr * (-2 * f.sum() &#x2F; N</span><br><span class="line"></span><br><span class="line"># y &#x3D; 3 x + 5</span><br><span class="line">X &#x3D; np.array([1, 2, 3, 4, 5])</span><br><span class="line">y &#x3D; np.array([8, 11, 14, 17, 20])</span><br><span class="line"></span><br><span class="line">gradient_descent(X,y)  # 10번만 돌렸을 때</span><br><span class="line">gradient_descent(X, y, epoch &#x3D; 100)  # 100번 반복</span><br><span class="line">gradient_descent(X, y, epoch &#x3D; 1000)  # 1000번 반복</span><br><span class="line">반복할수록 a&#x3D;43 b&#x3D;5에 점점 수렴해감을 확인할 수 있음</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
+<li>경사하강법에서의 a,b<br />
+an+1=an−η∇f(an)<br />
+bn+1=bn−η∇f(bn)
+<ul>
+<li>반복적으로 파라미터 a,b를 업데이트 해가면서 그래디언트(∇f)가 0이 될 때까지 이동<br />
+이 때 중요한게 바로 학습률 (learning rate,η)<br />
+학습률이 너무 낮게 되면 알고리즘이 수렴하기 위해서 반복을 많이 해야되고 학습률이 너무 크면 극소값을 지나쳐서 알고리즘이 수렴을 못하고 계산을 계속 반복 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">def gradient_descent(X, y, lr &#x3D; 0.05, epoch &#x3D; 10):</span><br><span class="line">    </span><br><span class="line">    a, b &#x3D; 0.33, 0.48 # 임의 선택한 파라미터 a, b</span><br><span class="line">    N &#x3D; len(X) # 샘플 갯수</span><br><span class="line">    </span><br><span class="line">    for _ in range(epoch):            </span><br><span class="line">        f &#x3D; y - (a*X + b)</span><br><span class="line">    </span><br><span class="line">        # a와 b를 업데이트 합니다(기울기를 바꿔준다고 쉽게이해하면 됨)</span><br><span class="line">        a -&#x3D; lr * (-2 * X.dot(f).sum() &#x2F; N)</span><br><span class="line">        b -&#x3D; lr * (-2 * f.sum() &#x2F; N</span><br><span class="line"></span><br><span class="line"># y &#x3D; 3 x + 5</span><br><span class="line">X &#x3D; np.array([1, 2, 3, 4, 5])</span><br><span class="line">y &#x3D; np.array([8, 11, 14, 17, 20])</span><br><span class="line"></span><br><span class="line">gradient_descent(X,y)  # 10번만 돌렸을 때</span><br><span class="line">gradient_descent(X, y, epoch &#x3D; 100)  # 100번 반복</span><br><span class="line">gradient_descent(X, y, epoch &#x3D; 1000)  # 1000번 반복</span><br><span class="line">반복할수록 a&#x3D;43 b&#x3D;5에 점점 수렴해감을 확인할 수 있음</span><br></pre></td></tr></table></figure></li>
+</ul></li>
 </ul>
 
     </div>
@@ -486,6 +502,8 @@
 
 
 
+
+  
 
 
 </body>

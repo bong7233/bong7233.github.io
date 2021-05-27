@@ -23,12 +23,12 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"bong7233.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="딥러닝 사전기초지식 python 미분의 개념들, 행렬 연산, 지수와 로그  딥러닝? Deep Neural Networks(DNN)을 학습시켜 문제 해결 인공신경망(Artificial Neural Networks)의 일부분이라 볼 수 있음 비선형함수로, 머신러닝에비해 패턴인식능력 월등 이미지나 텍스트, 음성같은 분야들에서 비약적 성능개선 기존 머신러닝과 다르">
+<meta name="description" content="딥러닝 사전기초지식  python 미분의 개념들, 행렬 연산, 지수와 로그  딥러닝?  Deep Neural Networks(DNN)을 학습시켜 문제 해결 인공신경망(Artificial Neural Networks)의 일부분이라 볼 수 있음 비선형함수로, 머신러닝에비해 패턴인식능력 월등 이미지나 텍스트, 음성같은 분야들에서 비약적 성능개선  기존 머신러닝과">
 <meta property="og:type" content="article">
 <meta property="og:title" content="딥러닝기초">
 <meta property="og:url" content="http://bong7233.github.io/2021/04/06/%EB%94%A5%EB%9F%AC%EB%8B%9D%EA%B8%B0%EC%B4%88/index.html">
 <meta property="og:site_name" content="Bong&#39;s Blog">
-<meta property="og:description" content="딥러닝 사전기초지식 python 미분의 개념들, 행렬 연산, 지수와 로그  딥러닝? Deep Neural Networks(DNN)을 학습시켜 문제 해결 인공신경망(Artificial Neural Networks)의 일부분이라 볼 수 있음 비선형함수로, 머신러닝에비해 패턴인식능력 월등 이미지나 텍스트, 음성같은 분야들에서 비약적 성능개선 기존 머신러닝과 다르">
+<meta property="og:description" content="딥러닝 사전기초지식  python 미분의 개념들, 행렬 연산, 지수와 로그  딥러닝?  Deep Neural Networks(DNN)을 학습시켜 문제 해결 인공신경망(Artificial Neural Networks)의 일부분이라 볼 수 있음 비선형함수로, 머신러닝에비해 패턴인식능력 월등 이미지나 텍스트, 음성같은 분야들에서 비약적 성능개선  기존 머신러닝과">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-04-06T13:28:15.000Z">
 <meta property="article:modified_time" content="2021-05-11T08:35:08.615Z">
@@ -189,7 +189,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EB%94%A5%EB%9F%AC%EB%8B%9D-%EC%82%AC%EC%A0%84%EA%B8%B0%EC%B4%88%EC%A7%80%EC%8B%9D"><span class="nav-number">1.</span> <span class="nav-text">딥러닝 사전기초지식</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%94%A5%EB%9F%AC%EB%8B%9D"><span class="nav-number">1.1.</span> <span class="nav-text">딥러닝?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5-%EB%AA%A8%EB%8D%B8%EC%9D%B4%EB%9E%80"><span class="nav-number">1.2.</span> <span class="nav-text">인공지능 모델이란</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EC%A2%8B%EC%9D%80-%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%EC%9D%B4%EB%9E%80"><span class="nav-number">1.2.1.</span> <span class="nav-text">좋은 인공지능이란?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%94%A5%EB%9F%AC%EB%8B%9D%EC%9D%98-%EB%AA%A9%EC%A0%81%EA%B3%BC-%EC%88%9C%EC%84%9C"><span class="nav-number">1.3.</span> <span class="nav-text">딥러닝의 목적과 순서</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Appendix-Basic-math"><span class="nav-number">1.4.</span> <span class="nav-text">Appendix: Basic math</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EB%94%A5%EB%9F%AC%EB%8B%9D-%EC%82%AC%EC%A0%84%EA%B8%B0%EC%B4%88%EC%A7%80%EC%8B%9D"><span class="nav-number">1.</span> <span class="nav-text">딥러닝 사전기초지식</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%94%A5%EB%9F%AC%EB%8B%9D"><span class="nav-number">1.1.</span> <span class="nav-text">딥러닝?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5-%EB%AA%A8%EB%8D%B8%EC%9D%B4%EB%9E%80"><span class="nav-number">1.2.</span> <span class="nav-text">인공지능 모델이란</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EC%A2%8B%EC%9D%80-%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%EC%9D%B4%EB%9E%80"><span class="nav-number">1.2.1.</span> <span class="nav-text">좋은 인공지능이란?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%94%A5%EB%9F%AC%EB%8B%9D%EC%9D%98-%EB%AA%A9%EC%A0%81%EA%B3%BC-%EC%88%9C%EC%84%9C"><span class="nav-number">1.3.</span> <span class="nav-text">딥러닝의 목적과 순서</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%ED%8F%AC%EC%9D%98-%EB%B3%80%ED%99%94%EC%97%90%EB%94%B0%EB%A5%B8-%EB%AA%A8%EB%8D%B8-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8-%EB%B0%8F-%EC%9C%A0%EC%A7%80%EB%B3%B4%EC%88%98%EA%B0%80-%ED%95%84%EC%9A%94%ED%95%A0-%EC%88%98-%EC%9E%88%EC%9D%8C"><span class="nav-number">1.4.</span> <span class="nav-text">데이터 분포의 변화에따른 모델 업데이트 및 유지보수가 필요할 수 있음</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#appendix-basic-math"><span class="nav-number">1.5.</span> <span class="nav-text">Appendix: Basic math</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -323,53 +323,59 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="딥러닝-사전기초지식"><a href="#딥러닝-사전기초지식" class="headerlink" title="딥러닝 사전기초지식"></a>딥러닝 사전기초지식</h1><ul>
+        <h1 id="딥러닝-사전기초지식">딥러닝 사전기초지식</h1>
+<ul>
 <li>python</li>
 <li>미분의 개념들, 행렬 연산, 지수와 로그</li>
 </ul>
-<h2 id="딥러닝"><a href="#딥러닝" class="headerlink" title="딥러닝?"></a>딥러닝?</h2><ul>
+<h2 id="딥러닝">딥러닝?</h2>
+<ul>
 <li>Deep Neural Networks(DNN)을 학습시켜 문제 해결</li>
 <li>인공신경망(Artificial Neural Networks)의 일부분이라 볼 수 있음</li>
 <li>비선형함수로, 머신러닝에비해 패턴인식능력 월등</li>
-<li>이미지나 텍스트, 음성같은 분야들에서 비약적 성능개선<ul>
+<li>이미지나 텍스트, 음성같은 분야들에서 비약적 성능개선
+<ul>
 <li>기존 머신러닝과 다르게 hand-crafted feature 필요없음</li>
 <li>단순 raw 데이터 넣기만하면 자동으로 feature 학습</li>
-</ul>
-</li>
+</ul></li>
 <li>음성인식, 기계번역, 자율주행, 객체인식및 이미지분류, 사진합성및 보정, 데이터분석 등등</li>
 </ul>
-<h2 id="인공지능-모델이란"><a href="#인공지능-모델이란" class="headerlink" title="인공지능 모델이란"></a>인공지능 모델이란</h2><ul>
-<li>x 가주어지면 y를 반환<ul>
+<h2 id="인공지능-모델이란">인공지능 모델이란</h2>
+<ul>
+<li>x 가주어지면 y를 반환
+<ul>
 <li>y=f(x)</li>
-</ul>
-</li>
-<li>파라미터(weight parameter)<ul>
+</ul></li>
+<li>파라미터(weight parameter)
+<ul>
 <li>f 가 동작하는 방식을 결정</li>
-</ul>
-</li>
-<li>학습 ?<ul>
+</ul></li>
+<li>학습 ?
+<ul>
 <li>x와y의 쌍으로 이뤄진 데이터가 주어지면, x-&gt;y 로가는 관계를 배우는것</li>
 <li>x와y를 통해 적절한 파라미터를 찾아내는것</li>
-</ul>
-</li>
-<li>모델 ?<ul>
+</ul></li>
+<li>모델 ?
+<ul>
 <li>상황에따라 알고리즘자체 혹은 파라미터를 뜻하기도 함</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h3 id="좋은-인공지능이란"><a href="#좋은-인공지능이란" class="headerlink" title="좋은 인공지능이란?"></a>좋은 인공지능이란?</h3><ul>
+<h3 id="좋은-인공지능이란">좋은 인공지능이란?</h3>
+<ul>
 <li>일반화(Generalization)를 잘 하는 모델</li>
-<li>보지못한 데이터에대해 좋은 예측을하는 모델<ul>
-<li>모든 경우의수를 모을수없으므로…</li>
+<li>보지못한 데이터에대해 좋은 예측을하는 모델
+<ul>
+<li>모든 경우의수를 모을수없으므로...</li>
 <li>스스로 새로운 데이터에대해 좋은 판단을 내릴수있어야함</li>
+</ul></li>
 </ul>
+<hr />
+<h2 id="딥러닝의-목적과-순서">딥러닝의 목적과 순서</h2>
+<ul>
+<li>주어진 데이터에대해 결과를 내는 가상의 함수를 <strong>모사</strong>하는 함수를 만드는것<br />
 </li>
 </ul>
-<hr>
-<h2 id="딥러닝의-목적과-순서"><a href="#딥러닝의-목적과-순서" class="headerlink" title="딥러닝의 목적과 순서"></a>딥러닝의 목적과 순서</h2><ul>
-<li>주어진 데이터에대해 결과를 내는 가상의 함수를 <strong>모사</strong>하는 함수를 만드는것  </li>
-</ul>
-<ol>
+<ol type="1">
 <li>문제정의</li>
 </ol>
 <ul>
@@ -377,74 +383,75 @@
 <li>풀고자하는 문제를 단계별로 나누고 simplify</li>
 <li>신경망이라는 함수에 넣기위한 x와 결과값y가 정의되어야 함</li>
 </ul>
-<ol start="2">
+<ol start="2" type="1">
 <li>데이터수집</li>
 </ol>
 <ul>
 <li>문제 정의에따라 정해진 x와y</li>
-<li>풀고자하는 문제의 영역에따라 수집방법이 다름<ul>
+<li>풀고자하는 문제의 영역에따라 수집방법이 다름
+<ul>
 <li>자연어처리,컴퓨터비전:크롤링</li>
 <li>데이터분석: 실제수집데이터</li>
-</ul>
-</li>
-<li>필요에따라 레이블링작업 수행<ul>
+</ul></li>
+<li>필요에따라 레이블링작업 수행
+<ul>
 <li>자동적으로 레이블이 y로 주어질수도있음</li>
 <li>but 대부분 레이블이 따로필요</li>
 <li>비지도학습(unsupervised learning)을 기대하면 안됨</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<ol start="3">
+<ol start="3" type="1">
 <li>데이터 전처리 및 분석</li>
 </ol>
 <ul>
-<li>수집도니 데이터를 신경망에 넣어주기위한 형태로 가공하는 과정<ul>
+<li>수집도니 데이터를 신경망에 넣어주기위한 형태로 가공하는 과정
+<ul>
 <li>입출력 값 정제(cleaning &amp; normalization)</li>
-</ul>
-</li>
-<li>이 과정에서 탐험적분석(Exploratory Data Analaysis, EDA) 필요<ul>
+</ul></li>
+<li>이 과정에서 탐험적분석(Exploratory Data Analaysis, EDA) 필요
+<ul>
 <li>데이터에 맞는 알고리즘을 찾기위함</li>
 <li>자연어처리, 컴퓨터비전의경우는 생략되기도 함</li>
-</ul>
-</li>
-<li>영상처리(computer vision)의 경우, 데이터증강(argumentation)이 수행됨<ul>
+</ul></li>
+<li>영상처리(computer vision)의 경우, 데이터증강(argumentation)이 수행됨
+<ul>
 <li>rotation,flipping,shifting 등 간단한 연산</li>
 <li>특히 전처리 및 분석은 경험을 많이 해보는것이 중요</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<ol start="4">
+<ol start="4" type="1">
 <li>알고리즘 적용</li>
 </ol>
 <ul>
 <li>데이터에대해 가설을 세우고, 해당 가설을위한 알고리즘(모델)을 적용</li>
 </ul>
-<ol start="5">
+<ol start="5" type="1">
 <li>평가</li>
 </ol>
 <ul>
-<li>문제 정의에 따른 공장하고 올바른 평가필요<ul>
+<li>문제 정의에 따른 공장하고 올바른 평가필요
+<ul>
 <li>가설을 검증하기 위한 실험 설계</li>
-</ul>
-</li>
-<li>테스트셋(test set) 구성<ul>
+</ul></li>
+<li>테스트셋(test set) 구성
+<ul>
 <li>판별력이 중요</li>
 <li>실제데이터와 가장 비슷하게 구성되어야함</li>
-</ul>
-</li>
+</ul></li>
 <li>정량적 평가(extrinsic evaluation)와 정성적 평가(intrinsic evaluation)</li>
 </ul>
-<ol start="6">
+<ol start="6" type="1">
 <li>배포</li>
 </ol>
 <ul>
 <li>학습과 평가가 완료된 모델 weights 파일을 배포</li>
 <li>RESTful API 등을 통해 wrapping 후 배포</li>
-<li>데이터 분포의 변화에따른 모델 업데이트 및 유지보수가 필요할 수 있음</li>
+<li><h2 id="데이터-분포의-변화에따른-모델-업데이트-및-유지보수가-필요할-수-있음">데이터 분포의 변화에따른 모델 업데이트 및 유지보수가 필요할 수 있음</h2></li>
 </ul>
-<hr>
-<h2 id="Appendix-Basic-math"><a href="#Appendix-Basic-math" class="headerlink" title="Appendix: Basic math"></a>Appendix: Basic math</h2><ul>
-<li>지수와 로그<ul>
+<h2 id="appendix-basic-math">Appendix: Basic math</h2>
+<ul>
+<li>지수와 로그
+<ul>
 <li>지수 기본법칙과 연산법칙 숙지</li>
 <li>머신러닝에서는 로그의 밑으로 자연상수 e를 기본적으로 사용함을 기억</li>
 <li>log1 = 0</li>
@@ -453,19 +460,18 @@
 <li>log a + log b = log ab</li>
 <li>log a - log b = log a/b</li>
 <li>log a의 b승 = b log a</li>
-</ul>
-</li>
-<li>시그마(덧셈)와 파이(곱셈)<ul>
+</ul></li>
+<li>시그마(덧셈)와 파이(곱셈)
+<ul>
 <li>정의를 알고 파이썬 코드로 짤줄 알아야함</li>
-</ul>
-</li>
-<li>argmax (hat ‘^’)<ul>
+</ul></li>
+<li>argmax (hat '^')
+<ul>
 <li>x(hat) = argmax f(x)</li>
 <li>f(x)가 최대값을 나타내는 argument x 를 리턴</li>
 <li>max 값을 리턴하는게아닌 값을 만드는 x를 리턴함을 기억</li>
 <li>같은 뉘앙스로 최소값을 나타내는 x를 리턴하는 argmin 도 있음</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 
     </div>
@@ -561,6 +567,8 @@
 
 
 
+
+  
 
 
 </body>

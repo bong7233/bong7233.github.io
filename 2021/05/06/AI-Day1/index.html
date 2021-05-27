@@ -23,12 +23,12 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"bong7233.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="Data Preprocess &amp; EDAWarm-up CSV(Comma-separated values) : 텍스트 데이터파일  비슷한 포맷으로 탭으로 구분하는 ‘tab-separated values’(TSV), 반각 스페이스로 구분하는 ‘space-separated values’(SSV) 등이 있으며, 이것들을 합쳐서 character-separate">
+<meta name="description" content="Data Preprocess &amp; EDA Warm-up  CSV(Comma-separated values) : 텍스트 데이터파일  비슷한 포맷으로 탭으로 구분하는 &#39;tab-separated values&#39;(TSV), 반각 스페이스로 구분하는 &#39;space-separated values&#39;(SSV) 등이 있으며, 이것들을 합쳐서 character-separa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AI-Day1">
 <meta property="og:url" content="http://bong7233.github.io/2021/05/06/AI-Day1/index.html">
 <meta property="og:site_name" content="Bong&#39;s Blog">
-<meta property="og:description" content="Data Preprocess &amp; EDAWarm-up CSV(Comma-separated values) : 텍스트 데이터파일  비슷한 포맷으로 탭으로 구분하는 ‘tab-separated values’(TSV), 반각 스페이스로 구분하는 ‘space-separated values’(SSV) 등이 있으며, 이것들을 합쳐서 character-separate">
+<meta property="og:description" content="Data Preprocess &amp; EDA Warm-up  CSV(Comma-separated values) : 텍스트 데이터파일  비슷한 포맷으로 탭으로 구분하는 &#39;tab-separated values&#39;(TSV), 반각 스페이스로 구분하는 &#39;space-separated values&#39;(SSV) 등이 있으며, 이것들을 합쳐서 character-separa">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-05-06T01:29:20.000Z">
 <meta property="article:modified_time" content="2021-05-17T23:55:51.826Z">
@@ -190,7 +190,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Preprocess-amp-EDA"><span class="nav-number">1.</span> <span class="nav-text">Data Preprocess &amp; EDA</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Warm-up"><span class="nav-number">1.1.</span> <span class="nav-text">Warm-up</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EDA-Exploratory-Data-Analysis-%ED%83%90%EC%83%89%EC%A0%81-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D"><span class="nav-number">1.2.</span> <span class="nav-text">EDA(Exploratory Data Analysis, 탐색적 데이터 분석)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-preprocessing"><span class="nav-number">1.3.</span> <span class="nav-text">Data preprocessing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pandas-%EB%A9%94%EC%84%9C%EB%93%9C%EB%93%A4"><span class="nav-number">1.4.</span> <span class="nav-text">Pandas 메서드들</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#data-preprocess-eda"><span class="nav-number">1.</span> <span class="nav-text">Data Preprocess &amp; EDA</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#warm-up"><span class="nav-number">1.1.</span> <span class="nav-text">Warm-up</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#edaexploratory-data-analysis-%ED%83%90%EC%83%89%EC%A0%81-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D"><span class="nav-number">1.2.</span> <span class="nav-text">EDA(Exploratory Data Analysis, 탐색적 데이터 분석)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#data-preprocessing"><span class="nav-number">1.3.</span> <span class="nav-text">Data preprocessing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pandas-%EB%A9%94%EC%84%9C%EB%93%9C%EB%93%A4"><span class="nav-number">1.4.</span> <span class="nav-text">Pandas 메서드들</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -324,139 +324,136 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="Data-Preprocess-amp-EDA"><a href="#Data-Preprocess-amp-EDA" class="headerlink" title="Data Preprocess &amp; EDA"></a>Data Preprocess &amp; EDA</h1><h2 id="Warm-up"><a href="#Warm-up" class="headerlink" title="Warm-up"></a>Warm-up</h2><ul>
-<li><p>CSV(Comma-separated values) : 텍스트 데이터파일</p>
+        <h1 id="data-preprocess-eda">Data Preprocess &amp; EDA</h1>
+<h2 id="warm-up">Warm-up</h2>
 <ul>
-<li>비슷한 포맷으로 탭으로 구분하는 ‘tab-separated values’(TSV), 반각 스페이스로 구분하는 ‘space-separated values’(SSV) 등이 있으며, 이것들을 합쳐서 character-separated values (CSV), delimiter-separated values 라고 부르기도 함  </li>
-</ul>
-</li>
-<li><p>EDA(Exploratory Data Analysis, 탐색적 데이터 분석)</p>
+<li>CSV(Comma-separated values) : 텍스트 데이터파일
 <ul>
-<li>수집한 데이터가 들어왔을 때, 이를 다양한 각도에서 관찰하고 이해한후  데이터를 분석하기 전에 그래프나 통계적인 방법으로 자료를 직관적으로 바라보는 과정  </li>
-</ul>
-</li>
-<li><p>Histogram</p>
+<li>비슷한 포맷으로 탭으로 구분하는 'tab-separated values'(TSV), 반각 스페이스로 구분하는 'space-separated values'(SSV) 등이 있으며, 이것들을 합쳐서 character-separated values (CSV), delimiter-separated values 라고 부르기도 함</li>
+</ul></li>
+<li>EDA(Exploratory Data Analysis, 탐색적 데이터 분석)
+<ul>
+<li>수집한 데이터가 들어왔을 때, 이를 다양한 각도에서 관찰하고 이해한후 데이터를 분석하기 전에 그래프나 통계적인 방법으로 자료를 직관적으로 바라보는 과정</li>
+</ul></li>
+<li>Histogram
 <ul>
 <li>양적데이터(숫자데이터) 사용</li>
 <li>막대그래프들 사이에 갭이없음, 갭이 있다?-&gt;데이터의 누락</li>
 <li>막대의 두께(bin size)가 일정</li>
 <li>y축은 일반적으로 갯수,히스토그램의 빈도를 나타냄</li>
-<li>데이터셋의 최소값,최대값을 찾은후 x축의 시작점과 끝점을 설정<ul>
-<li>[40,50) -&gt; 40이상 50미만 임을 기억  </li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Stem and Leaf Plots : 줄기 잎 그림</p>
+<li>데이터셋의 최소값,최대값을 찾은후 x축의 시작점과 끝점을 설정
+<ul>
+<li>[40,50) -&gt; 40이상 50미만 임을 기억</li>
+</ul></li>
+</ul></li>
+<li>Stem and Leaf Plots : 줄기 잎 그림
 <ul>
 <li>통계학에서 통계적 자료를 표와 그래프가 혼합된 방법으로 나타내는것</li>
-<li>주로 숫자를 다룰때는 자리수를 기준으로 구분하여 보기쉽게 정리  </li>
-</ul>
-</li>
-<li><p>Box and Whisker Plots : 상자 수염 그림</p>
+<li>주로 숫자를 다룰때는 자리수를 기준으로 구분하여 보기쉽게 정리</li>
+</ul></li>
+<li>Box and Whisker Plots : 상자 수염 그림
 <ul>
-<li>기술통계학에서 수치적 자료를 5가지 요약수치를 기준으로 표현하는 그래프<ul>
+<li>기술통계학에서 수치적 자료를 5가지 요약수치를 기준으로 표현하는 그래프
+<ul>
 <li>최솟값,제1~3사분위,최댓값</li>
 <li>1사분위 Q1 : 하위25%</li>
 <li>2사분위 Q2 : 50%</li>
 <li>3사분위 Q3 : 상위25%</li>
 <li>4분위범위 IQR : 3사분위-1사분위</li>
 <li>파이썬의 matplotlib.pyplot 모듈로 손쉽게 그릴수있음</li>
+</ul></li>
+<li>histogram과 다르게 집단이 여러개인경우도 한 공간에 나타낼수있음</li>
+</ul></li>
 </ul>
-</li>
-<li>histogram과 다르게 집단이 여러개인경우도 한 공간에 나타낼수있음  </li>
-</ul>
-</li>
-</ul>
-<h2 id="EDA-Exploratory-Data-Analysis-탐색적-데이터-분석"><a href="#EDA-Exploratory-Data-Analysis-탐색적-데이터-분석" class="headerlink" title="EDA(Exploratory Data Analysis, 탐색적 데이터 분석)"></a>EDA(Exploratory Data Analysis, 탐색적 데이터 분석)</h2><ul>
-<li><p>데이터의 초기분석단계</p>
+<h2 id="edaexploratory-data-analysis-탐색적-데이터-분석">EDA(Exploratory Data Analysis, 탐색적 데이터 분석)</h2>
+<ul>
+<li>데이터의 초기분석단계
 <ul>
 <li>시각화 같은 도구를 통해 패턴발견</li>
 <li>데이터 특이성 확인</li>
 <li>통계와 그래픽을 통해 가설을 검증</li>
-</ul>
-</li>
-<li><p>크게 2가지 방법이있음</p>
+</ul></li>
+<li>크게 2가지 방법이있음
 <ul>
 <li>Graphic: 차트 그림을 이용해 데이터확인</li>
 <li>Non-Graphic: Summary Statistics를통해 데이터확인</li>
-</ul>
-</li>
-<li><p>EDA의 “타겟”(데이터) 또한 2가지 (Univariate, Multi-variate)로 나눠짐</p>
+</ul></li>
+<li>EDA의 "타겟"(데이터) 또한 2가지 (Univariate, Multi-variate)로 나눠짐
 <ul>
-<li>Multi-variate : 변수들간의 관계를 보는 것이 주요 목적  </li>
-</ul>
-</li>
-<li><p>Uni - Non Graphic : Sample Data의 Distribution을 확인하는 것이 주목적</p>
+<li>Multi-variate : 변수들간의 관계를 보는 것이 주요 목적</li>
+</ul></li>
+<li>Uni - Non Graphic : Sample Data의 Distribution을 확인하는 것이 주목적
 <ul>
-<li>Numeric data의 경우 summary statistics 활용<ul>
+<li>Numeric data의 경우 summary statistics 활용
+<ul>
 <li>Center (Mean, Median, Mod)</li>
 <li>Spread (Variance, SD, IQR, Range)</li>
 <li>Modality (Peak)</li>
 <li>Shape (Tail, Skewness, Kurtosis)</li>
 <li>Outliers 등을 확인합니다.</li>
-<li>Categorical data의 경우 occurence, frequency, tabulation등을 할 수 있음  </li>
-</ul>
+<li>Categorical data의 경우 occurence, frequency, tabulation등을 할 수 있음<br />
 </li>
-</ul>
-</li>
-<li><p>Uni - Graphic</p>
+</ul></li>
+</ul></li>
+<li>Uni - Graphic
 <ul>
 <li>Histogram 혹은 Pie chart, Stem-leaf plot, Boxplot, QQplot 등을 사용합니다.</li>
-<li>그러나 값들이 너무 다양하다면, Binning, Tabulation등을 활용  </li>
-</ul>
-</li>
-<li><p>QQPlot :데이터의 분포와 이론상 분포가 잘 일치하는가 를 확인 할 수 있는 방법  </p>
-</li>
-<li><p>Multi - Non Graphic : Relationship을 보는 것이 주된 목표</p>
+<li>그러나 값들이 너무 다양하다면, Binning, Tabulation등을 활용</li>
+</ul></li>
+<li><p>QQPlot :데이터의 분포와 이론상 분포가 잘 일치하는가 를 확인 할 수 있는 방법</p></li>
+<li>Multi - Non Graphic : Relationship을 보는 것이 주된 목표
 <ul>
 <li>Cross-Tabulation</li>
-<li>Cross-Statistics (Correlation, Covariance)  </li>
-</ul>
+<li>Cross-Statistics (Correlation, Covariance)<br />
 </li>
-<li><p>Multi - Graphic</p>
+</ul></li>
+<li>Multi - Graphic
 <ul>
 <li>Category &amp; Numeric : Boxplots, Stacked bar, Parallel Coordinate, Heatmap</li>
 <li>Numeric &amp; Numeric : Scatter Plot</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="Data-preprocessing"><a href="#Data-preprocessing" class="headerlink" title="Data preprocessing"></a>Data preprocessing</h2><ul>
-<li>Data Cleaning<ul>
+<h2 id="data-preprocessing">Data preprocessing</h2>
+<ul>
+<li>Data Cleaning
+<ul>
 <li>noise 를 제거하거나, inconsistency 를 보정하는 과정</li>
 <li>값이 빠져있거나, 잘못 입력되거나 혹은 일관성을 가지지 않는 데이터들을 제거 / 보정 하는 과정들이 포함</li>
 <li>Ignore the tuple (결측치가 있는 데이터 삭제)</li>
 <li>Manual Fill (수동으로 입력)</li>
-<li>Global Constant (“Unknown”)</li>
+<li>Global Constant ("Unknown")</li>
 <li>Imputation (All mean, Class mean, Inference mean, Regression 등)</li>
 <li>Binning, Regression, Outlier analysis 등등</li>
-</ul>
+</ul></li>
+<li>Data Integration
+<ul>
+<li>여러개로 나누어져 있는 데이터들을 분석하기 편하게 하나로 합치는 과정<br />
 </li>
-<li>Data Integration<ul>
-<li>여러개로 나누어져 있는 데이터들을 분석하기 편하게 하나로 합치는 과정  </li>
-</ul>
+</ul></li>
+<li>Data Transformation(scaling)
+<ul>
+<li>데이터의 형태를 변환하는 작업<br />
 </li>
-<li>Data Transformation(scaling)<ul>
-<li>데이터의 형태를 변환하는 작업  </li>
-</ul>
-</li>
-<li>Data Reduction<ul>
+</ul></li>
+<li>Data Reduction
+<ul>
 <li>데이터를 의미있게 줄이는 것</li>
-<li>dimension reduction과 유사한 목적  </li>
+<li>dimension reduction과 유사한 목적</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="Pandas-메서드들"><a href="#Pandas-메서드들" class="headerlink" title="Pandas 메서드들"></a>Pandas 메서드들</h2><ul>
-<li>Missing Data<ul>
+<h2 id="pandas-메서드들">Pandas 메서드들</h2>
+<ul>
+<li>Missing Data
+<ul>
 <li>isna</li>
 <li>isnull</li>
 <li>notna</li>
 <li>notnull</li>
 <li>dropna</li>
 <li>fillna</li>
-</ul>
-</li>
-<li>Data Frame<ul>
+</ul></li>
+<li>Data Frame
+<ul>
 <li>index</li>
 <li>columns</li>
 <li>dtypes</li>
@@ -479,9 +476,9 @@
 <li>value_counts</li>
 <li>describe</li>
 <li>shape</li>
-</ul>
-</li>
-<li>Vis<ul>
+</ul></li>
+<li>Vis
+<ul>
 <li>plot</li>
 <li>plot.area</li>
 <li>plot.bar</li>
@@ -494,8 +491,7 @@
 <li>plot.line</li>
 <li>plot.pie</li>
 <li>plot.scatter</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 
     </div>
@@ -592,6 +588,8 @@
 
 
 
+
+  
 
 
 </body>

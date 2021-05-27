@@ -23,12 +23,12 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"bong7233.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="Weekly review가설검정 가설검정의 목적: 모집단의 실제값들 중 sample들을 뽑아 그 통계치를 통해 통계적으로 유의한지아닌지를 판정하는것    기술통계치(데이터를 설명하는 값들)와 box plot, violin plot, count, mean, standard dev, min, 1Q, median, 3Q, max 이해하고 설명할 수 있어야함">
+<meta name="description" content="Weekly review 가설검정  가설검정의 목적: 모집단의 실제값들 중 sample들을 뽑아 그 통계치를 통해 통계적으로 유의한지아닌지를 판정하는것 기술통계치(데이터를 설명하는 값들)와 box plot, violin plot, count, mean, standard dev, min, 1Q, median, 3Q, max 이해하고 설명할 수 있어야함  Ou">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AI-day10">
 <meta property="og:url" content="http://bong7233.github.io/2021/05/20/AI-day10/index.html">
 <meta property="og:site_name" content="Bong&#39;s Blog">
-<meta property="og:description" content="Weekly review가설검정 가설검정의 목적: 모집단의 실제값들 중 sample들을 뽑아 그 통계치를 통해 통계적으로 유의한지아닌지를 판정하는것    기술통계치(데이터를 설명하는 값들)와 box plot, violin plot, count, mean, standard dev, min, 1Q, median, 3Q, max 이해하고 설명할 수 있어야함">
+<meta property="og:description" content="Weekly review 가설검정  가설검정의 목적: 모집단의 실제값들 중 sample들을 뽑아 그 통계치를 통해 통계적으로 유의한지아닌지를 판정하는것 기술통계치(데이터를 설명하는 값들)와 box plot, violin plot, count, mean, standard dev, min, 1Q, median, 3Q, max 이해하고 설명할 수 있어야함  Ou">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-05-20T06:55:05.000Z">
 <meta property="article:modified_time" content="2021-05-20T08:05:44.365Z">
@@ -189,7 +189,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Weekly-review"><span class="nav-number">1.</span> <span class="nav-text">Weekly review</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EA%B0%80%EC%84%A4%EA%B2%80%EC%A0%95"><span class="nav-number">1.1.</span> <span class="nav-text">가설검정</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#T-test"><span class="nav-number">1.2.</span> <span class="nav-text">T-test</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Type-of-Error"><span class="nav-number">1.3.</span> <span class="nav-text">Type of Error</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chi-square"><span class="nav-number">1.4.</span> <span class="nav-text">Chi square</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ANOVA"><span class="nav-number">1.5.</span> <span class="nav-text">ANOVA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%81%B0-%EC%88%98%EC%9D%98-%EB%B2%95%EC%B9%99-Law-of-large-numbers"><span class="nav-number">1.6.</span> <span class="nav-text">큰 수의 법칙 ( Law of large numbers )</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%A4%91%EC%8B%AC%EA%B7%B9%ED%95%9C%EC%A0%95%EB%A6%AC-Central-Limit-Theorem-CLT"><span class="nav-number">1.7.</span> <span class="nav-text">중심극한정리 ( Central Limit Theorem, CLT )</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%8B%A0%EB%A2%B0%EA%B5%AC%EA%B0%84"><span class="nav-number">1.8.</span> <span class="nav-text">신뢰구간</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%B4%9D-%ED%99%95%EB%A5%A0%EC%9D%98-%EB%B2%95%EC%B9%99-The-Law-of-Total-Probability"><span class="nav-number">1.9.</span> <span class="nav-text">총 확률의 법칙 (The Law of Total Probability)</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#weekly-review"><span class="nav-number">1.</span> <span class="nav-text">Weekly review</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EA%B0%80%EC%84%A4%EA%B2%80%EC%A0%95"><span class="nav-number">1.1.</span> <span class="nav-text">가설검정</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#t-test"><span class="nav-number">1.2.</span> <span class="nav-text">T-test</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#type-of-error"><span class="nav-number">1.3.</span> <span class="nav-text">Type of Error</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chi-square"><span class="nav-number">1.4.</span> <span class="nav-text">Chi square</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#anova"><span class="nav-number">1.5.</span> <span class="nav-text">ANOVA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%81%B0-%EC%88%98%EC%9D%98-%EB%B2%95%EC%B9%99-law-of-large-numbers"><span class="nav-number">1.6.</span> <span class="nav-text">큰 수의 법칙 ( Law of large numbers )</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%A4%91%EC%8B%AC%EA%B7%B9%ED%95%9C%EC%A0%95%EB%A6%AC-central-limit-theorem-clt"><span class="nav-number">1.7.</span> <span class="nav-text">중심극한정리 ( Central Limit Theorem, CLT )</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%8B%A0%EB%A2%B0%EA%B5%AC%EA%B0%84"><span class="nav-number">1.8.</span> <span class="nav-text">신뢰구간</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%B4%9D-%ED%99%95%EB%A5%A0%EC%9D%98-%EB%B2%95%EC%B9%99-the-law-of-total-probability"><span class="nav-number">1.9.</span> <span class="nav-text">총 확률의 법칙 (The Law of Total Probability)</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -317,65 +317,70 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="Weekly-review"><a href="#Weekly-review" class="headerlink" title="Weekly review"></a>Weekly review</h1><h2 id="가설검정"><a href="#가설검정" class="headerlink" title="가설검정"></a>가설검정</h2><ul>
-<li><p>가설검정의 목적: 모집단의 실제값들 중 sample들을 뽑아 그 통계치를 통해 통계적으로 유의한지아닌지를 판정하는것  </p>
-</li>
-<li><p>기술통계치(데이터를 설명하는 값들)와 box plot, violin plot, count, mean, standard dev, min, 1Q, median, 3Q, max 이해하고 설명할 수 있어야함  </p>
-</li>
-<li><p>Outlier(이상치)에 대한 개념, 구하는 식 찾기  </p>
-</li>
-<li><p>추리통계치</p>
+        <h1 id="weekly-review">Weekly review</h1>
+<h2 id="가설검정">가설검정</h2>
 <ul>
-<li>Population, Parameter, Statistic, Estimator, Standard Deviation, Standard Error 각각의 정의는 반드시 알아야함  </li>
-</ul>
+<li><p>가설검정의 목적: 모집단의 실제값들 중 sample들을 뽑아 그 통계치를 통해 통계적으로 유의한지아닌지를 판정하는것</p></li>
+<li>기술통계치(데이터를 설명하는 값들)와 box plot, violin plot, count, mean, standard dev, min, 1Q, median, 3Q, max 이해하고 설명할 수 있어야함<br />
 </li>
-<li><p>Sampling 4가지 </p>
+<li><p>Outlier(이상치)에 대한 개념, 구하는 식 찾기</p></li>
+<li>추리통계치
 <ul>
-<li>Simple random sampling, Systematic sampling, Stratified random sampling, Cluster sampling 와 추가로 이것들의 변이형 도 찾아서 전체적인 뉘앙스를 기억하기  </li>
-</ul>
-</li>
-<li><p>Standard Error(표준오차,표준편차)</p>
+<li>Population, Parameter, Statistic, Estimator, Standard Deviation, Standard Error 각각의 정의는 반드시 알아야함</li>
+</ul></li>
+<li>Sampling 4가지
+<ul>
+<li>Simple random sampling, Systematic sampling, Stratified random sampling, Cluster sampling 와 추가로 이것들의 변이형 도 찾아서 전체적인 뉘앙스를 기억하기</li>
+</ul></li>
+<li>Standard Error(표준오차,표준편차)
 <ul>
 <li>표준편차 나누기 루트샘플사이즈 공식이 왜 그렇게 도출된것인지를 설명할 수 있어야함</li>
 <li>표본의 수가 많을수록 오차가 작다 기억</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="T-test"><a href="#T-test" class="headerlink" title="T-test"></a>T-test</h2><ul>
+<h2 id="t-test">T-test</h2>
+<ul>
 <li>독립성,정규성,등분산성이 지켜져야 t-test 가능</li>
 <li>수치형,연속형data 만 사용가능</li>
-<li>one sample : 1개 <strong>샘플의 평균값</strong>이 <strong>특정값과 동일</strong>한지 비교<ul>
+<li>one sample : 1개 <strong>샘플의 평균값</strong>이 <strong>특정값과 동일</strong>한지 비교
+<ul>
 <li>t = 샘플평균-모집단평균 / 표준편차</li>
-</ul>
-</li>
+</ul></li>
 <li>two sample : 2개 <strong>샘플 각각의 평균값</strong>이 <strong>서로 동일</strong>한지 비교</li>
 <li>t-test의 정확한 의미와 결과에대한 해석을 할 줄 알아야함</li>
-<li>P-value(일반적으로 신뢰구간 95%)<ul>
+<li>P-value(일반적으로 신뢰구간 95%)
+<ul>
 <li>0.05보다 크다 -&gt; 귀무가설 채택</li>
 <li>0.05보다 작다 -&gt; 귀무가설 기각</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="Type-of-Error"><a href="#Type-of-Error" class="headerlink" title="Type of Error"></a>Type of Error</h2><ul>
+<h2 id="type-of-error">Type of Error</h2>
+<ul>
 <li>type1, type2 error의 개념과 차이가 중요</li>
 </ul>
-<h2 id="Chi-square"><a href="#Chi-square" class="headerlink" title="Chi square"></a>Chi square</h2><ul>
+<h2 id="chi-square">Chi square</h2>
+<ul>
 <li>하는법과 의미를 기억</li>
 </ul>
-<h2 id="ANOVA"><a href="#ANOVA" class="headerlink" title="ANOVA"></a>ANOVA</h2><ul>
+<h2 id="anova">ANOVA</h2>
+<ul>
 <li>2 Sample 이상을 다루는경우 주로 사용하는 가설검정법</li>
 </ul>
-<h2 id="큰-수의-법칙-Law-of-large-numbers"><a href="#큰-수의-법칙-Law-of-large-numbers" class="headerlink" title="큰 수의 법칙 ( Law of large numbers )"></a>큰 수의 법칙 ( Law of large numbers )</h2><ul>
+<h2 id="큰-수의-법칙-law-of-large-numbers">큰 수의 법칙 ( Law of large numbers )</h2>
+<ul>
 <li>샘플이 많아질수록 모집단의 통계치와 근사해진다</li>
 </ul>
-<h2 id="중심극한정리-Central-Limit-Theorem-CLT"><a href="#중심극한정리-Central-Limit-Theorem-CLT" class="headerlink" title="중심극한정리 ( Central Limit Theorem, CLT )"></a>중심극한정리 ( Central Limit Theorem, CLT )</h2><ul>
+<h2 id="중심극한정리-central-limit-theorem-clt">중심극한정리 ( Central Limit Theorem, CLT )</h2>
+<ul>
 <li>샘플이 많아질수록 정규분포에 근사해진다</li>
 <li>특히 큰수의법칙과 중심극한정리는 개념을 정확히 설명할줄 알아야한다(면접에서도 중요)</li>
 </ul>
-<h2 id="신뢰구간"><a href="#신뢰구간" class="headerlink" title="신뢰구간"></a>신뢰구간</h2><ul>
+<h2 id="신뢰구간">신뢰구간</h2>
+<ul>
 <li>샘플평균 플러스마이너스 Error 로 기억(공식 암기)</li>
 </ul>
-<h2 id="총-확률의-법칙-The-Law-of-Total-Probability"><a href="#총-확률의-법칙-The-Law-of-Total-Probability" class="headerlink" title="총 확률의 법칙 (The Law of Total Probability)"></a>총 확률의 법칙 (The Law of Total Probability)</h2><ul>
+<h2 id="총-확률의-법칙-the-law-of-total-probability">총 확률의 법칙 (The Law of Total Probability)</h2>
+<ul>
 <li>다시말해 A의 모든 확률은, 주어진 Bn에 대해, 각각의 일어날 확률의 총합이다</li>
 <li>bayesian 에 대한 내용은 알면 알수록 좋고, 분야가 세분화될수록 점점 쓸모가있다</li>
 <li>조건부확률 계산하는 법도 직접 할수있으면 더 좋다</li>
@@ -474,6 +479,8 @@
 
 
 
+
+  
 
 
 </body>
