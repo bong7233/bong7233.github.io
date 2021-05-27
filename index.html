@@ -197,7 +197,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -263,6 +263,131 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://bong7233.github.io/2021/05/27/AI-day15/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="SangBong Lee">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bong's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/05/27/AI-day15/" class="post-title-link" itemprop="url">AI-day15</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-05-27 14:57:13 / Modified: 17:00:43" itemprop="dateCreated datePublished" datetime="2021-05-27T14:57:13+09:00">2021-05-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Weekly-reveiw/" itemprop="url" rel="index"><span itemprop="name">Weekly reveiw</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Weekly-reveiw"><a href="#Weekly-reveiw" class="headerlink" title="Weekly reveiw"></a>Weekly reveiw</h1><h2 id="벡터와-매트릭스-Vectors-and-Matrices"><a href="#벡터와-매트릭스-Vectors-and-Matrices" class="headerlink" title="벡터와 매트릭스 ( Vectors and Matrices )"></a>벡터와 매트릭스 ( Vectors and Matrices )</h2><ul>
+<li>벡터의 연산과 Norm, det 등의 값이가지는 의미와 실제 코드로 실행할수있다는것을 기억<ul>
+<li>원리이해와 각각에필요한 라이브러리를 쓸줄 알아야함</li>
+</ul>
+</li>
+</ul>
+<h2 id="차원죽소"><a href="#차원죽소" class="headerlink" title="차원죽소"></a>차원죽소</h2><ul>
+<li>차원축소하는 궁극적인이유는 , 속도를높이고 메모리의 사용을 줄이기위함</li>
+<li>PCA 와 SVD에대한 큰 개념을 이해하기</li>
+</ul>
+<h2 id="스칼라와-벡터"><a href="#스칼라와-벡터" class="headerlink" title="스칼라와 벡터"></a>스칼라와 벡터</h2><ul>
+<li>벡터에서는 numpy를 이용해 다양한 계산을 활용할줄 아는것이 기본이다</li>
+<li>스칼라는 숫자고 크기이다</li>
+<li>벡터를 수학적으로 이해하기보다는 데이터라고 받아들이자</li>
+<li>벡터의 길이(length)는 벡터의 차원수와 동일하다는 정도만 이해</li>
+<li>벡터의 크기 (Magnitude, Norm, Length)의 의미에대해 알기</li>
+<li>벡터의 내적 ( Dot Product )을 위해서는 두 벡터의 길이가 반드시 동일해야 한다</li>
+</ul>
+<h2 id="매트릭스"><a href="#매트릭스" class="headerlink" title="매트릭스"></a>매트릭스</h2><ul>
+<li>매트릭스의 Transpose 기억하기</li>
+<li>2개의 매트릭스가 일치하기 위해서는, 동일한 차원을 보유하고 각 해당하는 구성요소들이 동일해야 함</li>
+<li>정사각 매트릭스<ul>
+<li>정사각 매트릭스의 종류들과 특징은 알아두기</li>
+<li>단위매트릭스는 특히 중요</li>
+</ul>
+</li>
+<li>행렬식과 역행렬의 개념과 계산하는 방법 알기</li>
+</ul>
+<h2 id="분산과-표준편차"><a href="#분산과-표준편차" class="headerlink" title="분산과 표준편차"></a>분산과 표준편차</h2><ul>
+<li>각각의 의미와 구하는 라이브러리를 기억</li>
+<li>numpy와 pandas에서 ddof의 차이에 주의하자</li>
+<li>공분산과 상관계수는 메서드 사용시 원하는값이 배열의 어느위치에 있는지 알아야함<ul>
+<li>특히 상관계수가 1일때와 -1일때 똑같이 선형상관관계이고 방향만 양수 음수 임을 주의, -1이라고해서 선형관계가 아니라고 생각하면 안된다</li>
+<li>공분산과 상관계수는 서로 어떤관계가 있는지 설명할줄 알아야함</li>
+</ul>
+</li>
+</ul>
+<h2 id="basis-rank-span"><a href="#basis-rank-span" class="headerlink" title="basis, rank, span"></a>basis, rank, span</h2><ul>
+<li>각각의 개념을 이해하는것이 중요</li>
+</ul>
+<h2 id="Vector-transformation"><a href="#Vector-transformation" class="headerlink" title="Vector transformation"></a>Vector transformation</h2><ul>
+<li>다양한 방법으로 벡터를 변환시켜 차원을 줄이기위한 과정</li>
+<li>고유값과 고유벡터의 의미와 구하는법도 숙지</li>
+</ul>
+<h2 id="차원감소"><a href="#차원감소" class="headerlink" title="차원감소"></a>차원감소</h2><ul>
+<li>Feacture Selection 과 Feature Extraction 의 방식과 예시 기억하기</li>
+<li>Scaling 과 PCA 을 통해 차원감소하는 원리와 이유, 방법과 라이브러리 정리</li>
+</ul>
+<h2 id="Custering"><a href="#Custering" class="headerlink" title="Custering"></a>Custering</h2><ul>
+<li>머신러닝에서의 비지도학습의 한 종류로 데이터들간의 유사성을 토대로 분류하는것이다</li>
+<li>다양한 종류가있지만, 그런 종류가있다는것을 알고 데이터의 형태에 맞는 방법을 쓰는것이 중요하다</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://bong7233.github.io/2021/05/26/AI-Day14/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -286,10 +411,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-05-26 07:50:23 / Modified: 18:00:11" itemprop="dateCreated datePublished" datetime="2021-05-26T07:50:23+09:00">2021-05-26</time>
+      <time title="Created: 2021-05-26 07:50:23" itemprop="dateCreated datePublished" datetime="2021-05-26T07:50:23+09:00">2021-05-26</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-05-27 17:00:46" itemprop="dateModified" datetime="2021-05-27T17:00:46+09:00">2021-05-27</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -1826,146 +1957,6 @@
 <li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=mEWQ_vl3IPw&amp;list=PLalb9l0_6WArHh18Plrn8uIGBUKalqsf-&amp;index=1">https://www.youtube.com/watch?v=mEWQ_vl3IPw&amp;list=PLalb9l0_6WArHh18Plrn8uIGBUKalqsf-&amp;index=1</a></li>
 </ul>
 </li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://bong7233.github.io/2021/05/12/AI-Day5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="SangBong Lee">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Bong's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/05/12/AI-Day5/" class="post-title-link" itemprop="url">AI-Day5</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-05-12 16:09:17" itemprop="dateCreated datePublished" datetime="2021-05-12T16:09:17+09:00">2021-05-12</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-18 08:57:25" itemprop="dateModified" datetime="2021-05-18T08:57:25+09:00">2021-05-18</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Weekly-reveiw/" itemprop="url" rel="index"><span itemprop="name">Weekly reveiw</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Weekly-review"><a href="#Weekly-review" class="headerlink" title="Weekly review"></a>Weekly review</h1><h2 id="EDA"><a href="#EDA" class="headerlink" title="EDA"></a>EDA</h2><ul>
-<li>데이터를 불러오기<ul>
-<li>Description 을통해 데이터셋에대한 정보파악<ul>
-<li>EDA를 대신해주는거지만, 직접확인하는것이 더 정확</li>
-</ul>
-</li>
-<li>pd.read_csv() 에 대한 완벽한 숙지가 중요</li>
-</ul>
-</li>
-<li>데이터셋 확인하기<ul>
-<li>Graphic , Non-Graphic 을 구분하고 사용할줄 알아야함</li>
-<li>하지만, 자기가 시각화를 한 자료에대해서는 100% 설명할줄 알아야함<ul>
-<li>EDA과정에서 시각화된 자료에대한 코멘트(어떤 insigth를 얻었는지 등등)를 달아보기</li>
-</ul>
-</li>
-<li>Pandas의 메서드들을 외우는건 의미없음<ul>
-<li>여러번 사용해보면서 이런 기능을하는 함수가 있었다라는걸 기억하는것이 중요</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>데이터 전처리도 중요하다는것만 우선 기억  </li>
-</ul>
-<h2 id="Feature-Engineering"><a href="#Feature-Engineering" class="headerlink" title="Feature Engineering"></a>Feature Engineering</h2><ul>
-<li>데이터를 보다 확인하기 좋은 형태로 다듬는것이 목적<ul>
-<li>기존의 feature들을 조합하여 새로운 feature를 만드는것</li>
-<li>도메인지식과 창의성이 중요</li>
-</ul>
-</li>
-<li>DataFrame, DataSet 이해<ul>
-<li>결측치들(Na,Null,NaN,0,Undefined)의 차이를 알기</li>
-</ul>
-</li>
-<li>typecasting, 특히 string-&gt;int가 매우 중요하고 많이쓰임<ul>
-<li>replace,apply,astype 등의 다양한 방법이 존재하므로 정확히 의도대로 사용할 줄 알아야함  </li>
-</ul>
-</li>
-</ul>
-<h2 id="Data-Manipulation"><a href="#Data-Manipulation" class="headerlink" title="Data Manipulation"></a>Data Manipulation</h2><ul>
-<li>concat과 merge를 구분하고 사용할줄 알아야함<ul>
-<li>단순히 합치는법을 알기보다는 원하는 shape으로 만들어낼줄 아는것이 중요</li>
-</ul>
-</li>
-<li>wide &amp; tidy<ul>
-<li>각각의 형태가 언제 유용하고 확인하기 좋은가를 구분할줄 알아야함</li>
-<li>data를보고 어떤형태인지도 유추할수 있다면 best</li>
-<li>melt() &amp; pivot_table() 를 적절하게 사용할 줄 알아야함</li>
-</ul>
-</li>
-<li>pandas styling <ul>
-<li>나중에 알고있다면 좋은것</li>
-</ul>
-</li>
-</ul>
-<h2 id="Basic-derivative"><a href="#Basic-derivative" class="headerlink" title="Basic derivative"></a>Basic derivative</h2><ul>
-<li>미분에 대한 개념은 매우중요하지만, 직접미분을 해야하는경우는 드물다<ul>
-<li>다양한 미분 공식들을 알아야 알고리즘에대해 이해하고 사용할 수 있음</li>
-</ul>
-</li>
-<li>경사하강법은 뒤로갈수록 중요한 개념이므로 꾸준히 공부하고 이해할수록 좋음</li>
 </ul>
 
       
