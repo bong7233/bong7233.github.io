@@ -23,12 +23,12 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"bong7233.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="베이지안 통계 개론 (Bayesian Inference)  이유 불충분의 정리  확률을 모를때는 50대50으로 생각 아무 정보없을때 사전확률(50%) 어떤 새로운 정보로인해 상승한 사후확률(50+a%) 이렇게 어떤 하나의 정보로인해 확률이 변하는것이 베이즈정리  조건부확률도 중요  총 확률의 법칙 (The Law of Total Probability)  특">
+<meta name="description" content="베이지안 통계 개론 (Bayesian Inference) 이유 불충분의 정리 확률을 모를때는 50대50으로 생각 아무 정보없을때 사전확률(50%) 어떤 새로운 정보로인해 상승한 사후확률(50+a%) 이렇게 어떤 하나의 정보로인해 확률이 변하는것이 베이즈정리    조건부확률도 중요  총 확률의 법칙 (The Law of Total Probability) 특정">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AI-day9">
 <meta property="og:url" content="http://bong7233.github.io/2021/05/18/AI-day9/index.html">
 <meta property="og:site_name" content="Bong&#39;s Blog">
-<meta property="og:description" content="베이지안 통계 개론 (Bayesian Inference)  이유 불충분의 정리  확률을 모를때는 50대50으로 생각 아무 정보없을때 사전확률(50%) 어떤 새로운 정보로인해 상승한 사후확률(50+a%) 이렇게 어떤 하나의 정보로인해 확률이 변하는것이 베이즈정리  조건부확률도 중요  총 확률의 법칙 (The Law of Total Probability)  특">
+<meta property="og:description" content="베이지안 통계 개론 (Bayesian Inference) 이유 불충분의 정리 확률을 모를때는 50대50으로 생각 아무 정보없을때 사전확률(50%) 어떤 새로운 정보로인해 상승한 사후확률(50+a%) 이렇게 어떤 하나의 정보로인해 확률이 변하는것이 베이즈정리    조건부확률도 중요  총 확률의 법칙 (The Law of Total Probability) 특정">
 <meta property="og:locale">
 <meta property="og:image" content="http://bong7233.github.io/2021/05/18/images/ltp.PNG">
 <meta property="og:image" content="http://bong7233.github.io/2021/05/18/images/conditional.PNG">
@@ -194,7 +194,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EB%B2%A0%EC%9D%B4%EC%A7%80%EC%95%88-%ED%86%B5%EA%B3%84-%EA%B0%9C%EB%A1%A0-bayesian-inference"><span class="nav-number">1.</span> <span class="nav-text">베이지안 통계 개론 (Bayesian Inference)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%B4%9D-%ED%99%95%EB%A5%A0%EC%9D%98-%EB%B2%95%EC%B9%99-the-law-of-total-probability"><span class="nav-number">1.1.</span> <span class="nav-text">총 확률의 법칙 (The Law of Total Probability)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%A1%B0%EA%B1%B4%EB%B6%80-%ED%99%95%EB%A5%A0-the-law-of-conditional-probability"><span class="nav-number">1.2.</span> <span class="nav-text">조건부 확률 (The Law of Conditional Probability)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%B2%A0%EC%9D%B4%EC%A7%80%EC%95%88-%EC%9D%B4%EB%A1%A0-bayes-theorem"><span class="nav-number">1.3.</span> <span class="nav-text">베이지안 이론 (Bayes Theorem)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%B2%A0%EC%9D%B4%EC%A7%80%EC%95%88-%ED%85%8C%EC%8A%A4%ED%8A%B8%EB%A5%BC-%EB%B0%98%EB%B3%B5%ED%95%98%EC%97%AC-%EC%82%AC%EC%9A%A9-repeated-testing"><span class="nav-number">1.4.</span> <span class="nav-text">베이지안 테스트를 반복하여 사용 (repeated testing)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bayesian-%EA%B8%B0%EB%B0%98-%EC%8B%A0%EB%A2%B0%EA%B5%AC%EA%B0%84-%EC%B6%94%EC%A0%95"><span class="nav-number">1.4.1.</span> <span class="nav-text">Bayesian 기반 신뢰구간 추정</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bayesian-optimize"><span class="nav-number">1.4.2.</span> <span class="nav-text">Bayesian Optimize</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#naive-bayes"><span class="nav-number">1.5.</span> <span class="nav-text">Naive Bayes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mle-%EC%99%80-map"><span class="nav-number">1.6.</span> <span class="nav-text">MLE 와 MAP</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EB%B2%A0%EC%9D%B4%EC%A7%80%EC%95%88-%ED%86%B5%EA%B3%84-%EA%B0%9C%EB%A1%A0-Bayesian-Inference"><span class="nav-number">1.</span> <span class="nav-text">베이지안 통계 개론 (Bayesian Inference)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%B4%9D-%ED%99%95%EB%A5%A0%EC%9D%98-%EB%B2%95%EC%B9%99-The-Law-of-Total-Probability"><span class="nav-number">1.1.</span> <span class="nav-text">총 확률의 법칙 (The Law of Total Probability)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%A1%B0%EA%B1%B4%EB%B6%80-%ED%99%95%EB%A5%A0-The-Law-of-Conditional-Probability"><span class="nav-number">1.2.</span> <span class="nav-text">조건부 확률 (The Law of Conditional Probability)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%B2%A0%EC%9D%B4%EC%A7%80%EC%95%88-%EC%9D%B4%EB%A1%A0-Bayes-Theorem"><span class="nav-number">1.3.</span> <span class="nav-text">베이지안 이론 (Bayes Theorem)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%B2%A0%EC%9D%B4%EC%A7%80%EC%95%88-%ED%85%8C%EC%8A%A4%ED%8A%B8%EB%A5%BC-%EB%B0%98%EB%B3%B5%ED%95%98%EC%97%AC-%EC%82%AC%EC%9A%A9-repeated-testing"><span class="nav-number">1.4.</span> <span class="nav-text">베이지안 테스트를 반복하여 사용 (repeated testing)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bayesian-%EA%B8%B0%EB%B0%98-%EC%8B%A0%EB%A2%B0%EA%B5%AC%EA%B0%84-%EC%B6%94%EC%A0%95"><span class="nav-number">1.4.1.</span> <span class="nav-text">Bayesian 기반 신뢰구간 추정</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bayesian-Optimize"><span class="nav-number">1.4.2.</span> <span class="nav-text">Bayesian Optimize</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Naive-Bayes"><span class="nav-number">1.5.</span> <span class="nav-text">Naive Bayes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MLE-%EC%99%80-MAP"><span class="nav-number">1.6.</span> <span class="nav-text">MLE 와 MAP</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -322,86 +322,74 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="베이지안-통계-개론-bayesian-inference">베이지안 통계 개론 (Bayesian Inference)</h1>
-<ul>
-<li>이유 불충분의 정리
-<ul>
+        <h1 id="베이지안-통계-개론-Bayesian-Inference"><a href="#베이지안-통계-개론-Bayesian-Inference" class="headerlink" title="베이지안 통계 개론 (Bayesian Inference)"></a>베이지안 통계 개론 (Bayesian Inference)</h1><ul>
+<li>이유 불충분의 정리<ul>
 <li>확률을 모를때는 50대50으로 생각</li>
 <li>아무 정보없을때 사전확률(50%)</li>
 <li>어떤 새로운 정보로인해 상승한 사후확률(50+a%)</li>
-<li>이렇게 어떤 하나의 정보로인해 확률이 변하는것이 <strong>베이즈정리</strong></li>
-</ul></li>
+<li>이렇게 어떤 하나의 정보로인해 확률이 변하는것이 <strong>베이즈정리</strong> </li>
+</ul>
+</li>
 <li>조건부확률도 중요</li>
 </ul>
-<h2 id="총-확률의-법칙-the-law-of-total-probability">총 확률의 법칙 (The Law of Total Probability)</h2>
-<ul>
+<h2 id="총-확률의-법칙-The-Law-of-Total-Probability"><a href="#총-확률의-법칙-The-Law-of-Total-Probability" class="headerlink" title="총 확률의 법칙 (The Law of Total Probability)"></a>총 확률의 법칙 (The Law of Total Probability)</h2><ul>
 <li>특정 확률 변수에 대해, 모든 가능한 이벤트의 총 확률 = 1</li>
-<li>2개의 변수를 고려 한다면 두 변수가 연관이 있는 경우, B가 일어난 상황에서 A에 대한 확률 P(A)는, P(A|B) 의 형태로 표현<br />
-<img src="../images/ltp.PNG"></li>
+<li>2개의 변수를 고려 한다면 두 변수가 연관이 있는 경우, B가 일어난 상황에서 A에 대한 확률 P(A)는, P(A|B) 의 형태로 표현  <img src="../images/ltp.PNG"></li>
 </ul>
-<h2 id="조건부-확률-the-law-of-conditional-probability">조건부 확률 (The Law of Conditional Probability)</h2>
-<ul>
-<li>전체사각형이 모든 확률공간(1) 일때 각각 B의 조건에서 A가 일어날 확률을 교집합으로 표현가능<br />
-<img src="../images/conditional.PNG" width="300"></li>
+<h2 id="조건부-확률-The-Law-of-Conditional-Probability"><a href="#조건부-확률-The-Law-of-Conditional-Probability" class="headerlink" title="조건부 확률 (The Law of Conditional Probability)"></a>조건부 확률 (The Law of Conditional Probability)</h2><ul>
+<li>전체사각형이 모든 확률공간(1) 일때 각각 B의 조건에서 A가 일어날 확률을 교집합으로 표현가능  <img src="../images/conditional.PNG" width="300"></li>
 </ul>
-<h2 id="베이지안-이론-bayes-theorem">베이지안 이론 (Bayes Theorem)</h2>
-<ul>
-<li>사후확률(posterior probability)을 사전확률(prior probability)과 likelihood를 이용해서 계산할 수 있도록 해 주는 확률 변환식
-<ul>
+<h2 id="베이지안-이론-Bayes-Theorem"><a href="#베이지안-이론-Bayes-Theorem" class="headerlink" title="베이지안 이론 (Bayes Theorem)"></a>베이지안 이론 (Bayes Theorem)</h2><ul>
+<li>사후확률(posterior probability)을 사전확률(prior probability)과 likelihood를 이용해서 계산할 수 있도록 해 주는 확률 변환식<ul>
 <li>B가 주어진 상황에서 A의 확률 = A가 주어진 상황에서 B의 확률 X A의 확률 % B 의 확률로 표현</li>
 <li>p(A|B) -&gt; 사후 확률 (B라는 정보가 업데이트 된 이후 확률)</li>
 <li>p(A) -&gt; 사전 확률 (B라는 정보가 업데이트 되기 전의 사전확률)</li>
 <li>p(B|A) -&gt; likelihood(어떤 모델에서 해당 데이터(관측값)이 나올 확률)</li>
-</ul></li>
-<li>사전확률("Prior")은 사후확률("Updated")로 다시 표현 할 수 있음이 중요
-<ul>
-<li>쉽게말해 사후확률의 추가(샘플의 추가)로 불규칙한 확률을 정규분포와 비슷하게 업데이트 할수 있다 -&gt; 베이지안이론이 많이 쓰이는 이유<br />
-<img src="../images/bayes.PNG"></li>
-</ul></li>
 </ul>
-<h2 id="베이지안-테스트를-반복하여-사용-repeated-testing">베이지안 테스트를 반복하여 사용 (repeated testing)</h2>
-<ul>
-<li>False positive rate와 사전확률을 통해 반복적인 테스트로 정확한 확률을 계산
-<ul>
+</li>
+<li>사전확률(“Prior”)은 사후확률(“Updated”)로 다시 표현 할 수 있음이 중요<ul>
+<li>쉽게말해 사후확률의 추가(샘플의 추가)로 불규칙한 확률을 정규분포와 비슷하게 업데이트 할수 있다 -&gt; 베이지안이론이 많이 쓰이는 이유  <img src="../images/bayes.PNG"></li>
+</ul>
+</li>
+</ul>
+<h2 id="베이지안-테스트를-반복하여-사용-repeated-testing"><a href="#베이지안-테스트를-반복하여-사용-repeated-testing" class="headerlink" title="베이지안 테스트를 반복하여 사용 (repeated testing)"></a>베이지안 테스트를 반복하여 사용 (repeated testing)</h2><ul>
+<li>False positive rate와 사전확률을 통해 반복적인 테스트로 정확한 확률을 계산<ul>
 <li>TPR : True Positive Rate (= 민감도, true accept rate) 1인 케이스에 대해 1로 잘 예측한 비율(암환자를 암이라고 진단 함)</li>
 <li>FPR : False Positive Rate (= 1-특이도, false accept rate) 0인 케이스에 대해 1로 잘못 예측한 비율(암환자가 아닌데 암이라고 진단 함)</li>
-</ul></li>
 </ul>
-<h3 id="bayesian-기반-신뢰구간-추정">Bayesian 기반 신뢰구간 추정</h3>
-<ul>
+</li>
+</ul>
+<h3 id="Bayesian-기반-신뢰구간-추정"><a href="#Bayesian-기반-신뢰구간-추정" class="headerlink" title="Bayesian 기반 신뢰구간 추정"></a>Bayesian 기반 신뢰구간 추정</h3><ul>
 <li>Scipy.stats.bayes_mvs()</li>
 </ul>
-<h3 id="bayesian-optimize">Bayesian Optimize</h3>
-<ul>
-<li>https://github.com/fmfn/BayesianOptimization</li>
+<h3 id="Bayesian-Optimize"><a href="#Bayesian-Optimize" class="headerlink" title="Bayesian Optimize"></a>Bayesian Optimize</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/fmfn/BayesianOptimization">https://github.com/fmfn/BayesianOptimization</a></li>
 </ul>
-<h2 id="naive-bayes">Naive Bayes</h2>
-<ul>
+<h2 id="Naive-Bayes"><a href="#Naive-Bayes" class="headerlink" title="Naive Bayes"></a>Naive Bayes</h2><ul>
 <li>bayes theorem을 사용하되, 고려해야할 특징이 많은경우 보다 단순화해서 판달할수있는 방법</li>
 <li>즉, multi=class 분류에서 쉽고 빠르게 예측가능</li>
-<li>수치형보다는 범주형데이터에 효과적
-<ul>
+<li>수치형보다는 범주형데이터에 효과적<ul>
 <li>특히 실시간 예측이 필요한경우나 질병예측분야에서 효과적</li>
-</ul></li>
-<li>but ! 학습데이터에는 없지만 실제 검사데이터에 있는 범주에서는 확률이 0 이되어(zero frequency) 예측 불가능해짐
-<ul>
-<li>이를 방지하기위해 다른 테크닉이 필요하고, 실제 데이터간의 독립성이 불분명한경우에도 오류가능성있음</li>
-</ul></li>
 </ul>
-<h2 id="mle-와-map">MLE 와 MAP</h2>
-<ul>
-<li>최대우도법(Maximum Likelihood Estimation, 이하 MLE)
-<ul>
+</li>
+<li>but ! 학습데이터에는 없지만 실제 검사데이터에 있는 범주에서는 확률이 0 이되어(zero frequency) 예측 불가능해짐<ul>
+<li>이를 방지하기위해 다른 테크닉이 필요하고, 실제 데이터간의 독립성이 불분명한경우에도 오류가능성있음</li>
+</ul>
+</li>
+</ul>
+<h2 id="MLE-와-MAP"><a href="#MLE-와-MAP" class="headerlink" title="MLE 와 MAP"></a>MLE 와 MAP</h2><ul>
+<li>최대우도법(Maximum Likelihood Estimation, 이하 MLE)<ul>
 <li>likelihood 가 높은것을 선택</li>
 <li>내 주머니에서 돈이 떨어질확률 vs 친구 주머니에서 떨어질확률 -&gt; 높은것을 선택</li>
 <li>바지에 주머니의 갯수가 몇개인지에 상관없이 떨어질확률만 생각(좋지않음)</li>
-</ul></li>
-<li>최대 사후확률법(Maximum A Posteriori, 이하 MAP)
-<ul>
+</ul>
+</li>
+<li>최대 사후확률법(Maximum A Posteriori, 이하 MAP)<ul>
 <li>posterior 가 높은것을 선택</li>
 <li>길에떨어져있는 돈이 내꺼일확률 vs 친구꺼일확률 -&gt; 높은것을 선택</li>
 <li>주머니의 갯수까지 고려</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -498,8 +486,6 @@
 
 
 
-
-  
 
 
 </body>

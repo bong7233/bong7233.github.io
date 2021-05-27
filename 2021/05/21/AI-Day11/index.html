@@ -23,12 +23,12 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"bong7233.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="선형대수학  데이터사이언스와 선형대수의 관계를 알기 백터와 매트릭스에대한 기본계산 익히기 단위행렬(Identity matrix)과 같은 특별한 매트릭스의 의미 이해하고 행렬식(determinant)이나, 역행렬을(inverse)계산 할수 있어야함  Data Structure(데이터를 담는 구조)  1차원 (1D)  list 형태의 data structure">
+<meta name="description" content="선형대수학 데이터사이언스와 선형대수의 관계를 알기 백터와 매트릭스에대한 기본계산 익히기 단위행렬(Identity matrix)과 같은 특별한 매트릭스의 의미 이해하고 행렬식(determinant)이나, 역행렬을(inverse)계산 할수 있어야함  Data Structure(데이터를 담는 구조) 1차원 (1D) list 형태의 data structure">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AI-Day11">
 <meta property="og:url" content="http://bong7233.github.io/2021/05/21/AI-Day11/index.html">
 <meta property="og:site_name" content="Bong&#39;s Blog">
-<meta property="og:description" content="선형대수학  데이터사이언스와 선형대수의 관계를 알기 백터와 매트릭스에대한 기본계산 익히기 단위행렬(Identity matrix)과 같은 특별한 매트릭스의 의미 이해하고 행렬식(determinant)이나, 역행렬을(inverse)계산 할수 있어야함  Data Structure(데이터를 담는 구조)  1차원 (1D)  list 형태의 data structure">
+<meta property="og:description" content="선형대수학 데이터사이언스와 선형대수의 관계를 알기 백터와 매트릭스에대한 기본계산 익히기 단위행렬(Identity matrix)과 같은 특별한 매트릭스의 의미 이해하고 행렬식(determinant)이나, 역행렬을(inverse)계산 할수 있어야함  Data Structure(데이터를 담는 구조) 1차원 (1D) list 형태의 data structure">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-05-21T00:03:14.000Z">
 <meta property="article:modified_time" content="2021-05-21T07:09:06.560Z">
@@ -190,7 +190,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98%ED%95%99"><span class="nav-number">1.</span> <span class="nav-text">선형대수학</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#data-structure%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A5%BC-%EB%8B%B4%EB%8A%94-%EA%B5%AC%EC%A1%B0"><span class="nav-number">1.1.</span> <span class="nav-text">Data Structure(데이터를 담는 구조)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%8A%A4%EC%B9%BC%EB%9D%BC%EB%B2%A1%ED%84%B0"><span class="nav-number">1.2.</span> <span class="nav-text">스칼라,벡터</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4"><span class="nav-number">1.3.</span> <span class="nav-text">매트릭스</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%96%89%EB%A0%AC%EC%8B%9D-determinant"><span class="nav-number">1.4.</span> <span class="nav-text">행렬식 (Determinant)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%97%AD%ED%96%89%EB%A0%AC"><span class="nav-number">1.5.</span> <span class="nav-text">역행렬</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B8-%EB%AA%A8%EB%93%88%EB%B0%8F-%EB%A9%94%EC%84%9C%EB%93%9C"><span class="nav-number">1.5.1.</span> <span class="nav-text">사용해본 모듈및 메서드</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98%ED%95%99"><span class="nav-number">1.</span> <span class="nav-text">선형대수학</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Structure-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A5%BC-%EB%8B%B4%EB%8A%94-%EA%B5%AC%EC%A1%B0"><span class="nav-number">1.1.</span> <span class="nav-text">Data Structure(데이터를 담는 구조)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%8A%A4%EC%B9%BC%EB%9D%BC-%EB%B2%A1%ED%84%B0"><span class="nav-number">1.2.</span> <span class="nav-text">스칼라,벡터</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4"><span class="nav-number">1.3.</span> <span class="nav-text">매트릭스</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%96%89%EB%A0%AC%EC%8B%9D-Determinant"><span class="nav-number">1.4.</span> <span class="nav-text">행렬식 (Determinant)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%97%AD%ED%96%89%EB%A0%AC"><span class="nav-number">1.5.</span> <span class="nav-text">역행렬</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B8-%EB%AA%A8%EB%93%88%EB%B0%8F-%EB%A9%94%EC%84%9C%EB%93%9C"><span class="nav-number">1.5.1.</span> <span class="nav-text">사용해본 모듈및 메서드</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -318,77 +318,70 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="선형대수학">선형대수학</h1>
-<ul>
+        <h1 id="선형대수학"><a href="#선형대수학" class="headerlink" title="선형대수학"></a>선형대수학</h1><ul>
 <li>데이터사이언스와 선형대수의 관계를 알기</li>
 <li>백터와 매트릭스에대한 기본계산 익히기</li>
 <li>단위행렬(Identity matrix)과 같은 특별한 매트릭스의 의미 이해하고 행렬식(determinant)이나, 역행렬을(inverse)계산 할수 있어야함</li>
 </ul>
-<h2 id="data-structure데이터를-담는-구조">Data Structure(데이터를 담는 구조)</h2>
-<ul>
-<li>1차원 (1D)
-<ul>
+<h2 id="Data-Structure-데이터를-담는-구조"><a href="#Data-Structure-데이터를-담는-구조" class="headerlink" title="Data Structure(데이터를 담는 구조)"></a>Data Structure(데이터를 담는 구조)</h2><ul>
+<li>1차원 (1D)<ul>
 <li>list 형태의 data structure</li>
-</ul></li>
-<li>2차원 (2D)
-<ul>
-<li>list 안의 list 형태</li>
-</ul></li>
 </ul>
-<h2 id="스칼라벡터">스칼라,벡터</h2>
-<ul>
+</li>
+<li>2차원 (2D)<ul>
+<li>list 안의 list 형태</li>
+</ul>
+</li>
+</ul>
+<h2 id="스칼라-벡터"><a href="#스칼라-벡터" class="headerlink" title="스칼라,벡터"></a>스칼라,벡터</h2><ul>
 <li>선형 대수를 구성하는 기본 요소</li>
 <li>스칼라 : 단순히 변수로 저장되어 있는 숫자(크기)</li>
-<li>벡터 : 파이썬에서 주로 list로 사용 되며, 데이터셋을 구성하고 있는 데이터프레임의 행/열로써 사용(크기+방향)
-<ul>
+<li>벡터 : 파이썬에서 주로 list로 사용 되며, 데이터셋을 구성하고 있는 데이터프레임의 행/열로써 사용(크기+방향)<ul>
 <li>매트릭스는 벡터의 모음으로 간주 될 수도 있음</li>
 <li>벡터의 연산 공식 암기</li>
-</ul></li>
 </ul>
-<h2 id="매트릭스">매트릭스</h2>
-<ul>
+</li>
+</ul>
+<h2 id="매트릭스"><a href="#매트릭스" class="headerlink" title="매트릭스"></a>매트릭스</h2><ul>
 <li>행과 열을 통해 배치되어있는 숫자</li>
 <li>pandas를 통해 다뤘던 데이터프레임이 매트릭스와 유사한 형태</li>
-<li>Dimensionality
-<ul>
+<li>Dimensionality<ul>
 <li>매트릭스의 행과 열의 숫자를 차원 (dimension, 차원수)이라 표현</li>
 <li>차원을 표기 할때는 행을 먼저, 열을 나중에 표기 (행-열)</li>
-</ul></li>
+</ul>
+</li>
 <li>2개의 매트릭스가 일치하기 위해서는 차원이 같고, 해당하는 구성요소가 동일해야함</li>
-<li>Transpose (B<sup>T</sup> or B')
-<ul>
+<li>Transpose (B<sup>T</sup> or B’)<ul>
 <li>대각선기준 행 열을 뒤집기, 코드로는 df.T 로 간단하게 가능</li>
-</ul></li>
-<li>정사각 행렬(square matrix)
-<ul>
+</ul>
+</li>
+<li>정사각 행렬(square matrix)<ul>
 <li>정방매트릭스 라고불리며, 행과 열의수가 동일한 매트릭스</li>
 <li>Upper Triangular(상삼각): 대각선 위쪽 부분에만 값이 있고, 나머지는 전부 0</li>
 <li>Lower Triangular(하삼각): upper triangular 와 반대</li>
 <li>Symmetric(대칭): 대각선을 기준으로 위 아래의 값이 대칭</li>
-<li>Diagonal(대각): 대각선 부분에만 값이 있고, 나머지는 전부 0
-<ul>
+<li>Diagonal(대각): 대각선 부분에만 값이 있고, 나머지는 전부 0<ul>
 <li>Identity(단위 매트릭스) : 대각중 모든값이 1, 임의의 행렬에 곱했을때 단위행렬이 나오는것 = 역행렬</li>
-</ul></li>
-</ul></li>
 </ul>
-<h2 id="행렬식-determinant">행렬식 (Determinant)</h2>
-<ul>
-<li>2x2 행렬기준 행렬식은 ad-bc
-<ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="행렬식-Determinant"><a href="#행렬식-Determinant" class="headerlink" title="행렬식 (Determinant)"></a>행렬식 (Determinant)</h2><ul>
+<li>2x2 행렬기준 행렬식은 ad-bc<ul>
 <li>그 이상 차원의 행렬은 방법이 다름(재귀적으로 부분나누어서)</li>
-</ul></li>
-<li>행렬식이 0 이라면 역행렬은 존재하지 않음
-<ul>
-<li>이것을 "특이" (singular) 행렬이라 하며, <strong>매트릭스의 행과 열이 의존관계가 있다</strong> 고 표현가능</li>
-</ul></li>
 </ul>
-<h2 id="역행렬">역행렬</h2>
-<ul>
+</li>
+<li>행렬식이 0 이라면 역행렬은 존재하지 않음<ul>
+<li>이것을  “특이” (singular) 행렬이라 하며, <strong>매트릭스의 행과 열이 의존관계가 있다</strong> 고 표현가능</li>
+</ul>
+</li>
+</ul>
+<h2 id="역행렬"><a href="#역행렬" class="headerlink" title="역행렬"></a>역행렬</h2><ul>
 <li>역행렬 계산법은 여러가지이며 행렬의 역수로 표현가능</li>
 <li>행렬에 역행렬을 곱하면 단위행렬</li>
 </ul>
-<h3 id="사용해본-모듈및-메서드">사용해본 모듈및 메서드</h3>
-<ul>
+<h3 id="사용해본-모듈및-메서드"><a href="#사용해본-모듈및-메서드" class="headerlink" title="사용해본 모듈및 메서드"></a>사용해본 모듈및 메서드</h3><ul>
 <li>np.matmul</li>
 <li>np.dot</li>
 <li>linalg.norm(v)</li>
@@ -491,8 +484,6 @@
 
 
 
-
-  
 
 
 </body>
