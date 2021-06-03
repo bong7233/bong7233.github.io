@@ -30,15 +30,15 @@
 <meta property="og:site_name" content="Bong&#39;s Blog">
 <meta property="og:description" content="첫 프로젝트 진행 및 회고 (Project-Review) AI교육 16~20일차 개인프로잭트를 진행하였다 프로잭트의 대략적인 방향과 회고를 적어보았다 이번 포스팅에서는 자세한 분석과정이 아닌, 프로젝트 진행중 고민한 내용과 회고를 작성하였다.   프로젝트 진행 프로젝트의 주제는 게임판매량 데이터를 분석하고, 분석결과를 바탕으로 다음 출시할 게임의 설계방향을">
 <meta property="og:locale">
-<meta property="og:image" content="http://bong7233.github.io/2021/06/03/images/sales.png">
-<meta property="og:image" content="http://bong7233.github.io/2021/06/03/images/total.png">
+<meta property="og:image" content="http://bong7233.github.io/2021/06/03/images/sales.PNG">
+<meta property="og:image" content="http://bong7233.github.io/2021/06/03/images/total.PNG">
 <meta property="article:published_time" content="2021-06-03T04:53:47.000Z">
-<meta property="article:modified_time" content="2021-06-03T09:37:54.345Z">
+<meta property="article:modified_time" content="2021-06-03T10:18:29.975Z">
 <meta property="article:author" content="SangBong Lee">
 <meta property="article:tag" content="Project-Review">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://bong7233.github.io/2021/06/03/images/sales.png">
+<meta name="twitter:image" content="http://bong7233.github.io/2021/06/03/images/sales.PNG">
 
 
 <link rel="canonical" href="http://bong7233.github.io/2021/06/03/AI-day16-20/">
@@ -299,7 +299,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-06-03 13:53:47 / Modified: 18:37:54" itemprop="dateCreated datePublished" datetime="2021-06-03T13:53:47+09:00">2021-06-03</time>
+      <time title="Created: 2021-06-03 13:53:47 / Modified: 19:18:29" itemprop="dateCreated datePublished" datetime="2021-06-03T13:53:47+09:00">2021-06-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -336,7 +336,7 @@
 </ul>
 <p><strong>어떤 장르의 게임을 어떤플랫폼으로 어느지역에 출시할지</strong>  를 결론 내렸다.</p>
 <hr>
-<h2 id="시작부터-난관에-봉착"><a href="#시작부터-난관에-봉착" class="headerlink" title="시작부터 난관에 봉착"></a>시작부터 난관에 봉착</h2><p> 프로잭트는 주말을 포함하여 6일동안 진행하였다. 하지만 개인 프로젝트를 진행하는것이 처음이라 분석방향을 설정하는 단계에서부터 어려움을 겪었다. 실제로 6일 중 3일동안 파이썬 코드는 한줄도 적지못하고 공책에 연필로 분석방향 그리기에 바빴다.<br> 가장 큰 첫번째 고민은 <strong>“어떤 기준을 가지고 분석할까”</strong> 였다.<br> 판매량에 영향을 주는요인은 <strong>장르와 플랫폼</strong> 이 가장 일반적이지만 해당 데이터의 지역별, 연도별 판매량차이와 게임회사 정보도 무시할 수 없었다. 그래서 우선 장르와 플랫폼을 분석하고 그다음 나머지것들을 고려하기로 했다. 대략 이미지로 정리해보았다.<br> <img src="../images/sales.png" width= 450, height=200>  </p>
+<h2 id="시작부터-난관에-봉착"><a href="#시작부터-난관에-봉착" class="headerlink" title="시작부터 난관에 봉착"></a>시작부터 난관에 봉착</h2><p> 프로잭트는 주말을 포함하여 6일동안 진행하였다. 하지만 개인 프로젝트를 진행하는것이 처음이라 분석방향을 설정하는 단계에서부터 어려움을 겪었다. 실제로 6일 중 3일동안 파이썬 코드는 한줄도 적지못하고 공책에 연필로 분석방향 그리기에 바빴다.<br> 가장 큰 첫번째 고민은 <strong>“어떤 기준을 가지고 분석할까”</strong> 였다.<br> 판매량에 영향을 주는요인은 <strong>장르와 플랫폼</strong> 이 가장 일반적이지만 해당 데이터의 지역별, 연도별 판매량차이와 게임회사 정보도 무시할 수 없었다. 그래서 우선 장르와 플랫폼을 분석하고 그다음 나머지것들을 고려하기로 했다. 대략 이미지로 정리해보았다.<br> <img src="../images/sales.PNG" width= 450, height=200>  </p>
 <p> <strong>“플랫폼과 장르가 판매량과 어떤 연관이있는지 , 그리고 각각의 플랫폼&amp;장르는 지역&amp;연도와 어떤 연관이있는지”</strong> 분석향을 정했다.<br> 분석방향을 정했으니 장르부터 분석을 시작했다. 하지만.. 다시 또 문제가 발생했다. 내가 알고싶은것은 장르와 연도&amp;지역의 연관성 이였다.  </p>
 <ul>
 <li>장르들을 각 지역내에서의 비교해 지역내 인기가 많은 장르들을 분석할까?<ul>
@@ -367,7 +367,7 @@
 <h2 id="장르가-끝났다-플랫폼을-분석해보자"><a href="#장르가-끝났다-플랫폼을-분석해보자" class="headerlink" title="장르가 끝났다, 플랫폼을 분석해보자"></a>장르가 끝났다, 플랫폼을 분석해보자</h2><p> 이번에야말로 봍붙의 행복회로가 빛을 내기시작했다. 장르의 분석방법을 플랫폼에 그대로 적용시켰다. 그림으로 보았던 총 4가지의 분석을 마쳤고 분석결과도 도출해냈다. (추가로 같은 장르의 게임의 플랫폼별 판매량도 분석해보았다.)<br> 분석과정은 t-test나 ANOVA를 통해 가설검정 과정만 진행하였다. 분석과정에서 고려할 사항을 최소하 하기 위해서다.  </p>
 <p> 하지만 이것이 실수였다는것을 동기들의 피드백을 듣고 알게 되었다.<br> 비전공자가 <strong>“연관이있다 없다 식의 논리”</strong> 를 이해하기 어렵기때문이다. 각각의 판매량 차이를 그래프로 시각화하는것이 그래프가 많더라도 오히려 한눈에 이해하기는 쉽다는것을 피트백을 듣고 뒤늦게 깨달앗다.</p>
 <hr>
-<h2 id="출고량이-많은게임을-분석한다…-그런데-출고량이-많은-기준은"><a href="#출고량이-많은게임을-분석한다…-그런데-출고량이-많은-기준은" class="headerlink" title="출고량이 많은게임을 분석한다… 그런데 출고량이 많은 기준은?"></a>출고량이 많은게임을 분석한다… 그런데 출고량이 많은 기준은?</h2><p> 그렇다 출고량이 많은게임을 분석해서 기준을 적용하고 장르를 정하고 플랫폼을 정하고.. 흐름은 좋았다. 하지만 어느정도가 되어야 통계학적,객관적으로 <strong>많다</strong> 고 할 수 있을까?<br> 결론부터 말하자면 정확한 방법을 찾진 못했다. 과정에서배운 clustering, PCA,정규화 등의 방법이 있었지만 판매량의 분포가 워낙 일정했기때문에 기준을 정하기 애매했다. 그래서 그래프로 총판매량만 단순하게 시각화하고 그나마 차이가 많이나는 상위 100개의 게임을 선정했다.<br> <img src="../images/total.png" width=300 height=200></p>
+<h2 id="출고량이-많은게임을-분석한다…-그런데-출고량이-많은-기준은"><a href="#출고량이-많은게임을-분석한다…-그런데-출고량이-많은-기준은" class="headerlink" title="출고량이 많은게임을 분석한다… 그런데 출고량이 많은 기준은?"></a>출고량이 많은게임을 분석한다… 그런데 출고량이 많은 기준은?</h2><p> 그렇다 출고량이 많은게임을 분석해서 기준을 적용하고 장르를 정하고 플랫폼을 정하고.. 흐름은 좋았다. 하지만 어느정도가 되어야 통계학적,객관적으로 <strong>많다</strong> 고 할 수 있을까?<br> 결론부터 말하자면 정확한 방법을 찾진 못했다. 과정에서배운 clustering, PCA,정규화 등의 방법이 있었지만 판매량의 분포가 워낙 일정했기때문에 기준을 정하기 애매했다. 그래서 그래프로 총판매량만 단순하게 시각화하고 그나마 차이가 많이나는 상위 100개의 게임을 선정했다.<br> <img src="../images/total.PNG" width=300 height=200></p>
 <p> 하지만 분석하나하나가 회사의 매출을 좌우한다고 생각한다면? 이런 대략이라는 수치는 용납되지 않을것 같았고, 이번주말에 이 기준을 어떻게 설정할지 찾아보기로 했다.</p>
 <hr>
 <h2 id="거의다-온것같은데-마지막-결론도출도-만만치-않다"><a href="#거의다-온것같은데-마지막-결론도출도-만만치-않다" class="headerlink" title="거의다 온것같은데.. 마지막 결론도출도 만만치 않다"></a>거의다 온것같은데.. 마지막 결론도출도 만만치 않다</h2><p> 판매량 상위100개의 게임을 분석했고 가장많은 장르와 플렛폼을 찾아냈다. 그런데 여기서 또다시 딜레마에 빠졌다.<br> 판매량이 많은 장르와 플렛폼은 찾았는데 서로 비슷하지않다. 한마디로 슈팅게임이 가장 많이 팔렸는데, 플랫폼은 Wii가 가장 많다. 마음같아서는 슈팅게임을 Wii플랫폼으로 내면될 것 같다.<br> 그럼 어떤것을 먼저 골라야할까? 장르일까 플랫폼일까?<br> 여기서 이용한것이 <strong>트랜드</strong> 이다.<br> 분석결과 <strong>장르는 연도별 트랜드가 있지만</strong> , <strong>플랫폼은 연도별 트랜드가 없다</strong><br> 한마디로 최근 트랜드인(최근에 판매량이많은) 장르를 고른다면, 판매량이 많은 플랫폼을 고르는것보다는 의미가 있을것이라 판단했다. 이런 논리만으로 장르를 우선시 하는게 완벽한 분석은 아닐 수 있지만, 현재 분석한 데이터에선 가장 최선이라 생각했다. 물론 이부분도 후에 더 정확한 선택방법이 있는지 알아보는것도 개인적 숙제다.</p>

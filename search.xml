@@ -501,7 +501,7 @@
 <h2 id="편미분-Partial-Derivative"><a href="#편미분-Partial-Derivative" class="headerlink" title="편미분 Partial Derivative"></a>편미분 Partial Derivative</h2><ul>
 <li>파라미터가 2개 이상인 Error 함수에서 우선 1개의 파라미터에 대해서만 미분을 하자 라는 목적으로 다른 변수들을 상수 취급 하는 방법  </li>
 </ul>
-<img src="../images/PD.png">
+<img src="../images/PD.PNG">
 
 <h2 id="Chain-Rule"><a href="#Chain-Rule" class="headerlink" title="Chain Rule"></a>Chain Rule</h2><ul>
 <li><strong>합성함수(함수의 함수)</strong> 를 미분하기 위해 사용하는 방식</li>
@@ -641,7 +641,7 @@
 </ul>
 <h2 id="시간복잡도"><a href="#시간복잡도" class="headerlink" title="시간복잡도"></a>시간복잡도</h2><ul>
 <li>clustering 알고리즘은 매우많으며 도메인과 상황에따라 알맞은 것을 사용하는것이 중요</li>
-<li>data가 커질수록 시간복잡도를 무시할 수 없으므로 많이 알수록 도움이된다  <img src="../images/timecomplex.png"></li>
+<li>data가 커질수록 시간복잡도를 무시할 수 없으므로 많이 알수록 도움이된다  <img src="../images/timecomplex.PNG"></li>
 </ul>
 <h3 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h3><ul>
 <li>선형대수학 (MIT, Gulbert Strang)</li>
@@ -811,7 +811,7 @@
 <h2 id="R2-공간에서의-Linear-Projections"><a href="#R2-공간에서의-Linear-Projections" class="headerlink" title="R2 공간에서의 Linear Projections"></a>R<sup>2</sup> 공간에서의 Linear Projections</h2><ul>
 <li>일반적인 사영은 하나의 벡터를 다른벡터에 수직으로내려서 투영시키는것을 뜻한다</li>
 <li>통계에서의 사영은 투영시키는 그 벡터, 즉 두개의 feature중 하나를 다른하나에 투영시킴으로써 차원을 줄이고 그로인해 통계적 분석에 필요한 메모리나 시간 등을 줄이는 방법이다</li>
-<li>벡터 L에대한 벡터W의 projection  <img src="../images/linearprojection.png"></li>
+<li>벡터 L에대한 벡터W의 projection  <img src="../images/linearprojection.PNG"></li>
 </ul>
 ]]></content>
       <categories>
@@ -1061,7 +1061,7 @@
 </ul>
 <p><strong>어떤 장르의 게임을 어떤플랫폼으로 어느지역에 출시할지</strong>  를 결론 내렸다.</p>
 <hr>
-<h2 id="시작부터-난관에-봉착"><a href="#시작부터-난관에-봉착" class="headerlink" title="시작부터 난관에 봉착"></a>시작부터 난관에 봉착</h2><p> 프로잭트는 주말을 포함하여 6일동안 진행하였다. 하지만 개인 프로젝트를 진행하는것이 처음이라 분석방향을 설정하는 단계에서부터 어려움을 겪었다. 실제로 6일 중 3일동안 파이썬 코드는 한줄도 적지못하고 공책에 연필로 분석방향 그리기에 바빴다.<br> 가장 큰 첫번째 고민은 <strong>“어떤 기준을 가지고 분석할까”</strong> 였다.<br> 판매량에 영향을 주는요인은 <strong>장르와 플랫폼</strong> 이 가장 일반적이지만 해당 데이터의 지역별, 연도별 판매량차이와 게임회사 정보도 무시할 수 없었다. 그래서 우선 장르와 플랫폼을 분석하고 그다음 나머지것들을 고려하기로 했다. 대략 이미지로 정리해보았다.<br> <img src="../images/sales.png" width= 450, height=200>  </p>
+<h2 id="시작부터-난관에-봉착"><a href="#시작부터-난관에-봉착" class="headerlink" title="시작부터 난관에 봉착"></a>시작부터 난관에 봉착</h2><p> 프로잭트는 주말을 포함하여 6일동안 진행하였다. 하지만 개인 프로젝트를 진행하는것이 처음이라 분석방향을 설정하는 단계에서부터 어려움을 겪었다. 실제로 6일 중 3일동안 파이썬 코드는 한줄도 적지못하고 공책에 연필로 분석방향 그리기에 바빴다.<br> 가장 큰 첫번째 고민은 <strong>“어떤 기준을 가지고 분석할까”</strong> 였다.<br> 판매량에 영향을 주는요인은 <strong>장르와 플랫폼</strong> 이 가장 일반적이지만 해당 데이터의 지역별, 연도별 판매량차이와 게임회사 정보도 무시할 수 없었다. 그래서 우선 장르와 플랫폼을 분석하고 그다음 나머지것들을 고려하기로 했다. 대략 이미지로 정리해보았다.<br> <img src="../images/sales.PNG" width= 450, height=200>  </p>
 <p> <strong>“플랫폼과 장르가 판매량과 어떤 연관이있는지 , 그리고 각각의 플랫폼&amp;장르는 지역&amp;연도와 어떤 연관이있는지”</strong> 분석향을 정했다.<br> 분석방향을 정했으니 장르부터 분석을 시작했다. 하지만.. 다시 또 문제가 발생했다. 내가 알고싶은것은 장르와 연도&amp;지역의 연관성 이였다.  </p>
 <ul>
 <li>장르들을 각 지역내에서의 비교해 지역내 인기가 많은 장르들을 분석할까?<ul>
@@ -1092,7 +1092,7 @@
 <h2 id="장르가-끝났다-플랫폼을-분석해보자"><a href="#장르가-끝났다-플랫폼을-분석해보자" class="headerlink" title="장르가 끝났다, 플랫폼을 분석해보자"></a>장르가 끝났다, 플랫폼을 분석해보자</h2><p> 이번에야말로 봍붙의 행복회로가 빛을 내기시작했다. 장르의 분석방법을 플랫폼에 그대로 적용시켰다. 그림으로 보았던 총 4가지의 분석을 마쳤고 분석결과도 도출해냈다. (추가로 같은 장르의 게임의 플랫폼별 판매량도 분석해보았다.)<br> 분석과정은 t-test나 ANOVA를 통해 가설검정 과정만 진행하였다. 분석과정에서 고려할 사항을 최소하 하기 위해서다.  </p>
 <p> 하지만 이것이 실수였다는것을 동기들의 피드백을 듣고 알게 되었다.<br> 비전공자가 <strong>“연관이있다 없다 식의 논리”</strong> 를 이해하기 어렵기때문이다. 각각의 판매량 차이를 그래프로 시각화하는것이 그래프가 많더라도 오히려 한눈에 이해하기는 쉽다는것을 피트백을 듣고 뒤늦게 깨달앗다.</p>
 <hr>
-<h2 id="출고량이-많은게임을-분석한다…-그런데-출고량이-많은-기준은"><a href="#출고량이-많은게임을-분석한다…-그런데-출고량이-많은-기준은" class="headerlink" title="출고량이 많은게임을 분석한다… 그런데 출고량이 많은 기준은?"></a>출고량이 많은게임을 분석한다… 그런데 출고량이 많은 기준은?</h2><p> 그렇다 출고량이 많은게임을 분석해서 기준을 적용하고 장르를 정하고 플랫폼을 정하고.. 흐름은 좋았다. 하지만 어느정도가 되어야 통계학적,객관적으로 <strong>많다</strong> 고 할 수 있을까?<br> 결론부터 말하자면 정확한 방법을 찾진 못했다. 과정에서배운 clustering, PCA,정규화 등의 방법이 있었지만 판매량의 분포가 워낙 일정했기때문에 기준을 정하기 애매했다. 그래서 그래프로 총판매량만 단순하게 시각화하고 그나마 차이가 많이나는 상위 100개의 게임을 선정했다.<br> <img src="../images/total.png" width=300 height=200></p>
+<h2 id="출고량이-많은게임을-분석한다…-그런데-출고량이-많은-기준은"><a href="#출고량이-많은게임을-분석한다…-그런데-출고량이-많은-기준은" class="headerlink" title="출고량이 많은게임을 분석한다… 그런데 출고량이 많은 기준은?"></a>출고량이 많은게임을 분석한다… 그런데 출고량이 많은 기준은?</h2><p> 그렇다 출고량이 많은게임을 분석해서 기준을 적용하고 장르를 정하고 플랫폼을 정하고.. 흐름은 좋았다. 하지만 어느정도가 되어야 통계학적,객관적으로 <strong>많다</strong> 고 할 수 있을까?<br> 결론부터 말하자면 정확한 방법을 찾진 못했다. 과정에서배운 clustering, PCA,정규화 등의 방법이 있었지만 판매량의 분포가 워낙 일정했기때문에 기준을 정하기 애매했다. 그래서 그래프로 총판매량만 단순하게 시각화하고 그나마 차이가 많이나는 상위 100개의 게임을 선정했다.<br> <img src="../images/total.PNG" width=300 height=200></p>
 <p> 하지만 분석하나하나가 회사의 매출을 좌우한다고 생각한다면? 이런 대략이라는 수치는 용납되지 않을것 같았고, 이번주말에 이 기준을 어떻게 설정할지 찾아보기로 했다.</p>
 <hr>
 <h2 id="거의다-온것같은데-마지막-결론도출도-만만치-않다"><a href="#거의다-온것같은데-마지막-결론도출도-만만치-않다" class="headerlink" title="거의다 온것같은데.. 마지막 결론도출도 만만치 않다"></a>거의다 온것같은데.. 마지막 결론도출도 만만치 않다</h2><p> 판매량 상위100개의 게임을 분석했고 가장많은 장르와 플렛폼을 찾아냈다. 그런데 여기서 또다시 딜레마에 빠졌다.<br> 판매량이 많은 장르와 플렛폼은 찾았는데 서로 비슷하지않다. 한마디로 슈팅게임이 가장 많이 팔렸는데, 플랫폼은 Wii가 가장 많다. 마음같아서는 슈팅게임을 Wii플랫폼으로 내면될 것 같다.<br> 그럼 어떤것을 먼저 골라야할까? 장르일까 플랫폼일까?<br> 여기서 이용한것이 <strong>트랜드</strong> 이다.<br> 분석결과 <strong>장르는 연도별 트랜드가 있지만</strong> , <strong>플랫폼은 연도별 트랜드가 없다</strong><br> 한마디로 최근 트랜드인(최근에 판매량이많은) 장르를 고른다면, 판매량이 많은 플랫폼을 고르는것보다는 의미가 있을것이라 판단했다. 이런 논리만으로 장르를 우선시 하는게 완벽한 분석은 아닐 수 있지만, 현재 분석한 데이터에선 가장 최선이라 생각했다. 물론 이부분도 후에 더 정확한 선택방법이 있는지 알아보는것도 개인적 숙제다.</p>
@@ -1356,7 +1356,7 @@
 <hr>
 <h2 id="표본평균의-표준오차-Standard-Error-of-the-Sample-Mean"><a href="#표본평균의-표준오차-Standard-Error-of-the-Sample-Mean" class="headerlink" title="표본평균의 표준오차( Standard Error of the Sample Mean )"></a>표본평균의 표준오차( Standard Error of the Sample Mean )</h2><ul>
 <li>StandardError = 표본의 표준편차 s (sample standard deviation) / 표본의 수 n(sample size)</li>
-<li>표본의 수가 더욱 많아질수록, 추측은 더 정확해지고 (평균) 높은 신뢰도를 바탕으로 모집단에 대해 예측 할 수 있도록 함  <img src="../images/se.png"></li>
+<li>표본의 수가 더욱 많아질수록, 추측은 더 정확해지고 (평균) 높은 신뢰도를 바탕으로 모집단에 대해 예측 할 수 있도록 함  <img src="../images/se.PNG"></li>
 </ul>
 <hr>
 <h2 id="Student-T-test"><a href="#Student-T-test" class="headerlink" title="Student T-test"></a>Student T-test</h2><h3 id="One-Sample-t-test"><a href="#One-Sample-t-test" class="headerlink" title="One Sample t-test"></a>One Sample t-test</h3><ul>
@@ -1366,15 +1366,15 @@
 </ul>
 </li>
 <li><p>모집단에 대한 정보와 표본의 데이터를 비교  </p>
-<img src="../images/ttest.png"></li>
+<img src="../images/ttest.PNG"></li>
 <li><p>위 통계치는 평균을 빼고 표준편차로 나눠줬는데 이러한 과정을 <strong>“정규화”</strong> 라고 하며, 이 과정을 하게 되면 주어진 데이터가 평균은 0, 표준편차가 1인 데이터로 scaling 됨  </p>
 </li>
 <li><p>T-test Process</p>
 <ol>
 <li><p>귀무 가설 (Null Hypothesis) 설정  </p>
-<img src="../images/ttestpro1.png"></li>
+<img src="../images/ttestpro1.PNG"></li>
 <li><p>대안 가설 (Alternative Hypothesis) 설정 (귀무가설과 반대)  </p>
-<img src="../images/ttestpro2.png"></li>
+<img src="../images/ttestpro2.PNG"></li>
 <li><p>신뢰도 설정 (Confidence Level) : 모수가 신뢰구간 안에 포함될 확률 (보통 95, 99% 등을 사용)</p>
 <ul>
 <li>신뢰도 95%의 의미 = 모수가 신뢰 구간 안에 포함될 확률이 95% = 귀무가설이 틀렸지만 우연히 성립할 확률이 5%</li>
@@ -1431,9 +1431,9 @@
 </ul>
 <ol>
 <li><p>귀무가설 : 두 확률은 같다 (차이가 없다)  </p>
-<img src="../images/ttestpro3.png"></li>
+<img src="../images/ttestpro3.PNG"></li>
 <li><p>대안가설 : 같지 않다  </p>
-<img src="../images/ttestpro4.png"></li>
+<img src="../images/ttestpro4.PNG"></li>
 <li><p>신뢰도 : 95%</p>
 </li>
 </ol>
@@ -1478,10 +1478,10 @@
 </ul>
 <h2 id="총-확률의-법칙-The-Law-of-Total-Probability"><a href="#총-확률의-법칙-The-Law-of-Total-Probability" class="headerlink" title="총 확률의 법칙 (The Law of Total Probability)"></a>총 확률의 법칙 (The Law of Total Probability)</h2><ul>
 <li>특정 확률 변수에 대해, 모든 가능한 이벤트의 총 확률 = 1</li>
-<li>2개의 변수를 고려 한다면 두 변수가 연관이 있는 경우, B가 일어난 상황에서 A에 대한 확률 P(A)는, P(A|B) 의 형태로 표현  <img src="../images/ltp.png"></li>
+<li>2개의 변수를 고려 한다면 두 변수가 연관이 있는 경우, B가 일어난 상황에서 A에 대한 확률 P(A)는, P(A|B) 의 형태로 표현  <img src="../images/ltp.PNG"></li>
 </ul>
 <h2 id="조건부-확률-The-Law-of-Conditional-Probability"><a href="#조건부-확률-The-Law-of-Conditional-Probability" class="headerlink" title="조건부 확률 (The Law of Conditional Probability)"></a>조건부 확률 (The Law of Conditional Probability)</h2><ul>
-<li>전체사각형이 모든 확률공간(1) 일때 각각 B의 조건에서 A가 일어날 확률을 교집합으로 표현가능  <img src="../images/conditional.png" width="300"></li>
+<li>전체사각형이 모든 확률공간(1) 일때 각각 B의 조건에서 A가 일어날 확률을 교집합으로 표현가능  <img src="../images/conditional.PNG" width="300"></li>
 </ul>
 <h2 id="베이지안-이론-Bayes-Theorem"><a href="#베이지안-이론-Bayes-Theorem" class="headerlink" title="베이지안 이론 (Bayes Theorem)"></a>베이지안 이론 (Bayes Theorem)</h2><ul>
 <li>사후확률(posterior probability)을 사전확률(prior probability)과 likelihood를 이용해서 계산할 수 있도록 해 주는 확률 변환식<ul>
@@ -1492,7 +1492,7 @@
 </ul>
 </li>
 <li>사전확률(“Prior”)은 사후확률(“Updated”)로 다시 표현 할 수 있음이 중요<ul>
-<li>쉽게말해 사후확률의 추가(샘플의 추가)로 불규칙한 확률을 정규분포와 비슷하게 업데이트 할수 있다 -&gt; 베이지안이론이 많이 쓰이는 이유  <img src="../images/bayes.png"></li>
+<li>쉽게말해 사후확률의 추가(샘플의 추가)로 불규칙한 확률을 정규분포와 비슷하게 업데이트 할수 있다 -&gt; 베이지안이론이 많이 쓰이는 이유  <img src="../images/bayes.PNG"></li>
 </ul>
 </li>
 </ul>
@@ -1932,11 +1932,12 @@
 <li>내부 파라미터에따른 선형변환을 수행</li>
 <li>각 입력노드에 weight(가중치)를 곱하고 합친후, bias(편향) 더함  </li>
 </ul>
-<p><img src="/../images/linear.PNG" alt="li"></p>
+<img src="../images/linear.PNG">
+
 <ul>
 <li>이때 행렬의 곱으로 표현가능  </li>
 </ul>
-<p><img src="/../images/linearmulti.PNG" alt="li"></p>
+<img src="../images/linearmulit.PNG">
 ]]></content>
       <categories>
         <category>Deep-Learning</category>
