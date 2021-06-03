@@ -197,20 +197,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -254,6 +254,243 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://bong7233.github.io/2021/05/13/AI-day6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="SangBong Lee">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bong's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/05/13/AI-day6/" class="post-title-link" itemprop="url">AI-day6</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-05-13 09:36:33" itemprop="dateCreated datePublished" datetime="2021-05-13T09:36:33+09:00">2021-05-13</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-05-26 10:15:10" itemprop="dateModified" datetime="2021-05-26T10:15:10+09:00">2021-05-26</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="통계학"><a href="#통계학" class="headerlink" title="통계학"></a>통계학</h1><ul>
+<li>Estimation / Sampling의 목적과 방법</li>
+<li>가설검정 이해</li>
+<li>T-test의 목적과 사용예시 숙지  </li>
+</ul>
+<hr>
+<h2 id="기술-통계치-Descriptive-Statistics-란"><a href="#기술-통계치-Descriptive-Statistics-란" class="headerlink" title="기술 통계치(Descriptive Statistics)란?"></a>기술 통계치(Descriptive Statistics)란?</h2><ul>
+<li>count, mean, standard dev, min, 1Q, median, 3Q, max 등의 데이터를 설명 하는 값(혹은 통계치)</li>
+<li><a target="_blank" rel="noopener" href="https://drhongdatanote.tistory.com/25">https://drhongdatanote.tistory.com/25</a></li>
+<li>기술통계치의 시각화<ul>
+<li>df.describe()</li>
+<li>Mean / Median / Mode</li>
+<li>Range</li>
+<li>Var / SD</li>
+<li>Kurtosis</li>
+<li>Skewness  </li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="추리통계치-Inferetial-Statistics"><a href="#추리통계치-Inferetial-Statistics" class="headerlink" title="추리통계치(Inferetial Statistics)"></a>추리통계치(Inferetial Statistics)</h2><ul>
+<li>어떤 큰 집단에서 통계를할때 큰집단 내부의 작은 샘플그룹을 선정한후 분석,추론하는것</li>
+<li>키워드들을 알아두자<ul>
+<li>Population, Parameter, Statistic, Estimator, Standard Deviation, Standard Error  </li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="Effective-Sampling"><a href="#Effective-Sampling" class="headerlink" title="Effective Sampling"></a>Effective Sampling</h2><ul>
+<li>Simple random sampling<ul>
+<li>모집단에서 무작위로 sampling</li>
+</ul>
+</li>
+<li>Systematic sampling<ul>
+<li>모집단에서 규칙을 가지고 sample 추출<br>ex) 1, 6, 11, 16, … 번째의 데이터</li>
+</ul>
+</li>
+<li>Stratified random sampling<ul>
+<li>모집단을 미리 여러 그룹으로 나누고, 그 그룹별로 무작위 추출<br>ex) 여론 조사를 위해 사람을 나이대 별로 나누고, 해당 그룹안에서 무작위 추출</li>
+</ul>
+</li>
+<li>Cluster sampling<ul>
+<li>모집단을 미리 여러 그룹으로 나누고, 이후 특정 그룹을 무작위로 선택  </li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="가설검정"><a href="#가설검정" class="headerlink" title="가설검정"></a>가설검정</h2><ul>
+<li>주어진 상황에 대해서, 하고자 하는 주장이 맞는지 아닌지를 판정하는 과정</li>
+<li>모집단의 실제 값에 대한 sample의 통계치를 사용해 통계적으로 유의한지 아닌지 여부를 판정</li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Statistical_hypothesis_testing">https://en.wikipedia.org/wiki/Statistical_hypothesis_testing</a></li>
+<li>예시에 사용해본 메서드들<ul>
+<li>np.random.seed()</li>
+<li>np.random.binomial() / 베르누이 분포</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="표본평균의-표준오차-Standard-Error-of-the-Sample-Mean"><a href="#표본평균의-표준오차-Standard-Error-of-the-Sample-Mean" class="headerlink" title="표본평균의 표준오차( Standard Error of the Sample Mean )"></a>표본평균의 표준오차( Standard Error of the Sample Mean )</h2><ul>
+<li>StandardError = 표본의 표준편차 s (sample standard deviation) / 표본의 수 n(sample size)</li>
+<li>표본의 수가 더욱 많아질수록, 추측은 더 정확해지고 (평균) 높은 신뢰도를 바탕으로 모집단에 대해 예측 할 수 있도록 함  <img src="../images/se.PNG"></li>
+</ul>
+<hr>
+<h2 id="Student-T-test"><a href="#Student-T-test" class="headerlink" title="Student T-test"></a>Student T-test</h2><h3 id="One-Sample-t-test"><a href="#One-Sample-t-test" class="headerlink" title="One Sample t-test"></a>One Sample t-test</h3><ul>
+<li><p>1개의 sample 값들의 평균이 특정값과 동일한지 비교</p>
+<ul>
+<li>예) 동전이 공정한지 확인하려고 할때 : p(x = H) = 0.5</li>
+</ul>
+</li>
+<li><p>모집단에 대한 정보와 표본의 데이터를 비교  </p>
+<img src="../images/ttest.PNG"></li>
+<li><p>위 통계치는 평균을 빼고 표준편차로 나눠줬는데 이러한 과정을 <strong>“정규화”</strong> 라고 하며, 이 과정을 하게 되면 주어진 데이터가 평균은 0, 표준편차가 1인 데이터로 scaling 됨  </p>
+</li>
+<li><p>T-test Process</p>
+<ol>
+<li><p>귀무 가설 (Null Hypothesis) 설정  </p>
+<img src="../images/ttestpro1.PNG"></li>
+<li><p>대안 가설 (Alternative Hypothesis) 설정 (귀무가설과 반대)  </p>
+<img src="../images/ttestpro1.PNG"></li>
+<li><p>신뢰도 설정 (Confidence Level) : 모수가 신뢰구간 안에 포함될 확률 (보통 95, 99% 등을 사용)</p>
+<ul>
+<li>신뢰도 95%의 의미 = 모수가 신뢰 구간 안에 포함될 확률이 95% = 귀무가설이 틀렸지만 우연히 성립할 확률이 5%</li>
+</ul>
+</li>
+<li><p>P-value 확인(규모가 너무클때 t를 P-value로 바꿔준다)</p>
+<ul>
+<li>P-value : 주어진 가설에 대해 “얼마나 근거가 있는지”에 대한 값을 0과 1사이의 값으로 scale한 지표</li>
+<li>p-value가 낮다 -&gt; 귀무가설이 틀렸을 확률이 높다</li>
+</ul>
+</li>
+<li><p> p-value를 바탕으로 가설에 대해 결론  </p>
+</li>
+</ol>
+</li>
+<li><p>T-test with Scipy</p>
+<ul>
+<li>scipy에 수치만 입력하면 t=test를 실행해주는 다양한방법이 있음</li>
+<li><a target="_blank" rel="noopener" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_1samp.html">https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_1samp.html</a>  </li>
+</ul>
+</li>
+<li><p>P-value의 기준</p>
+<ol>
+<li>pvalue &lt; 0.01 : 귀무가설이 옳을 확률이 1%이하 -&gt; 틀렸다 (깐깐한 기준)</li>
+<li>pvalue &lt; 0.05 (5%) : 귀무가설이 옳을 확률이 5%이하 -&gt; 틀렸다 (일반적인 기준)</li>
+<li>0.05 ~ pvalue ~ 0.1 사이인 경우: (애매함)<ul>
+<li>실험을 다시한다</li>
+<li>데이터를 다시 뽑는다</li>
+<li>샘플링을 다시한다</li>
+<li>기존의 경험 / 인사이트를 바탕으로 가설에 대한 결론을 내린다.</li>
+</ul>
+</li>
+<li>pvalue &gt; 0.1 (10%) : 귀무가설이 옳을 확률이 10%이상인데 -&gt; 귀무가설이 맞다 ~ 틀리지 않았을것이다<ul>
+<li>ex) p-value : 0.85 –&gt; 귀무가설은 틀리지 않았다. (‘귀무가설이 옳다’와는 톤이 약간 다름)</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>p-value가 (1-Confidence)보다 낮은 경우, 귀무가설을 기각하고 대안 가설을 채택</li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/P-value">https://en.wikipedia.org/wiki/P-value</a>  </li>
+</ul>
+</li>
+<li><p>One-side test vs Two-side test</p>
+<ul>
+<li>One side test : 샘플 데이터의 평균이 “X”보다 크다 혹은 작다 / 크지 않다 작지 않다. 를 검정하는 내용</li>
+<li>Two side (tail / direction) test : 샘플 데이터의 평균이 “X”와 같다 / 같지 않다. 를 검정하는 내용</li>
+</ul>
+</li>
+</ul>
+<h3 id="Two-Sample-T-test"><a href="#Two-Sample-T-test" class="headerlink" title="Two Sample T-test"></a>Two Sample T-test</h3><ul>
+<li><p>2개의 sample 값들의 평균이 서로 동일한지 비교</p>
+<ul>
+<li>2개의 동전 (500원짜리 vs 100원짜리)을 여러번 던져서 p(H)의 평균이 유사한 지 확인</li>
+</ul>
+<ol>
+<li><p>귀무가설 : 두 확률은 같다 (차이가 없다)  </p>
+<img src="../images/ttestpro3.PNG"></li>
+<li><p>대안가설 : 같지 않다  </p>
+<img src="../images/ttestpro4.PNG"></li>
+<li><p>신뢰도 : 95%</p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="Quest"><a href="#Quest" class="headerlink" title="Quest"></a>Quest</h3><ul>
+<li>정규분포한? t분포란? 두분포의 차이는뭐고 어떨때 무엇을쓰는가?<ul>
+<li>이것을 정확히 파악해야 t=test, P-value를 재대로 이해할수있다</li>
+</ul>
+</li>
+<li>FDR (false discovery rate)</li>
+<li>P-value Q-value<ul>
+<li><a target="_blank" rel="noopener" href="https://doooob.tistory.com/101">https://doooob.tistory.com/101</a></li>
+</ul>
+</li>
+<li>t-test<ul>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=mEWQ_vl3IPw&amp;list=PLalb9l0_6WArHh18Plrn8uIGBUKalqsf-&amp;index=1">https://www.youtube.com/watch?v=mEWQ_vl3IPw&amp;list=PLalb9l0_6WArHh18Plrn8uIGBUKalqsf-&amp;index=1</a></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1090,7 +1327,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-26 19:54:52" itemprop="dateModified" datetime="2021-05-26T19:54:52+09:00">2021-05-26</time>
+        <time title="Modified: 2021-05-27 17:04:27" itemprop="dateModified" datetime="2021-05-27T17:04:27+09:00">2021-05-27</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1123,7 +1360,7 @@
 <li>이때 행렬의 곱으로 표현가능  </li>
 </ul>
 <p><img src="/../images/linearmulti.PNG" alt="li"></p>
-<img src="../images/linearmulti.PNG" height=250px width=500px>
+
       
     </div>
 

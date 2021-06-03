@@ -23,16 +23,24 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"bong7233.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta property="og:type" content="website">
-<meta property="og:title" content="Bong&#39;s Blog">
-<meta property="og:url" content="http://bong7233.github.io/tags/datascience/index.html">
+<meta name="description" content="첫 프로젝트 진행 및 회고 (Project&#x3D;review) AI교육 16~20일차 개인프로잭트를 진행하였다 프로잭트의 대략적인 방향과 회고를 적어보았다  프로젝트 진행 프로젝트의 주제는 게임판매량 데이터를 분석하고, 분석결과를 바탕으로 다음 출시할 게임의 설계방향을 정하는것이다. 비전공자를 대상으로 한다는 가정하에 발표시간은 5분제한이 있다.  데이터는 게임">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI-day16~20">
+<meta property="og:url" content="http://bong7233.github.io/2021/06/03/AI-day16-20/index.html">
 <meta property="og:site_name" content="Bong&#39;s Blog">
+<meta property="og:description" content="첫 프로젝트 진행 및 회고 (Project&#x3D;review) AI교육 16~20일차 개인프로잭트를 진행하였다 프로잭트의 대략적인 방향과 회고를 적어보았다  프로젝트 진행 프로젝트의 주제는 게임판매량 데이터를 분석하고, 분석결과를 바탕으로 다음 출시할 게임의 설계방향을 정하는것이다. 비전공자를 대상으로 한다는 가정하에 발표시간은 5분제한이 있다.  데이터는 게임">
 <meta property="og:locale">
+<meta property="og:image" content="http://bong7233.github.io/2021/06/03/images/sales.png">
+<meta property="article:published_time" content="2021-06-03T04:53:47.000Z">
+<meta property="article:modified_time" content="2021-06-03T05:53:22.987Z">
 <meta property="article:author" content="SangBong Lee">
+<meta property="article:tag" content="Project-Review">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://bong7233.github.io/2021/06/03/images/sales.png">
 
 
-<link rel="canonical" href="http://bong7233.github.io/tags/datascience/">
+<link rel="canonical" href="http://bong7233.github.io/2021/06/03/AI-day16-20/">
 
 
 <script class="page-configurations">
@@ -40,11 +48,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'kor'
   };
 </script>
-<title>Tag: datascience | Bong's Blog</title>
+<title>AI-day16~20 | Bong's Blog</title>
   
 
 
@@ -171,7 +179,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -184,6 +192,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EC%B2%AB-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%A7%84%ED%96%89-%EB%B0%8F-%ED%9A%8C%EA%B3%A0-Project-review"><span class="nav-number">1.</span> <span class="nav-text">첫 프로젝트 진행 및 회고 (Project&#x3D;review)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%A7%84%ED%96%89"><span class="nav-number">1.1.</span> <span class="nav-text">프로젝트 진행</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%9A%8C%EA%B3%A0"><span class="nav-number">1.1.1.</span> <span class="nav-text">프로젝트 회고</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%8B%9C%EC%9E%91%EB%B6%80%ED%84%B0-%EB%82%9C%EA%B4%80%EC%97%90-%EB%B4%89%EC%B0%A9"><span class="nav-number">1.2.</span> <span class="nav-text">시작부터 난관에 봉착</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -253,50 +262,113 @@
 </noscript>
 
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h2 class="collection-header">datascience
-          <small>Tag</small>
-        </h2>
-      </div>
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="kor">
+    <link itemprop="mainEntityOfPage" href="http://bong7233.github.io/2021/06/03/AI-day16-20/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="SangBong Lee">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bong's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AI-day16~20
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+
+      <time title="Created: 2021-06-03 13:53:47 / Modified: 14:53:22" itemprop="dateCreated datePublished" datetime="2021-06-03T13:53:47+09:00">2021-06-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Project/" itemprop="url" rel="index"><span itemprop="name">Project</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="첫-프로젝트-진행-및-회고-Project-review"><a href="#첫-프로젝트-진행-및-회고-Project-review" class="headerlink" title="첫 프로젝트 진행 및 회고 (Project=review)"></a>첫 프로젝트 진행 및 회고 (Project=review)</h1><ul>
+<li>AI교육 16~20일차 개인프로잭트를 진행하였다</li>
+<li>프로잭트의 대략적인 방향과 회고를 적어보았다</li>
+</ul>
+<h2 id="프로젝트-진행"><a href="#프로젝트-진행" class="headerlink" title="프로젝트 진행"></a>프로젝트 진행</h2><ul>
+<li>프로젝트의 주제는 게임판매량 데이터를 분석하고, 분석결과를 바탕으로 다음 출시할 게임의 설계방향을 정하는것이다.</li>
+<li>비전공자를 대상으로 한다는 가정하에 발표시간은 5분제한이 있다. </li>
+<li>데이터는 게임이름,장르,출시년도,게임회사,플랫폼, 지역별(북미,유럽,일본,그외) 판매량이 있었다.</li>
+<li>간단하게 요약하자면 <strong>판매량과 장르</strong> , <strong>판매량과 지역</strong>, <strong>판매량과 플랫폼</strong> 을 분석하고<br>각각의 연관성을 먼저 정리하였다.</li>
+<li>그 후 판매량이 많은 게임들의 장르,플랫폼,지역을 정리 후 위에서 분석한 연관성들을 적용시켜  </li>
+</ul>
+<p><strong>어떤 장르의 게임을 어떤플랫폼으로 어느지역에 출시할지</strong>  를 결론 내렸다.</p>
+<h3 id="프로젝트-회고"><a href="#프로젝트-회고" class="headerlink" title="프로젝트 회고"></a>프로젝트 회고</h3><ul>
+<li>이번 포스팅에서는 프로잭트의 자세한 내용보다는 프로젝트 진행 후 회고를 작성하였다.</li>
+</ul>
+<h2 id="시작부터-난관에-봉착"><a href="#시작부터-난관에-봉착" class="headerlink" title="시작부터 난관에 봉착"></a>시작부터 난관에 봉착</h2><p> 프로잭트는 주말을 포함하여 6일동안 진행하였다. 하지만 개인 프로젝트를 진행하는것이 처음이라 분석방향을 설정하는 단계에서부터 어려움을 겪었다. 실제로 6일 중 3일동안 파이썬 코드는 한줄도 적지못하고 공책에 연필로 분석방향 그리기에 바빴다.<br> 가장 큰 첫번째 고민은 <strong>“어떤 기준을 가지고 분석할까”</strong> 였다.<br> 판매량에 영향을 주는요인은 <strong>장르와 플랫폼</strong> 이 가장 일반적이지만 해당 데이터의 지역별, 연도별 판매량차이와 게임회사 정보도 무시할 수 없었다. 그래서 우선 장르와 플랫폼을 분석하고 그다음 나머지것들을 고려하기로 했다. 대략 이미지로 정리해보았다.<br> <img src="../images/sales.png" width= 500, height=250>  </p>
+<p> <strong>“플랫폼과 장르가 판매량과 어떤 연관이있는지 , 그리고 각각의 플랫폼&amp;장르는 지역&amp;연도와 어떤 연관이있는지”</strong> 분석향을 정했다.  </p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-04-06T19:41:36+09:00"
-              content="2021-04-06">
-          04-06
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/04/06/DataScience/" itemprop="url">
-            <span itemprop="name">DataScience</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Project-Review/" rel="tag"># Project-Review</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/05/27/AI-day15/" rel="prev" title="AI-day15">
+                  <i class="fa fa-chevron-left"></i> AI-day15
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-    </div>
-  </div>
-  
-  
-  
+
+
+
+
 
 
 <script>
