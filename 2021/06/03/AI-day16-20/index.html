@@ -23,16 +23,16 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"bong7233.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="첫 프로젝트 진행 및 회고 (Project&#x3D;review) AI교육 16~20일차 개인프로잭트를 진행하였다 프로잭트의 대략적인 방향과 회고를 적어보았다  프로젝트 진행 프로젝트의 주제는 게임판매량 데이터를 분석하고, 분석결과를 바탕으로 다음 출시할 게임의 설계방향을 정하는것이다. 비전공자를 대상으로 한다는 가정하에 발표시간은 5분제한이 있다.  데이터는 게임">
+<meta name="description" content="첫 프로젝트 진행 및 회고 (Project-Review) AI교육 16~20일차 개인프로잭트를 진행하였다 프로잭트의 대략적인 방향과 회고를 적어보았다 이번 포스팅에서는 프로잭트의 자세한 내용보다는 프로젝트 진행 후 회고를 작성하였다.  프로젝트 진행 프로젝트의 주제는 게임판매량 데이터를 분석하고, 분석결과를 바탕으로 다음 출시할 게임의 설계방향을 정하는것이">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AI-day16~20">
 <meta property="og:url" content="http://bong7233.github.io/2021/06/03/AI-day16-20/index.html">
 <meta property="og:site_name" content="Bong&#39;s Blog">
-<meta property="og:description" content="첫 프로젝트 진행 및 회고 (Project&#x3D;review) AI교육 16~20일차 개인프로잭트를 진행하였다 프로잭트의 대략적인 방향과 회고를 적어보았다  프로젝트 진행 프로젝트의 주제는 게임판매량 데이터를 분석하고, 분석결과를 바탕으로 다음 출시할 게임의 설계방향을 정하는것이다. 비전공자를 대상으로 한다는 가정하에 발표시간은 5분제한이 있다.  데이터는 게임">
+<meta property="og:description" content="첫 프로젝트 진행 및 회고 (Project-Review) AI교육 16~20일차 개인프로잭트를 진행하였다 프로잭트의 대략적인 방향과 회고를 적어보았다 이번 포스팅에서는 프로잭트의 자세한 내용보다는 프로젝트 진행 후 회고를 작성하였다.  프로젝트 진행 프로젝트의 주제는 게임판매량 데이터를 분석하고, 분석결과를 바탕으로 다음 출시할 게임의 설계방향을 정하는것이">
 <meta property="og:locale">
 <meta property="og:image" content="http://bong7233.github.io/2021/06/03/images/sales.png">
 <meta property="article:published_time" content="2021-06-03T04:53:47.000Z">
-<meta property="article:modified_time" content="2021-06-03T05:53:22.987Z">
+<meta property="article:modified_time" content="2021-06-03T06:55:18.620Z">
 <meta property="article:author" content="SangBong Lee">
 <meta property="article:tag" content="Project-Review">
 <meta property="article:tag" content="Python">
@@ -192,7 +192,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EC%B2%AB-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%A7%84%ED%96%89-%EB%B0%8F-%ED%9A%8C%EA%B3%A0-Project-review"><span class="nav-number">1.</span> <span class="nav-text">첫 프로젝트 진행 및 회고 (Project&#x3D;review)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%A7%84%ED%96%89"><span class="nav-number">1.1.</span> <span class="nav-text">프로젝트 진행</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%9A%8C%EA%B3%A0"><span class="nav-number">1.1.1.</span> <span class="nav-text">프로젝트 회고</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%8B%9C%EC%9E%91%EB%B6%80%ED%84%B0-%EB%82%9C%EA%B4%80%EC%97%90-%EB%B4%89%EC%B0%A9"><span class="nav-number">1.2.</span> <span class="nav-text">시작부터 난관에 봉착</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EC%B2%AB-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%A7%84%ED%96%89-%EB%B0%8F-%ED%9A%8C%EA%B3%A0-Project-Review"><span class="nav-number">1.</span> <span class="nav-text">첫 프로젝트 진행 및 회고 (Project-Review)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%A7%84%ED%96%89"><span class="nav-number">1.1.</span> <span class="nav-text">프로젝트 진행</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%8B%9C%EC%9E%91%EB%B6%80%ED%84%B0-%EB%82%9C%EA%B4%80%EC%97%90-%EB%B4%89%EC%B0%A9"><span class="nav-number">1.2.</span> <span class="nav-text">시작부터 난관에 봉착</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%9E%A5%EB%A5%B4%EC%99%80-%EC%A7%80%EC%97%AD%EC%9D%98-%EB%B6%84%EC%84%9D%EB%B0%A9%EB%B2%95%EC%9D%84-%EB%8B%A4%EB%A5%B8%EA%B8%B0%EC%A4%80%EC%97%90%EB%8F%84-%EB%98%91%EA%B0%99%EC%9D%B4-%EC%A0%81%EC%9A%A9%ED%95%A0%EC%88%98-%EC%9E%88%EC%9D%84%EA%B9%8C"><span class="nav-number">1.3.</span> <span class="nav-text">장르와 지역의 분석방법을 다른기준에도 똑같이 적용할수 있을까?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%9E%A5%EB%A5%B4%EA%B0%80-%EB%81%9D%EB%82%AC%EB%8B%A4-%ED%94%8C%EB%9E%AB%ED%8F%BC%EC%9D%84-%EB%B6%84%EC%84%9D%ED%95%B4%EB%B3%B4%EC%9E%90"><span class="nav-number">1.4.</span> <span class="nav-text">장르가 끝났다, 플랫폼을 분석해보자</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -298,7 +298,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-06-03 13:53:47 / Modified: 14:53:22" itemprop="dateCreated datePublished" datetime="2021-06-03T13:53:47+09:00">2021-06-03</time>
+      <time title="Created: 2021-06-03 13:53:47 / Modified: 15:55:18" itemprop="dateCreated datePublished" datetime="2021-06-03T13:53:47+09:00">2021-06-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -320,9 +320,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="첫-프로젝트-진행-및-회고-Project-review"><a href="#첫-프로젝트-진행-및-회고-Project-review" class="headerlink" title="첫 프로젝트 진행 및 회고 (Project=review)"></a>첫 프로젝트 진행 및 회고 (Project=review)</h1><ul>
+        <h1 id="첫-프로젝트-진행-및-회고-Project-Review"><a href="#첫-프로젝트-진행-및-회고-Project-Review" class="headerlink" title="첫 프로젝트 진행 및 회고 (Project-Review)"></a>첫 프로젝트 진행 및 회고 (Project-Review)</h1><ul>
 <li>AI교육 16~20일차 개인프로잭트를 진행하였다</li>
 <li>프로잭트의 대략적인 방향과 회고를 적어보았다</li>
+<li>이번 포스팅에서는 프로잭트의 자세한 내용보다는 프로젝트 진행 후 회고를 작성하였다.</li>
 </ul>
 <h2 id="프로젝트-진행"><a href="#프로젝트-진행" class="headerlink" title="프로젝트 진행"></a>프로젝트 진행</h2><ul>
 <li>프로젝트의 주제는 게임판매량 데이터를 분석하고, 분석결과를 바탕으로 다음 출시할 게임의 설계방향을 정하는것이다.</li>
@@ -332,11 +333,31 @@
 <li>그 후 판매량이 많은 게임들의 장르,플랫폼,지역을 정리 후 위에서 분석한 연관성들을 적용시켜  </li>
 </ul>
 <p><strong>어떤 장르의 게임을 어떤플랫폼으로 어느지역에 출시할지</strong>  를 결론 내렸다.</p>
-<h3 id="프로젝트-회고"><a href="#프로젝트-회고" class="headerlink" title="프로젝트 회고"></a>프로젝트 회고</h3><ul>
-<li>이번 포스팅에서는 프로잭트의 자세한 내용보다는 프로젝트 진행 후 회고를 작성하였다.</li>
-</ul>
 <h2 id="시작부터-난관에-봉착"><a href="#시작부터-난관에-봉착" class="headerlink" title="시작부터 난관에 봉착"></a>시작부터 난관에 봉착</h2><p> 프로잭트는 주말을 포함하여 6일동안 진행하였다. 하지만 개인 프로젝트를 진행하는것이 처음이라 분석방향을 설정하는 단계에서부터 어려움을 겪었다. 실제로 6일 중 3일동안 파이썬 코드는 한줄도 적지못하고 공책에 연필로 분석방향 그리기에 바빴다.<br> 가장 큰 첫번째 고민은 <strong>“어떤 기준을 가지고 분석할까”</strong> 였다.<br> 판매량에 영향을 주는요인은 <strong>장르와 플랫폼</strong> 이 가장 일반적이지만 해당 데이터의 지역별, 연도별 판매량차이와 게임회사 정보도 무시할 수 없었다. 그래서 우선 장르와 플랫폼을 분석하고 그다음 나머지것들을 고려하기로 했다. 대략 이미지로 정리해보았다.<br> <img src="../images/sales.png" width= 500, height=250>  </p>
-<p> <strong>“플랫폼과 장르가 판매량과 어떤 연관이있는지 , 그리고 각각의 플랫폼&amp;장르는 지역&amp;연도와 어떤 연관이있는지”</strong> 분석향을 정했다.  </p>
+<p> <strong>“플랫폼과 장르가 판매량과 어떤 연관이있는지 , 그리고 각각의 플랫폼&amp;장르는 지역&amp;연도와 어떤 연관이있는지”</strong> 분석향을 정했다.<br> 분석방향을 정했으니 장르부터 분석을 시작했다. 하지만.. 다시 또 문제가 발생했다. 내가 알고싶은것은 장르와 연도&amp;지역의 연관성 이였다.  </p>
+<ul>
+<li>장르들을 각 지역내에서의 비교해 지역내 인기가 많은 장르들을 분석할까?<ul>
+<li>그럼 각 지역별 인기있는 장르를 찾아낼 수 있을것이다. ex) 미국에선 레이싱, 유럽에선 RPG가 잘팔린다</li>
+<li>여러 장르의 게임을 출시할때, 지역별로 다른장르를 선택해 출시할 수 있다</li>
+</ul>
+</li>
+<li>한 장르에대해 각 지역별 차이를 분석할까?<ul>
+<li>그럼 어떤 장르가 어디서 더 인기가 많은지 알 수 있을것이다. ex) 레이싱게임은 유럽보다는 미국에서 더 잘팔린다</li>
+<li>한 장르의 게임을 출시할때 보다 판매량이 높은 지역에 출시할 수 있다</li>
+</ul>
+</li>
+</ul>
+<p> 물론 두가지를 다 비교하면 더욱 자세한 분석이 될 수 있고, 지역별로 다른 장르를 출시할 수도 있다. 하지만 이번 프로젝트의 발표시간은 5분이고, 다른 분석할 기준이 많기때문에 포괄적인 기준이 필요했다. 그래서 지역내에서가 아닌 지역별 차이를 분석하여 하나의 게임을 출시하는데 목표를 두었다.  </p>
+<h2 id="장르와-지역의-분석방법을-다른기준에도-똑같이-적용할수-있을까"><a href="#장르와-지역의-분석방법을-다른기준에도-똑같이-적용할수-있을까" class="headerlink" title="장르와 지역의 분석방법을 다른기준에도 똑같이 적용할수 있을까?"></a>장르와 지역의 분석방법을 다른기준에도 똑같이 적용할수 있을까?</h2><p> 동일한 방법으로 장르-연도, 플랫폼-지역&amp;연도를 분석하면 되지않을까? 잠시 복붙의 행복회로에 불이 들어왔다.<br> 하지만… 연도에서 다시한번 딜레마에 빠졌다. 연도를 고려하지 않았을때는 지역끼리만 비교하면 됬지만,, 게임기술이 1년단위로 급성장하는 시대에서 과연 1995년,2010년,2015년 같은장르의 판매량을 연도끼리 비교하는것이 의미가있을까? 좀 더 <strong>의미있는</strong> 분석을 위해 이번에는 장르에서 선택하지않았던 연도내에서 장르들의 차이를 비교해보기로 결정했다.</p>
+<ul>
+<li>연도내에서 장르의 차이를 분석한다면?<ul>
+<li>연도별 가장 인기있었던 장르들을 살펴본다면 전체적인 흐름 즉, <strong>장르의 트랜드</strong> 를 파악할 수 있다.</li>
+<li>이것은 그냥 같은 장르를 연도끼리 비교하는것보다 선호도 변화를 볼 수 있다. 더 유용하다.</li>
+</ul>
+</li>
+</ul>
+<p> 그래서 아쉽지만 기쁜마음으로(?) 지역과는 다른방향으로 분석하였다. 각 연도 내에서 어떤장르가 가장 많이판매되었는지 비교 한 후 전체적인 트랜드를 확인하기로 결정했다.</p>
+<h2 id="장르가-끝났다-플랫폼을-분석해보자"><a href="#장르가-끝났다-플랫폼을-분석해보자" class="headerlink" title="장르가 끝났다, 플랫폼을 분석해보자"></a>장르가 끝났다, 플랫폼을 분석해보자</h2><p> 이번에야말로 봍붙의 행복회로가 빛을 내기시작했다. 장르를 분석한방법을 플랫폼에 그대로 적용시켰다. 처음 그림으로 보았던 총 4가지의 분석을 마쳤고 분석결과도 도출해냈다. </p>
 
     </div>
 
