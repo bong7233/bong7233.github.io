@@ -30,19 +30,19 @@
 <meta property="og:site_name" content="Bong&#39;s Blog">
 <meta property="og:description" content="통계학 Estimation &#x2F; Sampling의 목적과 방법 가설검정 이해 T-test의 목적과 사용예시 숙지     기술 통계치(Descriptive Statistics)란? count, mean, standard dev, min, 1Q, median, 3Q, max 등의 데이터를 설명 하는 값(혹은 통계치) https:&#x2F;&#x2F;drhongdatanote.ti">
 <meta property="og:locale">
-<meta property="og:image" content="http://bong7233.github.io/2021/05/13/images/se.PNG">
-<meta property="og:image" content="http://bong7233.github.io/2021/05/13/images/ttest.PNG">
-<meta property="og:image" content="http://bong7233.github.io/2021/05/13/images/ttestpro1.PNG">
-<meta property="og:image" content="http://bong7233.github.io/2021/05/13/images/ttestpro1.PNG">
-<meta property="og:image" content="http://bong7233.github.io/2021/05/13/images/ttestpro3.PNG">
-<meta property="og:image" content="http://bong7233.github.io/2021/05/13/images/ttestpro4.PNG">
+<meta property="og:image" content="http://bong7233.github.io/2021/05/13/images/se.png">
+<meta property="og:image" content="http://bong7233.github.io/2021/05/13/images/ttest.png">
+<meta property="og:image" content="http://bong7233.github.io/2021/05/13/images/ttestpro1.png">
+<meta property="og:image" content="http://bong7233.github.io/2021/05/13/images/ttestpro2.png">
+<meta property="og:image" content="http://bong7233.github.io/2021/05/13/images/ttestpro3.png">
+<meta property="og:image" content="http://bong7233.github.io/2021/05/13/images/ttestpro4.png">
 <meta property="article:published_time" content="2021-05-13T00:36:33.000Z">
-<meta property="article:modified_time" content="2021-05-26T01:15:10.521Z">
+<meta property="article:modified_time" content="2021-06-03T09:36:12.123Z">
 <meta property="article:author" content="SangBong Lee">
 <meta property="article:tag" content="Data science">
 <meta property="article:tag" content="hypothesis statistics">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://bong7233.github.io/2021/05/13/images/se.PNG">
+<meta name="twitter:image" content="http://bong7233.github.io/2021/05/13/images/se.png">
 
 
 <link rel="canonical" href="http://bong7233.github.io/2021/05/13/AI-day6/">
@@ -309,7 +309,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-26 10:15:10" itemprop="dateModified" datetime="2021-05-26T10:15:10+09:00">2021-05-26</time>
+        <time title="Modified: 2021-06-03 18:36:12" itemprop="dateModified" datetime="2021-06-03T18:36:12+09:00">2021-06-03</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -391,7 +391,7 @@
 <hr>
 <h2 id="표본평균의-표준오차-Standard-Error-of-the-Sample-Mean"><a href="#표본평균의-표준오차-Standard-Error-of-the-Sample-Mean" class="headerlink" title="표본평균의 표준오차( Standard Error of the Sample Mean )"></a>표본평균의 표준오차( Standard Error of the Sample Mean )</h2><ul>
 <li>StandardError = 표본의 표준편차 s (sample standard deviation) / 표본의 수 n(sample size)</li>
-<li>표본의 수가 더욱 많아질수록, 추측은 더 정확해지고 (평균) 높은 신뢰도를 바탕으로 모집단에 대해 예측 할 수 있도록 함  <img src="../images/se.PNG"></li>
+<li>표본의 수가 더욱 많아질수록, 추측은 더 정확해지고 (평균) 높은 신뢰도를 바탕으로 모집단에 대해 예측 할 수 있도록 함  <img src="../images/se.png"></li>
 </ul>
 <hr>
 <h2 id="Student-T-test"><a href="#Student-T-test" class="headerlink" title="Student T-test"></a>Student T-test</h2><h3 id="One-Sample-t-test"><a href="#One-Sample-t-test" class="headerlink" title="One Sample t-test"></a>One Sample t-test</h3><ul>
@@ -401,15 +401,15 @@
 </ul>
 </li>
 <li><p>모집단에 대한 정보와 표본의 데이터를 비교  </p>
-<img src="../images/ttest.PNG"></li>
+<img src="../images/ttest.png"></li>
 <li><p>위 통계치는 평균을 빼고 표준편차로 나눠줬는데 이러한 과정을 <strong>“정규화”</strong> 라고 하며, 이 과정을 하게 되면 주어진 데이터가 평균은 0, 표준편차가 1인 데이터로 scaling 됨  </p>
 </li>
 <li><p>T-test Process</p>
 <ol>
 <li><p>귀무 가설 (Null Hypothesis) 설정  </p>
-<img src="../images/ttestpro1.PNG"></li>
+<img src="../images/ttestpro1.png"></li>
 <li><p>대안 가설 (Alternative Hypothesis) 설정 (귀무가설과 반대)  </p>
-<img src="../images/ttestpro1.PNG"></li>
+<img src="../images/ttestpro2.png"></li>
 <li><p>신뢰도 설정 (Confidence Level) : 모수가 신뢰구간 안에 포함될 확률 (보통 95, 99% 등을 사용)</p>
 <ul>
 <li>신뢰도 95%의 의미 = 모수가 신뢰 구간 안에 포함될 확률이 95% = 귀무가설이 틀렸지만 우연히 성립할 확률이 5%</li>
@@ -466,9 +466,9 @@
 </ul>
 <ol>
 <li><p>귀무가설 : 두 확률은 같다 (차이가 없다)  </p>
-<img src="../images/ttestpro3.PNG"></li>
+<img src="../images/ttestpro3.png"></li>
 <li><p>대안가설 : 같지 않다  </p>
-<img src="../images/ttestpro4.PNG"></li>
+<img src="../images/ttestpro4.png"></li>
 <li><p>신뢰도 : 95%</p>
 </li>
 </ol>

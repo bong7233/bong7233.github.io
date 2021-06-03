@@ -30,16 +30,16 @@
 <meta property="og:site_name" content="Bong&#39;s Blog">
 <meta property="og:description" content="베이지안 통계 개론 (Bayesian Inference) 이유 불충분의 정리 확률을 모를때는 50대50으로 생각 아무 정보없을때 사전확률(50%) 어떤 새로운 정보로인해 상승한 사후확률(50+a%) 이렇게 어떤 하나의 정보로인해 확률이 변하는것이 베이즈정리    조건부확률도 중요  총 확률의 법칙 (The Law of Total Probability) 특정">
 <meta property="og:locale">
-<meta property="og:image" content="http://bong7233.github.io/2021/05/18/images/ltp.PNG">
-<meta property="og:image" content="http://bong7233.github.io/2021/05/18/images/conditional.PNG">
-<meta property="og:image" content="http://bong7233.github.io/2021/05/18/images/bayes.PNG">
+<meta property="og:image" content="http://bong7233.github.io/2021/05/18/images/ltp.png">
+<meta property="og:image" content="http://bong7233.github.io/2021/05/18/images/conditional.png">
+<meta property="og:image" content="http://bong7233.github.io/2021/05/18/images/bayes.png">
 <meta property="article:published_time" content="2021-05-17T23:54:15.000Z">
-<meta property="article:modified_time" content="2021-05-18T04:43:01.020Z">
+<meta property="article:modified_time" content="2021-06-03T09:36:45.866Z">
 <meta property="article:author" content="SangBong Lee">
 <meta property="article:tag" content="Data science">
 <meta property="article:tag" content="Bayesian">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://bong7233.github.io/2021/05/18/images/ltp.PNG">
+<meta name="twitter:image" content="http://bong7233.github.io/2021/05/18/images/ltp.png">
 
 
 <link rel="canonical" href="http://bong7233.github.io/2021/05/18/AI-day9/">
@@ -298,10 +298,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-05-18 08:54:15 / Modified: 13:43:01" itemprop="dateCreated datePublished" datetime="2021-05-18T08:54:15+09:00">2021-05-18</time>
+      <time title="Created: 2021-05-18 08:54:15" itemprop="dateCreated datePublished" datetime="2021-05-18T08:54:15+09:00">2021-05-18</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-06-03 18:36:45" itemprop="dateModified" datetime="2021-06-03T18:36:45+09:00">2021-06-03</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -334,10 +340,10 @@
 </ul>
 <h2 id="총-확률의-법칙-The-Law-of-Total-Probability"><a href="#총-확률의-법칙-The-Law-of-Total-Probability" class="headerlink" title="총 확률의 법칙 (The Law of Total Probability)"></a>총 확률의 법칙 (The Law of Total Probability)</h2><ul>
 <li>특정 확률 변수에 대해, 모든 가능한 이벤트의 총 확률 = 1</li>
-<li>2개의 변수를 고려 한다면 두 변수가 연관이 있는 경우, B가 일어난 상황에서 A에 대한 확률 P(A)는, P(A|B) 의 형태로 표현  <img src="../images/ltp.PNG"></li>
+<li>2개의 변수를 고려 한다면 두 변수가 연관이 있는 경우, B가 일어난 상황에서 A에 대한 확률 P(A)는, P(A|B) 의 형태로 표현  <img src="../images/ltp.png"></li>
 </ul>
 <h2 id="조건부-확률-The-Law-of-Conditional-Probability"><a href="#조건부-확률-The-Law-of-Conditional-Probability" class="headerlink" title="조건부 확률 (The Law of Conditional Probability)"></a>조건부 확률 (The Law of Conditional Probability)</h2><ul>
-<li>전체사각형이 모든 확률공간(1) 일때 각각 B의 조건에서 A가 일어날 확률을 교집합으로 표현가능  <img src="../images/conditional.PNG" width="300"></li>
+<li>전체사각형이 모든 확률공간(1) 일때 각각 B의 조건에서 A가 일어날 확률을 교집합으로 표현가능  <img src="../images/conditional.png" width="300"></li>
 </ul>
 <h2 id="베이지안-이론-Bayes-Theorem"><a href="#베이지안-이론-Bayes-Theorem" class="headerlink" title="베이지안 이론 (Bayes Theorem)"></a>베이지안 이론 (Bayes Theorem)</h2><ul>
 <li>사후확률(posterior probability)을 사전확률(prior probability)과 likelihood를 이용해서 계산할 수 있도록 해 주는 확률 변환식<ul>
@@ -348,7 +354,7 @@
 </ul>
 </li>
 <li>사전확률(“Prior”)은 사후확률(“Updated”)로 다시 표현 할 수 있음이 중요<ul>
-<li>쉽게말해 사후확률의 추가(샘플의 추가)로 불규칙한 확률을 정규분포와 비슷하게 업데이트 할수 있다 -&gt; 베이지안이론이 많이 쓰이는 이유  <img src="../images/bayes.PNG"></li>
+<li>쉽게말해 사후확률의 추가(샘플의 추가)로 불규칙한 확률을 정규분포와 비슷하게 업데이트 할수 있다 -&gt; 베이지안이론이 많이 쓰이는 이유  <img src="../images/bayes.png"></li>
 </ul>
 </li>
 </ul>
