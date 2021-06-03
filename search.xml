@@ -1,167 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>AI-Day12</title>
-    <url>/2021/05/23/AI-Day12/</url>
-    <content><![CDATA[<h1 id="선형대수"><a href="#선형대수" class="headerlink" title="선형대수 +"></a>선형대수 +</h1><ul>
-<li>공분산, 상관계수의 목적과 사용 예시, 차이점 설명</li>
-<li>벡터의 직교와 그 조건 설명</li>
-<li>단위 벡터와, 단위 벡터로의 구분 설명</li>
-<li>span, basis, rank의 내용을 이해</li>
-<li>Gaussian elemination</li>
-<li>linear projection과 예시</li>
-</ul>
-<h2 id="기본적인-개념"><a href="#기본적인-개념" class="headerlink" title="기본적인 개념"></a>기본적인 개념</h2><ul>
-<li>기저벡터<ul>
-<li>“벡터공간 전체를 생성하는 선형 독립인 벡터의 집합” , but.. 이게무슨말일까?</li>
-<li>벡터v 의 각 좌표값을 스칼라라고 생각해보자</li>
-<li>이때 각 x,y 좌표의 단위벡터가 i^, j^ 라면 각각의 좌표를 단위백터에 스칼라곱 한만큼의 합이라고 볼 수 있다<ul>
-<li>벡터v =  ai^ + bj^</li>
-</ul>
-</li>
-<li>이 단위벡터 i^,j^ 을 xy좌표계의 <strong>기저벡터</strong> 라고 한다</li>
-<li>이는 벡터를 수적으로 표현할때 기저벡터를 기준으로 나타낸다  </li>
-</ul>
-</li>
-<li>선형결합<ul>
-<li>두 벡터를 스케일하여 새로운 벡터를 생성하는 모든 연산</li>
-<li>벡터 v,w 의 선형결합 : av + bw</li>
-<li>3차원 이라면 ? av + bw + cu  </li>
-</ul>
-</li>
-<li>선형생성<ul>
-<li>백터 v와 w의 모든 선형결합으로 만들어진 벡터의 집합을 두 벡터의 생성(선형생성) 이라 한다</li>
-<li>일반적으로 두 기저벡터로 선형결합을 한다면, 그 차원의 모든 벡터를 만들수있다. 즉 생성은 <strong>평면전체</strong> 가 된다</li>
-<li>하지만 두 기저벡터가 같은 직선상에 존재한다면 생성은 <strong>영점을 지나는 하나의 선</strong> 이 된다</li>
-<li>3차원에서 하나의 벡터가 나머지 두 벡터의 선형생성안에 있다면? 즉 두 벡터로 만들어진 평면안에 포함된다면<ul>
-<li>그 포함된 벡터의 변화는 전체 선형생성에 의미가 없다, 즉 제거해도 상관없다  </li>
-</ul>
-</li>
-</ul>
-</li>
-<li>선형종속<ul>
-<li><strong>제거해도 상관없다</strong> 는 것을 선형종속 이라 표현<ul>
-<li>즉 벡터(u) 는 다른 벡터(v,w) 들의 선형결합으로 표현될 수 있다</li>
-<li>u = av + bw  </li>
-</ul>
-</li>
-</ul>
-</li>
-<li>선형독립<ul>
-<li>서로 선형생성안에 포함되지않는 독립적인 상태라면 선형독립이라 표현<ul>
-<li>u != av + bw</li>
-<li>av + bw + cu = 0 의 유일한 해가 a=b=c=0 이라면 선형독립이다 라고도 할 수 있다</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="분산-Variance"><a href="#분산-Variance" class="headerlink" title="분산 Variance"></a>분산 Variance</h2><ul>
-<li><strong>데이터가 얼마나 퍼져있는지</strong> 측정하는 방법</li>
-<li>값-평균값 의 제곱  </li>
-</ul>
-<h2 id="표준편차-Standard-Deviation"><a href="#표준편차-Standard-Deviation" class="headerlink" title="표준편차 Standard Deviation"></a>표준편차 Standard Deviation</h2><ul>
-<li>분산에 루트씌운것</li>
-<li>분산은 샘플으 사이즈에 따라 평균에비해 스케일이 더 커지는 경향이있음</li>
-<li>표준편차는 제곱된 스케일을 낮춘 방법이므로 통계분석에서 많이 사용됨  </li>
-</ul>
-<h2 id="공분산-Covariance"><a href="#공분산-Covariance" class="headerlink" title="공분산 Covariance"></a>공분산 Covariance</h2><ul>
-<li>하나의 변수가 변화할때, 다른 변수가 어떤 연관성을 나타내며 변화하는가 측정</li>
-<li>COV(x,y) 로 나타내며, 연관성에따라 분류</li>
-<li>COV(x,y) &gt; 0 : x가 증가하면 y도 증가, 양의 공분산</li>
-<li>COV(x,y) &lt; 0 : x가 증가하면 y는 감소, 음의 공분산</li>
-<li>COV(x,y) ~ 0 : 관련성을 알 수 없음</li>
-<li>하지만 ! 변수들이 다른 스케일을 가지고 있다면 공분산은 실제 변수의 연관성에 관계 없이 영향을 받음<ul>
-<li>즉 만약 두 변수의 연관성이 작더라도 스케일이크다면, 연관성이 높지만 스케일이 작은 변수에비해 높은 공분산값을 가짐</li>
-<li>이것을 보완하기위해 상관계수를 사용  </li>
-</ul>
-</li>
-</ul>
-<h2 id="상관계수-r"><a href="#상관계수-r" class="headerlink" title="상관계수  r"></a>상관계수  r</h2><ul>
-<li>공분산을 두 변수의 표준편차로 각각 나누어 스케일을 조정한것</li>
-<li>정해진 범위 (-1에서1사이) 값만 가지며, 선형연고나성이 없는경우 0에 근접<ul>
-<li>공분산과 다르게 스케일에 영향받지 않음</li>
-<li>데이터의 평균, 분산의크기에 영향받지 않음</li>
-</ul>
-</li>
-<li>-1 &lt; COR(x,y) &lt; 0 : x가 증가하면 y는 감소</li>
-<li> 0 &lt; COR(x,y) &lt; 1 : x가 증가하면 y도 증가</li>
-<li>COR(x,y) ~ 0 : 관련성 알 수 없음</li>
-<li>COR(x,y) = 1 : 한변수가 다른변수에대해 완벽한 양의 선형관계이다  </li>
-</ul>
-<h3 id="Spearman-correlation"><a href="#Spearman-correlation" class="headerlink" title="Spearman correlation"></a>Spearman correlation</h3><ul>
-<li>일반적 상관계수는 Pearson correlation<ul>
-<li> 데이터에서 분산과 같은 numeric data를 계산</li>
-</ul>
-</li>
-<li>만약 categorical 이라면 ?<ul>
-<li>Spearman correlation coefficient 로 값들의 순서(rank)를 주고, 그 바탕으로 상관관계 측정  </li>
-</ul>
-</li>
-</ul>
-<h2 id="수직성-Orthogonality"><a href="#수직성-Orthogonality" class="headerlink" title="수직성 Orthogonality"></a>수직성 Orthogonality</h2><ul>
-<li>벡터, 매트릭스가 서로 수직인 상태</li>
-<li>두 벡터가 수직이다? 상관관계가 전혀 없다<ul>
-<li>수직이다 -&gt; 내적이 0 이다  </li>
-</ul>
-</li>
-</ul>
-<h2 id="단위벡터-Unit-Vectors"><a href="#단위벡터-Unit-Vectors" class="headerlink" title="단위벡터 Unit Vectors"></a>단위벡터 Unit Vectors</h2><ul>
-<li>단위길이(1) 을 갖는 모든벡터<ul>
-<li>차원별 단위벡터는 벡터내에 하나의1과 0들로만 이뤄진벡터</li>
-<li>ex ) 1차원:[1], 2차원:[1,0], 3차원:[1,0,0]  </li>
-</ul>
-</li>
-</ul>
-<h2 id="Span"><a href="#Span" class="headerlink" title="Span"></a>Span</h2><ul>
-<li>주어진 두 벡터의 조합으로 만들수 있는 모든 벡터들의 집합</li>
-<li>선형관계의 벡터가 아니라면? 주어진 차원전체를 나타내는 평면으로 나타낼 수 있다  </li>
-</ul>
-<h2 id="선형관계의-벡터-Linearly-Dependent-Vector"><a href="#선형관계의-벡터-Linearly-Dependent-Vector" class="headerlink" title="선형관계의 벡터 (Linearly Dependent Vector)"></a>선형관계의 벡터 (Linearly Dependent Vector)</h2><ul>
-<li>두 벡터가 같은선상에 있는 경우</li>
-<li>이 경우 두 벡터로 만들어진 Span은 하나의 선이 된다</li>
-<li>선형관계가 없는 <strong>벡터는 독립되어 있다</strong> 고 표현  </li>
-</ul>
-<h2 id="Basis"><a href="#Basis" class="headerlink" title="Basis"></a>Basis</h2><ul>
-<li>벡터공간 V의 basis 란, V를 채울 수 있는 선형관계에 있지않은 벡터들의 집합</li>
-<li>Orthogonal Basis: 공간을 채울 수 있는 <strong>서로 수직인 벡터</strong> </li>
-<li>Orthonormal Basis :  Orthogonal Basis에 추가로 Normalized 조건이 붙은 것으로, 길이가 1인 벡터들</li>
-<li>Gram-Schmidt 프로세스(단위 직교화)<ul>
-<li>일차독립 벡터집합을 정규직교기저로 변환</li>
-</ul>
-</li>
-<li>벡터공간을 나타내는 R<sup>n</sup> 에서의 n은 해당 <strong>벡터공간을 이루는 기저의 수</strong> 라고 이해할 수 있다  </li>
-</ul>
-<h2 id="Rank"><a href="#Rank" class="headerlink" title="Rank"></a>Rank</h2><ul>
-<li>매트릭스의 열을 이루는 벡터들로 만들 수 있는 span공간의 차원</li>
-<li>매트릭스의 차원과는 다를수 있음<ul>
-<li>why? 행과 열을 이루는 벡터들중 선형관계가 있는 경우 rank가 더 작을 수 있다  </li>
-</ul>
-</li>
-</ul>
-<h2 id="가우스-소거법-Gaussian-Elimination"><a href="#가우스-소거법-Gaussian-Elimination" class="headerlink" title="가우스 소거법(Gaussian Elimination)"></a>가우스 소거법(Gaussian Elimination)</h2><ul>
-<li>연립일차방정식에서 미지수를 소거시켜 남은 미지수에대한 선형결합으로 표현하여 풀이하는 방법</li>
-<li>매트릭스를 사다리꼴행렬(Row-Echelon form)로 바꾸는 방법<ul>
-<li>사다리꼴행렬 : 각행의 왼쪽에 1, 나머지는 0</li>
-</ul>
-</li>
-<li>다른 행들의 스칼라 곱과 합을통해 어떤행이 0이 되었다 -&gt; 선형관계가 있다  </li>
-</ul>
-<h2 id="R2-공간에서의-Linear-Projections"><a href="#R2-공간에서의-Linear-Projections" class="headerlink" title="R2 공간에서의 Linear Projections"></a>R<sup>2</sup> 공간에서의 Linear Projections</h2><ul>
-<li>일반적인 사영은 하나의 벡터를 다른벡터에 수직으로내려서 투영시키는것을 뜻한다</li>
-<li>통계에서의 사영은 투영시키는 그 벡터, 즉 두개의 feature중 하나를 다른하나에 투영시킴으로써 차원을 줄이고 그로인해 통계적 분석에 필요한 메모리나 시간 등을 줄이는 방법이다</li>
-<li>벡터 L에대한 벡터W의 projection  <img src="../images/linearprojection.PNG"></li>
-</ul>
-]]></content>
-      <categories>
-        <category>TIL</category>
-      </categories>
-      <tags>
-        <tag>Data science</tag>
-        <tag>Linear Algebra</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>AI-Day1</title>
     <url>/2021/05/06/AI-Day1/</url>
     <content><![CDATA[<h1 id="Data-Preprocess-amp-EDA"><a href="#Data-Preprocess-amp-EDA" class="headerlink" title="Data Preprocess &amp; EDA"></a>Data Preprocess &amp; EDA</h1><h2 id="Warm-up"><a href="#Warm-up" class="headerlink" title="Warm-up"></a>Warm-up</h2><ul>
@@ -347,44 +186,126 @@
       </tags>
   </entry>
   <entry>
-    <title>AI-Day2</title>
-    <url>/2021/05/07/AI-Day2/</url>
-    <content><![CDATA[<h1 id="Feature-Engineering"><a href="#Feature-Engineering" class="headerlink" title="Feature Engineering"></a>Feature Engineering</h1><h2 id="Warm-up"><a href="#Warm-up" class="headerlink" title="Warm up"></a>Warm up</h2><ul>
-<li>Data cleaning<ul>
-<li>대부분의 실제 데이터엔지니어, 데이터사이언티스트는 데이터클리닝이 대부분의 업무</li>
-<li>AI에 머신러닝을 시키기위해선 정제된 데이터가 필수  </li>
+    <title>AI-Day13</title>
+    <url>/2021/05/25/AI-Day13/</url>
+    <content><![CDATA[<h1 id="Dimension-Reduction"><a href="#Dimension-Reduction" class="headerlink" title="Dimension Reduction"></a>Dimension Reduction</h1><ul>
+<li>Vector transformation의 목적과 사용예시</li>
+<li>eigenvector(고유벡터) / eigenvalue(고유값)</li>
+<li>데이터의 feature수의 증가에따른 문제점과 handling 방법</li>
+<li>PCA의 목적과 기본원리</li>
+</ul>
+<h2 id="선형변환과-매트릭스-벡터변환"><a href="#선형변환과-매트릭스-벡터변환" class="headerlink" title="선형변환과 매트릭스(벡터변환)"></a>선형변환과 매트릭스(벡터변환)</h2><ul>
+<li>행렬과 벡터의곱은 “두 열벡터의 선형결합”을 표현한것 이라 할 수 있다</li>
+<li>선형변환 : 특정한 규칙이 정해진 함수이고 쉽게는 기저벡터를 변환시킴으로써 결과를 바꾼다<ul>
+<li>임의의 벡터 a,b와 스칼라 c에 대해 변환T가 두조건을 만족한다면? 변환T는 선형변환이다<ul>
+<li>T(a+b) = T(a)+T(b)</li>
+<li>T(ca) = cT(a)</li>
+</ul>
+</li>
+<li>임의의 열벡터 [x y]에 대해 다음이 성립하면 변환T는 선형변환이다<ul>
+<li>T([x y]) = T(x[1 0] + y[0 1]) = T(x[1 0])+T(y[0 1]) = xT([1 0]) + yT([1 0])</li>
+</ul>
+</li>
+<li>이때, 원래의 기저벡터 두개를 i^, j^ 이라하고 새로운 기저벡터를 i_new, j_new라 하면<ul>
+<li>i_new = T(i^), j_new = T(j^)</li>
+<li>결론적으로 T([x y]) = xi_new + yj_new</li>
 </ul>
 </li>
 </ul>
-<h2 id="Feature-Engineering-이란"><a href="#Feature-Engineering-이란" class="headerlink" title="Feature Engineering 이란?"></a>Feature Engineering 이란?</h2><ul>
-<li>도메인 지식과 창의성을 바탕으로, 데이터셋에 존재하는 Feature들을 재조합하여 새로운 Feature를 만드는 것</li>
-<li>통계 분석 혹은 머신러닝, 딥러닝까지 대부분의 분석은 데이터에 있는 패턴을 인식하고 해당 패턴들을 바탕으로 예측</li>
-<li>더 좋은 퍼포먼스를 위해서 새롭고, 의미있는 패턴을 제공하는 것이 궁극적인 Feature engineering의 목적</li>
-<li>Gargage in - Garbage out 을 기억  </li>
+</li>
+<li>종류에는 shearing, rotation, permutation, projection on x-axis(a vector) 등 이 있다</li>
 </ul>
-<h2 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h2><ul>
-<li>테이블형태의 데이터로 기억</li>
-<li>Row(행)에는 observation, Column(열)에는 feature가 있다</li>
-<li>만약 데이터에 NaN값이있다면? 같은 row의 다른값들은 자동으로 float으로 typecasting</li>
-</ul>
-<h2 id="Feature-Engineering-1"><a href="#Feature-Engineering-1" class="headerlink" title="Feature Engineering"></a>Feature Engineering</h2><ul>
-<li>feature끼리는 일반수식처럼 가능하지만, 각각의 data type에 주의하여야함<ul>
-<li>int끼리라면 의도대로 수식이되지만, 만약 str이라면? 예상치못한 결과도출</li>
-<li>특히 머신러닝 모델링에서는 문자열로된 data는 사용하지 않음</li>
+<h2 id="고유값과-고유벡터-eigenvalue-eigenvector"><a href="#고유값과-고유벡터-eigenvalue-eigenvector" class="headerlink" title="고유값과 고유벡터(eigenvalue/eigenvector)"></a>고유값과 고유벡터(eigenvalue/eigenvector)</h2><ul>
+<li>선형변환 후에도 span을 벗어나지 않는 벡터를 고유벡터라고 하며 각각의 고유벡터는 특별한 고유값을 가짐</li>
+<li>이때의 고유값은 변환된 고유벡터가 스케일된 크기라고 볼 수 있다<ul>
+<li>만약 고유벡터가 선형변환된 후에도 크기가 그대로라면? 고유값은 1 이다 </li>
+<li>식으로 표현하면 변환하려는 행렬 A와 고유벡터v , 고유값 λ 라면</li>
+<li>Av = λv<ul>
+<li>이 식의 참,거짓을 통해 행렬A의 고유벡터v와 고유값λ 를 찾을 수 있다</li>
+<li>하지만 좌항은 행렬x벡터, 우항은 스칼라x벡터 이므로 우항을 행렬x벡터의 형태로 바꿔줘야한다</li>
+<li>대각선에만 1 이 있고 나머지는 0은 항등행렬 I 를이용하여 λ = λI 로 바꾼다</li>
+<li>결국 (A-λI)v = 0 이 되고, <strong>벡터v가 0벡터가 아니라는 가정하에</strong> 식을 성립하는 고유벡터v를 찾는다</li>
+<li>이때 det(A-λI)=0 인 λ를 찾는다 (이것은 차원을 축소시킨다 고 이해하자, 평면이라면? 선형태로)</li>
+<li>고유값은 하나여도 고유벡터는 여러개일 수 있음을 기억하자</li>
 </ul>
 </li>
 </ul>
-<h3 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h3><ul>
-<li>s.replace(‘지우려는것’,’대체할것’)<ul>
-<li>하지만 바뀐것을 변수에 다시선언해주어야 변경됨(얕은복사? 더찾아보기)</li>
+</li>
+<li>대각선형렬일때는 고유벡터가 기저벡터와 같고 계산이 편해지기때문에, 어떤 행렬의 고유벡터를 기저벡터로 바꿔준다면 계산이 편해질것이다<ul>
+<li>why? : 대각선행렬의 대각선값들이 그 행렬의 고유벡터이기 때문</li>
+<li>그러기위해 행렬A의 고유벡터를 열벡터로 가지는 새로운 행렬을 B라고해보자</li>
+<li>이때 B<sup>T</sup>AT 를 하면, 대각선행렬이 아니였던 행렬A를 대각선에 고유값들을 갖는 대각선행렬로 변환된다</li>
 </ul>
 </li>
-<li>s.toint()<ul>
-<li>자동으로 int로 typecasting까지 실행</li>
+<li>분석의 측면에서보면 만약 분산-공분산 행렬의 고유값 고유벡터를 구한다면<ul>
+<li>고유값의 합은 두 분산의 합과 같고</li>
+<li>고유값의 곱은 분산-공분산의 행렬식과 같다</li>
+<li>여기서는 이렇다는것만 기억하고 이것들이 가지는 의미는 후에 더 알 수 있다</li>
 </ul>
 </li>
-<li>s.apply(함수)<ul>
-<li>한 column전체에 대해 함수를 다 실행시킴(파이썬의 map과 비슷한느낌)</li>
+</ul>
+<h2 id="고차원의-문제-The-Curse-of-Dimensionality"><a href="#고차원의-문제-The-Curse-of-Dimensionality" class="headerlink" title="고차원의 문제 (The Curse of Dimensionality)"></a>고차원의 문제 (The Curse of Dimensionality)</h2><ul>
+<li>feature 의 수가 많은 데이터셋을 모델링하거나 분석할때 발생하는 문제</li>
+<li>So, feature들의 중요도를 비교하여 실제로 의미가 높은 feature만 선택함으로써 차원을 줄여야함</li>
+</ul>
+<h2 id="Dimension-Reduction-차원축소"><a href="#Dimension-Reduction-차원축소" class="headerlink" title="Dimension Reduction 차원축소"></a>Dimension Reduction 차원축소</h2><ul>
+<li>이 고차원의 문제를 해결하기위해 차원축소</li>
+<li>Feature Selection<ul>
+<li>덜 중요한 feature를 제거하는 방법</li>
+<li>장점 : 선택된 feature 해석이 쉽다</li>
+<li>단점 : feature들간의 연관성을 고려해야함</li>
+<li>LASSO, Genetic algorithm 등</li>
+</ul>
+</li>
+<li>Feature Extraction<ul>
+<li>기존의 feature 혹은 feature들이 조합된 새로운 feature를 사용하는 방법</li>
+<li>장점 : feature 들간의 연관성 고려되어 feature 수를 줄일 수 있음</li>
+<li>단점 : feature 해석이 어려움</li>
+<li>PCA, Auto-encoder 등</li>
+</ul>
+</li>
+</ul>
+<h2 id="주성분분석-PCA-Principal-Component-Analysis"><a href="#주성분분석-PCA-Principal-Component-Analysis" class="headerlink" title="주성분분석 (PCA, Principal Component Analysis)"></a>주성분분석 (PCA, Principal Component Analysis)</h2><ul>
+<li>고차원의 데이터를 분석하기위한 방법(제일 정보손실이적은 2차원으로 바꾸는것이 무난하다)</li>
+<li>표본들의 선형연관성을 최소한으로 즉, 최대한 선형독립적인 표본들만 있는상태로 필터링하는것</li>
+<li>분산을 최대한 유지하는 축(PC)를 찾는것이 주 목적이고, 그 축을 기준으로 차원을 축소할수있음<ul>
+<li>많은 데이터를 어떤 벡터축에 사영시켜야, 분포를 가장 잘 나타내는 하나의 축이 될수 있을까?</li>
+</ul>
+</li>
+<li>PCA 의 과정<ul>
+<li>데이터의 각열에대해 평균을 빼고 표준편차로 나누어 Normalize</li>
+<li>데이터의 분산-공분산 매트릭스계산</li>
+<li>분산-공분산 매트릭스의 고유벡터와 고유값 계산</li>
+<li>데이터를 고유벡터에 projection(matmul)<ul>
+<li>데이터를 고유벡터에 사영하는것이 분산이 가장크기 떄문</li>
+<li>분산이크다? 데이터손실이 최소화된 상태에서의 분포를 나타낼 수 있다</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>PCA 특징<ul>
+<li>데이터에대해 독립적인 축을 찾을 수 있음</li>
+<li>데이터의 분포가 정규성을 띄지않는경우 적용이 어려움<ul>
+<li>커널 PCA 활용</li>
+</ul>
+</li>
+<li>분류/ 예측 문제에대해 데이터의 라벨을 고려하지 않기때문에 효과적 분리가 어려움<ul>
+<li>PLS 활용</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Sklearn 라이브러리를 활용하여 PCA 가능</li>
+</ul>
+<h2 id="One-hot-encoding"><a href="#One-hot-encoding" class="headerlink" title="One-hot encoding"></a>One-hot encoding</h2><ul>
+<li>모든 문자열 값들을 숫자 형으로 인코딩하는 전처리 작업을 함으로써 계산에 용이하게 바꿈</li>
+<li>레이블인코딩<ul>
+<li>일괄적인 숫자값으로 변환되어 예측성능이 떨어진다</li>
+<li>숫자간의 크고 작음에 대한 특성 작용</li>
+</ul>
+</li>
+<li>원 핫 인코딩<ul>
+<li>피쳐값의 유형에따라 새로운 피쳐를 추가해 고유값에 해당하는 갈럼에만 1을표시, 나머지 칼럼에는 0을 표시</li>
 </ul>
 </li>
 </ul>
@@ -394,159 +315,161 @@
       </categories>
       <tags>
         <tag>Data science</tag>
-        <tag>Feature Engineering</tag>
+        <tag>Linear Algebra</tag>
+        <tag>Dimension Reduction</tag>
       </tags>
   </entry>
   <entry>
-    <title>AI-Day4</title>
-    <url>/2021/05/11/AI-Day4/</url>
-    <content><![CDATA[<h1 id="Basic-Derivative-기초미분"><a href="#Basic-Derivative-기초미분" class="headerlink" title="Basic Derivative 기초미분"></a>Basic Derivative 기초미분</h1><ul>
-<li>미분 : 함수를 작게 나누는것</li>
-<li>DS에서의 미분?<ul>
-<li>x를 넣었을때 y값을 예측하는 선형모델을 예로보면</li>
-<li>y^ = a + b X</li>
-<li>주어진 데이터 X를 넣었을 떄 모델이 예측하는 예측값과 실제값 간의 차이(Error,𝜀)를 계산한 다음, 여러 모델 중 Error(모델에서 예측하는 예측값과 실제값 (y)의 차이)가 가장 작은 모델을 선택하는 방법을 통해, 가장 좋은 모델을 선택할 수 있음</li>
-<li>이 과정은 f(a,b) =𝜀 로 표현 될 수 있으며, 오차 함수인 𝜀 을 최소화 하는 a,b를 찾는 것이 머신러닝(Linear regression)의 목표</li>
-<li>이 오차함수를 최소화하는 a,b를 찾기위해 미분 사용  </li>
+    <title>AI-Day12</title>
+    <url>/2021/05/23/AI-Day12/</url>
+    <content><![CDATA[<h1 id="선형대수"><a href="#선형대수" class="headerlink" title="선형대수 +"></a>선형대수 +</h1><ul>
+<li>공분산, 상관계수의 목적과 사용 예시, 차이점 설명</li>
+<li>벡터의 직교와 그 조건 설명</li>
+<li>단위 벡터와, 단위 벡터로의 구분 설명</li>
+<li>span, basis, rank의 내용을 이해</li>
+<li>Gaussian elemination</li>
+<li>linear projection과 예시</li>
+</ul>
+<h2 id="기본적인-개념"><a href="#기본적인-개념" class="headerlink" title="기본적인 개념"></a>기본적인 개념</h2><ul>
+<li>기저벡터<ul>
+<li>“벡터공간 전체를 생성하는 선형 독립인 벡터의 집합” , but.. 이게무슨말일까?</li>
+<li>벡터v 의 각 좌표값을 스칼라라고 생각해보자</li>
+<li>이때 각 x,y 좌표의 단위벡터가 i^, j^ 라면 각각의 좌표를 단위백터에 스칼라곱 한만큼의 합이라고 볼 수 있다<ul>
+<li>벡터v =  ai^ + bj^</li>
 </ul>
 </li>
-</ul>
-<h2 id="미분-공식-w-Python"><a href="#미분-공식-w-Python" class="headerlink" title="미분 공식 w/ Python"></a>미분 공식 w/ Python</h2><ul>
-<li>기본적으로 미분은 다음의 공식을 활용<ul>
-<li>f’(x) = {f(x + Δx) - f(x)/ Δx}, Δ x-&gt; 0</li>
-<li>but 실제 0으로 나눌 수 없기때문에 0에 매우근사한 1e-5 을 사용하며, 이러한 접근 방식을 numerical method라 함</li>
-<li>numerical method에서는 조금 더 정확한 측정을 위해 분자에 f(x + Δx) - f(x - Δx)/ 2Δx 를 사용하기도 함  </li>
+<li>이 단위벡터 i^,j^ 을 xy좌표계의 <strong>기저벡터</strong> 라고 한다</li>
+<li>이는 벡터를 수적으로 표현할때 기저벡터를 기준으로 나타낸다  </li>
 </ul>
 </li>
-<li>머신러닝에서 쓰이는 대표적 미분공식들<ul>
-<li>f(x) = 상수 -&gt; f’(x) = 0<ul>
-<li>f’(x)가 상수 (constant)인 경우는 x를 아무리 늘리거나 줄여도 늘 같은 숫자이기 때문에 변화가 전혀 없음. 즉 변화율이 0이기 때문에 미분계수도 늘 0<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># f(x) &#x3D; 5</span><br><span class="line">def f(x):</span><br><span class="line">    return 5</span><br><span class="line"></span><br><span class="line">def numerical_derivative(fx, x):</span><br><span class="line">    delta_x &#x3D; 1e-5</span><br><span class="line"></span><br><span class="line">    return (fx(x + delta_x) - fx(x)) &#x2F; delta_x</span><br><span class="line">print(numerical_derivative(f, 1))</span><br><span class="line"></span><br><span class="line"># 예시 2 : Scipy의 derivative 활용(도함수를 바로계산해주는 함수)</span><br><span class="line">from scipy.misc import derivative</span><br><span class="line"></span><br><span class="line"># 두 방법의 결과값 비교</span><br><span class="line">derivative(f,1, dx&#x3D;1e-6) &#x3D;&#x3D; numerical_derivative(f, 1)</span><br></pre></td></tr></table></figure></li>
+<li>선형결합<ul>
+<li>두 벡터를 스케일하여 새로운 벡터를 생성하는 모든 연산</li>
+<li>벡터 v,w 의 선형결합 : av + bw</li>
+<li>3차원 이라면 ? av + bw + cu  </li>
 </ul>
 </li>
-<li>f(x) = ax<sup>{n}</sup> -&gt; f’(x) = an{x}<sup>{(n-1)}</sup><ul>
-<li>Power Rule로도 알려져있는 미분법</li>
-<li>x 기준으로 n승을 미분할 경우 n을 내려보내서 곱해준 후, 이후에 n승에서 “하나”를 가져왔기 때문에 빼주는 방법  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">def f(x):</span><br><span class="line">    return 3*(x**4) + 10</span><br><span class="line"></span><br><span class="line">def numerical_derivative(fx, x):</span><br><span class="line">    delta_x &#x3D; 1e-5</span><br><span class="line"></span><br><span class="line">    return (fx(x + delta_x) - fx(x)) &#x2F; delta_x</span><br><span class="line"></span><br><span class="line">print(numerical_derivative(f, 2))</span><br><span class="line"></span><br><span class="line"># 예시 2 : Scipy의 derivative 활용</span><br><span class="line">from scipy.misc import derivative</span><br><span class="line"></span><br><span class="line"># 두 방법의 결과값 비교</span><br><span class="line">print(derivative(f,2, dx&#x3D;1e-5))</span><br><span class="line">derivative(f,2, dx&#x3D;1e-5) &#x3D;&#x3D; numerical_derivative(f, 2)  #delta X의 값은 같지만 Rounding 에러로 인해 두 결과가 미묘하게 다르게 나오지만 거의 같음</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li>f(x) = e<sup>x</sup> -&gt;f’(x) = e<sup>x</sup><ul>
-<li>지수 함수의 경우에는 도함수 역시 지수 함수  </li>
-</ul>
-</li>
-<li>f(x) = lnx -&gt; f’(x) = {1 / x}<ul>
-<li>자연로그의 미분은 신경망의 활성 함수인 sigmoid 함수를 쉽게 미분할수 있도록 도와줌<ul>
-<li>why? sigmoid 함수에 자연로그를 씌움으로서 미분을 훨씬 수월하게 할 수 있게 되기 때문</li>
+<li>선형생성<ul>
+<li>백터 v와 w의 모든 선형결합으로 만들어진 벡터의 집합을 두 벡터의 생성(선형생성) 이라 한다</li>
+<li>일반적으로 두 기저벡터로 선형결합을 한다면, 그 차원의 모든 벡터를 만들수있다. 즉 생성은 <strong>평면전체</strong> 가 된다</li>
+<li>하지만 두 기저벡터가 같은 직선상에 존재한다면 생성은 <strong>영점을 지나는 하나의 선</strong> 이 된다</li>
+<li>3차원에서 하나의 벡터가 나머지 두 벡터의 선형생성안에 있다면? 즉 두 벡터로 만들어진 평면안에 포함된다면<ul>
+<li>그 포함된 벡터의 변화는 전체 선형생성에 의미가 없다, 즉 제거해도 상관없다  </li>
 </ul>
 </li>
 </ul>
 </li>
+<li>선형종속<ul>
+<li><strong>제거해도 상관없다</strong> 는 것을 선형종속 이라 표현<ul>
+<li>즉 벡터(u) 는 다른 벡터(v,w) 들의 선형결합으로 표현될 수 있다</li>
+<li>u = av + bw  </li>
 </ul>
 </li>
 </ul>
-<h2 id="편미분-Partial-Derivative"><a href="#편미분-Partial-Derivative" class="headerlink" title="편미분 Partial Derivative"></a>편미분 Partial Derivative</h2><ul>
-<li>파라미터가 2개 이상인 Error 함수에서 우선 1개의 파라미터에 대해서만 미분을 하자 라는 목적으로 다른 변수들을 상수 취급 하는 방법  </li>
-</ul>
-<p><img src="/../images/PD.PNG" alt="pd"></p>
-<h2 id="Chain-Rule"><a href="#Chain-Rule" class="headerlink" title="Chain Rule"></a>Chain Rule</h2><ul>
-<li><strong>합성함수(함수의 함수)</strong> 를 미분하기 위해 사용하는 방식</li>
-<li>F(x) = f(g(x))$<br>F’(x) -&gt; f’((g(x)) ∘ g’(x)<ul>
-<li>미분할 때 반드시 바깥함수(f(x))부터 미분을 해야함을 기억</li>
-<li>F(x) = (2x<sup>3</sup> + 7)<sup>6</sup>  를 x에 대해 미분하려는 경우<br>f(x) = x<sup>6</sup>, g(x) = 2x<sup>3</sup> + 7 로 설정<br>F’(x) = 6(2x<sup>3</sup> + 7)<sup>5</sup> ∘ 6x<sup>2</sup></li>
-</ul>
 </li>
-<li>Chain Rule은 Deep learning의 핵심 개념 중 하나인 Backward Propagation(역전파)을 이해하는데 중요하기 때문에 시간이 될 때마다 연습</li>
-</ul>
-<h2 id="경사하강법-Gradient-Descent"><a href="#경사하강법-Gradient-Descent" class="headerlink" title="경사하강법 Gradient Descent"></a>경사하강법 Gradient Descent</h2><ul>
-<li>오차 함수인 𝜀 을 최소화 하는 𝑎,𝑏 를 찾을 수 있는 최적화 알고리즘 중의 하나</li>
-<li>최적의 a,b를 찾기 위해선 도함수의 미분계수가 0인 곳을 찾으면 되지만, 실제 다루게 될 문제에선 파라미터의 갯수는 수없이 많고 하나의 minimum/maximum만이 존재하지 않음</li>
-<li>경사하강법은 임의의 a, b를 선택한 후 (random initialization)에 기울기 (gradient)를 계산해서 기울기 값이 낮아지는 방향으로 진행</li>
-<li>기울기는 항상 손실 함수 값이 가장 크게 증가하는 방향으로 진행합니다. 그렇기 때문에 경사하강법 알고리즘은 기울기의 반대 방향으로 이동</li>
-<li>경사하강법에서의 a,b<br>an+1=an−η∇f(an)<br>bn+1=bn−η∇f(bn)<ul>
-<li>반복적으로 파라미터 a,b를 업데이트 해가면서 그래디언트(∇f)가 0이 될 때까지 이동<br>이 때 중요한게 바로 학습률 (learning rate,η)<br>학습률이 너무 낮게 되면 알고리즘이 수렴하기 위해서 반복을 많이 해야되고 학습률이 너무 크면 극소값을 지나쳐서 알고리즘이 수렴을 못하고 계산을 계속 반복<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">def gradient_descent(X, y, lr &#x3D; 0.05, epoch &#x3D; 10):</span><br><span class="line">    </span><br><span class="line">    a, b &#x3D; 0.33, 0.48 # 임의 선택한 파라미터 a, b</span><br><span class="line">    N &#x3D; len(X) # 샘플 갯수</span><br><span class="line">    </span><br><span class="line">    for _ in range(epoch):            </span><br><span class="line">        f &#x3D; y - (a*X + b)</span><br><span class="line">    </span><br><span class="line">        # a와 b를 업데이트 합니다(기울기를 바꿔준다고 쉽게이해하면 됨)</span><br><span class="line">        a -&#x3D; lr * (-2 * X.dot(f).sum() &#x2F; N)</span><br><span class="line">        b -&#x3D; lr * (-2 * f.sum() &#x2F; N</span><br><span class="line"></span><br><span class="line"># y &#x3D; 3 x + 5</span><br><span class="line">X &#x3D; np.array([1, 2, 3, 4, 5])</span><br><span class="line">y &#x3D; np.array([8, 11, 14, 17, 20])</span><br><span class="line"></span><br><span class="line">gradient_descent(X,y)  # 10번만 돌렸을 때</span><br><span class="line">gradient_descent(X, y, epoch &#x3D; 100)  # 100번 반복</span><br><span class="line">gradient_descent(X, y, epoch &#x3D; 1000)  # 1000번 반복</span><br><span class="line">반복할수록 a&#x3D;43 b&#x3D;5에 점점 수렴해감을 확인할 수 있음</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>TIL</category>
-      </categories>
-      <tags>
-        <tag>Data science</tag>
-        <tag>Basic Derivative</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI-Day11</title>
-    <url>/2021/05/21/AI-Day11/</url>
-    <content><![CDATA[<h1 id="선형대수학"><a href="#선형대수학" class="headerlink" title="선형대수학"></a>선형대수학</h1><ul>
-<li>데이터사이언스와 선형대수의 관계를 알기</li>
-<li>백터와 매트릭스에대한 기본계산 익히기</li>
-<li>단위행렬(Identity matrix)과 같은 특별한 매트릭스의 의미 이해하고 행렬식(determinant)이나, 역행렬을(inverse)계산 할수 있어야함</li>
-</ul>
-<h2 id="Data-Structure-데이터를-담는-구조"><a href="#Data-Structure-데이터를-담는-구조" class="headerlink" title="Data Structure(데이터를 담는 구조)"></a>Data Structure(데이터를 담는 구조)</h2><ul>
-<li>1차원 (1D)<ul>
-<li>list 형태의 data structure</li>
-</ul>
-</li>
-<li>2차원 (2D)<ul>
-<li>list 안의 list 형태</li>
-</ul>
-</li>
-</ul>
-<h2 id="스칼라-벡터"><a href="#스칼라-벡터" class="headerlink" title="스칼라,벡터"></a>스칼라,벡터</h2><ul>
-<li>선형 대수를 구성하는 기본 요소</li>
-<li>스칼라 : 단순히 변수로 저장되어 있는 숫자(크기)</li>
-<li>벡터 : 파이썬에서 주로 list로 사용 되며, 데이터셋을 구성하고 있는 데이터프레임의 행/열로써 사용(크기+방향)<ul>
-<li>매트릭스는 벡터의 모음으로 간주 될 수도 있음</li>
-<li>벡터의 연산 공식 암기</li>
-</ul>
-</li>
-</ul>
-<h2 id="매트릭스"><a href="#매트릭스" class="headerlink" title="매트릭스"></a>매트릭스</h2><ul>
-<li>행과 열을 통해 배치되어있는 숫자</li>
-<li>pandas를 통해 다뤘던 데이터프레임이 매트릭스와 유사한 형태</li>
-<li>Dimensionality<ul>
-<li>매트릭스의 행과 열의 숫자를 차원 (dimension, 차원수)이라 표현</li>
-<li>차원을 표기 할때는 행을 먼저, 열을 나중에 표기 (행-열)</li>
-</ul>
-</li>
-<li>2개의 매트릭스가 일치하기 위해서는 차원이 같고, 해당하는 구성요소가 동일해야함</li>
-<li>Transpose (B<sup>T</sup> or B’)<ul>
-<li>대각선기준 행 열을 뒤집기, 코드로는 df.T 로 간단하게 가능</li>
-</ul>
-</li>
-<li>정사각 행렬(square matrix)<ul>
-<li>정방매트릭스 라고불리며, 행과 열의수가 동일한 매트릭스</li>
-<li>Upper Triangular(상삼각): 대각선 위쪽 부분에만 값이 있고, 나머지는 전부 0</li>
-<li>Lower Triangular(하삼각): upper triangular 와 반대</li>
-<li>Symmetric(대칭): 대각선을 기준으로 위 아래의 값이 대칭</li>
-<li>Diagonal(대각): 대각선 부분에만 값이 있고, 나머지는 전부 0<ul>
-<li>Identity(단위 매트릭스) : 대각중 모든값이 1, 임의의 행렬에 곱했을때 단위행렬이 나오는것 = 역행렬</li>
+<li>선형독립<ul>
+<li>서로 선형생성안에 포함되지않는 독립적인 상태라면 선형독립이라 표현<ul>
+<li>u != av + bw</li>
+<li>av + bw + cu = 0 의 유일한 해가 a=b=c=0 이라면 선형독립이다 라고도 할 수 있다</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="행렬식-Determinant"><a href="#행렬식-Determinant" class="headerlink" title="행렬식 (Determinant)"></a>행렬식 (Determinant)</h2><ul>
-<li>2x2 행렬기준 행렬식은 ad-bc<ul>
-<li>그 이상 차원의 행렬은 방법이 다름(재귀적으로 부분나누어서)</li>
+<h2 id="분산-Variance"><a href="#분산-Variance" class="headerlink" title="분산 Variance"></a>분산 Variance</h2><ul>
+<li><strong>데이터가 얼마나 퍼져있는지</strong> 측정하는 방법</li>
+<li>값-평균값 의 제곱  </li>
+</ul>
+<h2 id="표준편차-Standard-Deviation"><a href="#표준편차-Standard-Deviation" class="headerlink" title="표준편차 Standard Deviation"></a>표준편차 Standard Deviation</h2><ul>
+<li>분산에 루트씌운것</li>
+<li>분산은 샘플으 사이즈에 따라 평균에비해 스케일이 더 커지는 경향이있음</li>
+<li>표준편차는 제곱된 스케일을 낮춘 방법이므로 통계분석에서 많이 사용됨  </li>
+</ul>
+<h2 id="공분산-Covariance"><a href="#공분산-Covariance" class="headerlink" title="공분산 Covariance"></a>공분산 Covariance</h2><ul>
+<li>하나의 변수가 변화할때, 다른 변수가 어떤 연관성을 나타내며 변화하는가 측정</li>
+<li>COV(x,y) 로 나타내며, 연관성에따라 분류</li>
+<li>COV(x,y) &gt; 0 : x가 증가하면 y도 증가, 양의 공분산</li>
+<li>COV(x,y) &lt; 0 : x가 증가하면 y는 감소, 음의 공분산</li>
+<li>COV(x,y) ~ 0 : 관련성을 알 수 없음</li>
+<li>하지만 ! 변수들이 다른 스케일을 가지고 있다면 공분산은 실제 변수의 연관성에 관계 없이 영향을 받음<ul>
+<li>즉 만약 두 변수의 연관성이 작더라도 스케일이크다면, 연관성이 높지만 스케일이 작은 변수에비해 높은 공분산값을 가짐</li>
+<li>이것을 보완하기위해 상관계수를 사용  </li>
 </ul>
 </li>
-<li>행렬식이 0 이라면 역행렬은 존재하지 않음<ul>
-<li>이것을  “특이” (singular) 행렬이라 하며, <strong>매트릭스의 행과 열이 의존관계가 있다</strong> 고 표현가능</li>
+</ul>
+<h2 id="상관계수-r"><a href="#상관계수-r" class="headerlink" title="상관계수  r"></a>상관계수  r</h2><ul>
+<li>공분산을 두 변수의 표준편차로 각각 나누어 스케일을 조정한것</li>
+<li>정해진 범위 (-1에서1사이) 값만 가지며, 선형연고나성이 없는경우 0에 근접<ul>
+<li>공분산과 다르게 스케일에 영향받지 않음</li>
+<li>데이터의 평균, 분산의크기에 영향받지 않음</li>
+</ul>
+</li>
+<li>-1 &lt; COR(x,y) &lt; 0 : x가 증가하면 y는 감소</li>
+<li> 0 &lt; COR(x,y) &lt; 1 : x가 증가하면 y도 증가</li>
+<li>COR(x,y) ~ 0 : 관련성 알 수 없음</li>
+<li>COR(x,y) = 1 : 한변수가 다른변수에대해 완벽한 양의 선형관계이다  </li>
+</ul>
+<h3 id="Spearman-correlation"><a href="#Spearman-correlation" class="headerlink" title="Spearman correlation"></a>Spearman correlation</h3><ul>
+<li>일반적 상관계수는 Pearson correlation<ul>
+<li> 데이터에서 분산과 같은 numeric data를 계산</li>
+</ul>
+</li>
+<li>만약 categorical 이라면 ?<ul>
+<li>Spearman correlation coefficient 로 값들의 순서(rank)를 주고, 그 바탕으로 상관관계 측정  </li>
 </ul>
 </li>
 </ul>
-<h2 id="역행렬"><a href="#역행렬" class="headerlink" title="역행렬"></a>역행렬</h2><ul>
-<li>역행렬 계산법은 여러가지이며 행렬의 역수로 표현가능</li>
-<li>행렬에 역행렬을 곱하면 단위행렬</li>
+<h2 id="수직성-Orthogonality"><a href="#수직성-Orthogonality" class="headerlink" title="수직성 Orthogonality"></a>수직성 Orthogonality</h2><ul>
+<li>벡터, 매트릭스가 서로 수직인 상태</li>
+<li>두 벡터가 수직이다? 상관관계가 전혀 없다<ul>
+<li>수직이다 -&gt; 내적이 0 이다  </li>
 </ul>
-<h3 id="사용해본-모듈및-메서드"><a href="#사용해본-모듈및-메서드" class="headerlink" title="사용해본 모듈및 메서드"></a>사용해본 모듈및 메서드</h3><ul>
-<li>np.matmul</li>
-<li>np.dot</li>
-<li>linalg.norm(v)</li>
-<li>linalg.inv(v)</li>
-<li>mean_squared_error(x,y)</li>
-<li>mean_absolute_error(x,y)</li>
+</li>
+</ul>
+<h2 id="단위벡터-Unit-Vectors"><a href="#단위벡터-Unit-Vectors" class="headerlink" title="단위벡터 Unit Vectors"></a>단위벡터 Unit Vectors</h2><ul>
+<li>단위길이(1) 을 갖는 모든벡터<ul>
+<li>차원별 단위벡터는 벡터내에 하나의1과 0들로만 이뤄진벡터</li>
+<li>ex ) 1차원:[1], 2차원:[1,0], 3차원:[1,0,0]  </li>
+</ul>
+</li>
+</ul>
+<h2 id="Span"><a href="#Span" class="headerlink" title="Span"></a>Span</h2><ul>
+<li>주어진 두 벡터의 조합으로 만들수 있는 모든 벡터들의 집합</li>
+<li>선형관계의 벡터가 아니라면? 주어진 차원전체를 나타내는 평면으로 나타낼 수 있다  </li>
+</ul>
+<h2 id="선형관계의-벡터-Linearly-Dependent-Vector"><a href="#선형관계의-벡터-Linearly-Dependent-Vector" class="headerlink" title="선형관계의 벡터 (Linearly Dependent Vector)"></a>선형관계의 벡터 (Linearly Dependent Vector)</h2><ul>
+<li>두 벡터가 같은선상에 있는 경우</li>
+<li>이 경우 두 벡터로 만들어진 Span은 하나의 선이 된다</li>
+<li>선형관계가 없는 <strong>벡터는 독립되어 있다</strong> 고 표현  </li>
+</ul>
+<h2 id="Basis"><a href="#Basis" class="headerlink" title="Basis"></a>Basis</h2><ul>
+<li>벡터공간 V의 basis 란, V를 채울 수 있는 선형관계에 있지않은 벡터들의 집합</li>
+<li>Orthogonal Basis: 공간을 채울 수 있는 <strong>서로 수직인 벡터</strong> </li>
+<li>Orthonormal Basis :  Orthogonal Basis에 추가로 Normalized 조건이 붙은 것으로, 길이가 1인 벡터들</li>
+<li>Gram-Schmidt 프로세스(단위 직교화)<ul>
+<li>일차독립 벡터집합을 정규직교기저로 변환</li>
+</ul>
+</li>
+<li>벡터공간을 나타내는 R<sup>n</sup> 에서의 n은 해당 <strong>벡터공간을 이루는 기저의 수</strong> 라고 이해할 수 있다  </li>
+</ul>
+<h2 id="Rank"><a href="#Rank" class="headerlink" title="Rank"></a>Rank</h2><ul>
+<li>매트릭스의 열을 이루는 벡터들로 만들 수 있는 span공간의 차원</li>
+<li>매트릭스의 차원과는 다를수 있음<ul>
+<li>why? 행과 열을 이루는 벡터들중 선형관계가 있는 경우 rank가 더 작을 수 있다  </li>
+</ul>
+</li>
+</ul>
+<h2 id="가우스-소거법-Gaussian-Elimination"><a href="#가우스-소거법-Gaussian-Elimination" class="headerlink" title="가우스 소거법(Gaussian Elimination)"></a>가우스 소거법(Gaussian Elimination)</h2><ul>
+<li>연립일차방정식에서 미지수를 소거시켜 남은 미지수에대한 선형결합으로 표현하여 풀이하는 방법</li>
+<li>매트릭스를 사다리꼴행렬(Row-Echelon form)로 바꾸는 방법<ul>
+<li>사다리꼴행렬 : 각행의 왼쪽에 1, 나머지는 0</li>
+</ul>
+</li>
+<li>다른 행들의 스칼라 곱과 합을통해 어떤행이 0이 되었다 -&gt; 선형관계가 있다  </li>
+</ul>
+<h2 id="R2-공간에서의-Linear-Projections"><a href="#R2-공간에서의-Linear-Projections" class="headerlink" title="R2 공간에서의 Linear Projections"></a>R<sup>2</sup> 공간에서의 Linear Projections</h2><ul>
+<li>일반적인 사영은 하나의 벡터를 다른벡터에 수직으로내려서 투영시키는것을 뜻한다</li>
+<li>통계에서의 사영은 투영시키는 그 벡터, 즉 두개의 feature중 하나를 다른하나에 투영시킴으로써 차원을 줄이고 그로인해 통계적 분석에 필요한 메모리나 시간 등을 줄이는 방법이다</li>
+<li>벡터 L에대한 벡터W의 projection  <img src="../images/linearprojection.PNG"></li>
 </ul>
 ]]></content>
       <categories>
@@ -685,6 +608,134 @@
         <tag>Data science</tag>
         <tag>Linear Algebra</tag>
         <tag>Clustering</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI-Day2</title>
+    <url>/2021/05/07/AI-Day2/</url>
+    <content><![CDATA[<h1 id="Feature-Engineering"><a href="#Feature-Engineering" class="headerlink" title="Feature Engineering"></a>Feature Engineering</h1><h2 id="Warm-up"><a href="#Warm-up" class="headerlink" title="Warm up"></a>Warm up</h2><ul>
+<li>Data cleaning<ul>
+<li>대부분의 실제 데이터엔지니어, 데이터사이언티스트는 데이터클리닝이 대부분의 업무</li>
+<li>AI에 머신러닝을 시키기위해선 정제된 데이터가 필수  </li>
+</ul>
+</li>
+</ul>
+<h2 id="Feature-Engineering-이란"><a href="#Feature-Engineering-이란" class="headerlink" title="Feature Engineering 이란?"></a>Feature Engineering 이란?</h2><ul>
+<li>도메인 지식과 창의성을 바탕으로, 데이터셋에 존재하는 Feature들을 재조합하여 새로운 Feature를 만드는 것</li>
+<li>통계 분석 혹은 머신러닝, 딥러닝까지 대부분의 분석은 데이터에 있는 패턴을 인식하고 해당 패턴들을 바탕으로 예측</li>
+<li>더 좋은 퍼포먼스를 위해서 새롭고, 의미있는 패턴을 제공하는 것이 궁극적인 Feature engineering의 목적</li>
+<li>Gargage in - Garbage out 을 기억  </li>
+</ul>
+<h2 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h2><ul>
+<li>테이블형태의 데이터로 기억</li>
+<li>Row(행)에는 observation, Column(열)에는 feature가 있다</li>
+<li>만약 데이터에 NaN값이있다면? 같은 row의 다른값들은 자동으로 float으로 typecasting</li>
+</ul>
+<h2 id="Feature-Engineering-1"><a href="#Feature-Engineering-1" class="headerlink" title="Feature Engineering"></a>Feature Engineering</h2><ul>
+<li>feature끼리는 일반수식처럼 가능하지만, 각각의 data type에 주의하여야함<ul>
+<li>int끼리라면 의도대로 수식이되지만, 만약 str이라면? 예상치못한 결과도출</li>
+<li>특히 머신러닝 모델링에서는 문자열로된 data는 사용하지 않음</li>
+</ul>
+</li>
+</ul>
+<h3 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h3><ul>
+<li>s.replace(‘지우려는것’,’대체할것’)<ul>
+<li>하지만 바뀐것을 변수에 다시선언해주어야 변경됨(얕은복사? 더찾아보기)</li>
+</ul>
+</li>
+<li>s.toint()<ul>
+<li>자동으로 int로 typecasting까지 실행</li>
+</ul>
+</li>
+<li>s.apply(함수)<ul>
+<li>한 column전체에 대해 함수를 다 실행시킴(파이썬의 map과 비슷한느낌)</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>TIL</category>
+      </categories>
+      <tags>
+        <tag>Data science</tag>
+        <tag>Feature Engineering</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI-Day4</title>
+    <url>/2021/05/11/AI-Day4/</url>
+    <content><![CDATA[<h1 id="Basic-Derivative-기초미분"><a href="#Basic-Derivative-기초미분" class="headerlink" title="Basic Derivative 기초미분"></a>Basic Derivative 기초미분</h1><ul>
+<li>미분 : 함수를 작게 나누는것</li>
+<li>DS에서의 미분?<ul>
+<li>x를 넣었을때 y값을 예측하는 선형모델을 예로보면</li>
+<li>y^ = a + b X</li>
+<li>주어진 데이터 X를 넣었을 떄 모델이 예측하는 예측값과 실제값 간의 차이(Error,𝜀)를 계산한 다음, 여러 모델 중 Error(모델에서 예측하는 예측값과 실제값 (y)의 차이)가 가장 작은 모델을 선택하는 방법을 통해, 가장 좋은 모델을 선택할 수 있음</li>
+<li>이 과정은 f(a,b) =𝜀 로 표현 될 수 있으며, 오차 함수인 𝜀 을 최소화 하는 a,b를 찾는 것이 머신러닝(Linear regression)의 목표</li>
+<li>이 오차함수를 최소화하는 a,b를 찾기위해 미분 사용  </li>
+</ul>
+</li>
+</ul>
+<h2 id="미분-공식-w-Python"><a href="#미분-공식-w-Python" class="headerlink" title="미분 공식 w/ Python"></a>미분 공식 w/ Python</h2><ul>
+<li>기본적으로 미분은 다음의 공식을 활용<ul>
+<li>f’(x) = {f(x + Δx) - f(x)/ Δx}, Δ x-&gt; 0</li>
+<li>but 실제 0으로 나눌 수 없기때문에 0에 매우근사한 1e-5 을 사용하며, 이러한 접근 방식을 numerical method라 함</li>
+<li>numerical method에서는 조금 더 정확한 측정을 위해 분자에 f(x + Δx) - f(x - Δx)/ 2Δx 를 사용하기도 함  </li>
+</ul>
+</li>
+<li>머신러닝에서 쓰이는 대표적 미분공식들<ul>
+<li>f(x) = 상수 -&gt; f’(x) = 0<ul>
+<li>f’(x)가 상수 (constant)인 경우는 x를 아무리 늘리거나 줄여도 늘 같은 숫자이기 때문에 변화가 전혀 없음. 즉 변화율이 0이기 때문에 미분계수도 늘 0<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># f(x) &#x3D; 5</span><br><span class="line">def f(x):</span><br><span class="line">    return 5</span><br><span class="line"></span><br><span class="line">def numerical_derivative(fx, x):</span><br><span class="line">    delta_x &#x3D; 1e-5</span><br><span class="line"></span><br><span class="line">    return (fx(x + delta_x) - fx(x)) &#x2F; delta_x</span><br><span class="line">print(numerical_derivative(f, 1))</span><br><span class="line"></span><br><span class="line"># 예시 2 : Scipy의 derivative 활용(도함수를 바로계산해주는 함수)</span><br><span class="line">from scipy.misc import derivative</span><br><span class="line"></span><br><span class="line"># 두 방법의 결과값 비교</span><br><span class="line">derivative(f,1, dx&#x3D;1e-6) &#x3D;&#x3D; numerical_derivative(f, 1)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>f(x) = ax<sup>{n}</sup> -&gt; f’(x) = an{x}<sup>{(n-1)}</sup><ul>
+<li>Power Rule로도 알려져있는 미분법</li>
+<li>x 기준으로 n승을 미분할 경우 n을 내려보내서 곱해준 후, 이후에 n승에서 “하나”를 가져왔기 때문에 빼주는 방법  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">def f(x):</span><br><span class="line">    return 3*(x**4) + 10</span><br><span class="line"></span><br><span class="line">def numerical_derivative(fx, x):</span><br><span class="line">    delta_x &#x3D; 1e-5</span><br><span class="line"></span><br><span class="line">    return (fx(x + delta_x) - fx(x)) &#x2F; delta_x</span><br><span class="line"></span><br><span class="line">print(numerical_derivative(f, 2))</span><br><span class="line"></span><br><span class="line"># 예시 2 : Scipy의 derivative 활용</span><br><span class="line">from scipy.misc import derivative</span><br><span class="line"></span><br><span class="line"># 두 방법의 결과값 비교</span><br><span class="line">print(derivative(f,2, dx&#x3D;1e-5))</span><br><span class="line">derivative(f,2, dx&#x3D;1e-5) &#x3D;&#x3D; numerical_derivative(f, 2)  #delta X의 값은 같지만 Rounding 에러로 인해 두 결과가 미묘하게 다르게 나오지만 거의 같음</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>f(x) = e<sup>x</sup> -&gt;f’(x) = e<sup>x</sup><ul>
+<li>지수 함수의 경우에는 도함수 역시 지수 함수  </li>
+</ul>
+</li>
+<li>f(x) = lnx -&gt; f’(x) = {1 / x}<ul>
+<li>자연로그의 미분은 신경망의 활성 함수인 sigmoid 함수를 쉽게 미분할수 있도록 도와줌<ul>
+<li>why? sigmoid 함수에 자연로그를 씌움으로서 미분을 훨씬 수월하게 할 수 있게 되기 때문</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="편미분-Partial-Derivative"><a href="#편미분-Partial-Derivative" class="headerlink" title="편미분 Partial Derivative"></a>편미분 Partial Derivative</h2><ul>
+<li>파라미터가 2개 이상인 Error 함수에서 우선 1개의 파라미터에 대해서만 미분을 하자 라는 목적으로 다른 변수들을 상수 취급 하는 방법  </li>
+</ul>
+<p><img src="/../images/PD.PNG" alt="pd"></p>
+<h2 id="Chain-Rule"><a href="#Chain-Rule" class="headerlink" title="Chain Rule"></a>Chain Rule</h2><ul>
+<li><strong>합성함수(함수의 함수)</strong> 를 미분하기 위해 사용하는 방식</li>
+<li>F(x) = f(g(x))$<br>F’(x) -&gt; f’((g(x)) ∘ g’(x)<ul>
+<li>미분할 때 반드시 바깥함수(f(x))부터 미분을 해야함을 기억</li>
+<li>F(x) = (2x<sup>3</sup> + 7)<sup>6</sup>  를 x에 대해 미분하려는 경우<br>f(x) = x<sup>6</sup>, g(x) = 2x<sup>3</sup> + 7 로 설정<br>F’(x) = 6(2x<sup>3</sup> + 7)<sup>5</sup> ∘ 6x<sup>2</sup></li>
+</ul>
+</li>
+<li>Chain Rule은 Deep learning의 핵심 개념 중 하나인 Backward Propagation(역전파)을 이해하는데 중요하기 때문에 시간이 될 때마다 연습</li>
+</ul>
+<h2 id="경사하강법-Gradient-Descent"><a href="#경사하강법-Gradient-Descent" class="headerlink" title="경사하강법 Gradient Descent"></a>경사하강법 Gradient Descent</h2><ul>
+<li>오차 함수인 𝜀 을 최소화 하는 𝑎,𝑏 를 찾을 수 있는 최적화 알고리즘 중의 하나</li>
+<li>최적의 a,b를 찾기 위해선 도함수의 미분계수가 0인 곳을 찾으면 되지만, 실제 다루게 될 문제에선 파라미터의 갯수는 수없이 많고 하나의 minimum/maximum만이 존재하지 않음</li>
+<li>경사하강법은 임의의 a, b를 선택한 후 (random initialization)에 기울기 (gradient)를 계산해서 기울기 값이 낮아지는 방향으로 진행</li>
+<li>기울기는 항상 손실 함수 값이 가장 크게 증가하는 방향으로 진행합니다. 그렇기 때문에 경사하강법 알고리즘은 기울기의 반대 방향으로 이동</li>
+<li>경사하강법에서의 a,b<br>an+1=an−η∇f(an)<br>bn+1=bn−η∇f(bn)<ul>
+<li>반복적으로 파라미터 a,b를 업데이트 해가면서 그래디언트(∇f)가 0이 될 때까지 이동<br>이 때 중요한게 바로 학습률 (learning rate,η)<br>학습률이 너무 낮게 되면 알고리즘이 수렴하기 위해서 반복을 많이 해야되고 학습률이 너무 크면 극소값을 지나쳐서 알고리즘이 수렴을 못하고 계산을 계속 반복<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">def gradient_descent(X, y, lr &#x3D; 0.05, epoch &#x3D; 10):</span><br><span class="line">    </span><br><span class="line">    a, b &#x3D; 0.33, 0.48 # 임의 선택한 파라미터 a, b</span><br><span class="line">    N &#x3D; len(X) # 샘플 갯수</span><br><span class="line">    </span><br><span class="line">    for _ in range(epoch):            </span><br><span class="line">        f &#x3D; y - (a*X + b)</span><br><span class="line">    </span><br><span class="line">        # a와 b를 업데이트 합니다(기울기를 바꿔준다고 쉽게이해하면 됨)</span><br><span class="line">        a -&#x3D; lr * (-2 * X.dot(f).sum() &#x2F; N)</span><br><span class="line">        b -&#x3D; lr * (-2 * f.sum() &#x2F; N</span><br><span class="line"></span><br><span class="line"># y &#x3D; 3 x + 5</span><br><span class="line">X &#x3D; np.array([1, 2, 3, 4, 5])</span><br><span class="line">y &#x3D; np.array([8, 11, 14, 17, 20])</span><br><span class="line"></span><br><span class="line">gradient_descent(X,y)  # 10번만 돌렸을 때</span><br><span class="line">gradient_descent(X, y, epoch &#x3D; 100)  # 100번 반복</span><br><span class="line">gradient_descent(X, y, epoch &#x3D; 1000)  # 1000번 반복</span><br><span class="line">반복할수록 a&#x3D;43 b&#x3D;5에 점점 수렴해감을 확인할 수 있음</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>TIL</category>
+      </categories>
+      <tags>
+        <tag>Data science</tag>
+        <tag>Basic Derivative</tag>
       </tags>
   </entry>
   <entry>
@@ -835,69 +886,6 @@
       </tags>
   </entry>
   <entry>
-    <title>AI-day15</title>
-    <url>/2021/05/27/AI-day15/</url>
-    <content><![CDATA[<h1 id="Weekly-reveiw"><a href="#Weekly-reveiw" class="headerlink" title="Weekly reveiw"></a>Weekly reveiw</h1><h2 id="벡터와-매트릭스-Vectors-and-Matrices"><a href="#벡터와-매트릭스-Vectors-and-Matrices" class="headerlink" title="벡터와 매트릭스 ( Vectors and Matrices )"></a>벡터와 매트릭스 ( Vectors and Matrices )</h2><ul>
-<li>벡터의 연산과 Norm, det 등의 값이가지는 의미와 실제 코드로 실행할수있다는것을 기억<ul>
-<li>원리이해와 각각에필요한 라이브러리를 쓸줄 알아야함</li>
-</ul>
-</li>
-</ul>
-<h2 id="차원죽소"><a href="#차원죽소" class="headerlink" title="차원죽소"></a>차원죽소</h2><ul>
-<li>차원축소하는 궁극적인이유는 , 속도를높이고 메모리의 사용을 줄이기위함</li>
-<li>PCA 와 SVD에대한 큰 개념을 이해하기</li>
-</ul>
-<h2 id="스칼라와-벡터"><a href="#스칼라와-벡터" class="headerlink" title="스칼라와 벡터"></a>스칼라와 벡터</h2><ul>
-<li>벡터에서는 numpy를 이용해 다양한 계산을 활용할줄 아는것이 기본이다</li>
-<li>스칼라는 숫자고 크기이다</li>
-<li>벡터를 수학적으로 이해하기보다는 데이터라고 받아들이자</li>
-<li>벡터의 길이(length)는 벡터의 차원수와 동일하다는 정도만 이해</li>
-<li>벡터의 크기 (Magnitude, Norm, Length)의 의미에대해 알기</li>
-<li>벡터의 내적 ( Dot Product )을 위해서는 두 벡터의 길이가 반드시 동일해야 한다</li>
-</ul>
-<h2 id="매트릭스"><a href="#매트릭스" class="headerlink" title="매트릭스"></a>매트릭스</h2><ul>
-<li>매트릭스의 Transpose 기억하기</li>
-<li>2개의 매트릭스가 일치하기 위해서는, 동일한 차원을 보유하고 각 해당하는 구성요소들이 동일해야 함</li>
-<li>정사각 매트릭스<ul>
-<li>정사각 매트릭스의 종류들과 특징은 알아두기</li>
-<li>단위매트릭스는 특히 중요</li>
-</ul>
-</li>
-<li>행렬식과 역행렬의 개념과 계산하는 방법 알기</li>
-</ul>
-<h2 id="분산과-표준편차"><a href="#분산과-표준편차" class="headerlink" title="분산과 표준편차"></a>분산과 표준편차</h2><ul>
-<li>각각의 의미와 구하는 라이브러리를 기억</li>
-<li>numpy와 pandas에서 ddof의 차이에 주의하자</li>
-<li>공분산과 상관계수는 메서드 사용시 원하는값이 배열의 어느위치에 있는지 알아야함<ul>
-<li>특히 상관계수가 1일때와 -1일때 똑같이 선형상관관계이고 방향만 양수 음수 임을 주의 -1이라고해서 선형관계가 아니라고 생각하면 안된다</li>
-<li>공분산과 상관계수는 서로 어떤관계가 있는지 설명할줄 알아야함</li>
-</ul>
-</li>
-</ul>
-<h2 id="basis-rank-span"><a href="#basis-rank-span" class="headerlink" title="basis, rank, span"></a>basis, rank, span</h2><ul>
-<li>각각의 개념을 이해하는것이 중요</li>
-</ul>
-<h2 id="Vector-transformation"><a href="#Vector-transformation" class="headerlink" title="Vector transformation"></a>Vector transformation</h2><ul>
-<li>다양한 방법으로 벡터를 변환시켜 차원을 줄이기위한 과정</li>
-<li>고유값과 고유벡터의 의미와 구하는법도 숙지</li>
-</ul>
-<h2 id="차원감소"><a href="#차원감소" class="headerlink" title="차원감소"></a>차원감소</h2><ul>
-<li>Feacture Selection 과 Feature Extraction 의 방식과 예시 기억하기</li>
-<li>Scaling 과 PCA 을 통해 차원감소하는 원리와 이유, 방법과 라이브러리 정리</li>
-</ul>
-<h2 id="Custering"><a href="#Custering" class="headerlink" title="Custering"></a>Custering</h2><ul>
-<li>머신러닝에서의 비지도학습의 한 종류로 데이터들간의 유사성을 토대로 분류하는것이다</li>
-<li>다양한 종류가있지만, 그런 종류가있다는것을 알고 데이터의 형태에 맞는 방법을 쓰는것이 중요하다</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Weekly reveiw</category>
-      </categories>
-      <tags>
-        <tag>Data science</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>AI-day10</title>
     <url>/2021/05/20/AI-day10/</url>
     <content><![CDATA[<h1 id="Weekly-review"><a href="#Weekly-review" class="headerlink" title="Weekly review"></a>Weekly review</h1><h2 id="가설검정"><a href="#가설검정" class="headerlink" title="가설검정"></a>가설검정</h2><ul>
@@ -969,6 +957,132 @@
       </categories>
       <tags>
         <tag>Data science</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI-day15</title>
+    <url>/2021/05/27/AI-day15/</url>
+    <content><![CDATA[<h1 id="Weekly-reveiw"><a href="#Weekly-reveiw" class="headerlink" title="Weekly reveiw"></a>Weekly reveiw</h1><h2 id="벡터와-매트릭스-Vectors-and-Matrices"><a href="#벡터와-매트릭스-Vectors-and-Matrices" class="headerlink" title="벡터와 매트릭스 ( Vectors and Matrices )"></a>벡터와 매트릭스 ( Vectors and Matrices )</h2><ul>
+<li>벡터의 연산과 Norm, det 등의 값이가지는 의미와 실제 코드로 실행할수있다는것을 기억<ul>
+<li>원리이해와 각각에필요한 라이브러리를 쓸줄 알아야함</li>
+</ul>
+</li>
+</ul>
+<h2 id="차원죽소"><a href="#차원죽소" class="headerlink" title="차원죽소"></a>차원죽소</h2><ul>
+<li>차원축소하는 궁극적인이유는 , 속도를높이고 메모리의 사용을 줄이기위함</li>
+<li>PCA 와 SVD에대한 큰 개념을 이해하기</li>
+</ul>
+<h2 id="스칼라와-벡터"><a href="#스칼라와-벡터" class="headerlink" title="스칼라와 벡터"></a>스칼라와 벡터</h2><ul>
+<li>벡터에서는 numpy를 이용해 다양한 계산을 활용할줄 아는것이 기본이다</li>
+<li>스칼라는 숫자고 크기이다</li>
+<li>벡터를 수학적으로 이해하기보다는 데이터라고 받아들이자</li>
+<li>벡터의 길이(length)는 벡터의 차원수와 동일하다는 정도만 이해</li>
+<li>벡터의 크기 (Magnitude, Norm, Length)의 의미에대해 알기</li>
+<li>벡터의 내적 ( Dot Product )을 위해서는 두 벡터의 길이가 반드시 동일해야 한다</li>
+</ul>
+<h2 id="매트릭스"><a href="#매트릭스" class="headerlink" title="매트릭스"></a>매트릭스</h2><ul>
+<li>매트릭스의 Transpose 기억하기</li>
+<li>2개의 매트릭스가 일치하기 위해서는, 동일한 차원을 보유하고 각 해당하는 구성요소들이 동일해야 함</li>
+<li>정사각 매트릭스<ul>
+<li>정사각 매트릭스의 종류들과 특징은 알아두기</li>
+<li>단위매트릭스는 특히 중요</li>
+</ul>
+</li>
+<li>행렬식과 역행렬의 개념과 계산하는 방법 알기</li>
+</ul>
+<h2 id="분산과-표준편차"><a href="#분산과-표준편차" class="headerlink" title="분산과 표준편차"></a>분산과 표준편차</h2><ul>
+<li>각각의 의미와 구하는 라이브러리를 기억</li>
+<li>numpy와 pandas에서 ddof의 차이에 주의하자</li>
+<li>공분산과 상관계수는 메서드 사용시 원하는값이 배열의 어느위치에 있는지 알아야함<ul>
+<li>특히 상관계수가 1일때와 -1일때 똑같이 선형상관관계이고 방향만 양수 음수 임을 주의 -1이라고해서 선형관계가 아니라고 생각하면 안된다</li>
+<li>공분산과 상관계수는 서로 어떤관계가 있는지 설명할줄 알아야함</li>
+</ul>
+</li>
+</ul>
+<h2 id="basis-rank-span"><a href="#basis-rank-span" class="headerlink" title="basis, rank, span"></a>basis, rank, span</h2><ul>
+<li>각각의 개념을 이해하는것이 중요</li>
+</ul>
+<h2 id="Vector-transformation"><a href="#Vector-transformation" class="headerlink" title="Vector transformation"></a>Vector transformation</h2><ul>
+<li>다양한 방법으로 벡터를 변환시켜 차원을 줄이기위한 과정</li>
+<li>고유값과 고유벡터의 의미와 구하는법도 숙지</li>
+</ul>
+<h2 id="차원감소"><a href="#차원감소" class="headerlink" title="차원감소"></a>차원감소</h2><ul>
+<li>Feacture Selection 과 Feature Extraction 의 방식과 예시 기억하기</li>
+<li>Scaling 과 PCA 을 통해 차원감소하는 원리와 이유, 방법과 라이브러리 정리</li>
+</ul>
+<h2 id="Custering"><a href="#Custering" class="headerlink" title="Custering"></a>Custering</h2><ul>
+<li>머신러닝에서의 비지도학습의 한 종류로 데이터들간의 유사성을 토대로 분류하는것이다</li>
+<li>다양한 종류가있지만, 그런 종류가있다는것을 알고 데이터의 형태에 맞는 방법을 쓰는것이 중요하다</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Weekly reveiw</category>
+      </categories>
+      <tags>
+        <tag>Data science</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI-day16~20</title>
+    <url>/2021/06/03/AI-day16-20/</url>
+    <content><![CDATA[<h1 id="첫-프로젝트-진행-및-회고-Project-Review"><a href="#첫-프로젝트-진행-및-회고-Project-Review" class="headerlink" title="첫 프로젝트 진행 및 회고 (Project-Review)"></a>첫 프로젝트 진행 및 회고 (Project-Review)</h1><ul>
+<li>AI교육 16~20일차 개인프로잭트를 진행하였다</li>
+<li>프로잭트의 대략적인 방향과 회고를 적어보았다</li>
+<li>이번 포스팅에서는 자세한 분석과정이 아닌, 프로젝트 진행중 고민한 내용과 회고를 작성하였다.</li>
+</ul>
+<hr>
+<h2 id="프로젝트-진행"><a href="#프로젝트-진행" class="headerlink" title="프로젝트 진행"></a>프로젝트 진행</h2><ul>
+<li>프로젝트의 주제는 게임판매량 데이터를 분석하고, 분석결과를 바탕으로 다음 출시할 게임의 설계방향을 정하는것이다.</li>
+<li>비전공자를 대상으로 한다는 가정하에 발표시간은 5분제한이 있다. </li>
+<li>데이터는 게임이름,장르,출시년도,게임회사,플랫폼, 지역별(북미,유럽,일본,그외) 판매량이 있었다.</li>
+<li>간단하게 요약하자면 <strong>판매량과 장르</strong> , <strong>판매량과 지역</strong>, <strong>판매량과 플랫폼</strong> 을 분석하고<br>각각의 연관성을 먼저 정리하였다.</li>
+<li>그 후 판매량이 많은 게임들의 장르,플랫폼,지역을 정리 후 위에서 분석한 연관성들을 적용시켜  </li>
+</ul>
+<p><strong>어떤 장르의 게임을 어떤플랫폼으로 어느지역에 출시할지</strong>  를 결론 내렸다.</p>
+<hr>
+<h2 id="시작부터-난관에-봉착"><a href="#시작부터-난관에-봉착" class="headerlink" title="시작부터 난관에 봉착"></a>시작부터 난관에 봉착</h2><p> 프로잭트는 주말을 포함하여 6일동안 진행하였다. 하지만 개인 프로젝트를 진행하는것이 처음이라 분석방향을 설정하는 단계에서부터 어려움을 겪었다. 실제로 6일 중 3일동안 파이썬 코드는 한줄도 적지못하고 공책에 연필로 분석방향 그리기에 바빴다.<br> 가장 큰 첫번째 고민은 <strong>“어떤 기준을 가지고 분석할까”</strong> 였다.<br> 판매량에 영향을 주는요인은 <strong>장르와 플랫폼</strong> 이 가장 일반적이지만 해당 데이터의 지역별, 연도별 판매량차이와 게임회사 정보도 무시할 수 없었다. 그래서 우선 장르와 플랫폼을 분석하고 그다음 나머지것들을 고려하기로 했다. 대략 이미지로 정리해보았다.<br> <img src="../images/sales.png" width= 450, height=200>  </p>
+<p> <strong>“플랫폼과 장르가 판매량과 어떤 연관이있는지 , 그리고 각각의 플랫폼&amp;장르는 지역&amp;연도와 어떤 연관이있는지”</strong> 분석향을 정했다.<br> 분석방향을 정했으니 장르부터 분석을 시작했다. 하지만.. 다시 또 문제가 발생했다. 내가 알고싶은것은 장르와 연도&amp;지역의 연관성 이였다.  </p>
+<ul>
+<li>장르들을 각 지역내에서의 비교해 지역내 인기가 많은 장르들을 분석할까?<ul>
+<li>그럼 각 지역별 인기있는 장르를 찾아낼 수 있을것이다. ex) 미국에선 레이싱, 유럽에선 RPG가 잘팔린다</li>
+<li>여러 장르의 게임을 출시할때, 지역별로 다른장르를 선택해 출시할 수 있다</li>
+</ul>
+</li>
+<li>한 장르에대해 각 지역별 차이를 분석할까?<ul>
+<li>그럼 어떤 장르가 어디서 더 인기가 많은지 알 수 있을것이다. ex) 레이싱게임은 유럽보다는 미국에서 더 잘팔린다</li>
+<li>한 장르의 게임을 출시할때 보다 판매량이 높은 지역에 출시할 수 있다</li>
+</ul>
+</li>
+</ul>
+<p> 물론 두가지를 다 비교하면 더욱 자세한 분석이 될 수 있고, 지역별로 다른 장르를 출시할 수도 있다. 하지만 이번 프로젝트의 발표시간은 5분이고, 다른 분석할 기준이 많기때문에 포괄적인 기준이 필요했다. 그래서 지역내에서가 아닌 지역별 차이를 분석하여 하나의 게임을 출시하는데 목표를 두었다.  </p>
+<hr>
+<h2 id="장르와-지역의-분석방법을-다른기준에도-똑같이-적용할수-있을까"><a href="#장르와-지역의-분석방법을-다른기준에도-똑같이-적용할수-있을까" class="headerlink" title="장르와 지역의 분석방법을 다른기준에도 똑같이 적용할수 있을까?"></a>장르와 지역의 분석방법을 다른기준에도 똑같이 적용할수 있을까?</h2><p> 동일한 방법으로 장르-연도, 플랫폼-지역&amp;연도를 분석하면 되지않을까? 잠시 복붙의 행복회로에 불이 들어왔다.<br> 하지만… 연도에서 다시한번 딜레마에 빠졌다. 연도를 고려하지 않았을때는 지역끼리만 비교하면 됬지만,, 게임기술이 1년단위로 급성장하는 시대에서 과연 1995년,2010년,2015년 같은장르의 판매량을 연도끼리 비교하는것이 의미가있을까? 좀 더 <strong>의미있는</strong> 분석을 위해 이번에는 장르에서 선택하지않았던 연도내에서 장르들의 차이를 비교해보기로 결정했다.</p>
+<ul>
+<li>연도내에서 장르의 차이를 분석한다면?<ul>
+<li>연도별 가장 인기있었던 장르를 비교하면 전체적인 흐름 즉, <strong>장르의 트랜드</strong> 를 파악할 수 있다.</li>
+<li>이것은 그냥 같은 장르를 연도끼리 비교하는것보다 선호도 변화를 볼 수 있어 더 유용하다.</li>
+</ul>
+</li>
+</ul>
+<p> 그래서 아쉽지만 기쁜마음으로(?) 지역과는 다른방향으로 분석하였다. 각 연도 내에서 어떤장르가 가장 많이판매되었는지 비교 한 후 전체적인 트랜드를 확인하기로 결정했다.</p>
+<hr>
+<h2 id="장르가-끝났다-플랫폼을-분석해보자"><a href="#장르가-끝났다-플랫폼을-분석해보자" class="headerlink" title="장르가 끝났다, 플랫폼을 분석해보자"></a>장르가 끝났다, 플랫폼을 분석해보자</h2><p> 이번에야말로 봍붙의 행복회로가 빛을 내기시작했다. 장르의 분석방법을 플랫폼에 그대로 적용시켰다. 그림으로 보았던 총 4가지의 분석을 마쳤고 분석결과도 도출해냈다. (추가로 같은 장르의 게임의 플랫폼별 판매량도 분석해보았다.)<br> 분석과정은 t-test나 ANOVA를 통해 가설검정 과정만 진행하였다. 분석과정에서 고려할 사항을 최소하 하기 위해서다.  </p>
+<p> 하지만 이것이 실수였다는것을 동기들의 피드백을 듣고 알게 되었다.<br> 비전공자가 <strong>“연관이있다 없다 식의 논리”</strong> 를 이해하기 어렵기때문이다. 각각의 판매량 차이를 그래프로 시각화하는것이 그래프가 많더라도 오히려 한눈에 이해하기는 쉽다는것을 피트백을 듣고 뒤늦게 깨달앗다.</p>
+<hr>
+<h2 id="출고량이-많은게임을-분석한다…-그런데-출고량이-많은-기준은"><a href="#출고량이-많은게임을-분석한다…-그런데-출고량이-많은-기준은" class="headerlink" title="출고량이 많은게임을 분석한다… 그런데 출고량이 많은 기준은?"></a>출고량이 많은게임을 분석한다… 그런데 출고량이 많은 기준은?</h2><p> 그렇다 출고량이 많은게임을 분석해서 기준을 적용하고 장르를 정하고 플랫폼을 정하고.. 흐름은 좋았다. 하지만 어느정도가 되어야 통계학적,객관적으로 <strong>많다</strong> 고 할 수 있을까?<br> 결론부터 말하자면 정확한 방법을 찾진 못했다. 과정에서배운 clustering, PCA,정규화 등의 방법이 있었지만 판매량의 분포가 워낙 일정했기때문에 기준을 정하기 애매했다. 그래서 그래프로 총판매량만 단순하게 시각화하고 그나마 차이가 많이나는 상위 100개의 게임을 선정했다.<br> <img src="../images/total.png" width=300 height=200></p>
+<p> 하지만 분석하나하나가 회사의 매출을 좌우한다고 생각한다면? 이런 대략이라는 수치는 용납되지 않을것 같았고, 이번주말에 이 기준을 어떻게 설정할지 찾아보기로 했다.</p>
+<hr>
+<h2 id="거의다-온것같은데-마지막-결론도출도-만만치-않다"><a href="#거의다-온것같은데-마지막-결론도출도-만만치-않다" class="headerlink" title="거의다 온것같은데.. 마지막 결론도출도 만만치 않다"></a>거의다 온것같은데.. 마지막 결론도출도 만만치 않다</h2><p> 판매량 상위100개의 게임을 분석했고 가장많은 장르와 플렛폼을 찾아냈다. 그런데 여기서 또다시 딜레마에 빠졌다.<br> 판매량이 많은 장르와 플렛폼은 찾았는데 서로 비슷하지않다. 한마디로 슈팅게임이 가장 많이 팔렸는데, 플랫폼은 Wii가 가장 많다. 마음같아서는 슈팅게임을 Wii플랫폼으로 내면될 것 같다.<br> 그럼 어떤것을 먼저 골라야할까? 장르일까 플랫폼일까?<br> 여기서 이용한것이 <strong>트랜드</strong> 이다.<br> 분석결과 <strong>장르는 연도별 트랜드가 있지만</strong> , <strong>플랫폼은 연도별 트랜드가 없다</strong><br> 한마디로 최근 트랜드인(최근에 판매량이많은) 장르를 고른다면, 판매량이 많은 플랫폼을 고르는것보다는 의미가 있을것이라 판단했다. 이런 논리만으로 장르를 우선시 하는게 완벽한 분석은 아닐 수 있지만, 현재 분석한 데이터에선 가장 최선이라 생각했다. 물론 이부분도 후에 더 정확한 선택방법이 있는지 알아보는것도 개인적 숙제다.</p>
+<h3 id="복잡한-분석과-이론적-고찰을-통해-드디어-결론에-도착했다"><a href="#복잡한-분석과-이론적-고찰을-통해-드디어-결론에-도착했다" class="headerlink" title="복잡한 분석과 이론적 고찰을 통해 드디어 결론에 도착했다"></a>복잡한 분석과 이론적 고찰을 통해 드디어 결론에 도착했다</h3><p> 결국 상위100개 게임에서도 슈팅, 전체에서도 슈팅이 제일 많이 팔린걸 확인했다. 장르는 슈팅으로 정했다.<br> 그 다음 슈팅장르가 가장 많이 팔린 플랫폼과 지역을 분석하고 결론적으로 장르,플랫폼,지역을 선정했다.</p>
+<hr>
+<h2 id="영상도-찍고-동기부여도-하고-완벽했다"><a href="#영상도-찍고-동기부여도-하고-완벽했다" class="headerlink" title="영상도 찍고 동기부여도 하고 완벽했다"></a>영상도 찍고 동기부여도 하고 완벽했다</h2><p> 정말 많은것을 느꼈다. 한달간 수학,통계학,파이썬을 배우며 넘지 못할것 같았던 산들을 꾸역꾸역 올라갔다. 이론적인 부분에 집중해서 용어, 의미, 공식 같은 내용을 남들에게 설명할 수 있을 정도로 완벽하게 흡수하려고 노력했다.<br> 하지만 실제 비지니스에 활용하는것, 그것을 다른사람에게 논리적으로 설명하는것은 또 다른 영역이였다. 비전공자인 청자의 입장을 고려하는점이 필요한것 같았다. 신기하게도 동기들의 피드백에서도 같은 지적을 받았다.<br> 동기들의 노력과 고민의 결과가 담긴 아주 소중한 발표영상(5분길이의 50개영상)을 모두 보았다. 같은 데이터를 가지고 이렇게나 다른분석을 할 수 있고, 심지어는 나의 분석내용이 틀렸나 라고 의심할정도로 완벽한 발표내용도 보았다. 역시 배울점도 많고 뭔가 승부욕, 공부의지가 불타오르는 자극이 되었다.<br> 한달동안 이론만보고 컴퓨터만보고 대화한 느낌이였다면, 이번 프로젝트와 동기들과의 피드백으로 정말 데이터사이언스라는 분야에 첫걸음을 내딛었다는 생각에 뿌듯하다. 다음 프로젝트때는 내가 다른 동기들의 자극이 될 수 있도록 스스로 만족할수 있도록 꾸준히 부지런하게 걸어봐야겠다.<br> (그동안 잠자고있던 미적분,선형통계,파이썬,머신러닝,딥러닝 인강들을 깨울때가 된 것 같다)</p>
+]]></content>
+      <categories>
+        <category>Project</category>
+      </categories>
+      <tags>
+        <tag>Project-Review</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -1142,53 +1256,125 @@
       </tags>
   </entry>
   <entry>
-    <title>AI-day16~20</title>
-    <url>/2021/06/03/AI-day16-20/</url>
-    <content><![CDATA[<h1 id="첫-프로젝트-진행-및-회고-Project-Review"><a href="#첫-프로젝트-진행-및-회고-Project-Review" class="headerlink" title="첫 프로젝트 진행 및 회고 (Project-Review)"></a>첫 프로젝트 진행 및 회고 (Project-Review)</h1><ul>
-<li>AI교육 16~20일차 개인프로잭트를 진행하였다</li>
-<li>프로잭트의 대략적인 방향과 회고를 적어보았다</li>
-<li>이번 포스팅에서는 프로잭트의 자세한 내용보다는 프로젝트 진행 후 회고를 작성하였다.</li>
+    <title>AI-day7</title>
+    <url>/2021/05/14/AI-day7/</url>
+    <content><![CDATA[<h1 id="다양한-가설검정방법"><a href="#다양한-가설검정방법" class="headerlink" title="다양한 가설검정방법"></a>다양한 가설검정방법</h1><ul>
+<li>t-test를 위한 조건알기</li>
+<li>t-test 이외의 가설검정방법 익히기</li>
+<li>Type of Error 구분할줄 알기</li>
+<li>X<sup>2-test</sup>의 목적과 사용예시알기</li>
+<li>모수통계, 비모수통계 차이 파악하기</li>
 </ul>
-<h2 id="프로젝트-진행"><a href="#프로젝트-진행" class="headerlink" title="프로젝트 진행"></a>프로젝트 진행</h2><ul>
-<li>프로젝트의 주제는 게임판매량 데이터를 분석하고, 분석결과를 바탕으로 다음 출시할 게임의 설계방향을 정하는것이다.</li>
-<li>비전공자를 대상으로 한다는 가정하에 발표시간은 5분제한이 있다. </li>
-<li>데이터는 게임이름,장르,출시년도,게임회사,플랫폼, 지역별(북미,유럽,일본,그외) 판매량이 있었다.</li>
-<li>간단하게 요약하자면 <strong>판매량과 장르</strong> , <strong>판매량과 지역</strong>, <strong>판매량과 플랫폼</strong> 을 분석하고<br>각각의 연관성을 먼저 정리하였다.</li>
-<li>그 후 판매량이 많은 게임들의 장르,플랫폼,지역을 정리 후 위에서 분석한 연관성들을 적용시켜  </li>
-</ul>
-<p><strong>어떤 장르의 게임을 어떤플랫폼으로 어느지역에 출시할지</strong>  를 결론 내렸다.</p>
-<h2 id="시작부터-난관에-봉착"><a href="#시작부터-난관에-봉착" class="headerlink" title="시작부터 난관에 봉착"></a>시작부터 난관에 봉착</h2><p> 프로잭트는 주말을 포함하여 6일동안 진행하였다. 하지만 개인 프로젝트를 진행하는것이 처음이라 분석방향을 설정하는 단계에서부터 어려움을 겪었다. 실제로 6일 중 3일동안 파이썬 코드는 한줄도 적지못하고 공책에 연필로 분석방향 그리기에 바빴다.<br> 가장 큰 첫번째 고민은 <strong>“어떤 기준을 가지고 분석할까”</strong> 였다.<br> 판매량에 영향을 주는요인은 <strong>장르와 플랫폼</strong> 이 가장 일반적이지만 해당 데이터의 지역별, 연도별 판매량차이와 게임회사 정보도 무시할 수 없었다. 그래서 우선 장르와 플랫폼을 분석하고 그다음 나머지것들을 고려하기로 했다. 대략 이미지로 정리해보았다.<br> <img src="../images/sales.png" width= 500, height=250>  </p>
-<p> <strong>“플랫폼과 장르가 판매량과 어떤 연관이있는지 , 그리고 각각의 플랫폼&amp;장르는 지역&amp;연도와 어떤 연관이있는지”</strong> 분석향을 정했다.<br> 분석방향을 정했으니 장르부터 분석을 시작했다. 하지만.. 다시 또 문제가 발생했다. 내가 알고싶은것은 장르와 연도&amp;지역의 연관성 이였다.  </p>
-<ul>
-<li>장르들을 각 지역내에서의 비교해 지역내 인기가 많은 장르들을 분석할까?<ul>
-<li>그럼 각 지역별 인기있는 장르를 찾아낼 수 있을것이다. ex) 미국에선 레이싱, 유럽에선 RPG가 잘팔린다</li>
-<li>여러 장르의 게임을 출시할때, 지역별로 다른장르를 선택해 출시할 수 있다</li>
+<h2 id="T-test"><a href="#T-test" class="headerlink" title="T-test +"></a>T-test +</h2><ul>
+<li>T-test의 선행조건 3가지<ul>
+<li>독립성 : 두 그룹의 연관성이 없어야함</li>
+<li>정규성 : 데이터가 정규성을 나타내야함<ul>
+<li>scipy.stats.normaltest()</li>
 </ul>
 </li>
-<li>한 장르에대해 각 지역별 차이를 분석할까?<ul>
-<li>그럼 어떤 장르가 어디서 더 인기가 많은지 알 수 있을것이다. ex) 레이싱게임은 유럽보다는 미국에서 더 잘팔린다</li>
-<li>한 장르의 게임을 출시할때 보다 판매량이 높은 지역에 출시할 수 있다</li>
+<li>등분산성 : 유사한수준의 분산값을 가져야함</li>
 </ul>
 </li>
 </ul>
-<p> 물론 두가지를 다 비교하면 더욱 자세한 분석이 될 수 있고, 지역별로 다른 장르를 출시할 수도 있다. 하지만 이번 프로젝트의 발표시간은 5분이고, 다른 분석할 기준이 많기때문에 포괄적인 기준이 필요했다. 그래서 지역내에서가 아닌 지역별 차이를 분석하여 하나의 게임을 출시하는데 목표를 두었다.  </p>
-<h2 id="장르와-지역의-분석방법을-다른기준에도-똑같이-적용할수-있을까"><a href="#장르와-지역의-분석방법을-다른기준에도-똑같이-적용할수-있을까" class="headerlink" title="장르와 지역의 분석방법을 다른기준에도 똑같이 적용할수 있을까?"></a>장르와 지역의 분석방법을 다른기준에도 똑같이 적용할수 있을까?</h2><p> 동일한 방법으로 장르-연도, 플랫폼-지역&amp;연도를 분석하면 되지않을까? 잠시 복붙의 행복회로에 불이 들어왔다.<br> 하지만… 연도에서 다시한번 딜레마에 빠졌다. 연도를 고려하지 않았을때는 지역끼리만 비교하면 됬지만,, 게임기술이 1년단위로 급성장하는 시대에서 과연 1995년,2010년,2015년 같은장르의 판매량을 연도끼리 비교하는것이 의미가있을까? 좀 더 <strong>의미있는</strong> 분석을 위해 이번에는 장르에서 선택하지않았던 연도내에서 장르들의 차이를 비교해보기로 결정했다.</p>
-<ul>
-<li>연도내에서 장르의 차이를 분석한다면?<ul>
-<li>연도별 가장 인기있었던 장르들을 살펴본다면 전체적인 흐름 즉, <strong>장르의 트랜드</strong> 를 파악할 수 있다.</li>
-<li>이것은 그냥 같은 장르를 연도끼리 비교하는것보다 선호도 변화를 볼 수 있다. 더 유용하다.</li>
+<h2 id="Type-of-Error"><a href="#Type-of-Error" class="headerlink" title="Type of Error"></a>Type of Error</h2><ul>
+<li>Error<ul>
+<li>FN (알파,type1 error) : 귀무가설이 참이지만, 거짓이라 판단한경우</li>
+<li>FP (베타,type2 error) : 귀무가설이 거짓이지만, 참이라 판단한경우</li>
+</ul>
+</li>
+<li>Corret<ul>
+<li>TP (1-알파) : 귀무가설이 참이고, 참이라 판단</li>
+<li>TN (1-베타) : 귀무가설이 거짓이고, 거짓이라 판단</li>
 </ul>
 </li>
 </ul>
-<p> 그래서 아쉽지만 기쁜마음으로(?) 지역과는 다른방향으로 분석하였다. 각 연도 내에서 어떤장르가 가장 많이판매되었는지 비교 한 후 전체적인 트랜드를 확인하기로 결정했다.</p>
-<h2 id="장르가-끝났다-플랫폼을-분석해보자"><a href="#장르가-끝났다-플랫폼을-분석해보자" class="headerlink" title="장르가 끝났다, 플랫폼을 분석해보자"></a>장르가 끝났다, 플랫폼을 분석해보자</h2><p> 이번에야말로 봍붙의 행복회로가 빛을 내기시작했다. 장르를 분석한방법을 플랫폼에 그대로 적용시켰다. 처음 그림으로 보았던 총 4가지의 분석을 마쳤고 분석결과도 도출해냈다. </p>
+<h2 id="Non-parametric-methods-비모수적-방법"><a href="#Non-parametric-methods-비모수적-방법" class="headerlink" title="Non parametric methods(비모수적 방법)"></a>Non parametric methods(비모수적 방법)</h2><ul>
+<li>모집단이 특정확률분포(normal 같은)따른다는 전제를 하지않는 방식<ul>
+<li>즉 모집단의 형태에 관계없이 주어진 데이터에서 직접 확률을 계산 및 검정</li>
+</ul>
+</li>
+<li>parameter 추정이 필요하지 않는 non-parametric</li>
+<li>Categorical 데이터를 위한 모델링<ul>
+<li>범주형자료 : 관측결과가 몇개의 범주 또는 항목 형태로 나타나는 자료</li>
+<li>어떠한 수치가아닌 성별,선호도,혈액형,지역 등등으로 나타나는 것</li>
+</ul>
+</li>
+<li>극단적 outlier가 있는경우 매우 유효<ul>
+<li>outlier(이상치,극단치) : 분포에서 비정상적으로 보이는 극단값 혹은 비현실적 변수(평균을 왜곡시키는 값)</li>
+</ul>
+</li>
+<li>distribution free method (분포무관 검정법) 이라고도 함</li>
+</ul>
+<h3 id="비모수적-방법들"><a href="#비모수적-방법들" class="headerlink" title="비모수적 방법들"></a>비모수적 방법들</h3><ul>
+<li>카이제곱 테스트(x<sup>2</sup> Tests)<ul>
+<li>One sample x<sup>2</sup> Tests<ul>
+<li>주어진 데이터가 예상하고있는 분포와 동일한 분포를 나타낼지를 검정</li>
+<li>계산된 x<sup>2</sup> 값과 자유도를 이용하여 pvalue를 구함<ul>
+<li>stats.chi2.df(x<sup>2</sup>, df=자유도)</li>
+</ul>
+</li>
+<li>chisquare(data, axis=None) 으로 statstics과 pvalue 바로 구할수 있음<ul>
+<li>pvalue가 크다 -&gt; 연관이있다 -&gt; 분포가 비슷하다</li>
+<li>pvalue가 작다 -&gt; 연관이없다 -&gt; 분포가 다르다</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Two sample x<sup>2</sup><ul>
+<li>주어진 두 데이터가 서로 독립적인가를 검정</li>
+<li>이떄의 자유도는 one sample과 다르게 (행-1)*(열-1)</li>
+<li>chi2_contingency(data)<ul>
+<li>parameter 에 coreestion=T/F 로 Yates correction 설정가능</li>
+<li>x<sup>2</sup>, p-value, 자유도, 예측되는 관측치 순서대로 print 됨  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Kruskal-Wallis Test (비모수적 평균 비교법)<ul>
+<li>샘플크기가 같고나 다른 두개 이상의 독립샘플을 비교(샘플수가 5개이상일때 좋음)</li>
+<li>샘플의 순위를 매기고 집단별 순위의 합을 구해 통계량을 계산</li>
+<li>귀무가설은 모든그룹의 크기가 같다, 대립가설은 크기가 다르다로 설정</li>
+<li>from scipy.stats import kruskal  </li>
+</ul>
+</li>
+<li>Mann-Whitney U<ul>
+<li>Kruskal-Wallis Test와 같지만, 두개의 샘플에대해서 분석  </li>
+</ul>
+</li>
+<li>Spearman correlation<ul>
+<li>두 샘플이 어느정도 연관성은있지만, 그 연관성에 일정한 비율이 없을때 두 샘플의 통계적 의존성을 측정</li>
+<li>쉽게 이해하자면, 한학생의 수학 영어점수를 비교하여 수학을잘하면 영어도잘하나?확인  </li>
+</ul>
+</li>
+<li>Run test<ul>
+<li>연속적인 관측값들이 랜덤으로 나타난것인가를 검정하는 방법</li>
+<li>관측값들의 얻어진 순서에 근거하여 먼저얻어진 관측치가 후에 얻어진 관측치에 영향을 미치는지 확인  </li>
+</ul>
+</li>
+<li>Kolmogorov Smirnov test<ul>
+<li>비교하고자 하는 두 분포의 empirical distribution function 의 차이를 특정 기준과 비교하여 기각의 여부를 결정하는 것</li>
+<li>한마디로 어떤 두 샘플의 부분부분을 비교하여 이 두샘플이 같은 집단에서 나왔는지를 확인  </li>
+</ul>
+</li>
+<li>Wilcoxon Sigend-Rank Test<ul>
+<li>자료의 순서(절대값으로)를 사용해 중위수(median)가 0 인지 검정<ul>
+<li>중위수? : 양수데이터수 =음수데이터들수 -&gt; 중위수가 0</li>
+</ul>
+</li>
+<li>이 순위에 다시 +,- 를 부여하여 부호화된순위(signed rank)를 가지게함</li>
+<li>환자의 약 복용 전후 몸무게차이가 정규분포를 따른다는 귀무가설을 세우고 검정</li>
+</ul>
+</li>
+</ul>
 ]]></content>
       <categories>
-        <category>Project</category>
+        <category>TIL</category>
       </categories>
       <tags>
-        <tag>Project-Review</tag>
-        <tag>Python</tag>
+        <tag>Data science</tag>
+        <tag>hypothesis statistics</tag>
       </tags>
   </entry>
   <entry>
@@ -1497,6 +1683,28 @@
       </tags>
   </entry>
   <entry>
+    <title>linear layer</title>
+    <url>/2021/04/15/linear-layer/</url>
+    <content><![CDATA[<h1 id="Linear-layer"><a href="#Linear-layer" class="headerlink" title="Linear layer"></a>Linear layer</h1><ul>
+<li>신경망의 기본요소</li>
+<li>Fully-connected (FC) layer</li>
+<li>내부 파라미터에따른 선형변환을 수행</li>
+<li>각 입력노드에 weight(가중치)를 곱하고 합친후, bias(편향) 더함  </li>
+</ul>
+<p><img src="/../images/linear.PNG" alt="li"></p>
+<ul>
+<li>이때 행렬의 곱으로 표현가능  </li>
+</ul>
+<p><img src="/../images/linearmulti.PNG" alt="li"></p>
+]]></content>
+      <categories>
+        <category>Deep-Learning</category>
+      </categories>
+      <tags>
+        <tag>linear-layer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>딥러닝기초</title>
     <url>/2021/04/06/%EB%94%A5%EB%9F%AC%EB%8B%9D%EA%B8%B0%EC%B4%88/</url>
     <content><![CDATA[<h1 id="딥러닝-사전기초지식"><a href="#딥러닝-사전기초지식" class="headerlink" title="딥러닝 사전기초지식"></a>딥러닝 사전기초지식</h1><ul>
@@ -1652,272 +1860,78 @@
       </tags>
   </entry>
   <entry>
-    <title>AI-day7</title>
-    <url>/2021/05/14/AI-day7/</url>
-    <content><![CDATA[<h1 id="다양한-가설검정방법"><a href="#다양한-가설검정방법" class="headerlink" title="다양한 가설검정방법"></a>다양한 가설검정방법</h1><ul>
-<li>t-test를 위한 조건알기</li>
-<li>t-test 이외의 가설검정방법 익히기</li>
-<li>Type of Error 구분할줄 알기</li>
-<li>X<sup>2-test</sup>의 목적과 사용예시알기</li>
-<li>모수통계, 비모수통계 차이 파악하기</li>
+    <title>AI-Day11</title>
+    <url>/2021/05/21/AI-Day11/</url>
+    <content><![CDATA[<h1 id="선형대수학"><a href="#선형대수학" class="headerlink" title="선형대수학"></a>선형대수학</h1><ul>
+<li>데이터사이언스와 선형대수의 관계를 알기</li>
+<li>백터와 매트릭스에대한 기본계산 익히기</li>
+<li>단위행렬(Identity matrix)과 같은 특별한 매트릭스의 의미 이해하고 행렬식(determinant)이나, 역행렬을(inverse)계산 할수 있어야함</li>
 </ul>
-<h2 id="T-test"><a href="#T-test" class="headerlink" title="T-test +"></a>T-test +</h2><ul>
-<li>T-test의 선행조건 3가지<ul>
-<li>독립성 : 두 그룹의 연관성이 없어야함</li>
-<li>정규성 : 데이터가 정규성을 나타내야함<ul>
-<li>scipy.stats.normaltest()</li>
+<h2 id="Data-Structure-데이터를-담는-구조"><a href="#Data-Structure-데이터를-담는-구조" class="headerlink" title="Data Structure(데이터를 담는 구조)"></a>Data Structure(데이터를 담는 구조)</h2><ul>
+<li>1차원 (1D)<ul>
+<li>list 형태의 data structure</li>
 </ul>
 </li>
-<li>등분산성 : 유사한수준의 분산값을 가져야함</li>
+<li>2차원 (2D)<ul>
+<li>list 안의 list 형태</li>
 </ul>
 </li>
 </ul>
-<h2 id="Type-of-Error"><a href="#Type-of-Error" class="headerlink" title="Type of Error"></a>Type of Error</h2><ul>
-<li>Error<ul>
-<li>FN (알파,type1 error) : 귀무가설이 참이지만, 거짓이라 판단한경우</li>
-<li>FP (베타,type2 error) : 귀무가설이 거짓이지만, 참이라 판단한경우</li>
-</ul>
-</li>
-<li>Corret<ul>
-<li>TP (1-알파) : 귀무가설이 참이고, 참이라 판단</li>
-<li>TN (1-베타) : 귀무가설이 거짓이고, 거짓이라 판단</li>
+<h2 id="스칼라-벡터"><a href="#스칼라-벡터" class="headerlink" title="스칼라,벡터"></a>스칼라,벡터</h2><ul>
+<li>선형 대수를 구성하는 기본 요소</li>
+<li>스칼라 : 단순히 변수로 저장되어 있는 숫자(크기)</li>
+<li>벡터 : 파이썬에서 주로 list로 사용 되며, 데이터셋을 구성하고 있는 데이터프레임의 행/열로써 사용(크기+방향)<ul>
+<li>매트릭스는 벡터의 모음으로 간주 될 수도 있음</li>
+<li>벡터의 연산 공식 암기</li>
 </ul>
 </li>
 </ul>
-<h2 id="Non-parametric-methods-비모수적-방법"><a href="#Non-parametric-methods-비모수적-방법" class="headerlink" title="Non parametric methods(비모수적 방법)"></a>Non parametric methods(비모수적 방법)</h2><ul>
-<li>모집단이 특정확률분포(normal 같은)따른다는 전제를 하지않는 방식<ul>
-<li>즉 모집단의 형태에 관계없이 주어진 데이터에서 직접 확률을 계산 및 검정</li>
+<h2 id="매트릭스"><a href="#매트릭스" class="headerlink" title="매트릭스"></a>매트릭스</h2><ul>
+<li>행과 열을 통해 배치되어있는 숫자</li>
+<li>pandas를 통해 다뤘던 데이터프레임이 매트릭스와 유사한 형태</li>
+<li>Dimensionality<ul>
+<li>매트릭스의 행과 열의 숫자를 차원 (dimension, 차원수)이라 표현</li>
+<li>차원을 표기 할때는 행을 먼저, 열을 나중에 표기 (행-열)</li>
 </ul>
 </li>
-<li>parameter 추정이 필요하지 않는 non-parametric</li>
-<li>Categorical 데이터를 위한 모델링<ul>
-<li>범주형자료 : 관측결과가 몇개의 범주 또는 항목 형태로 나타나는 자료</li>
-<li>어떠한 수치가아닌 성별,선호도,혈액형,지역 등등으로 나타나는 것</li>
+<li>2개의 매트릭스가 일치하기 위해서는 차원이 같고, 해당하는 구성요소가 동일해야함</li>
+<li>Transpose (B<sup>T</sup> or B’)<ul>
+<li>대각선기준 행 열을 뒤집기, 코드로는 df.T 로 간단하게 가능</li>
 </ul>
 </li>
-<li>극단적 outlier가 있는경우 매우 유효<ul>
-<li>outlier(이상치,극단치) : 분포에서 비정상적으로 보이는 극단값 혹은 비현실적 변수(평균을 왜곡시키는 값)</li>
-</ul>
-</li>
-<li>distribution free method (분포무관 검정법) 이라고도 함</li>
-</ul>
-<h3 id="비모수적-방법들"><a href="#비모수적-방법들" class="headerlink" title="비모수적 방법들"></a>비모수적 방법들</h3><ul>
-<li>카이제곱 테스트(x<sup>2</sup> Tests)<ul>
-<li>One sample x<sup>2</sup> Tests<ul>
-<li>주어진 데이터가 예상하고있는 분포와 동일한 분포를 나타낼지를 검정</li>
-<li>계산된 x<sup>2</sup> 값과 자유도를 이용하여 pvalue를 구함<ul>
-<li>stats.chi2.df(x<sup>2</sup>, df=자유도)</li>
-</ul>
-</li>
-<li>chisquare(data, axis=None) 으로 statstics과 pvalue 바로 구할수 있음<ul>
-<li>pvalue가 크다 -&gt; 연관이있다 -&gt; 분포가 비슷하다</li>
-<li>pvalue가 작다 -&gt; 연관이없다 -&gt; 분포가 다르다</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Two sample x<sup>2</sup><ul>
-<li>주어진 두 데이터가 서로 독립적인가를 검정</li>
-<li>이떄의 자유도는 one sample과 다르게 (행-1)*(열-1)</li>
-<li>chi2_contingency(data)<ul>
-<li>parameter 에 coreestion=T/F 로 Yates correction 설정가능</li>
-<li>x<sup>2</sup>, p-value, 자유도, 예측되는 관측치 순서대로 print 됨  </li>
+<li>정사각 행렬(square matrix)<ul>
+<li>정방매트릭스 라고불리며, 행과 열의수가 동일한 매트릭스</li>
+<li>Upper Triangular(상삼각): 대각선 위쪽 부분에만 값이 있고, 나머지는 전부 0</li>
+<li>Lower Triangular(하삼각): upper triangular 와 반대</li>
+<li>Symmetric(대칭): 대각선을 기준으로 위 아래의 값이 대칭</li>
+<li>Diagonal(대각): 대각선 부분에만 값이 있고, 나머지는 전부 0<ul>
+<li>Identity(단위 매트릭스) : 대각중 모든값이 1, 임의의 행렬에 곱했을때 단위행렬이 나오는것 = 역행렬</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-</li>
-<li>Kruskal-Wallis Test (비모수적 평균 비교법)<ul>
-<li>샘플크기가 같고나 다른 두개 이상의 독립샘플을 비교(샘플수가 5개이상일때 좋음)</li>
-<li>샘플의 순위를 매기고 집단별 순위의 합을 구해 통계량을 계산</li>
-<li>귀무가설은 모든그룹의 크기가 같다, 대립가설은 크기가 다르다로 설정</li>
-<li>from scipy.stats import kruskal  </li>
+<h2 id="행렬식-Determinant"><a href="#행렬식-Determinant" class="headerlink" title="행렬식 (Determinant)"></a>행렬식 (Determinant)</h2><ul>
+<li>2x2 행렬기준 행렬식은 ad-bc<ul>
+<li>그 이상 차원의 행렬은 방법이 다름(재귀적으로 부분나누어서)</li>
 </ul>
 </li>
-<li>Mann-Whitney U<ul>
-<li>Kruskal-Wallis Test와 같지만, 두개의 샘플에대해서 분석  </li>
-</ul>
-</li>
-<li>Spearman correlation<ul>
-<li>두 샘플이 어느정도 연관성은있지만, 그 연관성에 일정한 비율이 없을때 두 샘플의 통계적 의존성을 측정</li>
-<li>쉽게 이해하자면, 한학생의 수학 영어점수를 비교하여 수학을잘하면 영어도잘하나?확인  </li>
-</ul>
-</li>
-<li>Run test<ul>
-<li>연속적인 관측값들이 랜덤으로 나타난것인가를 검정하는 방법</li>
-<li>관측값들의 얻어진 순서에 근거하여 먼저얻어진 관측치가 후에 얻어진 관측치에 영향을 미치는지 확인  </li>
-</ul>
-</li>
-<li>Kolmogorov Smirnov test<ul>
-<li>비교하고자 하는 두 분포의 empirical distribution function 의 차이를 특정 기준과 비교하여 기각의 여부를 결정하는 것</li>
-<li>한마디로 어떤 두 샘플의 부분부분을 비교하여 이 두샘플이 같은 집단에서 나왔는지를 확인  </li>
-</ul>
-</li>
-<li>Wilcoxon Sigend-Rank Test<ul>
-<li>자료의 순서(절대값으로)를 사용해 중위수(median)가 0 인지 검정<ul>
-<li>중위수? : 양수데이터수 =음수데이터들수 -&gt; 중위수가 0</li>
-</ul>
-</li>
-<li>이 순위에 다시 +,- 를 부여하여 부호화된순위(signed rank)를 가지게함</li>
-<li>환자의 약 복용 전후 몸무게차이가 정규분포를 따른다는 귀무가설을 세우고 검정</li>
+<li>행렬식이 0 이라면 역행렬은 존재하지 않음<ul>
+<li>이것을  “특이” (singular) 행렬이라 하며, <strong>매트릭스의 행과 열이 의존관계가 있다</strong> 고 표현가능</li>
 </ul>
 </li>
 </ul>
-]]></content>
-      <categories>
-        <category>TIL</category>
-      </categories>
-      <tags>
-        <tag>Data science</tag>
-        <tag>hypothesis statistics</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>linear layer</title>
-    <url>/2021/04/15/linear-layer/</url>
-    <content><![CDATA[<h1 id="Linear-layer"><a href="#Linear-layer" class="headerlink" title="Linear layer"></a>Linear layer</h1><ul>
-<li>신경망의 기본요소</li>
-<li>Fully-connected (FC) layer</li>
-<li>내부 파라미터에따른 선형변환을 수행</li>
-<li>각 입력노드에 weight(가중치)를 곱하고 합친후, bias(편향) 더함  </li>
+<h2 id="역행렬"><a href="#역행렬" class="headerlink" title="역행렬"></a>역행렬</h2><ul>
+<li>역행렬 계산법은 여러가지이며 행렬의 역수로 표현가능</li>
+<li>행렬에 역행렬을 곱하면 단위행렬</li>
 </ul>
-<p><img src="/../images/linear.PNG" alt="li"></p>
-<ul>
-<li>이때 행렬의 곱으로 표현가능  </li>
-</ul>
-<p><img src="/../images/linearmulti.PNG" alt="li"></p>
-]]></content>
-      <categories>
-        <category>Deep-Learning</category>
-      </categories>
-      <tags>
-        <tag>linear-layer</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI-Day13</title>
-    <url>/2021/05/25/AI-Day13/</url>
-    <content><![CDATA[<h1 id="Dimension-Reduction"><a href="#Dimension-Reduction" class="headerlink" title="Dimension Reduction"></a>Dimension Reduction</h1><ul>
-<li>Vector transformation의 목적과 사용예시</li>
-<li>eigenvector(고유벡터) / eigenvalue(고유값)</li>
-<li>데이터의 feature수의 증가에따른 문제점과 handling 방법</li>
-<li>PCA의 목적과 기본원리</li>
-</ul>
-<h2 id="선형변환과-매트릭스-벡터변환"><a href="#선형변환과-매트릭스-벡터변환" class="headerlink" title="선형변환과 매트릭스(벡터변환)"></a>선형변환과 매트릭스(벡터변환)</h2><ul>
-<li>행렬과 벡터의곱은 “두 열벡터의 선형결합”을 표현한것 이라 할 수 있다</li>
-<li>선형변환 : 특정한 규칙이 정해진 함수이고 쉽게는 기저벡터를 변환시킴으로써 결과를 바꾼다<ul>
-<li>임의의 벡터 a,b와 스칼라 c에 대해 변환T가 두조건을 만족한다면? 변환T는 선형변환이다<ul>
-<li>T(a+b) = T(a)+T(b)</li>
-<li>T(ca) = cT(a)</li>
-</ul>
-</li>
-<li>임의의 열벡터 [x y]에 대해 다음이 성립하면 변환T는 선형변환이다<ul>
-<li>T([x y]) = T(x[1 0] + y[0 1]) = T(x[1 0])+T(y[0 1]) = xT([1 0]) + yT([1 0])</li>
-</ul>
-</li>
-<li>이때, 원래의 기저벡터 두개를 i^, j^ 이라하고 새로운 기저벡터를 i_new, j_new라 하면<ul>
-<li>i_new = T(i^), j_new = T(j^)</li>
-<li>결론적으로 T([x y]) = xi_new + yj_new</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>종류에는 shearing, rotation, permutation, projection on x-axis(a vector) 등 이 있다</li>
-</ul>
-<h2 id="고유값과-고유벡터-eigenvalue-eigenvector"><a href="#고유값과-고유벡터-eigenvalue-eigenvector" class="headerlink" title="고유값과 고유벡터(eigenvalue/eigenvector)"></a>고유값과 고유벡터(eigenvalue/eigenvector)</h2><ul>
-<li>선형변환 후에도 span을 벗어나지 않는 벡터를 고유벡터라고 하며 각각의 고유벡터는 특별한 고유값을 가짐</li>
-<li>이때의 고유값은 변환된 고유벡터가 스케일된 크기라고 볼 수 있다<ul>
-<li>만약 고유벡터가 선형변환된 후에도 크기가 그대로라면? 고유값은 1 이다 </li>
-<li>식으로 표현하면 변환하려는 행렬 A와 고유벡터v , 고유값 λ 라면</li>
-<li>Av = λv<ul>
-<li>이 식의 참,거짓을 통해 행렬A의 고유벡터v와 고유값λ 를 찾을 수 있다</li>
-<li>하지만 좌항은 행렬x벡터, 우항은 스칼라x벡터 이므로 우항을 행렬x벡터의 형태로 바꿔줘야한다</li>
-<li>대각선에만 1 이 있고 나머지는 0은 항등행렬 I 를이용하여 λ = λI 로 바꾼다</li>
-<li>결국 (A-λI)v = 0 이 되고, <strong>벡터v가 0벡터가 아니라는 가정하에</strong> 식을 성립하는 고유벡터v를 찾는다</li>
-<li>이때 det(A-λI)=0 인 λ를 찾는다 (이것은 차원을 축소시킨다 고 이해하자, 평면이라면? 선형태로)</li>
-<li>고유값은 하나여도 고유벡터는 여러개일 수 있음을 기억하자</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>대각선형렬일때는 고유벡터가 기저벡터와 같고 계산이 편해지기때문에, 어떤 행렬의 고유벡터를 기저벡터로 바꿔준다면 계산이 편해질것이다<ul>
-<li>why? : 대각선행렬의 대각선값들이 그 행렬의 고유벡터이기 때문</li>
-<li>그러기위해 행렬A의 고유벡터를 열벡터로 가지는 새로운 행렬을 B라고해보자</li>
-<li>이때 B<sup>T</sup>AT 를 하면, 대각선행렬이 아니였던 행렬A를 대각선에 고유값들을 갖는 대각선행렬로 변환된다</li>
-</ul>
-</li>
-<li>분석의 측면에서보면 만약 분산-공분산 행렬의 고유값 고유벡터를 구한다면<ul>
-<li>고유값의 합은 두 분산의 합과 같고</li>
-<li>고유값의 곱은 분산-공분산의 행렬식과 같다</li>
-<li>여기서는 이렇다는것만 기억하고 이것들이 가지는 의미는 후에 더 알 수 있다</li>
-</ul>
-</li>
-</ul>
-<h2 id="고차원의-문제-The-Curse-of-Dimensionality"><a href="#고차원의-문제-The-Curse-of-Dimensionality" class="headerlink" title="고차원의 문제 (The Curse of Dimensionality)"></a>고차원의 문제 (The Curse of Dimensionality)</h2><ul>
-<li>feature 의 수가 많은 데이터셋을 모델링하거나 분석할때 발생하는 문제</li>
-<li>So, feature들의 중요도를 비교하여 실제로 의미가 높은 feature만 선택함으로써 차원을 줄여야함</li>
-</ul>
-<h2 id="Dimension-Reduction-차원축소"><a href="#Dimension-Reduction-차원축소" class="headerlink" title="Dimension Reduction 차원축소"></a>Dimension Reduction 차원축소</h2><ul>
-<li>이 고차원의 문제를 해결하기위해 차원축소</li>
-<li>Feature Selection<ul>
-<li>덜 중요한 feature를 제거하는 방법</li>
-<li>장점 : 선택된 feature 해석이 쉽다</li>
-<li>단점 : feature들간의 연관성을 고려해야함</li>
-<li>LASSO, Genetic algorithm 등</li>
-</ul>
-</li>
-<li>Feature Extraction<ul>
-<li>기존의 feature 혹은 feature들이 조합된 새로운 feature를 사용하는 방법</li>
-<li>장점 : feature 들간의 연관성 고려되어 feature 수를 줄일 수 있음</li>
-<li>단점 : feature 해석이 어려움</li>
-<li>PCA, Auto-encoder 등</li>
-</ul>
-</li>
-</ul>
-<h2 id="주성분분석-PCA-Principal-Component-Analysis"><a href="#주성분분석-PCA-Principal-Component-Analysis" class="headerlink" title="주성분분석 (PCA, Principal Component Analysis)"></a>주성분분석 (PCA, Principal Component Analysis)</h2><ul>
-<li>고차원의 데이터를 분석하기위한 방법(제일 정보손실이적은 2차원으로 바꾸는것이 무난하다)</li>
-<li>표본들의 선형연관성을 최소한으로 즉, 최대한 선형독립적인 표본들만 있는상태로 필터링하는것</li>
-<li>분산을 최대한 유지하는 축(PC)를 찾는것이 주 목적이고, 그 축을 기준으로 차원을 축소할수있음<ul>
-<li>많은 데이터를 어떤 벡터축에 사영시켜야, 분포를 가장 잘 나타내는 하나의 축이 될수 있을까?</li>
-</ul>
-</li>
-<li>PCA 의 과정<ul>
-<li>데이터의 각열에대해 평균을 빼고 표준편차로 나누어 Normalize</li>
-<li>데이터의 분산-공분산 매트릭스계산</li>
-<li>분산-공분산 매트릭스의 고유벡터와 고유값 계산</li>
-<li>데이터를 고유벡터에 projection(matmul)<ul>
-<li>데이터를 고유벡터에 사영하는것이 분산이 가장크기 떄문</li>
-<li>분산이크다? 데이터손실이 최소화된 상태에서의 분포를 나타낼 수 있다</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>PCA 특징<ul>
-<li>데이터에대해 독립적인 축을 찾을 수 있음</li>
-<li>데이터의 분포가 정규성을 띄지않는경우 적용이 어려움<ul>
-<li>커널 PCA 활용</li>
-</ul>
-</li>
-<li>분류/ 예측 문제에대해 데이터의 라벨을 고려하지 않기때문에 효과적 분리가 어려움<ul>
-<li>PLS 활용</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Sklearn 라이브러리를 활용하여 PCA 가능</li>
-</ul>
-<h2 id="One-hot-encoding"><a href="#One-hot-encoding" class="headerlink" title="One-hot encoding"></a>One-hot encoding</h2><ul>
-<li>모든 문자열 값들을 숫자 형으로 인코딩하는 전처리 작업을 함으로써 계산에 용이하게 바꿈</li>
-<li>레이블인코딩<ul>
-<li>일괄적인 숫자값으로 변환되어 예측성능이 떨어진다</li>
-<li>숫자간의 크고 작음에 대한 특성 작용</li>
-</ul>
-</li>
-<li>원 핫 인코딩<ul>
-<li>피쳐값의 유형에따라 새로운 피쳐를 추가해 고유값에 해당하는 갈럼에만 1을표시, 나머지 칼럼에는 0을 표시</li>
-</ul>
-</li>
+<h3 id="사용해본-모듈및-메서드"><a href="#사용해본-모듈및-메서드" class="headerlink" title="사용해본 모듈및 메서드"></a>사용해본 모듈및 메서드</h3><ul>
+<li>np.matmul</li>
+<li>np.dot</li>
+<li>linalg.norm(v)</li>
+<li>linalg.inv(v)</li>
+<li>mean_squared_error(x,y)</li>
+<li>mean_absolute_error(x,y)</li>
 </ul>
 ]]></content>
       <categories>
@@ -1926,7 +1940,6 @@
       <tags>
         <tag>Data science</tag>
         <tag>Linear Algebra</tag>
-        <tag>Dimension Reduction</tag>
       </tags>
   </entry>
 </search>
