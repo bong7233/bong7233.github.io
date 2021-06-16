@@ -21,14 +21,14 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"bong7233.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+    var CONFIG = {"hostname":"bong7233.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="통계학 Estimation &#x2F; Sampling의 목적과 방법 가설검정 이해 T-test의 목적과 사용예시 숙지     기술 통계치(Descriptive Statistics)란? count, mean, standard dev, min, 1Q, median, 3Q, max 등의 데이터를 설명 하는 값(혹은 통계치) https:&#x2F;&#x2F;drhongdatanote.ti">
+<meta name="description" content="통계학  Estimation &#x2F; Sampling의 목적과 방법 가설검정 이해 T-test의 목적과 사용예시 숙지 기술 통계치(Descriptive Statistics)란? count, mean, standard dev, min, 1Q, median, 3Q, max 등의 데이터를 설명 하는 값(혹은 통계치) https:&#x2F;&#x2F;drhongdatanote.tisto">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AI-day6">
 <meta property="og:url" content="http://bong7233.github.io/2021/05/13/AI-day6/index.html">
 <meta property="og:site_name" content="Bong&#39;s Blog">
-<meta property="og:description" content="통계학 Estimation &#x2F; Sampling의 목적과 방법 가설검정 이해 T-test의 목적과 사용예시 숙지     기술 통계치(Descriptive Statistics)란? count, mean, standard dev, min, 1Q, median, 3Q, max 등의 데이터를 설명 하는 값(혹은 통계치) https:&#x2F;&#x2F;drhongdatanote.ti">
+<meta property="og:description" content="통계학  Estimation &#x2F; Sampling의 목적과 방법 가설검정 이해 T-test의 목적과 사용예시 숙지 기술 통계치(Descriptive Statistics)란? count, mean, standard dev, min, 1Q, median, 3Q, max 등의 데이터를 설명 하는 값(혹은 통계치) https:&#x2F;&#x2F;drhongdatanote.tisto">
 <meta property="og:locale">
 <meta property="og:image" content="http://bong7233.github.io/2021/05/13/images/se.PNG">
 <meta property="og:image" content="http://bong7233.github.io/2021/05/13/images/ttest.PNG">
@@ -197,7 +197,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%ED%86%B5%EA%B3%84%ED%95%99"><span class="nav-number">1.</span> <span class="nav-text">통계학</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EA%B8%B0%EC%88%A0-%ED%86%B5%EA%B3%84%EC%B9%98-Descriptive-Statistics-%EB%9E%80"><span class="nav-number">1.1.</span> <span class="nav-text">기술 통계치(Descriptive Statistics)란?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%B6%94%EB%A6%AC%ED%86%B5%EA%B3%84%EC%B9%98-Inferetial-Statistics"><span class="nav-number">1.2.</span> <span class="nav-text">추리통계치(Inferetial Statistics)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Effective-Sampling"><span class="nav-number">1.3.</span> <span class="nav-text">Effective Sampling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EA%B0%80%EC%84%A4%EA%B2%80%EC%A0%95"><span class="nav-number">1.4.</span> <span class="nav-text">가설검정</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%91%9C%EB%B3%B8%ED%8F%89%EA%B7%A0%EC%9D%98-%ED%91%9C%EC%A4%80%EC%98%A4%EC%B0%A8-Standard-Error-of-the-Sample-Mean"><span class="nav-number">1.5.</span> <span class="nav-text">표본평균의 표준오차( Standard Error of the Sample Mean )</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Student-T-test"><span class="nav-number">1.6.</span> <span class="nav-text">Student T-test</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#One-Sample-t-test"><span class="nav-number">1.6.1.</span> <span class="nav-text">One Sample t-test</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Two-Sample-T-test"><span class="nav-number">1.6.2.</span> <span class="nav-text">Two Sample T-test</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Quest"><span class="nav-number">1.6.3.</span> <span class="nav-text">Quest</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%ED%86%B5%EA%B3%84%ED%95%99"><span class="nav-number">1.</span> <span class="nav-text">통계학</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#t-test%EC%9D%98-%EB%AA%A9%EC%A0%81%EA%B3%BC-%EC%82%AC%EC%9A%A9%EC%98%88%EC%8B%9C-%EC%88%99%EC%A7%80"><span class="nav-number">1.1.</span> <span class="nav-text">T-test의 목적과 사용예시 숙지</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EA%B8%B0%EC%88%A0-%ED%86%B5%EA%B3%84%EC%B9%98descriptive-statistics%EB%9E%80"><span class="nav-number">1.2.</span> <span class="nav-text">기술 통계치(Descriptive Statistics)란?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#skewness"><span class="nav-number">1.3.</span> <span class="nav-text">Skewness</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%B6%94%EB%A6%AC%ED%86%B5%EA%B3%84%EC%B9%98inferetial-statistics"><span class="nav-number">1.4.</span> <span class="nav-text">추리통계치(Inferetial Statistics)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#population-parameter-statistic-estimator-standard-deviation-standard-error"><span class="nav-number">1.5.</span> <span class="nav-text">Population, Parameter, Statistic, Estimator, Standard Deviation, Standard Error</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#effective-sampling"><span class="nav-number">1.6.</span> <span class="nav-text">Effective Sampling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%AA%A8%EC%A7%91%EB%8B%A8%EC%9D%84-%EB%AF%B8%EB%A6%AC-%EC%97%AC%EB%9F%AC-%EA%B7%B8%EB%A3%B9%EC%9C%BC%EB%A1%9C-%EB%82%98%EB%88%84%EA%B3%A0-%EC%9D%B4%ED%9B%84-%ED%8A%B9%EC%A0%95-%EA%B7%B8%EB%A3%B9%EC%9D%84-%EB%AC%B4%EC%9E%91%EC%9C%84%EB%A1%9C-%EC%84%A0%ED%83%9D"><span class="nav-number">1.7.</span> <span class="nav-text">모집단을 미리 여러 그룹으로 나누고, 이후 특정 그룹을 무작위로 선택</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EA%B0%80%EC%84%A4%EA%B2%80%EC%A0%95"><span class="nav-number">1.8.</span> <span class="nav-text">가설검정</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#np.random.binomial-%EB%B2%A0%EB%A5%B4%EB%88%84%EC%9D%B4-%EB%B6%84%ED%8F%AC"><span class="nav-number">1.9.</span> <span class="nav-text">np.random.binomial() &#x2F; 베르누이 분포</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%91%9C%EB%B3%B8%ED%8F%89%EA%B7%A0%EC%9D%98-%ED%91%9C%EC%A4%80%EC%98%A4%EC%B0%A8-standard-error-of-the-sample-mean"><span class="nav-number">1.10.</span> <span class="nav-text">표본평균의 표준오차( Standard Error of the Sample Mean )</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#student-t-test"><span class="nav-number">1.11.</span> <span class="nav-text">Student T-test</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#one-sample-t-test"><span class="nav-number">1.11.1.</span> <span class="nav-text">One Sample t-test</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#two-sample-t-test"><span class="nav-number">1.11.2.</span> <span class="nav-text">Two Sample T-test</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#quest"><span class="nav-number">1.11.3.</span> <span class="nav-text">Quest</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -259,8 +259,6 @@
   </div>
   <div class="reading-progress-bar"></div>
   <a role="button" class="book-mark-link book-mark-link-fixed"></a>
-
-  <a href="https://github.com/bong7233" class="github-corner" title="My GitHub" aria-label="My GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
@@ -331,163 +329,152 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="통계학"><a href="#통계학" class="headerlink" title="통계학"></a>통계학</h1><ul>
+        <h1 id="통계학">통계학</h1>
+<ul>
 <li>Estimation / Sampling의 목적과 방법</li>
 <li>가설검정 이해</li>
-<li>T-test의 목적과 사용예시 숙지  </li>
-</ul>
-<hr>
-<h2 id="기술-통계치-Descriptive-Statistics-란"><a href="#기술-통계치-Descriptive-Statistics-란" class="headerlink" title="기술 통계치(Descriptive Statistics)란?"></a>기술 통계치(Descriptive Statistics)란?</h2><ul>
+<li><h2 id="t-test의-목적과-사용예시-숙지">T-test의 목적과 사용예시 숙지</h2>
+<h2 id="기술-통계치descriptive-statistics란">기술 통계치(Descriptive Statistics)란?</h2></li>
 <li>count, mean, standard dev, min, 1Q, median, 3Q, max 등의 데이터를 설명 하는 값(혹은 통계치)</li>
-<li><a target="_blank" rel="noopener" href="https://drhongdatanote.tistory.com/25">https://drhongdatanote.tistory.com/25</a></li>
-<li>기술통계치의 시각화<ul>
+<li>https://drhongdatanote.tistory.com/25</li>
+<li>기술통계치의 시각화
+<ul>
 <li>df.describe()</li>
 <li>Mean / Median / Mode</li>
 <li>Range</li>
 <li>Var / SD</li>
 <li>Kurtosis</li>
-<li>Skewness  </li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="추리통계치-Inferetial-Statistics"><a href="#추리통계치-Inferetial-Statistics" class="headerlink" title="추리통계치(Inferetial Statistics)"></a>추리통계치(Inferetial Statistics)</h2><ul>
+<li><h2 id="skewness">Skewness</h2>
+<h2 id="추리통계치inferetial-statistics">추리통계치(Inferetial Statistics)</h2></li>
+</ul></li>
 <li>어떤 큰 집단에서 통계를할때 큰집단 내부의 작은 샘플그룹을 선정한후 분석,추론하는것</li>
-<li>키워드들을 알아두자<ul>
-<li>Population, Parameter, Statistic, Estimator, Standard Deviation, Standard Error  </li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="Effective-Sampling"><a href="#Effective-Sampling" class="headerlink" title="Effective Sampling"></a>Effective Sampling</h2><ul>
-<li>Simple random sampling<ul>
+<li>키워드들을 알아두자
+<ul>
+<li><h2 id="population-parameter-statistic-estimator-standard-deviation-standard-error">Population, Parameter, Statistic, Estimator, Standard Deviation, Standard Error</h2>
+<h2 id="effective-sampling">Effective Sampling</h2></li>
+</ul></li>
+<li>Simple random sampling
+<ul>
 <li>모집단에서 무작위로 sampling</li>
-</ul>
-</li>
-<li>Systematic sampling<ul>
-<li>모집단에서 규칙을 가지고 sample 추출<br>ex) 1, 6, 11, 16, … 번째의 데이터</li>
-</ul>
-</li>
-<li>Stratified random sampling<ul>
-<li>모집단을 미리 여러 그룹으로 나누고, 그 그룹별로 무작위 추출<br>ex) 여론 조사를 위해 사람을 나이대 별로 나누고, 해당 그룹안에서 무작위 추출</li>
-</ul>
-</li>
-<li>Cluster sampling<ul>
-<li>모집단을 미리 여러 그룹으로 나누고, 이후 특정 그룹을 무작위로 선택  </li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="가설검정"><a href="#가설검정" class="headerlink" title="가설검정"></a>가설검정</h2><ul>
+</ul></li>
+<li>Systematic sampling
+<ul>
+<li>모집단에서 규칙을 가지고 sample 추출<br />
+ex) 1, 6, 11, 16, ... 번째의 데이터</li>
+</ul></li>
+<li>Stratified random sampling
+<ul>
+<li>모집단을 미리 여러 그룹으로 나누고, 그 그룹별로 무작위 추출<br />
+ex) 여론 조사를 위해 사람을 나이대 별로 나누고, 해당 그룹안에서 무작위 추출</li>
+</ul></li>
+<li>Cluster sampling
+<ul>
+<li><h2 id="모집단을-미리-여러-그룹으로-나누고-이후-특정-그룹을-무작위로-선택">모집단을 미리 여러 그룹으로 나누고, 이후 특정 그룹을 무작위로 선택</h2>
+<h2 id="가설검정">가설검정</h2></li>
+</ul></li>
 <li>주어진 상황에 대해서, 하고자 하는 주장이 맞는지 아닌지를 판정하는 과정</li>
 <li>모집단의 실제 값에 대한 sample의 통계치를 사용해 통계적으로 유의한지 아닌지 여부를 판정</li>
-<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Statistical_hypothesis_testing">https://en.wikipedia.org/wiki/Statistical_hypothesis_testing</a></li>
-<li>예시에 사용해본 메서드들<ul>
+<li>https://en.wikipedia.org/wiki/Statistical_hypothesis_testing</li>
+<li>예시에 사용해본 메서드들
+<ul>
 <li>np.random.seed()</li>
-<li>np.random.binomial() / 베르누이 분포</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="표본평균의-표준오차-Standard-Error-of-the-Sample-Mean"><a href="#표본평균의-표준오차-Standard-Error-of-the-Sample-Mean" class="headerlink" title="표본평균의 표준오차( Standard Error of the Sample Mean )"></a>표본평균의 표준오차( Standard Error of the Sample Mean )</h2><ul>
+<li><h2 id="np.random.binomial-베르누이-분포">np.random.binomial() / 베르누이 분포</h2>
+<h2 id="표본평균의-표준오차-standard-error-of-the-sample-mean">표본평균의 표준오차( Standard Error of the Sample Mean )</h2></li>
+</ul></li>
 <li>StandardError = 표본의 표준편차 s (sample standard deviation) / 표본의 수 n(sample size)</li>
-<li>표본의 수가 더욱 많아질수록, 추측은 더 정확해지고 (평균) 높은 신뢰도를 바탕으로 모집단에 대해 예측 할 수 있도록 함.  <img src="../images/se.PNG"></li>
+<li>표본의 수가 더욱 많아질수록, 추측은 더 정확해지고 (평균) 높은 신뢰도를 바탕으로 모집단에 대해 예측 할 수 있도록 함.<br />
+<img src="../images/se.PNG"></li>
 </ul>
-<hr>
-<h2 id="Student-T-test"><a href="#Student-T-test" class="headerlink" title="Student T-test"></a>Student T-test</h2><h3 id="One-Sample-t-test"><a href="#One-Sample-t-test" class="headerlink" title="One Sample t-test"></a>One Sample t-test</h3><ul>
-<li><p>1개의 sample 값들의 평균이 특정값과 동일한지 비교</p>
+<hr />
+<h2 id="student-t-test">Student T-test</h2>
+<h3 id="one-sample-t-test">One Sample t-test</h3>
+<ul>
+<li>1개의 sample 값들의 평균이 특정값과 동일한지 비교
 <ul>
 <li>예) 동전이 공정한지 확인하려고 할때 : p(x = H) = 0.5</li>
-</ul>
-</li>
-<li><p>모집단에 대한 정보와 표본의 데이터를 비교  </p>
+</ul></li>
+<li>모집단에 대한 정보와 표본의 데이터를 비교<br />
 <img src="../images/ttest.PNG"></li>
-<li><p>위 통계치는 평균을 빼고 표준편차로 나눠줬는데 이러한 과정을 <strong>“정규화”</strong> 라고 하며, 이 과정을 하게 되면 주어진 데이터가 평균은 0, 표준편차가 1인 데이터로 scaling 됨  </p>
-</li>
-<li><p>T-test Process</p>
-<ol>
-<li><p>귀무 가설 (Null Hypothesis) 설정  </p>
-<img src="../images/ttestpro1.PNG"></li>
-<li><p>대안 가설 (Alternative Hypothesis) 설정 (귀무가설과 반대)  </p>
-<img src="../images/ttestpro2.PNG"></li>
-<li><p>신뢰도 설정 (Confidence Level) : 모수가 신뢰구간 안에 포함될 확률 (보통 95, 99% 등을 사용)</p>
+<li><p>위 통계치는 평균을 빼고 표준편차로 나눠줬는데 이러한 과정을 <strong>"정규화"</strong> 라고 하며, 이 과정을 하게 되면 주어진 데이터가 평균은 0, 표준편차가 1인 데이터로 scaling 됨</p></li>
+<li>T-test Process
+<ol type="1">
+<li><p>귀무 가설 (Null Hypothesis) 설정<br />
+<img src="../images/ttestpro1.PNG"></p></li>
+<li><p>대안 가설 (Alternative Hypothesis) 설정 (귀무가설과 반대)<br />
+<img src="../images/ttestpro2.PNG"></p></li>
+<li>신뢰도 설정 (Confidence Level) : 모수가 신뢰구간 안에 포함될 확률 (보통 95, 99% 등을 사용)
 <ul>
 <li>신뢰도 95%의 의미 = 모수가 신뢰 구간 안에 포함될 확률이 95% = 귀무가설이 틀렸지만 우연히 성립할 확률이 5%</li>
-</ul>
-</li>
-<li><p>P-value 확인(규모가 너무클때 t를 P-value로 바꿔준다)</p>
+</ul></li>
+<li>P-value 확인(규모가 너무클때 t를 P-value로 바꿔준다)
 <ul>
-<li>P-value : 주어진 가설에 대해 “얼마나 근거가 있는지”에 대한 값을 0과 1사이의 값으로 scale한 지표</li>
+<li>P-value : 주어진 가설에 대해 "얼마나 근거가 있는지"에 대한 값을 0과 1사이의 값으로 scale한 지표</li>
 <li>p-value가 낮다 -&gt; 귀무가설이 틀렸을 확률이 높다</li>
-</ul>
+</ul></li>
+<li>p-value를 바탕으로 가설에 대해 결론<br />
 </li>
-<li><p> p-value를 바탕으로 가설에 대해 결론  </p>
-</li>
-</ol>
-</li>
-<li><p>T-test with Scipy</p>
+</ol></li>
+<li>T-test with Scipy
 <ul>
 <li>scipy에 수치만 입력하면 t=test를 실행해주는 다양한방법이 있음</li>
-<li><a target="_blank" rel="noopener" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_1samp.html">https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_1samp.html</a>  </li>
-</ul>
+<li>https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_1samp.html<br />
 </li>
-<li><p>P-value의 기준</p>
-<ol>
+</ul></li>
+<li>P-value의 기준
+<ol type="1">
 <li>pvalue &lt; 0.01 : 귀무가설이 옳을 확률이 1%이하 -&gt; 틀렸다 (깐깐한 기준)</li>
 <li>pvalue &lt; 0.05 (5%) : 귀무가설이 옳을 확률이 5%이하 -&gt; 틀렸다 (일반적인 기준)</li>
-<li>0.05 ~ pvalue ~ 0.1 사이인 경우: (애매함)<ul>
+<li>0.05 ~ pvalue ~ 0.1 사이인 경우: (애매함)
+<ul>
 <li>실험을 다시한다</li>
 <li>데이터를 다시 뽑는다</li>
 <li>샘플링을 다시한다</li>
 <li>기존의 경험 / 인사이트를 바탕으로 가설에 대한 결론을 내린다.</li>
-</ul>
-</li>
-<li>pvalue &gt; 0.1 (10%) : 귀무가설이 옳을 확률이 10%이상인데 -&gt; 귀무가설이 맞다 ~ 틀리지 않았을것이다<ul>
-<li>ex) p-value : 0.85 –&gt; 귀무가설은 틀리지 않았다. (‘귀무가설이 옳다’와는 톤이 약간 다름)</li>
-</ul>
-</li>
+</ul></li>
+<li>pvalue &gt; 0.1 (10%) : 귀무가설이 옳을 확률이 10%이상인데 -&gt; 귀무가설이 맞다 ~ 틀리지 않았을것이다
+<ul>
+<li>ex) p-value : 0.85 --&gt; 귀무가설은 틀리지 않았다. ('귀무가설이 옳다'와는 톤이 약간 다름)</li>
+</ul></li>
 </ol>
 <ul>
 <li>p-value가 (1-Confidence)보다 낮은 경우, 귀무가설을 기각하고 대안 가설을 채택</li>
-<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/P-value">https://en.wikipedia.org/wiki/P-value</a>  </li>
-</ul>
-</li>
-<li><p>One-side test vs Two-side test</p>
+<li>https://en.wikipedia.org/wiki/P-value</li>
+</ul></li>
+<li>One-side test vs Two-side test
 <ul>
-<li>One side test : 샘플 데이터의 평균이 “X”보다 크다 혹은 작다 / 크지 않다 작지 않다. 를 검정하는 내용</li>
-<li>Two side (tail / direction) test : 샘플 데이터의 평균이 “X”와 같다 / 같지 않다. 를 검정하는 내용</li>
+<li>One side test : 샘플 데이터의 평균이 "X"보다 크다 혹은 작다 / 크지 않다 작지 않다. 를 검정하는 내용</li>
+<li>Two side (tail / direction) test : 샘플 데이터의 평균이 "X"와 같다 / 같지 않다. 를 검정하는 내용</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h3 id="Two-Sample-T-test"><a href="#Two-Sample-T-test" class="headerlink" title="Two Sample T-test"></a>Two Sample T-test</h3><ul>
-<li><p>2개의 sample 값들의 평균이 서로 동일한지 비교</p>
+<h3 id="two-sample-t-test">Two Sample T-test</h3>
+<ul>
+<li>2개의 sample 값들의 평균이 서로 동일한지 비교
 <ul>
 <li>2개의 동전 (500원짜리 vs 100원짜리)을 여러번 던져서 p(H)의 평균이 유사한 지 확인</li>
 </ul>
-<ol>
-<li><p>귀무가설 : 두 확률은 같다 (차이가 없다)  </p>
-<img src="../images/ttestpro3.PNG"></li>
-<li><p>대안가설 : 같지 않다  </p>
-<img src="../images/ttestpro4.PNG"></li>
-<li><p>신뢰도 : 95%</p>
-</li>
-</ol>
-</li>
+<ol type="1">
+<li><p>귀무가설 : 두 확률은 같다 (차이가 없다)<br />
+<img src="../images/ttestpro3.PNG"></p></li>
+<li><p>대안가설 : 같지 않다<br />
+<img src="../images/ttestpro4.PNG"></p></li>
+<li><p>신뢰도 : 95%</p></li>
+</ol></li>
 </ul>
-<h3 id="Quest"><a href="#Quest" class="headerlink" title="Quest"></a>Quest</h3><ul>
-<li>정규분포한? t분포란? 두분포의 차이는뭐고 어떨때 무엇을쓰는가?<ul>
+<h3 id="quest">Quest</h3>
+<ul>
+<li>정규분포한? t분포란? 두분포의 차이는뭐고 어떨때 무엇을쓰는가?
+<ul>
 <li>이것을 정확히 파악해야 t=test, P-value를 재대로 이해할수있다</li>
-</ul>
-</li>
+</ul></li>
 <li>FDR (false discovery rate)</li>
-<li>P-value Q-value<ul>
-<li><a target="_blank" rel="noopener" href="https://doooob.tistory.com/101">https://doooob.tistory.com/101</a></li>
-</ul>
-</li>
-<li>t-test<ul>
-<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=mEWQ_vl3IPw&amp;list=PLalb9l0_6WArHh18Plrn8uIGBUKalqsf-&amp;index=1">https://www.youtube.com/watch?v=mEWQ_vl3IPw&amp;list=PLalb9l0_6WArHh18Plrn8uIGBUKalqsf-&amp;index=1</a></li>
-</ul>
-</li>
+<li>P-value Q-value
+<ul>
+<li>https://doooob.tistory.com/101</li>
+</ul></li>
+<li>t-test
+<ul>
+<li>https://www.youtube.com/watch?v=mEWQ_vl3IPw&amp;list=PLalb9l0_6WArHh18Plrn8uIGBUKalqsf-&amp;index=1</li>
+</ul></li>
 </ul>
 
     </div>
@@ -498,8 +485,8 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Data-science/" rel="tag"># Data science</a>
-              <a href="/tags/hypothesis-statistics/" rel="tag"># hypothesis statistics</a>
+              <a href="/tags/Data-science/" rel="tag"><i class="fa fa-tag"></i> Data science</a>
+              <a href="/tags/hypothesis-statistics/" rel="tag"><i class="fa fa-tag"></i> hypothesis statistics</a>
           </div>
 
         
@@ -562,7 +549,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">SangBong Lee</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
 
     </div>
@@ -584,6 +571,8 @@
 
 
 
+
+  
 
 
 </body>

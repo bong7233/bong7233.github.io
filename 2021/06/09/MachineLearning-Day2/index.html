@@ -21,14 +21,14 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"bong7233.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+    var CONFIG = {"hostname":"bong7233.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="다중선형회귀 (Multiple Linear Regression)MSE(Mean Square Error) &amp; R2 둘의 정의와 차이점은 무엇인가?Training and Testing data 훈련,테스트 데이터를 나누는 이유는 ?low bias, low variance 모델 각 모델은 어떤것인지 훈련&#x2F;테스트세트를 사용해 설명할 수 있어야함  다중선형회">
+<meta name="description" content="다중선형회귀 (Multiple Linear Regression) MSE(Mean Square Error) &amp; R2  둘의 정의와 차이점은 무엇인가? ## Training and Testing data 훈련,테스트 데이터를 나누는 이유는 ? ## low bias, low variance 모델 각 모델은 어떤것인지 훈련&#x2F;테스트세트를 사용해 설명할 수 있">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MachineLearning-Day2">
 <meta property="og:url" content="http://bong7233.github.io/2021/06/09/MachineLearning-Day2/index.html">
 <meta property="og:site_name" content="Bong&#39;s Blog">
-<meta property="og:description" content="다중선형회귀 (Multiple Linear Regression)MSE(Mean Square Error) &amp; R2 둘의 정의와 차이점은 무엇인가?Training and Testing data 훈련,테스트 데이터를 나누는 이유는 ?low bias, low variance 모델 각 모델은 어떤것인지 훈련&#x2F;테스트세트를 사용해 설명할 수 있어야함  다중선형회">
+<meta property="og:description" content="다중선형회귀 (Multiple Linear Regression) MSE(Mean Square Error) &amp; R2  둘의 정의와 차이점은 무엇인가? ## Training and Testing data 훈련,테스트 데이터를 나누는 이유는 ? ## low bias, low variance 모델 각 모델은 어떤것인지 훈련&#x2F;테스트세트를 사용해 설명할 수 있">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-06-09T02:31:56.000Z">
 <meta property="article:modified_time" content="2021-06-10T08:45:42.425Z">
@@ -189,7 +189,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EB%8B%A4%EC%A4%91%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80-Multiple-Linear-Regression"><span class="nav-number">1.</span> <span class="nav-text">다중선형회귀 (Multiple Linear Regression)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MSE-Mean-Square-Error-amp-R2"><span class="nav-number">1.1.</span> <span class="nav-text">MSE(Mean Square Error) &amp; R2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Training-and-Testing-data"><span class="nav-number">1.2.</span> <span class="nav-text">Training and Testing data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#low-bias-low-variance-%EB%AA%A8%EB%8D%B8"><span class="nav-number">1.3.</span> <span class="nav-text">low bias, low variance 모델</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%8B%A4%EC%A4%91%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80%EB%AA%A8%EB%8D%B8"><span class="nav-number">1.4.</span> <span class="nav-text">다중선형회귀모델</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%9A%8C%EA%B7%80%EB%AA%A8%EB%8D%B8%EC%9D%98-%ED%8F%89%EA%B0%80%EC%A7%80%ED%91%9C"><span class="nav-number">1.5.</span> <span class="nav-text">회귀모델의 평가지표</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EA%B3%BC%EC%A0%81%ED%95%A9%EA%B3%BC-%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9"><span class="nav-number">1.6.</span> <span class="nav-text">과적합과 과소적합</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-step-process"><span class="nav-number">1.7.</span> <span class="nav-text">5 step process</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sum-of-Squares"><span class="nav-number">1.8.</span> <span class="nav-text">Sum of Squares</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%83%81%EA%B4%80%EA%B3%84%EC%88%98-amp-%EA%B2%B0%EC%A0%95%EA%B3%84%EC%88%98"><span class="nav-number">1.9.</span> <span class="nav-text">상관계수 &amp; 결정계수</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%9A%8C%EA%B7%80%EC%9D%98-%EC%98%A4%EB%A5%98%EC%A7%80%ED%91%9C%EB%8A%94"><span class="nav-number">1.10.</span> <span class="nav-text">회귀의 오류지표는?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%8E%B8%ED%96%A5-%EB%B6%84%EC%82%B0%EC%9D%98-%ED%8A%B8%EB%A0%88%EC%9D%B4%EB%93%9C%EC%98%A4%ED%94%84"><span class="nav-number">1.11.</span> <span class="nav-text">편향&#x2F;분산의 트레이드오프</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EB%8B%A4%EC%A4%91%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80-multiple-linear-regression"><span class="nav-number">1.</span> <span class="nav-text">다중선형회귀 (Multiple Linear Regression)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#msemean-square-error-r2"><span class="nav-number">1.1.</span> <span class="nav-text">MSE(Mean Square Error) &amp; R2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%8B%A4%EC%A4%91%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80%EB%AA%A8%EB%8D%B8"><span class="nav-number">1.2.</span> <span class="nav-text">다중선형회귀모델</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%9A%8C%EA%B7%80%EB%AA%A8%EB%8D%B8%EC%9D%98-%ED%8F%89%EA%B0%80%EC%A7%80%ED%91%9C"><span class="nav-number">1.3.</span> <span class="nav-text">회귀모델의 평가지표</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EA%B3%BC%EC%A0%81%ED%95%A9%EA%B3%BC-%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9"><span class="nav-number">1.4.</span> <span class="nav-text">과적합과 과소적합</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#step-process"><span class="nav-number">1.5.</span> <span class="nav-text">5 step process</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sum-of-squares"><span class="nav-number">1.6.</span> <span class="nav-text">Sum of Squares</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%83%81%EA%B4%80%EA%B3%84%EC%88%98-%EA%B2%B0%EC%A0%95%EA%B3%84%EC%88%98"><span class="nav-number">1.7.</span> <span class="nav-text">상관계수 &amp; 결정계수</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%9A%8C%EA%B7%80%EC%9D%98-%EC%98%A4%EB%A5%98%EC%A7%80%ED%91%9C%EB%8A%94"><span class="nav-number">1.8.</span> <span class="nav-text">회귀의 오류지표는?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%8E%B8%ED%96%A5%EB%B6%84%EC%82%B0%EC%9D%98-%ED%8A%B8%EB%A0%88%EC%9D%B4%EB%93%9C%EC%98%A4%ED%94%84"><span class="nav-number">1.9.</span> <span class="nav-text">편향&#x2F;분산의 트레이드오프</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -251,8 +251,6 @@
   </div>
   <div class="reading-progress-bar"></div>
   <a role="button" class="book-mark-link book-mark-link-fixed"></a>
-
-  <a href="https://github.com/bong7233" class="github-corner" title="My GitHub" aria-label="My GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
@@ -323,12 +321,22 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="다중선형회귀-Multiple-Linear-Regression"><a href="#다중선형회귀-Multiple-Linear-Regression" class="headerlink" title="다중선형회귀 (Multiple Linear Regression)"></a>다중선형회귀 (Multiple Linear Regression)</h1><h2 id="MSE-Mean-Square-Error-amp-R2"><a href="#MSE-Mean-Square-Error-amp-R2" class="headerlink" title="MSE(Mean Square Error) &amp; R2"></a>MSE(Mean Square Error) &amp; R<sup>2</sup></h2><ul>
-<li>둘의 정의와 차이점은 무엇인가?<h2 id="Training-and-Testing-data"><a href="#Training-and-Testing-data" class="headerlink" title="Training and Testing data"></a>Training and Testing data</h2></li>
-<li>훈련,테스트 데이터를 나누는 이유는 ?<h2 id="low-bias-low-variance-모델"><a href="#low-bias-low-variance-모델" class="headerlink" title="low bias, low variance 모델"></a>low bias, low variance 모델</h2></li>
+        <h1 id="다중선형회귀-multiple-linear-regression">다중선형회귀 (Multiple Linear Regression)</h1>
+<h2 id="msemean-square-error-r2">MSE(Mean Square Error) &amp; R<sup>2</sup></h2>
+<ul>
+<li>둘의 정의와 차이점은 무엇인가? ## Training and Testing data</li>
+<li>훈련,테스트 데이터를 나누는 이유는 ? ## low bias, low variance 모델</li>
 <li>각 모델은 어떤것인지 훈련/테스트세트를 사용해 설명할 수 있어야함</li>
 </ul>
-<h2 id="다중선형회귀모델"><a href="#다중선형회귀모델" class="headerlink" title="다중선형회귀모델"></a>다중선형회귀모델</h2><h2 id="회귀모델의-평가지표"><a href="#회귀모델의-평가지표" class="headerlink" title="회귀모델의 평가지표"></a>회귀모델의 평가지표</h2><h2 id="과적합과-과소적합"><a href="#과적합과-과소적합" class="headerlink" title="과적합과 과소적합"></a>과적합과 과소적합</h2><h2 id="5-step-process"><a href="#5-step-process" class="headerlink" title="5 step process"></a>5 step process</h2><h2 id="Sum-of-Squares"><a href="#Sum-of-Squares" class="headerlink" title="Sum of Squares"></a>Sum of Squares</h2><h2 id="상관계수-amp-결정계수"><a href="#상관계수-amp-결정계수" class="headerlink" title="상관계수 &amp; 결정계수"></a>상관계수 &amp; 결정계수</h2><h2 id="회귀의-오류지표는"><a href="#회귀의-오류지표는" class="headerlink" title="회귀의 오류지표는?"></a>회귀의 오류지표는?</h2><h2 id="편향-분산의-트레이드오프"><a href="#편향-분산의-트레이드오프" class="headerlink" title="편향/분산의 트레이드오프"></a>편향/분산의 트레이드오프</h2>
+<h2 id="다중선형회귀모델">다중선형회귀모델</h2>
+<h2 id="회귀모델의-평가지표">회귀모델의 평가지표</h2>
+<h2 id="과적합과-과소적합">과적합과 과소적합</h2>
+<h2 id="step-process">5 step process</h2>
+<h2 id="sum-of-squares">Sum of Squares</h2>
+<h2 id="상관계수-결정계수">상관계수 &amp; 결정계수</h2>
+<h2 id="회귀의-오류지표는">회귀의 오류지표는?</h2>
+<h2 id="편향분산의-트레이드오프">편향/분산의 트레이드오프</h2>
+
     </div>
 
     
@@ -337,7 +345,7 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Multiple-Regression/" rel="tag"># Multiple Regression</a>
+              <a href="/tags/Multiple-Regression/" rel="tag"><i class="fa fa-tag"></i> Multiple Regression</a>
           </div>
 
         
@@ -400,7 +408,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">SangBong Lee</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
 
     </div>
@@ -422,6 +430,8 @@
 
 
 
+
+  
 
 
 </body>

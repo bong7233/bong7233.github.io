@@ -3,70 +3,77 @@
   <entry>
     <title>AI-Day11</title>
     <url>/2021/05/21/AI-Day11/</url>
-    <content><![CDATA[<h1 id="선형대수학"><a href="#선형대수학" class="headerlink" title="선형대수학"></a>선형대수학</h1><ul>
+    <content><![CDATA[<h1 id="선형대수학">선형대수학</h1>
+<ul>
 <li>데이터사이언스와 선형대수의 관계를 알기</li>
 <li>백터와 매트릭스에대한 기본계산 익히기</li>
 <li>단위행렬(Identity matrix)과 같은 특별한 매트릭스의 의미 이해하고 행렬식(determinant)이나, 역행렬을(inverse)계산 할수 있어야함</li>
 </ul>
-<h2 id="Data-Structure-데이터를-담는-구조"><a href="#Data-Structure-데이터를-담는-구조" class="headerlink" title="Data Structure(데이터를 담는 구조)"></a>Data Structure(데이터를 담는 구조)</h2><ul>
-<li>1차원 (1D)<ul>
+<h2 id="data-structure데이터를-담는-구조">Data Structure(데이터를 담는 구조)</h2>
+<ul>
+<li>1차원 (1D)
+<ul>
 <li>list 형태의 data structure</li>
-</ul>
-</li>
-<li>2차원 (2D)<ul>
+</ul></li>
+<li>2차원 (2D)
+<ul>
 <li>list 안의 list 형태</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="스칼라-벡터"><a href="#스칼라-벡터" class="headerlink" title="스칼라,벡터"></a>스칼라,벡터</h2><ul>
+<h2 id="스칼라벡터">스칼라,벡터</h2>
+<ul>
 <li>선형 대수를 구성하는 기본 요소</li>
 <li>스칼라 : 단순히 변수로 저장되어 있는 숫자(크기)</li>
-<li>벡터 : 파이썬에서 주로 list로 사용 되며, 데이터셋을 구성하고 있는 데이터프레임의 행/열로써 사용(크기+방향)<ul>
+<li>벡터 : 파이썬에서 주로 list로 사용 되며, 데이터셋을 구성하고 있는 데이터프레임의 행/열로써 사용(크기+방향)
+<ul>
 <li>매트릭스는 벡터의 모음으로 간주 될 수도 있음</li>
 <li>벡터의 연산 공식 암기</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="매트릭스"><a href="#매트릭스" class="headerlink" title="매트릭스"></a>매트릭스</h2><ul>
+<h2 id="매트릭스">매트릭스</h2>
+<ul>
 <li>행과 열을 통해 배치되어있는 숫자</li>
 <li>pandas를 통해 다뤘던 데이터프레임이 매트릭스와 유사한 형태</li>
-<li>Dimensionality<ul>
+<li>Dimensionality
+<ul>
 <li>매트릭스의 행과 열의 숫자를 차원 (dimension, 차원수)이라 표현</li>
 <li>차원을 표기 할때는 행을 먼저, 열을 나중에 표기 (행-열)</li>
-</ul>
-</li>
+</ul></li>
 <li>2개의 매트릭스가 일치하기 위해서는 차원이 같고, 해당하는 구성요소가 동일해야함</li>
-<li>Transpose (B<sup>T</sup> or B’)<ul>
+<li>Transpose (B<sup>T</sup> or B')
+<ul>
 <li>대각선기준 행 열을 뒤집기, 코드로는 df.T 로 간단하게 가능</li>
-</ul>
-</li>
-<li>정사각 행렬(square matrix)<ul>
+</ul></li>
+<li>정사각 행렬(square matrix)
+<ul>
 <li>정방매트릭스 라고불리며, 행과 열의수가 동일한 매트릭스</li>
 <li>Upper Triangular(상삼각): 대각선 위쪽 부분에만 값이 있고, 나머지는 전부 0</li>
 <li>Lower Triangular(하삼각): upper triangular 와 반대</li>
 <li>Symmetric(대칭): 대각선을 기준으로 위 아래의 값이 대칭</li>
-<li>Diagonal(대각): 대각선 부분에만 값이 있고, 나머지는 전부 0<ul>
+<li>Diagonal(대각): 대각선 부분에만 값이 있고, 나머지는 전부 0
+<ul>
 <li>Identity(단위 매트릭스) : 대각중 모든값이 1, 임의의 행렬에 곱했을때 단위행렬이 나오는것 = 역행렬</li>
+</ul></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="행렬식-Determinant"><a href="#행렬식-Determinant" class="headerlink" title="행렬식 (Determinant)"></a>행렬식 (Determinant)</h2><ul>
-<li>2x2 행렬기준 행렬식은 ad-bc<ul>
+<h2 id="행렬식-determinant">행렬식 (Determinant)</h2>
+<ul>
+<li>2x2 행렬기준 행렬식은 ad-bc
+<ul>
 <li>그 이상 차원의 행렬은 방법이 다름(재귀적으로 부분나누어서)</li>
+</ul></li>
+<li>행렬식이 0 이라면 역행렬은 존재하지 않음
+<ul>
+<li>이것을 "특이" (singular) 행렬이라 하며, <strong>매트릭스의 행과 열이 의존관계가 있다</strong> 고 표현가능</li>
+</ul></li>
 </ul>
-</li>
-<li>행렬식이 0 이라면 역행렬은 존재하지 않음<ul>
-<li>이것을  “특이” (singular) 행렬이라 하며, <strong>매트릭스의 행과 열이 의존관계가 있다</strong> 고 표현가능</li>
-</ul>
-</li>
-</ul>
-<h2 id="역행렬"><a href="#역행렬" class="headerlink" title="역행렬"></a>역행렬</h2><ul>
+<h2 id="역행렬">역행렬</h2>
+<ul>
 <li>역행렬 계산법은 여러가지이며 행렬의 역수로 표현가능</li>
 <li>행렬에 역행렬을 곱하면 단위행렬</li>
 </ul>
-<h3 id="사용해본-모듈및-메서드"><a href="#사용해본-모듈및-메서드" class="headerlink" title="사용해본 모듈및 메서드"></a>사용해본 모듈및 메서드</h3><ul>
+<h3 id="사용해본-모듈및-메서드">사용해본 모듈및 메서드</h3>
+<ul>
 <li>np.matmul</li>
 <li>np.dot</li>
 <li>linalg.norm(v)</li>
@@ -84,820 +91,138 @@
       </tags>
   </entry>
   <entry>
-    <title>AI-Day13</title>
-    <url>/2021/05/25/AI-Day13/</url>
-    <content><![CDATA[<h1 id="Dimension-Reduction"><a href="#Dimension-Reduction" class="headerlink" title="Dimension Reduction"></a>Dimension Reduction</h1><ul>
-<li>Vector transformation의 목적과 사용예시</li>
-<li>eigenvector(고유벡터) / eigenvalue(고유값)</li>
-<li>데이터의 feature수의 증가에따른 문제점과 handling 방법</li>
-<li>PCA의 목적과 기본원리</li>
-</ul>
-<h2 id="선형변환과-매트릭스-벡터변환"><a href="#선형변환과-매트릭스-벡터변환" class="headerlink" title="선형변환과 매트릭스(벡터변환)"></a>선형변환과 매트릭스(벡터변환)</h2><ul>
-<li>행렬과 벡터의곱은 “두 열벡터의 선형결합”을 표현한것 이라 할 수 있다</li>
-<li>선형변환 : 특정한 규칙이 정해진 함수이고 쉽게는 기저벡터를 변환시킴으로써 결과를 바꾼다<ul>
-<li>임의의 벡터 a,b와 스칼라 c에 대해 변환T가 두조건을 만족한다면? 변환T는 선형변환이다<ul>
-<li>T(a+b) = T(a)+T(b)</li>
-<li>T(ca) = cT(a)</li>
-</ul>
-</li>
-<li>임의의 열벡터 [x y]에 대해 다음이 성립하면 변환T는 선형변환이다<ul>
-<li>T([x y]) = T(x[1 0] + y[0 1]) = T(x[1 0])+T(y[0 1]) = xT([1 0]) + yT([1 0])</li>
-</ul>
-</li>
-<li>이때, 원래의 기저벡터 두개를 i^, j^ 이라하고 새로운 기저벡터를 i_new, j_new라 하면<ul>
-<li>i_new = T(i^), j_new = T(j^)</li>
-<li>결론적으로 T([x y]) = xi_new + yj_new</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>종류에는 shearing, rotation, permutation, projection on x-axis(a vector) 등 이 있다</li>
-</ul>
-<h2 id="고유값과-고유벡터-eigenvalue-eigenvector"><a href="#고유값과-고유벡터-eigenvalue-eigenvector" class="headerlink" title="고유값과 고유벡터(eigenvalue/eigenvector)"></a>고유값과 고유벡터(eigenvalue/eigenvector)</h2><ul>
-<li>선형변환 후에도 span을 벗어나지 않는 벡터를 고유벡터라고 하며 각각의 고유벡터는 특별한 고유값을 가짐</li>
-<li>이때의 고유값은 변환된 고유벡터가 스케일된 크기라고 볼 수 있다<ul>
-<li>만약 고유벡터가 선형변환된 후에도 크기가 그대로라면? 고유값은 1 이다 </li>
-<li>식으로 표현하면 변환하려는 행렬 A와 고유벡터v , 고유값 λ 라면</li>
-<li>Av = λv<ul>
-<li>이 식의 참,거짓을 통해 행렬A의 고유벡터v와 고유값λ 를 찾을 수 있다</li>
-<li>하지만 좌항은 행렬x벡터, 우항은 스칼라x벡터 이므로 우항을 행렬x벡터의 형태로 바꿔줘야한다</li>
-<li>대각선에만 1 이 있고 나머지는 0은 항등행렬 I 를이용하여 λ = λI 로 바꾼다</li>
-<li>결국 (A-λI)v = 0 이 되고, <strong>벡터v가 0벡터가 아니라는 가정하에</strong> 식을 성립하는 고유벡터v를 찾는다</li>
-<li>이때 det(A-λI)=0 인 λ를 찾는다 (이것은 차원을 축소시킨다 고 이해하자, 평면이라면? 선형태로)</li>
-<li>고유값은 하나여도 고유벡터는 여러개일 수 있음을 기억하자</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>대각선형렬일때는 고유벡터가 기저벡터와 같고 계산이 편해지기때문에, 어떤 행렬의 고유벡터를 기저벡터로 바꿔준다면 계산이 편해질것이다<ul>
-<li>why? : 대각선행렬의 대각선값들이 그 행렬의 고유벡터이기 때문</li>
-<li>그러기위해 행렬A의 고유벡터를 열벡터로 가지는 새로운 행렬을 B라고해보자</li>
-<li>이때 B<sup>T</sup>AT 를 하면, 대각선행렬이 아니였던 행렬A를 대각선에 고유값들을 갖는 대각선행렬로 변환된다</li>
-</ul>
-</li>
-<li>분석의 측면에서보면 만약 분산-공분산 행렬의 고유값 고유벡터를 구한다면<ul>
-<li>고유값의 합은 두 분산의 합과 같고</li>
-<li>고유값의 곱은 분산-공분산의 행렬식과 같다</li>
-<li>여기서는 이렇다는것만 기억하고 이것들이 가지는 의미는 후에 더 알 수 있다</li>
-</ul>
-</li>
-</ul>
-<h2 id="고차원의-문제-The-Curse-of-Dimensionality"><a href="#고차원의-문제-The-Curse-of-Dimensionality" class="headerlink" title="고차원의 문제 (The Curse of Dimensionality)"></a>고차원의 문제 (The Curse of Dimensionality)</h2><ul>
-<li>feature 의 수가 많은 데이터셋을 모델링하거나 분석할때 발생하는 문제</li>
-<li>So, feature들의 중요도를 비교하여 실제로 의미가 높은 feature만 선택함으로써 차원을 줄여야함</li>
-</ul>
-<h2 id="Dimension-Reduction-차원축소"><a href="#Dimension-Reduction-차원축소" class="headerlink" title="Dimension Reduction 차원축소"></a>Dimension Reduction 차원축소</h2><ul>
-<li>이 고차원의 문제를 해결하기위해 차원축소</li>
-<li>Feature Selection<ul>
-<li>덜 중요한 feature를 제거하는 방법</li>
-<li>장점 : 선택된 feature 해석이 쉽다</li>
-<li>단점 : feature들간의 연관성을 고려해야함</li>
-<li>LASSO, Genetic algorithm 등</li>
-</ul>
-</li>
-<li>Feature Extraction<ul>
-<li>기존의 feature 혹은 feature들이 조합된 새로운 feature를 사용하는 방법</li>
-<li>장점 : feature 들간의 연관성 고려되어 feature 수를 줄일 수 있음</li>
-<li>단점 : feature 해석이 어려움</li>
-<li>PCA, Auto-encoder 등</li>
-</ul>
-</li>
-</ul>
-<h2 id="주성분분석-PCA-Principal-Component-Analysis"><a href="#주성분분석-PCA-Principal-Component-Analysis" class="headerlink" title="주성분분석 (PCA, Principal Component Analysis)"></a>주성분분석 (PCA, Principal Component Analysis)</h2><ul>
-<li>고차원의 데이터를 분석하기위한 방법(제일 정보손실이적은 2차원으로 바꾸는것이 무난하다)</li>
-<li>표본들의 선형연관성을 최소한으로 즉, 최대한 선형독립적인 표본들만 있는상태로 필터링하는것</li>
-<li>분산을 최대한 유지하는 축(PC)를 찾는것이 주 목적이고, 그 축을 기준으로 차원을 축소할수있음<ul>
-<li>많은 데이터를 어떤 벡터축에 사영시켜야, 분포를 가장 잘 나타내는 하나의 축이 될수 있을까?</li>
-</ul>
-</li>
-<li>PCA 의 과정<ul>
-<li>데이터의 각열에대해 평균을 빼고 표준편차로 나누어 Normalize</li>
-<li>데이터의 분산-공분산 매트릭스계산</li>
-<li>분산-공분산 매트릭스의 고유벡터와 고유값 계산</li>
-<li>데이터를 고유벡터에 projection(matmul)<ul>
-<li>데이터를 고유벡터에 사영하는것이 분산이 가장크기 떄문</li>
-<li>분산이크다? 데이터손실이 최소화된 상태에서의 분포를 나타낼 수 있다</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>PCA 특징<ul>
-<li>데이터에대해 독립적인 축을 찾을 수 있음</li>
-<li>데이터의 분포가 정규성을 띄지않는경우 적용이 어려움<ul>
-<li>커널 PCA 활용</li>
-</ul>
-</li>
-<li>분류/ 예측 문제에대해 데이터의 라벨을 고려하지 않기때문에 효과적 분리가 어려움<ul>
-<li>PLS 활용</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Sklearn 라이브러리를 활용하여 PCA 가능</li>
-</ul>
-<h2 id="One-hot-encoding"><a href="#One-hot-encoding" class="headerlink" title="One-hot encoding"></a>One-hot encoding</h2><ul>
-<li>모든 문자열 값들을 숫자 형으로 인코딩하는 전처리 작업을 함으로써 계산에 용이하게 바꿈</li>
-<li>레이블인코딩<ul>
-<li>일괄적인 숫자값으로 변환되어 예측성능이 떨어진다</li>
-<li>숫자간의 크고 작음에 대한 특성 작용</li>
-</ul>
-</li>
-<li>원 핫 인코딩<ul>
-<li>피쳐값의 유형에따라 새로운 피쳐를 추가해 고유값에 해당하는 갈럼에만 1을표시, 나머지 칼럼에는 0을 표시</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>TIL</category>
-      </categories>
-      <tags>
-        <tag>Data science</tag>
-        <tag>Linear Algebra</tag>
-        <tag>Dimension Reduction</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI-Day2</title>
-    <url>/2021/05/07/AI-Day2/</url>
-    <content><![CDATA[<h1 id="Feature-Engineering"><a href="#Feature-Engineering" class="headerlink" title="Feature Engineering"></a>Feature Engineering</h1><h2 id="Warm-up"><a href="#Warm-up" class="headerlink" title="Warm up"></a>Warm up</h2><ul>
-<li>Data cleaning<ul>
-<li>대부분의 실제 데이터엔지니어, 데이터사이언티스트는 데이터클리닝이 대부분의 업무</li>
-<li>AI에 머신러닝을 시키기위해선 정제된 데이터가 필수  </li>
-</ul>
-</li>
-</ul>
-<h2 id="Feature-Engineering-이란"><a href="#Feature-Engineering-이란" class="headerlink" title="Feature Engineering 이란?"></a>Feature Engineering 이란?</h2><ul>
-<li>도메인 지식과 창의성을 바탕으로, 데이터셋에 존재하는 Feature들을 재조합하여 새로운 Feature를 만드는 것</li>
-<li>통계 분석 혹은 머신러닝, 딥러닝까지 대부분의 분석은 데이터에 있는 패턴을 인식하고 해당 패턴들을 바탕으로 예측</li>
-<li>더 좋은 퍼포먼스를 위해서 새롭고, 의미있는 패턴을 제공하는 것이 궁극적인 Feature engineering의 목적</li>
-<li>Gargage in - Garbage out 을 기억  </li>
-</ul>
-<h2 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h2><ul>
-<li>테이블형태의 데이터로 기억</li>
-<li>Row(행)에는 observation, Column(열)에는 feature가 있다</li>
-<li>만약 데이터에 NaN값이있다면? 같은 row의 다른값들은 자동으로 float으로 typecasting</li>
-</ul>
-<h2 id="Feature-Engineering-1"><a href="#Feature-Engineering-1" class="headerlink" title="Feature Engineering"></a>Feature Engineering</h2><ul>
-<li>feature끼리는 일반수식처럼 가능하지만, 각각의 data type에 주의하여야함<ul>
-<li>int끼리라면 의도대로 수식이되지만, 만약 str이라면? 예상치못한 결과도출</li>
-<li>특히 머신러닝 모델링에서는 문자열로된 data는 사용하지 않음</li>
-</ul>
-</li>
-</ul>
-<h3 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h3><ul>
-<li>s.replace(‘지우려는것’,’대체할것’)<ul>
-<li>하지만 바뀐것을 변수에 다시선언해주어야 변경됨(얕은복사? 더찾아보기)</li>
-</ul>
-</li>
-<li>s.toint()<ul>
-<li>자동으로 int로 typecasting까지 실행</li>
-</ul>
-</li>
-<li>s.apply(함수)<ul>
-<li>한 column전체에 대해 함수를 다 실행시킴(파이썬의 map과 비슷한느낌)</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>TIL</category>
-      </categories>
-      <tags>
-        <tag>Data science</tag>
-        <tag>Feature Engineering</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI-Day3</title>
-    <url>/2021/05/10/AI-Day3/</url>
-    <content><![CDATA[<h1 id="Data-Manipulation"><a href="#Data-Manipulation" class="headerlink" title="Data Manipulation"></a>Data Manipulation</h1><h2 id="Warm-up"><a href="#Warm-up" class="headerlink" title="Warm-up"></a>Warm-up</h2><ul>
-<li>Pandas 유용 메서드<ul>
-<li>pd.show_versions() : 여러 툴들의 버전표시</li>
-<li>pd.DataFrame() : DF 생성, parameter 값들은 공식문서 참조</li>
-<li>df.rename(‘a’,’b’) : 열이름 변경 a -&gt; b</li>
-<li>df.loc[::음수] : 열 순서바꾸기<ul>
-<li>df.loc[::음수].reset_index(drop=True) : 색인 초기화(행은 역순이지만)</li>
-</ul>
-</li>
-<li>df.loc[:,::음수] : 열 반전</li>
-<li>df.dtypes() : 타입확인 (parameter에 execlude=’원하는타입’ 으로 선별가능) </li>
-<li>df.apply() : data type 변환</li>
-<li>df.info(memory_usage=’deep’) : DF size 축소 (메모리확보)</li>
-<li>from glob import glob : 여러개의파일을 하나로 합침<ul>
-<li>sorted(glob(‘파일명*’))</li>
-<li>pd.concat((pd.read_csv(file))) for file in stock_files), ignore_index=True) : 로 합쳐진 값의 인덱스를 중복되지않게 수정</li>
-<li>ingnore 대신 axis=’columns’ : 여러파일에서 열단위로 DF 빌드</li>
-</ul>
-</li>
-<li>pd.read_clipboard() : 엑셀에서 선택한 클립보드영역을 자동으로 df 빌드</li>
-<li>df.sample() : 전체행을 설정한 비율에따라 두개의 df로 나누기</li>
-<li>df.genre.isin() : 원하는 조건만 선택가능</li>
-<li>df.nlargest() : 가장큰것부터 표시</li>
-<li>pd.~.str.split() : 문자열을 여러열로 분리</li>
-</ul>
-</li>
-</ul>
-<h2 id="Manipulation-데이터의-조작"><a href="#Manipulation-데이터의-조작" class="headerlink" title="Manipulation, 데이터의 조작"></a>Manipulation, 데이터의 조작</h2><ul>
-<li>데이터가 여러개로 나눠져있으므로 하나로 합칠수 있어야함</li>
-<li>그중 자주사용되는 두가지 concat과 merge에 대해 습득</li>
-<li>string과 dataframe은 조작법이 다름을 주의</li>
-<li>dataframe의 dimension이 같아야 두개를 manipulation 가능</li>
-</ul>
-<h3 id="concat"><a href="#concat" class="headerlink" title="concat"></a>concat</h3><ul>
-<li>pd.concat([x,y],axis=1)<ul>
-<li>두개의 df x와 y, axis=1 이면 열로 붙임, default값은 행으로 붙임</li>
-</ul>
-</li>
-</ul>
-<h3 id="maerge"><a href="#maerge" class="headerlink" title="maerge"></a>maerge</h3><ul>
-<li>concat과 다르게 공통된 부분을 기반으로 합침</li>
-<li>inner-join이외의 option들도 추가적으로 숙지해야함</li>
-<li>df.merge(df2, how=’inner’, on=’종목’)<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 데이터프레임 필터링 예시</span><br><span class="line"></span><br><span class="line"># type cast &#x2F; str-&gt;int</span><br><span class="line">df[&#39;순이익률&#39;] &#x3D; pd.to_numeric(df[&#39;순이익률&#39;])</span><br><span class="line"></span><br><span class="line"># 필터링 조건 (Condition) 설정</span><br><span class="line">condition &#x3D; (df[&#39;순이익률&#39;] &gt; 0) # Type Cast</span><br><span class="line"># () 로 씌우는것에 주의</span><br><span class="line"># and or 등도 사용가능</span><br><span class="line"></span><br><span class="line">## condition 의 값을 출력을 통해 확인해보세요. </span><br><span class="line"></span><br><span class="line"># [ ] 안에 컨디션을 설정하는 것으로, 컨디션의 값이 *TRUE*로 해당하는 부분의 데이터만 선택 할 수 있습니다.</span><br><span class="line">df_subset &#x3D; df[condition]</span><br><span class="line"></span><br><span class="line"># 결과물을 확인</span><br><span class="line">df_subset</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="groupby"><a href="#groupby" class="headerlink" title="groupby"></a>groupby</h3><ul>
-<li>테마에 따른 순이익률을 보고싶다?</li>
-<li>df.groupby(‘테마’).순이익률.mean()</li>
-</ul>
-<h3 id="Tidy-data"><a href="#Tidy-data" class="headerlink" title="Tidy data"></a>Tidy data</h3><ul>
-<li>쉽게말해 한 row에 한 observation을 다 표현한 data<ul>
-<li>1행 1데이터</li>
-<li>행에는 observation, 열에는 feature</li>
-</ul>
-</li>
-<li>일반적인 데이터는 wide라고 명칭<ul>
-<li>wide -&gt; tidy</li>
-<li>tidy -&gt; wide</li>
-<li>둘다 할 줄 알아야 함</li>
-</ul>
-</li>
-<li>df.melt() 로 tidy 를 조작하는법도 알아야함</li>
-<li>특히 seaborn과같은 시각화 라이브러리에 유용</li>
-</ul>
-]]></content>
-      <categories>
-        <category>TIL</category>
-      </categories>
-      <tags>
-        <tag>Data science</tag>
-        <tag>Data Manipulation</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI-Day5</title>
-    <url>/2021/05/12/AI-Day5/</url>
-    <content><![CDATA[<h1 id="Weekly-review"><a href="#Weekly-review" class="headerlink" title="Weekly review"></a>Weekly review</h1><h2 id="EDA"><a href="#EDA" class="headerlink" title="EDA"></a>EDA</h2><ul>
-<li>데이터를 불러오기<ul>
-<li>Description 을통해 데이터셋에대한 정보파악<ul>
-<li>EDA를 대신해주는거지만, 직접확인하는것이 더 정확</li>
-</ul>
-</li>
-<li>pd.read_csv() 에 대한 완벽한 숙지가 중요</li>
-</ul>
-</li>
-<li>데이터셋 확인하기<ul>
-<li>Graphic , Non-Graphic 을 구분하고 사용할줄 알아야함</li>
-<li>하지만, 자기가 시각화를 한 자료에대해서는 100% 설명할줄 알아야함<ul>
-<li>EDA과정에서 시각화된 자료에대한 코멘트(어떤 insigth를 얻었는지 등등)를 달아보기</li>
-</ul>
-</li>
-<li>Pandas의 메서드들을 외우는건 의미없음<ul>
-<li>여러번 사용해보면서 이런 기능을하는 함수가 있었다라는걸 기억하는것이 중요</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>데이터 전처리도 중요하다는것만 우선 기억  </li>
-</ul>
-<h2 id="Feature-Engineering"><a href="#Feature-Engineering" class="headerlink" title="Feature Engineering"></a>Feature Engineering</h2><ul>
-<li>데이터를 보다 확인하기 좋은 형태로 다듬는것이 목적<ul>
-<li>기존의 feature들을 조합하여 새로운 feature를 만드는것</li>
-<li>도메인지식과 창의성이 중요</li>
-</ul>
-</li>
-<li>DataFrame, DataSet 이해<ul>
-<li>결측치들(Na,Null,NaN,0,Undefined)의 차이를 알기</li>
-</ul>
-</li>
-<li>typecasting, 특히 string-&gt;int가 매우 중요하고 많이쓰임<ul>
-<li>replace,apply,astype 등의 다양한 방법이 존재하므로 정확히 의도대로 사용할 줄 알아야함  </li>
-</ul>
-</li>
-</ul>
-<h2 id="Data-Manipulation"><a href="#Data-Manipulation" class="headerlink" title="Data Manipulation"></a>Data Manipulation</h2><ul>
-<li>concat과 merge를 구분하고 사용할줄 알아야함<ul>
-<li>단순히 합치는법을 알기보다는 원하는 shape으로 만들어낼줄 아는것이 중요</li>
-</ul>
-</li>
-<li>wide &amp; tidy<ul>
-<li>각각의 형태가 언제 유용하고 확인하기 좋은가를 구분할줄 알아야함</li>
-<li>data를보고 어떤형태인지도 유추할수 있다면 best</li>
-<li>melt() &amp; pivot_table() 를 적절하게 사용할 줄 알아야함</li>
-</ul>
-</li>
-<li>pandas styling <ul>
-<li>나중에 알고있다면 좋은것</li>
-</ul>
-</li>
-</ul>
-<h2 id="Basic-derivative"><a href="#Basic-derivative" class="headerlink" title="Basic derivative"></a>Basic derivative</h2><ul>
-<li>미분에 대한 개념은 매우중요하지만, 직접미분을 해야하는경우는 드물다<ul>
-<li>다양한 미분 공식들을 알아야 알고리즘에대해 이해하고 사용할 수 있음</li>
-</ul>
-</li>
-<li>경사하강법은 뒤로갈수록 중요한 개념이므로 꾸준히 공부하고 이해할수록 좋음</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Weekly reveiw</category>
-      </categories>
-      <tags>
-        <tag>Data science</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI-Day4</title>
-    <url>/2021/05/11/AI-Day4/</url>
-    <content><![CDATA[<h1 id="Basic-Derivative-기초미분"><a href="#Basic-Derivative-기초미분" class="headerlink" title="Basic Derivative 기초미분"></a>Basic Derivative 기초미분</h1><ul>
-<li>미분 : 함수를 작게 나누는것</li>
-<li>DS에서의 미분?<ul>
-<li>x를 넣었을때 y값을 예측하는 선형모델을 예로보면</li>
-<li>y^ = a + b X</li>
-<li>주어진 데이터 X를 넣었을 떄 모델이 예측하는 예측값과 실제값 간의 차이(Error,𝜀)를 계산한 다음, 여러 모델 중 Error(모델에서 예측하는 예측값과 실제값 (y)의 차이)가 가장 작은 모델을 선택하는 방법을 통해, 가장 좋은 모델을 선택할 수 있음</li>
-<li>이 과정은 f(a,b) =𝜀 로 표현 될 수 있으며, 오차 함수인 𝜀 을 최소화 하는 a,b를 찾는 것이 머신러닝(Linear regression)의 목표</li>
-<li>이 오차함수를 최소화하는 a,b를 찾기위해 미분 사용  </li>
-</ul>
-</li>
-</ul>
-<h2 id="미분-공식-w-Python"><a href="#미분-공식-w-Python" class="headerlink" title="미분 공식 w/ Python"></a>미분 공식 w/ Python</h2><ul>
-<li>기본적으로 미분은 다음의 공식을 활용<ul>
-<li>f’(x) = {f(x + Δx) - f(x)/ Δx}, Δ x-&gt; 0</li>
-<li>but 실제 0으로 나눌 수 없기때문에 0에 매우근사한 1e-5 을 사용하며, 이러한 접근 방식을 numerical method라 함</li>
-<li>numerical method에서는 조금 더 정확한 측정을 위해 분자에 f(x + Δx) - f(x - Δx)/ 2Δx 를 사용하기도 함  </li>
-</ul>
-</li>
-<li>머신러닝에서 쓰이는 대표적 미분공식들<ul>
-<li>f(x) = 상수 -&gt; f’(x) = 0<ul>
-<li>f’(x)가 상수 (constant)인 경우는 x를 아무리 늘리거나 줄여도 늘 같은 숫자이기 때문에 변화가 전혀 없음. 즉 변화율이 0이기 때문에 미분계수도 늘 0<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># f(x) &#x3D; 5</span><br><span class="line">def f(x):</span><br><span class="line">    return 5</span><br><span class="line"></span><br><span class="line">def numerical_derivative(fx, x):</span><br><span class="line">    delta_x &#x3D; 1e-5</span><br><span class="line"></span><br><span class="line">    return (fx(x + delta_x) - fx(x)) &#x2F; delta_x</span><br><span class="line">print(numerical_derivative(f, 1))</span><br><span class="line"></span><br><span class="line"># 예시 2 : Scipy의 derivative 활용(도함수를 바로계산해주는 함수)</span><br><span class="line">from scipy.misc import derivative</span><br><span class="line"></span><br><span class="line"># 두 방법의 결과값 비교</span><br><span class="line">derivative(f,1, dx&#x3D;1e-6) &#x3D;&#x3D; numerical_derivative(f, 1)</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li>f(x) = ax<sup>{n}</sup> -&gt; f’(x) = an{x}<sup>{(n-1)}</sup><ul>
-<li>Power Rule로도 알려져있는 미분법</li>
-<li>x 기준으로 n승을 미분할 경우 n을 내려보내서 곱해준 후, 이후에 n승에서 “하나”를 가져왔기 때문에 빼주는 방법  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">def f(x):</span><br><span class="line">    return 3*(x**4) + 10</span><br><span class="line"></span><br><span class="line">def numerical_derivative(fx, x):</span><br><span class="line">    delta_x &#x3D; 1e-5</span><br><span class="line"></span><br><span class="line">    return (fx(x + delta_x) - fx(x)) &#x2F; delta_x</span><br><span class="line"></span><br><span class="line">print(numerical_derivative(f, 2))</span><br><span class="line"></span><br><span class="line"># 예시 2 : Scipy의 derivative 활용</span><br><span class="line">from scipy.misc import derivative</span><br><span class="line"></span><br><span class="line"># 두 방법의 결과값 비교</span><br><span class="line">print(derivative(f,2, dx&#x3D;1e-5))</span><br><span class="line">derivative(f,2, dx&#x3D;1e-5) &#x3D;&#x3D; numerical_derivative(f, 2)  #delta X의 값은 같지만 Rounding 에러로 인해 두 결과가 미묘하게 다르게 나오지만 거의 같음</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li>f(x) = e<sup>x</sup> -&gt;f’(x) = e<sup>x</sup><ul>
-<li>지수 함수의 경우에는 도함수 역시 지수 함수  </li>
-</ul>
-</li>
-<li>f(x) = lnx -&gt; f’(x) = {1 / x}<ul>
-<li>자연로그의 미분은 신경망의 활성 함수인 sigmoid 함수를 쉽게 미분할수 있도록 도와줌<ul>
-<li>why? sigmoid 함수에 자연로그를 씌움으로서 미분을 훨씬 수월하게 할 수 있게 되기 때문</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="편미분-Partial-Derivative"><a href="#편미분-Partial-Derivative" class="headerlink" title="편미분 Partial Derivative"></a>편미분 Partial Derivative</h2><ul>
-<li>파라미터가 2개 이상인 Error 함수에서 우선 1개의 파라미터에 대해서만 미분을 하자 라는 목적으로 다른 변수들을 상수 취급 하는 방법  </li>
-</ul>
-<img src="../images/PD.PNG">
-
-<h2 id="Chain-Rule"><a href="#Chain-Rule" class="headerlink" title="Chain Rule"></a>Chain Rule</h2><ul>
-<li><strong>합성함수(함수의 함수)</strong> 를 미분하기 위해 사용하는 방식</li>
-<li>F(x) = f(g(x))$<br>F’(x) -&gt; f’((g(x)) ∘ g’(x)<ul>
-<li>미분할 때 반드시 바깥함수(f(x))부터 미분을 해야함을 기억</li>
-<li>F(x) = (2x<sup>3</sup> + 7)<sup>6</sup>  를 x에 대해 미분하려는 경우<br>f(x) = x<sup>6</sup>, g(x) = 2x<sup>3</sup> + 7 로 설정<br>F’(x) = 6(2x<sup>3</sup> + 7)<sup>5</sup> ∘ 6x<sup>2</sup></li>
-</ul>
-</li>
-<li>Chain Rule은 Deep learning의 핵심 개념 중 하나인 Backward Propagation(역전파)을 이해하는데 중요하기 때문에 시간이 될 때마다 연습</li>
-</ul>
-<h2 id="경사하강법-Gradient-Descent"><a href="#경사하강법-Gradient-Descent" class="headerlink" title="경사하강법 Gradient Descent"></a>경사하강법 Gradient Descent</h2><ul>
-<li>오차 함수인 𝜀 을 최소화 하는 𝑎,𝑏 를 찾을 수 있는 최적화 알고리즘 중의 하나</li>
-<li>최적의 a,b를 찾기 위해선 도함수의 미분계수가 0인 곳을 찾으면 되지만, 실제 다루게 될 문제에선 파라미터의 갯수는 수없이 많고 하나의 minimum/maximum만이 존재하지 않음</li>
-<li>경사하강법은 임의의 a, b를 선택한 후 (random initialization)에 기울기 (gradient)를 계산해서 기울기 값이 낮아지는 방향으로 진행</li>
-<li>기울기는 항상 손실 함수 값이 가장 크게 증가하는 방향으로 진행합니다. 그렇기 때문에 경사하강법 알고리즘은 기울기의 반대 방향으로 이동</li>
-<li>경사하강법에서의 a,b<br>an+1=an−η∇f(an)<br>bn+1=bn−η∇f(bn)<ul>
-<li>반복적으로 파라미터 a,b를 업데이트 해가면서 그래디언트(∇f)가 0이 될 때까지 이동<br>이 때 중요한게 바로 학습률 (learning rate,η)<br>학습률이 너무 낮게 되면 알고리즘이 수렴하기 위해서 반복을 많이 해야되고 학습률이 너무 크면 극소값을 지나쳐서 알고리즘이 수렴을 못하고 계산을 계속 반복<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">def gradient_descent(X, y, lr &#x3D; 0.05, epoch &#x3D; 10):</span><br><span class="line">    </span><br><span class="line">    a, b &#x3D; 0.33, 0.48 # 임의 선택한 파라미터 a, b</span><br><span class="line">    N &#x3D; len(X) # 샘플 갯수</span><br><span class="line">    </span><br><span class="line">    for _ in range(epoch):            </span><br><span class="line">        f &#x3D; y - (a*X + b)</span><br><span class="line">    </span><br><span class="line">        # a와 b를 업데이트 합니다(기울기를 바꿔준다고 쉽게이해하면 됨)</span><br><span class="line">        a -&#x3D; lr * (-2 * X.dot(f).sum() &#x2F; N)</span><br><span class="line">        b -&#x3D; lr * (-2 * f.sum() &#x2F; N</span><br><span class="line"></span><br><span class="line"># y &#x3D; 3 x + 5</span><br><span class="line">X &#x3D; np.array([1, 2, 3, 4, 5])</span><br><span class="line">y &#x3D; np.array([8, 11, 14, 17, 20])</span><br><span class="line"></span><br><span class="line">gradient_descent(X,y)  # 10번만 돌렸을 때</span><br><span class="line">gradient_descent(X, y, epoch &#x3D; 100)  # 100번 반복</span><br><span class="line">gradient_descent(X, y, epoch &#x3D; 1000)  # 1000번 반복</span><br><span class="line">반복할수록 a&#x3D;43 b&#x3D;5에 점점 수렴해감을 확인할 수 있음</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>TIL</category>
-      </categories>
-      <tags>
-        <tag>Data science</tag>
-        <tag>Basic Derivative</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI-day10</title>
-    <url>/2021/05/20/AI-day10/</url>
-    <content><![CDATA[<h1 id="Weekly-review"><a href="#Weekly-review" class="headerlink" title="Weekly review"></a>Weekly review</h1><h2 id="가설검정"><a href="#가설검정" class="headerlink" title="가설검정"></a>가설검정</h2><ul>
-<li><p>가설검정의 목적: 모집단의 실제값들 중 sample들을 뽑아 그 통계치를 통해 통계적으로 유의한지아닌지를 판정하는것  </p>
-</li>
-<li><p>기술통계치(데이터를 설명하는 값들)와 box plot, violin plot, count, mean, standard dev, min, 1Q, median, 3Q, max 이해하고 설명할 수 있어야함  </p>
-</li>
-<li><p>Outlier(이상치)에 대한 개념, 구하는 식 찾기  </p>
-</li>
-<li><p>추리통계치</p>
-<ul>
-<li>Population, Parameter, Statistic, Estimator, Standard Deviation, Standard Error 각각의 정의는 반드시 알아야함  </li>
-</ul>
-</li>
-<li><p>Sampling 4가지 </p>
-<ul>
-<li>Simple random sampling, Systematic sampling, Stratified random sampling, Cluster sampling 와 추가로 이것들의 변이형 도 찾아서 전체적인 뉘앙스를 기억하기  </li>
-</ul>
-</li>
-<li><p>Standard Error(표준오차,표준편차)</p>
-<ul>
-<li>표준편차 나누기 루트샘플사이즈 공식이 왜 그렇게 도출된것인지를 설명할 수 있어야함</li>
-<li>표본의 수가 많을수록 오차가 작다 기억</li>
-</ul>
-</li>
-</ul>
-<h2 id="T-test"><a href="#T-test" class="headerlink" title="T-test"></a>T-test</h2><ul>
-<li>독립성,정규성,등분산성이 지켜져야 t-test 가능</li>
-<li>수치형,연속형data 만 사용가능</li>
-<li>one sample : 1개 <strong>샘플의 평균값</strong>이 <strong>특정값과 동일</strong>한지 비교<ul>
-<li>t = 샘플평균-모집단평균 / 표준편차</li>
-</ul>
-</li>
-<li>two sample : 2개 <strong>샘플 각각의 평균값</strong>이 <strong>서로 동일</strong>한지 비교</li>
-<li>t-test의 정확한 의미와 결과에대한 해석을 할 줄 알아야함</li>
-<li>P-value(일반적으로 신뢰구간 95%)<ul>
-<li>0.05보다 크다 -&gt; 귀무가설 채택</li>
-<li>0.05보다 작다 -&gt; 귀무가설 기각</li>
-</ul>
-</li>
-</ul>
-<h2 id="Type-of-Error"><a href="#Type-of-Error" class="headerlink" title="Type of Error"></a>Type of Error</h2><ul>
-<li>type1, type2 error의 개념과 차이가 중요</li>
-</ul>
-<h2 id="Chi-square"><a href="#Chi-square" class="headerlink" title="Chi square"></a>Chi square</h2><ul>
-<li>하는법과 의미를 기억</li>
-</ul>
-<h2 id="ANOVA"><a href="#ANOVA" class="headerlink" title="ANOVA"></a>ANOVA</h2><ul>
-<li>2 Sample 이상을 다루는경우 주로 사용하는 가설검정법</li>
-</ul>
-<h2 id="큰-수의-법칙-Law-of-large-numbers"><a href="#큰-수의-법칙-Law-of-large-numbers" class="headerlink" title="큰 수의 법칙 ( Law of large numbers )"></a>큰 수의 법칙 ( Law of large numbers )</h2><ul>
-<li>샘플이 많아질수록 모집단의 통계치와 근사해진다</li>
-</ul>
-<h2 id="중심극한정리-Central-Limit-Theorem-CLT"><a href="#중심극한정리-Central-Limit-Theorem-CLT" class="headerlink" title="중심극한정리 ( Central Limit Theorem, CLT )"></a>중심극한정리 ( Central Limit Theorem, CLT )</h2><ul>
-<li>샘플이 많아질수록 정규분포에 근사해진다</li>
-<li>특히 큰수의법칙과 중심극한정리는 개념을 정확히 설명할줄 알아야한다(면접에서도 중요)</li>
-</ul>
-<h2 id="신뢰구간"><a href="#신뢰구간" class="headerlink" title="신뢰구간"></a>신뢰구간</h2><ul>
-<li>샘플평균 플러스마이너스 Error 로 기억(공식 암기)</li>
-</ul>
-<h2 id="총-확률의-법칙-The-Law-of-Total-Probability"><a href="#총-확률의-법칙-The-Law-of-Total-Probability" class="headerlink" title="총 확률의 법칙 (The Law of Total Probability)"></a>총 확률의 법칙 (The Law of Total Probability)</h2><ul>
-<li>다시말해 A의 모든 확률은, 주어진 Bn에 대해, 각각의 일어날 확률의 총합이다</li>
-<li>bayesian 에 대한 내용은 알면 알수록 좋고, 분야가 세분화될수록 점점 쓸모가있다</li>
-<li>조건부확률 계산하는 법도 직접 할수있으면 더 좋다</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Weekly reveiw</category>
-      </categories>
-      <tags>
-        <tag>Data science</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI-day16~20</title>
-    <url>/2021/06/03/AI-day16-20/</url>
-    <content><![CDATA[<h1 id="첫-프로젝트-진행-및-회고-Project-Review"><a href="#첫-프로젝트-진행-및-회고-Project-Review" class="headerlink" title="첫 프로젝트 진행 및 회고 (Project-Review)"></a>첫 프로젝트 진행 및 회고 (Project-Review)</h1><ul>
-<li>AI교육 16~20일차 개인프로잭트를 진행하였다</li>
-<li>프로잭트의 대략적인 방향과 회고를 적어보았다</li>
-<li>이번 포스팅에서는 자세한 분석과정이 아닌, 프로젝트 진행중 고민한 내용과 회고를 작성하였다.</li>
-</ul>
-<hr>
-<h2 id="프로젝트-진행"><a href="#프로젝트-진행" class="headerlink" title="프로젝트 진행"></a>프로젝트 진행</h2><ul>
-<li>프로젝트의 주제는 게임판매량 데이터를 분석하고, 분석결과를 바탕으로 다음 출시할 게임의 설계방향을 정하는것이다.</li>
-<li>비전공자를 대상으로 한다는 가정하에 발표시간은 5분제한이 있다. </li>
-<li>데이터는 게임이름,장르,출시년도,게임회사,플랫폼, 지역별(북미,유럽,일본,그외) 판매량이 있었다.</li>
-<li>간단하게 요약하자면 <strong>판매량과 장르</strong> , <strong>판매량과 지역</strong>, <strong>판매량과 플랫폼</strong> 을 분석하고<br>각각의 연관성을 먼저 정리하였다.</li>
-<li>그 후 판매량이 많은 게임들의 장르,플랫폼,지역을 정리 후 위에서 분석한 연관성들을 적용시켜  </li>
-</ul>
-<p><strong>어떤 장르의 게임을 어떤플랫폼으로 어느지역에 출시할지</strong>  를 결론 내렸다.</p>
-<hr>
-<h2 id="시작부터-난관에-봉착"><a href="#시작부터-난관에-봉착" class="headerlink" title="시작부터 난관에 봉착"></a>시작부터 난관에 봉착</h2><p> 프로잭트는 주말을 포함하여 6일동안 진행하였다. 하지만 개인 프로젝트를 진행하는것이 처음이라 분석방향을 설정하는 단계에서부터 어려움을 겪었다. 실제로 6일 중 3일동안 파이썬 코드는 한줄도 적지못하고 공책에 연필로 분석방향 그리기에 바빴다.<br> 가장 큰 첫번째 고민은 <strong>“어떤 기준을 가지고 분석할까”</strong> 였다.<br> 판매량에 영향을 주는요인은 <strong>장르와 플랫폼</strong> 이 가장 일반적이지만 해당 데이터의 지역별, 연도별 판매량차이와 게임회사 정보도 무시할 수 없었다. 그래서 우선 장르와 플랫폼을 분석하고 그다음 나머지것들을 고려하기로 했다. 대략 이미지로 정리해보았다.<br> <img src="../images/sales.png" width= 450, height=200>  </p>
-<p> <strong>“플랫폼과 장르가 판매량과 어떤 연관이있는지 , 그리고 각각의 플랫폼&amp;장르는 지역&amp;연도와 어떤 연관이있는지”</strong> 분석향을 정했다.<br> 분석방향을 정했으니 장르부터 분석을 시작했다. 하지만.. 다시 또 문제가 발생했다. 내가 알고싶은것은 장르와 연도&amp;지역의 연관성 이였다.  </p>
-<ul>
-<li>장르들을 각 지역내에서의 비교해 지역내 인기가 많은 장르들을 분석할까?<ul>
-<li>그럼 각 지역별 인기있는 장르를 찾아낼 수 있을것이다.</li>
-<li>ex) 미국에선 레이싱, 유럽에선 RPG가 잘팔린다</li>
-<li>여러 장르의 게임을 출시할때, 지역별로 다른장르를 선택해 출시할 수 있다</li>
-</ul>
-</li>
-<li>한 장르에대해 각 지역별 차이를 분석할까?<ul>
-<li>그럼 어떤 장르가 어디서 더 인기가 많은지 알 수 있을것이다. </li>
-<li>ex) 레이싱게임은 유럽보다는 미국에서 더 잘팔린다</li>
-<li>한 장르의 게임을 출시할때 보다 판매량이 높은 지역에 출시할 수 있다</li>
-</ul>
-</li>
-</ul>
-<p> 물론 두가지를 다 비교하면 더욱 자세한 분석이 될 수 있고, 지역별로 다른 장르를 출시할 수도 있다. 하지만 이번 프로젝트의 발표시간은 5분이고, 다른 분석할 기준이 많기때문에 포괄적인 기준이 필요했다. 그래서 지역내에서가 아닌 지역별 차이를 분석하여 하나의 게임을 출시하는데 목표를 두었다.  </p>
-<hr>
-<h2 id="장르와-지역의-분석방법을-다른기준에도-똑같이-적용할수-있을까"><a href="#장르와-지역의-분석방법을-다른기준에도-똑같이-적용할수-있을까" class="headerlink" title="장르와 지역의 분석방법을 다른기준에도 똑같이 적용할수 있을까?"></a>장르와 지역의 분석방법을 다른기준에도 똑같이 적용할수 있을까?</h2><p> 동일한 방법으로 장르-연도, 플랫폼-지역&amp;연도를 분석하면 되지않을까? 잠시 복붙의 행복회로에 불이 들어왔다.<br> 하지만… 연도에서 다시한번 딜레마에 빠졌다. 연도를 고려하지 않았을때는 지역끼리만 비교하면 됬지만,, 게임기술이 1년단위로 급성장하는 시대에서 과연 1995년,2010년,2015년 같은장르의 판매량을 연도끼리 비교하는것이 의미가있을까? 좀 더 <strong>의미있는</strong> 분석을 위해 이번에는 장르에서 선택하지않았던 연도내에서 장르들의 차이를 비교해보기로 결정했다.</p>
-<ul>
-<li>연도내에서 장르의 차이를 분석한다면?<ul>
-<li>연도별 가장 인기있었던 장르를 비교하면 전체적인 흐름 즉, <strong>장르의 트랜드</strong> 를 파악할 수 있다.</li>
-<li>이것은 그냥 같은 장르를 연도끼리 비교하는것보다 선호도 변화를 볼 수 있어 더 유용하다.</li>
-</ul>
-</li>
-</ul>
-<p> 그래서 아쉽지만 기쁜마음으로(?) 지역과는 다른방향으로 분석하였다. 각 연도 내에서 어떤장르가 가장 많이판매되었는지 비교 한 후 전체적인 트랜드를 확인하기로 결정했다.</p>
-<hr>
-<h2 id="장르가-끝났다-플랫폼을-분석해보자"><a href="#장르가-끝났다-플랫폼을-분석해보자" class="headerlink" title="장르가 끝났다, 플랫폼을 분석해보자"></a>장르가 끝났다, 플랫폼을 분석해보자</h2><p> 이번에야말로 봍붙의 행복회로가 빛을 내기시작했다. 장르의 분석방법을 플랫폼에 그대로 적용시켰다. 그림으로 보았던 총 4가지의 분석을 마쳤고 분석결과도 도출해냈다. (추가로 같은 장르의 게임의 플랫폼별 판매량도 분석해보았다.)<br> 분석과정은 t-test나 ANOVA를 통해 가설검정 과정만 진행하였다. 분석과정에서 고려할 사항을 최소하 하기 위해서다.  </p>
-<p> 하지만 이것이 실수였다는것을 동기들의 피드백을 듣고 알게 되었다.<br> 비전공자가 <strong>“연관이있다 없다 식의 논리”</strong> 를 이해하기 어렵기때문이다. 각각의 판매량 차이를 그래프로 시각화하는것이 그래프가 많더라도 오히려 한눈에 이해하기는 쉽다는것을 피트백을 듣고 뒤늦게 깨달앗다.</p>
-<hr>
-<h2 id="출고량이-많은게임을-분석한다…-그런데-출고량이-많은-기준은"><a href="#출고량이-많은게임을-분석한다…-그런데-출고량이-많은-기준은" class="headerlink" title="출고량이 많은게임을 분석한다… 그런데 출고량이 많은 기준은?"></a>출고량이 많은게임을 분석한다… 그런데 출고량이 많은 기준은?</h2><p> 그렇다 출고량이 많은게임을 분석해서 기준을 적용하고 장르를 정하고 플랫폼을 정하고.. 흐름은 좋았다. 하지만 어느정도가 되어야 통계학적,객관적으로 <strong>많다</strong> 고 할 수 있을까?<br> 결론부터 말하자면 정확한 방법을 찾진 못했다. 과정에서배운 clustering, PCA,정규화 등의 방법이 있었지만 판매량의 분포가 워낙 일정했기때문에 기준을 정하기 애매했다. 그래서 그래프로 총판매량만 단순하게 시각화하고 그나마 차이가 많이나는 상위 100개의 게임을 선정했다.<br> <img src="../images/total.PNG" width=300 height=200></p>
-<p> 하지만 분석하나하나가 회사의 매출을 좌우한다고 생각한다면? 이런 대략이라는 수치는 용납되지 않을것 같았고, 이번주말에 이 기준을 어떻게 설정할지 찾아보기로 했다.</p>
-<hr>
-<h2 id="거의다-온것같은데-마지막-결론도출도-만만치-않다"><a href="#거의다-온것같은데-마지막-결론도출도-만만치-않다" class="headerlink" title="거의다 온것같은데.. 마지막 결론도출도 만만치 않다"></a>거의다 온것같은데.. 마지막 결론도출도 만만치 않다</h2><p> 판매량 상위100개의 게임을 분석했고 가장많은 장르와 플렛폼을 찾아냈다. 그런데 여기서 또다시 딜레마에 빠졌다.<br> 판매량이 많은 장르와 플렛폼은 찾았는데 서로 비슷하지않다. 한마디로 슈팅게임이 가장 많이 팔렸는데, 플랫폼은 Wii가 가장 많다. 마음같아서는 슈팅게임을 Wii플랫폼으로 내면될 것 같다.<br> 그럼 어떤것을 먼저 골라야할까? 장르일까 플랫폼일까?<br> 여기서 이용한것이 <strong>트랜드</strong> 이다.<br> 분석결과 <strong>장르는 연도별 트랜드가 있지만</strong> , <strong>플랫폼은 연도별 트랜드가 없다</strong><br> 한마디로 최근 트랜드인(최근에 판매량이많은) 장르를 고른다면, 판매량이 많은 플랫폼을 고르는것보다는 의미가 있을것이라 판단했다. 이런 논리만으로 장르를 우선시 하는게 완벽한 분석은 아닐 수 있지만, 현재 분석한 데이터에선 가장 최선이라 생각했다. 물론 이부분도 후에 더 정확한 선택방법이 있는지 알아보는것도 개인적 숙제다.</p>
-<h3 id="복잡한-분석과-이론적-고찰을-통해-드디어-결론에-도착했다"><a href="#복잡한-분석과-이론적-고찰을-통해-드디어-결론에-도착했다" class="headerlink" title="복잡한 분석과 이론적 고찰을 통해 드디어 결론에 도착했다"></a>복잡한 분석과 이론적 고찰을 통해 드디어 결론에 도착했다</h3><p> 결국 상위100개 게임에서도 슈팅, 전체에서도 슈팅이 제일 많이 팔린걸 확인했다. 장르는 슈팅으로 정했다.<br> 그 다음 슈팅장르가 가장 많이 팔린 플랫폼과 지역을 분석하고 결론적으로 장르,플랫폼,지역을 선정했다.</p>
-<hr>
-<h2 id="영상도-찍고-동기부여도-하고-완벽했다"><a href="#영상도-찍고-동기부여도-하고-완벽했다" class="headerlink" title="영상도 찍고 동기부여도 하고 완벽했다"></a>영상도 찍고 동기부여도 하고 완벽했다</h2><p> 정말 많은것을 느꼈다. 한달간 수학,통계학,파이썬을 배우며 넘지 못할것 같았던 산들을 꾸역꾸역 올라갔다. 이론적인 부분에 집중해서 용어, 의미, 공식 같은 내용을 남들에게 설명할 수 있을 정도로 완벽하게 흡수하려고 노력했다.<br> 하지만 실제 비지니스에 활용하는것, 그것을 다른사람에게 논리적으로 설명하는것은 또 다른 영역이였다. 비전공자인 청자의 입장을 고려하는점이 필요한것 같았다. 신기하게도 동기들의 피드백에서도 같은 지적을 받았다.<br> 동기들의 노력과 고민의 결과가 담긴 아주 소중한 발표영상(5분길이의 50개영상)을 모두 보았다. 같은 데이터를 가지고 이렇게나 다른분석을 할 수 있고, 심지어는 나의 분석내용이 틀렸나 라고 의심할정도로 완벽한 발표내용도 보았다. 역시 배울점도 많고 뭔가 승부욕, 공부의지가 불타오르는 자극이 되었다.<br> 한달동안 이론만보고 컴퓨터만보고 대화한 느낌이였다면, 이번 프로젝트와 동기들과의 피드백으로 정말 데이터사이언스라는 분야에 첫걸음을 내딛었다는 생각에 뿌듯하다. 다음 프로젝트때는 내가 다른 동기들의 자극이 될 수 있도록 스스로 만족할수 있도록 꾸준히 부지런하게 걸어봐야겠다.<br> (그동안 잠자고있던 미적분,선형통계,파이썬,머신러닝,딥러닝 인강들을 깨울때가 된 것 같다)<br> 블로그도 옮길때가 된것 같다 블로그테마가 익스플로러에서 재대로 작동하지않아 공부시간과 블로그 수정시간이 비슷한것같다… 티스토리나 밸로그로 옮길예정이다</p>
-]]></content>
-      <categories>
-        <category>Project</category>
-      </categories>
-      <tags>
-        <tag>Project-Review</tag>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI-Day14</title>
-    <url>/2021/05/26/AI-Day14/</url>
-    <content><![CDATA[<h1 id="군집화-Clustering"><a href="#군집화-Clustering" class="headerlink" title="군집화 (Clustering)"></a>군집화 (Clustering)</h1><ul>
-<li>Screeplot 이해</li>
-<li>Supervised, Unsupervised learning 차이 이해</li>
-<li>K-means clustering 이해</li>
-</ul>
-<h2 id="Scree-plot"><a href="#Scree-plot" class="headerlink" title="Scree plot"></a>Scree plot</h2><ul>
-<li>고유값 크기를 기반으로 성분 수를 결정</li>
-<li>그래프의 기울기는 주성분에 의해 설명되는 데이터의 변동성을 나타냄<ul>
-<li>즉 기울기가 많이 떨어진다? 해당 주성분이 데이터의 많은 영향을준다</li>
-<li>기울기가 평평해진다? 해당 주성분이 데이터에 적은 영향을준다</li>
-<li>그러므로 기울기가 급격하게 변하는 고유값들을 골라 주성분으로 선택</li>
-<li>앞서배운 PCA에서 feature수를 줄여 차원을 줄이는것처럼, 데이터에 영향을 많이주는 주성분을 골라내 차원을 줄인다고 이해할 수 있다</li>
-</ul>
-</li>
-</ul>
-<h2 id="Machine-Learning"><a href="#Machine-Learning" class="headerlink" title="Machine Learning"></a>Machine Learning</h2><ul>
-<li>지도학습 (Supervised Leanring)<ul>
-<li>input data에 라벨(답)이 있을경우 사용</li>
-<li>분류(Classification)<ul>
-<li>데이터의 카테고리, 클래스 예측</li>
-</ul>
-</li>
-<li>회귀(Prediction)<ul>
-<li>continuous 데이터를 바탕으로 결과를 예측</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>비지도학습 (Unsupervised Learning)<ul>
-<li>Input data에 라벨(답)이 없을경우 사용<ul>
-<li>클러스터링(Clustering)<ul>
-<li>데이터의 연관된 feature를 바탕으로 유사한 그룹을 생성</li>
-</ul>
-</li>
-<li>차원 축소 (Dimensionality Reduction)<ul>
-<li>높은 차원을 갖는 데이터셋을 사용하여 feature selection / extraction 등을 통해 차원을 줄이는 방법</li>
-</ul>
-</li>
-<li>연관 규칙 학습 (Association Rule Learning)<ul>
-<li>데이터셋의 feature들의 관계를 발견</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>강화 학습 (Reinforcement Learning)<ul>
-<li>머신러닝의 한 형태로, 기계가 좋은 행동에 대해서는 보상, 그렇지 않은 행동에는 처벌이라는 피드백을 통해서 행동에 대해 학습</li>
-</ul>
-</li>
-</ul>
-<h2 id="군집화-Clustering-1"><a href="#군집화-Clustering-1" class="headerlink" title="군집화(Clustering)"></a>군집화(Clustering)</h2><ul>
-<li>Unsupervised Learning Algorithm의 한 종류</li>
-<li>주어진 데이터들이 얼마나, 어떻게 유사한지</li>
-<li>데이터셋을 요약/정리하는데 있어서 매우 효율적인 방법</li>
-<li>Hard vs Soft Clustering<ul>
-<li>Hard Clustering에서 하나의 데이터는 하나의 cluster에만 할당</li>
-<li>Soft Clustering에서 하나의 데이터는 여러 cluster에 확률을 가지고 할당</li>
-<li>일반적으로 Hard Clustering을 Clustering이라 함</li>
-</ul>
-</li>
-<li>정답을 보장하지 않기 때문에, production의 수준 혹은 예측을 위한 모델링보다는 EDA를 위한 방법으로써 많이 쓰임</li>
-</ul>
-<h3 id="HCA-Hierarchical-Clustering"><a href="#HCA-Hierarchical-Clustering" class="headerlink" title="HCA (Hierarchical Clustering)"></a>HCA (Hierarchical Clustering)</h3><ul>
-<li>각각의 샘플간의 유사성에 기반하여 행과열을 재정렬</li>
-<li>정렬된 cluster 간의 dendrogram 을 그리고, 가지의 길이로 연관성을 나타낼 수 있음</li>
-<li>Agglomerative: 개별 포인트에서 시작후 점점 크게 합쳐감</li>
-<li>Divisive: 한개의 큰 cluster에서 시작후 점점 작은 cluster로 나눠감</li>
-</ul>
-<h3 id="Point-Assignment"><a href="#Point-Assignment" class="headerlink" title="Point Assignment"></a>Point Assignment</h3><ul>
-<li>시작시에 cluster의 수를 정한 다음, 데이터들을 하나씩 cluster에 배정</li>
-</ul>
-<h2 id="K-means-clustering"><a href="#K-means-clustering" class="headerlink" title="K-means clustering"></a>K-means clustering</h2><ul>
-<li>point assignment의 한종류로 빈번하게 쓰임</li>
-</ul>
-<ol>
-<li>k 개의 랜덤한 데이터를 cluster의 중심점으로 설정</li>
-<li>해당 cluster에 근접해 있는 데이터를 cluster로 할당</li>
-<li>변경된 cluster에 대해서 중심점을 새로 계산</li>
-<li>cluster에 유의미한 변화가 없을 때 까지 2-3 반복</li>
-</ol>
-<ul>
-<li>시간복잡도가 선형이므로 빅데이터에 적합</li>
-<li>PCA와 clustering은 반드시 연계해서 사용할 필요는 없지만, PCA로 전처리를 하고 K-means를 메인 “머신러닝”으로 사용할 수 있음</li>
-</ul>
-<h3 id="중심점-Centroid-계산"><a href="#중심점-Centroid-계산" class="headerlink" title="중심점 (Centroid) 계산"></a>중심점 (Centroid) 계산</h3><ul>
-<li>K-means 는 centroid-based clustering 알고리즘으로도 불립</li>
-<li>Centroid란, 주어진 cluster 내부에 있는 모든 점들의 중심부분에 위치한 (가상의) 점</li>
-<li>Initial Centoid state<ul>
-<li>k-means는 centroid를 어떻게 선택하느냐에 따라서, clustering의 결과가 안 좋거나 끝없이 반복해야 하는 경우도 있음</li>
-</ul>
-</li>
-</ul>
-<h3 id="K-means에서-K를-결정하는-방법"><a href="#K-means에서-K를-결정하는-방법" class="headerlink" title="K-means에서 K를 결정하는 방법"></a>K-means에서 K를 결정하는 방법</h3><ul>
-<li>The Eyeball Method : 사람의 주관적인 판단을 통해 임의로 지정하는 방법</li>
-<li>Metrics : 객관적인 지표를 설정하여, 최적화된 k를 선택하는 방법</li>
-<li>일반적으로 Elbow methods 활용</li>
-</ul>
-<h2 id="Similarity"><a href="#Similarity" class="headerlink" title="Similarity"></a>Similarity</h2><ul>
-<li>그렇다면 군집화에서 데이터끼리의 유사성은 어떻게 분별하는가</li>
-<li>Euclidean</li>
-<li>Cosine</li>
-<li>Jaccard</li>
-<li>Edit Distance</li>
-</ul>
-<h2 id="시간복잡도"><a href="#시간복잡도" class="headerlink" title="시간복잡도"></a>시간복잡도</h2><ul>
-<li>clustering 알고리즘은 매우많으며 도메인과 상황에따라 알맞은 것을 사용하는것이 중요</li>
-<li>data가 커질수록 시간복잡도를 무시할 수 없으므로 많이 알수록 도움이된다  <img src="../images/timecomplex.PNG"></li>
-</ul>
-<h3 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h3><ul>
-<li>선형대수학 (MIT, Gulbert Strang)</li>
-<li>통계 (Harvard, Statistics 110)</li>
-<li>모두를위한 딥러닝(성킴)</li>
-<li>Machine Learning( Andrew Ng)</li>
-<li>CS231n(Stanford, Computer Vision)</li>
-<li>CS224n(Stanford, NLP)</li>
-</ul>
-]]></content>
-      <categories>
-        <category>TIL</category>
-      </categories>
-      <tags>
-        <tag>Data science</tag>
-        <tag>Linear Algebra</tag>
-        <tag>Clustering</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>AI-Day1</title>
     <url>/2021/05/06/AI-Day1/</url>
-    <content><![CDATA[<h1 id="Data-Preprocess-amp-EDA"><a href="#Data-Preprocess-amp-EDA" class="headerlink" title="Data Preprocess &amp; EDA"></a>Data Preprocess &amp; EDA</h1><h2 id="Warm-up"><a href="#Warm-up" class="headerlink" title="Warm-up"></a>Warm-up</h2><ul>
-<li><p>CSV(Comma-separated values) : 텍스트 데이터파일</p>
+    <content><![CDATA[<h1 id="data-preprocess-eda">Data Preprocess &amp; EDA</h1>
+<h2 id="warm-up">Warm-up</h2>
 <ul>
-<li>비슷한 포맷으로 탭으로 구분하는 ‘tab-separated values’(TSV), 반각 스페이스로 구분하는 ‘space-separated values’(SSV) 등이 있으며, 이것들을 합쳐서 character-separated values (CSV), delimiter-separated values 라고 부르기도 함  </li>
-</ul>
-</li>
-<li><p>EDA(Exploratory Data Analysis, 탐색적 데이터 분석)</p>
+<li>CSV(Comma-separated values) : 텍스트 데이터파일
 <ul>
-<li>수집한 데이터가 들어왔을 때, 이를 다양한 각도에서 관찰하고 이해한후  데이터를 분석하기 전에 그래프나 통계적인 방법으로 자료를 직관적으로 바라보는 과정  </li>
-</ul>
-</li>
-<li><p>Histogram</p>
+<li>비슷한 포맷으로 탭으로 구분하는 'tab-separated values'(TSV), 반각 스페이스로 구분하는 'space-separated values'(SSV) 등이 있으며, 이것들을 합쳐서 character-separated values (CSV), delimiter-separated values 라고 부르기도 함</li>
+</ul></li>
+<li>EDA(Exploratory Data Analysis, 탐색적 데이터 분석)
+<ul>
+<li>수집한 데이터가 들어왔을 때, 이를 다양한 각도에서 관찰하고 이해한후 데이터를 분석하기 전에 그래프나 통계적인 방법으로 자료를 직관적으로 바라보는 과정</li>
+</ul></li>
+<li>Histogram
 <ul>
 <li>양적데이터(숫자데이터) 사용</li>
 <li>막대그래프들 사이에 갭이없음, 갭이 있다?-&gt;데이터의 누락</li>
 <li>막대의 두께(bin size)가 일정</li>
 <li>y축은 일반적으로 갯수,히스토그램의 빈도를 나타냄</li>
-<li>데이터셋의 최소값,최대값을 찾은후 x축의 시작점과 끝점을 설정<ul>
-<li>[40,50) -&gt; 40이상 50미만 임을 기억  </li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Stem and Leaf Plots : 줄기 잎 그림</p>
+<li>데이터셋의 최소값,최대값을 찾은후 x축의 시작점과 끝점을 설정
+<ul>
+<li>[40,50) -&gt; 40이상 50미만 임을 기억</li>
+</ul></li>
+</ul></li>
+<li>Stem and Leaf Plots : 줄기 잎 그림
 <ul>
 <li>통계학에서 통계적 자료를 표와 그래프가 혼합된 방법으로 나타내는것</li>
-<li>주로 숫자를 다룰때는 자리수를 기준으로 구분하여 보기쉽게 정리  </li>
-</ul>
-</li>
-<li><p>Box and Whisker Plots : 상자 수염 그림</p>
+<li>주로 숫자를 다룰때는 자리수를 기준으로 구분하여 보기쉽게 정리</li>
+</ul></li>
+<li>Box and Whisker Plots : 상자 수염 그림
 <ul>
-<li>기술통계학에서 수치적 자료를 5가지 요약수치를 기준으로 표현하는 그래프<ul>
+<li>기술통계학에서 수치적 자료를 5가지 요약수치를 기준으로 표현하는 그래프
+<ul>
 <li>최솟값,제1~3사분위,최댓값</li>
 <li>1사분위 Q1 : 하위25%</li>
 <li>2사분위 Q2 : 50%</li>
 <li>3사분위 Q3 : 상위25%</li>
 <li>4분위범위 IQR : 3사분위-1사분위</li>
 <li>파이썬의 matplotlib.pyplot 모듈로 손쉽게 그릴수있음</li>
+</ul></li>
+<li>histogram과 다르게 집단이 여러개인경우도 한 공간에 나타낼수있음</li>
+</ul></li>
 </ul>
-</li>
-<li>histogram과 다르게 집단이 여러개인경우도 한 공간에 나타낼수있음  </li>
-</ul>
-</li>
-</ul>
-<h2 id="EDA-Exploratory-Data-Analysis-탐색적-데이터-분석"><a href="#EDA-Exploratory-Data-Analysis-탐색적-데이터-분석" class="headerlink" title="EDA(Exploratory Data Analysis, 탐색적 데이터 분석)"></a>EDA(Exploratory Data Analysis, 탐색적 데이터 분석)</h2><ul>
-<li><p>데이터의 초기분석단계</p>
+<h2 id="edaexploratory-data-analysis-탐색적-데이터-분석">EDA(Exploratory Data Analysis, 탐색적 데이터 분석)</h2>
+<ul>
+<li>데이터의 초기분석단계
 <ul>
 <li>시각화 같은 도구를 통해 패턴발견</li>
 <li>데이터 특이성 확인</li>
 <li>통계와 그래픽을 통해 가설을 검증</li>
-</ul>
-</li>
-<li><p>크게 2가지 방법이있음</p>
+</ul></li>
+<li>크게 2가지 방법이있음
 <ul>
 <li>Graphic: 차트 그림을 이용해 데이터확인</li>
 <li>Non-Graphic: Summary Statistics를통해 데이터확인</li>
-</ul>
-</li>
-<li><p>EDA의 “타겟”(데이터) 또한 2가지 (Univariate, Multi-variate)로 나눠짐</p>
+</ul></li>
+<li>EDA의 "타겟"(데이터) 또한 2가지 (Univariate, Multi-variate)로 나눠짐
 <ul>
-<li>Multi-variate : 변수들간의 관계를 보는 것이 주요 목적  </li>
-</ul>
-</li>
-<li><p>Uni - Non Graphic : Sample Data의 Distribution을 확인하는 것이 주목적</p>
+<li>Multi-variate : 변수들간의 관계를 보는 것이 주요 목적</li>
+</ul></li>
+<li>Uni - Non Graphic : Sample Data의 Distribution을 확인하는 것이 주목적
 <ul>
-<li>Numeric data의 경우 summary statistics 활용<ul>
+<li>Numeric data의 경우 summary statistics 활용
+<ul>
 <li>Center (Mean, Median, Mod)</li>
 <li>Spread (Variance, SD, IQR, Range)</li>
 <li>Modality (Peak)</li>
 <li>Shape (Tail, Skewness, Kurtosis)</li>
 <li>Outliers 등을 확인합니다.</li>
-<li>Categorical data의 경우 occurence, frequency, tabulation등을 할 수 있음  </li>
-</ul>
+<li>Categorical data의 경우 occurence, frequency, tabulation등을 할 수 있음<br />
 </li>
-</ul>
-</li>
-<li><p>Uni - Graphic</p>
+</ul></li>
+</ul></li>
+<li>Uni - Graphic
 <ul>
 <li>Histogram 혹은 Pie chart, Stem-leaf plot, Boxplot, QQplot 등을 사용합니다.</li>
-<li>그러나 값들이 너무 다양하다면, Binning, Tabulation등을 활용  </li>
-</ul>
-</li>
-<li><p>QQPlot :데이터의 분포와 이론상 분포가 잘 일치하는가 를 확인 할 수 있는 방법  </p>
-</li>
-<li><p>Multi - Non Graphic : Relationship을 보는 것이 주된 목표</p>
+<li>그러나 값들이 너무 다양하다면, Binning, Tabulation등을 활용</li>
+</ul></li>
+<li><p>QQPlot :데이터의 분포와 이론상 분포가 잘 일치하는가 를 확인 할 수 있는 방법</p></li>
+<li>Multi - Non Graphic : Relationship을 보는 것이 주된 목표
 <ul>
 <li>Cross-Tabulation</li>
-<li>Cross-Statistics (Correlation, Covariance)  </li>
-</ul>
+<li>Cross-Statistics (Correlation, Covariance)<br />
 </li>
-<li><p>Multi - Graphic</p>
+</ul></li>
+<li>Multi - Graphic
 <ul>
 <li>Category &amp; Numeric : Boxplots, Stacked bar, Parallel Coordinate, Heatmap</li>
 <li>Numeric &amp; Numeric : Scatter Plot</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="Data-preprocessing"><a href="#Data-preprocessing" class="headerlink" title="Data preprocessing"></a>Data preprocessing</h2><ul>
-<li>Data Cleaning<ul>
+<h2 id="data-preprocessing">Data preprocessing</h2>
+<ul>
+<li>Data Cleaning
+<ul>
 <li>noise 를 제거하거나, inconsistency 를 보정하는 과정</li>
 <li>값이 빠져있거나, 잘못 입력되거나 혹은 일관성을 가지지 않는 데이터들을 제거 / 보정 하는 과정들이 포함</li>
 <li>Ignore the tuple (결측치가 있는 데이터 삭제)</li>
 <li>Manual Fill (수동으로 입력)</li>
-<li>Global Constant (“Unknown”)</li>
+<li>Global Constant ("Unknown")</li>
 <li>Imputation (All mean, Class mean, Inference mean, Regression 등)</li>
 <li>Binning, Regression, Outlier analysis 등등</li>
-</ul>
+</ul></li>
+<li>Data Integration
+<ul>
+<li>여러개로 나누어져 있는 데이터들을 분석하기 편하게 하나로 합치는 과정<br />
 </li>
-<li>Data Integration<ul>
-<li>여러개로 나누어져 있는 데이터들을 분석하기 편하게 하나로 합치는 과정  </li>
-</ul>
+</ul></li>
+<li>Data Transformation(scaling)
+<ul>
+<li>데이터의 형태를 변환하는 작업<br />
 </li>
-<li>Data Transformation(scaling)<ul>
-<li>데이터의 형태를 변환하는 작업  </li>
-</ul>
-</li>
-<li>Data Reduction<ul>
+</ul></li>
+<li>Data Reduction
+<ul>
 <li>데이터를 의미있게 줄이는 것</li>
-<li>dimension reduction과 유사한 목적  </li>
+<li>dimension reduction과 유사한 목적</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="Pandas-메서드들"><a href="#Pandas-메서드들" class="headerlink" title="Pandas 메서드들"></a>Pandas 메서드들</h2><ul>
-<li>Missing Data<ul>
+<h2 id="pandas-메서드들">Pandas 메서드들</h2>
+<ul>
+<li>Missing Data
+<ul>
 <li>isna</li>
 <li>isnull</li>
 <li>notna</li>
 <li>notnull</li>
 <li>dropna</li>
 <li>fillna</li>
-</ul>
-</li>
-<li>Data Frame<ul>
+</ul></li>
+<li>Data Frame
+<ul>
 <li>index</li>
 <li>columns</li>
 <li>dtypes</li>
@@ -920,9 +245,9 @@
 <li>value_counts</li>
 <li>describe</li>
 <li>shape</li>
-</ul>
-</li>
-<li>Vis<ul>
+</ul></li>
+<li>Vis
+<ul>
 <li>plot</li>
 <li>plot.area</li>
 <li>plot.bar</li>
@@ -935,8 +260,7 @@
 <li>plot.line</li>
 <li>plot.pie</li>
 <li>plot.scatter</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 ]]></content>
       <categories>
@@ -948,117 +272,1284 @@
       </tags>
   </entry>
   <entry>
+    <title>AI-Day13</title>
+    <url>/2021/05/25/AI-Day13/</url>
+    <content><![CDATA[<h1 id="dimension-reduction">Dimension Reduction</h1>
+<ul>
+<li>Vector transformation의 목적과 사용예시</li>
+<li>eigenvector(고유벡터) / eigenvalue(고유값)</li>
+<li>데이터의 feature수의 증가에따른 문제점과 handling 방법</li>
+<li>PCA의 목적과 기본원리</li>
+</ul>
+<h2 id="선형변환과-매트릭스벡터변환">선형변환과 매트릭스(벡터변환)</h2>
+<ul>
+<li>행렬과 벡터의곱은 "두 열벡터의 선형결합"을 표현한것 이라 할 수 있다</li>
+<li>선형변환 : 특정한 규칙이 정해진 함수이고 쉽게는 기저벡터를 변환시킴으로써 결과를 바꾼다
+<ul>
+<li>임의의 벡터 a,b와 스칼라 c에 대해 변환T가 두조건을 만족한다면? 변환T는 선형변환이다
+<ul>
+<li>T(a+b) = T(a)+T(b)</li>
+<li>T(ca) = cT(a)</li>
+</ul></li>
+<li>임의의 열벡터 [x y]에 대해 다음이 성립하면 변환T는 선형변환이다
+<ul>
+<li>T([x y]) = T(x[1 0] + y[0 1]) = T(x[1 0])+T(y[0 1]) = xT([1 0]) + yT([1 0])</li>
+</ul></li>
+<li>이때, 원래의 기저벡터 두개를 i^, j^ 이라하고 새로운 기저벡터를 i_new, j_new라 하면
+<ul>
+<li>i_new = T(i^), j_new = T(j^)</li>
+<li>결론적으로 T([x y]) = xi_new + yj_new</li>
+</ul></li>
+</ul></li>
+<li>종류에는 shearing, rotation, permutation, projection on x-axis(a vector) 등 이 있다</li>
+</ul>
+<h2 id="고유값과-고유벡터eigenvalueeigenvector">고유값과 고유벡터(eigenvalue/eigenvector)</h2>
+<ul>
+<li>선형변환 후에도 span을 벗어나지 않는 벡터를 고유벡터라고 하며 각각의 고유벡터는 특별한 고유값을 가짐</li>
+<li>이때의 고유값은 변환된 고유벡터가 스케일된 크기라고 볼 수 있다
+<ul>
+<li>만약 고유벡터가 선형변환된 후에도 크기가 그대로라면? 고유값은 1 이다</li>
+<li>식으로 표현하면 변환하려는 행렬 A와 고유벡터v , 고유값 λ 라면</li>
+<li>Av = λv
+<ul>
+<li>이 식의 참,거짓을 통해 행렬A의 고유벡터v와 고유값λ 를 찾을 수 있다</li>
+<li>하지만 좌항은 행렬x벡터, 우항은 스칼라x벡터 이므로 우항을 행렬x벡터의 형태로 바꿔줘야한다</li>
+<li>대각선에만 1 이 있고 나머지는 0은 항등행렬 I 를이용하여 λ = λI 로 바꾼다</li>
+<li>결국 (A-λI)v = 0 이 되고, <strong>벡터v가 0벡터가 아니라는 가정하에</strong> 식을 성립하는 고유벡터v를 찾는다</li>
+<li>이때 det(A-λI)=0 인 λ를 찾는다 (이것은 차원을 축소시킨다 고 이해하자, 평면이라면? 선형태로)</li>
+<li>고유값은 하나여도 고유벡터는 여러개일 수 있음을 기억하자</li>
+</ul></li>
+</ul></li>
+<li>대각선형렬일때는 고유벡터가 기저벡터와 같고 계산이 편해지기때문에, 어떤 행렬의 고유벡터를 기저벡터로 바꿔준다면 계산이 편해질것이다
+<ul>
+<li>why? : 대각선행렬의 대각선값들이 그 행렬의 고유벡터이기 때문</li>
+<li>그러기위해 행렬A의 고유벡터를 열벡터로 가지는 새로운 행렬을 B라고해보자</li>
+<li>이때 B<sup>T</sup>AT 를 하면, 대각선행렬이 아니였던 행렬A를 대각선에 고유값들을 갖는 대각선행렬로 변환된다</li>
+</ul></li>
+<li>분석의 측면에서보면 만약 분산-공분산 행렬의 고유값 고유벡터를 구한다면
+<ul>
+<li>고유값의 합은 두 분산의 합과 같고</li>
+<li>고유값의 곱은 분산-공분산의 행렬식과 같다</li>
+<li>여기서는 이렇다는것만 기억하고 이것들이 가지는 의미는 후에 더 알 수 있다</li>
+</ul></li>
+</ul>
+<h2 id="고차원의-문제-the-curse-of-dimensionality">고차원의 문제 (The Curse of Dimensionality)</h2>
+<ul>
+<li>feature 의 수가 많은 데이터셋을 모델링하거나 분석할때 발생하는 문제</li>
+<li>So, feature들의 중요도를 비교하여 실제로 의미가 높은 feature만 선택함으로써 차원을 줄여야함</li>
+</ul>
+<h2 id="dimension-reduction-차원축소">Dimension Reduction 차원축소</h2>
+<ul>
+<li>이 고차원의 문제를 해결하기위해 차원축소</li>
+<li>Feature Selection
+<ul>
+<li>덜 중요한 feature를 제거하는 방법</li>
+<li>장점 : 선택된 feature 해석이 쉽다</li>
+<li>단점 : feature들간의 연관성을 고려해야함</li>
+<li>LASSO, Genetic algorithm 등</li>
+</ul></li>
+<li>Feature Extraction
+<ul>
+<li>기존의 feature 혹은 feature들이 조합된 새로운 feature를 사용하는 방법</li>
+<li>장점 : feature 들간의 연관성 고려되어 feature 수를 줄일 수 있음</li>
+<li>단점 : feature 해석이 어려움</li>
+<li>PCA, Auto-encoder 등</li>
+</ul></li>
+</ul>
+<h2 id="주성분분석-pca-principal-component-analysis">주성분분석 (PCA, Principal Component Analysis)</h2>
+<ul>
+<li>고차원의 데이터를 분석하기위한 방법(제일 정보손실이적은 2차원으로 바꾸는것이 무난하다)</li>
+<li>표본들의 선형연관성을 최소한으로 즉, 최대한 선형독립적인 표본들만 있는상태로 필터링하는것</li>
+<li>분산을 최대한 유지하는 축(PC)를 찾는것이 주 목적이고, 그 축을 기준으로 차원을 축소할수있음
+<ul>
+<li>많은 데이터를 어떤 벡터축에 사영시켜야, 분포를 가장 잘 나타내는 하나의 축이 될수 있을까?</li>
+</ul></li>
+<li>PCA 의 과정
+<ul>
+<li>데이터의 각열에대해 평균을 빼고 표준편차로 나누어 Normalize</li>
+<li>데이터의 분산-공분산 매트릭스계산</li>
+<li>분산-공분산 매트릭스의 고유벡터와 고유값 계산</li>
+<li>데이터를 고유벡터에 projection(matmul)
+<ul>
+<li>데이터를 고유벡터에 사영하는것이 분산이 가장크기 떄문</li>
+<li>분산이크다? 데이터손실이 최소화된 상태에서의 분포를 나타낼 수 있다</li>
+</ul></li>
+</ul></li>
+<li>PCA 특징
+<ul>
+<li>데이터에대해 독립적인 축을 찾을 수 있음</li>
+<li>데이터의 분포가 정규성을 띄지않는경우 적용이 어려움
+<ul>
+<li>커널 PCA 활용</li>
+</ul></li>
+<li>분류/ 예측 문제에대해 데이터의 라벨을 고려하지 않기때문에 효과적 분리가 어려움
+<ul>
+<li>PLS 활용</li>
+</ul></li>
+</ul></li>
+<li>Sklearn 라이브러리를 활용하여 PCA 가능</li>
+</ul>
+<h2 id="one-hot-encoding">One-hot encoding</h2>
+<ul>
+<li>모든 문자열 값들을 숫자 형으로 인코딩하는 전처리 작업을 함으로써 계산에 용이하게 바꿈</li>
+<li>레이블인코딩
+<ul>
+<li>일괄적인 숫자값으로 변환되어 예측성능이 떨어진다</li>
+<li>숫자간의 크고 작음에 대한 특성 작용</li>
+</ul></li>
+<li>원 핫 인코딩
+<ul>
+<li>피쳐값의 유형에따라 새로운 피쳐를 추가해 고유값에 해당하는 갈럼에만 1을표시, 나머지 칼럼에는 0을 표시</li>
+</ul></li>
+</ul>
+]]></content>
+      <categories>
+        <category>TIL</category>
+      </categories>
+      <tags>
+        <tag>Data science</tag>
+        <tag>Linear Algebra</tag>
+        <tag>Dimension Reduction</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI-Day12</title>
+    <url>/2021/05/23/AI-Day12/</url>
+    <content><![CDATA[<h1 id="선형대수">선형대수 +</h1>
+<ul>
+<li>공분산, 상관계수의 목적과 사용 예시, 차이점 설명</li>
+<li>벡터의 직교와 그 조건 설명</li>
+<li>단위 벡터와, 단위 벡터로의 구분 설명</li>
+<li>span, basis, rank의 내용을 이해</li>
+<li>Gaussian elemination</li>
+<li>linear projection과 예시</li>
+</ul>
+<h2 id="기본적인-개념">기본적인 개념</h2>
+<ul>
+<li>기저벡터
+<ul>
+<li>"벡터공간 전체를 생성하는 선형 독립인 벡터의 집합" , but.. 이게무슨말일까?</li>
+<li>벡터v 의 각 좌표값을 스칼라라고 생각해보자</li>
+<li>이때 각 x,y 좌표의 단위벡터가 i^, j^ 라면 각각의 좌표를 단위백터에 스칼라곱 한만큼의 합이라고 볼 수 있다
+<ul>
+<li>벡터v = ai^ + bj^</li>
+</ul></li>
+<li>이 단위벡터 i<sup>,j</sup> 을 xy좌표계의 <strong>기저벡터</strong> 라고 한다</li>
+<li>이는 벡터를 수적으로 표현할때 기저벡터를 기준으로 나타낸다<br />
+</li>
+</ul></li>
+<li>선형결합
+<ul>
+<li>두 벡터를 스케일하여 새로운 벡터를 생성하는 모든 연산</li>
+<li>벡터 v,w 의 선형결합 : av + bw</li>
+<li>3차원 이라면 ? av + bw + cu<br />
+</li>
+</ul></li>
+<li>선형생성
+<ul>
+<li>백터 v와 w의 모든 선형결합으로 만들어진 벡터의 집합을 두 벡터의 생성(선형생성) 이라 한다</li>
+<li>일반적으로 두 기저벡터로 선형결합을 한다면, 그 차원의 모든 벡터를 만들수있다. 즉 생성은 <strong>평면전체</strong> 가 된다</li>
+<li>하지만 두 기저벡터가 같은 직선상에 존재한다면 생성은 <strong>영점을 지나는 하나의 선</strong> 이 된다</li>
+<li>3차원에서 하나의 벡터가 나머지 두 벡터의 선형생성안에 있다면? 즉 두 벡터로 만들어진 평면안에 포함된다면
+<ul>
+<li>그 포함된 벡터의 변화는 전체 선형생성에 의미가 없다, 즉 제거해도 상관없다<br />
+</li>
+</ul></li>
+</ul></li>
+<li>선형종속
+<ul>
+<li><strong>제거해도 상관없다</strong> 는 것을 선형종속 이라 표현
+<ul>
+<li>즉 벡터(u) 는 다른 벡터(v,w) 들의 선형결합으로 표현될 수 있다</li>
+<li>u = av + bw<br />
+</li>
+</ul></li>
+</ul></li>
+<li>선형독립
+<ul>
+<li>서로 선형생성안에 포함되지않는 독립적인 상태라면 선형독립이라 표현
+<ul>
+<li>u != av + bw</li>
+<li>av + bw + cu = 0 의 유일한 해가 a=b=c=0 이라면 선형독립이다 라고도 할 수 있다</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="분산-variance">분산 Variance</h2>
+<ul>
+<li><strong>데이터가 얼마나 퍼져있는지</strong> 측정하는 방법</li>
+<li>값-평균값 의 제곱</li>
+</ul>
+<h2 id="표준편차-standard-deviation">표준편차 Standard Deviation</h2>
+<ul>
+<li>분산에 루트씌운것</li>
+<li>분산은 샘플으 사이즈에 따라 평균에비해 스케일이 더 커지는 경향이있음</li>
+<li>표준편차는 제곱된 스케일을 낮춘 방법이므로 통계분석에서 많이 사용됨</li>
+</ul>
+<h2 id="공분산-covariance">공분산 Covariance</h2>
+<ul>
+<li>하나의 변수가 변화할때, 다른 변수가 어떤 연관성을 나타내며 변화하는가 측정</li>
+<li>COV(x,y) 로 나타내며, 연관성에따라 분류</li>
+<li>COV(x,y) &gt; 0 : x가 증가하면 y도 증가, 양의 공분산</li>
+<li>COV(x,y) &lt; 0 : x가 증가하면 y는 감소, 음의 공분산</li>
+<li>COV(x,y) ~ 0 : 관련성을 알 수 없음</li>
+<li>하지만 ! 변수들이 다른 스케일을 가지고 있다면 공분산은 실제 변수의 연관성에 관계 없이 영향을 받음
+<ul>
+<li>즉 만약 두 변수의 연관성이 작더라도 스케일이크다면, 연관성이 높지만 스케일이 작은 변수에비해 높은 공분산값을 가짐</li>
+<li>이것을 보완하기위해 상관계수를 사용</li>
+</ul></li>
+</ul>
+<h2 id="상관계수-r">상관계수 r</h2>
+<ul>
+<li>공분산을 두 변수의 표준편차로 각각 나누어 스케일을 조정한것</li>
+<li>정해진 범위 (-1에서1사이) 값만 가지며, 선형연고나성이 없는경우 0에 근접
+<ul>
+<li>공분산과 다르게 스케일에 영향받지 않음</li>
+<li>데이터의 평균, 분산의크기에 영향받지 않음</li>
+</ul></li>
+<li>-1 &lt; COR(x,y) &lt; 0 : x가 증가하면 y는 감소</li>
+<li>0 &lt; COR(x,y) &lt; 1 : x가 증가하면 y도 증가</li>
+<li>COR(x,y) ~ 0 : 관련성 알 수 없음</li>
+<li>COR(x,y) = 1 : 한변수가 다른변수에대해 완벽한 양의 선형관계이다</li>
+</ul>
+<h3 id="spearman-correlation">Spearman correlation</h3>
+<ul>
+<li>일반적 상관계수는 Pearson correlation
+<ul>
+<li>데이터에서 분산과 같은 numeric data를 계산</li>
+</ul></li>
+<li>만약 categorical 이라면 ?
+<ul>
+<li>Spearman correlation coefficient 로 값들의 순서(rank)를 주고, 그 바탕으로 상관관계 측정</li>
+</ul></li>
+</ul>
+<h2 id="수직성-orthogonality">수직성 Orthogonality</h2>
+<ul>
+<li>벡터, 매트릭스가 서로 수직인 상태</li>
+<li>두 벡터가 수직이다? 상관관계가 전혀 없다
+<ul>
+<li>수직이다 -&gt; 내적이 0 이다</li>
+</ul></li>
+</ul>
+<h2 id="단위벡터-unit-vectors">단위벡터 Unit Vectors</h2>
+<ul>
+<li>단위길이(1) 을 갖는 모든벡터
+<ul>
+<li>차원별 단위벡터는 벡터내에 하나의1과 0들로만 이뤄진벡터</li>
+<li>ex ) 1차원:[1], 2차원:[1,0], 3차원:[1,0,0]</li>
+</ul></li>
+</ul>
+<h2 id="span">Span</h2>
+<ul>
+<li>주어진 두 벡터의 조합으로 만들수 있는 모든 벡터들의 집합</li>
+<li>선형관계의 벡터가 아니라면? 주어진 차원전체를 나타내는 평면으로 나타낼 수 있다</li>
+</ul>
+<h2 id="선형관계의-벡터-linearly-dependent-vector">선형관계의 벡터 (Linearly Dependent Vector)</h2>
+<ul>
+<li>두 벡터가 같은선상에 있는 경우</li>
+<li>이 경우 두 벡터로 만들어진 Span은 하나의 선이 된다</li>
+<li>선형관계가 없는 <strong>벡터는 독립되어 있다</strong> 고 표현</li>
+</ul>
+<h2 id="basis">Basis</h2>
+<ul>
+<li>벡터공간 V의 basis 란, V를 채울 수 있는 선형관계에 있지않은 벡터들의 집합</li>
+<li>Orthogonal Basis: 공간을 채울 수 있는 <strong>서로 수직인 벡터</strong></li>
+<li>Orthonormal Basis : Orthogonal Basis에 추가로 Normalized 조건이 붙은 것으로, 길이가 1인 벡터들</li>
+<li>Gram-Schmidt 프로세스(단위 직교화)
+<ul>
+<li>일차독립 벡터집합을 정규직교기저로 변환</li>
+</ul></li>
+<li>벡터공간을 나타내는 R<sup>n</sup> 에서의 n은 해당 <strong>벡터공간을 이루는 기저의 수</strong> 라고 이해할 수 있다</li>
+</ul>
+<h2 id="rank">Rank</h2>
+<ul>
+<li>매트릭스의 열을 이루는 벡터들로 만들 수 있는 span공간의 차원</li>
+<li>매트릭스의 차원과는 다를수 있음
+<ul>
+<li>why? 행과 열을 이루는 벡터들중 선형관계가 있는 경우 rank가 더 작을 수 있다</li>
+</ul></li>
+</ul>
+<h2 id="가우스-소거법gaussian-elimination">가우스 소거법(Gaussian Elimination)</h2>
+<ul>
+<li>연립일차방정식에서 미지수를 소거시켜 남은 미지수에대한 선형결합으로 표현하여 풀이하는 방법</li>
+<li>매트릭스를 사다리꼴행렬(Row-Echelon form)로 바꾸는 방법
+<ul>
+<li>사다리꼴행렬 : 각행의 왼쪽에 1, 나머지는 0</li>
+</ul></li>
+<li>다른 행들의 스칼라 곱과 합을통해 어떤행이 0이 되었다 -&gt; 선형관계가 있다</li>
+</ul>
+<h2 id="r2-공간에서의-linear-projections">R<sup>2</sup> 공간에서의 Linear Projections</h2>
+<ul>
+<li>일반적인 사영은 하나의 벡터를 다른벡터에 수직으로내려서 투영시키는것을 뜻한다</li>
+<li>통계에서의 사영은 투영시키는 그 벡터, 즉 두개의 feature중 하나를 다른하나에 투영시킴으로써 차원을 줄이고 그로인해 통계적 분석에 필요한 메모리나 시간 등을 줄이는 방법이다</li>
+<li>벡터 L에대한 벡터W의 projection<br />
+<img src="../images/linearprojection.PNG"></li>
+</ul>
+]]></content>
+      <categories>
+        <category>TIL</category>
+      </categories>
+      <tags>
+        <tag>Data science</tag>
+        <tag>Linear Algebra</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI-Day14</title>
+    <url>/2021/05/26/AI-Day14/</url>
+    <content><![CDATA[<h1 id="군집화-clustering">군집화 (Clustering)</h1>
+<ul>
+<li>Screeplot 이해</li>
+<li>Supervised, Unsupervised learning 차이 이해</li>
+<li>K-means clustering 이해</li>
+</ul>
+<h2 id="scree-plot">Scree plot</h2>
+<ul>
+<li>고유값 크기를 기반으로 성분 수를 결정</li>
+<li>그래프의 기울기는 주성분에 의해 설명되는 데이터의 변동성을 나타냄
+<ul>
+<li>즉 기울기가 많이 떨어진다? 해당 주성분이 데이터의 많은 영향을준다</li>
+<li>기울기가 평평해진다? 해당 주성분이 데이터에 적은 영향을준다</li>
+<li>그러므로 기울기가 급격하게 변하는 고유값들을 골라 주성분으로 선택</li>
+<li>앞서배운 PCA에서 feature수를 줄여 차원을 줄이는것처럼, 데이터에 영향을 많이주는 주성분을 골라내 차원을 줄인다고 이해할 수 있다</li>
+</ul></li>
+</ul>
+<h2 id="machine-learning">Machine Learning</h2>
+<ul>
+<li>지도학습 (Supervised Leanring)
+<ul>
+<li>input data에 라벨(답)이 있을경우 사용</li>
+<li>분류(Classification)
+<ul>
+<li>데이터의 카테고리, 클래스 예측</li>
+</ul></li>
+<li>회귀(Prediction)
+<ul>
+<li>continuous 데이터를 바탕으로 결과를 예측</li>
+</ul></li>
+</ul></li>
+<li>비지도학습 (Unsupervised Learning)
+<ul>
+<li>Input data에 라벨(답)이 없을경우 사용
+<ul>
+<li>클러스터링(Clustering)
+<ul>
+<li>데이터의 연관된 feature를 바탕으로 유사한 그룹을 생성</li>
+</ul></li>
+<li>차원 축소 (Dimensionality Reduction)
+<ul>
+<li>높은 차원을 갖는 데이터셋을 사용하여 feature selection / extraction 등을 통해 차원을 줄이는 방법</li>
+</ul></li>
+<li>연관 규칙 학습 (Association Rule Learning)
+<ul>
+<li>데이터셋의 feature들의 관계를 발견</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>강화 학습 (Reinforcement Learning)
+<ul>
+<li>머신러닝의 한 형태로, 기계가 좋은 행동에 대해서는 보상, 그렇지 않은 행동에는 처벌이라는 피드백을 통해서 행동에 대해 학습</li>
+</ul></li>
+</ul>
+<h2 id="군집화clustering">군집화(Clustering)</h2>
+<ul>
+<li>Unsupervised Learning Algorithm의 한 종류</li>
+<li>주어진 데이터들이 얼마나, 어떻게 유사한지</li>
+<li>데이터셋을 요약/정리하는데 있어서 매우 효율적인 방법</li>
+<li>Hard vs Soft Clustering
+<ul>
+<li>Hard Clustering에서 하나의 데이터는 하나의 cluster에만 할당</li>
+<li>Soft Clustering에서 하나의 데이터는 여러 cluster에 확률을 가지고 할당</li>
+<li>일반적으로 Hard Clustering을 Clustering이라 함</li>
+</ul></li>
+<li>정답을 보장하지 않기 때문에, production의 수준 혹은 예측을 위한 모델링보다는 EDA를 위한 방법으로써 많이 쓰임</li>
+</ul>
+<h3 id="hca-hierarchical-clustering">HCA (Hierarchical Clustering)</h3>
+<ul>
+<li>각각의 샘플간의 유사성에 기반하여 행과열을 재정렬</li>
+<li>정렬된 cluster 간의 dendrogram 을 그리고, 가지의 길이로 연관성을 나타낼 수 있음</li>
+<li>Agglomerative: 개별 포인트에서 시작후 점점 크게 합쳐감</li>
+<li>Divisive: 한개의 큰 cluster에서 시작후 점점 작은 cluster로 나눠감</li>
+</ul>
+<h3 id="point-assignment">Point Assignment</h3>
+<ul>
+<li>시작시에 cluster의 수를 정한 다음, 데이터들을 하나씩 cluster에 배정</li>
+</ul>
+<h2 id="k-means-clustering">K-means clustering</h2>
+<ul>
+<li>point assignment의 한종류로 빈번하게 쓰임</li>
+</ul>
+<ol type="1">
+<li>k 개의 랜덤한 데이터를 cluster의 중심점으로 설정</li>
+<li>해당 cluster에 근접해 있는 데이터를 cluster로 할당</li>
+<li>변경된 cluster에 대해서 중심점을 새로 계산</li>
+<li>cluster에 유의미한 변화가 없을 때 까지 2-3 반복</li>
+</ol>
+<ul>
+<li>시간복잡도가 선형이므로 빅데이터에 적합</li>
+<li>PCA와 clustering은 반드시 연계해서 사용할 필요는 없지만, PCA로 전처리를 하고 K-means를 메인 "머신러닝"으로 사용할 수 있음</li>
+</ul>
+<h3 id="중심점-centroid-계산">중심점 (Centroid) 계산</h3>
+<ul>
+<li>K-means 는 centroid-based clustering 알고리즘으로도 불립</li>
+<li>Centroid란, 주어진 cluster 내부에 있는 모든 점들의 중심부분에 위치한 (가상의) 점</li>
+<li>Initial Centoid state
+<ul>
+<li>k-means는 centroid를 어떻게 선택하느냐에 따라서, clustering의 결과가 안 좋거나 끝없이 반복해야 하는 경우도 있음</li>
+</ul></li>
+</ul>
+<h3 id="k-means에서-k를-결정하는-방법">K-means에서 K를 결정하는 방법</h3>
+<ul>
+<li>The Eyeball Method : 사람의 주관적인 판단을 통해 임의로 지정하는 방법</li>
+<li>Metrics : 객관적인 지표를 설정하여, 최적화된 k를 선택하는 방법</li>
+<li>일반적으로 Elbow methods 활용</li>
+</ul>
+<h2 id="similarity">Similarity</h2>
+<ul>
+<li>그렇다면 군집화에서 데이터끼리의 유사성은 어떻게 분별하는가</li>
+<li>Euclidean</li>
+<li>Cosine</li>
+<li>Jaccard</li>
+<li>Edit Distance</li>
+</ul>
+<h2 id="시간복잡도">시간복잡도</h2>
+<ul>
+<li>clustering 알고리즘은 매우많으며 도메인과 상황에따라 알맞은 것을 사용하는것이 중요</li>
+<li>data가 커질수록 시간복잡도를 무시할 수 없으므로 많이 알수록 도움이된다<br />
+<img src="../images/timecomplex.PNG"></li>
+</ul>
+<h3 id="참고자료">참고자료</h3>
+<ul>
+<li>선형대수학 (MIT, Gulbert Strang)</li>
+<li>통계 (Harvard, Statistics 110)</li>
+<li>모두를위한 딥러닝(성킴)</li>
+<li>Machine Learning( Andrew Ng)</li>
+<li>CS231n(Stanford, Computer Vision)</li>
+<li>CS224n(Stanford, NLP)</li>
+</ul>
+]]></content>
+      <categories>
+        <category>TIL</category>
+      </categories>
+      <tags>
+        <tag>Data science</tag>
+        <tag>Linear Algebra</tag>
+        <tag>Clustering</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI-Day2</title>
+    <url>/2021/05/07/AI-Day2/</url>
+    <content><![CDATA[<h1 id="feature-engineering">Feature Engineering</h1>
+<h2 id="warm-up">Warm up</h2>
+<ul>
+<li>Data cleaning
+<ul>
+<li>대부분의 실제 데이터엔지니어, 데이터사이언티스트는 데이터클리닝이 대부분의 업무</li>
+<li>AI에 머신러닝을 시키기위해선 정제된 데이터가 필수</li>
+</ul></li>
+</ul>
+<h2 id="feature-engineering-이란">Feature Engineering 이란?</h2>
+<ul>
+<li>도메인 지식과 창의성을 바탕으로, 데이터셋에 존재하는 Feature들을 재조합하여 새로운 Feature를 만드는 것</li>
+<li>통계 분석 혹은 머신러닝, 딥러닝까지 대부분의 분석은 데이터에 있는 패턴을 인식하고 해당 패턴들을 바탕으로 예측</li>
+<li>더 좋은 퍼포먼스를 위해서 새롭고, 의미있는 패턴을 제공하는 것이 궁극적인 Feature engineering의 목적</li>
+<li>Gargage in - Garbage out 을 기억</li>
+</ul>
+<h2 id="dataframe">DataFrame</h2>
+<ul>
+<li>테이블형태의 데이터로 기억</li>
+<li>Row(행)에는 observation, Column(열)에는 feature가 있다</li>
+<li>만약 데이터에 NaN값이있다면? 같은 row의 다른값들은 자동으로 float으로 typecasting</li>
+</ul>
+<h2 id="feature-engineering-1">Feature Engineering</h2>
+<ul>
+<li>feature끼리는 일반수식처럼 가능하지만, 각각의 data type에 주의하여야함
+<ul>
+<li>int끼리라면 의도대로 수식이되지만, 만약 str이라면? 예상치못한 결과도출</li>
+<li>특히 머신러닝 모델링에서는 문자열로된 data는 사용하지 않음</li>
+</ul></li>
+</ul>
+<h3 id="methods">Methods</h3>
+<ul>
+<li>s.replace('지우려는것','대체할것')
+<ul>
+<li>하지만 바뀐것을 변수에 다시선언해주어야 변경됨(얕은복사? 더찾아보기)</li>
+</ul></li>
+<li>s.toint()
+<ul>
+<li>자동으로 int로 typecasting까지 실행</li>
+</ul></li>
+<li>s.apply(함수)
+<ul>
+<li>한 column전체에 대해 함수를 다 실행시킴(파이썬의 map과 비슷한느낌)</li>
+</ul></li>
+</ul>
+]]></content>
+      <categories>
+        <category>TIL</category>
+      </categories>
+      <tags>
+        <tag>Data science</tag>
+        <tag>Feature Engineering</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI-Day3</title>
+    <url>/2021/05/10/AI-Day3/</url>
+    <content><![CDATA[<h1 id="data-manipulation">Data Manipulation</h1>
+<h2 id="warm-up">Warm-up</h2>
+<ul>
+<li>Pandas 유용 메서드
+<ul>
+<li>pd.show_versions() : 여러 툴들의 버전표시</li>
+<li>pd.DataFrame() : DF 생성, parameter 값들은 공식문서 참조</li>
+<li>df.rename('a','b') : 열이름 변경 a -&gt; b</li>
+<li>df.loc[::음수] : 열 순서바꾸기
+<ul>
+<li>df.loc[::음수].reset_index(drop=True) : 색인 초기화(행은 역순이지만)</li>
+</ul></li>
+<li>df.loc[:,::음수] : 열 반전</li>
+<li>df.dtypes() : 타입확인 (parameter에 execlude='원하는타입' 으로 선별가능)</li>
+<li>df.apply() : data type 변환</li>
+<li>df.info(memory_usage='deep') : DF size 축소 (메모리확보)</li>
+<li>from glob import glob : 여러개의파일을 하나로 합침
+<ul>
+<li>sorted(glob('파일명*'))</li>
+<li>pd.concat((pd.read_csv(file))) for file in stock_files), ignore_index=True) : 로 합쳐진 값의 인덱스를 중복되지않게 수정</li>
+<li>ingnore 대신 axis='columns' : 여러파일에서 열단위로 DF 빌드</li>
+</ul></li>
+<li>pd.read_clipboard() : 엑셀에서 선택한 클립보드영역을 자동으로 df 빌드</li>
+<li>df.sample() : 전체행을 설정한 비율에따라 두개의 df로 나누기</li>
+<li>df.genre.isin() : 원하는 조건만 선택가능</li>
+<li>df.nlargest() : 가장큰것부터 표시</li>
+<li>pd.~.str.split() : 문자열을 여러열로 분리</li>
+</ul></li>
+</ul>
+<h2 id="manipulation-데이터의-조작">Manipulation, 데이터의 조작</h2>
+<ul>
+<li>데이터가 여러개로 나눠져있으므로 하나로 합칠수 있어야함</li>
+<li>그중 자주사용되는 두가지 concat과 merge에 대해 습득</li>
+<li>string과 dataframe은 조작법이 다름을 주의</li>
+<li>dataframe의 dimension이 같아야 두개를 manipulation 가능</li>
+</ul>
+<h3 id="concat">concat</h3>
+<ul>
+<li>pd.concat([x,y],axis=1)
+<ul>
+<li>두개의 df x와 y, axis=1 이면 열로 붙임, default값은 행으로 붙임</li>
+</ul></li>
+</ul>
+<h3 id="maerge">maerge</h3>
+<ul>
+<li>concat과 다르게 공통된 부분을 기반으로 합침</li>
+<li>inner-join이외의 option들도 추가적으로 숙지해야함</li>
+<li>df.merge(df2, how='inner', on='종목') <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 데이터프레임 필터링 예시</span><br><span class="line"></span><br><span class="line"># type cast &#x2F; str-&gt;int</span><br><span class="line">df[&#39;순이익률&#39;] &#x3D; pd.to_numeric(df[&#39;순이익률&#39;])</span><br><span class="line"></span><br><span class="line"># 필터링 조건 (Condition) 설정</span><br><span class="line">condition &#x3D; (df[&#39;순이익률&#39;] &gt; 0) # Type Cast</span><br><span class="line"># () 로 씌우는것에 주의</span><br><span class="line"># and or 등도 사용가능</span><br><span class="line"></span><br><span class="line">## condition 의 값을 출력을 통해 확인해보세요. </span><br><span class="line"></span><br><span class="line"># [ ] 안에 컨디션을 설정하는 것으로, 컨디션의 값이 *TRUE*로 해당하는 부분의 데이터만 선택 할 수 있습니다.</span><br><span class="line">df_subset &#x3D; df[condition]</span><br><span class="line"></span><br><span class="line"># 결과물을 확인</span><br><span class="line">df_subset</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="groupby">groupby</h3>
+<ul>
+<li>테마에 따른 순이익률을 보고싶다?</li>
+<li>df.groupby('테마').순이익률.mean()</li>
+</ul>
+<h3 id="tidy-data">Tidy data</h3>
+<ul>
+<li>쉽게말해 한 row에 한 observation을 다 표현한 data
+<ul>
+<li>1행 1데이터</li>
+<li>행에는 observation, 열에는 feature</li>
+</ul></li>
+<li>일반적인 데이터는 wide라고 명칭
+<ul>
+<li>wide -&gt; tidy</li>
+<li>tidy -&gt; wide</li>
+<li>둘다 할 줄 알아야 함</li>
+</ul></li>
+<li>df.melt() 로 tidy 를 조작하는법도 알아야함</li>
+<li>특히 seaborn과같은 시각화 라이브러리에 유용</li>
+</ul>
+]]></content>
+      <categories>
+        <category>TIL</category>
+      </categories>
+      <tags>
+        <tag>Data science</tag>
+        <tag>Data Manipulation</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI-Day4</title>
+    <url>/2021/05/11/AI-Day4/</url>
+    <content><![CDATA[<h1 id="basic-derivative-기초미분">Basic Derivative 기초미분</h1>
+<ul>
+<li>미분 : 함수를 작게 나누는것</li>
+<li>DS에서의 미분?
+<ul>
+<li>x를 넣었을때 y값을 예측하는 선형모델을 예로보면</li>
+<li>y^ = a + b X</li>
+<li>주어진 데이터 X를 넣었을 떄 모델이 예측하는 예측값과 실제값 간의 차이(Error,𝜀)를 계산한 다음, 여러 모델 중 Error(모델에서 예측하는 예측값과 실제값 (y)의 차이)가 가장 작은 모델을 선택하는 방법을 통해, 가장 좋은 모델을 선택할 수 있음</li>
+<li>이 과정은 f(a,b) =𝜀 로 표현 될 수 있으며, 오차 함수인 𝜀 을 최소화 하는 a,b를 찾는 것이 머신러닝(Linear regression)의 목표</li>
+<li>이 오차함수를 최소화하는 a,b를 찾기위해 미분 사용</li>
+</ul></li>
+</ul>
+<h2 id="미분-공식-w-python">미분 공식 w/ Python</h2>
+<ul>
+<li>기본적으로 미분은 다음의 공식을 활용
+<ul>
+<li>f'(x) = {f(x + Δx) - f(x)/ Δx}, Δ x-&gt; 0</li>
+<li>but 실제 0으로 나눌 수 없기때문에 0에 매우근사한 1e-5 을 사용하며, 이러한 접근 방식을 numerical method라 함</li>
+<li>numerical method에서는 조금 더 정확한 측정을 위해 분자에 f(x + Δx) - f(x - Δx)/ 2Δx 를 사용하기도 함<br />
+</li>
+</ul></li>
+<li>머신러닝에서 쓰이는 대표적 미분공식들
+<ul>
+<li>f(x) = 상수 -&gt; f'(x) = 0
+<ul>
+<li>f'(x)가 상수 (constant)인 경우는 x를 아무리 늘리거나 줄여도 늘 같은 숫자이기 때문에 변화가 전혀 없음. 즉 변화율이 0이기 때문에 미분계수도 늘 0 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># f(x) &#x3D; 5</span><br><span class="line">def f(x):</span><br><span class="line">    return 5</span><br><span class="line"></span><br><span class="line">def numerical_derivative(fx, x):</span><br><span class="line">    delta_x &#x3D; 1e-5</span><br><span class="line"></span><br><span class="line">    return (fx(x + delta_x) - fx(x)) &#x2F; delta_x</span><br><span class="line">print(numerical_derivative(f, 1))</span><br><span class="line"></span><br><span class="line"># 예시 2 : Scipy의 derivative 활용(도함수를 바로계산해주는 함수)</span><br><span class="line">from scipy.misc import derivative</span><br><span class="line"></span><br><span class="line"># 두 방법의 결과값 비교</span><br><span class="line">derivative(f,1, dx&#x3D;1e-6) &#x3D;&#x3D; numerical_derivative(f, 1)</span><br></pre></td></tr></table></figure></li>
+</ul></li>
+<li>f(x) = ax<sup>{n}</sup> -&gt; f'(x) = an{x}<sup>{(n-1)}</sup>
+<ul>
+<li>Power Rule로도 알려져있는 미분법</li>
+<li>x 기준으로 n승을 미분할 경우 n을 내려보내서 곱해준 후, 이후에 n승에서 "하나"를 가져왔기 때문에 빼주는 방법<br />
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">def f(x):</span><br><span class="line">    return 3*(x**4) + 10</span><br><span class="line"></span><br><span class="line">def numerical_derivative(fx, x):</span><br><span class="line">    delta_x &#x3D; 1e-5</span><br><span class="line"></span><br><span class="line">    return (fx(x + delta_x) - fx(x)) &#x2F; delta_x</span><br><span class="line"></span><br><span class="line">print(numerical_derivative(f, 2))</span><br><span class="line"></span><br><span class="line"># 예시 2 : Scipy의 derivative 활용</span><br><span class="line">from scipy.misc import derivative</span><br><span class="line"></span><br><span class="line"># 두 방법의 결과값 비교</span><br><span class="line">print(derivative(f,2, dx&#x3D;1e-5))</span><br><span class="line">derivative(f,2, dx&#x3D;1e-5) &#x3D;&#x3D; numerical_derivative(f, 2)  #delta X의 값은 같지만 Rounding 에러로 인해 두 결과가 미묘하게 다르게 나오지만 거의 같음</span><br></pre></td></tr></table></figure></li>
+</ul></li>
+<li>f(x) = e<sup>x</sup> -&gt;f'(x) = e<sup>x</sup>
+<ul>
+<li>지수 함수의 경우에는 도함수 역시 지수 함수<br />
+</li>
+</ul></li>
+<li>f(x) = lnx -&gt; f'(x) = {1 / x}
+<ul>
+<li>자연로그의 미분은 신경망의 활성 함수인 sigmoid 함수를 쉽게 미분할수 있도록 도와줌
+<ul>
+<li>why? sigmoid 함수에 자연로그를 씌움으로서 미분을 훨씬 수월하게 할 수 있게 되기 때문</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="편미분-partial-derivative">편미분 Partial Derivative</h2>
+<ul>
+<li>파라미터가 2개 이상인 Error 함수에서 우선 1개의 파라미터에 대해서만 미분을 하자 라는 목적으로 다른 변수들을 상수 취급 하는 방법</li>
+</ul>
+<p><img src="../images/PD.PNG"></p>
+<h2 id="chain-rule">Chain Rule</h2>
+<ul>
+<li><strong>합성함수(함수의 함수)</strong> 를 미분하기 위해 사용하는 방식</li>
+<li>F(x) = f(g(x))$ F'(x) -&gt; f'((g(x)) ∘ g'(x)
+<ul>
+<li>미분할 때 반드시 바깥함수(f(x))부터 미분을 해야함을 기억</li>
+<li>F(x) = (2x<sup>3</sup> + 7)<sup>6</sup> 를 x에 대해 미분하려는 경우<br />
+f(x) = x<sup>6</sup>, g(x) = 2x<sup>3</sup> + 7 로 설정<br />
+F'(x) = 6(2x<sup>3</sup> + 7)<sup>5</sup> ∘ 6x<sup>2</sup></li>
+</ul></li>
+<li>Chain Rule은 Deep learning의 핵심 개념 중 하나인 Backward Propagation(역전파)을 이해하는데 중요하기 때문에 시간이 될 때마다 연습</li>
+</ul>
+<h2 id="경사하강법-gradient-descent">경사하강법 Gradient Descent</h2>
+<ul>
+<li>오차 함수인 𝜀 을 최소화 하는 𝑎,𝑏 를 찾을 수 있는 최적화 알고리즘 중의 하나</li>
+<li>최적의 a,b를 찾기 위해선 도함수의 미분계수가 0인 곳을 찾으면 되지만, 실제 다루게 될 문제에선 파라미터의 갯수는 수없이 많고 하나의 minimum/maximum만이 존재하지 않음</li>
+<li>경사하강법은 임의의 a, b를 선택한 후 (random initialization)에 기울기 (gradient)를 계산해서 기울기 값이 낮아지는 방향으로 진행</li>
+<li>기울기는 항상 손실 함수 값이 가장 크게 증가하는 방향으로 진행합니다. 그렇기 때문에 경사하강법 알고리즘은 기울기의 반대 방향으로 이동</li>
+<li>경사하강법에서의 a,b<br />
+an+1=an−η∇f(an)<br />
+bn+1=bn−η∇f(bn)
+<ul>
+<li>반복적으로 파라미터 a,b를 업데이트 해가면서 그래디언트(∇f)가 0이 될 때까지 이동<br />
+이 때 중요한게 바로 학습률 (learning rate,η)<br />
+학습률이 너무 낮게 되면 알고리즘이 수렴하기 위해서 반복을 많이 해야되고 학습률이 너무 크면 극소값을 지나쳐서 알고리즘이 수렴을 못하고 계산을 계속 반복 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">def gradient_descent(X, y, lr &#x3D; 0.05, epoch &#x3D; 10):</span><br><span class="line">    </span><br><span class="line">    a, b &#x3D; 0.33, 0.48 # 임의 선택한 파라미터 a, b</span><br><span class="line">    N &#x3D; len(X) # 샘플 갯수</span><br><span class="line">    </span><br><span class="line">    for _ in range(epoch):            </span><br><span class="line">        f &#x3D; y - (a*X + b)</span><br><span class="line">    </span><br><span class="line">        # a와 b를 업데이트 합니다(기울기를 바꿔준다고 쉽게이해하면 됨)</span><br><span class="line">        a -&#x3D; lr * (-2 * X.dot(f).sum() &#x2F; N)</span><br><span class="line">        b -&#x3D; lr * (-2 * f.sum() &#x2F; N</span><br><span class="line"></span><br><span class="line"># y &#x3D; 3 x + 5</span><br><span class="line">X &#x3D; np.array([1, 2, 3, 4, 5])</span><br><span class="line">y &#x3D; np.array([8, 11, 14, 17, 20])</span><br><span class="line"></span><br><span class="line">gradient_descent(X,y)  # 10번만 돌렸을 때</span><br><span class="line">gradient_descent(X, y, epoch &#x3D; 100)  # 100번 반복</span><br><span class="line">gradient_descent(X, y, epoch &#x3D; 1000)  # 1000번 반복</span><br><span class="line">반복할수록 a&#x3D;43 b&#x3D;5에 점점 수렴해감을 확인할 수 있음</span><br></pre></td></tr></table></figure></li>
+</ul></li>
+</ul>
+]]></content>
+      <categories>
+        <category>TIL</category>
+      </categories>
+      <tags>
+        <tag>Data science</tag>
+        <tag>Basic Derivative</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI-day10</title>
+    <url>/2021/05/20/AI-day10/</url>
+    <content><![CDATA[<h1 id="weekly-review">Weekly review</h1>
+<h2 id="가설검정">가설검정</h2>
+<ul>
+<li><p>가설검정의 목적: 모집단의 실제값들 중 sample들을 뽑아 그 통계치를 통해 통계적으로 유의한지아닌지를 판정하는것</p></li>
+<li>기술통계치(데이터를 설명하는 값들)와 box plot, violin plot, count, mean, standard dev, min, 1Q, median, 3Q, max 이해하고 설명할 수 있어야함<br />
+</li>
+<li><p>Outlier(이상치)에 대한 개념, 구하는 식 찾기</p></li>
+<li>추리통계치
+<ul>
+<li>Population, Parameter, Statistic, Estimator, Standard Deviation, Standard Error 각각의 정의는 반드시 알아야함</li>
+</ul></li>
+<li>Sampling 4가지
+<ul>
+<li>Simple random sampling, Systematic sampling, Stratified random sampling, Cluster sampling 와 추가로 이것들의 변이형 도 찾아서 전체적인 뉘앙스를 기억하기</li>
+</ul></li>
+<li>Standard Error(표준오차,표준편차)
+<ul>
+<li>표준편차 나누기 루트샘플사이즈 공식이 왜 그렇게 도출된것인지를 설명할 수 있어야함</li>
+<li>표본의 수가 많을수록 오차가 작다 기억</li>
+</ul></li>
+</ul>
+<h2 id="t-test">T-test</h2>
+<ul>
+<li>독립성,정규성,등분산성이 지켜져야 t-test 가능</li>
+<li>수치형,연속형data 만 사용가능</li>
+<li>one sample : 1개 <strong>샘플의 평균값</strong>이 <strong>특정값과 동일</strong>한지 비교
+<ul>
+<li>t = 샘플평균-모집단평균 / 표준편차</li>
+</ul></li>
+<li>two sample : 2개 <strong>샘플 각각의 평균값</strong>이 <strong>서로 동일</strong>한지 비교</li>
+<li>t-test의 정확한 의미와 결과에대한 해석을 할 줄 알아야함</li>
+<li>P-value(일반적으로 신뢰구간 95%)
+<ul>
+<li>0.05보다 크다 -&gt; 귀무가설 채택</li>
+<li>0.05보다 작다 -&gt; 귀무가설 기각</li>
+</ul></li>
+</ul>
+<h2 id="type-of-error">Type of Error</h2>
+<ul>
+<li>type1, type2 error의 개념과 차이가 중요</li>
+</ul>
+<h2 id="chi-square">Chi square</h2>
+<ul>
+<li>하는법과 의미를 기억</li>
+</ul>
+<h2 id="anova">ANOVA</h2>
+<ul>
+<li>2 Sample 이상을 다루는경우 주로 사용하는 가설검정법</li>
+</ul>
+<h2 id="큰-수의-법칙-law-of-large-numbers">큰 수의 법칙 ( Law of large numbers )</h2>
+<ul>
+<li>샘플이 많아질수록 모집단의 통계치와 근사해진다</li>
+</ul>
+<h2 id="중심극한정리-central-limit-theorem-clt">중심극한정리 ( Central Limit Theorem, CLT )</h2>
+<ul>
+<li>샘플이 많아질수록 정규분포에 근사해진다</li>
+<li>특히 큰수의법칙과 중심극한정리는 개념을 정확히 설명할줄 알아야한다(면접에서도 중요)</li>
+</ul>
+<h2 id="신뢰구간">신뢰구간</h2>
+<ul>
+<li>샘플평균 플러스마이너스 Error 로 기억(공식 암기)</li>
+</ul>
+<h2 id="총-확률의-법칙-the-law-of-total-probability">총 확률의 법칙 (The Law of Total Probability)</h2>
+<ul>
+<li>다시말해 A의 모든 확률은, 주어진 Bn에 대해, 각각의 일어날 확률의 총합이다</li>
+<li>bayesian 에 대한 내용은 알면 알수록 좋고, 분야가 세분화될수록 점점 쓸모가있다</li>
+<li>조건부확률 계산하는 법도 직접 할수있으면 더 좋다</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Weekly reveiw</category>
+      </categories>
+      <tags>
+        <tag>Data science</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI-day15</title>
+    <url>/2021/05/27/AI-day15/</url>
+    <content><![CDATA[<h1 id="weekly-reveiw">Weekly reveiw</h1>
+<h2 id="벡터와-매트릭스-vectors-and-matrices">벡터와 매트릭스 ( Vectors and Matrices )</h2>
+<ul>
+<li>벡터의 연산과 Norm, det 등의 값이가지는 의미와 실제 코드로 실행할수있다는것을 기억
+<ul>
+<li>원리이해와 각각에필요한 라이브러리를 쓸줄 알아야함</li>
+</ul></li>
+</ul>
+<h2 id="차원죽소">차원죽소</h2>
+<ul>
+<li>차원축소하는 궁극적인이유는 , 속도를높이고 메모리의 사용을 줄이기위함</li>
+<li>PCA 와 SVD에대한 큰 개념을 이해하기</li>
+</ul>
+<h2 id="스칼라와-벡터">스칼라와 벡터</h2>
+<ul>
+<li>벡터에서는 numpy를 이용해 다양한 계산을 활용할줄 아는것이 기본이다</li>
+<li>스칼라는 숫자고 크기이다</li>
+<li>벡터를 수학적으로 이해하기보다는 데이터라고 받아들이자</li>
+<li>벡터의 길이(length)는 벡터의 차원수와 동일하다는 정도만 이해</li>
+<li>벡터의 크기 (Magnitude, Norm, Length)의 의미에대해 알기</li>
+<li>벡터의 내적 ( Dot Product )을 위해서는 두 벡터의 길이가 반드시 동일해야 한다</li>
+</ul>
+<h2 id="매트릭스">매트릭스</h2>
+<ul>
+<li>매트릭스의 Transpose 기억하기</li>
+<li>2개의 매트릭스가 일치하기 위해서는, 동일한 차원을 보유하고 각 해당하는 구성요소들이 동일해야 함</li>
+<li>정사각 매트릭스
+<ul>
+<li>정사각 매트릭스의 종류들과 특징은 알아두기</li>
+<li>단위매트릭스는 특히 중요</li>
+</ul></li>
+<li>행렬식과 역행렬의 개념과 계산하는 방법 알기</li>
+</ul>
+<h2 id="분산과-표준편차">분산과 표준편차</h2>
+<ul>
+<li>각각의 의미와 구하는 라이브러리를 기억</li>
+<li>numpy와 pandas에서 ddof의 차이에 주의하자</li>
+<li>공분산과 상관계수는 메서드 사용시 원하는값이 배열의 어느위치에 있는지 알아야함
+<ul>
+<li>특히 상관계수가 1일때와 -1일때 똑같이 선형상관관계이고 방향만 양수 음수 임을 주의 -1이라고해서 선형관계가 아니라고 생각하면 안된다</li>
+<li>공분산과 상관계수는 서로 어떤관계가 있는지 설명할줄 알아야함</li>
+</ul></li>
+</ul>
+<h2 id="basis-rank-span">basis, rank, span</h2>
+<ul>
+<li>각각의 개념을 이해하는것이 중요</li>
+</ul>
+<h2 id="vector-transformation">Vector transformation</h2>
+<ul>
+<li>다양한 방법으로 벡터를 변환시켜 차원을 줄이기위한 과정</li>
+<li>고유값과 고유벡터의 의미와 구하는법도 숙지</li>
+</ul>
+<h2 id="차원감소">차원감소</h2>
+<ul>
+<li>Feacture Selection 과 Feature Extraction 의 방식과 예시 기억하기</li>
+<li>Scaling 과 PCA 을 통해 차원감소하는 원리와 이유, 방법과 라이브러리 정리</li>
+</ul>
+<h2 id="custering">Custering</h2>
+<ul>
+<li>머신러닝에서의 비지도학습의 한 종류로 데이터들간의 유사성을 토대로 분류하는것이다</li>
+<li>다양한 종류가있지만, 그런 종류가있다는것을 알고 데이터의 형태에 맞는 방법을 쓰는것이 중요하다</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Weekly reveiw</category>
+      </categories>
+      <tags>
+        <tag>Data science</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI-Day5</title>
+    <url>/2021/05/12/AI-Day5/</url>
+    <content><![CDATA[<h1 id="weekly-review">Weekly review</h1>
+<h2 id="eda">EDA</h2>
+<ul>
+<li>데이터를 불러오기
+<ul>
+<li>Description 을통해 데이터셋에대한 정보파악
+<ul>
+<li>EDA를 대신해주는거지만, 직접확인하는것이 더 정확</li>
+</ul></li>
+<li>pd.read_csv() 에 대한 완벽한 숙지가 중요</li>
+</ul></li>
+<li>데이터셋 확인하기
+<ul>
+<li>Graphic , Non-Graphic 을 구분하고 사용할줄 알아야함</li>
+<li>하지만, 자기가 시각화를 한 자료에대해서는 100% 설명할줄 알아야함
+<ul>
+<li>EDA과정에서 시각화된 자료에대한 코멘트(어떤 insigth를 얻었는지 등등)를 달아보기</li>
+</ul></li>
+<li>Pandas의 메서드들을 외우는건 의미없음
+<ul>
+<li>여러번 사용해보면서 이런 기능을하는 함수가 있었다라는걸 기억하는것이 중요</li>
+</ul></li>
+</ul></li>
+<li>데이터 전처리도 중요하다는것만 우선 기억</li>
+</ul>
+<h2 id="feature-engineering">Feature Engineering</h2>
+<ul>
+<li>데이터를 보다 확인하기 좋은 형태로 다듬는것이 목적
+<ul>
+<li>기존의 feature들을 조합하여 새로운 feature를 만드는것</li>
+<li>도메인지식과 창의성이 중요</li>
+</ul></li>
+<li>DataFrame, DataSet 이해
+<ul>
+<li>결측치들(Na,Null,NaN,0,Undefined)의 차이를 알기</li>
+</ul></li>
+<li>typecasting, 특히 string-&gt;int가 매우 중요하고 많이쓰임
+<ul>
+<li>replace,apply,astype 등의 다양한 방법이 존재하므로 정확히 의도대로 사용할 줄 알아야함</li>
+</ul></li>
+</ul>
+<h2 id="data-manipulation">Data Manipulation</h2>
+<ul>
+<li>concat과 merge를 구분하고 사용할줄 알아야함
+<ul>
+<li>단순히 합치는법을 알기보다는 원하는 shape으로 만들어낼줄 아는것이 중요</li>
+</ul></li>
+<li>wide &amp; tidy
+<ul>
+<li>각각의 형태가 언제 유용하고 확인하기 좋은가를 구분할줄 알아야함</li>
+<li>data를보고 어떤형태인지도 유추할수 있다면 best</li>
+<li>melt() &amp; pivot_table() 를 적절하게 사용할 줄 알아야함</li>
+</ul></li>
+<li>pandas styling
+<ul>
+<li>나중에 알고있다면 좋은것</li>
+</ul></li>
+</ul>
+<h2 id="basic-derivative">Basic derivative</h2>
+<ul>
+<li>미분에 대한 개념은 매우중요하지만, 직접미분을 해야하는경우는 드물다
+<ul>
+<li>다양한 미분 공식들을 알아야 알고리즘에대해 이해하고 사용할 수 있음</li>
+</ul></li>
+<li>경사하강법은 뒤로갈수록 중요한 개념이므로 꾸준히 공부하고 이해할수록 좋음</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Weekly reveiw</category>
+      </categories>
+      <tags>
+        <tag>Data science</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI-day16~20</title>
+    <url>/2021/06/03/AI-day16-20/</url>
+    <content><![CDATA[<h1 id="첫-프로젝트-진행-및-회고-project-review">첫 프로젝트 진행 및 회고 (Project-Review)</h1>
+<ul>
+<li>AI교육 16~20일차 개인프로잭트를 진행하였다</li>
+<li>프로잭트의 대략적인 방향과 회고를 적어보았다</li>
+<li>이번 포스팅에서는 자세한 분석과정이 아닌, 프로젝트 진행중 고민한 내용과 회고를 작성하였다.</li>
+</ul>
+<hr />
+<h2 id="프로젝트-진행">프로젝트 진행</h2>
+<ul>
+<li>프로젝트의 주제는 게임판매량 데이터를 분석하고, 분석결과를 바탕으로 다음 출시할 게임의 설계방향을 정하는것이다.</li>
+<li>비전공자를 대상으로 한다는 가정하에 발표시간은 5분제한이 있다.</li>
+<li>데이터는 게임이름,장르,출시년도,게임회사,플랫폼, 지역별(북미,유럽,일본,그외) 판매량이 있었다.</li>
+<li>간단하게 요약하자면 <strong>판매량과 장르</strong> , <strong>판매량과 지역</strong>, <strong>판매량과 플랫폼</strong> 을 분석하고<br />
+각각의 연관성을 먼저 정리하였다.</li>
+<li>그 후 판매량이 많은 게임들의 장르,플랫폼,지역을 정리 후 위에서 분석한 연관성들을 적용시켜<br />
+<strong>어떤 장르의 게임을 어떤플랫폼으로 어느지역에 출시할지</strong> 를 결론 내렸다.</li>
+</ul>
+<hr />
+<h2 id="시작부터-난관에-봉착">시작부터 난관에 봉착</h2>
+<p>프로잭트는 주말을 포함하여 6일동안 진행하였다. 하지만 개인 프로젝트를 진행하는것이 처음이라 분석방향을 설정하는 단계에서부터 어려움을 겪었다. 실제로 6일 중 3일동안 파이썬 코드는 한줄도 적지못하고 공책에 연필로 분석방향 그리기에 바빴다.<br />
+가장 큰 첫번째 고민은 <strong>"어떤 기준을 가지고 분석할까"</strong> 였다.<br />
+판매량에 영향을 주는요인은 <strong>장르와 플랫폼</strong> 이 가장 일반적이지만 해당 데이터의 지역별, 연도별 판매량차이와 게임회사 정보도 무시할 수 없었다. 그래서 우선 장르와 플랫폼을 분석하고 그다음 나머지것들을 고려하기로 했다. 대략 이미지로 정리해보았다.<br />
+<img src="../images/sales.png" width= 450, height=200></p>
+<p><strong>"플랫폼과 장르가 판매량과 어떤 연관이있는지 , 그리고 각각의 플랫폼&amp;장르는 지역&amp;연도와 어떤 연관이있는지"</strong> 분석향을 정했다.<br />
+분석방향을 정했으니 장르부터 분석을 시작했다. 하지만.. 다시 또 문제가 발생했다. 내가 알고싶은것은 장르와 연도&amp;지역의 연관성 이였다.<br />
+- 장르들을 각 지역내에서의 비교해 지역내 인기가 많은 장르들을 분석할까? - 그럼 각 지역별 인기있는 장르를 찾아낼 수 있을것이다. - ex) 미국에선 레이싱, 유럽에선 RPG가 잘팔린다 - 여러 장르의 게임을 출시할때, 지역별로 다른장르를 선택해 출시할 수 있다 - 한 장르에대해 각 지역별 차이를 분석할까? - 그럼 어떤 장르가 어디서 더 인기가 많은지 알 수 있을것이다. - ex) 레이싱게임은 유럽보다는 미국에서 더 잘팔린다 - 한 장르의 게임을 출시할때 보다 판매량이 높은 지역에 출시할 수 있다</p>
+<p>물론 두가지를 다 비교하면 더욱 자세한 분석이 될 수 있고, 지역별로 다른 장르를 출시할 수도 있다. 하지만 이번 프로젝트의 발표시간은 5분이고, 다른 분석할 기준이 많기때문에 포괄적인 기준이 필요했다. 그래서 지역내에서가 아닌 지역별 차이를 분석하여 하나의 게임을 출시하는데 목표를 두었다.</p>
+<hr />
+<h2 id="장르와-지역의-분석방법을-다른기준에도-똑같이-적용할수-있을까">장르와 지역의 분석방법을 다른기준에도 똑같이 적용할수 있을까?</h2>
+<p>동일한 방법으로 장르-연도, 플랫폼-지역&amp;연도를 분석하면 되지않을까? 잠시 복붙의 행복회로에 불이 들어왔다.<br />
+하지만... 연도에서 다시한번 딜레마에 빠졌다. 연도를 고려하지 않았을때는 지역끼리만 비교하면 됬지만,, 게임기술이 1년단위로 급성장하는 시대에서 과연 1995년,2010년,2015년 같은장르의 판매량을 연도끼리 비교하는것이 의미가있을까? 좀 더 <strong>의미있는</strong> 분석을 위해 이번에는 장르에서 선택하지않았던 연도내에서 장르들의 차이를 비교해보기로 결정했다. - 연도내에서 장르의 차이를 분석한다면? - 연도별 가장 인기있었던 장르를 비교하면 전체적인 흐름 즉, <strong>장르의 트랜드</strong> 를 파악할 수 있다. - 이것은 그냥 같은 장르를 연도끼리 비교하는것보다 선호도 변화를 볼 수 있어 더 유용하다.</p>
+<p>그래서 아쉽지만 기쁜마음으로(?) 지역과는 다른방향으로 분석하였다. 각 연도 내에서 어떤장르가 가장 많이판매되었는지 비교 한 후 전체적인 트랜드를 확인하기로 결정했다.</p>
+<hr />
+<h2 id="장르가-끝났다-플랫폼을-분석해보자">장르가 끝났다, 플랫폼을 분석해보자</h2>
+<p>이번에야말로 봍붙의 행복회로가 빛을 내기시작했다. 장르의 분석방법을 플랫폼에 그대로 적용시켰다. 그림으로 보았던 총 4가지의 분석을 마쳤고 분석결과도 도출해냈다. (추가로 같은 장르의 게임의 플랫폼별 판매량도 분석해보았다.)<br />
+분석과정은 t-test나 ANOVA를 통해 가설검정 과정만 진행하였다. 분석과정에서 고려할 사항을 최소하 하기 위해서다.</p>
+<p>하지만 이것이 실수였다는것을 동기들의 피드백을 듣고 알게 되었다.<br />
+비전공자가 <strong>"연관이있다 없다 식의 논리"</strong> 를 이해하기 어렵기때문이다. 각각의 판매량 차이를 그래프로 시각화하는것이 그래프가 많더라도 오히려 한눈에 이해하기는 쉽다는것을 피트백을 듣고 뒤늦게 깨달앗다.</p>
+<hr />
+<h2 id="출고량이-많은게임을-분석한다...-그런데-출고량이-많은-기준은">출고량이 많은게임을 분석한다... 그런데 출고량이 많은 기준은?</h2>
+<p>그렇다 출고량이 많은게임을 분석해서 기준을 적용하고 장르를 정하고 플랫폼을 정하고.. 흐름은 좋았다. 하지만 어느정도가 되어야 통계학적,객관적으로 <strong>많다</strong> 고 할 수 있을까?<br />
+결론부터 말하자면 정확한 방법을 찾진 못했다. 과정에서배운 clustering, PCA,정규화 등의 방법이 있었지만 판매량의 분포가 워낙 일정했기때문에 기준을 정하기 애매했다. 그래서 그래프로 총판매량만 단순하게 시각화하고 그나마 차이가 많이나는 상위 100개의 게임을 선정했다.<br />
+<img src="../images/total.PNG" width=300 height=200></p>
+<p>하지만 분석하나하나가 회사의 매출을 좌우한다고 생각한다면? 이런 대략이라는 수치는 용납되지 않을것 같았고, 이번주말에 이 기준을 어떻게 설정할지 찾아보기로 했다.</p>
+<hr />
+<h2 id="거의다-온것같은데..-마지막-결론도출도-만만치-않다">거의다 온것같은데.. 마지막 결론도출도 만만치 않다</h2>
+<p>판매량 상위100개의 게임을 분석했고 가장많은 장르와 플렛폼을 찾아냈다. 그런데 여기서 또다시 딜레마에 빠졌다.<br />
+판매량이 많은 장르와 플렛폼은 찾았는데 서로 비슷하지않다. 한마디로 슈팅게임이 가장 많이 팔렸는데, 플랫폼은 Wii가 가장 많다. 마음같아서는 슈팅게임을 Wii플랫폼으로 내면될 것 같다.<br />
+그럼 어떤것을 먼저 골라야할까? 장르일까 플랫폼일까?<br />
+여기서 이용한것이 <strong>트랜드</strong> 이다.<br />
+분석결과 <strong>장르는 연도별 트랜드가 있지만</strong> , <strong>플랫폼은 연도별 트랜드가 없다</strong><br />
+한마디로 최근 트랜드인(최근에 판매량이많은) 장르를 고른다면, 판매량이 많은 플랫폼을 고르는것보다는 의미가 있을것이라 판단했다. 이런 논리만으로 장르를 우선시 하는게 완벽한 분석은 아닐 수 있지만, 현재 분석한 데이터에선 가장 최선이라 생각했다. 물론 이부분도 후에 더 정확한 선택방법이 있는지 알아보는것도 개인적 숙제다. ### 복잡한 분석과 이론적 고찰을 통해 드디어 결론에 도착했다 결국 상위100개 게임에서도 슈팅, 전체에서도 슈팅이 제일 많이 팔린걸 확인했다. 장르는 슈팅으로 정했다.<br />
+그 다음 슈팅장르가 가장 많이 팔린 플랫폼과 지역을 분석하고 결론적으로 장르,플랫폼,지역을 선정했다.</p>
+<hr />
+<h2 id="영상도-찍고-동기부여도-하고-완벽했다">영상도 찍고 동기부여도 하고 완벽했다</h2>
+<p>정말 많은것을 느꼈다. 한달간 수학,통계학,파이썬을 배우며 넘지 못할것 같았던 산들을 꾸역꾸역 올라갔다. 이론적인 부분에 집중해서 용어, 의미, 공식 같은 내용을 남들에게 설명할 수 있을 정도로 완벽하게 흡수하려고 노력했다.<br />
+하지만 실제 비지니스에 활용하는것, 그것을 다른사람에게 논리적으로 설명하는것은 또 다른 영역이였다. 비전공자인 청자의 입장을 고려하는점이 필요한것 같았다. 신기하게도 동기들의 피드백에서도 같은 지적을 받았다.<br />
+동기들의 노력과 고민의 결과가 담긴 아주 소중한 발표영상(5분길이의 50개영상)을 모두 보았다. 같은 데이터를 가지고 이렇게나 다른분석을 할 수 있고, 심지어는 나의 분석내용이 틀렸나 라고 의심할정도로 완벽한 발표내용도 보았다. 역시 배울점도 많고 뭔가 승부욕, 공부의지가 불타오르는 자극이 되었다.<br />
+한달동안 이론만보고 컴퓨터만보고 대화한 느낌이였다면, 이번 프로젝트와 동기들과의 피드백으로 정말 데이터사이언스라는 분야에 첫걸음을 내딛었다는 생각에 뿌듯하다. 다음 프로젝트때는 내가 다른 동기들의 자극이 될 수 있도록 스스로 만족할수 있도록 꾸준히 부지런하게 걸어봐야겠다.<br />
+(그동안 잠자고있던 미적분,선형통계,파이썬,머신러닝,딥러닝 인강들을 깨울때가 된 것 같다)<br />
+블로그도 옮길때가 된것 같다 블로그테마가 익스플로러에서 재대로 작동하지않아 공부시간과 블로그 수정시간이 비슷한것같다... 티스토리나 밸로그로 옮길예정이다</p>
+]]></content>
+      <categories>
+        <category>Project</category>
+      </categories>
+      <tags>
+        <tag>Project-Review</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI-day6</title>
+    <url>/2021/05/13/AI-day6/</url>
+    <content><![CDATA[<h1 id="통계학">통계학</h1>
+<ul>
+<li>Estimation / Sampling의 목적과 방법</li>
+<li>가설검정 이해</li>
+<li><h2 id="t-test의-목적과-사용예시-숙지">T-test의 목적과 사용예시 숙지</h2>
+<h2 id="기술-통계치descriptive-statistics란">기술 통계치(Descriptive Statistics)란?</h2></li>
+<li>count, mean, standard dev, min, 1Q, median, 3Q, max 등의 데이터를 설명 하는 값(혹은 통계치)</li>
+<li>https://drhongdatanote.tistory.com/25</li>
+<li>기술통계치의 시각화
+<ul>
+<li>df.describe()</li>
+<li>Mean / Median / Mode</li>
+<li>Range</li>
+<li>Var / SD</li>
+<li>Kurtosis</li>
+<li><h2 id="skewness">Skewness</h2>
+<h2 id="추리통계치inferetial-statistics">추리통계치(Inferetial Statistics)</h2></li>
+</ul></li>
+<li>어떤 큰 집단에서 통계를할때 큰집단 내부의 작은 샘플그룹을 선정한후 분석,추론하는것</li>
+<li>키워드들을 알아두자
+<ul>
+<li><h2 id="population-parameter-statistic-estimator-standard-deviation-standard-error">Population, Parameter, Statistic, Estimator, Standard Deviation, Standard Error</h2>
+<h2 id="effective-sampling">Effective Sampling</h2></li>
+</ul></li>
+<li>Simple random sampling
+<ul>
+<li>모집단에서 무작위로 sampling</li>
+</ul></li>
+<li>Systematic sampling
+<ul>
+<li>모집단에서 규칙을 가지고 sample 추출<br />
+ex) 1, 6, 11, 16, ... 번째의 데이터</li>
+</ul></li>
+<li>Stratified random sampling
+<ul>
+<li>모집단을 미리 여러 그룹으로 나누고, 그 그룹별로 무작위 추출<br />
+ex) 여론 조사를 위해 사람을 나이대 별로 나누고, 해당 그룹안에서 무작위 추출</li>
+</ul></li>
+<li>Cluster sampling
+<ul>
+<li><h2 id="모집단을-미리-여러-그룹으로-나누고-이후-특정-그룹을-무작위로-선택">모집단을 미리 여러 그룹으로 나누고, 이후 특정 그룹을 무작위로 선택</h2>
+<h2 id="가설검정">가설검정</h2></li>
+</ul></li>
+<li>주어진 상황에 대해서, 하고자 하는 주장이 맞는지 아닌지를 판정하는 과정</li>
+<li>모집단의 실제 값에 대한 sample의 통계치를 사용해 통계적으로 유의한지 아닌지 여부를 판정</li>
+<li>https://en.wikipedia.org/wiki/Statistical_hypothesis_testing</li>
+<li>예시에 사용해본 메서드들
+<ul>
+<li>np.random.seed()</li>
+<li><h2 id="np.random.binomial-베르누이-분포">np.random.binomial() / 베르누이 분포</h2>
+<h2 id="표본평균의-표준오차-standard-error-of-the-sample-mean">표본평균의 표준오차( Standard Error of the Sample Mean )</h2></li>
+</ul></li>
+<li>StandardError = 표본의 표준편차 s (sample standard deviation) / 표본의 수 n(sample size)</li>
+<li>표본의 수가 더욱 많아질수록, 추측은 더 정확해지고 (평균) 높은 신뢰도를 바탕으로 모집단에 대해 예측 할 수 있도록 함.<br />
+<img src="../images/se.PNG"></li>
+</ul>
+<hr />
+<h2 id="student-t-test">Student T-test</h2>
+<h3 id="one-sample-t-test">One Sample t-test</h3>
+<ul>
+<li>1개의 sample 값들의 평균이 특정값과 동일한지 비교
+<ul>
+<li>예) 동전이 공정한지 확인하려고 할때 : p(x = H) = 0.5</li>
+</ul></li>
+<li>모집단에 대한 정보와 표본의 데이터를 비교<br />
+<img src="../images/ttest.PNG"></li>
+<li><p>위 통계치는 평균을 빼고 표준편차로 나눠줬는데 이러한 과정을 <strong>"정규화"</strong> 라고 하며, 이 과정을 하게 되면 주어진 데이터가 평균은 0, 표준편차가 1인 데이터로 scaling 됨</p></li>
+<li>T-test Process
+<ol type="1">
+<li><p>귀무 가설 (Null Hypothesis) 설정<br />
+<img src="../images/ttestpro1.PNG"></p></li>
+<li><p>대안 가설 (Alternative Hypothesis) 설정 (귀무가설과 반대)<br />
+<img src="../images/ttestpro2.PNG"></p></li>
+<li>신뢰도 설정 (Confidence Level) : 모수가 신뢰구간 안에 포함될 확률 (보통 95, 99% 등을 사용)
+<ul>
+<li>신뢰도 95%의 의미 = 모수가 신뢰 구간 안에 포함될 확률이 95% = 귀무가설이 틀렸지만 우연히 성립할 확률이 5%</li>
+</ul></li>
+<li>P-value 확인(규모가 너무클때 t를 P-value로 바꿔준다)
+<ul>
+<li>P-value : 주어진 가설에 대해 "얼마나 근거가 있는지"에 대한 값을 0과 1사이의 값으로 scale한 지표</li>
+<li>p-value가 낮다 -&gt; 귀무가설이 틀렸을 확률이 높다</li>
+</ul></li>
+<li>p-value를 바탕으로 가설에 대해 결론<br />
+</li>
+</ol></li>
+<li>T-test with Scipy
+<ul>
+<li>scipy에 수치만 입력하면 t=test를 실행해주는 다양한방법이 있음</li>
+<li>https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_1samp.html<br />
+</li>
+</ul></li>
+<li>P-value의 기준
+<ol type="1">
+<li>pvalue &lt; 0.01 : 귀무가설이 옳을 확률이 1%이하 -&gt; 틀렸다 (깐깐한 기준)</li>
+<li>pvalue &lt; 0.05 (5%) : 귀무가설이 옳을 확률이 5%이하 -&gt; 틀렸다 (일반적인 기준)</li>
+<li>0.05 ~ pvalue ~ 0.1 사이인 경우: (애매함)
+<ul>
+<li>실험을 다시한다</li>
+<li>데이터를 다시 뽑는다</li>
+<li>샘플링을 다시한다</li>
+<li>기존의 경험 / 인사이트를 바탕으로 가설에 대한 결론을 내린다.</li>
+</ul></li>
+<li>pvalue &gt; 0.1 (10%) : 귀무가설이 옳을 확률이 10%이상인데 -&gt; 귀무가설이 맞다 ~ 틀리지 않았을것이다
+<ul>
+<li>ex) p-value : 0.85 --&gt; 귀무가설은 틀리지 않았다. ('귀무가설이 옳다'와는 톤이 약간 다름)</li>
+</ul></li>
+</ol>
+<ul>
+<li>p-value가 (1-Confidence)보다 낮은 경우, 귀무가설을 기각하고 대안 가설을 채택</li>
+<li>https://en.wikipedia.org/wiki/P-value</li>
+</ul></li>
+<li>One-side test vs Two-side test
+<ul>
+<li>One side test : 샘플 데이터의 평균이 "X"보다 크다 혹은 작다 / 크지 않다 작지 않다. 를 검정하는 내용</li>
+<li>Two side (tail / direction) test : 샘플 데이터의 평균이 "X"와 같다 / 같지 않다. 를 검정하는 내용</li>
+</ul></li>
+</ul>
+<h3 id="two-sample-t-test">Two Sample T-test</h3>
+<ul>
+<li>2개의 sample 값들의 평균이 서로 동일한지 비교
+<ul>
+<li>2개의 동전 (500원짜리 vs 100원짜리)을 여러번 던져서 p(H)의 평균이 유사한 지 확인</li>
+</ul>
+<ol type="1">
+<li><p>귀무가설 : 두 확률은 같다 (차이가 없다)<br />
+<img src="../images/ttestpro3.PNG"></p></li>
+<li><p>대안가설 : 같지 않다<br />
+<img src="../images/ttestpro4.PNG"></p></li>
+<li><p>신뢰도 : 95%</p></li>
+</ol></li>
+</ul>
+<h3 id="quest">Quest</h3>
+<ul>
+<li>정규분포한? t분포란? 두분포의 차이는뭐고 어떨때 무엇을쓰는가?
+<ul>
+<li>이것을 정확히 파악해야 t=test, P-value를 재대로 이해할수있다</li>
+</ul></li>
+<li>FDR (false discovery rate)</li>
+<li>P-value Q-value
+<ul>
+<li>https://doooob.tistory.com/101</li>
+</ul></li>
+<li>t-test
+<ul>
+<li>https://www.youtube.com/watch?v=mEWQ_vl3IPw&amp;list=PLalb9l0_6WArHh18Plrn8uIGBUKalqsf-&amp;index=1</li>
+</ul></li>
+</ul>
+]]></content>
+      <categories>
+        <category>TIL</category>
+      </categories>
+      <tags>
+        <tag>Data science</tag>
+        <tag>hypothesis statistics</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AI-day7</title>
     <url>/2021/05/14/AI-day7/</url>
-    <content><![CDATA[<h1 id="다양한-가설검정방법"><a href="#다양한-가설검정방법" class="headerlink" title="다양한 가설검정방법"></a>다양한 가설검정방법</h1><ul>
+    <content><![CDATA[<h1 id="다양한-가설검정방법">다양한 가설검정방법</h1>
+<ul>
 <li>t-test를 위한 조건알기</li>
 <li>t-test 이외의 가설검정방법 익히기</li>
 <li>Type of Error 구분할줄 알기</li>
 <li>X<sup>2-test</sup>의 목적과 사용예시알기</li>
 <li>모수통계, 비모수통계 차이 파악하기</li>
 </ul>
-<h2 id="T-test"><a href="#T-test" class="headerlink" title="T-test +"></a>T-test +</h2><ul>
-<li>T-test의 선행조건 3가지<ul>
+<h2 id="t-test">T-test +</h2>
+<ul>
+<li>T-test의 선행조건 3가지
+<ul>
 <li>독립성 : 두 그룹의 연관성이 없어야함</li>
-<li>정규성 : 데이터가 정규성을 나타내야함<ul>
+<li>정규성 : 데이터가 정규성을 나타내야함
+<ul>
 <li>scipy.stats.normaltest()</li>
-</ul>
-</li>
+</ul></li>
 <li>등분산성 : 유사한수준의 분산값을 가져야함</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="Type-of-Error"><a href="#Type-of-Error" class="headerlink" title="Type of Error"></a>Type of Error</h2><ul>
-<li>Error<ul>
+<h2 id="type-of-error">Type of Error</h2>
+<ul>
+<li>Error
+<ul>
 <li>FN (알파,type1 error) : 귀무가설이 참이지만, 거짓이라 판단한경우</li>
 <li>FP (베타,type2 error) : 귀무가설이 거짓이지만, 참이라 판단한경우</li>
-</ul>
-</li>
-<li>Corret<ul>
+</ul></li>
+<li>Corret
+<ul>
 <li>TP (1-알파) : 귀무가설이 참이고, 참이라 판단</li>
 <li>TN (1-베타) : 귀무가설이 거짓이고, 거짓이라 판단</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="Non-parametric-methods-비모수적-방법"><a href="#Non-parametric-methods-비모수적-방법" class="headerlink" title="Non parametric methods(비모수적 방법)"></a>Non parametric methods(비모수적 방법)</h2><ul>
-<li>모집단이 특정확률분포(normal 같은)따른다는 전제를 하지않는 방식<ul>
+<h2 id="non-parametric-methods비모수적-방법">Non parametric methods(비모수적 방법)</h2>
+<ul>
+<li>모집단이 특정확률분포(normal 같은)따른다는 전제를 하지않는 방식
+<ul>
 <li>즉 모집단의 형태에 관계없이 주어진 데이터에서 직접 확률을 계산 및 검정</li>
-</ul>
-</li>
+</ul></li>
 <li>parameter 추정이 필요하지 않는 non-parametric</li>
-<li>Categorical 데이터를 위한 모델링<ul>
+<li>Categorical 데이터를 위한 모델링
+<ul>
 <li>범주형자료 : 관측결과가 몇개의 범주 또는 항목 형태로 나타나는 자료</li>
 <li>어떠한 수치가아닌 성별,선호도,혈액형,지역 등등으로 나타나는 것</li>
-</ul>
-</li>
-<li>극단적 outlier가 있는경우 매우 유효<ul>
+</ul></li>
+<li>극단적 outlier가 있는경우 매우 유효
+<ul>
 <li>outlier(이상치,극단치) : 분포에서 비정상적으로 보이는 극단값 혹은 비현실적 변수(평균을 왜곡시키는 값)</li>
-</ul>
-</li>
+</ul></li>
 <li>distribution free method (분포무관 검정법) 이라고도 함</li>
 </ul>
-<h3 id="비모수적-방법들"><a href="#비모수적-방법들" class="headerlink" title="비모수적 방법들"></a>비모수적 방법들</h3><ul>
-<li>카이제곱 테스트(x<sup>2</sup> Tests)<ul>
-<li>One sample x<sup>2</sup> Tests<ul>
+<h3 id="비모수적-방법들">비모수적 방법들</h3>
+<ul>
+<li>카이제곱 테스트(x<sup>2</sup> Tests)
+<ul>
+<li>One sample x<sup>2</sup> Tests
+<ul>
 <li>주어진 데이터가 예상하고있는 분포와 동일한 분포를 나타낼지를 검정</li>
-<li>계산된 x<sup>2</sup> 값과 자유도를 이용하여 pvalue를 구함<ul>
+<li>계산된 x<sup>2</sup> 값과 자유도를 이용하여 pvalue를 구함
+<ul>
 <li>stats.chi2.df(x<sup>2</sup>, df=자유도)</li>
-</ul>
-</li>
-<li>chisquare(data, axis=None) 으로 statstics과 pvalue 바로 구할수 있음<ul>
+</ul></li>
+<li>chisquare(data, axis=None) 으로 statstics과 pvalue 바로 구할수 있음
+<ul>
 <li>pvalue가 크다 -&gt; 연관이있다 -&gt; 분포가 비슷하다</li>
 <li>pvalue가 작다 -&gt; 연관이없다 -&gt; 분포가 다르다</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Two sample x<sup>2</sup><ul>
+</ul></li>
+</ul></li>
+<li>Two sample x<sup>2</sup>
+<ul>
 <li>주어진 두 데이터가 서로 독립적인가를 검정</li>
 <li>이떄의 자유도는 one sample과 다르게 (행-1)*(열-1)</li>
-<li>chi2_contingency(data)<ul>
+<li>chi2_contingency(data)
+<ul>
 <li>parameter 에 coreestion=T/F 로 Yates correction 설정가능</li>
-<li>x<sup>2</sup>, p-value, 자유도, 예측되는 관측치 순서대로 print 됨  </li>
-</ul>
+<li>x<sup>2</sup>, p-value, 자유도, 예측되는 관측치 순서대로 print 됨<br />
 </li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Kruskal-Wallis Test (비모수적 평균 비교법)<ul>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Kruskal-Wallis Test (비모수적 평균 비교법)
+<ul>
 <li>샘플크기가 같고나 다른 두개 이상의 독립샘플을 비교(샘플수가 5개이상일때 좋음)</li>
 <li>샘플의 순위를 매기고 집단별 순위의 합을 구해 통계량을 계산</li>
 <li>귀무가설은 모든그룹의 크기가 같다, 대립가설은 크기가 다르다로 설정</li>
-<li>from scipy.stats import kruskal  </li>
-</ul>
+<li>from scipy.stats import kruskal<br />
 </li>
-<li>Mann-Whitney U<ul>
-<li>Kruskal-Wallis Test와 같지만, 두개의 샘플에대해서 분석  </li>
-</ul>
+</ul></li>
+<li>Mann-Whitney U
+<ul>
+<li>Kruskal-Wallis Test와 같지만, 두개의 샘플에대해서 분석<br />
 </li>
-<li>Spearman correlation<ul>
+</ul></li>
+<li>Spearman correlation
+<ul>
 <li>두 샘플이 어느정도 연관성은있지만, 그 연관성에 일정한 비율이 없을때 두 샘플의 통계적 의존성을 측정</li>
-<li>쉽게 이해하자면, 한학생의 수학 영어점수를 비교하여 수학을잘하면 영어도잘하나?확인  </li>
-</ul>
+<li>쉽게 이해하자면, 한학생의 수학 영어점수를 비교하여 수학을잘하면 영어도잘하나?확인<br />
 </li>
-<li>Run test<ul>
+</ul></li>
+<li>Run test
+<ul>
 <li>연속적인 관측값들이 랜덤으로 나타난것인가를 검정하는 방법</li>
-<li>관측값들의 얻어진 순서에 근거하여 먼저얻어진 관측치가 후에 얻어진 관측치에 영향을 미치는지 확인  </li>
-</ul>
+<li>관측값들의 얻어진 순서에 근거하여 먼저얻어진 관측치가 후에 얻어진 관측치에 영향을 미치는지 확인<br />
 </li>
-<li>Kolmogorov Smirnov test<ul>
+</ul></li>
+<li>Kolmogorov Smirnov test
+<ul>
 <li>비교하고자 하는 두 분포의 empirical distribution function 의 차이를 특정 기준과 비교하여 기각의 여부를 결정하는 것</li>
-<li>한마디로 어떤 두 샘플의 부분부분을 비교하여 이 두샘플이 같은 집단에서 나왔는지를 확인  </li>
-</ul>
+<li>한마디로 어떤 두 샘플의 부분부분을 비교하여 이 두샘플이 같은 집단에서 나왔는지를 확인<br />
 </li>
-<li>Wilcoxon Sigend-Rank Test<ul>
-<li>자료의 순서(절대값으로)를 사용해 중위수(median)가 0 인지 검정<ul>
+</ul></li>
+<li>Wilcoxon Sigend-Rank Test
+<ul>
+<li>자료의 순서(절대값으로)를 사용해 중위수(median)가 0 인지 검정
+<ul>
 <li>중위수? : 양수데이터수 =음수데이터들수 -&gt; 중위수가 0</li>
-</ul>
-</li>
+</ul></li>
 <li>이 순위에 다시 +,- 를 부여하여 부호화된순위(signed rank)를 가지게함</li>
 <li>환자의 약 복용 전후 몸무게차이가 정규분포를 따른다는 귀무가설을 세우고 검정</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 ]]></content>
       <categories>
@@ -1072,53 +1563,61 @@
   <entry>
     <title>AI-day8</title>
     <url>/2021/05/17/AI-day8/</url>
-    <content><![CDATA[<h1 id="신뢰구간-Confidence-Interval"><a href="#신뢰구간-Confidence-Interval" class="headerlink" title="신뢰구간 (Confidence Interval)"></a>신뢰구간 (Confidence Interval)</h1><ul>
-<li>목표<ul>
+    <content><![CDATA[<h1 id="신뢰구간-confidence-interval">신뢰구간 (Confidence Interval)</h1>
+<ul>
+<li>목표
+<ul>
 <li>ANOVA, CLT 이해</li>
 <li>신뢰구간의 목적과 사용예시 이해</li>
-<li>추정된 통계치에 대한 신뢰구간 계산  </li>
+<li>추정된 통계치에 대한 신뢰구간 계산</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="신뢰구간이란"><a href="#신뢰구간이란" class="headerlink" title="신뢰구간이란?"></a>신뢰구간이란?</h2><ul>
+<h2 id="신뢰구간이란">신뢰구간이란?</h2>
+<ul>
 <li>실제 모수가 존재할 가능성이 높은구간</li>
 <li>모비율,모평균 등의 모수를 포함할 확률</li>
 <li>신뢰수준(Confidence level) : 구간에 모수평균이 포함될 확률</li>
 </ul>
-<h2 id="구간추정-Point-estimate-VS-Interval-estimate"><a href="#구간추정-Point-estimate-VS-Interval-estimate" class="headerlink" title="구간추정 (Point estimate VS Interval estimate)"></a>구간추정 (Point estimate VS Interval estimate)</h2><ul>
+<h2 id="구간추정-point-estimate-vs-interval-estimate">구간추정 (Point estimate VS Interval estimate)</h2>
+<ul>
 <li>Point -&gt; 하나의 값일것이다, Interval -&gt; a~b 사이일 것이다</li>
-<li>예측구간이 넓어질수록 신뢰도는 상승<ul>
+<li>예측구간이 넓어질수록 신뢰도는 상승
+<ul>
 <li>신뢰도 : 95% -&gt; 100번하면 95번은 모집단의 평균에 포함된값이나온다</li>
 <li>일반적으로 z값이 95% = 1.96, 90% = 1.65, 99% = 2.57</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="ANOVA"><a href="#ANOVA" class="headerlink" title="ANOVA"></a>ANOVA</h2><ul>
+<h2 id="anova">ANOVA</h2>
+<ul>
 <li>2개 이상의 그룹의 평균에 차이가 있는지를 가설검정</li>
 <li>만약 여러개를 하나씩 비교한다면? error 증가</li>
-<li>여러 그룹이 하나의 분포에서왔다고 가정<ul>
-<li>F-test<ul>
+<li>여러 그룹이 하나의 분포에서왔다고 가정
+<ul>
+<li>F-test
+<ul>
 <li>표본의 분산에 대한 두표본의 차이를 검정하는 방법</li>
-<li>카이제곱 : 단일표본의 모집단이 정규분포를 따르며 분산을 미리 알고 있는 경우    </li>
+<li>카이제곱 : 단일표본의 모집단이 정규분포를 따르며 분산을 미리 알고 있는 경우<br />
+</li>
 <li>F Test : 모집단을 알고 있지 않은 경우</li>
-<li>F = 그룹들 간의 분산 / 그룹내에서의 분산<ul>
+<li>F = 그룹들 간의 분산 / 그룹내에서의 분산
+<ul>
 <li>F 값이 크다 ? -&gt; 그룹끼리의 분포가 그룹내부보다 크다-&gt; 그룹간 분포가 다를것이다</li>
+</ul></li>
+</ul></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="큰수의-법칙-Law-of-large-numbers"><a href="#큰수의-법칙-Law-of-large-numbers" class="headerlink" title="큰수의 법칙 ( Law of large numbers )"></a>큰수의 법칙 ( Law of large numbers )</h2><ul>
+<h2 id="큰수의-법칙-law-of-large-numbers">큰수의 법칙 ( Law of large numbers )</h2>
+<ul>
 <li>샘플 데이터의수가 커질수록 , 샘플의 통계치는 점점 모집단의 모수와 같아진다</li>
 <li>일반적으로 샘플수가 30개 이상이면 큰수의법칙으로 볼 수 있다</li>
 </ul>
-<h2 id="중심극한정리-Central-Limit-Theorem-CLT"><a href="#중심극한정리-Central-Limit-Theorem-CLT" class="headerlink" title="중심극한정리 ( Central Limit Theorem, CLT )"></a>중심극한정리 ( Central Limit Theorem, CLT )</h2><ul>
+<h2 id="중심극한정리-central-limit-theorem-clt">중심극한정리 ( Central Limit Theorem, CLT )</h2>
+<ul>
 <li>샘플데이터가 많아질수록 샘플평균은 정규분포에 근사해진다</li>
 <li>샘플데이터들의 기존 분포가 모두 다르더라도, 샘플들의 평균은 데이터가 쌓일수록 모두 정규분포에 근사해지므로 서로 비교가 가능해짐(가설검정이 쉬워짐)</li>
 </ul>
-<h3 id="Quest"><a href="#Quest" class="headerlink" title="Quest"></a>Quest</h3><ul>
+<h3 id="quest">Quest</h3>
+<ul>
 <li>정규분포, T분포, F분포를 구분하고 설명할수 있는가</li>
 <li>P-value, 카이제곱의 x, F-test의 f값에대해 구분하고 설명할수있는가</li>
 <li>코딩에서 가독성을 올려주는 method chaining 에대해 알아보자</li>
@@ -1135,74 +1634,86 @@
   <entry>
     <title>AI-day9</title>
     <url>/2021/05/18/AI-day9/</url>
-    <content><![CDATA[<h1 id="베이지안-통계-개론-Bayesian-Inference"><a href="#베이지안-통계-개론-Bayesian-Inference" class="headerlink" title="베이지안 통계 개론 (Bayesian Inference)"></a>베이지안 통계 개론 (Bayesian Inference)</h1><ul>
-<li>이유 불충분의 정리<ul>
+    <content><![CDATA[<h1 id="베이지안-통계-개론-bayesian-inference">베이지안 통계 개론 (Bayesian Inference)</h1>
+<ul>
+<li>이유 불충분의 정리
+<ul>
 <li>확률을 모를때는 50대50으로 생각</li>
 <li>아무 정보없을때 사전확률(50%)</li>
 <li>어떤 새로운 정보로인해 상승한 사후확률(50+a%)</li>
-<li>이렇게 어떤 하나의 정보로인해 확률이 변하는것이 <strong>베이즈정리</strong> </li>
-</ul>
-</li>
+<li>이렇게 어떤 하나의 정보로인해 확률이 변하는것이 <strong>베이즈정리</strong></li>
+</ul></li>
 <li>조건부확률도 중요</li>
 </ul>
-<h2 id="총-확률의-법칙-The-Law-of-Total-Probability"><a href="#총-확률의-법칙-The-Law-of-Total-Probability" class="headerlink" title="총 확률의 법칙 (The Law of Total Probability)"></a>총 확률의 법칙 (The Law of Total Probability)</h2><ul>
+<h2 id="총-확률의-법칙-the-law-of-total-probability">총 확률의 법칙 (The Law of Total Probability)</h2>
+<ul>
 <li>특정 확률 변수에 대해, 모든 가능한 이벤트의 총 확률 = 1</li>
-<li>2개의 변수를 고려 한다면 두 변수가 연관이 있는 경우, B가 일어난 상황에서 A에 대한 확률 P(A)는, P(A|B) 의 형태로 표현  <img src="../images/ltp.PNG"></li>
+<li>2개의 변수를 고려 한다면 두 변수가 연관이 있는 경우, B가 일어난 상황에서 A에 대한 확률 P(A)는, P(A|B) 의 형태로 표현<br />
+<img src="../images/ltp.PNG"></li>
 </ul>
-<h2 id="조건부-확률-The-Law-of-Conditional-Probability"><a href="#조건부-확률-The-Law-of-Conditional-Probability" class="headerlink" title="조건부 확률 (The Law of Conditional Probability)"></a>조건부 확률 (The Law of Conditional Probability)</h2><ul>
-<li>전체사각형이 모든 확률공간(1) 일때 각각 B의 조건에서 A가 일어날 확률을 교집합으로 표현가능  <img src="../images/conditional.PNG" width="300"></li>
+<h2 id="조건부-확률-the-law-of-conditional-probability">조건부 확률 (The Law of Conditional Probability)</h2>
+<ul>
+<li>전체사각형이 모든 확률공간(1) 일때 각각 B의 조건에서 A가 일어날 확률을 교집합으로 표현가능<br />
+<img src="../images/conditional.PNG" width="300"></li>
 </ul>
-<h2 id="베이지안-이론-Bayes-Theorem"><a href="#베이지안-이론-Bayes-Theorem" class="headerlink" title="베이지안 이론 (Bayes Theorem)"></a>베이지안 이론 (Bayes Theorem)</h2><ul>
-<li>사후확률(posterior probability)을 사전확률(prior probability)과 likelihood를 이용해서 계산할 수 있도록 해 주는 확률 변환식<ul>
+<h2 id="베이지안-이론-bayes-theorem">베이지안 이론 (Bayes Theorem)</h2>
+<ul>
+<li>사후확률(posterior probability)을 사전확률(prior probability)과 likelihood를 이용해서 계산할 수 있도록 해 주는 확률 변환식
+<ul>
 <li>B가 주어진 상황에서 A의 확률 = A가 주어진 상황에서 B의 확률 X A의 확률 % B 의 확률로 표현</li>
 <li>p(A|B) -&gt; 사후 확률 (B라는 정보가 업데이트 된 이후 확률)</li>
 <li>p(A) -&gt; 사전 확률 (B라는 정보가 업데이트 되기 전의 사전확률)</li>
 <li>p(B|A) -&gt; likelihood(어떤 모델에서 해당 데이터(관측값)이 나올 확률)</li>
+</ul></li>
+<li>사전확률("Prior")은 사후확률("Updated")로 다시 표현 할 수 있음이 중요
+<ul>
+<li>쉽게말해 사후확률의 추가(샘플의 추가)로 불규칙한 확률을 정규분포와 비슷하게 업데이트 할수 있다 -&gt; 베이지안이론이 많이 쓰이는 이유<br />
+<img src="../images/bayes.PNG"></li>
+</ul></li>
 </ul>
-</li>
-<li>사전확률(“Prior”)은 사후확률(“Updated”)로 다시 표현 할 수 있음이 중요<ul>
-<li>쉽게말해 사후확률의 추가(샘플의 추가)로 불규칙한 확률을 정규분포와 비슷하게 업데이트 할수 있다 -&gt; 베이지안이론이 많이 쓰이는 이유  <img src="../images/bayes.PNG"></li>
-</ul>
-</li>
-</ul>
-<h2 id="베이지안-테스트를-반복하여-사용-repeated-testing"><a href="#베이지안-테스트를-반복하여-사용-repeated-testing" class="headerlink" title="베이지안 테스트를 반복하여 사용 (repeated testing)"></a>베이지안 테스트를 반복하여 사용 (repeated testing)</h2><ul>
-<li>False positive rate와 사전확률을 통해 반복적인 테스트로 정확한 확률을 계산<ul>
+<h2 id="베이지안-테스트를-반복하여-사용-repeated-testing">베이지안 테스트를 반복하여 사용 (repeated testing)</h2>
+<ul>
+<li>False positive rate와 사전확률을 통해 반복적인 테스트로 정확한 확률을 계산
+<ul>
 <li>TPR : True Positive Rate (= 민감도, true accept rate) 1인 케이스에 대해 1로 잘 예측한 비율(암환자를 암이라고 진단 함)</li>
 <li>FPR : False Positive Rate (= 1-특이도, false accept rate) 0인 케이스에 대해 1로 잘못 예측한 비율(암환자가 아닌데 암이라고 진단 함)</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h3 id="Bayesian-기반-신뢰구간-추정"><a href="#Bayesian-기반-신뢰구간-추정" class="headerlink" title="Bayesian 기반 신뢰구간 추정"></a>Bayesian 기반 신뢰구간 추정</h3><ul>
+<h3 id="bayesian-기반-신뢰구간-추정">Bayesian 기반 신뢰구간 추정</h3>
+<ul>
 <li>Scipy.stats.bayes_mvs()</li>
 </ul>
-<h3 id="Bayesian-Optimize"><a href="#Bayesian-Optimize" class="headerlink" title="Bayesian Optimize"></a>Bayesian Optimize</h3><ul>
-<li><a href="https://github.com/fmfn/BayesianOptimization">https://github.com/fmfn/BayesianOptimization</a></li>
+<h3 id="bayesian-optimize">Bayesian Optimize</h3>
+<ul>
+<li>https://github.com/fmfn/BayesianOptimization</li>
 </ul>
-<h2 id="Naive-Bayes"><a href="#Naive-Bayes" class="headerlink" title="Naive Bayes"></a>Naive Bayes</h2><ul>
+<h2 id="naive-bayes">Naive Bayes</h2>
+<ul>
 <li>bayes theorem을 사용하되, 고려해야할 특징이 많은경우 보다 단순화해서 판달할수있는 방법</li>
 <li>즉, multi=class 분류에서 쉽고 빠르게 예측가능</li>
-<li>수치형보다는 범주형데이터에 효과적<ul>
+<li>수치형보다는 범주형데이터에 효과적
+<ul>
 <li>특히 실시간 예측이 필요한경우나 질병예측분야에서 효과적</li>
-</ul>
-</li>
-<li>but ! 학습데이터에는 없지만 실제 검사데이터에 있는 범주에서는 확률이 0 이되어(zero frequency) 예측 불가능해짐<ul>
+</ul></li>
+<li>but ! 학습데이터에는 없지만 실제 검사데이터에 있는 범주에서는 확률이 0 이되어(zero frequency) 예측 불가능해짐
+<ul>
 <li>이를 방지하기위해 다른 테크닉이 필요하고, 실제 데이터간의 독립성이 불분명한경우에도 오류가능성있음</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="MLE-와-MAP"><a href="#MLE-와-MAP" class="headerlink" title="MLE 와 MAP"></a>MLE 와 MAP</h2><ul>
-<li>최대우도법(Maximum Likelihood Estimation, 이하 MLE)<ul>
+<h2 id="mle-와-map">MLE 와 MAP</h2>
+<ul>
+<li>최대우도법(Maximum Likelihood Estimation, 이하 MLE)
+<ul>
 <li>likelihood 가 높은것을 선택</li>
 <li>내 주머니에서 돈이 떨어질확률 vs 친구 주머니에서 떨어질확률 -&gt; 높은것을 선택</li>
 <li>바지에 주머니의 갯수가 몇개인지에 상관없이 떨어질확률만 생각(좋지않음)</li>
-</ul>
-</li>
-<li>최대 사후확률법(Maximum A Posteriori, 이하 MAP)<ul>
+</ul></li>
+<li>최대 사후확률법(Maximum A Posteriori, 이하 MAP)
+<ul>
 <li>posterior 가 높은것을 선택</li>
 <li>길에떨어져있는 돈이 내꺼일확률 vs 친구꺼일확률 -&gt; 높은것을 선택</li>
 <li>주머니의 갯수까지 고려</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 ]]></content>
       <categories>
@@ -1216,155 +1727,110 @@
   <entry>
     <title>DataScience</title>
     <url>/2021/04/06/DataScience/</url>
-    <content><![CDATA[<h1 id="데이터사이언스-시작한-이유"><a href="#데이터사이언스-시작한-이유" class="headerlink" title="데이터사이언스 시작한 이유?"></a>데이터사이언스 시작한 이유?</h1><ul>
+    <content><![CDATA[<h1 id="데이터사이언스-시작한-이유">데이터사이언스 시작한 이유?</h1>
+<ul>
 <li>백엔드 관련 공부하던 중 웹이나 앱의 개발보다는 정보와 데이터를 처리, 알고리즘을 이용한 수학적 과정에 흥미를 느낌</li>
 <li>데이터사이언스 엔지니어중 평소 인공지능관련된 딥러닝,머신러닝에 관심이 많아 기초부터 시작해서 딥러닝,머신러닝을 공부</li>
 <li>21년에 부지런히 공부하여 취업이 되면 best, 공부를하며 국내 인공지능 대학원에 22년 신입생으로 지원해보는것도 가능하다면 better(하지만 취업보다 더 어렵지않을까..)</li>
 </ul>
-<h2 id="생명공학전공-승무원경험이-장점이-될수-있을까"><a href="#생명공학전공-승무원경험이-장점이-될수-있을까" class="headerlink" title="생명공학전공 + 승무원경험이 장점이 될수 있을까?"></a>생명공학전공 + 승무원경험이 장점이 될수 있을까?</h2><ul>
+<h2 id="생명공학전공-승무원경험이-장점이-될수-있을까">생명공학전공 + 승무원경험이 장점이 될수 있을까?</h2>
+<ul>
 <li>현업은 석박사 or 전공자들이 많다고함</li>
 <li>So 국비지원 6개월과정과(21년 5월시작) + 파이썬과 알고리즘, 컴퓨터사이언스에대해 인강으로 독학시작(21년 4월시작)</li>
 <li>실제로 캐글같은 현업 활용사례에는 생명과학 전공도 도움이 될 수 있고(거의다 잊어버렸지만, 그래도 전공이니 조금만 복습하면 리마인드 가능), 승무원경험으로 쌓은 커뮤니케이션 능력과 회사경험은 충분히 장점이 될 수 있음</li>
-<li>데이터사이언스 기술만으로는 부족하다! 학문이나 인문학과 혼합된 </li>
+<li>데이터사이언스 기술만으로는 부족하다! 학문이나 인문학과 혼합된</li>
 </ul>
-<h2 id="데이터사이언스-목적"><a href="#데이터사이언스-목적" class="headerlink" title="데이터사이언스 목적"></a>데이터사이언스 목적</h2><ul>
-<li>데이터 이해 -&gt; 분석 -&gt; 해석 -&gt; 인사이트 도출 -&gt; 결론도출 -&gt; 비지니스 문제 해결<ul>
+<h2 id="데이터사이언스-목적">데이터사이언스 목적</h2>
+<ul>
+<li>데이터 이해 -&gt; 분석 -&gt; 해석 -&gt; 인사이트 도출 -&gt; 결론도출 -&gt; 비지니스 문제 해결
+<ul>
 <li>분석한 데이터를 해석할수없다면? 무용지물이다</li>
 <li>생명공학 전공이나 다른 사회경험은 이 데이터해석에서 충분히 강점이 될 수 있음</li>
 <li>현업에서 분석결과를 다른사람에게 전달할때, 전달받는 사람의 대부분은 데이터사이언스에대해 자세히 알지 못한다. 이때 커뮤니케이션 능력이 더욱더 중요</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="빅데이터시대로인한-데이터-종류와-처리가-더욱-다양해짐"><a href="#빅데이터시대로인한-데이터-종류와-처리가-더욱-다양해짐" class="headerlink" title="빅데이터시대로인한 데이터 종류와 처리가 더욱 다양해짐"></a>빅데이터시대로인한 데이터 종류와 처리가 더욱 다양해짐</h2><ul>
+<h2 id="빅데이터시대로인한-데이터-종류와-처리가-더욱-다양해짐">빅데이터시대로인한 데이터 종류와 처리가 더욱 다양해짐</h2>
+<ul>
 <li>예전에는 엑셀로만 다루었지만, 최근 프로그래밍 언어와 기술들로 훨씬더 방대하고 복잡한 데이터를 수집 및 분석이 가능해짐</li>
 <li>이 방대한 데이터를 사람이 직접 수집할수없기떄문에, 머신러닝 딥러닝 기술을 이용해 기계가 수많은 데이터를 처리하도록 함</li>
 </ul>
-<h2 id="머신러닝-딥러닝-AI"><a href="#머신러닝-딥러닝-AI" class="headerlink" title="머신러닝 딥러닝 AI"></a>머신러닝 딥러닝 AI</h2><ul>
-<li><p>머신러닝</p>
+<h2 id="머신러닝-딥러닝-ai">머신러닝 딥러닝 AI</h2>
 <ul>
-<li>알고리즘을 이용한 기계의 지도학습(supervised)과 비지도(unsupervised)학습  </li>
-</ul>
+<li>머신러닝
+<ul>
+<li>알고리즘을 이용한 기계의 지도학습(supervised)과 비지도(unsupervised)학습<br />
 </li>
-<li><p>딥러닝</p>
+</ul></li>
+<li>딥러닝
 <ul>
 <li>머신러닝의 알고리즘중, 인공신경망을 이용하여 머신러닝하는것</li>
-<li>이미지나 비디오데이터를 분석하는데 탁월  </li>
-</ul>
+<li>이미지나 비디오데이터를 분석하는데 탁월<br />
 </li>
-<li><p>AI</p>
+</ul></li>
+<li>AI
 <ul>
 <li>인간의 지능을 기계에 구현</li>
+</ul></li>
+<li>머신러닝 딥러닝은 구체적인 분석방법과 기법을 뜻함(데이터사이언티스트가 다룸)<br />
+</li>
+<li>AI는 그런 방법을 적용시켜 기업에서 방향을 설정하고 개념을 이용하는것</li>
 </ul>
-</li>
-<li><p>머신러닝 딥러닝은 구체적인 분석방법과 기법을 뜻함(데이터사이언티스트가 다룸)  </p>
-</li>
-<li><p>AI는 그런 방법을 적용시켜 기업에서 방향을 설정하고 개념을 이용하는것</p>
-</li>
-</ul>
-<h2 id="데이터사이언티스트"><a href="#데이터사이언티스트" class="headerlink" title="데이터사이언티스트?"></a>데이터사이언티스트?</h2><ul>
-<li>데이터사이언티스트 : 머신러닝과 딥러닝을 활용하여 데이터분석(Data Analytics)<ul>
+<h2 id="데이터사이언티스트">데이터사이언티스트?</h2>
+<ul>
+<li>데이터사이언티스트 : 머신러닝과 딥러닝을 활용하여 데이터분석(Data Analytics)
+<ul>
 <li>우버,넷플릭스,유투브,페이스북 같은 기업들은 스스로 자체적으로 머신러닝 딥러닝알고리즘을 만들어서 사용</li>
-<li>AI개발, 알고리즘연구원 등등으로 모집하기도 함  </li>
-</ul>
+<li>AI개발, 알고리즘연구원 등등으로 모집하기도 함<br />
 </li>
-<li>데이터 엔지니어(Data engineering)<ul>
-<li>ETL process를 이용하고, 데이터 준비와 전처리  </li>
-</ul>
+</ul></li>
+<li>데이터 엔지니어(Data engineering)
+<ul>
+<li>ETL process를 이용하고, 데이터 준비와 전처리<br />
 </li>
-<li>Data governance<ul>
-<li>데이터 관련된 법( 국내의 데이터3법, 유럽의 GDPR 등)을 다룸  </li>
-</ul>
+</ul></li>
+<li>Data governance
+<ul>
+<li>데이터 관련된 법( 국내의 데이터3법, 유럽의 GDPR 등)을 다룸<br />
 </li>
-<li>BI developer, Data visualiser, Application developer<ul>
-<li>처리된 크고 복잡한 데이터를 이해하기쉽고 유용하게 시각화 함  </li>
-<li>데이터의 종류가 방대해짐에따라 각각의 업무가 더욱 세분화되는 추세  </li>
-</ul>
+</ul></li>
+<li>BI developer, Data visualiser, Application developer
+<ul>
+<li>처리된 크고 복잡한 데이터를 이해하기쉽고 유용하게 시각화 함<br />
 </li>
+<li>데이터의 종류가 방대해짐에따라 각각의 업무가 더욱 세분화되는 추세</li>
+</ul></li>
 </ul>
-<hr>
-<h2 id="데이터-분석"><a href="#데이터-분석" class="headerlink" title="데이터 분석"></a>데이터 분석</h2><ul>
-<li>통계학 이론이 base<ul>
-<li>기술통계 Descriptive statistics<ul>
-<li>데이터가 어떤 형태인지 요약해서 정리</li>
-<li>데이터 이해를위한 데이터 묘사</li>
-<li>EDA</li>
-<li>변수들의 분포와 이 변수들의 관계성에대해 파악  </li>
-</ul>
+<h2 id="자세한-준비방법">자세한 준비방법</h2>
+<ul>
+<li>전문서적 3권이상 읽어보기
+<ul>
+<li>데이터분석이뭔지? 머신러닝 딥러닝은 정확히 무엇인지?<br />
 </li>
-<li>추론통계 Inferential statistics<ul>
-<li>표본데이터를 근거로 집단의 특성을 추론 및일반화</li>
-<li>가설검정의 과정에대해 공부하면서 추론통계개념을 이해하는것이 좋음  </li>
-</ul>
-</li>
-</ul>
-</li>
-<li>프로그래밍 언어를 이용하여 데이터를 분석하는 과정이 중요<ul>
-<li>Python / R</li>
-<li>EDA / Regression  </li>
-</ul>
-</li>
-</ul>
-<h2 id="데이터-준비"><a href="#데이터-준비" class="headerlink" title="데이터 준비"></a>데이터 준비</h2><ul>
-<li>데이터 전처리(Data preprocessing)<ul>
-<li>데이터 merging</li>
-<li>숫자변수 scaling</li>
-<li>범주형 변수활용</li>
-<li>결측치(missing values) 처리</li>
-<li>columns, values 의 일관성  </li>
-</ul>
-</li>
-<li>데이터 수집 (Data collecting)<ul>
-<li><strong>SQL (Structured Query Language)</strong> 갈수록 중요해지는 추세</li>
-<li>Data crawling (웹상에서 매우 유용)<ul>
-<li>python beatifulsoup</li>
-<li>selenium<h2 id="데이터-분석결과-활용"><a href="#데이터-분석결과-활용" class="headerlink" title="데이터 분석결과 활용"></a>데이터 분석결과 활용</h2></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>분석 결과보고<ul>
-<li>Plots 활용(쉽고빠름)<ul>
-<li>python- matplotlib.pyplot, seaborn</li>
-<li>R- ggplot2  </li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Dashborad 제작<ul>
-<li>PowerBi</li>
-<li>Tableau</li>
-<li>BI 툴 사용  </li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="자세한-준비방법"><a href="#자세한-준비방법" class="headerlink" title="자세한 준비방법"></a>자세한 준비방법</h2><ul>
-<li>전문서적 3권이상 읽어보기<ul>
-<li>데이터분석이뭔지? 머신러닝 딥러닝은 정확히 무엇인지?  </li>
-</ul>
-</li>
-<li>온라인강의(단순한 이론보다는 각각 직무스킬의 세부내용과 활용법까지 알기)<ul>
+</ul></li>
+<li>온라인강의(단순한 이론보다는 각각 직무스킬의 세부내용과 활용법까지 알기)
+<ul>
 <li>데이터분석 전체 과정에대한 설명은 기초로 알아야함</li>
-<li>원하는 직무에맞는 스킬을 추가로 선택  </li>
-</ul>
+<li>원하는 직무에맞는 스킬을 추가로 선택<br />
 </li>
-<li>뉴스레터 블로그 구독(최신정보의 습득)<ul>
-<li>python- pandas 관련내용은 매우 중요(SPARK, Tensorflow 등등…)</li>
+</ul></li>
+<li>뉴스레터 블로그 구독(최신정보의 습득)
+<ul>
+<li>python- pandas 관련내용은 매우 중요(SPARK, Tensorflow 등등...)</li>
 <li>이외의 데이터관련 국내외 공식사이트와 블로그로 최신정보 획득</li>
-</ul>
+</ul></li>
+<li>대학원은 세부 분야에대해서도 잘 알아봐야함
+<ul>
+<li>연구 및 개발위주의 학위과정은 필수<br />
 </li>
-<li>대학원은 세부 분야에대해서도 잘 알아봐야함<ul>
-<li>연구 및 개발위주의 학위과정은 필수  </li>
-</ul>
-</li>
-<li>자격증(비전공자라면 겸행할수록 좋음 but 시간대비 효율이 낮을수있음)<ul>
-<li>자격증은… 실제 현업 및 취업에 크게 도움되지않음</li>
+</ul></li>
+<li>자격증(비전공자라면 겸행할수록 좋음 but 시간대비 효율이 낮을수있음)
+<ul>
+<li>자격증은... 실제 현업 및 취업에 크게 도움되지않음</li>
 <li>공부하면서 얻는 내용자체가 도움이되지, 자격증 자체가 도움되진 않는다</li>
 <li>데이터분석전문가 ADP</li>
 <li>데이터분석준전문가 ADsP</li>
-<li>데이터 분석기사  </li>
-</ul>
-</li>
+<li>데이터 분석기사</li>
+</ul></li>
 </ul>
 ]]></content>
       <categories>
@@ -1375,46 +1841,40 @@
       </tags>
   </entry>
   <entry>
-    <title>MachineLearning-Day2</title>
-    <url>/2021/06/09/MachineLearning-Day2/</url>
-    <content><![CDATA[<h1 id="다중선형회귀-Multiple-Linear-Regression"><a href="#다중선형회귀-Multiple-Linear-Regression" class="headerlink" title="다중선형회귀 (Multiple Linear Regression)"></a>다중선형회귀 (Multiple Linear Regression)</h1><h2 id="MSE-Mean-Square-Error-amp-R2"><a href="#MSE-Mean-Square-Error-amp-R2" class="headerlink" title="MSE(Mean Square Error) &amp; R2"></a>MSE(Mean Square Error) &amp; R<sup>2</sup></h2><ul>
-<li>둘의 정의와 차이점은 무엇인가?<h2 id="Training-and-Testing-data"><a href="#Training-and-Testing-data" class="headerlink" title="Training and Testing data"></a>Training and Testing data</h2></li>
-<li>훈련,테스트 데이터를 나누는 이유는 ?<h2 id="low-bias-low-variance-모델"><a href="#low-bias-low-variance-모델" class="headerlink" title="low bias, low variance 모델"></a>low bias, low variance 모델</h2></li>
-<li>각 모델은 어떤것인지 훈련/테스트세트를 사용해 설명할 수 있어야함</li>
-</ul>
-<h2 id="다중선형회귀모델"><a href="#다중선형회귀모델" class="headerlink" title="다중선형회귀모델"></a>다중선형회귀모델</h2><h2 id="회귀모델의-평가지표"><a href="#회귀모델의-평가지표" class="headerlink" title="회귀모델의 평가지표"></a>회귀모델의 평가지표</h2><h2 id="과적합과-과소적합"><a href="#과적합과-과소적합" class="headerlink" title="과적합과 과소적합"></a>과적합과 과소적합</h2><h2 id="5-step-process"><a href="#5-step-process" class="headerlink" title="5 step process"></a>5 step process</h2><h2 id="Sum-of-Squares"><a href="#Sum-of-Squares" class="headerlink" title="Sum of Squares"></a>Sum of Squares</h2><h2 id="상관계수-amp-결정계수"><a href="#상관계수-amp-결정계수" class="headerlink" title="상관계수 &amp; 결정계수"></a>상관계수 &amp; 결정계수</h2><h2 id="회귀의-오류지표는"><a href="#회귀의-오류지표는" class="headerlink" title="회귀의 오류지표는?"></a>회귀의 오류지표는?</h2><h2 id="편향-분산의-트레이드오프"><a href="#편향-분산의-트레이드오프" class="headerlink" title="편향/분산의 트레이드오프"></a>편향/분산의 트레이드오프</h2>]]></content>
-      <categories>
-        <category>Machine Learning</category>
-      </categories>
-      <tags>
-        <tag>Multiple Regression</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MachineLearning-Day1</title>
     <url>/2021/06/08/MachineLearing-Day1/</url>
-    <content><![CDATA[<h1 id="단순회귀"><a href="#단순회귀" class="headerlink" title="단순회귀"></a>단순회귀</h1><ul>
+    <content><![CDATA[<h1 id="단순회귀">단순회귀</h1>
+<ul>
 <li>종속변수 : 결과, 타겟, 레이블 (y)</li>
 <li>독립변수 : 변수 (x)</li>
-<li>회귀선의 공식 $\hat{y}$ = b<sub>0</sub> + b<sub>1</sub>$x$<ul>
+<li>회귀선의 공식 <span class="math inline">\(\hat{y}\)</span> = b<sub>0</sub> + b<sub>1</sub><span class="math inline">\(x\)</span>
+<ul>
 <li>회귀선의 공식을 도출과정 중요</li>
-</ul>
-</li>
-<li>Tabular Data <ul>
+</ul></li>
+<li>Tabular Data
+<ul>
 <li>행데이터 : 관측치 (열 별로 데이터타입이 다를수있음)</li>
 <li>열데이터 : 변수 (같은 열에는 같은 데이터타입)</li>
-</ul>
-</li>
-<li>분류와 회귀의 차이<ul>
+</ul></li>
+<li>분류와 회귀의 차이
+<ul>
 <li>출력유형 : 분류는 레이블, 회귀는 연속적</li>
 <li>목적 : 분류는 결정경계 찾기(데이터를 설명하는 경계선), 회귀는 최대한 비슷한값찾기</li>
 <li>평가 : 분류는 정밀도사용, 회귀는 r<sup>2</sup> 에러사용</li>
 <li>“How Much / How Many?” (회귀)</li>
 <li>“Is this A or B?” (분류)</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="단순선형회귀모델"><a href="#단순선형회귀모델" class="headerlink" title="단순선형회귀모델"></a>단순선형회귀모델</h2><h2 id="단순서형회귀-모델학습"><a href="#단순서형회귀-모델학습" class="headerlink" title="단순서형회귀 모델학습"></a>단순서형회귀 모델학습</h2><h2 id="회귀계수"><a href="#회귀계수" class="headerlink" title="회귀계수"></a>회귀계수</h2><h2 id="sklearn-linear-model-LinearRegression"><a href="#sklearn-linear-model-LinearRegression" class="headerlink" title="sklearn.linear_model.LinearRegression"></a>sklearn.linear_model.LinearRegression</h2><h2 id="sklearn-metrics-mean-absolute-error"><a href="#sklearn-metrics-mean-absolute-error" class="headerlink" title="sklearn.metrics.mean_absolute_error"></a>sklearn.metrics.mean_absolute_error</h2><h2 id="Supervised-Learning"><a href="#Supervised-Learning" class="headerlink" title="Supervised Learning"></a>Supervised Learning</h2><h2 id="최소제곱법이란"><a href="#최소제곱법이란" class="headerlink" title="최소제곱법이란?"></a>최소제곱법이란?</h2><h2 id="Plotly-시각화-툴"><a href="#Plotly-시각화-툴" class="headerlink" title="Plotly 시각화 툴"></a>Plotly 시각화 툴</h2><h2 id="Interact-사용하기"><a href="#Interact-사용하기" class="headerlink" title="Interact 사용하기"></a>Interact 사용하기</h2>]]></content>
+<h2 id="단순선형회귀모델">단순선형회귀모델</h2>
+<h2 id="단순서형회귀-모델학습">단순서형회귀 모델학습</h2>
+<h2 id="회귀계수">회귀계수</h2>
+<h2 id="sklearn.linear_model.linearregression">sklearn.linear_model.LinearRegression</h2>
+<h2 id="sklearn.metrics.mean_absolute_error">sklearn.metrics.mean_absolute_error</h2>
+<h2 id="supervised-learning">Supervised Learning</h2>
+<h2 id="최소제곱법이란">최소제곱법이란?</h2>
+<h2 id="plotly-시각화-툴">Plotly 시각화 툴</h2>
+<h2 id="interact-사용하기">Interact 사용하기</h2>
+]]></content>
       <categories>
         <category>Machine Learning</category>
       </categories>
@@ -1423,61 +1883,11 @@
       </tags>
   </entry>
   <entry>
-    <title>MachineLearning-Day4</title>
-    <url>/2021/06/11/MachineLearning-Day4/</url>
-    <content><![CDATA[<h2 id="로지스틱-회귀분석"><a href="#로지스틱-회귀분석" class="headerlink" title="로지스틱 회귀분석"></a>로지스틱 회귀분석</h2><ul>
-<li>Odds, Odds ratio, logit</li>
-<li>categorical 한 종속변수(이항종속변수)를 numeric으로 바꿔줌으로써 OLS 사용가능해짐</li>
-<li>but 해석방법이 기존의 OLS와 다름</li>
-</ul>
-<h2 id="회귀계수의-의미가-독립변수-1단위-증가당-종속변수의-변화량이-아니다"><a href="#회귀계수의-의미가-독립변수-1단위-증가당-종속변수의-변화량이-아니다" class="headerlink" title="회귀계수의 의미가 독립변수 1단위 증가당 종속변수의 변화량이 아니다"></a>회귀계수의 의미가 독립변수 1단위 증가당 종속변수의 변화량이 아니다</h2><ul>
-<li>회귀계수가 양수 -&gt; 1 , 음수-&gt;0 에 가깝다고 1차적으로 판단</li>
-<li>그것을 바로 해석하지않고, 회귀계수의 루트를 제거해준 값을 다시확인</li>
-<li>여기서 루트를 제거한것이 Odds ratio</li>
-<li>1단위 증가당 종속변수의 변화량이아니라, ~배 증가함 으로 판단</li>
-<li>but 0.98배 증가한다 -&gt; 증가는 증간데 최종의미는 결국 0.02배 줄어든것인데…?</li>
-<li>그렇기 때문에 로그를 떼어낸 값 -1 후 x 100 해줌</li>
-<li>그럼 그 결과값 % 만큼 증가,감소 했다고 판단가능<h2 id="이런-복잡한-해석을-피하기위해서-레퍼런스-그룹의-선정이-매우-중요"><a href="#이런-복잡한-해석을-피하기위해서-레퍼런스-그룹의-선정이-매우-중요" class="headerlink" title="이런 복잡한 해석을 피하기위해서, 레퍼런스 그룹의 선정이 매우 중요"></a>이런 복잡한 해석을 피하기위해서, 레퍼런스 그룹의 선정이 매우 중요</h2></li>
-<li>모든 독립변수의 증감에 대해 종속변수가 1이 되는 확률로 해석. 0이되는 확률로해석하면 안됨</li>
-</ul>
-<hr>
-<h2 id="Testing-모델을-제대로-빌딩하고있는가-방법이-재대로인가"><a href="#Testing-모델을-제대로-빌딩하고있는가-방법이-재대로인가" class="headerlink" title="Testing = 모델을 제대로 빌딩하고있는가? 방법이 재대로인가"></a>Testing = 모델을 제대로 빌딩하고있는가? 방법이 재대로인가</h2><h2 id="Validation-제대로된-모델을-빌딩하고-있는가-모델-성능이-제대로인가"><a href="#Validation-제대로된-모델을-빌딩하고-있는가-모델-성능이-제대로인가" class="headerlink" title="Validation = 제대로된 모델을 빌딩하고 있는가? 모델 성능이 제대로인가"></a>Validation = 제대로된 모델을 빌딩하고 있는가? 모델 성능이 제대로인가</h2><hr>
-<h2 id="Training-set"><a href="#Training-set" class="headerlink" title="Training set"></a>Training set</h2><ul>
-<li>모델학습, 학습을 반복하면 과적합 되므로 좋지않다</li>
-</ul>
-<h2 id="Validation-set"><a href="#Validation-set" class="headerlink" title="Validation set"></a>Validation set</h2><ul>
-<li>학습된 모델의 성능을 측정, 다양한 파라미터와 모델 사용, 그중 가장 성능이 좋았던 모델을 선택</li>
-</ul>
-<h2 id="Test-set"><a href="#Test-set" class="headerlink" title="Test set"></a>Test set</h2><ul>
-<li>validation으로 결정한 모델을 마지막으로 딱 한번 성능을 측정하기위해 사용</li>
-</ul>
-<h3 id="1-Training-set으로-모델들을-만든-뒤-validation-set으로-최종-모델을-선택"><a href="#1-Training-set으로-모델들을-만든-뒤-validation-set으로-최종-모델을-선택" class="headerlink" title="1. Training set으로 모델들을 만든 뒤, validation set으로 최종 모델을 선택"></a>1. Training set으로 모델들을 만든 뒤, validation set으로 최종 모델을 선택</h3><h3 id="2-Validation-set은-여러-모델들-각각에-적용되어-성능을-측정하고-최종-모델을-선정하기-위해-사용"><a href="#2-Validation-set은-여러-모델들-각각에-적용되어-성능을-측정하고-최종-모델을-선정하기-위해-사용" class="headerlink" title="2. Validation set은 여러 모델들 각각에 적용되어 성능을 측정하고 최종 모델을 선정하기 위해 사용."></a>2. Validation set은 여러 모델들 각각에 적용되어 성능을 측정하고 최종 모델을 선정하기 위해 사용.</h3><h3 id="3-선정된-모델에-대해-test-set으로-단-한번-성능을-측정"><a href="#3-선정된-모델에-대해-test-set으로-단-한번-성능을-측정" class="headerlink" title="3. 선정된 모델에 대해 test set으로 단 한번 성능을 측정"></a>3. 선정된 모델에 대해 test set으로 단 한번 성능을 측정</h3><hr>
-<h2 id="로지스틱회귀-선형회귀-차이점"><a href="#로지스틱회귀-선형회귀-차이점" class="headerlink" title="로지스틱회귀, 선형회귀 차이점?"></a>로지스틱회귀, 선형회귀 차이점?</h2><ul>
-<li>선형회귀는 최소제곱법으로 직선을 만들고 잔차,오차,R2 등을 활용가능</li>
-<li>로지스틱은 샘플의 종속변수를 분류하여 더 가능도가 높은 feature를 선택가능</li>
-</ul>
-<hr>
-<h2 id="좋은-유효성-검사세트-만들기"><a href="#좋은-유효성-검사세트-만들기" class="headerlink" title="좋은 유효성 검사세트 만들기"></a>좋은 유효성 검사세트 만들기</h2><ul>
-<li>데이터의 편향과 분산을 잘 고려하여 모델을 선택해야 과(소)적합을 피할 수 있음</li>
-</ul>
-<h2 id="시계열-데이터"><a href="#시계열-데이터" class="headerlink" title="시계열 데이터?"></a>시계열 데이터?</h2><ul>
-<li>시간을 기준으로 나누어져 있기때문에, 학습,검증,테스트 데이터를 나누기 편함</li>
-<li>but 어느정도 연속된 섹션을 설정하는것이좋음, 날짜의 간격이 너무 크면 의미가 흐려지므로</li>
-<li>훈련,검증세트의 겹침이 발생하여 교차검증이 발생할 수 있음을 주의</li>
-</ul>
-<hr>
-]]></content>
-      <categories>
-        <category>Machine Learning</category>
-      </categories>
-      <tags>
-        <tag>Logistic Regression</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MachineLearning-Day3</title>
     <url>/2021/06/10/MachineLearning-Day3/</url>
-    <content><![CDATA[<h2 id="릿지회귀-능선회귀-Ridge-regression"><a href="#릿지회귀-능선회귀-Ridge-regression" class="headerlink" title="릿지회귀,능선회귀 (Ridge regression)"></a>릿지회귀,능선회귀 (Ridge regression)</h2><h2 id="라쏘회귀-Lasso-regression"><a href="#라쏘회귀-Lasso-regression" class="headerlink" title="라쏘회귀 (Lasso regression)"></a>라쏘회귀 (Lasso regression)</h2>]]></content>
+    <content><![CDATA[<h2 id="릿지회귀능선회귀-ridge-regression">릿지회귀,능선회귀 (Ridge regression)</h2>
+<h2 id="라쏘회귀-lasso-regression">라쏘회귀 (Lasso regression)</h2>
+]]></content>
       <categories>
         <category>Machine Learning</category>
       </categories>
@@ -1488,53 +1898,59 @@
   <entry>
     <title>딥러닝기초</title>
     <url>/2021/04/06/%EB%94%A5%EB%9F%AC%EB%8B%9D%EA%B8%B0%EC%B4%88/</url>
-    <content><![CDATA[<h1 id="딥러닝-사전기초지식"><a href="#딥러닝-사전기초지식" class="headerlink" title="딥러닝 사전기초지식"></a>딥러닝 사전기초지식</h1><ul>
+    <content><![CDATA[<h1 id="딥러닝-사전기초지식">딥러닝 사전기초지식</h1>
+<ul>
 <li>python</li>
 <li>미분의 개념들, 행렬 연산, 지수와 로그</li>
 </ul>
-<h2 id="딥러닝"><a href="#딥러닝" class="headerlink" title="딥러닝?"></a>딥러닝?</h2><ul>
+<h2 id="딥러닝">딥러닝?</h2>
+<ul>
 <li>Deep Neural Networks(DNN)을 학습시켜 문제 해결</li>
 <li>인공신경망(Artificial Neural Networks)의 일부분이라 볼 수 있음</li>
 <li>비선형함수로, 머신러닝에비해 패턴인식능력 월등</li>
-<li>이미지나 텍스트, 음성같은 분야들에서 비약적 성능개선<ul>
+<li>이미지나 텍스트, 음성같은 분야들에서 비약적 성능개선
+<ul>
 <li>기존 머신러닝과 다르게 hand-crafted feature 필요없음</li>
 <li>단순 raw 데이터 넣기만하면 자동으로 feature 학습</li>
-</ul>
-</li>
+</ul></li>
 <li>음성인식, 기계번역, 자율주행, 객체인식및 이미지분류, 사진합성및 보정, 데이터분석 등등</li>
 </ul>
-<h2 id="인공지능-모델이란"><a href="#인공지능-모델이란" class="headerlink" title="인공지능 모델이란"></a>인공지능 모델이란</h2><ul>
-<li>x 가주어지면 y를 반환<ul>
+<h2 id="인공지능-모델이란">인공지능 모델이란</h2>
+<ul>
+<li>x 가주어지면 y를 반환
+<ul>
 <li>y=f(x)</li>
-</ul>
-</li>
-<li>파라미터(weight parameter)<ul>
+</ul></li>
+<li>파라미터(weight parameter)
+<ul>
 <li>f 가 동작하는 방식을 결정</li>
-</ul>
-</li>
-<li>학습 ?<ul>
+</ul></li>
+<li>학습 ?
+<ul>
 <li>x와y의 쌍으로 이뤄진 데이터가 주어지면, x-&gt;y 로가는 관계를 배우는것</li>
 <li>x와y를 통해 적절한 파라미터를 찾아내는것</li>
-</ul>
-</li>
-<li>모델 ?<ul>
+</ul></li>
+<li>모델 ?
+<ul>
 <li>상황에따라 알고리즘자체 혹은 파라미터를 뜻하기도 함</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h3 id="좋은-인공지능이란"><a href="#좋은-인공지능이란" class="headerlink" title="좋은 인공지능이란?"></a>좋은 인공지능이란?</h3><ul>
+<h3 id="좋은-인공지능이란">좋은 인공지능이란?</h3>
+<ul>
 <li>일반화(Generalization)를 잘 하는 모델</li>
-<li>보지못한 데이터에대해 좋은 예측을하는 모델<ul>
-<li>모든 경우의수를 모을수없으므로…</li>
+<li>보지못한 데이터에대해 좋은 예측을하는 모델
+<ul>
+<li>모든 경우의수를 모을수없으므로...</li>
 <li>스스로 새로운 데이터에대해 좋은 판단을 내릴수있어야함</li>
+</ul></li>
 </ul>
+<hr />
+<h2 id="딥러닝의-목적과-순서">딥러닝의 목적과 순서</h2>
+<ul>
+<li>주어진 데이터에대해 결과를 내는 가상의 함수를 <strong>모사</strong>하는 함수를 만드는것<br />
 </li>
 </ul>
-<hr>
-<h2 id="딥러닝의-목적과-순서"><a href="#딥러닝의-목적과-순서" class="headerlink" title="딥러닝의 목적과 순서"></a>딥러닝의 목적과 순서</h2><ul>
-<li>주어진 데이터에대해 결과를 내는 가상의 함수를 <strong>모사</strong>하는 함수를 만드는것  </li>
-</ul>
-<ol>
+<ol type="1">
 <li>문제정의</li>
 </ol>
 <ul>
@@ -1542,74 +1958,75 @@
 <li>풀고자하는 문제를 단계별로 나누고 simplify</li>
 <li>신경망이라는 함수에 넣기위한 x와 결과값y가 정의되어야 함</li>
 </ul>
-<ol start="2">
+<ol start="2" type="1">
 <li>데이터수집</li>
 </ol>
 <ul>
 <li>문제 정의에따라 정해진 x와y</li>
-<li>풀고자하는 문제의 영역에따라 수집방법이 다름<ul>
+<li>풀고자하는 문제의 영역에따라 수집방법이 다름
+<ul>
 <li>자연어처리,컴퓨터비전:크롤링</li>
 <li>데이터분석: 실제수집데이터</li>
-</ul>
-</li>
-<li>필요에따라 레이블링작업 수행<ul>
+</ul></li>
+<li>필요에따라 레이블링작업 수행
+<ul>
 <li>자동적으로 레이블이 y로 주어질수도있음</li>
 <li>but 대부분 레이블이 따로필요</li>
 <li>비지도학습(unsupervised learning)을 기대하면 안됨</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<ol start="3">
+<ol start="3" type="1">
 <li>데이터 전처리 및 분석</li>
 </ol>
 <ul>
-<li>수집도니 데이터를 신경망에 넣어주기위한 형태로 가공하는 과정<ul>
+<li>수집도니 데이터를 신경망에 넣어주기위한 형태로 가공하는 과정
+<ul>
 <li>입출력 값 정제(cleaning &amp; normalization)</li>
-</ul>
-</li>
-<li>이 과정에서 탐험적분석(Exploratory Data Analaysis, EDA) 필요<ul>
+</ul></li>
+<li>이 과정에서 탐험적분석(Exploratory Data Analaysis, EDA) 필요
+<ul>
 <li>데이터에 맞는 알고리즘을 찾기위함</li>
 <li>자연어처리, 컴퓨터비전의경우는 생략되기도 함</li>
-</ul>
-</li>
-<li>영상처리(computer vision)의 경우, 데이터증강(argumentation)이 수행됨<ul>
+</ul></li>
+<li>영상처리(computer vision)의 경우, 데이터증강(argumentation)이 수행됨
+<ul>
 <li>rotation,flipping,shifting 등 간단한 연산</li>
 <li>특히 전처리 및 분석은 경험을 많이 해보는것이 중요</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<ol start="4">
+<ol start="4" type="1">
 <li>알고리즘 적용</li>
 </ol>
 <ul>
 <li>데이터에대해 가설을 세우고, 해당 가설을위한 알고리즘(모델)을 적용</li>
 </ul>
-<ol start="5">
+<ol start="5" type="1">
 <li>평가</li>
 </ol>
 <ul>
-<li>문제 정의에 따른 공장하고 올바른 평가필요<ul>
+<li>문제 정의에 따른 공장하고 올바른 평가필요
+<ul>
 <li>가설을 검증하기 위한 실험 설계</li>
-</ul>
-</li>
-<li>테스트셋(test set) 구성<ul>
+</ul></li>
+<li>테스트셋(test set) 구성
+<ul>
 <li>판별력이 중요</li>
 <li>실제데이터와 가장 비슷하게 구성되어야함</li>
-</ul>
-</li>
+</ul></li>
 <li>정량적 평가(extrinsic evaluation)와 정성적 평가(intrinsic evaluation)</li>
 </ul>
-<ol start="6">
+<ol start="6" type="1">
 <li>배포</li>
 </ol>
 <ul>
 <li>학습과 평가가 완료된 모델 weights 파일을 배포</li>
 <li>RESTful API 등을 통해 wrapping 후 배포</li>
-<li>데이터 분포의 변화에따른 모델 업데이트 및 유지보수가 필요할 수 있음</li>
+<li><h2 id="데이터-분포의-변화에따른-모델-업데이트-및-유지보수가-필요할-수-있음">데이터 분포의 변화에따른 모델 업데이트 및 유지보수가 필요할 수 있음</h2></li>
 </ul>
-<hr>
-<h2 id="Appendix-Basic-math"><a href="#Appendix-Basic-math" class="headerlink" title="Appendix: Basic math"></a>Appendix: Basic math</h2><ul>
-<li>지수와 로그<ul>
+<h2 id="appendix-basic-math">Appendix: Basic math</h2>
+<ul>
+<li>지수와 로그
+<ul>
 <li>지수 기본법칙과 연산법칙 숙지</li>
 <li>머신러닝에서는 로그의 밑으로 자연상수 e를 기본적으로 사용함을 기억</li>
 <li>log1 = 0</li>
@@ -1618,19 +2035,18 @@
 <li>log a + log b = log ab</li>
 <li>log a - log b = log a/b</li>
 <li>log a의 b승 = b log a</li>
-</ul>
-</li>
-<li>시그마(덧셈)와 파이(곱셈)<ul>
+</ul></li>
+<li>시그마(덧셈)와 파이(곱셈)
+<ul>
 <li>정의를 알고 파이썬 코드로 짤줄 알아야함</li>
-</ul>
-</li>
-<li>argmax (hat ‘^’)<ul>
+</ul></li>
+<li>argmax (hat '^')
+<ul>
 <li>x(hat) = argmax f(x)</li>
 <li>f(x)가 최대값을 나타내는 argument x 를 리턴</li>
 <li>max 값을 리턴하는게아닌 값을 만드는 x를 리턴함을 기억</li>
 <li>같은 뉘앙스로 최소값을 나타내는 x를 리턴하는 argmin 도 있음</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 ]]></content>
       <categories>
@@ -1641,20 +2057,85 @@
       </tags>
   </entry>
   <entry>
+    <title>MachineLearning-Day4</title>
+    <url>/2021/06/11/MachineLearning-Day4/</url>
+    <content><![CDATA[<h2 id="로지스틱-회귀분석">로지스틱 회귀분석</h2>
+<ul>
+<li>Odds, Odds ratio, logit</li>
+<li>categorical 한 종속변수(이항종속변수)를 numeric으로 바꿔줌으로써 OLS 사용가능해짐</li>
+<li>but 해석방법이 기존의 OLS와 다름</li>
+</ul>
+<h2 id="회귀계수의-의미가-독립변수-1단위-증가당-종속변수의-변화량이-아니다">회귀계수의 의미가 독립변수 1단위 증가당 종속변수의 변화량이 아니다</h2>
+<ul>
+<li>회귀계수가 양수 -&gt; 1 , 음수-&gt;0 에 가깝다고 1차적으로 판단</li>
+<li>그것을 바로 해석하지않고, 회귀계수의 루트를 제거해준 값을 다시확인</li>
+<li>여기서 루트를 제거한것이 Odds ratio</li>
+<li>1단위 증가당 종속변수의 변화량이아니라, ~배 증가함 으로 판단</li>
+<li>but 0.98배 증가한다 -&gt; 증가는 증간데 최종의미는 결국 0.02배 줄어든것인데...?</li>
+<li>그렇기 때문에 로그를 떼어낸 값 -1 후 x 100 해줌</li>
+<li>그럼 그 결과값 % 만큼 증가,감소 했다고 판단가능 ## 이런 복잡한 해석을 피하기위해서, 레퍼런스 그룹의 선정이 매우 중요</li>
+<li>모든 독립변수의 증감에 대해 종속변수가 1이 되는 확률로 해석. 0이되는 확률로해석하면 안됨</li>
+</ul>
+<hr />
+<h2 id="testing-모델을-제대로-빌딩하고있는가-방법이-재대로인가">Testing = 모델을 제대로 빌딩하고있는가? 방법이 재대로인가</h2>
+<h2 id="validation-제대로된-모델을-빌딩하고-있는가-모델-성능이-제대로인가">Validation = 제대로된 모델을 빌딩하고 있는가? 모델 성능이 제대로인가</h2>
+<hr />
+<h2 id="training-set">Training set</h2>
+<ul>
+<li>모델학습, 학습을 반복하면 과적합 되므로 좋지않다</li>
+</ul>
+<h2 id="validation-set">Validation set</h2>
+<ul>
+<li>학습된 모델의 성능을 측정, 다양한 파라미터와 모델 사용, 그중 가장 성능이 좋았던 모델을 선택</li>
+</ul>
+<h2 id="test-set">Test set</h2>
+<ul>
+<li>validation으로 결정한 모델을 마지막으로 딱 한번 성능을 측정하기위해 사용</li>
+</ul>
+<h3 id="training-set으로-모델들을-만든-뒤-validation-set으로-최종-모델을-선택">1. Training set으로 모델들을 만든 뒤, validation set으로 최종 모델을 선택</h3>
+<h3 id="validation-set은-여러-모델들-각각에-적용되어-성능을-측정하고-최종-모델을-선정하기-위해-사용.">2. Validation set은 여러 모델들 각각에 적용되어 성능을 측정하고 최종 모델을 선정하기 위해 사용.</h3>
+<h3 id="선정된-모델에-대해-test-set으로-단-한번-성능을-측정">3. 선정된 모델에 대해 test set으로 단 한번 성능을 측정</h3>
+<hr />
+<h2 id="로지스틱회귀-선형회귀-차이점">로지스틱회귀, 선형회귀 차이점?</h2>
+<ul>
+<li>선형회귀는 최소제곱법으로 직선을 만들고 잔차,오차,R2 등을 활용가능</li>
+<li>로지스틱은 샘플의 종속변수를 분류하여 더 가능도가 높은 feature를 선택가능</li>
+</ul>
+<hr />
+<h2 id="좋은-유효성-검사세트-만들기">좋은 유효성 검사세트 만들기</h2>
+<ul>
+<li>데이터의 편향과 분산을 잘 고려하여 모델을 선택해야 과(소)적합을 피할 수 있음</li>
+</ul>
+<h2 id="시계열-데이터">시계열 데이터?</h2>
+<ul>
+<li>시간을 기준으로 나누어져 있기때문에, 학습,검증,테스트 데이터를 나누기 편함</li>
+<li>but 어느정도 연속된 섹션을 설정하는것이좋음, 날짜의 간격이 너무 크면 의미가 흐려지므로</li>
+<li>훈련,검증세트의 겹침이 발생하여 교차검증이 발생할 수 있음을 주의</li>
+</ul>
+<hr />
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+      </categories>
+      <tags>
+        <tag>Logistic Regression</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>linear layer</title>
     <url>/2021/04/15/linear-layer/</url>
-    <content><![CDATA[<h1 id="Linear-layer"><a href="#Linear-layer" class="headerlink" title="Linear layer"></a>Linear layer</h1><ul>
+    <content><![CDATA[<h1 id="linear-layer">Linear layer</h1>
+<ul>
 <li>신경망의 기본요소</li>
 <li>Fully-connected (FC) layer</li>
 <li>내부 파라미터에따른 선형변환을 수행</li>
-<li>각 입력노드에 weight(가중치)를 곱하고 합친후, bias(편향) 더함  </li>
+<li>각 입력노드에 weight(가중치)를 곱하고 합친후, bias(편향) 더함</li>
 </ul>
-<img src="./_images/linear.PNG">
-
+<p><img src="./_images/linear.PNG"></p>
 <ul>
-<li>이때 행렬의 곱으로 표현가능.  </li>
+<li>이때 행렬의 곱으로 표현가능.</li>
 </ul>
-<img src="./_images/linearmulit.PNG">
+<p><img src="./_images/linearmulit.PNG"></p>
 ]]></content>
       <categories>
         <category>Deep-Learning</category>
@@ -1664,397 +2145,29 @@
       </tags>
   </entry>
   <entry>
-    <title>AI-day6</title>
-    <url>/2021/05/13/AI-day6/</url>
-    <content><![CDATA[<h1 id="통계학"><a href="#통계학" class="headerlink" title="통계학"></a>통계학</h1><ul>
-<li>Estimation / Sampling의 목적과 방법</li>
-<li>가설검정 이해</li>
-<li>T-test의 목적과 사용예시 숙지  </li>
-</ul>
-<hr>
-<h2 id="기술-통계치-Descriptive-Statistics-란"><a href="#기술-통계치-Descriptive-Statistics-란" class="headerlink" title="기술 통계치(Descriptive Statistics)란?"></a>기술 통계치(Descriptive Statistics)란?</h2><ul>
-<li>count, mean, standard dev, min, 1Q, median, 3Q, max 등의 데이터를 설명 하는 값(혹은 통계치)</li>
-<li><a href="https://drhongdatanote.tistory.com/25">https://drhongdatanote.tistory.com/25</a></li>
-<li>기술통계치의 시각화<ul>
-<li>df.describe()</li>
-<li>Mean / Median / Mode</li>
-<li>Range</li>
-<li>Var / SD</li>
-<li>Kurtosis</li>
-<li>Skewness  </li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="추리통계치-Inferetial-Statistics"><a href="#추리통계치-Inferetial-Statistics" class="headerlink" title="추리통계치(Inferetial Statistics)"></a>추리통계치(Inferetial Statistics)</h2><ul>
-<li>어떤 큰 집단에서 통계를할때 큰집단 내부의 작은 샘플그룹을 선정한후 분석,추론하는것</li>
-<li>키워드들을 알아두자<ul>
-<li>Population, Parameter, Statistic, Estimator, Standard Deviation, Standard Error  </li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="Effective-Sampling"><a href="#Effective-Sampling" class="headerlink" title="Effective Sampling"></a>Effective Sampling</h2><ul>
-<li>Simple random sampling<ul>
-<li>모집단에서 무작위로 sampling</li>
-</ul>
-</li>
-<li>Systematic sampling<ul>
-<li>모집단에서 규칙을 가지고 sample 추출<br>ex) 1, 6, 11, 16, … 번째의 데이터</li>
-</ul>
-</li>
-<li>Stratified random sampling<ul>
-<li>모집단을 미리 여러 그룹으로 나누고, 그 그룹별로 무작위 추출<br>ex) 여론 조사를 위해 사람을 나이대 별로 나누고, 해당 그룹안에서 무작위 추출</li>
-</ul>
-</li>
-<li>Cluster sampling<ul>
-<li>모집단을 미리 여러 그룹으로 나누고, 이후 특정 그룹을 무작위로 선택  </li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="가설검정"><a href="#가설검정" class="headerlink" title="가설검정"></a>가설검정</h2><ul>
-<li>주어진 상황에 대해서, 하고자 하는 주장이 맞는지 아닌지를 판정하는 과정</li>
-<li>모집단의 실제 값에 대한 sample의 통계치를 사용해 통계적으로 유의한지 아닌지 여부를 판정</li>
-<li><a href="https://en.wikipedia.org/wiki/Statistical_hypothesis_testing">https://en.wikipedia.org/wiki/Statistical_hypothesis_testing</a></li>
-<li>예시에 사용해본 메서드들<ul>
-<li>np.random.seed()</li>
-<li>np.random.binomial() / 베르누이 분포</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="표본평균의-표준오차-Standard-Error-of-the-Sample-Mean"><a href="#표본평균의-표준오차-Standard-Error-of-the-Sample-Mean" class="headerlink" title="표본평균의 표준오차( Standard Error of the Sample Mean )"></a>표본평균의 표준오차( Standard Error of the Sample Mean )</h2><ul>
-<li>StandardError = 표본의 표준편차 s (sample standard deviation) / 표본의 수 n(sample size)</li>
-<li>표본의 수가 더욱 많아질수록, 추측은 더 정확해지고 (평균) 높은 신뢰도를 바탕으로 모집단에 대해 예측 할 수 있도록 함.  <img src="../images/se.PNG"></li>
-</ul>
-<hr>
-<h2 id="Student-T-test"><a href="#Student-T-test" class="headerlink" title="Student T-test"></a>Student T-test</h2><h3 id="One-Sample-t-test"><a href="#One-Sample-t-test" class="headerlink" title="One Sample t-test"></a>One Sample t-test</h3><ul>
-<li><p>1개의 sample 값들의 평균이 특정값과 동일한지 비교</p>
+    <title>MachineLearning-Day2</title>
+    <url>/2021/06/09/MachineLearning-Day2/</url>
+    <content><![CDATA[<h1 id="다중선형회귀-multiple-linear-regression">다중선형회귀 (Multiple Linear Regression)</h1>
+<h2 id="msemean-square-error-r2">MSE(Mean Square Error) &amp; R<sup>2</sup></h2>
 <ul>
-<li>예) 동전이 공정한지 확인하려고 할때 : p(x = H) = 0.5</li>
+<li>둘의 정의와 차이점은 무엇인가? ## Training and Testing data</li>
+<li>훈련,테스트 데이터를 나누는 이유는 ? ## low bias, low variance 모델</li>
+<li>각 모델은 어떤것인지 훈련/테스트세트를 사용해 설명할 수 있어야함</li>
 </ul>
-</li>
-<li><p>모집단에 대한 정보와 표본의 데이터를 비교  </p>
-<img src="../images/ttest.PNG"></li>
-<li><p>위 통계치는 평균을 빼고 표준편차로 나눠줬는데 이러한 과정을 <strong>“정규화”</strong> 라고 하며, 이 과정을 하게 되면 주어진 데이터가 평균은 0, 표준편차가 1인 데이터로 scaling 됨  </p>
-</li>
-<li><p>T-test Process</p>
-<ol>
-<li><p>귀무 가설 (Null Hypothesis) 설정  </p>
-<img src="../images/ttestpro1.PNG"></li>
-<li><p>대안 가설 (Alternative Hypothesis) 설정 (귀무가설과 반대)  </p>
-<img src="../images/ttestpro2.PNG"></li>
-<li><p>신뢰도 설정 (Confidence Level) : 모수가 신뢰구간 안에 포함될 확률 (보통 95, 99% 등을 사용)</p>
-<ul>
-<li>신뢰도 95%의 의미 = 모수가 신뢰 구간 안에 포함될 확률이 95% = 귀무가설이 틀렸지만 우연히 성립할 확률이 5%</li>
-</ul>
-</li>
-<li><p>P-value 확인(규모가 너무클때 t를 P-value로 바꿔준다)</p>
-<ul>
-<li>P-value : 주어진 가설에 대해 “얼마나 근거가 있는지”에 대한 값을 0과 1사이의 값으로 scale한 지표</li>
-<li>p-value가 낮다 -&gt; 귀무가설이 틀렸을 확률이 높다</li>
-</ul>
-</li>
-<li><p> p-value를 바탕으로 가설에 대해 결론  </p>
-</li>
-</ol>
-</li>
-<li><p>T-test with Scipy</p>
-<ul>
-<li>scipy에 수치만 입력하면 t=test를 실행해주는 다양한방법이 있음</li>
-<li><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_1samp.html">https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_1samp.html</a>  </li>
-</ul>
-</li>
-<li><p>P-value의 기준</p>
-<ol>
-<li>pvalue &lt; 0.01 : 귀무가설이 옳을 확률이 1%이하 -&gt; 틀렸다 (깐깐한 기준)</li>
-<li>pvalue &lt; 0.05 (5%) : 귀무가설이 옳을 확률이 5%이하 -&gt; 틀렸다 (일반적인 기준)</li>
-<li>0.05 ~ pvalue ~ 0.1 사이인 경우: (애매함)<ul>
-<li>실험을 다시한다</li>
-<li>데이터를 다시 뽑는다</li>
-<li>샘플링을 다시한다</li>
-<li>기존의 경험 / 인사이트를 바탕으로 가설에 대한 결론을 내린다.</li>
-</ul>
-</li>
-<li>pvalue &gt; 0.1 (10%) : 귀무가설이 옳을 확률이 10%이상인데 -&gt; 귀무가설이 맞다 ~ 틀리지 않았을것이다<ul>
-<li>ex) p-value : 0.85 –&gt; 귀무가설은 틀리지 않았다. (‘귀무가설이 옳다’와는 톤이 약간 다름)</li>
-</ul>
-</li>
-</ol>
-<ul>
-<li>p-value가 (1-Confidence)보다 낮은 경우, 귀무가설을 기각하고 대안 가설을 채택</li>
-<li><a href="https://en.wikipedia.org/wiki/P-value">https://en.wikipedia.org/wiki/P-value</a>  </li>
-</ul>
-</li>
-<li><p>One-side test vs Two-side test</p>
-<ul>
-<li>One side test : 샘플 데이터의 평균이 “X”보다 크다 혹은 작다 / 크지 않다 작지 않다. 를 검정하는 내용</li>
-<li>Two side (tail / direction) test : 샘플 데이터의 평균이 “X”와 같다 / 같지 않다. 를 검정하는 내용</li>
-</ul>
-</li>
-</ul>
-<h3 id="Two-Sample-T-test"><a href="#Two-Sample-T-test" class="headerlink" title="Two Sample T-test"></a>Two Sample T-test</h3><ul>
-<li><p>2개의 sample 값들의 평균이 서로 동일한지 비교</p>
-<ul>
-<li>2개의 동전 (500원짜리 vs 100원짜리)을 여러번 던져서 p(H)의 평균이 유사한 지 확인</li>
-</ul>
-<ol>
-<li><p>귀무가설 : 두 확률은 같다 (차이가 없다)  </p>
-<img src="../images/ttestpro3.PNG"></li>
-<li><p>대안가설 : 같지 않다  </p>
-<img src="../images/ttestpro4.PNG"></li>
-<li><p>신뢰도 : 95%</p>
-</li>
-</ol>
-</li>
-</ul>
-<h3 id="Quest"><a href="#Quest" class="headerlink" title="Quest"></a>Quest</h3><ul>
-<li>정규분포한? t분포란? 두분포의 차이는뭐고 어떨때 무엇을쓰는가?<ul>
-<li>이것을 정확히 파악해야 t=test, P-value를 재대로 이해할수있다</li>
-</ul>
-</li>
-<li>FDR (false discovery rate)</li>
-<li>P-value Q-value<ul>
-<li><a href="https://doooob.tistory.com/101">https://doooob.tistory.com/101</a></li>
-</ul>
-</li>
-<li>t-test<ul>
-<li><a href="https://www.youtube.com/watch?v=mEWQ_vl3IPw&amp;list=PLalb9l0_6WArHh18Plrn8uIGBUKalqsf-&amp;index=1">https://www.youtube.com/watch?v=mEWQ_vl3IPw&amp;list=PLalb9l0_6WArHh18Plrn8uIGBUKalqsf-&amp;index=1</a></li>
-</ul>
-</li>
-</ul>
+<h2 id="다중선형회귀모델">다중선형회귀모델</h2>
+<h2 id="회귀모델의-평가지표">회귀모델의 평가지표</h2>
+<h2 id="과적합과-과소적합">과적합과 과소적합</h2>
+<h2 id="step-process">5 step process</h2>
+<h2 id="sum-of-squares">Sum of Squares</h2>
+<h2 id="상관계수-결정계수">상관계수 &amp; 결정계수</h2>
+<h2 id="회귀의-오류지표는">회귀의 오류지표는?</h2>
+<h2 id="편향분산의-트레이드오프">편향/분산의 트레이드오프</h2>
 ]]></content>
       <categories>
-        <category>TIL</category>
+        <category>Machine Learning</category>
       </categories>
       <tags>
-        <tag>Data science</tag>
-        <tag>hypothesis statistics</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI-day15</title>
-    <url>/2021/05/27/AI-day15/</url>
-    <content><![CDATA[<h1 id="Weekly-reveiw"><a href="#Weekly-reveiw" class="headerlink" title="Weekly reveiw"></a>Weekly reveiw</h1><h2 id="벡터와-매트릭스-Vectors-and-Matrices"><a href="#벡터와-매트릭스-Vectors-and-Matrices" class="headerlink" title="벡터와 매트릭스 ( Vectors and Matrices )"></a>벡터와 매트릭스 ( Vectors and Matrices )</h2><ul>
-<li>벡터의 연산과 Norm, det 등의 값이가지는 의미와 실제 코드로 실행할수있다는것을 기억<ul>
-<li>원리이해와 각각에필요한 라이브러리를 쓸줄 알아야함</li>
-</ul>
-</li>
-</ul>
-<h2 id="차원죽소"><a href="#차원죽소" class="headerlink" title="차원죽소"></a>차원죽소</h2><ul>
-<li>차원축소하는 궁극적인이유는 , 속도를높이고 메모리의 사용을 줄이기위함</li>
-<li>PCA 와 SVD에대한 큰 개념을 이해하기</li>
-</ul>
-<h2 id="스칼라와-벡터"><a href="#스칼라와-벡터" class="headerlink" title="스칼라와 벡터"></a>스칼라와 벡터</h2><ul>
-<li>벡터에서는 numpy를 이용해 다양한 계산을 활용할줄 아는것이 기본이다</li>
-<li>스칼라는 숫자고 크기이다</li>
-<li>벡터를 수학적으로 이해하기보다는 데이터라고 받아들이자</li>
-<li>벡터의 길이(length)는 벡터의 차원수와 동일하다는 정도만 이해</li>
-<li>벡터의 크기 (Magnitude, Norm, Length)의 의미에대해 알기</li>
-<li>벡터의 내적 ( Dot Product )을 위해서는 두 벡터의 길이가 반드시 동일해야 한다</li>
-</ul>
-<h2 id="매트릭스"><a href="#매트릭스" class="headerlink" title="매트릭스"></a>매트릭스</h2><ul>
-<li>매트릭스의 Transpose 기억하기</li>
-<li>2개의 매트릭스가 일치하기 위해서는, 동일한 차원을 보유하고 각 해당하는 구성요소들이 동일해야 함</li>
-<li>정사각 매트릭스<ul>
-<li>정사각 매트릭스의 종류들과 특징은 알아두기</li>
-<li>단위매트릭스는 특히 중요</li>
-</ul>
-</li>
-<li>행렬식과 역행렬의 개념과 계산하는 방법 알기</li>
-</ul>
-<h2 id="분산과-표준편차"><a href="#분산과-표준편차" class="headerlink" title="분산과 표준편차"></a>분산과 표준편차</h2><ul>
-<li>각각의 의미와 구하는 라이브러리를 기억</li>
-<li>numpy와 pandas에서 ddof의 차이에 주의하자</li>
-<li>공분산과 상관계수는 메서드 사용시 원하는값이 배열의 어느위치에 있는지 알아야함<ul>
-<li>특히 상관계수가 1일때와 -1일때 똑같이 선형상관관계이고 방향만 양수 음수 임을 주의 -1이라고해서 선형관계가 아니라고 생각하면 안된다</li>
-<li>공분산과 상관계수는 서로 어떤관계가 있는지 설명할줄 알아야함</li>
-</ul>
-</li>
-</ul>
-<h2 id="basis-rank-span"><a href="#basis-rank-span" class="headerlink" title="basis, rank, span"></a>basis, rank, span</h2><ul>
-<li>각각의 개념을 이해하는것이 중요</li>
-</ul>
-<h2 id="Vector-transformation"><a href="#Vector-transformation" class="headerlink" title="Vector transformation"></a>Vector transformation</h2><ul>
-<li>다양한 방법으로 벡터를 변환시켜 차원을 줄이기위한 과정</li>
-<li>고유값과 고유벡터의 의미와 구하는법도 숙지</li>
-</ul>
-<h2 id="차원감소"><a href="#차원감소" class="headerlink" title="차원감소"></a>차원감소</h2><ul>
-<li>Feacture Selection 과 Feature Extraction 의 방식과 예시 기억하기</li>
-<li>Scaling 과 PCA 을 통해 차원감소하는 원리와 이유, 방법과 라이브러리 정리</li>
-</ul>
-<h2 id="Custering"><a href="#Custering" class="headerlink" title="Custering"></a>Custering</h2><ul>
-<li>머신러닝에서의 비지도학습의 한 종류로 데이터들간의 유사성을 토대로 분류하는것이다</li>
-<li>다양한 종류가있지만, 그런 종류가있다는것을 알고 데이터의 형태에 맞는 방법을 쓰는것이 중요하다</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Weekly reveiw</category>
-      </categories>
-      <tags>
-        <tag>Data science</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI-Day12</title>
-    <url>/2021/05/23/AI-Day12/</url>
-    <content><![CDATA[<h1 id="선형대수"><a href="#선형대수" class="headerlink" title="선형대수 +"></a>선형대수 +</h1><ul>
-<li>공분산, 상관계수의 목적과 사용 예시, 차이점 설명</li>
-<li>벡터의 직교와 그 조건 설명</li>
-<li>단위 벡터와, 단위 벡터로의 구분 설명</li>
-<li>span, basis, rank의 내용을 이해</li>
-<li>Gaussian elemination</li>
-<li>linear projection과 예시</li>
-</ul>
-<h2 id="기본적인-개념"><a href="#기본적인-개념" class="headerlink" title="기본적인 개념"></a>기본적인 개념</h2><ul>
-<li>기저벡터<ul>
-<li>“벡터공간 전체를 생성하는 선형 독립인 벡터의 집합” , but.. 이게무슨말일까?</li>
-<li>벡터v 의 각 좌표값을 스칼라라고 생각해보자</li>
-<li>이때 각 x,y 좌표의 단위벡터가 i^, j^ 라면 각각의 좌표를 단위백터에 스칼라곱 한만큼의 합이라고 볼 수 있다<ul>
-<li>벡터v =  ai^ + bj^</li>
-</ul>
-</li>
-<li>이 단위벡터 i^,j^ 을 xy좌표계의 <strong>기저벡터</strong> 라고 한다</li>
-<li>이는 벡터를 수적으로 표현할때 기저벡터를 기준으로 나타낸다  </li>
-</ul>
-</li>
-<li>선형결합<ul>
-<li>두 벡터를 스케일하여 새로운 벡터를 생성하는 모든 연산</li>
-<li>벡터 v,w 의 선형결합 : av + bw</li>
-<li>3차원 이라면 ? av + bw + cu  </li>
-</ul>
-</li>
-<li>선형생성<ul>
-<li>백터 v와 w의 모든 선형결합으로 만들어진 벡터의 집합을 두 벡터의 생성(선형생성) 이라 한다</li>
-<li>일반적으로 두 기저벡터로 선형결합을 한다면, 그 차원의 모든 벡터를 만들수있다. 즉 생성은 <strong>평면전체</strong> 가 된다</li>
-<li>하지만 두 기저벡터가 같은 직선상에 존재한다면 생성은 <strong>영점을 지나는 하나의 선</strong> 이 된다</li>
-<li>3차원에서 하나의 벡터가 나머지 두 벡터의 선형생성안에 있다면? 즉 두 벡터로 만들어진 평면안에 포함된다면<ul>
-<li>그 포함된 벡터의 변화는 전체 선형생성에 의미가 없다, 즉 제거해도 상관없다  </li>
-</ul>
-</li>
-</ul>
-</li>
-<li>선형종속<ul>
-<li><strong>제거해도 상관없다</strong> 는 것을 선형종속 이라 표현<ul>
-<li>즉 벡터(u) 는 다른 벡터(v,w) 들의 선형결합으로 표현될 수 있다</li>
-<li>u = av + bw  </li>
-</ul>
-</li>
-</ul>
-</li>
-<li>선형독립<ul>
-<li>서로 선형생성안에 포함되지않는 독립적인 상태라면 선형독립이라 표현<ul>
-<li>u != av + bw</li>
-<li>av + bw + cu = 0 의 유일한 해가 a=b=c=0 이라면 선형독립이다 라고도 할 수 있다</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="분산-Variance"><a href="#분산-Variance" class="headerlink" title="분산 Variance"></a>분산 Variance</h2><ul>
-<li><strong>데이터가 얼마나 퍼져있는지</strong> 측정하는 방법</li>
-<li>값-평균값 의 제곱  </li>
-</ul>
-<h2 id="표준편차-Standard-Deviation"><a href="#표준편차-Standard-Deviation" class="headerlink" title="표준편차 Standard Deviation"></a>표준편차 Standard Deviation</h2><ul>
-<li>분산에 루트씌운것</li>
-<li>분산은 샘플으 사이즈에 따라 평균에비해 스케일이 더 커지는 경향이있음</li>
-<li>표준편차는 제곱된 스케일을 낮춘 방법이므로 통계분석에서 많이 사용됨  </li>
-</ul>
-<h2 id="공분산-Covariance"><a href="#공분산-Covariance" class="headerlink" title="공분산 Covariance"></a>공분산 Covariance</h2><ul>
-<li>하나의 변수가 변화할때, 다른 변수가 어떤 연관성을 나타내며 변화하는가 측정</li>
-<li>COV(x,y) 로 나타내며, 연관성에따라 분류</li>
-<li>COV(x,y) &gt; 0 : x가 증가하면 y도 증가, 양의 공분산</li>
-<li>COV(x,y) &lt; 0 : x가 증가하면 y는 감소, 음의 공분산</li>
-<li>COV(x,y) ~ 0 : 관련성을 알 수 없음</li>
-<li>하지만 ! 변수들이 다른 스케일을 가지고 있다면 공분산은 실제 변수의 연관성에 관계 없이 영향을 받음<ul>
-<li>즉 만약 두 변수의 연관성이 작더라도 스케일이크다면, 연관성이 높지만 스케일이 작은 변수에비해 높은 공분산값을 가짐</li>
-<li>이것을 보완하기위해 상관계수를 사용  </li>
-</ul>
-</li>
-</ul>
-<h2 id="상관계수-r"><a href="#상관계수-r" class="headerlink" title="상관계수  r"></a>상관계수  r</h2><ul>
-<li>공분산을 두 변수의 표준편차로 각각 나누어 스케일을 조정한것</li>
-<li>정해진 범위 (-1에서1사이) 값만 가지며, 선형연고나성이 없는경우 0에 근접<ul>
-<li>공분산과 다르게 스케일에 영향받지 않음</li>
-<li>데이터의 평균, 분산의크기에 영향받지 않음</li>
-</ul>
-</li>
-<li>-1 &lt; COR(x,y) &lt; 0 : x가 증가하면 y는 감소</li>
-<li> 0 &lt; COR(x,y) &lt; 1 : x가 증가하면 y도 증가</li>
-<li>COR(x,y) ~ 0 : 관련성 알 수 없음</li>
-<li>COR(x,y) = 1 : 한변수가 다른변수에대해 완벽한 양의 선형관계이다  </li>
-</ul>
-<h3 id="Spearman-correlation"><a href="#Spearman-correlation" class="headerlink" title="Spearman correlation"></a>Spearman correlation</h3><ul>
-<li>일반적 상관계수는 Pearson correlation<ul>
-<li> 데이터에서 분산과 같은 numeric data를 계산</li>
-</ul>
-</li>
-<li>만약 categorical 이라면 ?<ul>
-<li>Spearman correlation coefficient 로 값들의 순서(rank)를 주고, 그 바탕으로 상관관계 측정  </li>
-</ul>
-</li>
-</ul>
-<h2 id="수직성-Orthogonality"><a href="#수직성-Orthogonality" class="headerlink" title="수직성 Orthogonality"></a>수직성 Orthogonality</h2><ul>
-<li>벡터, 매트릭스가 서로 수직인 상태</li>
-<li>두 벡터가 수직이다? 상관관계가 전혀 없다<ul>
-<li>수직이다 -&gt; 내적이 0 이다  </li>
-</ul>
-</li>
-</ul>
-<h2 id="단위벡터-Unit-Vectors"><a href="#단위벡터-Unit-Vectors" class="headerlink" title="단위벡터 Unit Vectors"></a>단위벡터 Unit Vectors</h2><ul>
-<li>단위길이(1) 을 갖는 모든벡터<ul>
-<li>차원별 단위벡터는 벡터내에 하나의1과 0들로만 이뤄진벡터</li>
-<li>ex ) 1차원:[1], 2차원:[1,0], 3차원:[1,0,0]  </li>
-</ul>
-</li>
-</ul>
-<h2 id="Span"><a href="#Span" class="headerlink" title="Span"></a>Span</h2><ul>
-<li>주어진 두 벡터의 조합으로 만들수 있는 모든 벡터들의 집합</li>
-<li>선형관계의 벡터가 아니라면? 주어진 차원전체를 나타내는 평면으로 나타낼 수 있다  </li>
-</ul>
-<h2 id="선형관계의-벡터-Linearly-Dependent-Vector"><a href="#선형관계의-벡터-Linearly-Dependent-Vector" class="headerlink" title="선형관계의 벡터 (Linearly Dependent Vector)"></a>선형관계의 벡터 (Linearly Dependent Vector)</h2><ul>
-<li>두 벡터가 같은선상에 있는 경우</li>
-<li>이 경우 두 벡터로 만들어진 Span은 하나의 선이 된다</li>
-<li>선형관계가 없는 <strong>벡터는 독립되어 있다</strong> 고 표현  </li>
-</ul>
-<h2 id="Basis"><a href="#Basis" class="headerlink" title="Basis"></a>Basis</h2><ul>
-<li>벡터공간 V의 basis 란, V를 채울 수 있는 선형관계에 있지않은 벡터들의 집합</li>
-<li>Orthogonal Basis: 공간을 채울 수 있는 <strong>서로 수직인 벡터</strong> </li>
-<li>Orthonormal Basis :  Orthogonal Basis에 추가로 Normalized 조건이 붙은 것으로, 길이가 1인 벡터들</li>
-<li>Gram-Schmidt 프로세스(단위 직교화)<ul>
-<li>일차독립 벡터집합을 정규직교기저로 변환</li>
-</ul>
-</li>
-<li>벡터공간을 나타내는 R<sup>n</sup> 에서의 n은 해당 <strong>벡터공간을 이루는 기저의 수</strong> 라고 이해할 수 있다  </li>
-</ul>
-<h2 id="Rank"><a href="#Rank" class="headerlink" title="Rank"></a>Rank</h2><ul>
-<li>매트릭스의 열을 이루는 벡터들로 만들 수 있는 span공간의 차원</li>
-<li>매트릭스의 차원과는 다를수 있음<ul>
-<li>why? 행과 열을 이루는 벡터들중 선형관계가 있는 경우 rank가 더 작을 수 있다  </li>
-</ul>
-</li>
-</ul>
-<h2 id="가우스-소거법-Gaussian-Elimination"><a href="#가우스-소거법-Gaussian-Elimination" class="headerlink" title="가우스 소거법(Gaussian Elimination)"></a>가우스 소거법(Gaussian Elimination)</h2><ul>
-<li>연립일차방정식에서 미지수를 소거시켜 남은 미지수에대한 선형결합으로 표현하여 풀이하는 방법</li>
-<li>매트릭스를 사다리꼴행렬(Row-Echelon form)로 바꾸는 방법<ul>
-<li>사다리꼴행렬 : 각행의 왼쪽에 1, 나머지는 0</li>
-</ul>
-</li>
-<li>다른 행들의 스칼라 곱과 합을통해 어떤행이 0이 되었다 -&gt; 선형관계가 있다  </li>
-</ul>
-<h2 id="R2-공간에서의-Linear-Projections"><a href="#R2-공간에서의-Linear-Projections" class="headerlink" title="R2 공간에서의 Linear Projections"></a>R<sup>2</sup> 공간에서의 Linear Projections</h2><ul>
-<li>일반적인 사영은 하나의 벡터를 다른벡터에 수직으로내려서 투영시키는것을 뜻한다</li>
-<li>통계에서의 사영은 투영시키는 그 벡터, 즉 두개의 feature중 하나를 다른하나에 투영시킴으로써 차원을 줄이고 그로인해 통계적 분석에 필요한 메모리나 시간 등을 줄이는 방법이다</li>
-<li>벡터 L에대한 벡터W의 projection  <img src="../images/linearprojection.PNG"></li>
-</ul>
-]]></content>
-      <categories>
-        <category>TIL</category>
-      </categories>
-      <tags>
-        <tag>Data science</tag>
-        <tag>Linear Algebra</tag>
+        <tag>Multiple Regression</tag>
       </tags>
   </entry>
 </search>
