@@ -272,6 +272,204 @@
       </tags>
   </entry>
   <entry>
+    <title>AI-Day13</title>
+    <url>/2021/05/25/AI-Day13/</url>
+    <content><![CDATA[<h1 id="dimension-reduction">Dimension Reduction</h1>
+<ul>
+<li>Vector transformation의 목적과 사용예시</li>
+<li>eigenvector(고유벡터) / eigenvalue(고유값)</li>
+<li>데이터의 feature수의 증가에따른 문제점과 handling 방법</li>
+<li>PCA의 목적과 기본원리</li>
+</ul>
+<h2 id="선형변환과-매트릭스벡터변환">선형변환과 매트릭스(벡터변환)</h2>
+<ul>
+<li>행렬과 벡터의곱은 "두 열벡터의 선형결합"을 표현한것 이라 할 수 있다</li>
+<li>선형변환 : 특정한 규칙이 정해진 함수이고 쉽게는 기저벡터를 변환시킴으로써 결과를 바꾼다
+<ul>
+<li>임의의 벡터 a,b와 스칼라 c에 대해 변환T가 두조건을 만족한다면? 변환T는 선형변환이다
+<ul>
+<li>T(a+b) = T(a)+T(b)</li>
+<li>T(ca) = cT(a)</li>
+</ul></li>
+<li>임의의 열벡터 [x y]에 대해 다음이 성립하면 변환T는 선형변환이다
+<ul>
+<li>T([x y]) = T(x[1 0] + y[0 1]) = T(x[1 0])+T(y[0 1]) = xT([1 0]) + yT([1 0])</li>
+</ul></li>
+<li>이때, 원래의 기저벡터 두개를 i^, j^ 이라하고 새로운 기저벡터를 i_new, j_new라 하면
+<ul>
+<li>i_new = T(i^), j_new = T(j^)</li>
+<li>결론적으로 T([x y]) = xi_new + yj_new</li>
+</ul></li>
+</ul></li>
+<li>종류에는 shearing, rotation, permutation, projection on x-axis(a vector) 등 이 있다</li>
+</ul>
+<h2 id="고유값과-고유벡터eigenvalueeigenvector">고유값과 고유벡터(eigenvalue/eigenvector)</h2>
+<ul>
+<li>선형변환 후에도 span을 벗어나지 않는 벡터를 고유벡터라고 하며 각각의 고유벡터는 특별한 고유값을 가짐</li>
+<li>이때의 고유값은 변환된 고유벡터가 스케일된 크기라고 볼 수 있다
+<ul>
+<li>만약 고유벡터가 선형변환된 후에도 크기가 그대로라면? 고유값은 1 이다</li>
+<li>식으로 표현하면 변환하려는 행렬 A와 고유벡터v , 고유값 λ 라면</li>
+<li>Av = λv
+<ul>
+<li>이 식의 참,거짓을 통해 행렬A의 고유벡터v와 고유값λ 를 찾을 수 있다</li>
+<li>하지만 좌항은 행렬x벡터, 우항은 스칼라x벡터 이므로 우항을 행렬x벡터의 형태로 바꿔줘야한다</li>
+<li>대각선에만 1 이 있고 나머지는 0은 항등행렬 I 를이용하여 λ = λI 로 바꾼다</li>
+<li>결국 (A-λI)v = 0 이 되고, <strong>벡터v가 0벡터가 아니라는 가정하에</strong> 식을 성립하는 고유벡터v를 찾는다</li>
+<li>이때 det(A-λI)=0 인 λ를 찾는다 (이것은 차원을 축소시킨다 고 이해하자, 평면이라면? 선형태로)</li>
+<li>고유값은 하나여도 고유벡터는 여러개일 수 있음을 기억하자</li>
+</ul></li>
+</ul></li>
+<li>대각선형렬일때는 고유벡터가 기저벡터와 같고 계산이 편해지기때문에, 어떤 행렬의 고유벡터를 기저벡터로 바꿔준다면 계산이 편해질것이다
+<ul>
+<li>why? : 대각선행렬의 대각선값들이 그 행렬의 고유벡터이기 때문</li>
+<li>그러기위해 행렬A의 고유벡터를 열벡터로 가지는 새로운 행렬을 B라고해보자</li>
+<li>이때 B<sup>T</sup>AT 를 하면, 대각선행렬이 아니였던 행렬A를 대각선에 고유값들을 갖는 대각선행렬로 변환된다</li>
+</ul></li>
+<li>분석의 측면에서보면 만약 분산-공분산 행렬의 고유값 고유벡터를 구한다면
+<ul>
+<li>고유값의 합은 두 분산의 합과 같고</li>
+<li>고유값의 곱은 분산-공분산의 행렬식과 같다</li>
+<li>여기서는 이렇다는것만 기억하고 이것들이 가지는 의미는 후에 더 알 수 있다</li>
+</ul></li>
+</ul>
+<h2 id="고차원의-문제-the-curse-of-dimensionality">고차원의 문제 (The Curse of Dimensionality)</h2>
+<ul>
+<li>feature 의 수가 많은 데이터셋을 모델링하거나 분석할때 발생하는 문제</li>
+<li>So, feature들의 중요도를 비교하여 실제로 의미가 높은 feature만 선택함으로써 차원을 줄여야함</li>
+</ul>
+<h2 id="dimension-reduction-차원축소">Dimension Reduction 차원축소</h2>
+<ul>
+<li>이 고차원의 문제를 해결하기위해 차원축소</li>
+<li>Feature Selection
+<ul>
+<li>덜 중요한 feature를 제거하는 방법</li>
+<li>장점 : 선택된 feature 해석이 쉽다</li>
+<li>단점 : feature들간의 연관성을 고려해야함</li>
+<li>LASSO, Genetic algorithm 등</li>
+</ul></li>
+<li>Feature Extraction
+<ul>
+<li>기존의 feature 혹은 feature들이 조합된 새로운 feature를 사용하는 방법</li>
+<li>장점 : feature 들간의 연관성 고려되어 feature 수를 줄일 수 있음</li>
+<li>단점 : feature 해석이 어려움</li>
+<li>PCA, Auto-encoder 등</li>
+</ul></li>
+</ul>
+<h2 id="주성분분석-pca-principal-component-analysis">주성분분석 (PCA, Principal Component Analysis)</h2>
+<ul>
+<li>고차원의 데이터를 분석하기위한 방법(제일 정보손실이적은 2차원으로 바꾸는것이 무난하다)</li>
+<li>표본들의 선형연관성을 최소한으로 즉, 최대한 선형독립적인 표본들만 있는상태로 필터링하는것</li>
+<li>분산을 최대한 유지하는 축(PC)를 찾는것이 주 목적이고, 그 축을 기준으로 차원을 축소할수있음
+<ul>
+<li>많은 데이터를 어떤 벡터축에 사영시켜야, 분포를 가장 잘 나타내는 하나의 축이 될수 있을까?</li>
+</ul></li>
+<li>PCA 의 과정
+<ul>
+<li>데이터의 각열에대해 평균을 빼고 표준편차로 나누어 Normalize</li>
+<li>데이터의 분산-공분산 매트릭스계산</li>
+<li>분산-공분산 매트릭스의 고유벡터와 고유값 계산</li>
+<li>데이터를 고유벡터에 projection(matmul)
+<ul>
+<li>데이터를 고유벡터에 사영하는것이 분산이 가장크기 떄문</li>
+<li>분산이크다? 데이터손실이 최소화된 상태에서의 분포를 나타낼 수 있다</li>
+</ul></li>
+</ul></li>
+<li>PCA 특징
+<ul>
+<li>데이터에대해 독립적인 축을 찾을 수 있음</li>
+<li>데이터의 분포가 정규성을 띄지않는경우 적용이 어려움
+<ul>
+<li>커널 PCA 활용</li>
+</ul></li>
+<li>분류/ 예측 문제에대해 데이터의 라벨을 고려하지 않기때문에 효과적 분리가 어려움
+<ul>
+<li>PLS 활용</li>
+</ul></li>
+</ul></li>
+<li>Sklearn 라이브러리를 활용하여 PCA 가능</li>
+</ul>
+<h2 id="one-hot-encoding">One-hot encoding</h2>
+<ul>
+<li>모든 문자열 값들을 숫자 형으로 인코딩하는 전처리 작업을 함으로써 계산에 용이하게 바꿈</li>
+<li>레이블인코딩
+<ul>
+<li>일괄적인 숫자값으로 변환되어 예측성능이 떨어진다</li>
+<li>숫자간의 크고 작음에 대한 특성 작용</li>
+</ul></li>
+<li>원 핫 인코딩
+<ul>
+<li>피쳐값의 유형에따라 새로운 피쳐를 추가해 고유값에 해당하는 갈럼에만 1을표시, 나머지 칼럼에는 0을 표시</li>
+</ul></li>
+</ul>
+]]></content>
+      <categories>
+        <category>TIL</category>
+      </categories>
+      <tags>
+        <tag>Data science</tag>
+        <tag>Linear Algebra</tag>
+        <tag>Dimension Reduction</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI-Day2</title>
+    <url>/2021/05/07/AI-Day2/</url>
+    <content><![CDATA[<h1 id="feature-engineering">Feature Engineering</h1>
+<h2 id="warm-up">Warm up</h2>
+<ul>
+<li>Data cleaning
+<ul>
+<li>대부분의 실제 데이터엔지니어, 데이터사이언티스트는 데이터클리닝이 대부분의 업무</li>
+<li>AI에 머신러닝을 시키기위해선 정제된 데이터가 필수</li>
+</ul></li>
+</ul>
+<h2 id="feature-engineering-이란">Feature Engineering 이란?</h2>
+<ul>
+<li>도메인 지식과 창의성을 바탕으로, 데이터셋에 존재하는 Feature들을 재조합하여 새로운 Feature를 만드는 것</li>
+<li>통계 분석 혹은 머신러닝, 딥러닝까지 대부분의 분석은 데이터에 있는 패턴을 인식하고 해당 패턴들을 바탕으로 예측</li>
+<li>더 좋은 퍼포먼스를 위해서 새롭고, 의미있는 패턴을 제공하는 것이 궁극적인 Feature engineering의 목적</li>
+<li>Gargage in - Garbage out 을 기억</li>
+</ul>
+<h2 id="dataframe">DataFrame</h2>
+<ul>
+<li>테이블형태의 데이터로 기억</li>
+<li>Row(행)에는 observation, Column(열)에는 feature가 있다</li>
+<li>만약 데이터에 NaN값이있다면? 같은 row의 다른값들은 자동으로 float으로 typecasting</li>
+</ul>
+<h2 id="feature-engineering-1">Feature Engineering</h2>
+<ul>
+<li>feature끼리는 일반수식처럼 가능하지만, 각각의 data type에 주의하여야함
+<ul>
+<li>int끼리라면 의도대로 수식이되지만, 만약 str이라면? 예상치못한 결과도출</li>
+<li>특히 머신러닝 모델링에서는 문자열로된 data는 사용하지 않음</li>
+</ul></li>
+</ul>
+<h3 id="methods">Methods</h3>
+<ul>
+<li>s.replace('지우려는것','대체할것')
+<ul>
+<li>하지만 바뀐것을 변수에 다시선언해주어야 변경됨(얕은복사? 더찾아보기)</li>
+</ul></li>
+<li>s.toint()
+<ul>
+<li>자동으로 int로 typecasting까지 실행</li>
+</ul></li>
+<li>s.apply(함수)
+<ul>
+<li>한 column전체에 대해 함수를 다 실행시킴(파이썬의 map과 비슷한느낌)</li>
+</ul></li>
+</ul>
+]]></content>
+      <categories>
+        <category>TIL</category>
+      </categories>
+      <tags>
+        <tag>Data science</tag>
+        <tag>Feature Engineering</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AI-Day12</title>
     <url>/2021/05/23/AI-Day12/</url>
     <content><![CDATA[<h1 id="선형대수">선형대수 +</h1>
@@ -453,147 +651,6 @@
       </tags>
   </entry>
   <entry>
-    <title>AI-Day13</title>
-    <url>/2021/05/25/AI-Day13/</url>
-    <content><![CDATA[<h1 id="dimension-reduction">Dimension Reduction</h1>
-<ul>
-<li>Vector transformation의 목적과 사용예시</li>
-<li>eigenvector(고유벡터) / eigenvalue(고유값)</li>
-<li>데이터의 feature수의 증가에따른 문제점과 handling 방법</li>
-<li>PCA의 목적과 기본원리</li>
-</ul>
-<h2 id="선형변환과-매트릭스벡터변환">선형변환과 매트릭스(벡터변환)</h2>
-<ul>
-<li>행렬과 벡터의곱은 "두 열벡터의 선형결합"을 표현한것 이라 할 수 있다</li>
-<li>선형변환 : 특정한 규칙이 정해진 함수이고 쉽게는 기저벡터를 변환시킴으로써 결과를 바꾼다
-<ul>
-<li>임의의 벡터 a,b와 스칼라 c에 대해 변환T가 두조건을 만족한다면? 변환T는 선형변환이다
-<ul>
-<li>T(a+b) = T(a)+T(b)</li>
-<li>T(ca) = cT(a)</li>
-</ul></li>
-<li>임의의 열벡터 [x y]에 대해 다음이 성립하면 변환T는 선형변환이다
-<ul>
-<li>T([x y]) = T(x[1 0] + y[0 1]) = T(x[1 0])+T(y[0 1]) = xT([1 0]) + yT([1 0])</li>
-</ul></li>
-<li>이때, 원래의 기저벡터 두개를 i^, j^ 이라하고 새로운 기저벡터를 i_new, j_new라 하면
-<ul>
-<li>i_new = T(i^), j_new = T(j^)</li>
-<li>결론적으로 T([x y]) = xi_new + yj_new</li>
-</ul></li>
-</ul></li>
-<li>종류에는 shearing, rotation, permutation, projection on x-axis(a vector) 등 이 있다</li>
-</ul>
-<h2 id="고유값과-고유벡터eigenvalueeigenvector">고유값과 고유벡터(eigenvalue/eigenvector)</h2>
-<ul>
-<li>선형변환 후에도 span을 벗어나지 않는 벡터를 고유벡터라고 하며 각각의 고유벡터는 특별한 고유값을 가짐</li>
-<li>이때의 고유값은 변환된 고유벡터가 스케일된 크기라고 볼 수 있다
-<ul>
-<li>만약 고유벡터가 선형변환된 후에도 크기가 그대로라면? 고유값은 1 이다</li>
-<li>식으로 표현하면 변환하려는 행렬 A와 고유벡터v , 고유값 λ 라면</li>
-<li>Av = λv
-<ul>
-<li>이 식의 참,거짓을 통해 행렬A의 고유벡터v와 고유값λ 를 찾을 수 있다</li>
-<li>하지만 좌항은 행렬x벡터, 우항은 스칼라x벡터 이므로 우항을 행렬x벡터의 형태로 바꿔줘야한다</li>
-<li>대각선에만 1 이 있고 나머지는 0은 항등행렬 I 를이용하여 λ = λI 로 바꾼다</li>
-<li>결국 (A-λI)v = 0 이 되고, <strong>벡터v가 0벡터가 아니라는 가정하에</strong> 식을 성립하는 고유벡터v를 찾는다</li>
-<li>이때 det(A-λI)=0 인 λ를 찾는다 (이것은 차원을 축소시킨다 고 이해하자, 평면이라면? 선형태로)</li>
-<li>고유값은 하나여도 고유벡터는 여러개일 수 있음을 기억하자</li>
-</ul></li>
-</ul></li>
-<li>대각선형렬일때는 고유벡터가 기저벡터와 같고 계산이 편해지기때문에, 어떤 행렬의 고유벡터를 기저벡터로 바꿔준다면 계산이 편해질것이다
-<ul>
-<li>why? : 대각선행렬의 대각선값들이 그 행렬의 고유벡터이기 때문</li>
-<li>그러기위해 행렬A의 고유벡터를 열벡터로 가지는 새로운 행렬을 B라고해보자</li>
-<li>이때 B<sup>T</sup>AT 를 하면, 대각선행렬이 아니였던 행렬A를 대각선에 고유값들을 갖는 대각선행렬로 변환된다</li>
-</ul></li>
-<li>분석의 측면에서보면 만약 분산-공분산 행렬의 고유값 고유벡터를 구한다면
-<ul>
-<li>고유값의 합은 두 분산의 합과 같고</li>
-<li>고유값의 곱은 분산-공분산의 행렬식과 같다</li>
-<li>여기서는 이렇다는것만 기억하고 이것들이 가지는 의미는 후에 더 알 수 있다</li>
-</ul></li>
-</ul>
-<h2 id="고차원의-문제-the-curse-of-dimensionality">고차원의 문제 (The Curse of Dimensionality)</h2>
-<ul>
-<li>feature 의 수가 많은 데이터셋을 모델링하거나 분석할때 발생하는 문제</li>
-<li>So, feature들의 중요도를 비교하여 실제로 의미가 높은 feature만 선택함으로써 차원을 줄여야함</li>
-</ul>
-<h2 id="dimension-reduction-차원축소">Dimension Reduction 차원축소</h2>
-<ul>
-<li>이 고차원의 문제를 해결하기위해 차원축소</li>
-<li>Feature Selection
-<ul>
-<li>덜 중요한 feature를 제거하는 방법</li>
-<li>장점 : 선택된 feature 해석이 쉽다</li>
-<li>단점 : feature들간의 연관성을 고려해야함</li>
-<li>LASSO, Genetic algorithm 등</li>
-</ul></li>
-<li>Feature Extraction
-<ul>
-<li>기존의 feature 혹은 feature들이 조합된 새로운 feature를 사용하는 방법</li>
-<li>장점 : feature 들간의 연관성 고려되어 feature 수를 줄일 수 있음</li>
-<li>단점 : feature 해석이 어려움</li>
-<li>PCA, Auto-encoder 등</li>
-</ul></li>
-</ul>
-<h2 id="주성분분석-pca-principal-component-analysis">주성분분석 (PCA, Principal Component Analysis)</h2>
-<ul>
-<li>고차원의 데이터를 분석하기위한 방법(제일 정보손실이적은 2차원으로 바꾸는것이 무난하다)</li>
-<li>표본들의 선형연관성을 최소한으로 즉, 최대한 선형독립적인 표본들만 있는상태로 필터링하는것</li>
-<li>분산을 최대한 유지하는 축(PC)를 찾는것이 주 목적이고, 그 축을 기준으로 차원을 축소할수있음
-<ul>
-<li>많은 데이터를 어떤 벡터축에 사영시켜야, 분포를 가장 잘 나타내는 하나의 축이 될수 있을까?</li>
-</ul></li>
-<li>PCA 의 과정
-<ul>
-<li>데이터의 각열에대해 평균을 빼고 표준편차로 나누어 Normalize</li>
-<li>데이터의 분산-공분산 매트릭스계산</li>
-<li>분산-공분산 매트릭스의 고유벡터와 고유값 계산</li>
-<li>데이터를 고유벡터에 projection(matmul)
-<ul>
-<li>데이터를 고유벡터에 사영하는것이 분산이 가장크기 떄문</li>
-<li>분산이크다? 데이터손실이 최소화된 상태에서의 분포를 나타낼 수 있다</li>
-</ul></li>
-</ul></li>
-<li>PCA 특징
-<ul>
-<li>데이터에대해 독립적인 축을 찾을 수 있음</li>
-<li>데이터의 분포가 정규성을 띄지않는경우 적용이 어려움
-<ul>
-<li>커널 PCA 활용</li>
-</ul></li>
-<li>분류/ 예측 문제에대해 데이터의 라벨을 고려하지 않기때문에 효과적 분리가 어려움
-<ul>
-<li>PLS 활용</li>
-</ul></li>
-</ul></li>
-<li>Sklearn 라이브러리를 활용하여 PCA 가능</li>
-</ul>
-<h2 id="one-hot-encoding">One-hot encoding</h2>
-<ul>
-<li>모든 문자열 값들을 숫자 형으로 인코딩하는 전처리 작업을 함으로써 계산에 용이하게 바꿈</li>
-<li>레이블인코딩
-<ul>
-<li>일괄적인 숫자값으로 변환되어 예측성능이 떨어진다</li>
-<li>숫자간의 크고 작음에 대한 특성 작용</li>
-</ul></li>
-<li>원 핫 인코딩
-<ul>
-<li>피쳐값의 유형에따라 새로운 피쳐를 추가해 고유값에 해당하는 갈럼에만 1을표시, 나머지 칼럼에는 0을 표시</li>
-</ul></li>
-</ul>
-]]></content>
-      <categories>
-        <category>TIL</category>
-      </categories>
-      <tags>
-        <tag>Data science</tag>
-        <tag>Linear Algebra</tag>
-        <tag>Dimension Reduction</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>AI-Day14</title>
     <url>/2021/05/26/AI-Day14/</url>
     <content><![CDATA[<h1 id="군집화-clustering">군집화 (Clustering)</h1>
@@ -734,63 +791,6 @@
         <tag>Data science</tag>
         <tag>Linear Algebra</tag>
         <tag>Clustering</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI-Day2</title>
-    <url>/2021/05/07/AI-Day2/</url>
-    <content><![CDATA[<h1 id="feature-engineering">Feature Engineering</h1>
-<h2 id="warm-up">Warm up</h2>
-<ul>
-<li>Data cleaning
-<ul>
-<li>대부분의 실제 데이터엔지니어, 데이터사이언티스트는 데이터클리닝이 대부분의 업무</li>
-<li>AI에 머신러닝을 시키기위해선 정제된 데이터가 필수</li>
-</ul></li>
-</ul>
-<h2 id="feature-engineering-이란">Feature Engineering 이란?</h2>
-<ul>
-<li>도메인 지식과 창의성을 바탕으로, 데이터셋에 존재하는 Feature들을 재조합하여 새로운 Feature를 만드는 것</li>
-<li>통계 분석 혹은 머신러닝, 딥러닝까지 대부분의 분석은 데이터에 있는 패턴을 인식하고 해당 패턴들을 바탕으로 예측</li>
-<li>더 좋은 퍼포먼스를 위해서 새롭고, 의미있는 패턴을 제공하는 것이 궁극적인 Feature engineering의 목적</li>
-<li>Gargage in - Garbage out 을 기억</li>
-</ul>
-<h2 id="dataframe">DataFrame</h2>
-<ul>
-<li>테이블형태의 데이터로 기억</li>
-<li>Row(행)에는 observation, Column(열)에는 feature가 있다</li>
-<li>만약 데이터에 NaN값이있다면? 같은 row의 다른값들은 자동으로 float으로 typecasting</li>
-</ul>
-<h2 id="feature-engineering-1">Feature Engineering</h2>
-<ul>
-<li>feature끼리는 일반수식처럼 가능하지만, 각각의 data type에 주의하여야함
-<ul>
-<li>int끼리라면 의도대로 수식이되지만, 만약 str이라면? 예상치못한 결과도출</li>
-<li>특히 머신러닝 모델링에서는 문자열로된 data는 사용하지 않음</li>
-</ul></li>
-</ul>
-<h3 id="methods">Methods</h3>
-<ul>
-<li>s.replace('지우려는것','대체할것')
-<ul>
-<li>하지만 바뀐것을 변수에 다시선언해주어야 변경됨(얕은복사? 더찾아보기)</li>
-</ul></li>
-<li>s.toint()
-<ul>
-<li>자동으로 int로 typecasting까지 실행</li>
-</ul></li>
-<li>s.apply(함수)
-<ul>
-<li>한 column전체에 대해 함수를 다 실행시킴(파이썬의 map과 비슷한느낌)</li>
-</ul></li>
-</ul>
-]]></content>
-      <categories>
-        <category>TIL</category>
-      </categories>
-      <tags>
-        <tag>Data science</tag>
-        <tag>Feature Engineering</tag>
       </tags>
   </entry>
   <entry>
@@ -1196,79 +1196,6 @@ bn+1=bn−η∇f(bn)
       </tags>
   </entry>
   <entry>
-    <title>AI-day16~20</title>
-    <url>/2021/06/03/AI-day16-20/</url>
-    <content><![CDATA[<h1 id="첫-프로젝트-진행-및-회고-project-review">첫 프로젝트 진행 및 회고 (Project-Review)</h1>
-<ul>
-<li>AI교육 16~20일차 개인프로잭트를 진행하였다</li>
-<li>프로잭트의 대략적인 방향과 회고를 적어보았다</li>
-<li>이번 포스팅에서는 자세한 분석과정이 아닌, 프로젝트 진행중 고민한 내용과 회고를 작성하였다.</li>
-</ul>
-<hr />
-<h2 id="프로젝트-진행">프로젝트 진행</h2>
-<ul>
-<li>프로젝트의 주제는 게임판매량 데이터를 분석하고, 분석결과를 바탕으로 다음 출시할 게임의 설계방향을 정하는것이다.</li>
-<li>비전공자를 대상으로 한다는 가정하에 발표시간은 5분제한이 있다.</li>
-<li>데이터는 게임이름,장르,출시년도,게임회사,플랫폼, 지역별(북미,유럽,일본,그외) 판매량이 있었다.</li>
-<li>간단하게 요약하자면 <strong>판매량과 장르</strong> , <strong>판매량과 지역</strong>, <strong>판매량과 플랫폼</strong> 을 분석하고<br />
-각각의 연관성을 먼저 정리하였다.</li>
-<li>그 후 판매량이 많은 게임들의 장르,플랫폼,지역을 정리 후 위에서 분석한 연관성들을 적용시켜<br />
-<strong>어떤 장르의 게임을 어떤플랫폼으로 어느지역에 출시할지</strong> 를 결론 내렸다.</li>
-</ul>
-<hr />
-<h2 id="시작부터-난관에-봉착">시작부터 난관에 봉착</h2>
-<p>프로잭트는 주말을 포함하여 6일동안 진행하였다. 하지만 개인 프로젝트를 진행하는것이 처음이라 분석방향을 설정하는 단계에서부터 어려움을 겪었다. 실제로 6일 중 3일동안 파이썬 코드는 한줄도 적지못하고 공책에 연필로 분석방향 그리기에 바빴다.<br />
-가장 큰 첫번째 고민은 <strong>"어떤 기준을 가지고 분석할까"</strong> 였다.<br />
-판매량에 영향을 주는요인은 <strong>장르와 플랫폼</strong> 이 가장 일반적이지만 해당 데이터의 지역별, 연도별 판매량차이와 게임회사 정보도 무시할 수 없었다. 그래서 우선 장르와 플랫폼을 분석하고 그다음 나머지것들을 고려하기로 했다. 대략 이미지로 정리해보았다.<br />
-<img src="../images/sales.png" width= 450, height=200></p>
-<p><strong>"플랫폼과 장르가 판매량과 어떤 연관이있는지 , 그리고 각각의 플랫폼&amp;장르는 지역&amp;연도와 어떤 연관이있는지"</strong> 분석향을 정했다.<br />
-분석방향을 정했으니 장르부터 분석을 시작했다. 하지만.. 다시 또 문제가 발생했다. 내가 알고싶은것은 장르와 연도&amp;지역의 연관성 이였다.<br />
-- 장르들을 각 지역내에서의 비교해 지역내 인기가 많은 장르들을 분석할까? - 그럼 각 지역별 인기있는 장르를 찾아낼 수 있을것이다. - ex) 미국에선 레이싱, 유럽에선 RPG가 잘팔린다 - 여러 장르의 게임을 출시할때, 지역별로 다른장르를 선택해 출시할 수 있다 - 한 장르에대해 각 지역별 차이를 분석할까? - 그럼 어떤 장르가 어디서 더 인기가 많은지 알 수 있을것이다. - ex) 레이싱게임은 유럽보다는 미국에서 더 잘팔린다 - 한 장르의 게임을 출시할때 보다 판매량이 높은 지역에 출시할 수 있다</p>
-<p>물론 두가지를 다 비교하면 더욱 자세한 분석이 될 수 있고, 지역별로 다른 장르를 출시할 수도 있다. 하지만 이번 프로젝트의 발표시간은 5분이고, 다른 분석할 기준이 많기때문에 포괄적인 기준이 필요했다. 그래서 지역내에서가 아닌 지역별 차이를 분석하여 하나의 게임을 출시하는데 목표를 두었다.</p>
-<hr />
-<h2 id="장르와-지역의-분석방법을-다른기준에도-똑같이-적용할수-있을까">장르와 지역의 분석방법을 다른기준에도 똑같이 적용할수 있을까?</h2>
-<p>동일한 방법으로 장르-연도, 플랫폼-지역&amp;연도를 분석하면 되지않을까? 잠시 복붙의 행복회로에 불이 들어왔다.<br />
-하지만... 연도에서 다시한번 딜레마에 빠졌다. 연도를 고려하지 않았을때는 지역끼리만 비교하면 됬지만,, 게임기술이 1년단위로 급성장하는 시대에서 과연 1995년,2010년,2015년 같은장르의 판매량을 연도끼리 비교하는것이 의미가있을까? 좀 더 <strong>의미있는</strong> 분석을 위해 이번에는 장르에서 선택하지않았던 연도내에서 장르들의 차이를 비교해보기로 결정했다. - 연도내에서 장르의 차이를 분석한다면? - 연도별 가장 인기있었던 장르를 비교하면 전체적인 흐름 즉, <strong>장르의 트랜드</strong> 를 파악할 수 있다. - 이것은 그냥 같은 장르를 연도끼리 비교하는것보다 선호도 변화를 볼 수 있어 더 유용하다.</p>
-<p>그래서 아쉽지만 기쁜마음으로(?) 지역과는 다른방향으로 분석하였다. 각 연도 내에서 어떤장르가 가장 많이판매되었는지 비교 한 후 전체적인 트랜드를 확인하기로 결정했다.</p>
-<hr />
-<h2 id="장르가-끝났다-플랫폼을-분석해보자">장르가 끝났다, 플랫폼을 분석해보자</h2>
-<p>이번에야말로 봍붙의 행복회로가 빛을 내기시작했다. 장르의 분석방법을 플랫폼에 그대로 적용시켰다. 그림으로 보았던 총 4가지의 분석을 마쳤고 분석결과도 도출해냈다. (추가로 같은 장르의 게임의 플랫폼별 판매량도 분석해보았다.)<br />
-분석과정은 t-test나 ANOVA를 통해 가설검정 과정만 진행하였다. 분석과정에서 고려할 사항을 최소하 하기 위해서다.</p>
-<p>하지만 이것이 실수였다는것을 동기들의 피드백을 듣고 알게 되었다.<br />
-비전공자가 <strong>"연관이있다 없다 식의 논리"</strong> 를 이해하기 어렵기때문이다. 각각의 판매량 차이를 그래프로 시각화하는것이 그래프가 많더라도 오히려 한눈에 이해하기는 쉽다는것을 피트백을 듣고 뒤늦게 깨달앗다.</p>
-<hr />
-<h2 id="출고량이-많은게임을-분석한다...-그런데-출고량이-많은-기준은">출고량이 많은게임을 분석한다... 그런데 출고량이 많은 기준은?</h2>
-<p>그렇다 출고량이 많은게임을 분석해서 기준을 적용하고 장르를 정하고 플랫폼을 정하고.. 흐름은 좋았다. 하지만 어느정도가 되어야 통계학적,객관적으로 <strong>많다</strong> 고 할 수 있을까?<br />
-결론부터 말하자면 정확한 방법을 찾진 못했다. 과정에서배운 clustering, PCA,정규화 등의 방법이 있었지만 판매량의 분포가 워낙 일정했기때문에 기준을 정하기 애매했다. 그래서 그래프로 총판매량만 단순하게 시각화하고 그나마 차이가 많이나는 상위 100개의 게임을 선정했다.<br />
-<img src="../images/total.PNG" width=300 height=200></p>
-<p>하지만 분석하나하나가 회사의 매출을 좌우한다고 생각한다면? 이런 대략이라는 수치는 용납되지 않을것 같았고, 이번주말에 이 기준을 어떻게 설정할지 찾아보기로 했다.</p>
-<hr />
-<h2 id="거의다-온것같은데..-마지막-결론도출도-만만치-않다">거의다 온것같은데.. 마지막 결론도출도 만만치 않다</h2>
-<p>판매량 상위100개의 게임을 분석했고 가장많은 장르와 플렛폼을 찾아냈다. 그런데 여기서 또다시 딜레마에 빠졌다.<br />
-판매량이 많은 장르와 플렛폼은 찾았는데 서로 비슷하지않다. 한마디로 슈팅게임이 가장 많이 팔렸는데, 플랫폼은 Wii가 가장 많다. 마음같아서는 슈팅게임을 Wii플랫폼으로 내면될 것 같다.<br />
-그럼 어떤것을 먼저 골라야할까? 장르일까 플랫폼일까?<br />
-여기서 이용한것이 <strong>트랜드</strong> 이다.<br />
-분석결과 <strong>장르는 연도별 트랜드가 있지만</strong> , <strong>플랫폼은 연도별 트랜드가 없다</strong><br />
-한마디로 최근 트랜드인(최근에 판매량이많은) 장르를 고른다면, 판매량이 많은 플랫폼을 고르는것보다는 의미가 있을것이라 판단했다. 이런 논리만으로 장르를 우선시 하는게 완벽한 분석은 아닐 수 있지만, 현재 분석한 데이터에선 가장 최선이라 생각했다. 물론 이부분도 후에 더 정확한 선택방법이 있는지 알아보는것도 개인적 숙제다. ### 복잡한 분석과 이론적 고찰을 통해 드디어 결론에 도착했다 결국 상위100개 게임에서도 슈팅, 전체에서도 슈팅이 제일 많이 팔린걸 확인했다. 장르는 슈팅으로 정했다.<br />
-그 다음 슈팅장르가 가장 많이 팔린 플랫폼과 지역을 분석하고 결론적으로 장르,플랫폼,지역을 선정했다.</p>
-<hr />
-<h2 id="영상도-찍고-동기부여도-하고-완벽했다">영상도 찍고 동기부여도 하고 완벽했다</h2>
-<p>정말 많은것을 느꼈다. 한달간 수학,통계학,파이썬을 배우며 넘지 못할것 같았던 산들을 꾸역꾸역 올라갔다. 이론적인 부분에 집중해서 용어, 의미, 공식 같은 내용을 남들에게 설명할 수 있을 정도로 완벽하게 흡수하려고 노력했다.<br />
-하지만 실제 비지니스에 활용하는것, 그것을 다른사람에게 논리적으로 설명하는것은 또 다른 영역이였다. 비전공자인 청자의 입장을 고려하는점이 필요한것 같았다. 신기하게도 동기들의 피드백에서도 같은 지적을 받았다.<br />
-동기들의 노력과 고민의 결과가 담긴 아주 소중한 발표영상(5분길이의 50개영상)을 모두 보았다. 같은 데이터를 가지고 이렇게나 다른분석을 할 수 있고, 심지어는 나의 분석내용이 틀렸나 라고 의심할정도로 완벽한 발표내용도 보았다. 역시 배울점도 많고 뭔가 승부욕, 공부의지가 불타오르는 자극이 되었다.<br />
-한달동안 이론만보고 컴퓨터만보고 대화한 느낌이였다면, 이번 프로젝트와 동기들과의 피드백으로 정말 데이터사이언스라는 분야에 첫걸음을 내딛었다는 생각에 뿌듯하다. 다음 프로젝트때는 내가 다른 동기들의 자극이 될 수 있도록 스스로 만족할수 있도록 꾸준히 부지런하게 걸어봐야겠다.<br />
-(그동안 잠자고있던 미적분,선형통계,파이썬,머신러닝,딥러닝 인강들을 깨울때가 된 것 같다)<br />
-블로그도 옮길때가 된것 같다 블로그테마가 익스플로러에서 재대로 작동하지않아 공부시간과 블로그 수정시간이 비슷한것같다... 티스토리나 밸로그로 옮길예정이다</p>
-]]></content>
-      <categories>
-        <category>Project</category>
-      </categories>
-      <tags>
-        <tag>Project-Review</tag>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>AI-day6</title>
     <url>/2021/05/13/AI-day6/</url>
     <content><![CDATA[<h1 id="통계학">통계학</h1>
@@ -1428,6 +1355,79 @@ ex) 여론 조사를 위해 사람을 나이대 별로 나누고, 해당 그룹�
       </tags>
   </entry>
   <entry>
+    <title>AI-day16~20</title>
+    <url>/2021/06/03/AI-day16-20/</url>
+    <content><![CDATA[<h1 id="첫-프로젝트-진행-및-회고-project-review">첫 프로젝트 진행 및 회고 (Project-Review)</h1>
+<ul>
+<li>AI교육 16~20일차 개인프로잭트를 진행하였다</li>
+<li>프로잭트의 대략적인 방향과 회고를 적어보았다</li>
+<li>이번 포스팅에서는 자세한 분석과정이 아닌, 프로젝트 진행중 고민한 내용과 회고를 작성하였다.</li>
+</ul>
+<hr />
+<h2 id="프로젝트-진행">프로젝트 진행</h2>
+<ul>
+<li>프로젝트의 주제는 게임판매량 데이터를 분석하고, 분석결과를 바탕으로 다음 출시할 게임의 설계방향을 정하는것이다.</li>
+<li>비전공자를 대상으로 한다는 가정하에 발표시간은 5분제한이 있다.</li>
+<li>데이터는 게임이름,장르,출시년도,게임회사,플랫폼, 지역별(북미,유럽,일본,그외) 판매량이 있었다.</li>
+<li>간단하게 요약하자면 <strong>판매량과 장르</strong> , <strong>판매량과 지역</strong>, <strong>판매량과 플랫폼</strong> 을 분석하고<br />
+각각의 연관성을 먼저 정리하였다.</li>
+<li>그 후 판매량이 많은 게임들의 장르,플랫폼,지역을 정리 후 위에서 분석한 연관성들을 적용시켜<br />
+<strong>어떤 장르의 게임을 어떤플랫폼으로 어느지역에 출시할지</strong> 를 결론 내렸다.</li>
+</ul>
+<hr />
+<h2 id="시작부터-난관에-봉착">시작부터 난관에 봉착</h2>
+<p>프로잭트는 주말을 포함하여 6일동안 진행하였다. 하지만 개인 프로젝트를 진행하는것이 처음이라 분석방향을 설정하는 단계에서부터 어려움을 겪었다. 실제로 6일 중 3일동안 파이썬 코드는 한줄도 적지못하고 공책에 연필로 분석방향 그리기에 바빴다.<br />
+가장 큰 첫번째 고민은 <strong>"어떤 기준을 가지고 분석할까"</strong> 였다.<br />
+판매량에 영향을 주는요인은 <strong>장르와 플랫폼</strong> 이 가장 일반적이지만 해당 데이터의 지역별, 연도별 판매량차이와 게임회사 정보도 무시할 수 없었다. 그래서 우선 장르와 플랫폼을 분석하고 그다음 나머지것들을 고려하기로 했다. 대략 이미지로 정리해보았다.<br />
+<img src="../images/sales.png" width= 450, height=200></p>
+<p><strong>"플랫폼과 장르가 판매량과 어떤 연관이있는지 , 그리고 각각의 플랫폼&amp;장르는 지역&amp;연도와 어떤 연관이있는지"</strong> 분석향을 정했다.<br />
+분석방향을 정했으니 장르부터 분석을 시작했다. 하지만.. 다시 또 문제가 발생했다. 내가 알고싶은것은 장르와 연도&amp;지역의 연관성 이였다.<br />
+- 장르들을 각 지역내에서의 비교해 지역내 인기가 많은 장르들을 분석할까? - 그럼 각 지역별 인기있는 장르를 찾아낼 수 있을것이다. - ex) 미국에선 레이싱, 유럽에선 RPG가 잘팔린다 - 여러 장르의 게임을 출시할때, 지역별로 다른장르를 선택해 출시할 수 있다 - 한 장르에대해 각 지역별 차이를 분석할까? - 그럼 어떤 장르가 어디서 더 인기가 많은지 알 수 있을것이다. - ex) 레이싱게임은 유럽보다는 미국에서 더 잘팔린다 - 한 장르의 게임을 출시할때 보다 판매량이 높은 지역에 출시할 수 있다</p>
+<p>물론 두가지를 다 비교하면 더욱 자세한 분석이 될 수 있고, 지역별로 다른 장르를 출시할 수도 있다. 하지만 이번 프로젝트의 발표시간은 5분이고, 다른 분석할 기준이 많기때문에 포괄적인 기준이 필요했다. 그래서 지역내에서가 아닌 지역별 차이를 분석하여 하나의 게임을 출시하는데 목표를 두었다.</p>
+<hr />
+<h2 id="장르와-지역의-분석방법을-다른기준에도-똑같이-적용할수-있을까">장르와 지역의 분석방법을 다른기준에도 똑같이 적용할수 있을까?</h2>
+<p>동일한 방법으로 장르-연도, 플랫폼-지역&amp;연도를 분석하면 되지않을까? 잠시 복붙의 행복회로에 불이 들어왔다.<br />
+하지만... 연도에서 다시한번 딜레마에 빠졌다. 연도를 고려하지 않았을때는 지역끼리만 비교하면 됬지만,, 게임기술이 1년단위로 급성장하는 시대에서 과연 1995년,2010년,2015년 같은장르의 판매량을 연도끼리 비교하는것이 의미가있을까? 좀 더 <strong>의미있는</strong> 분석을 위해 이번에는 장르에서 선택하지않았던 연도내에서 장르들의 차이를 비교해보기로 결정했다. - 연도내에서 장르의 차이를 분석한다면? - 연도별 가장 인기있었던 장르를 비교하면 전체적인 흐름 즉, <strong>장르의 트랜드</strong> 를 파악할 수 있다. - 이것은 그냥 같은 장르를 연도끼리 비교하는것보다 선호도 변화를 볼 수 있어 더 유용하다.</p>
+<p>그래서 아쉽지만 기쁜마음으로(?) 지역과는 다른방향으로 분석하였다. 각 연도 내에서 어떤장르가 가장 많이판매되었는지 비교 한 후 전체적인 트랜드를 확인하기로 결정했다.</p>
+<hr />
+<h2 id="장르가-끝났다-플랫폼을-분석해보자">장르가 끝났다, 플랫폼을 분석해보자</h2>
+<p>이번에야말로 봍붙의 행복회로가 빛을 내기시작했다. 장르의 분석방법을 플랫폼에 그대로 적용시켰다. 그림으로 보았던 총 4가지의 분석을 마쳤고 분석결과도 도출해냈다. (추가로 같은 장르의 게임의 플랫폼별 판매량도 분석해보았다.)<br />
+분석과정은 t-test나 ANOVA를 통해 가설검정 과정만 진행하였다. 분석과정에서 고려할 사항을 최소하 하기 위해서다.</p>
+<p>하지만 이것이 실수였다는것을 동기들의 피드백을 듣고 알게 되었다.<br />
+비전공자가 <strong>"연관이있다 없다 식의 논리"</strong> 를 이해하기 어렵기때문이다. 각각의 판매량 차이를 그래프로 시각화하는것이 그래프가 많더라도 오히려 한눈에 이해하기는 쉽다는것을 피트백을 듣고 뒤늦게 깨달앗다.</p>
+<hr />
+<h2 id="출고량이-많은게임을-분석한다...-그런데-출고량이-많은-기준은">출고량이 많은게임을 분석한다... 그런데 출고량이 많은 기준은?</h2>
+<p>그렇다 출고량이 많은게임을 분석해서 기준을 적용하고 장르를 정하고 플랫폼을 정하고.. 흐름은 좋았다. 하지만 어느정도가 되어야 통계학적,객관적으로 <strong>많다</strong> 고 할 수 있을까?<br />
+결론부터 말하자면 정확한 방법을 찾진 못했다. 과정에서배운 clustering, PCA,정규화 등의 방법이 있었지만 판매량의 분포가 워낙 일정했기때문에 기준을 정하기 애매했다. 그래서 그래프로 총판매량만 단순하게 시각화하고 그나마 차이가 많이나는 상위 100개의 게임을 선정했다.<br />
+<img src="../images/total.PNG" width=300 height=200></p>
+<p>하지만 분석하나하나가 회사의 매출을 좌우한다고 생각한다면? 이런 대략이라는 수치는 용납되지 않을것 같았고, 이번주말에 이 기준을 어떻게 설정할지 찾아보기로 했다.</p>
+<hr />
+<h2 id="거의다-온것같은데..-마지막-결론도출도-만만치-않다">거의다 온것같은데.. 마지막 결론도출도 만만치 않다</h2>
+<p>판매량 상위100개의 게임을 분석했고 가장많은 장르와 플렛폼을 찾아냈다. 그런데 여기서 또다시 딜레마에 빠졌다.<br />
+판매량이 많은 장르와 플렛폼은 찾았는데 서로 비슷하지않다. 한마디로 슈팅게임이 가장 많이 팔렸는데, 플랫폼은 Wii가 가장 많다. 마음같아서는 슈팅게임을 Wii플랫폼으로 내면될 것 같다.<br />
+그럼 어떤것을 먼저 골라야할까? 장르일까 플랫폼일까?<br />
+여기서 이용한것이 <strong>트랜드</strong> 이다.<br />
+분석결과 <strong>장르는 연도별 트랜드가 있지만</strong> , <strong>플랫폼은 연도별 트랜드가 없다</strong><br />
+한마디로 최근 트랜드인(최근에 판매량이많은) 장르를 고른다면, 판매량이 많은 플랫폼을 고르는것보다는 의미가 있을것이라 판단했다. 이런 논리만으로 장르를 우선시 하는게 완벽한 분석은 아닐 수 있지만, 현재 분석한 데이터에선 가장 최선이라 생각했다. 물론 이부분도 후에 더 정확한 선택방법이 있는지 알아보는것도 개인적 숙제다. ### 복잡한 분석과 이론적 고찰을 통해 드디어 결론에 도착했다 결국 상위100개 게임에서도 슈팅, 전체에서도 슈팅이 제일 많이 팔린걸 확인했다. 장르는 슈팅으로 정했다.<br />
+그 다음 슈팅장르가 가장 많이 팔린 플랫폼과 지역을 분석하고 결론적으로 장르,플랫폼,지역을 선정했다.</p>
+<hr />
+<h2 id="영상도-찍고-동기부여도-하고-완벽했다">영상도 찍고 동기부여도 하고 완벽했다</h2>
+<p>정말 많은것을 느꼈다. 한달간 수학,통계학,파이썬을 배우며 넘지 못할것 같았던 산들을 꾸역꾸역 올라갔다. 이론적인 부분에 집중해서 용어, 의미, 공식 같은 내용을 남들에게 설명할 수 있을 정도로 완벽하게 흡수하려고 노력했다.<br />
+하지만 실제 비지니스에 활용하는것, 그것을 다른사람에게 논리적으로 설명하는것은 또 다른 영역이였다. 비전공자인 청자의 입장을 고려하는점이 필요한것 같았다. 신기하게도 동기들의 피드백에서도 같은 지적을 받았다.<br />
+동기들의 노력과 고민의 결과가 담긴 아주 소중한 발표영상(5분길이의 50개영상)을 모두 보았다. 같은 데이터를 가지고 이렇게나 다른분석을 할 수 있고, 심지어는 나의 분석내용이 틀렸나 라고 의심할정도로 완벽한 발표내용도 보았다. 역시 배울점도 많고 뭔가 승부욕, 공부의지가 불타오르는 자극이 되었다.<br />
+한달동안 이론만보고 컴퓨터만보고 대화한 느낌이였다면, 이번 프로젝트와 동기들과의 피드백으로 정말 데이터사이언스라는 분야에 첫걸음을 내딛었다는 생각에 뿌듯하다. 다음 프로젝트때는 내가 다른 동기들의 자극이 될 수 있도록 스스로 만족할수 있도록 꾸준히 부지런하게 걸어봐야겠다.<br />
+(그동안 잠자고있던 미적분,선형통계,파이썬,머신러닝,딥러닝 인강들을 깨울때가 된 것 같다)<br />
+블로그도 옮길때가 된것 같다 블로그테마가 익스플로러에서 재대로 작동하지않아 공부시간과 블로그 수정시간이 비슷한것같다... 티스토리나 밸로그로 옮길예정이다</p>
+]]></content>
+      <categories>
+        <category>Project</category>
+      </categories>
+      <tags>
+        <tag>Project-Review</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AI-day8</title>
     <url>/2021/05/17/AI-day8/</url>
     <content><![CDATA[<h1 id="신뢰구간-confidence-interval">신뢰구간 (Confidence Interval)</h1>
@@ -1496,99 +1496,6 @@ ex) 여론 조사를 위해 사람을 나이대 별로 나누고, 해당 그룹�
       <tags>
         <tag>Data science</tag>
         <tag>Confidence Interval</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI-day9</title>
-    <url>/2021/05/18/AI-day9/</url>
-    <content><![CDATA[<h1 id="베이지안-통계-개론-bayesian-inference">베이지안 통계 개론 (Bayesian Inference)</h1>
-<ul>
-<li>이유 불충분의 정리
-<ul>
-<li>확률을 모를때는 50대50으로 생각</li>
-<li>아무 정보없을때 사전확률(50%)</li>
-<li>어떤 새로운 정보로인해 상승한 사후확률(50+a%)</li>
-<li>이렇게 어떤 하나의 정보로인해 확률이 변하는것이 <strong>베이즈정리</strong></li>
-</ul></li>
-<li>조건부확률도 중요</li>
-</ul>
-<h2 id="총-확률의-법칙-the-law-of-total-probability">총 확률의 법칙 (The Law of Total Probability)</h2>
-<ul>
-<li>특정 확률 변수에 대해, 모든 가능한 이벤트의 총 확률 = 1</li>
-<li>2개의 변수를 고려 한다면 두 변수가 연관이 있는 경우, B가 일어난 상황에서 A에 대한 확률 P(A)는, P(A|B) 의 형태로 표현<br />
-<img src="../images/ltp.PNG"></li>
-</ul>
-<h2 id="조건부-확률-the-law-of-conditional-probability">조건부 확률 (The Law of Conditional Probability)</h2>
-<ul>
-<li>전체사각형이 모든 확률공간(1) 일때 각각 B의 조건에서 A가 일어날 확률을 교집합으로 표현가능<br />
-<img src="../images/conditional.PNG" width="300"></li>
-</ul>
-<h2 id="베이지안-이론-bayes-theorem">베이지안 이론 (Bayes Theorem)</h2>
-<ul>
-<li>사후확률(posterior probability)을 사전확률(prior probability)과 likelihood를 이용해서 계산할 수 있도록 해 주는 확률 변환식
-<ul>
-<li>B가 주어진 상황에서 A의 확률 = A가 주어진 상황에서 B의 확률 X A의 확률 % B 의 확률로 표현</li>
-<li>p(A|B) -&gt; 사후 확률 (B라는 정보가 업데이트 된 이후 확률)</li>
-<li>p(A) -&gt; 사전 확률 (B라는 정보가 업데이트 되기 전의 사전확률)</li>
-<li>p(B|A) -&gt; likelihood(어떤 모델에서 해당 데이터(관측값)이 나올 확률)</li>
-</ul></li>
-<li>사전확률("Prior")은 사후확률("Updated")로 다시 표현 할 수 있음이 중요
-<ul>
-<li>쉽게말해 사후확률의 추가(샘플의 추가)로 불규칙한 확률을 정규분포와 비슷하게 업데이트 할수 있다 -&gt; 베이지안이론이 많이 쓰이는 이유<br />
-<img src="../images/bayes.PNG"></li>
-</ul></li>
-</ul>
-<h2 id="베이지안-테스트를-반복하여-사용-repeated-testing">베이지안 테스트를 반복하여 사용 (repeated testing)</h2>
-<ul>
-<li>False positive rate와 사전확률을 통해 반복적인 테스트로 정확한 확률을 계산
-<ul>
-<li>TPR : True Positive Rate (= 민감도, true accept rate) 1인 케이스에 대해 1로 잘 예측한 비율(암환자를 암이라고 진단 함)</li>
-<li>FPR : False Positive Rate (= 1-특이도, false accept rate) 0인 케이스에 대해 1로 잘못 예측한 비율(암환자가 아닌데 암이라고 진단 함)</li>
-</ul></li>
-</ul>
-<h3 id="bayesian-기반-신뢰구간-추정">Bayesian 기반 신뢰구간 추정</h3>
-<ul>
-<li>Scipy.stats.bayes_mvs()</li>
-</ul>
-<h3 id="bayesian-optimize">Bayesian Optimize</h3>
-<ul>
-<li>https://github.com/fmfn/BayesianOptimization</li>
-</ul>
-<h2 id="naive-bayes">Naive Bayes</h2>
-<ul>
-<li>bayes theorem을 사용하되, 고려해야할 특징이 많은경우 보다 단순화해서 판달할수있는 방법</li>
-<li>즉, multi=class 분류에서 쉽고 빠르게 예측가능</li>
-<li>수치형보다는 범주형데이터에 효과적
-<ul>
-<li>특히 실시간 예측이 필요한경우나 질병예측분야에서 효과적</li>
-</ul></li>
-<li>but ! 학습데이터에는 없지만 실제 검사데이터에 있는 범주에서는 확률이 0 이되어(zero frequency) 예측 불가능해짐
-<ul>
-<li>이를 방지하기위해 다른 테크닉이 필요하고, 실제 데이터간의 독립성이 불분명한경우에도 오류가능성있음</li>
-</ul></li>
-</ul>
-<h2 id="mle-와-map">MLE 와 MAP</h2>
-<ul>
-<li>최대우도법(Maximum Likelihood Estimation, 이하 MLE)
-<ul>
-<li>likelihood 가 높은것을 선택</li>
-<li>내 주머니에서 돈이 떨어질확률 vs 친구 주머니에서 떨어질확률 -&gt; 높은것을 선택</li>
-<li>바지에 주머니의 갯수가 몇개인지에 상관없이 떨어질확률만 생각(좋지않음)</li>
-</ul></li>
-<li>최대 사후확률법(Maximum A Posteriori, 이하 MAP)
-<ul>
-<li>posterior 가 높은것을 선택</li>
-<li>길에떨어져있는 돈이 내꺼일확률 vs 친구꺼일확률 -&gt; 높은것을 선택</li>
-<li>주머니의 갯수까지 고려</li>
-</ul></li>
-</ul>
-]]></content>
-      <categories>
-        <category>TIL</category>
-      </categories>
-      <tags>
-        <tag>Data science</tag>
-        <tag>Bayesian</tag>
       </tags>
   </entry>
   <entry>
@@ -1725,6 +1632,99 @@ ex) 여론 조사를 위해 사람을 나이대 별로 나누고, 해당 그룹�
       </tags>
   </entry>
   <entry>
+    <title>AI-day9</title>
+    <url>/2021/05/18/AI-day9/</url>
+    <content><![CDATA[<h1 id="베이지안-통계-개론-bayesian-inference">베이지안 통계 개론 (Bayesian Inference)</h1>
+<ul>
+<li>이유 불충분의 정리
+<ul>
+<li>확률을 모를때는 50대50으로 생각</li>
+<li>아무 정보없을때 사전확률(50%)</li>
+<li>어떤 새로운 정보로인해 상승한 사후확률(50+a%)</li>
+<li>이렇게 어떤 하나의 정보로인해 확률이 변하는것이 <strong>베이즈정리</strong></li>
+</ul></li>
+<li>조건부확률도 중요</li>
+</ul>
+<h2 id="총-확률의-법칙-the-law-of-total-probability">총 확률의 법칙 (The Law of Total Probability)</h2>
+<ul>
+<li>특정 확률 변수에 대해, 모든 가능한 이벤트의 총 확률 = 1</li>
+<li>2개의 변수를 고려 한다면 두 변수가 연관이 있는 경우, B가 일어난 상황에서 A에 대한 확률 P(A)는, P(A|B) 의 형태로 표현<br />
+<img src="../images/ltp.PNG"></li>
+</ul>
+<h2 id="조건부-확률-the-law-of-conditional-probability">조건부 확률 (The Law of Conditional Probability)</h2>
+<ul>
+<li>전체사각형이 모든 확률공간(1) 일때 각각 B의 조건에서 A가 일어날 확률을 교집합으로 표현가능<br />
+<img src="../images/conditional.PNG" width="300"></li>
+</ul>
+<h2 id="베이지안-이론-bayes-theorem">베이지안 이론 (Bayes Theorem)</h2>
+<ul>
+<li>사후확률(posterior probability)을 사전확률(prior probability)과 likelihood를 이용해서 계산할 수 있도록 해 주는 확률 변환식
+<ul>
+<li>B가 주어진 상황에서 A의 확률 = A가 주어진 상황에서 B의 확률 X A의 확률 % B 의 확률로 표현</li>
+<li>p(A|B) -&gt; 사후 확률 (B라는 정보가 업데이트 된 이후 확률)</li>
+<li>p(A) -&gt; 사전 확률 (B라는 정보가 업데이트 되기 전의 사전확률)</li>
+<li>p(B|A) -&gt; likelihood(어떤 모델에서 해당 데이터(관측값)이 나올 확률)</li>
+</ul></li>
+<li>사전확률("Prior")은 사후확률("Updated")로 다시 표현 할 수 있음이 중요
+<ul>
+<li>쉽게말해 사후확률의 추가(샘플의 추가)로 불규칙한 확률을 정규분포와 비슷하게 업데이트 할수 있다 -&gt; 베이지안이론이 많이 쓰이는 이유<br />
+<img src="../images/bayes.PNG"></li>
+</ul></li>
+</ul>
+<h2 id="베이지안-테스트를-반복하여-사용-repeated-testing">베이지안 테스트를 반복하여 사용 (repeated testing)</h2>
+<ul>
+<li>False positive rate와 사전확률을 통해 반복적인 테스트로 정확한 확률을 계산
+<ul>
+<li>TPR : True Positive Rate (= 민감도, true accept rate) 1인 케이스에 대해 1로 잘 예측한 비율(암환자를 암이라고 진단 함)</li>
+<li>FPR : False Positive Rate (= 1-특이도, false accept rate) 0인 케이스에 대해 1로 잘못 예측한 비율(암환자가 아닌데 암이라고 진단 함)</li>
+</ul></li>
+</ul>
+<h3 id="bayesian-기반-신뢰구간-추정">Bayesian 기반 신뢰구간 추정</h3>
+<ul>
+<li>Scipy.stats.bayes_mvs()</li>
+</ul>
+<h3 id="bayesian-optimize">Bayesian Optimize</h3>
+<ul>
+<li>https://github.com/fmfn/BayesianOptimization</li>
+</ul>
+<h2 id="naive-bayes">Naive Bayes</h2>
+<ul>
+<li>bayes theorem을 사용하되, 고려해야할 특징이 많은경우 보다 단순화해서 판달할수있는 방법</li>
+<li>즉, multi=class 분류에서 쉽고 빠르게 예측가능</li>
+<li>수치형보다는 범주형데이터에 효과적
+<ul>
+<li>특히 실시간 예측이 필요한경우나 질병예측분야에서 효과적</li>
+</ul></li>
+<li>but ! 학습데이터에는 없지만 실제 검사데이터에 있는 범주에서는 확률이 0 이되어(zero frequency) 예측 불가능해짐
+<ul>
+<li>이를 방지하기위해 다른 테크닉이 필요하고, 실제 데이터간의 독립성이 불분명한경우에도 오류가능성있음</li>
+</ul></li>
+</ul>
+<h2 id="mle-와-map">MLE 와 MAP</h2>
+<ul>
+<li>최대우도법(Maximum Likelihood Estimation, 이하 MLE)
+<ul>
+<li>likelihood 가 높은것을 선택</li>
+<li>내 주머니에서 돈이 떨어질확률 vs 친구 주머니에서 떨어질확률 -&gt; 높은것을 선택</li>
+<li>바지에 주머니의 갯수가 몇개인지에 상관없이 떨어질확률만 생각(좋지않음)</li>
+</ul></li>
+<li>최대 사후확률법(Maximum A Posteriori, 이하 MAP)
+<ul>
+<li>posterior 가 높은것을 선택</li>
+<li>길에떨어져있는 돈이 내꺼일확률 vs 친구꺼일확률 -&gt; 높은것을 선택</li>
+<li>주머니의 갯수까지 고려</li>
+</ul></li>
+</ul>
+]]></content>
+      <categories>
+        <category>TIL</category>
+      </categories>
+      <tags>
+        <tag>Data science</tag>
+        <tag>Bayesian</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>DataScience</title>
     <url>/2021/04/06/DataScience/</url>
     <content><![CDATA[<h1 id="데이터사이언스-시작한-이유">데이터사이언스 시작한 이유?</h1>
@@ -1841,32 +1841,6 @@ ex) 여론 조사를 위해 사람을 나이대 별로 나누고, 해당 그룹�
       </tags>
   </entry>
   <entry>
-    <title>MachineLearning-Day2</title>
-    <url>/2021/06/09/MachineLearning-Day2/</url>
-    <content><![CDATA[<h1 id="다중선형회귀-multiple-linear-regression">다중선형회귀 (Multiple Linear Regression)</h1>
-<h2 id="msemean-square-error-r2">MSE(Mean Square Error) &amp; R<sup>2</sup></h2>
-<ul>
-<li>둘의 정의와 차이점은 무엇인가? ## Training and Testing data</li>
-<li>훈련,테스트 데이터를 나누는 이유는 ? ## low bias, low variance 모델</li>
-<li>각 모델은 어떤것인지 훈련/테스트세트를 사용해 설명할 수 있어야함</li>
-</ul>
-<h2 id="다중선형회귀모델">다중선형회귀모델</h2>
-<h2 id="회귀모델의-평가지표">회귀모델의 평가지표</h2>
-<h2 id="과적합과-과소적합">과적합과 과소적합</h2>
-<h2 id="step-process">5 step process</h2>
-<h2 id="sum-of-squares">Sum of Squares</h2>
-<h2 id="상관계수-결정계수">상관계수 &amp; 결정계수</h2>
-<h2 id="회귀의-오류지표는">회귀의 오류지표는?</h2>
-<h2 id="편향분산의-트레이드오프">편향/분산의 트레이드오프</h2>
-]]></content>
-      <categories>
-        <category>Machine Learning</category>
-      </categories>
-      <tags>
-        <tag>Multiple Regression</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MachineLearning-Day1</title>
     <url>/2021/06/08/MachineLearing-Day1/</url>
     <content><![CDATA[<h1 id="단순회귀">단순회귀</h1>
@@ -1906,6 +1880,19 @@ ex) 여론 조사를 위해 사람을 나이대 별로 나누고, 해당 그룹�
       </categories>
       <tags>
         <tag>Simple Regression</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MachineLearning-Day3</title>
+    <url>/2021/06/10/MachineLearning-Day3/</url>
+    <content><![CDATA[<h2 id="릿지회귀능선회귀-ridge-regression">릿지회귀,능선회귀 (Ridge regression)</h2>
+<h2 id="라쏘회귀-lasso-regression">라쏘회귀 (Lasso regression)</h2>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+      </categories>
+      <tags>
+        <tag>Ridge Regression</tag>
       </tags>
   </entry>
   <entry>
@@ -1974,39 +1961,29 @@ ex) 여론 조사를 위해 사람을 나이대 별로 나누고, 해당 그룹�
       </tags>
   </entry>
   <entry>
-    <title>MachineLearning-Day3</title>
-    <url>/2021/06/10/MachineLearning-Day3/</url>
-    <content><![CDATA[<h2 id="릿지회귀능선회귀-ridge-regression">릿지회귀,능선회귀 (Ridge regression)</h2>
-<h2 id="라쏘회귀-lasso-regression">라쏘회귀 (Lasso regression)</h2>
+    <title>MachineLearning-Day2</title>
+    <url>/2021/06/09/MachineLearning-Day2/</url>
+    <content><![CDATA[<h1 id="다중선형회귀-multiple-linear-regression">다중선형회귀 (Multiple Linear Regression)</h1>
+<h2 id="msemean-square-error-r2">MSE(Mean Square Error) &amp; R<sup>2</sup></h2>
+<ul>
+<li>둘의 정의와 차이점은 무엇인가? ## Training and Testing data</li>
+<li>훈련,테스트 데이터를 나누는 이유는 ? ## low bias, low variance 모델</li>
+<li>각 모델은 어떤것인지 훈련/테스트세트를 사용해 설명할 수 있어야함</li>
+</ul>
+<h2 id="다중선형회귀모델">다중선형회귀모델</h2>
+<h2 id="회귀모델의-평가지표">회귀모델의 평가지표</h2>
+<h2 id="과적합과-과소적합">과적합과 과소적합</h2>
+<h2 id="step-process">5 step process</h2>
+<h2 id="sum-of-squares">Sum of Squares</h2>
+<h2 id="상관계수-결정계수">상관계수 &amp; 결정계수</h2>
+<h2 id="회귀의-오류지표는">회귀의 오류지표는?</h2>
+<h2 id="편향분산의-트레이드오프">편향/분산의 트레이드오프</h2>
 ]]></content>
       <categories>
         <category>Machine Learning</category>
       </categories>
       <tags>
-        <tag>Ridge Regression</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>linear layer</title>
-    <url>/2021/04/15/linear-layer/</url>
-    <content><![CDATA[<h1 id="linear-layer">Linear layer</h1>
-<ul>
-<li>신경망의 기본요소</li>
-<li>Fully-connected (FC) layer</li>
-<li>내부 파라미터에따른 선형변환을 수행</li>
-<li>각 입력노드에 weight(가중치)를 곱하고 합친후, bias(편향) 더함</li>
-</ul>
-<p><img src="./_images/linear.PNG"></p>
-<ul>
-<li>이때 행렬의 곱으로 표현가능.</li>
-</ul>
-<p><img src="./_images/linearmulit.PNG"></p>
-]]></content>
-      <categories>
-        <category>Deep-Learning</category>
-      </categories>
-      <tags>
-        <tag>linear-layer</tag>
+        <tag>Multiple Regression</tag>
       </tags>
   </entry>
   <entry>
@@ -2168,6 +2145,29 @@ ex) 여론 조사를 위해 사람을 나이대 별로 나누고, 해당 그룹�
       </categories>
       <tags>
         <tag>deeplearning-basic</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>linear layer</title>
+    <url>/2021/04/15/linear-layer/</url>
+    <content><![CDATA[<h1 id="linear-layer">Linear layer</h1>
+<ul>
+<li>신경망의 기본요소</li>
+<li>Fully-connected (FC) layer</li>
+<li>내부 파라미터에따른 선형변환을 수행</li>
+<li>각 입력노드에 weight(가중치)를 곱하고 합친후, bias(편향) 더함</li>
+</ul>
+<p><img src="./_images/linear.PNG"></p>
+<ul>
+<li>이때 행렬의 곱으로 표현가능.</li>
+</ul>
+<p><img src="./_images/linearmulit.PNG"></p>
+]]></content>
+      <categories>
+        <category>Deep-Learning</category>
+      </categories>
+      <tags>
+        <tag>linear-layer</tag>
       </tags>
   </entry>
 </search>
