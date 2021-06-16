@@ -23,12 +23,12 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"bong7233.github.io","root":"/","images":"/images","scheme":"Muse","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="통계학 Estimation &#x2F; Sampling의 목적과 방법 가설검정 이해 T-test의 목적과 사용예시 숙지     기술 통계치(Descriptive Statistics)란? count, mean, standard dev, min, 1Q, median, 3Q, max 등의 데이터를 설명 하는 값(혹은 통계치) https:&#x2F;&#x2F;drhongdatanote.ti">
+<meta name="description" content="통계학 Estimation &#x2F; Sampling의 목적과 방법 가설검정 이해 T-test의 목적과 사용예시 숙지">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AI-day6">
 <meta property="og:url" content="http://bong7233.github.io/2021/05/13/AI-day6/index.html">
 <meta property="og:site_name" content="Bong&#39;s Blog">
-<meta property="og:description" content="통계학 Estimation &#x2F; Sampling의 목적과 방법 가설검정 이해 T-test의 목적과 사용예시 숙지     기술 통계치(Descriptive Statistics)란? count, mean, standard dev, min, 1Q, median, 3Q, max 등의 데이터를 설명 하는 값(혹은 통계치) https:&#x2F;&#x2F;drhongdatanote.ti">
+<meta property="og:description" content="통계학 Estimation &#x2F; Sampling의 목적과 방법 가설검정 이해 T-test의 목적과 사용예시 숙지">
 <meta property="og:locale">
 <meta property="og:image" content="http://bong7233.github.io/2021/05/13/images/se.PNG">
 <meta property="og:image" content="http://bong7233.github.io/2021/05/13/images/ttest.PNG">
@@ -37,7 +37,7 @@
 <meta property="og:image" content="http://bong7233.github.io/2021/05/13/images/ttestpro3.PNG">
 <meta property="og:image" content="http://bong7233.github.io/2021/05/13/images/ttestpro4.PNG">
 <meta property="article:published_time" content="2021-05-13T00:36:33.000Z">
-<meta property="article:modified_time" content="2021-06-16T08:56:10.548Z">
+<meta property="article:modified_time" content="2021-06-16T09:28:10.980Z">
 <meta property="article:author" content="SangBong Lee">
 <meta property="article:tag" content="Data science">
 <meta property="article:tag" content="hypothesis statistics">
@@ -307,7 +307,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-16 17:56:10" itemprop="dateModified" datetime="2021-06-16T17:56:10+09:00">2021-06-16</time>
+        <time title="Modified: 2021-06-16 18:28:10" itemprop="dateModified" datetime="2021-06-16T18:28:10+09:00">2021-06-16</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -334,6 +334,8 @@
 <li>가설검정 이해</li>
 <li>T-test의 목적과 사용예시 숙지  </li>
 </ul>
+<span id="more"></span>
+
 <hr>
 <h2 id="기술-통계치-Descriptive-Statistics-란"><a href="#기술-통계치-Descriptive-Statistics-란" class="headerlink" title="기술 통계치(Descriptive Statistics)란?"></a>기술 통계치(Descriptive Statistics)란?</h2><ul>
 <li>count, mean, standard dev, min, 1Q, median, 3Q, max 등의 데이터를 설명 하는 값(혹은 통계치)</li>
