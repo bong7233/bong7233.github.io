@@ -23,12 +23,12 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"bong7233.github.io","root":"/","images":"/images","scheme":"Mist","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="Weekly reveiw 벡터와 매트릭스 ( Vectors and Matrices )  벡터의 연산과 Norm, det 등의 값이가지는 의미와 실제 코드로 실행할수있다는것을 기억  원리이해와 각각에필요한 라이브러리를 쓸줄 알아야함   차원죽소  차원축소하는 궁극적인이유는 , 속도를높이고 메모리의 사용을 줄이기위함 PCA 와 SVD에대한 큰 개념을 이해하기">
+<meta name="description" content="Weekly reveiw벡터와 매트릭스 ( Vectors and Matrices ) 벡터의 연산과 Norm, det 등의 값이가지는 의미와 실제 코드로 실행할수있다는것을 기억 원리이해와 각각에필요한 라이브러리를 쓸줄 알아야함    차원죽소 차원축소하는 궁극적인이유는 , 속도를높이고 메모리의 사용을 줄이기위함 PCA 와 SVD에대한 큰 개념을 이해하기  스칼">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AI-day15">
 <meta property="og:url" content="http://bong7233.github.io/2021/05/27/AI-day15/index.html">
 <meta property="og:site_name" content="Bong&#39;s Blog">
-<meta property="og:description" content="Weekly reveiw 벡터와 매트릭스 ( Vectors and Matrices )  벡터의 연산과 Norm, det 등의 값이가지는 의미와 실제 코드로 실행할수있다는것을 기억  원리이해와 각각에필요한 라이브러리를 쓸줄 알아야함   차원죽소  차원축소하는 궁극적인이유는 , 속도를높이고 메모리의 사용을 줄이기위함 PCA 와 SVD에대한 큰 개념을 이해하기">
+<meta property="og:description" content="Weekly reveiw벡터와 매트릭스 ( Vectors and Matrices ) 벡터의 연산과 Norm, det 등의 값이가지는 의미와 실제 코드로 실행할수있다는것을 기억 원리이해와 각각에필요한 라이브러리를 쓸줄 알아야함    차원죽소 차원축소하는 궁극적인이유는 , 속도를높이고 메모리의 사용을 줄이기위함 PCA 와 SVD에대한 큰 개념을 이해하기  스칼">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-05-27T05:57:13.000Z">
 <meta property="article:modified_time" content="2021-06-03T05:06:26.156Z">
@@ -189,7 +189,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#weekly-reveiw"><span class="nav-number">1.</span> <span class="nav-text">Weekly reveiw</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%B2%A1%ED%84%B0%EC%99%80-%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4-vectors-and-matrices"><span class="nav-number">1.1.</span> <span class="nav-text">벡터와 매트릭스 ( Vectors and Matrices )</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%B0%A8%EC%9B%90%EC%A3%BD%EC%86%8C"><span class="nav-number">1.2.</span> <span class="nav-text">차원죽소</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%8A%A4%EC%B9%BC%EB%9D%BC%EC%99%80-%EB%B2%A1%ED%84%B0"><span class="nav-number">1.3.</span> <span class="nav-text">스칼라와 벡터</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4"><span class="nav-number">1.4.</span> <span class="nav-text">매트릭스</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%B6%84%EC%82%B0%EA%B3%BC-%ED%91%9C%EC%A4%80%ED%8E%B8%EC%B0%A8"><span class="nav-number">1.5.</span> <span class="nav-text">분산과 표준편차</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#basis-rank-span"><span class="nav-number">1.6.</span> <span class="nav-text">basis, rank, span</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vector-transformation"><span class="nav-number">1.7.</span> <span class="nav-text">Vector transformation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%B0%A8%EC%9B%90%EA%B0%90%EC%86%8C"><span class="nav-number">1.8.</span> <span class="nav-text">차원감소</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#custering"><span class="nav-number">1.9.</span> <span class="nav-text">Custering</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Weekly-reveiw"><span class="nav-number">1.</span> <span class="nav-text">Weekly reveiw</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%B2%A1%ED%84%B0%EC%99%80-%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4-Vectors-and-Matrices"><span class="nav-number">1.1.</span> <span class="nav-text">벡터와 매트릭스 ( Vectors and Matrices )</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%B0%A8%EC%9B%90%EC%A3%BD%EC%86%8C"><span class="nav-number">1.2.</span> <span class="nav-text">차원죽소</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%8A%A4%EC%B9%BC%EB%9D%BC%EC%99%80-%EB%B2%A1%ED%84%B0"><span class="nav-number">1.3.</span> <span class="nav-text">스칼라와 벡터</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4"><span class="nav-number">1.4.</span> <span class="nav-text">매트릭스</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%B6%84%EC%82%B0%EA%B3%BC-%ED%91%9C%EC%A4%80%ED%8E%B8%EC%B0%A8"><span class="nav-number">1.5.</span> <span class="nav-text">분산과 표준편차</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#basis-rank-span"><span class="nav-number">1.6.</span> <span class="nav-text">basis, rank, span</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vector-transformation"><span class="nav-number">1.7.</span> <span class="nav-text">Vector transformation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%B0%A8%EC%9B%90%EA%B0%90%EC%86%8C"><span class="nav-number">1.8.</span> <span class="nav-text">차원감소</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Custering"><span class="nav-number">1.9.</span> <span class="nav-text">Custering</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -321,21 +321,17 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="weekly-reveiw">Weekly reveiw</h1>
-<h2 id="벡터와-매트릭스-vectors-and-matrices">벡터와 매트릭스 ( Vectors and Matrices )</h2>
-<ul>
-<li>벡터의 연산과 Norm, det 등의 값이가지는 의미와 실제 코드로 실행할수있다는것을 기억
-<ul>
+        <h1 id="Weekly-reveiw"><a href="#Weekly-reveiw" class="headerlink" title="Weekly reveiw"></a>Weekly reveiw</h1><h2 id="벡터와-매트릭스-Vectors-and-Matrices"><a href="#벡터와-매트릭스-Vectors-and-Matrices" class="headerlink" title="벡터와 매트릭스 ( Vectors and Matrices )"></a>벡터와 매트릭스 ( Vectors and Matrices )</h2><ul>
+<li>벡터의 연산과 Norm, det 등의 값이가지는 의미와 실제 코드로 실행할수있다는것을 기억<ul>
 <li>원리이해와 각각에필요한 라이브러리를 쓸줄 알아야함</li>
-</ul></li>
 </ul>
-<h2 id="차원죽소">차원죽소</h2>
-<ul>
+</li>
+</ul>
+<h2 id="차원죽소"><a href="#차원죽소" class="headerlink" title="차원죽소"></a>차원죽소</h2><ul>
 <li>차원축소하는 궁극적인이유는 , 속도를높이고 메모리의 사용을 줄이기위함</li>
 <li>PCA 와 SVD에대한 큰 개념을 이해하기</li>
 </ul>
-<h2 id="스칼라와-벡터">스칼라와 벡터</h2>
-<ul>
+<h2 id="스칼라와-벡터"><a href="#스칼라와-벡터" class="headerlink" title="스칼라와 벡터"></a>스칼라와 벡터</h2><ul>
 <li>벡터에서는 numpy를 이용해 다양한 계산을 활용할줄 아는것이 기본이다</li>
 <li>스칼라는 숫자고 크기이다</li>
 <li>벡터를 수학적으로 이해하기보다는 데이터라고 받아들이자</li>
@@ -343,43 +339,37 @@
 <li>벡터의 크기 (Magnitude, Norm, Length)의 의미에대해 알기</li>
 <li>벡터의 내적 ( Dot Product )을 위해서는 두 벡터의 길이가 반드시 동일해야 한다</li>
 </ul>
-<h2 id="매트릭스">매트릭스</h2>
-<ul>
+<h2 id="매트릭스"><a href="#매트릭스" class="headerlink" title="매트릭스"></a>매트릭스</h2><ul>
 <li>매트릭스의 Transpose 기억하기</li>
 <li>2개의 매트릭스가 일치하기 위해서는, 동일한 차원을 보유하고 각 해당하는 구성요소들이 동일해야 함</li>
-<li>정사각 매트릭스
-<ul>
+<li>정사각 매트릭스<ul>
 <li>정사각 매트릭스의 종류들과 특징은 알아두기</li>
 <li>단위매트릭스는 특히 중요</li>
-</ul></li>
+</ul>
+</li>
 <li>행렬식과 역행렬의 개념과 계산하는 방법 알기</li>
 </ul>
-<h2 id="분산과-표준편차">분산과 표준편차</h2>
-<ul>
+<h2 id="분산과-표준편차"><a href="#분산과-표준편차" class="headerlink" title="분산과 표준편차"></a>분산과 표준편차</h2><ul>
 <li>각각의 의미와 구하는 라이브러리를 기억</li>
 <li>numpy와 pandas에서 ddof의 차이에 주의하자</li>
-<li>공분산과 상관계수는 메서드 사용시 원하는값이 배열의 어느위치에 있는지 알아야함
-<ul>
+<li>공분산과 상관계수는 메서드 사용시 원하는값이 배열의 어느위치에 있는지 알아야함<ul>
 <li>특히 상관계수가 1일때와 -1일때 똑같이 선형상관관계이고 방향만 양수 음수 임을 주의 -1이라고해서 선형관계가 아니라고 생각하면 안된다</li>
 <li>공분산과 상관계수는 서로 어떤관계가 있는지 설명할줄 알아야함</li>
-</ul></li>
 </ul>
-<h2 id="basis-rank-span">basis, rank, span</h2>
-<ul>
+</li>
+</ul>
+<h2 id="basis-rank-span"><a href="#basis-rank-span" class="headerlink" title="basis, rank, span"></a>basis, rank, span</h2><ul>
 <li>각각의 개념을 이해하는것이 중요</li>
 </ul>
-<h2 id="vector-transformation">Vector transformation</h2>
-<ul>
+<h2 id="Vector-transformation"><a href="#Vector-transformation" class="headerlink" title="Vector transformation"></a>Vector transformation</h2><ul>
 <li>다양한 방법으로 벡터를 변환시켜 차원을 줄이기위한 과정</li>
 <li>고유값과 고유벡터의 의미와 구하는법도 숙지</li>
 </ul>
-<h2 id="차원감소">차원감소</h2>
-<ul>
+<h2 id="차원감소"><a href="#차원감소" class="headerlink" title="차원감소"></a>차원감소</h2><ul>
 <li>Feacture Selection 과 Feature Extraction 의 방식과 예시 기억하기</li>
 <li>Scaling 과 PCA 을 통해 차원감소하는 원리와 이유, 방법과 라이브러리 정리</li>
 </ul>
-<h2 id="custering">Custering</h2>
-<ul>
+<h2 id="Custering"><a href="#Custering" class="headerlink" title="Custering"></a>Custering</h2><ul>
 <li>머신러닝에서의 비지도학습의 한 종류로 데이터들간의 유사성을 토대로 분류하는것이다</li>
 <li>다양한 종류가있지만, 그런 종류가있다는것을 알고 데이터의 형태에 맞는 방법을 쓰는것이 중요하다</li>
 </ul>

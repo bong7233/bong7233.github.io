@@ -23,12 +23,12 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"bong7233.github.io","root":"/","images":"/images","scheme":"Mist","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="단순회귀  종속변수 : 결과, 타겟, 레이블 (y) 독립변수 : 변수 (x) 회귀선의 공식 \(\hat{y}\) &#x3D; b0 + b1\(x\)  회귀선의 공식을 도출과정 중요  Tabular Data  행데이터 : 관측치 (열 별로 데이터타입이 다를수있음) 열데이터 : 변수 (같은 열에는 같은 데이터타입)  분류와 회귀의 차이  출력유형 : 분류는 레이블, 회">
+<meta name="description" content="단순회귀 종속변수 : 결과, 타겟, 레이블 (y) 독립변수 : 변수 (x) 회귀선의 공식 $\hat{y}$ &#x3D; b0 + b1$x$ 회귀선의 공식을 도출과정 중요   Tabular Data  행데이터 : 관측치 (열 별로 데이터타입이 다를수있음) 열데이터 : 변수 (같은 열에는 같은 데이터타입)   분류와 회귀의 차이 출력유형 : 분류는 레이블, 회귀는 연속">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MachineLearning-Day1">
 <meta property="og:url" content="http://bong7233.github.io/2021/06/08/MachineLearing-Day1/index.html">
 <meta property="og:site_name" content="Bong&#39;s Blog">
-<meta property="og:description" content="단순회귀  종속변수 : 결과, 타겟, 레이블 (y) 독립변수 : 변수 (x) 회귀선의 공식 \(\hat{y}\) &#x3D; b0 + b1\(x\)  회귀선의 공식을 도출과정 중요  Tabular Data  행데이터 : 관측치 (열 별로 데이터타입이 다를수있음) 열데이터 : 변수 (같은 열에는 같은 데이터타입)  분류와 회귀의 차이  출력유형 : 분류는 레이블, 회">
+<meta property="og:description" content="단순회귀 종속변수 : 결과, 타겟, 레이블 (y) 독립변수 : 변수 (x) 회귀선의 공식 $\hat{y}$ &#x3D; b0 + b1$x$ 회귀선의 공식을 도출과정 중요   Tabular Data  행데이터 : 관측치 (열 별로 데이터타입이 다를수있음) 열데이터 : 변수 (같은 열에는 같은 데이터타입)   분류와 회귀의 차이 출력유형 : 분류는 레이블, 회귀는 연속">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-06-08T01:10:02.000Z">
 <meta property="article:modified_time" content="2021-06-09T02:57:31.742Z">
@@ -189,7 +189,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EB%8B%A8%EC%88%9C%ED%9A%8C%EA%B7%80"><span class="nav-number">1.</span> <span class="nav-text">단순회귀</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%8B%A8%EC%88%9C%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80%EB%AA%A8%EB%8D%B8"><span class="nav-number">1.1.</span> <span class="nav-text">단순선형회귀모델</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%8B%A8%EC%88%9C%EC%84%9C%ED%98%95%ED%9A%8C%EA%B7%80-%EB%AA%A8%EB%8D%B8%ED%95%99%EC%8A%B5"><span class="nav-number">1.2.</span> <span class="nav-text">단순서형회귀 모델학습</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%9A%8C%EA%B7%80%EA%B3%84%EC%88%98"><span class="nav-number">1.3.</span> <span class="nav-text">회귀계수</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sklearn.linear_model.linearregression"><span class="nav-number">1.4.</span> <span class="nav-text">sklearn.linear_model.LinearRegression</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sklearn.metrics.mean_absolute_error"><span class="nav-number">1.5.</span> <span class="nav-text">sklearn.metrics.mean_absolute_error</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#supervised-learning"><span class="nav-number">1.6.</span> <span class="nav-text">Supervised Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%B5%9C%EC%86%8C%EC%A0%9C%EA%B3%B1%EB%B2%95%EC%9D%B4%EB%9E%80"><span class="nav-number">1.7.</span> <span class="nav-text">최소제곱법이란?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#plotly-%EC%8B%9C%EA%B0%81%ED%99%94-%ED%88%B4"><span class="nav-number">1.8.</span> <span class="nav-text">Plotly 시각화 툴</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#interact-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0"><span class="nav-number">1.9.</span> <span class="nav-text">Interact 사용하기</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EB%8B%A8%EC%88%9C%ED%9A%8C%EA%B7%80"><span class="nav-number">1.</span> <span class="nav-text">단순회귀</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%8B%A8%EC%88%9C%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80%EB%AA%A8%EB%8D%B8"><span class="nav-number">1.1.</span> <span class="nav-text">단순선형회귀모델</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%8B%A8%EC%88%9C%EC%84%9C%ED%98%95%ED%9A%8C%EA%B7%80-%EB%AA%A8%EB%8D%B8%ED%95%99%EC%8A%B5"><span class="nav-number">1.2.</span> <span class="nav-text">단순서형회귀 모델학습</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%9A%8C%EA%B7%80%EA%B3%84%EC%88%98"><span class="nav-number">1.3.</span> <span class="nav-text">회귀계수</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sklearn-linear-model-LinearRegression"><span class="nav-number">1.4.</span> <span class="nav-text">sklearn.linear_model.LinearRegression</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sklearn-metrics-mean-absolute-error"><span class="nav-number">1.5.</span> <span class="nav-text">sklearn.metrics.mean_absolute_error</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Supervised-Learning"><span class="nav-number">1.6.</span> <span class="nav-text">Supervised Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%B5%9C%EC%86%8C%EC%A0%9C%EA%B3%B1%EB%B2%95%EC%9D%B4%EB%9E%80"><span class="nav-number">1.7.</span> <span class="nav-text">최소제곱법이란?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Plotly-%EC%8B%9C%EA%B0%81%ED%99%94-%ED%88%B4"><span class="nav-number">1.8.</span> <span class="nav-text">Plotly 시각화 툴</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interact-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0"><span class="nav-number">1.9.</span> <span class="nav-text">Interact 사용하기</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -321,38 +321,28 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="단순회귀">단순회귀</h1>
-<ul>
+        <h1 id="단순회귀"><a href="#단순회귀" class="headerlink" title="단순회귀"></a>단순회귀</h1><ul>
 <li>종속변수 : 결과, 타겟, 레이블 (y)</li>
 <li>독립변수 : 변수 (x)</li>
-<li>회귀선의 공식 <span class="math inline">\(\hat{y}\)</span> = b<sub>0</sub> + b<sub>1</sub><span class="math inline">\(x\)</span>
-<ul>
+<li>회귀선의 공식 $\hat{y}$ = b<sub>0</sub> + b<sub>1</sub>$x$<ul>
 <li>회귀선의 공식을 도출과정 중요</li>
-</ul></li>
-<li>Tabular Data
-<ul>
+</ul>
+</li>
+<li>Tabular Data <ul>
 <li>행데이터 : 관측치 (열 별로 데이터타입이 다를수있음)</li>
 <li>열데이터 : 변수 (같은 열에는 같은 데이터타입)</li>
-</ul></li>
-<li>분류와 회귀의 차이
-<ul>
+</ul>
+</li>
+<li>분류와 회귀의 차이<ul>
 <li>출력유형 : 분류는 레이블, 회귀는 연속적</li>
 <li>목적 : 분류는 결정경계 찾기(데이터를 설명하는 경계선), 회귀는 최대한 비슷한값찾기</li>
 <li>평가 : 분류는 정밀도사용, 회귀는 r<sup>2</sup> 에러사용</li>
 <li>“How Much / How Many?” (회귀)</li>
 <li>“Is this A or B?” (분류)</li>
-</ul></li>
 </ul>
-<h2 id="단순선형회귀모델">단순선형회귀모델</h2>
-<h2 id="단순서형회귀-모델학습">단순서형회귀 모델학습</h2>
-<h2 id="회귀계수">회귀계수</h2>
-<h2 id="sklearn.linear_model.linearregression">sklearn.linear_model.LinearRegression</h2>
-<h2 id="sklearn.metrics.mean_absolute_error">sklearn.metrics.mean_absolute_error</h2>
-<h2 id="supervised-learning">Supervised Learning</h2>
-<h2 id="최소제곱법이란">최소제곱법이란?</h2>
-<h2 id="plotly-시각화-툴">Plotly 시각화 툴</h2>
-<h2 id="interact-사용하기">Interact 사용하기</h2>
-
+</li>
+</ul>
+<h2 id="단순선형회귀모델"><a href="#단순선형회귀모델" class="headerlink" title="단순선형회귀모델"></a>단순선형회귀모델</h2><h2 id="단순서형회귀-모델학습"><a href="#단순서형회귀-모델학습" class="headerlink" title="단순서형회귀 모델학습"></a>단순서형회귀 모델학습</h2><h2 id="회귀계수"><a href="#회귀계수" class="headerlink" title="회귀계수"></a>회귀계수</h2><h2 id="sklearn-linear-model-LinearRegression"><a href="#sklearn-linear-model-LinearRegression" class="headerlink" title="sklearn.linear_model.LinearRegression"></a>sklearn.linear_model.LinearRegression</h2><h2 id="sklearn-metrics-mean-absolute-error"><a href="#sklearn-metrics-mean-absolute-error" class="headerlink" title="sklearn.metrics.mean_absolute_error"></a>sklearn.metrics.mean_absolute_error</h2><h2 id="Supervised-Learning"><a href="#Supervised-Learning" class="headerlink" title="Supervised Learning"></a>Supervised Learning</h2><h2 id="최소제곱법이란"><a href="#최소제곱법이란" class="headerlink" title="최소제곱법이란?"></a>최소제곱법이란?</h2><h2 id="Plotly-시각화-툴"><a href="#Plotly-시각화-툴" class="headerlink" title="Plotly 시각화 툴"></a>Plotly 시각화 툴</h2><h2 id="Interact-사용하기"><a href="#Interact-사용하기" class="headerlink" title="Interact 사용하기"></a>Interact 사용하기</h2>
     </div>
 
     
