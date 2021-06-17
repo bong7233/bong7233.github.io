@@ -23,21 +23,21 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"bong7233.github.io","root":"/","images":"/images","scheme":"Muse","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="단순회귀 종속변수 : 결과, 타겟, 레이블 (y) 독립변수 : 변수 (x) 회귀선의 공식 $\hat{y}$ &#x3D; b0 + b1$x$ 회귀선의 공식을 도출과정 중요   Tabular Data  행데이터 : 관측치 (열 별로 데이터타입이 다를수있음) 열데이터 : 변수 (같은 열에는 같은 데이터타입)   분류와 회귀의 차이 출력유형 : 분류는 레이블, 회귀는 연속">
+<meta name="description" content="Model Selection">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MachineLearning-Day1">
-<meta property="og:url" content="http://bong7233.github.io/2021/06/08/MachineLearing-Day1/index.html">
+<meta property="og:title" content="MachineLearning-Day8">
+<meta property="og:url" content="http://bong7233.github.io/2021/06/17/MachineLearning-Day8/index.html">
 <meta property="og:site_name" content="Bong&#39;s Blog">
-<meta property="og:description" content="단순회귀 종속변수 : 결과, 타겟, 레이블 (y) 독립변수 : 변수 (x) 회귀선의 공식 $\hat{y}$ &#x3D; b0 + b1$x$ 회귀선의 공식을 도출과정 중요   Tabular Data  행데이터 : 관측치 (열 별로 데이터타입이 다를수있음) 열데이터 : 변수 (같은 열에는 같은 데이터타입)   분류와 회귀의 차이 출력유형 : 분류는 레이블, 회귀는 연속">
+<meta property="og:description" content="Model Selection">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-06-08T01:10:02.000Z">
-<meta property="article:modified_time" content="2021-06-09T02:57:31.742Z">
+<meta property="article:published_time" content="2021-06-17T10:30:17.000Z">
+<meta property="article:modified_time" content="2021-06-17T10:32:11.825Z">
 <meta property="article:author" content="SangBong Lee">
-<meta property="article:tag" content="Simple Regression">
+<meta property="article:tag" content="Model Selection">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://bong7233.github.io/2021/06/08/MachineLearing-Day1/">
+<link rel="canonical" href="http://bong7233.github.io/2021/06/17/MachineLearning-Day8/">
 
 
 <script class="page-configurations">
@@ -49,7 +49,7 @@
     lang   : 'kor'
   };
 </script>
-<title>MachineLearning-Day1 | Bong's Blog</title>
+<title>MachineLearning-Day8 | Bong's Blog</title>
   
 
 
@@ -189,7 +189,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EB%8B%A8%EC%88%9C%ED%9A%8C%EA%B7%80"><span class="nav-number">1.</span> <span class="nav-text">단순회귀</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%8B%A8%EC%88%9C%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80%EB%AA%A8%EB%8D%B8"><span class="nav-number">1.1.</span> <span class="nav-text">단순선형회귀모델</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%8B%A8%EC%88%9C%EC%84%9C%ED%98%95%ED%9A%8C%EA%B7%80-%EB%AA%A8%EB%8D%B8%ED%95%99%EC%8A%B5"><span class="nav-number">1.2.</span> <span class="nav-text">단순서형회귀 모델학습</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%9A%8C%EA%B7%80%EA%B3%84%EC%88%98"><span class="nav-number">1.3.</span> <span class="nav-text">회귀계수</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sklearn-linear-model-LinearRegression"><span class="nav-number">1.4.</span> <span class="nav-text">sklearn.linear_model.LinearRegression</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sklearn-metrics-mean-absolute-error"><span class="nav-number">1.5.</span> <span class="nav-text">sklearn.metrics.mean_absolute_error</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Supervised-Learning"><span class="nav-number">1.6.</span> <span class="nav-text">Supervised Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%B5%9C%EC%86%8C%EC%A0%9C%EA%B3%B1%EB%B2%95%EC%9D%B4%EB%9E%80"><span class="nav-number">1.7.</span> <span class="nav-text">최소제곱법이란?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Plotly-%EC%8B%9C%EA%B0%81%ED%99%94-%ED%88%B4"><span class="nav-number">1.8.</span> <span class="nav-text">Plotly 시각화 툴</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interact-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0"><span class="nav-number">1.9.</span> <span class="nav-text">Interact 사용하기</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Model-Selection"><span class="nav-number">1.</span> <span class="nav-text">Model Selection</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -203,7 +203,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -216,7 +216,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -268,7 +268,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="kor">
-    <link itemprop="mainEntityOfPage" href="http://bong7233.github.io/2021/06/08/MachineLearing-Day1/">
+    <link itemprop="mainEntityOfPage" href="http://bong7233.github.io/2021/06/17/MachineLearning-Day8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -281,7 +281,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          MachineLearning-Day1
+          MachineLearning-Day8
         </h1>
 
         <div class="post-meta-container">
@@ -291,16 +291,10 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2021-06-08 10:10:02" itemprop="dateCreated datePublished" datetime="2021-06-08T10:10:02+09:00">2021-06-08</time>
+      <time title="Created: 2021-06-17 19:30:17 / Modified: 19:32:11" itemprop="dateCreated datePublished" datetime="2021-06-17T19:30:17+09:00">2021-06-17</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-09 11:57:31" itemprop="dateModified" datetime="2021-06-09T11:57:31+09:00">2021-06-09</time>
-      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -321,28 +315,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="단순회귀"><a href="#단순회귀" class="headerlink" title="단순회귀"></a>단순회귀</h1><ul>
-<li>종속변수 : 결과, 타겟, 레이블 (y)</li>
-<li>독립변수 : 변수 (x)</li>
-<li>회귀선의 공식 $\hat{y}$ = b<sub>0</sub> + b<sub>1</sub>$x$<ul>
-<li>회귀선의 공식을 도출과정 중요</li>
-</ul>
-</li>
-<li>Tabular Data <ul>
-<li>행데이터 : 관측치 (열 별로 데이터타입이 다를수있음)</li>
-<li>열데이터 : 변수 (같은 열에는 같은 데이터타입)</li>
-</ul>
-</li>
-<li>분류와 회귀의 차이<ul>
-<li>출력유형 : 분류는 레이블, 회귀는 연속적</li>
-<li>목적 : 분류는 결정경계 찾기(데이터를 설명하는 경계선), 회귀는 최대한 비슷한값찾기</li>
-<li>평가 : 분류는 정밀도사용, 회귀는 r<sup>2</sup> 에러사용</li>
-<li>“How Much / How Many?” (회귀)</li>
-<li>“Is this A or B?” (분류)</li>
-</ul>
-</li>
-</ul>
-<h2 id="단순선형회귀모델"><a href="#단순선형회귀모델" class="headerlink" title="단순선형회귀모델"></a>단순선형회귀모델</h2><h2 id="단순서형회귀-모델학습"><a href="#단순서형회귀-모델학습" class="headerlink" title="단순서형회귀 모델학습"></a>단순서형회귀 모델학습</h2><h2 id="회귀계수"><a href="#회귀계수" class="headerlink" title="회귀계수"></a>회귀계수</h2><h2 id="sklearn-linear-model-LinearRegression"><a href="#sklearn-linear-model-LinearRegression" class="headerlink" title="sklearn.linear_model.LinearRegression"></a>sklearn.linear_model.LinearRegression</h2><h2 id="sklearn-metrics-mean-absolute-error"><a href="#sklearn-metrics-mean-absolute-error" class="headerlink" title="sklearn.metrics.mean_absolute_error"></a>sklearn.metrics.mean_absolute_error</h2><h2 id="Supervised-Learning"><a href="#Supervised-Learning" class="headerlink" title="Supervised Learning"></a>Supervised Learning</h2><h2 id="최소제곱법이란"><a href="#최소제곱법이란" class="headerlink" title="최소제곱법이란?"></a>최소제곱법이란?</h2><h2 id="Plotly-시각화-툴"><a href="#Plotly-시각화-툴" class="headerlink" title="Plotly 시각화 툴"></a>Plotly 시각화 툴</h2><h2 id="Interact-사용하기"><a href="#Interact-사용하기" class="headerlink" title="Interact 사용하기"></a>Interact 사용하기</h2>
+        <h2 id="Model-Selection"><a href="#Model-Selection" class="headerlink" title="Model Selection"></a>Model Selection</h2>
     </div>
 
     
@@ -351,21 +324,18 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Simple-Regression/" rel="tag"><i class="fa fa-tag"></i> Simple Regression</a>
+              <a href="/tags/Model-Selection/" rel="tag"><i class="fa fa-tag"></i> Model Selection</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/06/03/AI-day16-20/" rel="prev" title="AI-day16~20">
-                  <i class="fa fa-chevron-left"></i> AI-day16~20
+                <a href="/2021/06/17/MachineLearning-Day7/" rel="prev" title="MachineLearning-Day7">
+                  <i class="fa fa-chevron-left"></i> MachineLearning-Day7
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/06/09/MachineLearning-Day2/" rel="next" title="MachineLearning-Day2">
-                  MachineLearning-Day2 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
